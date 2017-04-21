@@ -10,6 +10,7 @@
 		422DB3CE1EAA30B300377AB5 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		422DB3D31EAA30B300377AB5 /* AdvancedUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB3D21EAA30B300377AB5 /* AdvancedUIKitTests.swift */; };
 		422DB3D51EAA30B300377AB5 /* AdvancedUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 422DB3C71EAA30B300377AB5 /* AdvancedUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		661973D369AC6A62DFA73493 /* Pods_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,9 @@
 		422DB3CD1EAA30B300377AB5 /* AdvancedUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB3D21EAA30B300377AB5 /* AdvancedUIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedUIKitTests.swift; sourceTree = "<group>"; };
 		422DB3D41EAA30B300377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				422DB3CE1EAA30B300377AB5 /* AdvancedUIKit.framework in Frameworks */,
+				661973D369AC6A62DFA73493 /* Pods_AdvancedUIKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 				422DB3C61EAA30B300377AB5 /* AdvancedUIKit */,
 				422DB3D11EAA30B300377AB5 /* AdvancedUIKitTests */,
 				422DB3C51EAA30B300377AB5 /* Products */,
+				C0272E9011EE625BC09036CD /* Pods */,
+				CBAC1959A0FE1FE370BF95C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +91,23 @@
 				422DB3D41EAA30B300377AB5 /* Info.plist */,
 			);
 			path = AdvancedUIKitTests;
+			sourceTree = "<group>";
+		};
+		C0272E9011EE625BC09036CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */,
+				F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CBAC1959A0FE1FE370BF95C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 422DB3DB1EAA30B300377AB5 /* Build configuration list for PBXNativeTarget "AdvancedUIKitTests" */;
 			buildPhases = (
+				8EBE781682D583EAA0683D58 /* [CP] Check Pods Manifest.lock */,
 				422DB3C91EAA30B300377AB5 /* Sources */,
 				422DB3CA1EAA30B300377AB5 /* Frameworks */,
 				422DB3CB1EAA30B300377AB5 /* Resources */,
+				0A9620F9CFC162D44B34507E /* [CP] Embed Pods Frameworks */,
+				08B8CB3A373072E049E1422C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +219,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08B8CB3A373072E049E1422C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A9620F9CFC162D44B34507E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EBE781682D583EAA0683D58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		422DB3BF1EAA30B300377AB5 /* Sources */ = {
@@ -333,7 +408,7 @@
 				INFOPLIST_FILE = AdvancedUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.AdvancedUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -352,7 +427,7 @@
 				INFOPLIST_FILE = AdvancedUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.AdvancedUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -361,6 +436,7 @@
 		};
 		422DB3DC1EAA30B300377AB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = XN66S2NA25;
 				INFOPLIST_FILE = AdvancedUIKitTests/Info.plist;
@@ -373,6 +449,7 @@
 		};
 		422DB3DD1EAA30B300377AB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = XN66S2NA25;
 				INFOPLIST_FILE = AdvancedUIKitTests/Info.plist;
@@ -402,6 +479,7 @@
 				422DB3DA1EAA30B300377AB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		422DB3DB1EAA30B300377AB5 /* Build configuration list for PBXNativeTarget "AdvancedUIKitTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +488,7 @@
 				422DB3DD1EAA30B300377AB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
