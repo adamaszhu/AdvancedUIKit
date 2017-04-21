@@ -13,6 +13,7 @@
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
 		422DB4131EAA3CF100377AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */; };
 		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
+		422DB4331EAAC11400377AB5 /* Label+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4311EAAC11400377AB5 /* Label+Dynamic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		422DB4141EAA3CF100377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB4191EAA3CF100377AB5 /* AdvancedUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB4281EAA3D2A00377AB5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		422DB4311EAAC11400377AB5 /* Label+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Dynamic.swift"; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		422DB3C61EAA30B300377AB5 /* AdvancedUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				422DB4301EAAC11400377AB5 /* Label */,
 				422DB3C81EAA30B300377AB5 /* Info.plist */,
 			);
 			path = AdvancedUIKit;
@@ -116,6 +119,14 @@
 				422DB4281EAA3D2A00377AB5 /* Info.plist */,
 			);
 			path = AdvancedUIKitTests;
+			sourceTree = "<group>";
+		};
+		422DB4301EAAC11400377AB5 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				422DB4311EAAC11400377AB5 /* Label+Dynamic.swift */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 		C0272E9011EE625BC09036CD /* Pods */ = {
@@ -282,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				422DB4331EAAC11400377AB5 /* Label+Dynamic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +564,7 @@
 				422DB4221EAA3CF100377AB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		422DB4231EAA3CF100377AB5 /* Build configuration list for PBXNativeTarget "AdvancedUIKitTests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +573,7 @@
 				422DB4251EAA3CF100377AB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
