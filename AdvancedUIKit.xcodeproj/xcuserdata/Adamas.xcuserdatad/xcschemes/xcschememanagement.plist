@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>AdvancedUIKitHost.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,26 @@
 			<true/>
 		</dict>
 		<key>422DB3CC1EAA30B300377AB5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>422DB3E11EAA3CA500377AB5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>422DB3F41EAA3CA500377AB5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>422DB4051EAA3CF100377AB5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>422DB4181EAA3CF100377AB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
