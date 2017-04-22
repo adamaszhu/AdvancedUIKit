@@ -39,7 +39,7 @@ extension String {
         var displayedLines = [String]()
         let lines = components(separatedBy: CharacterSet.newlines)
         for line in lines {
-            for displayedLine in line.measureSingleLine(withFont: font, inView: view) {
+            for displayedLine in line.measureLine(withFont: font, inView: view) {
                 displayedLines.append(displayedLine)
             }
         }
@@ -52,7 +52,7 @@ extension String {
      * - parameter view: The view that text is in.
      * - returns: The actual line amount displayed on the view.
      */
-    private func measureSingleLine(withFont font: UIFont, inView view: UIView) -> [String] {
+    private func measureLine(withFont font: UIFont, inView view: UIView) -> [String] {
         if isEmpty {
             return [""]
         }

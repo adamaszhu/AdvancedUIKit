@@ -14,10 +14,9 @@ public extension UILabel {
             return frame.origin
         }
         // COMMENT: If lastLine is nil, then the logic should be fixed.
-        let lastLine = text!.components(separatedBy: CharacterSet.newlines).last!
-        let size = NSString(string: lastLine).size(attributes: [NSFontAttributeName: font])
-        let lastLineLength = CGFloat(Int(size.width) % Int(frame.width))
-        let offsetX = lastLineLength == 0 ? frame.width : lastLineLength
+        let lastLine = text!.measureLines(withFont: font, inView: self).last!
+        let lastLineLength = lastLine.measureWidth(withFont: font)
+        let offsetX = lastLineLength
         let offsetY = frame.height - lineHeight
         return CGPoint(x: frame.origin.x + offsetX, y: frame.origin.y + offsetY)
     }
