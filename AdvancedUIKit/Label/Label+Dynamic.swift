@@ -36,7 +36,7 @@ public extension UILabel {
         guard let text = text else {
             return 0
         }
-        return font.measureLineAmount(ofContext: text, inView: self)
+        return text.measureLineAmount(withFont: font, inView: self)
     }
     
 }

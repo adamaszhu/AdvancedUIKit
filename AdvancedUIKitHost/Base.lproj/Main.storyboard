@@ -91,7 +91,28 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-0M-4AI">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a dynamic label. sdasdfas dfasdfasdfasdfasdfasdfsadf Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koX-nA-sBe">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0M-bd-04w">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="T0M-bd-04w" firstAttribute="top" secondItem="HZd-0M-4AI" secondAttribute="top" id="69j-O7-lE3"/>
+                                            <constraint firstItem="koX-nA-sBe" firstAttribute="top" secondItem="HZd-0M-4AI" secondAttribute="top" id="UMV-ZG-KkC"/>
+                                            <constraint firstItem="T0M-bd-04w" firstAttribute="leading" secondItem="HZd-0M-4AI" secondAttribute="leading" id="Xxo-Z8-fwW"/>
+                                            <constraint firstItem="koX-nA-sBe" firstAttribute="leading" secondItem="HZd-0M-4AI" secondAttribute="leading" id="b25-cJ-fEb"/>
+                                            <constraint firstAttribute="trailing" secondItem="koX-nA-sBe" secondAttribute="trailing" id="yXP-Hv-mCH"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -112,6 +133,10 @@
                             <constraint firstItem="cAT-9z-y4N" firstAttribute="leading" secondItem="qcJ-Lo-n0o" secondAttribute="leading" id="m0c-dp-cZN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dynamicLabel" destination="koX-nA-sBe" id="Rnb-Xi-sfG"/>
+                        <outlet property="endTagLabel" destination="T0M-bd-04w" id="RQj-lA-Avw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awf-2H-GMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
