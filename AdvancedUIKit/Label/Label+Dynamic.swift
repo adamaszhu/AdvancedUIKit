@@ -6,78 +6,38 @@
  */
 public extension UILabel {
     
-//    /**
-//     * The default line space.
-//     */
-//    private static let DefaultLineSpace = CGFloat(5)
-//    
-//    /**
-//     * Get the position of the end.
-//     */
-//    public var endPosition: CGPoint {
-//        /**
-//         * - version: 0.2.0
-//         * - date: 12/01/2017
-//         */
-//        get {
-//            if (frame.size.width == 0) || (text == nil) {
-//                return frame.origin
-//            }
-//            let lineList = text!.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
-//            if lineList.last == nil {
-//                return frame.origin
-//            }
-//            let size = NSString(string: lineList.last!).sizeWithAttributes([NSFontAttributeName: font])
-//            let lastLineLength = size.width % frame.size.width
-//            let x = lastLineLength == 0 ? frame.size.width : lastLineLength
-//            let y = lastLineLength == 0 ? frame.size.height - lineHeight * 2 - UILabel.DefaultLineSpace : frame.size.height - lineHeight
-//            return CGPoint(x: frame.origin.x + x, y: frame.origin.y + y)
-//        }
-//    }
-//    
-//    /**
-//     * Get the height of each line.
-//     */
-//    public var lineHeight: CGFloat {
-//        /**
-//         * - version: 0.0.6
-//         * - date: 10/10/2016
-//         */
-//        get {
-//            if text == nil {
-//                return 0
-//            }
-//            return getLineHeight(withText: text!, withFont: font)
-//        }
-//    }
-//    
-//    /**
-//     * How many lines are presented.
-//     */
-//    public var lineAmount: Int {
-//        /**
-//         * - version: 0.0.6
-//         * - date: 10/10/2016
-//         */
-//        get {
-//            if text == nil {
-//                return 0
-//            }
-//            return getLineAmount(withText: text!, withFont: font)
-//        }
-//    }
-//    
-//    /**
-//     * Set the dynamic content.
-//     * - version: 0.2.0
-//     * - date: 12/01/2017
-//     * - parameter text: The content of the label.
-//     */
-//    public func setDynamicText(text: String) {
-//        self.text = text
-//        let height = (lineHeight + UILabel.DefaultLineSpace) * CGFloat(lineAmount) - UILabel.DefaultLineSpace
-//        frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, height)
-//    }
+    /**
+     * Get the position of the last character.
+     */
+    public var endPosition: CGPoint {
+        if lineAmount == 0 {
+            return frame.origin
+        }
+        // COMMENT: If lastLine is nil, then the logic should be fixed.
+        let lastLine = text!.components(separatedBy: CharacterSet.newlines).last!
+        let size = NSString(string: lastLine).size(attributes: [NSFontAttributeName: font])
+        let lastLineLength = CGFloat(Int(size.width) % Int(frame.width))
+        let offsetX = lastLineLength == 0 ? frame.width : lastLineLength
+        let offsetY = frame.height - lineHeight
+        return CGPoint(x: frame.origin.x + offsetX, y: frame.origin.y + offsetY)
+    }
+    
+    /**
+     * Get the height of each line.
+     */
+    public var lineHeight: CGFloat {
+        return font.lineHeight
+    }
+    
+    /**
+     * How many lines are presented.
+     */
+    public var lineAmount: Int {
+        guard let text = text else {
+            return 0
+        }
+        return font.measureLineAmount(ofContext: text, inView: self)
+    }
     
 }
 
