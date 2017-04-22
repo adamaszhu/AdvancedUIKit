@@ -8,16 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
+		422DB40B1EAA3CF100377AB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB40A1EAA3CF100377AB5 /* ViewController.swift */; };
 		422DB40E1EAA3CF100377AB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40C1EAA3CF100377AB5 /* Main.storyboard */; };
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
 		422DB4131EAA3CF100377AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */; };
 		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
-		422DB43A1EAAE6BD00377AB5 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
-		422DB43D1EAAEBA700377AB5 /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB43C1EAAEBA700377AB5 /* ViewViewController.swift */; };
-		422DB43F1EAAEBBB00377AB5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */; };
-		4269397C1EAB253700761FDE /* String+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269397B1EAB253700761FDE /* String+Display.swift */; };
-		426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939751EAB01CD00761FDE /* Label+Dynamic.swift */; };
-		426939791EAB151400761FDE /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939781EAB151400761FDE /* LabelViewController.swift */; };
+		422DB4331EAAC11400377AB5 /* Label+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4311EAAC11400377AB5 /* Label+Dynamic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,17 +31,14 @@
 		422DB3C81EAA30B300377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB4061EAA3CF100377AB5 /* AdvancedUIKitHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedUIKitHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB4081EAA3CF100377AB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		422DB40A1EAA3CF100377AB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		422DB40D1EAA3CF100377AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		422DB40F1EAA3CF100377AB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		422DB4121EAA3CF100377AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		422DB4141EAA3CF100377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB4191EAA3CF100377AB5 /* AdvancedUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB4281EAA3D2A00377AB5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		422DB43C1EAAEBA700377AB5 /* ViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
-		422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		4269397B1EAB253700761FDE /* String+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Display.swift"; sourceTree = "<group>"; };
-		426939751EAB01CD00761FDE /* Label+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Dynamic.swift"; sourceTree = "<group>"; };
-		426939781EAB151400761FDE /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
+		422DB4311EAAC11400377AB5 /* Label+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Dynamic.swift"; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				422DB43A1EAAE6BD00377AB5 /* AdvancedUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +94,7 @@
 		422DB3C61EAA30B300377AB5 /* AdvancedUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				4269397A1EAB253700761FDE /* String */,
-				426939741EAB01CD00761FDE /* Label */,
-				422DB4351EAAD2D800377AB5 /* View */,
+				422DB4301EAAC11400377AB5 /* Label */,
 				422DB3C81EAA30B300377AB5 /* Info.plist */,
 			);
 			path = AdvancedUIKit;
@@ -113,10 +103,8 @@
 		422DB4071EAA3CF100377AB5 /* AdvancedUIKitHost */ = {
 			isa = PBXGroup;
 			children = (
-				426939771EAB150700761FDE /* Label */,
-				422DB43B1EAAEBA700377AB5 /* View */,
 				422DB4081EAA3CF100377AB5 /* AppDelegate.swift */,
-				422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */,
+				422DB40A1EAA3CF100377AB5 /* ViewController.swift */,
 				422DB40C1EAA3CF100377AB5 /* Main.storyboard */,
 				422DB40F1EAA3CF100377AB5 /* Assets.xcassets */,
 				422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */,
@@ -133,41 +121,10 @@
 			path = AdvancedUIKitTests;
 			sourceTree = "<group>";
 		};
-		422DB4351EAAD2D800377AB5 /* View */ = {
+		422DB4301EAAC11400377AB5 /* Label */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		422DB43B1EAAEBA700377AB5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				422DB43C1EAAEBA700377AB5 /* ViewViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		4269397A1EAB253700761FDE /* String */ = {
-			isa = PBXGroup;
-			children = (
-				4269397B1EAB253700761FDE /* String+Display.swift */,
-			);
-			path = String;
-			sourceTree = "<group>";
-		};
-		426939741EAB01CD00761FDE /* Label */ = {
-			isa = PBXGroup;
-			children = (
-				426939751EAB01CD00761FDE /* Label+Dynamic.swift */,
-			);
-			path = Label;
-			sourceTree = "<group>";
-		};
-		426939771EAB150700761FDE /* Label */ = {
-			isa = PBXGroup;
-			children = (
-				426939781EAB151400761FDE /* LabelViewController.swift */,
+				422DB4311EAAC11400377AB5 /* Label+Dynamic.swift */,
 			);
 			path = Label;
 			sourceTree = "<group>";
@@ -268,7 +225,6 @@
 					422DB3C31EAA30B300377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = XN66S2NA25;
-						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					422DB4051EAA3CF100377AB5 = {
@@ -337,8 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4269397C1EAB253700761FDE /* String+Display.swift in Sources */,
-				426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */,
+				422DB4331EAAC11400377AB5 /* Label+Dynamic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,10 +301,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				422DB43D1EAAEBA700377AB5 /* ViewViewController.swift in Sources */,
-				422DB43F1EAAEBBB00377AB5 /* TableViewController.swift in Sources */,
+				422DB40B1EAA3CF100377AB5 /* ViewController.swift in Sources */,
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
-				426939791EAB151400761FDE /* LabelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +447,6 @@
 		422DB3D91EAA30B300377AB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = XN66S2NA25;
@@ -507,7 +459,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -515,7 +466,6 @@
 		422DB3DA1EAA30B300377AB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = XN66S2NA25;
