@@ -15,6 +15,9 @@
 		422DB43A1EAAE6BD00377AB5 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		422DB43D1EAAEBA700377AB5 /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB43C1EAAEBA700377AB5 /* ViewViewController.swift */; };
 		422DB43F1EAAEBBB00377AB5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */; };
+		425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD4C1EAC6EDB001F1F81 /* RootView.swift */; };
+		425EAD4F1EAC6F5E001F1F81 /* ViewVisibilityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD4E1EAC6F5E001F1F81 /* ViewVisibilityProtocol.swift */; };
+		425EAD511EAC6F71001F1F81 /* ViewInitializationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD501EAC6F71001F1F81 /* ViewInitializationProtocol.swift */; };
 		426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939751EAB01CD00761FDE /* Label+Dynamic.swift */; };
 		426939791EAB151400761FDE /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939781EAB151400761FDE /* LabelViewController.swift */; };
 		4269397C1EAB253700761FDE /* String+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269397B1EAB253700761FDE /* String+Display.swift */; };
@@ -44,6 +47,9 @@
 		422DB4281EAA3D2A00377AB5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB43C1EAAEBA700377AB5 /* ViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
 		422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		425EAD4C1EAC6EDB001F1F81 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		425EAD4E1EAC6F5E001F1F81 /* ViewVisibilityProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewVisibilityProtocol.swift; sourceTree = "<group>"; };
+		425EAD501EAC6F71001F1F81 /* ViewInitializationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInitializationProtocol.swift; sourceTree = "<group>"; };
 		426939751EAB01CD00761FDE /* Label+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Dynamic.swift"; sourceTree = "<group>"; };
 		426939781EAB151400761FDE /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		4269397B1EAB253700761FDE /* String+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Display.swift"; sourceTree = "<group>"; };
@@ -139,6 +145,9 @@
 		422DB4351EAAD2D800377AB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				425EAD4C1EAC6EDB001F1F81 /* RootView.swift */,
+				425EAD4E1EAC6F5E001F1F81 /* ViewVisibilityProtocol.swift */,
+				425EAD501EAC6F71001F1F81 /* ViewInitializationProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,7 +357,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425EAD511EAC6F71001F1F81 /* ViewInitializationProtocol.swift in Sources */,
+				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Display.swift in Sources */,
+				425EAD4F1EAC6F5E001F1F81 /* ViewVisibilityProtocol.swift in Sources */,
 				4269397F1EAB43A400761FDE /* String+Helper.swift in Sources */,
 				426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */,
 			);
