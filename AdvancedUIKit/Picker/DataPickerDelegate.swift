@@ -10,6 +10,6 @@ public protocol DataPickerDelegate {
      * DataPicker has a selected value.
      * - parameter values: The value for each column.
      */
-    func dataPicker(dataPicker: DataPicker, didSelectValue values: [String])
+    func dataPicker(dataPicker: DataPicker, didSelectValue values: Array<String>)
     
 }

@@ -4,7 +4,13 @@
  * - date: 22/04/2017
  * - author: Adamas
  */
-public class DataPicker: UIView {
+public class DataPicker: RootView, ViewVisibilityProtocol, ViewInitializationProtocol {
+    
+    /**
+     * System error.
+     */
+    private let columnError = "The column doesn't exist."
+    private let itemError = "The item doesn't exist."
     
     /**
      * The name of two buttons.
@@ -52,7 +58,7 @@ public class DataPicker: UIView {
     /**
      * The column list, which is a list of column name and item tuple. Value is the value for each selection. Name is the name of the value which will be displayed on the screen.
      */
-    var columns: [DataPickerColumn] {
+    public var columns: Array<DataPickerColumn> {
         didSet {
             pickerView.reloadAllComponents()
         }
@@ -87,46 +93,106 @@ public class DataPicker: UIView {
         titleLabel = UILabel()
         pickerView = UIPickerView()
         columns = []
-//        isVisible = false
-//        isInitialized = false
-//        titleBackgroundColor = UIColor.grayColor()
         super.init(coder: aDecoder)
-        backgroundColor = UIColor.gray
-        // COMMENT: Create components in the SinglePicker.
-//        let titleColor = UIColor.whiteColor()
-//        cancelButton.backgroundColor = titleBackgroundColor
-//        cancelButton.setTitle(SinglePickerView.CancelButtonName.localizeInBundle(forClass: self.classForCoder), forState: UIControlState.Normal)
-//        cancelButton.addTarget(self, action: #selector(SinglePickerView.cancel), forControlEvents: UIControlEvents.TouchUpInside)
-//        doneButton.backgroundColor = titleBackgroundColor
-//        doneButton.setTitle(SinglePickerView.DoneButtonName.localizeInBundle(forClass: self.classForCoder), forState: UIControlState.Normal)
-//        doneButton.addTarget(self, action: #selector(SinglePickerView.finish), forControlEvents: UIControlEvents.TouchUpInside)
-//        titleLabel.backgroundColor = titleBackgroundColor
-//        titleLabel.textColor = titleColor
-//        titleLabel.textAlignment = NSTextAlignment.Center
-//        pickerView.backgroundColor = UIColor.whiteColor()
-        //        pickerView.delegate = self
-        // COMMENT: The first time to draw the view.
-//        originFrame = frame
-//        frame = CGRectMake(originFrame!.origin.x, CGFloat(DisplayHelper.screenHeight), originFrame!.size.width, originFrame!.size.height)
-        // COMMENT: Set the size and position of each sub element.
     }
     
-    public override func didMoveToWindow() {
-        super.didMoveToWindow()
+    /**
+     * Set the DataPicker with a single column.
+     * - parameter column: The item.
+     */
+    public func setSingleColumn(_ column: Array<DataPickerItem>) {
+        columns = [DataPickerColumn(title: "", items: column)]
     }
     
-    public override func didMoveToSuperview() {
-        super.didMoveToSuperview()
+    /**
+     * Select an item.
+     * - parameter value: The value to be selected.
+     * - parameter index: The index of the column.
+     */
+    public func selectValue(_ value: String, atColumn index: Int) {
+        if (index < 0) || (index >= columns.count) {
+            Logger.logError(columnError)
+            return
+        }
+        var item: DataPickerItem
+        for itemIndex in 0 ..< columns[index].items.count {
+            item = columns[index].items[itemIndex]
+            if item.value == value {
+                pickerView.selectRow(itemIndex, inComponent: index, animated: false)
+                return
+            }
+        }
+        Logger.logError(itemError)
     }
     
-    public override func draw(_ rect: CGRect) {
-        super.draw(rect)
+    /**
+     * The selected values are confirmed by clicking the done button.
+     */
+    func confirmSelection() {
+        var selections = Array<String>()
+        for index in 0 ..< columns.count {
+            selections.append(columns[index].items[pickerView.selectedRow(inComponent: index)].value)
+        }
+        dataPickerDelegate?.dataPicker(dataPicker: self, didSelectValue: selections)
+        hide()
+    }
+    
+    /**
+     * ViewVisibilityProtocol.
+     */
+    public override func hide() {
+        if !isVisible {
+            return
+        }
+        super.hide()
+        frame = originalFrame
+        // TODO: Use UIView extension instead
+        UIView.animate(withDuration: 1) {
+            self.frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
+        }
+    }
+    
+    /**
+     * ViewVisibilityProtocol.
+     */
+    public override func show() {
+        if isVisible {
+            return
+        }
+        super.show()
+        frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
+        // TODO: Use UIView extension instead
+        UIView.animate(withDuration: 1) {
+            self.frame = self.originalFrame
+        }
+    }
+    
+    /**
+     * ViewInitializationProtocol.
+     */
+    public override func initialize() {
+        titleBackgroundColor = UIColor.gray
+        let titleTextColor = UIColor.white
+        cancelButton.backgroundColor = titleBackgroundColor
+        cancelButton.setTitle(cancelButtonName.localizeWithinFramework(forType: self), for: .normal)
+        cancelButton.addTarget(self, action: #selector(hide), for: .touchUpInside)
+        doneButton.backgroundColor = titleBackgroundColor
+        doneButton.setTitle(doneButtonName.localizeWithinFramework(forType: self), for: .normal)
+        doneButton.addTarget(self, action: #selector(confirmSelection), for: .touchUpInside)
+        titleLabel.backgroundColor = titleBackgroundColor
+        titleLabel.textColor = titleTextColor
+        titleLabel.textAlignment = .center
+        pickerView.backgroundColor = UIColor.white
+        pickerView.delegate = self
+    }
+    
+    /**
+     * ViewInitializationProtocol.
+     */
+    public override func render() {
         cancelButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
-        cancelButton.backgroundColor = UIColor.green
         titleLabel.frame = CGRect(x: buttonWidth, y: 0, width: frame.width - 2 * buttonWidth, height: buttonHeight)
-        titleLabel.backgroundColor = UIColor.blue
         doneButton.frame = CGRect(x: frame.width - buttonWidth, y: 0, width: buttonWidth, height: buttonHeight)
-        doneButton.backgroundColor = UIColor.red
         pickerView.frame = CGRect(x: 0, y: buttonHeight, width: frame.width, height: frame.height - buttonHeight)
         addSubview(cancelButton)
         addSubview(doneButton)
