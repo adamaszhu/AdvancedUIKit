@@ -41,7 +41,7 @@ open class RootView: UIView {
             return
         }
         isInitialized = true
-        originalFrame = rect
+        originalFrame = frame
         render()
     }
     

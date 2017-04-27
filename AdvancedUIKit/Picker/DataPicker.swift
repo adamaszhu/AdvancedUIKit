@@ -19,6 +19,11 @@ public class DataPicker: RootView, ViewVisibilityProtocol, ViewInitializationPro
     private let doneButtonName = "Done"
     
     /**
+     * The duration of the show and hide animation.
+     */
+    private let animationDuration = 0.25
+    
+    /**
      * The size of the button.
      */
     private let buttonHeight = CGFloat(40)
@@ -109,7 +114,7 @@ public class DataPicker: RootView, ViewVisibilityProtocol, ViewInitializationPro
      * - parameter value: The value to be selected.
      * - parameter index: The index of the column.
      */
-    public func selectValue(_ value: String, atColumn index: Int) {
+    public func selectValue(_ value: String, atColumn index: Int = 0) {
         if (index < 0) || (index >= columns.count) {
             Logger.logError(columnError)
             return
@@ -134,7 +139,8 @@ public class DataPicker: RootView, ViewVisibilityProtocol, ViewInitializationPro
             selections.append(columns[index].items[pickerView.selectedRow(inComponent: index)].value)
         }
         dataPickerDelegate?.dataPicker(dataPicker: self, didSelectValue: selections)
-        hide()
+        // COMMENT: Waiting for the view to be refreshed for a button text change.
+        perform(#selector(hide), with: nil, afterDelay: 0.2)
     }
     
     /**
@@ -144,12 +150,12 @@ public class DataPicker: RootView, ViewVisibilityProtocol, ViewInitializationPro
         if !isVisible {
             return
         }
-        super.hide()
         frame = originalFrame
         // TODO: Use UIView extension instead
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: animationDuration) {
             self.frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
         }
+        super.hide()
     }
     
     /**
@@ -159,12 +165,12 @@ public class DataPicker: RootView, ViewVisibilityProtocol, ViewInitializationPro
         if isVisible {
             return
         }
-        super.show()
         frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
         // TODO: Use UIView extension instead
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: animationDuration) {
             self.frame = self.originalFrame
         }
+        super.show()
     }
     
     /**
@@ -198,6 +204,8 @@ public class DataPicker: RootView, ViewVisibilityProtocol, ViewInitializationPro
         addSubview(doneButton)
         addSubview(pickerView)
         addSubview(titleLabel)
+        frame = CGRect(x: originalFrame.origin.x, y: originalFrame.origin.y + originalFrame.height, width: originalFrame.width, height: originalFrame.height)
+        super.hide()
     }
     
 }
