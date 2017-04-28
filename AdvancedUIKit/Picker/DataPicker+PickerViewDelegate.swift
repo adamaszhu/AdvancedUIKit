@@ -1,5 +1,5 @@
 /**
- * DataPicker+Delegate presents the action to be done on a picker view.
+ * DataPicker+PickerViewDelegate presents the action to be done on a picker view.
  * - author: Adamas
  * - version: 1.0.0
  * - date: 23/04/2017
