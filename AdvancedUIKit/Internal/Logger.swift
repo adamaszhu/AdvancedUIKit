@@ -4,21 +4,28 @@
  * - version: 1.0.0
  * - date: 11/04/2017
  */
-class Logger: AnyObject {
+class Logger {
+    
+    /**
+     * The default logger.
+     */
+    static let standard: Logger = {
+        return Logger()
+    }()
     
     /**
      * Message tag.
      */
-    private static let errorTag = "Error"
-    private static let infoTag = "Info"
-    private static let detailSeperator = "=========="
+    private let errorTag = "Error"
+    private let infoTag = "Info"
+    private let detailSeperator = "=========="
     
     /**
      * Log an info.
      * - parameter info: The info.
      * - parameter detail: The detail of the error.
      */
-    static func logInfo(_ info: String, withDetail detail: Any? = nil) {
+    func logInfo(_ info: String, withDetail detail: Any? = nil) {
         logMessage(info, withTag: infoTag, withDetail: detail)
     }
     
@@ -27,8 +34,16 @@ class Logger: AnyObject {
      * - parameter error: The error.
      * - parameter detail: The detail of the error.
      */
-    static func logError(_ error: String, withDetail detail: Any? = nil) {
+    func logError(_ error: String, withDetail detail: Any? = nil) {
         logMessage(error, withTag: errorTag, withDetail: detail)
+    }
+    
+    /**
+     * Log an error.
+     * - parameter error: The error.
+     */
+    func logError(_ error: Error) {
+        logMessage(error.localizedDescription, withTag: errorTag)
     }
     
     /**
@@ -36,7 +51,7 @@ class Logger: AnyObject {
      * - parameter tag: The type of the message.
      * - parameter message: The message.
      */
-    static func logMessage(_ message: String, withTag tag: String, withDetail detail: Any? = nil) {
+    private func logMessage(_ message: String, withTag tag: String, withDetail detail: Any? = nil) {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"

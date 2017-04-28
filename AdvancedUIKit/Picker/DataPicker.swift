@@ -116,7 +116,7 @@ public class DataPicker: RootView, ViewVisibilityProtocol, ViewInitializationPro
      */
     public func selectValue(_ value: String, atColumn index: Int = 0) {
         if (index < 0) || (index >= columns.count) {
-            Logger.logError(columnError)
+            Logger.standard.logError(columnError)
             return
         }
         var item: DataPickerItem
@@ -127,7 +127,7 @@ public class DataPicker: RootView, ViewVisibilityProtocol, ViewInitializationPro
                 return
             }
         }
-        Logger.logError(itemError)
+        Logger.standard.logError(itemError)
     }
     
     /**
