@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
 		422DB40E1EAA3CF100377AB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40C1EAA3CF100377AB5 /* Main.storyboard */; };
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
@@ -104,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,9 +316,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 422DB4231EAA3CF100377AB5 /* Build configuration list for PBXNativeTarget "AdvancedUIKitTests" */;
 			buildPhases = (
+				0AE15A75752978FE6C7DBC84 /* [CP] Check Pods Manifest.lock */,
 				422DB4151EAA3CF100377AB5 /* Sources */,
 				422DB4161EAA3CF100377AB5 /* Frameworks */,
 				422DB4171EAA3CF100377AB5 /* Resources */,
+				7C34FC7B5BE743A66DA27DC5 /* [CP] Embed Pods Frameworks */,
+				2E7BACCB82A6B8146203F566 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -406,6 +411,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AE15A75752978FE6C7DBC84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2E7BACCB82A6B8146203F566 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C34FC7B5BE743A66DA27DC5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		422DB3BF1EAA30B300377AB5 /* Sources */ = {
@@ -661,8 +714,9 @@
 		};
 		422DB4241EAA3CF100377AB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = XN66S2NA25;
 				INFOPLIST_FILE = AdvancedUIKitHostUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -675,8 +729,9 @@
 		};
 		422DB4251EAA3CF100377AB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = XN66S2NA25;
 				INFOPLIST_FILE = AdvancedUIKitHostUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
