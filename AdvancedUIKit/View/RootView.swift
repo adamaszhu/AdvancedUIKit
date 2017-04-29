@@ -4,7 +4,7 @@
  * - date: 23/04/2017
  * - version: 1.0.0
  */
-open class RootView: UIView, ViewInitializationProtocol, ViewVisibilityProtocol {
+open class RootView: UIView {
     
     /**
      * Whether the view is visible or not.
@@ -41,7 +41,7 @@ open class RootView: UIView, ViewInitializationProtocol, ViewVisibilityProtocol 
             return
         }
         isInitialized = true
-        originalFrame = rect
+        originalFrame = frame
         render()
     }
     
