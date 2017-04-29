@@ -150,12 +150,13 @@ public class DataPicker: RootView, ViewVisibilityProtocol, ViewInitializationPro
         if !isVisible {
             return
         }
-        frame = originalFrame
-        // TODO: Use UIView extension instead
-        UIView.animate(withDuration: animationDuration) {
+        animate(withChange: {
             self.frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
+        }, withPreparation: {
+            self.frame = self.originalFrame
+        }) {
+            super.hide()
         }
-        super.hide()
     }
     
     /**
@@ -165,12 +166,13 @@ public class DataPicker: RootView, ViewVisibilityProtocol, ViewInitializationPro
         if isVisible {
             return
         }
-        frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
-        // TODO: Use UIView extension instead
-        UIView.animate(withDuration: animationDuration) {
+        animate(withChange: {
             self.frame = self.originalFrame
+        }, withPreparation: {
+            self.frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
+        }) {
+            super.show()
         }
-        super.show()
     }
     
     /**

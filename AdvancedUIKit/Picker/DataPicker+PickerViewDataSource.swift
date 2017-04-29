@@ -1,5 +1,5 @@
 /**
- * DataPicker+DataSource provides data to a picker view.
+ * DataPicker+PickerViewDataSource provides data to a picker view.
  * - author: Adamas
  * - version: 1.0.0
  * - date: 23/04/2017
