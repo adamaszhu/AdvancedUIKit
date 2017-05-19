@@ -12,7 +12,7 @@ extension String {
      * - returns: The suffix removed string. Nil if the suffix doesn't exist in the original string.
      */
     func removeSuffix(_ suffix: String) -> String? {
-        if !hasSuffix(suffix) {
+        guard hasSuffix(suffix) else {
             return nil
         }
         let suffixBeginIndex = index(endIndex, offsetBy: -suffix.characters.count)
@@ -25,7 +25,7 @@ extension String {
      * - returns: The prefix removed string. Nil if the prefix doesn't exist in the original string.
      */
     func removePrefix(_ prefix: String) -> String? {
-        if !hasPrefix(prefix) {
+        guard hasPrefix(prefix) else {
             return nil
         }
         let prefixEndIndex = index(startIndex, offsetBy: prefix.characters.count)
