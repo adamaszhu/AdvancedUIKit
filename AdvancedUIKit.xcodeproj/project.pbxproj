@@ -15,10 +15,25 @@
 		422DB43A1EAAE6BD00377AB5 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		422DB43D1EAAEBA700377AB5 /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB43C1EAAEBA700377AB5 /* ViewViewController.swift */; };
 		422DB43F1EAAEBBB00377AB5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */; };
+		425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD111EB357A800A0ED26 /* View+Animation.swift */; };
+		425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD131EB3689000A0ED26 /* View+Gesture.swift */; };
+		425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD151EB36EA100A0ED26 /* String+Localizer.swift */; };
+		425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD4C1EAC6EDB001F1F81 /* RootView.swift */; };
+		425EAD4F1EAC6F5E001F1F81 /* RootViewVisibilityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD4E1EAC6F5E001F1F81 /* RootViewVisibilityProtocol.swift */; };
+		425EAD511EAC6F71001F1F81 /* RootViewInitializationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD501EAC6F71001F1F81 /* RootViewInitializationProtocol.swift */; };
 		426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939751EAB01CD00761FDE /* Label+Dynamic.swift */; };
 		426939791EAB151400761FDE /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939781EAB151400761FDE /* LabelViewController.swift */; };
 		4269397C1EAB253700761FDE /* String+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269397B1EAB253700761FDE /* String+Display.swift */; };
 		4269397F1EAB43A400761FDE /* String+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269397E1EAB43A400761FDE /* String+Helper.swift */; };
+		426939831EAB65A800761FDE /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939821EAB65A800761FDE /* PickerViewController.swift */; };
+		426939851EAB673E00761FDE /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939841EAB673E00761FDE /* DataPicker.swift */; };
+		426939871EAB675500761FDE /* DataPicker+PickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939861EAB675500761FDE /* DataPicker+PickerViewDataSource.swift */; };
+		426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939881EAB676300761FDE /* DataPicker+PickerViewDelegate.swift */; };
+		426939941EAB8EE000761FDE /* DataPicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = 426939961EAB8EE000761FDE /* DataPicker.strings */; };
+		426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939981EAC43E300761FDE /* DataPickerDelegate.swift */; };
+		4269399D1EAC478600761FDE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269399C1EAC478600761FDE /* Logger.swift */; };
+		4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269399E1EAC4B3100761FDE /* DataPickerItem.swift */; };
+		426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939A01EAC4C7700761FDE /* DataPickerColumn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +59,26 @@
 		422DB4281EAA3D2A00377AB5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB43C1EAAEBA700377AB5 /* ViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
 		422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		425DCD111EB357A800A0ED26 /* View+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
+		425DCD131EB3689000A0ED26 /* View+Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Gesture.swift"; sourceTree = "<group>"; };
+		425DCD151EB36EA100A0ED26 /* String+Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localizer.swift"; sourceTree = "<group>"; };
+		425EAD4C1EAC6EDB001F1F81 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		425EAD4E1EAC6F5E001F1F81 /* RootViewVisibilityProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewVisibilityProtocol.swift; sourceTree = "<group>"; };
+		425EAD501EAC6F71001F1F81 /* RootViewInitializationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewInitializationProtocol.swift; sourceTree = "<group>"; };
 		426939751EAB01CD00761FDE /* Label+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Dynamic.swift"; sourceTree = "<group>"; };
 		426939781EAB151400761FDE /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		4269397B1EAB253700761FDE /* String+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Display.swift"; sourceTree = "<group>"; };
 		4269397E1EAB43A400761FDE /* String+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Helper.swift"; sourceTree = "<group>"; };
+		426939821EAB65A800761FDE /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		426939841EAB673E00761FDE /* DataPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
+		426939861EAB675500761FDE /* DataPicker+PickerViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataPicker+PickerViewDataSource.swift"; sourceTree = "<group>"; };
+		426939881EAB676300761FDE /* DataPicker+PickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataPicker+PickerViewDelegate.swift"; sourceTree = "<group>"; };
+		426939951EAB8EE000761FDE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DataPicker.strings; sourceTree = "<group>"; };
+		426939971EAB8EF500761FDE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DataPicker.strings"; sourceTree = "<group>"; };
+		426939981EAC43E300761FDE /* DataPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerDelegate.swift; sourceTree = "<group>"; };
+		4269399C1EAC478600761FDE /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		4269399E1EAC4B3100761FDE /* DataPickerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerItem.swift; sourceTree = "<group>"; };
+		426939A01EAC4C7700761FDE /* DataPickerColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerColumn.swift; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +135,7 @@
 		422DB3C61EAA30B300377AB5 /* AdvancedUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				426939801EAB650F00761FDE /* Picker */,
 				4269397D1EAB439700761FDE /* Internal */,
 				4269397A1EAB253700761FDE /* String */,
 				426939741EAB01CD00761FDE /* Label */,
@@ -116,6 +148,7 @@
 		422DB4071EAA3CF100377AB5 /* AdvancedUIKitHost */ = {
 			isa = PBXGroup;
 			children = (
+				426939811EAB652C00761FDE /* Picker */,
 				426939771EAB150700761FDE /* Label */,
 				422DB43B1EAAEBA700377AB5 /* View */,
 				422DB4081EAA3CF100377AB5 /* AppDelegate.swift */,
@@ -139,6 +172,11 @@
 		422DB4351EAAD2D800377AB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				425EAD4C1EAC6EDB001F1F81 /* RootView.swift */,
+				425EAD4E1EAC6F5E001F1F81 /* RootViewVisibilityProtocol.swift */,
+				425EAD501EAC6F71001F1F81 /* RootViewInitializationProtocol.swift */,
+				425DCD111EB357A800A0ED26 /* View+Animation.swift */,
+				425DCD131EB3689000A0ED26 /* View+Gesture.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,9 +216,33 @@
 		4269397D1EAB439700761FDE /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				4269399C1EAC478600761FDE /* Logger.swift */,
+				425DCD151EB36EA100A0ED26 /* String+Localizer.swift */,
 				4269397E1EAB43A400761FDE /* String+Helper.swift */,
 			);
 			path = Internal;
+			sourceTree = "<group>";
+		};
+		426939801EAB650F00761FDE /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				426939841EAB673E00761FDE /* DataPicker.swift */,
+				4269399E1EAC4B3100761FDE /* DataPickerItem.swift */,
+				426939A01EAC4C7700761FDE /* DataPickerColumn.swift */,
+				426939981EAC43E300761FDE /* DataPickerDelegate.swift */,
+				426939861EAB675500761FDE /* DataPicker+PickerViewDataSource.swift */,
+				426939881EAB676300761FDE /* DataPicker+PickerViewDelegate.swift */,
+				426939961EAB8EE000761FDE /* DataPicker.strings */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		426939811EAB652C00761FDE /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				426939821EAB65A800761FDE /* PickerViewController.swift */,
+			);
+			path = Picker;
 			sourceTree = "<group>";
 		};
 		C0272E9011EE625BC09036CD /* Pods */ = {
@@ -302,6 +364,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 422DB3BA1EAA30B300377AB5;
 			productRefGroup = 422DB3C51EAA30B300377AB5 /* Products */;
@@ -320,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426939941EAB8EE000761FDE /* DataPicker.strings in Resources */,
 				422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,9 +412,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425EAD511EAC6F71001F1F81 /* RootViewInitializationProtocol.swift in Sources */,
+				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
+				425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Display.swift in Sources */,
+				425EAD4F1EAC6F5E001F1F81 /* RootViewVisibilityProtocol.swift in Sources */,
+				426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */,
+				4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */,
 				4269397F1EAB43A400761FDE /* String+Helper.swift in Sources */,
 				426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */,
+				4269399D1EAC478600761FDE /* Logger.swift in Sources */,
+				425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */,
+				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
+				426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */,
+				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
+				426939871EAB675500761FDE /* DataPicker+PickerViewDataSource.swift in Sources */,
+				425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426939831EAB65A800761FDE /* PickerViewController.swift in Sources */,
 				422DB43D1EAAEBA700377AB5 /* ViewViewController.swift in Sources */,
 				422DB43F1EAAEBBB00377AB5 /* TableViewController.swift in Sources */,
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
@@ -399,6 +477,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		426939961EAB8EE000761FDE /* DataPicker.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				426939951EAB8EE000761FDE /* en */,
+				426939971EAB8EF500761FDE /* zh-Hans */,
+			);
+			name = DataPicker.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -406,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -460,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
