@@ -10,7 +10,7 @@ public extension UILabel {
      * Get the position of the last character.
      */
     public var endPosition: CGPoint {
-        if lineAmount == 0 {
+        guard lineAmount != 0 else {
             return frame.origin
         }
         // COMMENT: If lastLine is nil, then the logic should be fixed.
