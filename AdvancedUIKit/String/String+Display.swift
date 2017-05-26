@@ -33,7 +33,7 @@ extension String {
      * - returns: The actual lines displayed on the view.
      */
     func measureLines(withFont font: UIFont, inView view: UIView) -> Array<String> {
-        if view.frame.width == 0 {
+        guard view.frame.width != 0 else {
             return []
         }
         var displayedLines = Array<String>()
@@ -53,7 +53,7 @@ extension String {
      * - returns: The actual line amount displayed on the view.
      */
     private func measureLine(withFont font: UIFont, inView view: UIView) -> Array<String> {
-        if isEmpty {
+        guard !isEmpty else {
             return [""]
         }
         var lines = Array<String>()
@@ -61,7 +61,7 @@ extension String {
         while !remainLine.isEmpty {
             // COMMENT: Extract a line from the beginning of the remainLine. For better performance, words seperating strategy is considered prior to character seperating strategy.
             // COMMENT: Extract a line containing several words from the beginning of the remainLine.
-            var words = remainLine.components(separatedBy: CharacterSet.whitespaces)
+            var words = remainLine.components(separatedBy: .whitespaces)
             var width = words.joined(separator: " ").measureWidth(withFont: font)
             while (width > view.frame.width) && (words.count > 1) {
                 words.removeLast()
@@ -78,7 +78,6 @@ extension String {
             }
             // COMMENT: Extra a line from a extra long word from the beginning of the remainLine. Only one word is left.
             var word = words.first!
-            width = word.measureWidth(withFont: font)
             while width > view.frame.width {
                 word = word.substring(to: word.index(word.endIndex, offsetBy: -1))
                 width = word.measureWidth(withFont: font)
