@@ -22,7 +22,31 @@ open class RootView: UIView {
     private var isInitialized: Bool
     
     /**
-     * Override.
+     * Show the view. It should be overrided by the subclass via RootViewVisible.
+     */
+    open func show() {
+        isVisible = true
+    }
+    
+    /**
+     * Hide the view. It should be overrided by the sub class via RootViewVisible.
+     */
+    open func hide() {
+        isVisible = false
+    }
+    
+    /**
+     * Initialize the view. It should be overrided by the subclass via RouteViewInitializable.
+     */
+    open func initialize() {}
+    
+    /**
+     * Initialize the view. It should be overrided by the subclass via RouteViewInitializable.
+     */
+    open func render() {}
+    
+    /**
+     * UIView
      */
     public required init?(coder aDecoder: NSCoder) {
         isInitialized = false
@@ -33,7 +57,7 @@ open class RootView: UIView {
     }
     
     /**
-     * Override.
+     * UIView
      */
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -44,30 +68,6 @@ open class RootView: UIView {
         originalFrame = frame
         render()
     }
-    
-    /**
-     * ViewVisibilityProtocol.
-     */
-    open func show() {
-        isVisible = true
-    }
-    
-    /**
-     * ViewVisibilityProtocol.
-     */
-    open func hide() {
-        isVisible = false
-    }
-    
-    /**
-     * ViewInitializationProtocol.
-     */
-    open func initialize() {}
-    
-    /**
-     * ViewInitializationProtocol.
-     */
-    open func render() {}
     
 }
 

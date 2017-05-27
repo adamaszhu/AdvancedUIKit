@@ -35,6 +35,7 @@
 		4269399D1EAC478600761FDE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269399C1EAC478600761FDE /* Logger.swift */; };
 		4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269399E1EAC4B3100761FDE /* DataPickerItem.swift */; };
 		426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939A01EAC4C7700761FDE /* DataPickerColumn.swift */; };
+		427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427373E31ED8FFA200DD8891 /* GestureFilterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		4269399C1EAC478600761FDE /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		4269399E1EAC4B3100761FDE /* DataPickerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerItem.swift; sourceTree = "<group>"; };
 		426939A01EAC4C7700761FDE /* DataPickerColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerColumn.swift; sourceTree = "<group>"; };
+		427373E31ED8FFA200DD8891 /* GestureFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureFilterView.swift; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				425EAD501EAC6F71001F1F81 /* RouteViewInitializable.swift */,
 				425DCD111EB357A800A0ED26 /* View+Animation.swift */,
 				425DCD131EB3689000A0ED26 /* View+Gesture.swift */,
+				427373E31ED8FFA200DD8891 /* GestureFilterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */,
 				4269399D1EAC478600761FDE /* Logger.swift in Sources */,
 				425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */,
+				427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */,
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
 				426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
