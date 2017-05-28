@@ -1,10 +1,26 @@
 /**
  * View+Gesture is used to add additional function to a uiview relating to the gesture function.
+ * TODO: Please use isUserInteractionEnabled at the moment.
  * - author: Adamas
  * - version: 1.0.0
  * - date: 28/04/2017
  */
-public extension UIView {
+extension UIView {
+    
+    /**
+     * The view used to filter gestures.
+     */
+    private var gestureFilterView: GestureFilterView {
+        for view in subviews {
+            if let gestureFilterView = view as? GestureFilterView {
+                return gestureFilterView
+            }
+        }
+        // COMMENT: The view doesn't exist.
+        let gestureFilterView = GestureFilterView(frame: bounds)
+        addSubview(gestureFilterView)
+        return gestureFilterView
+    }
     
     /**
      * Enable the any gesture on the view.
@@ -29,10 +45,7 @@ public extension UIView {
      * - parameter type: The type of gesture to be disabled.
      */
     public func enableGesture(ofType type: AnyClass) {
-        guard let gesture = findGesture(ofType: type) else {
-            return
-        }
-        removeGestureRecognizer(gesture)
+        gestureFilterView.changeGestureRecognizerUsibility(ofType: type, toUsibility: false)
     }
     
     /**
@@ -40,34 +53,7 @@ public extension UIView {
      * - parameter type: The gesture to be disabled.
      */
     public func disableGesture(ofType type: AnyClass) {
-        guard let gesture = findGesture(ofType: type) else {
-            return
-        }
-        gesture.addTarget(self, action: #selector(ignoreAction))
-        addGestureRecognizer(gesture)
-    }
-    
-    /**
-     * Do nothing for an action.
-     */
-    func ignoreAction() {
-    }
-    
-    /**
-     * Find a specific type of gesture.
-     * - parameter type: The type of the gesture.
-     * - returns: The found gesture. Nil if it is not found.
-     */
-    private func findGesture(ofType type: AnyClass) -> UIGestureRecognizer? {
-        if gestureRecognizers == nil {
-            return nil
-        }
-        for gestureRecognizer in gestureRecognizers! {
-            if gestureRecognizer.isKind(of: type) {
-                return gestureRecognizer
-            }
-        }
-        return nil
+        gestureFilterView.changeGestureRecognizerUsibility(ofType: type, toUsibility: true)
     }
     
 }
