@@ -1,5 +1,6 @@
 /**
  * GestureFilterView filters the gesture within the view.
+ * TODO: Pass invalid gesture to the view below.
  * - author: Adamas
  * - version: 1.0.0
  * - date: 27/05/2017

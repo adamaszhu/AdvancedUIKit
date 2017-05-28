@@ -1,17 +1,21 @@
 /**
  * View+Gesture is used to add additional function to a uiview relating to the gesture function.
+ * TODO: Please use isUserInteractionEnabled at the moment.
  * - author: Adamas
  * - version: 1.0.0
  * - date: 28/04/2017
  */
-public extension UIView {
+extension UIView {
     
+    /**
+     * The view used to filter gestures.
+     */
     private var gestureFilterView: GestureFilterView {
         for view in subviews {
             if let gestureFilterView = view as? GestureFilterView {
                 return gestureFilterView
             }
-         }
+        }
         // COMMENT: The view doesn't exist.
         let gestureFilterView = GestureFilterView(frame: bounds)
         addSubview(gestureFilterView)
