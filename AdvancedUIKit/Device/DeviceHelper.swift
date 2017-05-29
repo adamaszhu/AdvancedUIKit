@@ -21,7 +21,8 @@ public class DeviceHelper: NSObject {
      */
     private let phoneNumberError = "The phone number is invalid."
     private let addressError = "The address is incorrect."
-//    private let rootViewError = "There is no root view."
+    private let attachmentError = "The attachment is invalid."
+    private let windowError = "The window presented is invalid."
     
     /**
      * Function url.
@@ -63,44 +64,38 @@ public class DeviceHelper: NSObject {
         }
         open(mapURL, withError: mapError)
     }
-//
-//    /**
-//     * Send an email.
-//     * - parameter address: The email address.
-//     * - parameter subject: The subject of the email.
-//     * - parameter content: The content of the email.
-//     * - parameter isHTMLContent: Whether the content is a html or not.
-//     * - parameter attachmentList: A list of attachments of the email.
-//     */
-//    public func sendEmail(toAddress address: String, withSubject subject: String, withContent content: String, withAttachments attachmentList: Dictionary<String, NSData>? = nil, asHTMLContent isHTML: Bool = false) {
-//        let mailViewController = MFMailComposeViewController()
-//        mailViewController.mailComposeDelegate = self
-//        mailViewController.setToRecipients([address])
-//        mailViewController.setSubject(subject)
-//        if attachmentList != nil {
-//            for attachmentName in attachmentList!.keys {
-//                let fileInfoAccessor = FileInfoAccessor(withPath: attachmentName)
-//                if fileInfoAccessor.mimeType == nil {
-//                    continue
-//                }
-//                mailViewController.addAttachmentData(attachmentList![attachmentName]!, mimeType: fileInfoAccessor.mimeType!, fileName: attachmentName);
-//            }
-//        }
-//        mailViewController.setMessageBody(content, isHTML: isHTML)
-//        var rootViewController = application.keyWindow?.rootViewController
-//        if rootViewController == nil {
-//            logError(ContactHelper.RootViewError)
-//            return
-//        }
-//        if rootViewController!.isKindOfClass(UINavigationController) {
-//            let navigationController = rootViewController as! UINavigationController
-//            rootViewController = navigationController.viewControllers.last
-//        }
-//        // TODO: Consider about the sliding view.
-//        rootViewController?.presentViewController(mailViewController, animated: true, completion: nil);
-//    }
-//    
-//    
+    
+    /**
+     * Send an email.
+     * - parameter address: The email address.
+     * - parameter subject: The subject of the email.
+     * - parameter content: The content of the email.
+     * - parameter isHTMLContent: Whether the content is a html or not.
+     * - parameter attachments: A list of attachments of the email. It is a list of name and data pair
+     */
+    public func sendEmail(toAddress address: String, withSubject subject: String, withContent content: String, withAttachments attachments: Dictionary<String, Data> = [:], asHTMLContent isHTML: Bool = false) {
+        let mailViewController = MFMailComposeViewController()
+        mailViewController.mailComposeDelegate = self
+        mailViewController.setToRecipients([address])
+        mailViewController.setSubject(subject)
+        for (name, data) in attachments {
+            guard let mimeType = FileInfoAccessor(path: name).mimeType else {
+                Logger.standard.logError(attachmentError, withDetail: name)
+                continue
+            }
+            mailViewController.addAttachmentData(data, mimeType: mimeType, fileName: name);
+        }
+        mailViewController.setMessageBody(content, isHTML: isHTML)
+        guard var rootViewController = application.keyWindow?.rootViewController else {
+            Logger.standard.logError(windowError)
+            return
+        }
+        if let navigationController = rootViewController as? UINavigationController {
+            rootViewController = navigationController.viewControllers.last ?? navigationController
+        }
+        rootViewController.present(mailViewController, animated: true, completion: nil)
+    }
+    
     /**
      * Open an URL.
      * - parameter url: The url to be opened.

@@ -44,6 +44,7 @@
 		428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */; };
 		428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */; };
 		428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */; };
+		42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		428EAB651EDC4BE3006ED22B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeviceHelper.strings; sourceTree = "<group>"; };
 		428EAB671EDC4BE5006ED22B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceHelper.strings"; sourceTree = "<group>"; };
+		42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfoAccessor.swift; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		4269397D1EAB439700761FDE /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */,
 				4269399C1EAC478600761FDE /* Logger.swift */,
 				425DCD151EB36EA100A0ED26 /* String+Localizer.swift */,
 				4269397E1EAB43A400761FDE /* String+Helper.swift */,
@@ -527,6 +530,7 @@
 				428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */,
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
 				28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */,
+				42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */,
 				428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */,
 				426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
