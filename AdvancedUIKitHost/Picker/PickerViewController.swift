@@ -8,7 +8,9 @@ class PickerViewController: UIViewController, DataPickerDelegate {
         dataPicker.dataPickerDelegate = self
         let items = [DataPickerItem(value: "China"), DataPickerItem(value: "Australia"), DataPickerItem(value: "America")]
         dataPicker.setSingleColumn(items)
-        dataPicker.selectValue("Australia")
+        if let title = showDataPickerButton.titleLabel?.text {
+            dataPicker.selectValue(title)
+        }
     }
     
     @IBAction func showDataPicker(_ sender: Any) {

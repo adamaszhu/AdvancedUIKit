@@ -115,7 +115,7 @@ public class DataPicker: RootView, RootViewVisible, RouteViewInitializable {
      * - parameter index: The index of the column.
      */
     public func selectValue(_ value: String, atColumn index: Int = 0) {
-        guard !((index >= 0) && (index < columns.count)) else {
+        guard (index >= 0) && (index < columns.count) else {
             Logger.standard.logError(columnError)
             return
         }
