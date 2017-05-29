@@ -231,13 +231,13 @@
 		426939801EAB650F00761FDE /* Picker */ = {
 			isa = PBXGroup;
 			children = (
+				426939961EAB8EE000761FDE /* DataPicker.strings */,
 				426939841EAB673E00761FDE /* DataPicker.swift */,
-				4269399E1EAC4B3100761FDE /* DataPickerItem.swift */,
-				426939A01EAC4C7700761FDE /* DataPickerColumn.swift */,
-				426939981EAC43E300761FDE /* DataPickerDelegate.swift */,
 				426939861EAB675500761FDE /* DataPicker+PickerViewDataSource.swift */,
 				426939881EAB676300761FDE /* DataPicker+PickerViewDelegate.swift */,
-				426939961EAB8EE000761FDE /* DataPicker.strings */,
+				426939A01EAC4C7700761FDE /* DataPickerColumn.swift */,
+				426939981EAC43E300761FDE /* DataPickerDelegate.swift */,
+				4269399E1EAC4B3100761FDE /* DataPickerItem.swift */,
 			);
 			path = Picker;
 			sourceTree = "<group>";

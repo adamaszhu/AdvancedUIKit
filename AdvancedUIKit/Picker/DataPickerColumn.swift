@@ -9,4 +9,14 @@ public struct DataPickerColumn {
     let title: String
     let items: Array<DataPickerItem>
     
+    /**
+     * Initialize the column.
+     * - parameter title: The title of the column. Empty is the default value.
+     * - parameter items: The column items.
+     */
+    init(title: String = "", items: Array<DataPickerItem>) {
+        self.title = title
+        self.items = items
+    }
+    
 }

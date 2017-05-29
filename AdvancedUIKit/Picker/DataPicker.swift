@@ -63,7 +63,7 @@ public class DataPicker: RootView, RootViewVisible, RouteViewInitializable {
     /**
      * The column list, which is a list of column name and item tuple. Value is the value for each selection. Name is the name of the value which will be displayed on the screen.
      */
-    public var columns: Array<DataPickerColumn> {
+    public private(set) var columns: Array<DataPickerColumn> {
         didSet {
             pickerView.reloadAllComponents()
         }
@@ -103,10 +103,10 @@ public class DataPicker: RootView, RootViewVisible, RouteViewInitializable {
     
     /**
      * Set the DataPicker with a single column.
-     * - parameter column: The item.
+     * - parameter items: The item list.
      */
-    public func setSingleColumn(_ column: Array<DataPickerItem>) {
-        columns = [DataPickerColumn(title: "", items: column)]
+    public func setSingleColumn(_ items: Array<DataPickerItem>) {
+        columns = [DataPickerColumn(items: items)]
     }
     
     /**
@@ -115,7 +115,7 @@ public class DataPicker: RootView, RootViewVisible, RouteViewInitializable {
      * - parameter index: The index of the column.
      */
     public func selectValue(_ value: String, atColumn index: Int = 0) {
-        if (index < 0) || (index >= columns.count) {
+        guard !((index >= 0) && (index < columns.count)) else {
             Logger.standard.logError(columnError)
             return
         }
@@ -144,7 +144,7 @@ public class DataPicker: RootView, RootViewVisible, RouteViewInitializable {
     }
     
     /**
-     * ViewVisibilityProtocol.
+     * RouteViewVisible
      */
     public override func hide() {
         if !isVisible {
@@ -160,7 +160,7 @@ public class DataPicker: RootView, RootViewVisible, RouteViewInitializable {
     }
     
     /**
-     * ViewVisibilityProtocol.
+     * RouteViewVisible
      */
     public override func show() {
         if isVisible {
@@ -176,7 +176,7 @@ public class DataPicker: RootView, RootViewVisible, RouteViewInitializable {
     }
     
     /**
-     * ViewInitializationProtocol.
+     * RouteViewInitializable
      */
     public override func initialize() {
         titleBackgroundColor = UIColor.gray
@@ -190,22 +190,22 @@ public class DataPicker: RootView, RootViewVisible, RouteViewInitializable {
         titleLabel.backgroundColor = titleBackgroundColor
         titleLabel.textColor = titleTextColor
         titleLabel.textAlignment = .center
+        addSubview(cancelButton)
+        addSubview(doneButton)
+        addSubview(pickerView)
+        addSubview(titleLabel)
         pickerView.backgroundColor = UIColor.white
         pickerView.delegate = self
     }
     
     /**
-     * ViewInitializationProtocol.
+     * RouteViewInitializable
      */
     public override func render() {
         cancelButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
         titleLabel.frame = CGRect(x: buttonWidth, y: 0, width: frame.width - 2 * buttonWidth, height: buttonHeight)
         doneButton.frame = CGRect(x: frame.width - buttonWidth, y: 0, width: buttonWidth, height: buttonHeight)
         pickerView.frame = CGRect(x: 0, y: buttonHeight, width: frame.width, height: frame.height - buttonHeight)
-        addSubview(cancelButton)
-        addSubview(doneButton)
-        addSubview(pickerView)
-        addSubview(titleLabel)
         frame = CGRect(x: originalFrame.origin.x, y: originalFrame.origin.y + originalFrame.height, width: originalFrame.width, height: originalFrame.height)
         super.hide()
     }

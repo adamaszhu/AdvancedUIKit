@@ -6,10 +6,13 @@
  */
 extension DataPicker: UIPickerViewDelegate {
     
+    /**
+     * UIPickerViewDelegate
+     */
     public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label: UILabel
-        if view?.isKind(of: UILabel.self) == true {
-            label = view as! UILabel
+        if let reusableLabel = view as? UILabel {
+            label = reusableLabel
         } else {
             label = UILabel()
             label.textAlignment = .center
