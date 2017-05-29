@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */; };
+		28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */; };
+		28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F21EDBF49D006646A3 /* DeviceType.swift */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
 		422DB40E1EAA3CF100377AB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40C1EAA3CF100377AB5 /* Main.storyboard */; };
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoAccessor.swift; sourceTree = "<group>"; };
+		28F550F21EDBF49D006646A3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdvancedUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB3C81EAA30B300377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB4061EAA3CF100377AB5 /* AdvancedUIKitHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedUIKitHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28F550F01EDBF490006646A3 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */,
+				28F550F21EDBF49D006646A3 /* DeviceType.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
 		422DB3BA1EAA30B300377AB5 = {
 			isa = PBXGroup;
 			children = (
@@ -139,12 +152,13 @@
 		422DB3C61EAA30B300377AB5 /* AdvancedUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				426939801EAB650F00761FDE /* Picker */,
-				4269397D1EAB439700761FDE /* Internal */,
-				4269397A1EAB253700761FDE /* String */,
-				426939741EAB01CD00761FDE /* Label */,
-				422DB4351EAAD2D800377AB5 /* View */,
+				28F550F01EDBF490006646A3 /* Device */,
 				422DB3C81EAA30B300377AB5 /* Info.plist */,
+				4269397D1EAB439700761FDE /* Internal */,
+				426939741EAB01CD00761FDE /* Label */,
+				426939801EAB650F00761FDE /* Picker */,
+				4269397A1EAB253700761FDE /* String */,
+				422DB4351EAAD2D800377AB5 /* View */,
 			);
 			path = AdvancedUIKit;
 			sourceTree = "<group>";
@@ -481,10 +495,12 @@
 				425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */,
 				427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */,
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
+				28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */,
 				426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
 				426939871EAB675500761FDE /* DataPicker+PickerViewDataSource.swift in Sources */,
 				425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */,
+				28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
