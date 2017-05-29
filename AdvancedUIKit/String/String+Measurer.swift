@@ -1,5 +1,5 @@
 /**
- * String+Display add additional support for displaying a string on the screen.
+ * String+Measurer add additional support for displaying a string on the screen.
  * - author: Adamas
  * - version: 1.0.0
  * - date: 22/04/2017
@@ -13,7 +13,16 @@ extension String {
      * - returns: The width.
      */
     func measureWidth(withFont font: UIFont) -> CGFloat {
-        return NSString(string: self).size(attributes: [NSFontAttributeName: font]).width
+        return self.size(attributes: [NSFontAttributeName: font]).width
+    }
+    
+    /**
+     * Get the width of a string with a specific font.
+     * - parameter font: The font.
+     * - returns: The height.
+     */
+    func measureHeight(withFont font: UIFont) -> CGFloat {
+        return self.size(attributes: [NSFontAttributeName: font]).height
     }
     
     /**
@@ -23,7 +32,20 @@ extension String {
      * - returns: The actual line amount displayed on the view.
      */
     func measureLineAmount(withFont font: UIFont, inView view: UIView) -> Int {
-        return measureLines(withFont: font, inView: view).count
+        let height = measureHeight(withFont: font, inView: view)
+        return Int(height / font.lineHeight)
+    }
+    
+    /**
+     * Get the actual height of the string displayed on the screen.
+     * - parameter font: The font that is applied.
+     * - parameter view: The view that text is in.
+     * - returns: The actual height displayed on the view.
+     */
+    func measureHeight(withFont font: UIFont, inView view: UIView) -> CGFloat {
+        let maxBounds = CGSize(width: view.frame.width, height: .greatestFiniteMagnitude)
+        let bounds = self.boundingRect(with: maxBounds, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        return bounds.height
     }
     
     /**

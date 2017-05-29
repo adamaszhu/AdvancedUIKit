@@ -24,7 +24,7 @@
 		425EAD511EAC6F71001F1F81 /* RouteViewInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD501EAC6F71001F1F81 /* RouteViewInitializable.swift */; };
 		426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939751EAB01CD00761FDE /* Label+Dynamic.swift */; };
 		426939791EAB151400761FDE /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939781EAB151400761FDE /* LabelViewController.swift */; };
-		4269397C1EAB253700761FDE /* String+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269397B1EAB253700761FDE /* String+Display.swift */; };
+		4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269397B1EAB253700761FDE /* String+Measurer.swift */; };
 		4269397F1EAB43A400761FDE /* String+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269397E1EAB43A400761FDE /* String+Helper.swift */; };
 		426939831EAB65A800761FDE /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939821EAB65A800761FDE /* PickerViewController.swift */; };
 		426939851EAB673E00761FDE /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939841EAB673E00761FDE /* DataPicker.swift */; };
@@ -69,7 +69,7 @@
 		425EAD501EAC6F71001F1F81 /* RouteViewInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewInitializable.swift; sourceTree = "<group>"; };
 		426939751EAB01CD00761FDE /* Label+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Dynamic.swift"; sourceTree = "<group>"; };
 		426939781EAB151400761FDE /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
-		4269397B1EAB253700761FDE /* String+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Display.swift"; sourceTree = "<group>"; };
+		4269397B1EAB253700761FDE /* String+Measurer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Measurer.swift"; sourceTree = "<group>"; };
 		4269397E1EAB43A400761FDE /* String+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Helper.swift"; sourceTree = "<group>"; };
 		426939821EAB65A800761FDE /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		426939841EAB673E00761FDE /* DataPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 		4269397A1EAB253700761FDE /* String */ = {
 			isa = PBXGroup;
 			children = (
-				4269397B1EAB253700761FDE /* String+Display.swift */,
+				4269397B1EAB253700761FDE /* String+Measurer.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -471,7 +471,7 @@
 				425EAD511EAC6F71001F1F81 /* RouteViewInitializable.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
 				425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */,
-				4269397C1EAB253700761FDE /* String+Display.swift in Sources */,
+				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
 				425EAD4F1EAC6F5E001F1F81 /* RootViewVisible.swift in Sources */,
 				426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */,
 				4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */,
