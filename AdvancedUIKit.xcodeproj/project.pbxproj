@@ -39,6 +39,11 @@
 		426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939A01EAC4C7700761FDE /* DataPickerColumn.swift */; };
 		427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427373E31ED8FFA200DD8891 /* GestureFilterView.swift */; };
 		428EAB481EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */; };
+		428EAB5E1EDC4BD3006ED22B /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5A1EDC4BD3006ED22B /* DeviceHelper.swift */; };
+		428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5B1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift */; };
+		428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */; };
+		428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */; };
+		428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +93,12 @@
 		426939A01EAC4C7700761FDE /* DataPickerColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerColumn.swift; sourceTree = "<group>"; };
 		427373E31ED8FFA200DD8891 /* GestureFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureFilterView.swift; sourceTree = "<group>"; };
 		428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceInfoAccessor+Specs.swift"; sourceTree = "<group>"; };
+		428EAB5A1EDC4BD3006ED22B /* DeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
+		428EAB5B1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceHelper+MailComposeViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelperDelegate.swift; sourceTree = "<group>"; };
+		428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
+		428EAB651EDC4BE3006ED22B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeviceHelper.strings; sourceTree = "<group>"; };
+		428EAB671EDC4BE5006ED22B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceHelper.strings"; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +134,11 @@
 		28F550F01EDBF490006646A3 /* Device */ = {
 			isa = PBXGroup;
 			children = (
+				428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */,
+				428EAB5A1EDC4BD3006ED22B /* DeviceHelper.swift */,
+				428EAB5B1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift */,
+				428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */,
+				428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */,
 				28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */,
 				28F550F21EDBF49D006646A3 /* DeviceType.swift */,
 			);
@@ -419,6 +435,7 @@
 			files = (
 				426939941EAB8EE000761FDE /* DataPicker.strings in Resources */,
 				422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */,
+				428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,18 +517,22 @@
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
 				425EAD4F1EAC6F5E001F1F81 /* RootViewVisible.swift in Sources */,
 				426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */,
+				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
 				4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */,
 				4269397F1EAB43A400761FDE /* String+Helper.swift in Sources */,
 				426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */,
 				4269399D1EAC478600761FDE /* Logger.swift in Sources */,
 				425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */,
 				427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */,
+				428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */,
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
 				28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */,
+				428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */,
 				426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
 				426939871EAB675500761FDE /* DataPicker+PickerViewDataSource.swift in Sources */,
 				425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */,
+				428EAB5E1EDC4BD3006ED22B /* DeviceHelper.swift in Sources */,
 				28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +591,15 @@
 				426939971EAB8EF500761FDE /* zh-Hans */,
 			);
 			name = DataPicker.strings;
+			sourceTree = "<group>";
+		};
+		428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				428EAB651EDC4BE3006ED22B /* en */,
+				428EAB671EDC4BE5006ED22B /* zh-Hans */,
+			);
+			name = DeviceHelper.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
