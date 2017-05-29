@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */; };
+		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
 		28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */; };
 		28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F21EDBF49D006646A3 /* DeviceType.swift */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
@@ -16,7 +17,6 @@
 		422DB4131EAA3CF100377AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */; };
 		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
 		422DB43A1EAAE6BD00377AB5 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
-		422DB43D1EAAEBA700377AB5 /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB43C1EAAEBA700377AB5 /* ViewViewController.swift */; };
 		422DB43F1EAAEBBB00377AB5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */; };
 		425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD111EB357A800A0ED26 /* View+Animation.swift */; };
 		425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD131EB3689000A0ED26 /* View+Gesture.swift */; };
@@ -58,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoAccessor.swift; sourceTree = "<group>"; };
 		28F550F21EDBF49D006646A3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdvancedUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +71,6 @@
 		422DB4141EAA3CF100377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB4191EAA3CF100377AB5 /* AdvancedUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB4281EAA3D2A00377AB5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		422DB43C1EAAEBA700377AB5 /* ViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
 		422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		425DCD111EB357A800A0ED26 /* View+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
 		425DCD131EB3689000A0ED26 /* View+Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Gesture.swift"; sourceTree = "<group>"; };
@@ -133,6 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28D1BFEF1EDCE0E100290999 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
 		28F550F01EDBF490006646A3 /* Device */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,15 +194,15 @@
 		422DB4071EAA3CF100377AB5 /* AdvancedUIKitHost */ = {
 			isa = PBXGroup;
 			children = (
-				426939811EAB652C00761FDE /* Picker */,
-				426939771EAB150700761FDE /* Label */,
-				422DB43B1EAAEBA700377AB5 /* View */,
 				422DB4081EAA3CF100377AB5 /* AppDelegate.swift */,
-				422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */,
-				422DB40C1EAA3CF100377AB5 /* Main.storyboard */,
 				422DB40F1EAA3CF100377AB5 /* Assets.xcassets */,
-				422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */,
+				28D1BFEF1EDCE0E100290999 /* Device */,
 				422DB4141EAA3CF100377AB5 /* Info.plist */,
+				426939771EAB150700761FDE /* Label */,
+				422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */,
+				422DB40C1EAA3CF100377AB5 /* Main.storyboard */,
+				426939811EAB652C00761FDE /* Picker */,
+				422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */,
 			);
 			path = AdvancedUIKitHost;
 			sourceTree = "<group>";
@@ -217,14 +225,6 @@
 				425DCD111EB357A800A0ED26 /* View+Animation.swift */,
 				425DCD131EB3689000A0ED26 /* View+Gesture.swift */,
 				427373E31ED8FFA200DD8891 /* GestureFilterView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		422DB43B1EAAEBA700377AB5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				422DB43C1EAAEBA700377AB5 /* ViewViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -546,8 +546,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				426939831EAB65A800761FDE /* PickerViewController.swift in Sources */,
-				422DB43D1EAAEBA700377AB5 /* ViewViewController.swift in Sources */,
 				422DB43F1EAAEBBB00377AB5 /* TableViewController.swift in Sources */,
+				28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */,
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
 				426939791EAB151400761FDE /* LabelViewController.swift in Sources */,
 			);

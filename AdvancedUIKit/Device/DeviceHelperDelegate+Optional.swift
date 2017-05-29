@@ -4,7 +4,7 @@
  * - version: 1.0.0
  * - date: 29/05/2017
  */
-extension DeviceHelperDelegate {
+public extension DeviceHelperDelegate {
     
     /**
      * DeviceHelperDelegate

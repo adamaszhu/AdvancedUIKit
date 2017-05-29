@@ -8,7 +8,7 @@ public class DeviceHelper: NSObject {
     /**
      * The singleton instance in the system.
      */
-    public static let shared: DeviceHelper = DeviceHelper()
+    public static let standard: DeviceHelper = DeviceHelper()
     
     /**
      * User error.
@@ -41,7 +41,7 @@ public class DeviceHelper: NSObject {
     private let application: UIApplication
     
     /**
-     * Make a phone call.
+     * Make a phone call. Please let the user confirm the action beforehand.
      * - parameter number: The phone number.
      */
     public func dial(withNumber number: String) {
@@ -53,10 +53,10 @@ public class DeviceHelper: NSObject {
     }
     
     /**
-     * Show a location in the map application.
+     * Show a location in the map application. Please let the user confirm the action beforehand.
      * - parameter address: The address to be shown.
      */
-    public func showMap(withAddress address: String) {
+    public func showMap(ofAddress address: String) {
         let formattedAddress = address.replacingOccurrences(of: " ", with: "+")
         guard let mapURL = URL(string: "\(mapPrefix)\(formattedAddress)") else {
             Logger.standard.logInfo(addressError, withDetail: address)
@@ -66,14 +66,14 @@ public class DeviceHelper: NSObject {
     }
     
     /**
-     * Send an email.
+     * Send an email. Please let the user confirm the action beforehand.
      * - parameter address: The email address.
      * - parameter subject: The subject of the email.
      * - parameter content: The content of the email.
      * - parameter isHTMLContent: Whether the content is a html or not.
      * - parameter attachments: A list of attachments of the email. It is a list of name and data pair
      */
-    public func sendEmail(toAddress address: String, withSubject subject: String, withContent content: String, withAttachments attachments: Dictionary<String, Data> = [:], asHTMLContent isHTML: Bool = false) {
+    public func email(toAddress address: String, withSubject subject: String, withContent content: String, withAttachments attachments: Dictionary<String, Data> = [:], asHTMLContent isHTML: Bool = false) {
         let mailViewController = MFMailComposeViewController()
         mailViewController.mailComposeDelegate = self
         mailViewController.setToRecipients([address])
@@ -113,7 +113,7 @@ public class DeviceHelper: NSObject {
      * Initialize the object.
      * - parameter application: The application used to make a function call.
      */
-    init(application: UIApplication = UIApplication.shared) {
+    public init(application: UIApplication = UIApplication.shared) {
         self.application = application
         super.init()
     }
