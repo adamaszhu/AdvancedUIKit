@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
+		28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
+		28D1BFF81EDCEC7300290999 /* AdvancedUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */; };
 		28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F21EDBF49D006646A3 /* DeviceType.swift */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
@@ -16,7 +18,6 @@
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
 		422DB4131EAA3CF100377AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */; };
 		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
-		422DB43A1EAAE6BD00377AB5 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		422DB43F1EAAEBBB00377AB5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */; };
 		425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD111EB357A800A0ED26 /* View+Animation.swift */; };
 		425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD131EB3689000A0ED26 /* View+Gesture.swift */; };
@@ -48,6 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		28D1BFF91EDCEC7300290999 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 422DB3BB1EAA30B300377AB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 422DB3C31EAA30B300377AB5;
+			remoteInfo = AdvancedUIKit;
+		};
 		422DB41A1EAA3CF100377AB5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 422DB3BB1EAA30B300377AB5 /* Project object */;
@@ -56,6 +64,20 @@
 			remoteInfo = AdvancedUIKitHost;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		28D1BFFB1EDCEC7300290999 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				28D1BFF81EDCEC7300290999 /* AdvancedUIKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				422DB43A1EAAE6BD00377AB5 /* AdvancedUIKit.framework in Frameworks */,
+				28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,10 +371,12 @@
 				422DB4021EAA3CF100377AB5 /* Sources */,
 				422DB4031EAA3CF100377AB5 /* Frameworks */,
 				422DB4041EAA3CF100377AB5 /* Resources */,
+				28D1BFFB1EDCEC7300290999 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				28D1BFFA1EDCEC7300290999 /* PBXTargetDependency */,
 			);
 			name = AdvancedUIKitHost;
 			productName = AdvancedUIKitHost;
@@ -564,6 +588,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		28D1BFFA1EDCEC7300290999 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 422DB3C31EAA30B300377AB5 /* AdvancedUIKit */;
+			targetProxy = 28D1BFF91EDCEC7300290999 /* PBXContainerItemProxy */;
+		};
 		422DB41B1EAA3CF100377AB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 422DB4051EAA3CF100377AB5 /* AdvancedUIKitHost */;
@@ -756,6 +785,7 @@
 		422DB4211EAA3CF100377AB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XN66S2NA25;
 				INFOPLIST_FILE = AdvancedUIKitHost/Info.plist;
@@ -769,6 +799,7 @@
 		422DB4221EAA3CF100377AB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XN66S2NA25;
 				INFOPLIST_FILE = AdvancedUIKitHost/Info.plist;
