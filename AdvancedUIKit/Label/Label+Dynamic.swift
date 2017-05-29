@@ -38,6 +38,16 @@ public extension UILabel {
         return text.measureLineAmount(withFont: font, inView: self)
     }
     
+    /**
+     * The actual height of the text.
+     */
+    public var actualHeight: CGFloat {
+        guard let text = text else {
+            return 0
+        }
+        return text.measureHeight(withFont: font, inView: self)
+    }
+    
 }
 
 import UIKit
