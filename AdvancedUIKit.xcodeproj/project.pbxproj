@@ -38,6 +38,7 @@
 		4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269399E1EAC4B3100761FDE /* DataPickerItem.swift */; };
 		426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939A01EAC4C7700761FDE /* DataPickerColumn.swift */; };
 		427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427373E31ED8FFA200DD8891 /* GestureFilterView.swift */; };
+		428EAB481EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		4269399E1EAC4B3100761FDE /* DataPickerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerItem.swift; sourceTree = "<group>"; };
 		426939A01EAC4C7700761FDE /* DataPickerColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerColumn.swift; sourceTree = "<group>"; };
 		427373E31ED8FFA200DD8891 /* GestureFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureFilterView.swift; sourceTree = "<group>"; };
+		428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceInfoAccessor+Specs.swift"; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		422DB4261EAA3D2A00377AB5 /* AdvancedUIKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				428EAB461EDC1683006ED22B /* Device */,
 				422DB4281EAA3D2A00377AB5 /* Info.plist */,
 			);
 			path = AdvancedUIKitTests;
@@ -262,6 +265,14 @@
 				426939821EAB65A800761FDE /* PickerViewController.swift */,
 			);
 			path = Picker;
+			sourceTree = "<group>";
+		};
+		428EAB461EDC1683006ED22B /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */,
+			);
+			path = Device;
 			sourceTree = "<group>";
 		};
 		C0272E9011EE625BC09036CD /* Pods */ = {
@@ -374,6 +385,7 @@
 					422DB4181EAA3CF100377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = XN66S2NA25;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 422DB4051EAA3CF100377AB5;
 					};
@@ -520,6 +532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				428EAB481EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,11 +750,13 @@
 			baseConfigurationReference = 4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = XN66S2NA25;
-				INFOPLIST_FILE = AdvancedUIKitHostUITests/Info.plist;
+				INFOPLIST_FILE = AdvancedUIKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.AdvancedUIKitHostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AdvancedUIKitHost;
 			};
@@ -752,8 +767,9 @@
 			baseConfigurationReference = F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = XN66S2NA25;
-				INFOPLIST_FILE = AdvancedUIKitHostUITests/Info.plist;
+				INFOPLIST_FILE = AdvancedUIKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.AdvancedUIKitHostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
