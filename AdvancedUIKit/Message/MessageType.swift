@@ -1,15 +1,15 @@
-import Foundation
-
 /**
  * MessageType represents the type of a message.
- * - version: 0.0.1
- * - date: 18/10/2016
  * - author: Adamas
+ * - version: 1.0.0
+ * - date: 20/05/2017
  */
 enum MessageType {
-    case Unknown
-    case Info
-    case Warning
-    case Error
-    case Input
+    
+    case info
+    case warning
+    case error
+    case input
+    case unknown
+    
 }

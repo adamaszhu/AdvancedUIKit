@@ -1,52 +1,38 @@
-import UIKit
-
-
 /**
  * MessageHelper is used to display a message on the screen.
- * - version: 0.0.9
- * - date: 18/10/2016
  * - author: Adamas
+ * - version: 1.0.0
+ * - date: 18/10/2017
  */
-public class MessageHelper: NSObject {
-    
-    /**
-     * Default message title.
-     */
-    static let SuccessTitle = "Success"
-    static let WarningTitle = "Warning"
-    static let ErrorTitle = "Error"
-    
-    /**
-     * The name of the button.
-     */
-    private static let InfoConfirmButtonName = "Ok"
-    private static let WarningConfirmButtonName = "Yes"
-    private static let WarningCancelButtonName = "No"
-    private static let ErrorConfirmButtonName = "Ok"
-    private static let InputConfirmButtonName = "Done"
-    private static let InputCancelButtonName = "Cancel"
-    
-    /**
-     * Error message.
-     */
-    private static let ShowError = "It is impossible to show the message."
+public class MessageHelper {
     
     /**
      * Get the shared instance of the MessageHelper. If the protocol will be implemented, please create a new object.
      */
-    public static var defaultHelper: MessageHelper {
-        /**
-         * - version: 0.0.9
-         * - date: 18/10/2016
-         */
-        get{
-            if messageHelper == nil {
-                messageHelper = MessageHelper()
-            }
-            messageHelper?.messageHelperDelegate = nil
-            return messageHelper!
-        }
-    }
+    public static let standard: MessageHelper? = MessageHelper()
+    
+    /**
+     * Default message title.
+     */
+    private static let successTitle = "Success".localizeWithinFramework(forType: MessageHelper.self)
+    private static let warningTitle = "Warning".localizeWithinFramework(forType: MessageHelper.self)
+    private static let errorTitle = "Error".localizeWithinFramework(forType: MessageHelper.self)
+    
+    /**
+     * The name of the button.
+     */
+    private let infoConfirmButtonName = "Ok".localizeWithinFramework(forType: MessageHelper.self)
+    private let warningConfirmButtonName = "Yes".localizeWithinFramework(forType: MessageHelper.self)
+    private let warningCancelButtonName = "No".localizeWithinFramework(forType: MessageHelper.self)
+    private let errorConfirmButtonName = "Ok".localizeWithinFramework(forType: MessageHelper.self)
+    private let inputConfirmButtonName = "Done".localizeWithinFramework(forType: MessageHelper.self)
+    private let inputCancelButtonName = "Cancel".localizeWithinFramework(forType: MessageHelper.self)
+    
+    /**
+     * Error message.
+     */
+    private let windowError = "The window presented is invalid."
+    private let typeError = "The message type is unknown."
     
     /**
      * The delegate of the MessageHelper.
@@ -54,9 +40,9 @@ public class MessageHelper: NSObject {
     public var messageHelperDelegate: MessageHelperDelegate?
     
     /**
-     * The singleton object.
+     * The root view controller.
      */
-    private static var messageHelper: MessageHelper?
+    private let rootViewController: UIViewController
     
     /**
      * The type of current message.
@@ -64,158 +50,145 @@ public class MessageHelper: NSObject {
     private var messageType: MessageType
     
     /**
-     * Current message.
+     * Current message controller.
      */
-    private var alertController: UIAlertController?
+    private var alertController: UIAlertController!
     
     /**
      * Popup an information message.
-     * - version: 0.0.9
-     * - date: 18/10/2016
      * - parameter title: The title of the message.
      * - parameter content: The content.
      */
-    public func showInfo(withTitle title: String = SuccessTitle, withContent content: String) {
+    public func showInfo(withTitle title: String = successTitle, withContent content: String) {
         hidePreviousMessage()
-        let localizedConfirmButtonName = MessageHelper.InfoConfirmButtonName.localizeInBundle(forClass: self.classForCoder)
-        messageType = MessageType.Info
-        let localizedTitle = title == MessageHelper.SuccessTitle ? title.localizeInBundle(forClass: self.classForCoder) : title
-        createMessage(withTitle: localizedTitle, withContent: content, withConfirmButtonName: localizedConfirmButtonName)
+        messageType = .info
+        createMessage(withTitle: title, withContent: content, withConfirmButtonName: infoConfirmButtonName)
         showMessage()
     }
     
     /**
      * Popup a warning message.
-     * - version: 0.0.9
-     * - date: 18/10/2016
      * - parameter title: The title of the message.
      * - parameter content: The content of the message.
      */
-    public func showWarning(withTitle title: String = WarningTitle, withContent content: String) {
+    public func showWarning(withTitle title: String = warningTitle, withContent content: String) {
         hidePreviousMessage()
-        let localizedConfirmButtonName = MessageHelper.WarningConfirmButtonName.localizeInBundle(forClass: self.classForCoder)
-        var localizedCancelButtonName = MessageHelper.WarningCancelButtonName.localizeInBundle(forClass: self.classForCoder) as? String
-        messageType = MessageType.Warning
-        let localizedTitle = title == MessageHelper.WarningTitle ? title.localizeInBundle(forClass: self.classForCoder) : title
-        createMessage(withTitle: localizedTitle, withContent: content, withConfirmButtonName: localizedConfirmButtonName, withCancelButtonName: localizedCancelButtonName)
+        messageType = .warning
+        createMessage(withTitle: title, withContent: content, withConfirmButtonName: warningConfirmButtonName, withCancelButtonName: warningCancelButtonName)
         showMessage()
     }
     
     /**
      * Popup an error message.
-     * - version: 0.0.9
-     * - date: 18/10/2016
      * - parameter title: The title of the message.
      * - parameter content: The content of the message.
      */
-    public func showError(withTitle title: String = ErrorTitle, withContent content: String) {
+    public func showError(withTitle title: String = errorTitle, withContent content: String) {
         hidePreviousMessage()
-        let localizedConfirmButtonName = MessageHelper.ErrorConfirmButtonName.localizeInBundle(forClass: self.classForCoder)
-        messageType = MessageType.Error
-        let localizedTitle = title == MessageHelper.ErrorTitle ? title.localizeInBundle(forClass: self.classForCoder) : title
-        createMessage(withTitle: localizedTitle, withContent: content, withConfirmButtonName: localizedConfirmButtonName)
+        messageType = .error
+        createMessage(withTitle: title, withContent: content, withConfirmButtonName: errorConfirmButtonName)
         showMessage()
     }
     
     /**
      * Show an input box.
-     * - version: 0.0.9
-     * - date: 18/10/2016
      * - parameter title: The title of the message.
      */
     public func showInput(withTitle title: String) {
         hidePreviousMessage()
-        messageType = MessageType.Input
-        let localizedConfirmButtonName = MessageHelper.InputConfirmButtonName.localizeInBundle(forClass: self.classForCoder)
-        var localizedCancelButtonName = MessageHelper.InputCancelButtonName.localizeInBundle(forClass: self.classForCoder) as? String
-        // TODO: The input thing.
-        createMessage(withTitle: title, withContent: nil, withConfirmButtonName: localizedConfirmButtonName, withCancelButtonName: localizedCancelButtonName)
-        alertController!.addTextFieldWithConfigurationHandler(nil)
+        messageType = .input
+        createMessage(withTitle: title, withContent: nil, withConfirmButtonName: inputConfirmButtonName, withCancelButtonName: inputCancelButtonName)
+        alertController.addTextField(configurationHandler: nil)
         showMessage()
     }
     
     /**
+     * Initialize the helper.
+     * - parameter application: The application used to make a function call.
+     */
+    public init?(application: UIApplication = UIApplication.shared) {
+        guard let rootViewController = application.keyWindow?.rootViewController else {
+            Logger.standard.logError(windowError)
+            return nil
+        }
+        let navigationController = rootViewController as? UINavigationController
+        self.rootViewController = navigationController?.viewControllers.last ?? rootViewController
+        messageType = .unknown
+    }
+    
+    /**
      * Create an alert controller including a message.
-     * - version: 0.0.9
-     * - date: 18/10/2016
      * - parameter title: The title.
      * - parameter content: The content of the message. Nil means that it is an input message.
-     * - parameter confirmButtonName: The name of the confirm button. If this is nil, the confirm button will not be shown.
-     * - parameter cancelButtonName: The name of the cancel button.
+     * - parameter confirmButtonName: The name of the confirm button.
+     * - parameter cancelButtonName: The name of the cancel button. If this is nil, the confirm button will not be shown.
      */
     private func createMessage(withTitle title: String, withContent content: String?, withConfirmButtonName confirmButtonName: String, withCancelButtonName cancelButtonName: String? = nil) {
-        alertController = UIAlertController(title: title, message: content, preferredStyle: UIAlertControllerStyle.Alert)
-        if cancelButtonName != nil {
-            let cancelAction = UIAlertAction(title: cancelButtonName!, style: UIAlertActionStyle.Default) { (action: UIAlertAction) -> Void in
+        alertController = UIAlertController(title: title, message: content, preferredStyle: .alert)
+        if let cancelButtonName = cancelButtonName {
+            let cancelAction = UIAlertAction(title: cancelButtonName, style: .default) { [unowned self] (action: UIAlertAction) -> Void in
                 switch self.messageType {
-                case .Info:
-                    break;
-                case .Warning:
-                    self.messageHelperDelegate?.messageHelperDidCancelWarning?(self)
-                case .Error:
+                case .info:
                     break
-                case .Input:
-                    self.messageHelperDelegate?.messageHelperDidCancelInput?(self)
-                case .Unknown:
-                    break;
+                case .error:
+                    break
+                case .warning:
+                    self.messageHelperDelegate?.messageHelperDidCancelWarning(self)
+                    break
+                case .input:
+                    self.messageHelperDelegate?.messageHelperDidCancelInput(self)
+                    break
+                case .unknown:
+                    Logger.standard.logError(self.typeError)
+                    break
                 }
             }
-            alertController!.addAction(cancelAction)
+            alertController.addAction(cancelAction)
         }
-        let confirmAction = UIAlertAction(title: confirmButtonName, style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+        let confirmAction = UIAlertAction(title: confirmButtonName, style: .default) { [unowned self] (action: UIAlertAction) -> Void in
             switch self.messageType {
-            case .Info:
-                self.messageHelperDelegate?.messageHelperDidConfirmInfo?(self)
-            case .Warning:
-                self.messageHelperDelegate?.messageHelperDidConfirmWarning?(self)
-            case .Error:
-                self.messageHelperDelegate?.messageHelperDidConfirmError?(self)
-            case .Input:
-                self.messageHelperDelegate?.messageHelper?(self, didConfirmInput: self.alertController!.textFields![0].text!)
-            case .Unknown:
-                break;
+            case .info:
+                break
+            case .error:
+                self.messageHelperDelegate?.messageHelperDidConfirmError(self)
+                break
+            case .warning:
+                self.messageHelperDelegate?.messageHelperDidConfirmWarning(self)
+                break
+            case .input:
+                self.messageHelperDelegate?.messageHelper(self, didConfirmInput: self.alertController.textFields?[0].text ?? "")
+            case .unknown:
+                Logger.standard.logError(self.typeError)
+                break
             }
-        })
-        alertController!.addAction(confirmAction)
+        }
+        alertController.addAction(confirmAction)
     }
     
     /**
      * Show the alert controller with the message.
-     * - version: 0.0.9
-     * - date: 18/10/2016
      */
     private func showMessage() {
-        var rootViewController = UIApplication.sharedApplication().keyWindow?.rootViewController
-        if rootViewController == nil {
-            logError(MessageHelper.ShowError)
-            return
+        var currentController: UIViewController
+        if let navigationController = rootViewController as? UINavigationController {
+            currentController = navigationController.viewControllers.last ?? navigationController
+        } else {
+            currentController = rootViewController
         }
-        if rootViewController!.isKindOfClass(UINavigationController) {
-            let navigationController = rootViewController as! UINavigationController
-            rootViewController = navigationController.viewControllers.last
-        }
-        rootViewController?.presentViewController(alertController!, animated: true, completion: nil)
+        currentController.present(alertController, animated: true, completion: nil)
     }
     
     /**
      * Hide previous message.
-     * - version: 0.0.9
-     * - date: 18/10/2016
      */
     private func hidePreviousMessage() {
-        if messageType != MessageType.Unknown {
-            messageType = MessageType.Unknown
-            alertController?.navigationController?.popViewControllerAnimated(false)
+        if let previousAlertController = alertController {
+            previousAlertController.navigationController?.popViewController(animated: false)
+            messageType = .unknown
             alertController = nil
         }
     }
     
-    /**
-     * - version: 0.0.9
-     * - date: 18/10/2016
-     */
-    private override init() {
-        messageType = MessageType.Unknown
-        super.init()
-    }
 }
+
+import UIKit

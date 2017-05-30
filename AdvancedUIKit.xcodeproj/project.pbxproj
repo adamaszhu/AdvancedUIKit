@@ -10,12 +10,11 @@
 		1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */; };
 		284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 284E5C471EDD103400C3CC86 /* MessageHelper.strings */; };
 		284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */; };
-		284E5C511EDD104C00C3CC86 /* CustomizedMessageHelper+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4A1EDD104C00C3CC86 /* CustomizedMessageHelper+Localization.swift */; };
 		284E5C521EDD104C00C3CC86 /* CustomizedMessageHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4B1EDD104C00C3CC86 /* CustomizedMessageHelperDelegate.swift */; };
 		284E5C531EDD104C00C3CC86 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4C1EDD104C00C3CC86 /* MessageHelper.swift */; };
-		284E5C541EDD104C00C3CC86 /* MessageHelper+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4D1EDD104C00C3CC86 /* MessageHelper+Localization.swift */; };
 		284E5C551EDD104C00C3CC86 /* MessageHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4E1EDD104C00C3CC86 /* MessageHelperDelegate.swift */; };
 		284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4F1EDD104C00C3CC86 /* MessageType.swift */; };
+		284E5C581EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C571EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
 		28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		28D1BFF81EDCEC7300290999 /* AdvancedUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -97,12 +96,11 @@
 		284E5C461EDD103400C3CC86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MessageHelper.strings; sourceTree = "<group>"; };
 		284E5C481EDD103600C3CC86 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MessageHelper.strings"; sourceTree = "<group>"; };
 		284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedMessageHelper.swift; sourceTree = "<group>"; };
-		284E5C4A1EDD104C00C3CC86 /* CustomizedMessageHelper+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomizedMessageHelper+Localization.swift"; sourceTree = "<group>"; };
 		284E5C4B1EDD104C00C3CC86 /* CustomizedMessageHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedMessageHelperDelegate.swift; sourceTree = "<group>"; };
 		284E5C4C1EDD104C00C3CC86 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
-		284E5C4D1EDD104C00C3CC86 /* MessageHelper+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageHelper+Localization.swift"; sourceTree = "<group>"; };
 		284E5C4E1EDD104C00C3CC86 /* MessageHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelperDelegate.swift; sourceTree = "<group>"; };
 		284E5C4F1EDD104C00C3CC86 /* MessageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
+		284E5C571EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		28D1BFFC1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceViewController+DeviceHelperDelegate.swift"; sourceTree = "<group>"; };
 		28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PickerViewController+DataPickerDelegate.swift"; sourceTree = "<group>"; };
@@ -188,12 +186,11 @@
 			isa = PBXGroup;
 			children = (
 				284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */,
-				284E5C4A1EDD104C00C3CC86 /* CustomizedMessageHelper+Localization.swift */,
 				284E5C4B1EDD104C00C3CC86 /* CustomizedMessageHelperDelegate.swift */,
 				284E5C471EDD103400C3CC86 /* MessageHelper.strings */,
 				284E5C4C1EDD104C00C3CC86 /* MessageHelper.swift */,
-				284E5C4D1EDD104C00C3CC86 /* MessageHelper+Localization.swift */,
 				284E5C4E1EDD104C00C3CC86 /* MessageHelperDelegate.swift */,
+				284E5C571EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift */,
 				284E5C4F1EDD104C00C3CC86 /* MessageType.swift */,
 			);
 			path = Message;
@@ -601,11 +598,11 @@
 				284E5C551EDD104C00C3CC86 /* MessageHelperDelegate.swift in Sources */,
 				425EAD511EAC6F71001F1F81 /* RouteViewInitializable.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
+				284E5C581EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift in Sources */,
 				425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
 				425EAD4F1EAC6F5E001F1F81 /* RootViewVisible.swift in Sources */,
 				426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */,
-				284E5C541EDD104C00C3CC86 /* MessageHelper+Localization.swift in Sources */,
 				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
 				284E5C531EDD104C00C3CC86 /* MessageHelper.swift in Sources */,
 				4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */,
@@ -626,7 +623,6 @@
 				426939871EAB675500761FDE /* DataPicker+PickerViewDataSource.swift in Sources */,
 				425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */,
 				284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */,
-				284E5C511EDD104C00C3CC86 /* CustomizedMessageHelper+Localization.swift in Sources */,
 				428EAB5E1EDC4BD3006ED22B /* DeviceHelper.swift in Sources */,
 				28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */,
 			);
