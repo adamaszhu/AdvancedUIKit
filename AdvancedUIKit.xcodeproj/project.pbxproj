@@ -196,6 +196,13 @@
 			path = Message;
 			sourceTree = "<group>";
 		};
+		284E5C591EDD324400C3CC86 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		28D1BFEF1EDCE0E100290999 /* Device */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +286,7 @@
 				422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */,
 				28D1C0001EDCF3DA00290999 /* Main */,
 				422DB40C1EAA3CF100377AB5 /* Main.storyboard */,
+				284E5C591EDD324400C3CC86 /* Message */,
 				426939811EAB652C00761FDE /* Picker */,
 			);
 			path = AdvancedUIKitHost;

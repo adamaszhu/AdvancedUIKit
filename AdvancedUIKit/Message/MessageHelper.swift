@@ -21,12 +21,12 @@ public class MessageHelper {
     /**
      * The name of the button.
      */
-    private let infoConfirmButtonName = "Ok".localizeWithinFramework(forType: MessageHelper.self)
-    private let warningConfirmButtonName = "Yes".localizeWithinFramework(forType: MessageHelper.self)
-    private let warningCancelButtonName = "No".localizeWithinFramework(forType: MessageHelper.self)
-    private let errorConfirmButtonName = "Ok".localizeWithinFramework(forType: MessageHelper.self)
-    private let inputConfirmButtonName = "Done".localizeWithinFramework(forType: MessageHelper.self)
-    private let inputCancelButtonName = "Cancel".localizeWithinFramework(forType: MessageHelper.self)
+    private static let infoConfirmButtonName = "Ok".localizeWithinFramework(forType: MessageHelper.self)
+    private static let warningConfirmButtonName = "Yes".localizeWithinFramework(forType: MessageHelper.self)
+    private static let warningCancelButtonName = "No".localizeWithinFramework(forType: MessageHelper.self)
+    private static let errorConfirmButtonName = "Ok".localizeWithinFramework(forType: MessageHelper.self)
+    private static let inputConfirmButtonName = "Done".localizeWithinFramework(forType: MessageHelper.self)
+    private static let inputCancelButtonName = "Cancel".localizeWithinFramework(forType: MessageHelper.self)
     
     /**
      * Error message.
@@ -58,11 +58,12 @@ public class MessageHelper {
      * Popup an information message.
      * - parameter title: The title of the message.
      * - parameter content: The content.
+     * - parameter confirmButtonName: The name of the confirm button.
      */
-    public func showInfo(withTitle title: String = successTitle, withContent content: String) {
+    public func showInfo(withTitle title: String = successTitle, withContent content: String, withConfirmButtonName confirmButtonName: String = infoConfirmButtonName) {
         hidePreviousMessage()
         messageType = .info
-        createMessage(withTitle: title, withContent: content, withConfirmButtonName: infoConfirmButtonName)
+        createMessage(withTitle: title, withContent: content, withConfirmButtonName: confirmButtonName)
         showMessage()
     }
     
@@ -70,11 +71,13 @@ public class MessageHelper {
      * Popup a warning message.
      * - parameter title: The title of the message.
      * - parameter content: The content of the message.
+     * - parameter confirmButtonName: The name of the confirm button.
+     * - parameter cancelButtonName: The name of the cancel button.
      */
-    public func showWarning(withTitle title: String = warningTitle, withContent content: String) {
+    public func showWarning(withTitle title: String = warningTitle, withContent content: String, withConfirmButtonName confirmButtonName: String = warningConfirmButtonName, withCancelButtonName cancelButtonName: String = warningCancelButtonName) {
         hidePreviousMessage()
         messageType = .warning
-        createMessage(withTitle: title, withContent: content, withConfirmButtonName: warningConfirmButtonName, withCancelButtonName: warningCancelButtonName)
+        createMessage(withTitle: title, withContent: content, withConfirmButtonName: confirmButtonName, withCancelButtonName: cancelButtonName)
         showMessage()
     }
     
@@ -82,22 +85,25 @@ public class MessageHelper {
      * Popup an error message.
      * - parameter title: The title of the message.
      * - parameter content: The content of the message.
+     * - parameter confirmButtonName: The name of the confirm button.
      */
-    public func showError(withTitle title: String = errorTitle, withContent content: String) {
+    public func showError(withTitle title: String = errorTitle, withContent content: String, withConfirmButtonName confirmButtonName: String = errorConfirmButtonName) {
         hidePreviousMessage()
         messageType = .error
-        createMessage(withTitle: title, withContent: content, withConfirmButtonName: errorConfirmButtonName)
+        createMessage(withTitle: title, withContent: content, withConfirmButtonName: confirmButtonName)
         showMessage()
     }
     
     /**
      * Show an input box.
      * - parameter title: The title of the message.
+     * - parameter confirmButtonName: The name of the confirm button.
+     * - parameter cancelButtonName: The name of the cancel button.
      */
-    public func showInput(withTitle title: String) {
+    public func showInput(withTitle title: String, withConfirmButtonName confirmButtonName: String = inputConfirmButtonName, withCancelButtonName cancelButtonName: String = inputCancelButtonName) {
         hidePreviousMessage()
         messageType = .input
-        createMessage(withTitle: title, withContent: nil, withConfirmButtonName: inputConfirmButtonName, withCancelButtonName: inputCancelButtonName)
+        createMessage(withTitle: title, withContent: nil, withConfirmButtonName: confirmButtonName, withCancelButtonName: cancelButtonName)
         alertController.addTextField(configurationHandler: nil)
         showMessage()
     }
