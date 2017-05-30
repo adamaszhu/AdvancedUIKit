@@ -41,7 +41,7 @@ public class DeviceHelper: NSObject {
     private let application: UIApplication
     
     /**
-     * Make a phone call. Please let the user confirm the action beforehand.
+     * Make a phone call.
      * - parameter number: The phone number.
      */
     public func dial(withNumber number: String) {
