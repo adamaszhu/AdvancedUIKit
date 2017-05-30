@@ -14,7 +14,7 @@ public class MessageHelper {
     /**
      * Default message title.
      */
-    private static let successTitle = "Success".localizeWithinFramework(forType: MessageHelper.self)
+    private static let successTitle = ""
     private static let warningTitle = "Warning".localizeWithinFramework(forType: MessageHelper.self)
     private static let errorTitle = "Error".localizeWithinFramework(forType: MessageHelper.self)
     
@@ -60,7 +60,7 @@ public class MessageHelper {
      * - parameter content: The content.
      * - parameter confirmButtonName: The name of the confirm button.
      */
-    public func showInfo(withTitle title: String = successTitle, withContent content: String, withConfirmButtonName confirmButtonName: String = infoConfirmButtonName) {
+    public func showInfo(_ content: String, withTitle title: String = successTitle, withConfirmButtonName confirmButtonName: String = infoConfirmButtonName) {
         hidePreviousMessage()
         messageType = .info
         createMessage(withTitle: title, withContent: content, withConfirmButtonName: confirmButtonName)
@@ -74,7 +74,7 @@ public class MessageHelper {
      * - parameter confirmButtonName: The name of the confirm button.
      * - parameter cancelButtonName: The name of the cancel button.
      */
-    public func showWarning(withTitle title: String = warningTitle, withContent content: String, withConfirmButtonName confirmButtonName: String = warningConfirmButtonName, withCancelButtonName cancelButtonName: String = warningCancelButtonName) {
+    public func showWarning(_ content: String, withTitle title: String = warningTitle, withConfirmButtonName confirmButtonName: String = warningConfirmButtonName, withCancelButtonName cancelButtonName: String = warningCancelButtonName) {
         hidePreviousMessage()
         messageType = .warning
         createMessage(withTitle: title, withContent: content, withConfirmButtonName: confirmButtonName, withCancelButtonName: cancelButtonName)
@@ -87,7 +87,7 @@ public class MessageHelper {
      * - parameter content: The content of the message.
      * - parameter confirmButtonName: The name of the confirm button.
      */
-    public func showError(withTitle title: String = errorTitle, withContent content: String, withConfirmButtonName confirmButtonName: String = errorConfirmButtonName) {
+    public func showError(_ content: String, withTitle title: String = errorTitle, withConfirmButtonName confirmButtonName: String = errorConfirmButtonName) {
         hidePreviousMessage()
         messageType = .error
         createMessage(withTitle: title, withContent: content, withConfirmButtonName: confirmButtonName)

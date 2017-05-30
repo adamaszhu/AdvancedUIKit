@@ -5,7 +5,7 @@ class MainViewController: UIViewController {
     var features: Array<Feature>
     
     required init?(coder aDecoder: NSCoder) {
-        features = [.device, .label, .picker]
+        features = [.device, .label, .message, .picker]
         super.init(coder: aDecoder)
     }
     
