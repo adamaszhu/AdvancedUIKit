@@ -22,26 +22,26 @@ open class RootView: UIView {
     private var isInitialized: Bool
     
     /**
-     * Show the view. It should be overrided by the subclass via RootViewVisible.
+     * Show the view.
      */
     open func show() {
         isVisible = true
     }
     
     /**
-     * Hide the view. It should be overrided by the sub class via RootViewVisible.
+     * Hide the view.
      */
     open func hide() {
         isVisible = false
     }
     
     /**
-     * Initialize the view. It should be overrided by the subclass via RouteViewInitializable.
+     * Initialize the view.
      */
     open func initialize() {}
     
     /**
-     * Initialize the view. It should be overrided by the subclass via RouteViewInitializable.
+     * Render the views inside right after being allocated the frame.
      */
     open func render() {}
     
