@@ -14,19 +14,19 @@ public class MessageHelper {
     /**
      * Default message title.
      */
-    private static let successTitle = ""
-    private static let warningTitle = "Warning".localizeWithinFramework(forType: MessageHelper.self)
-    private static let errorTitle = "Error".localizeWithinFramework(forType: MessageHelper.self)
+    static let successTitle = ""
+    static let warningTitle = "Warning".localizeWithinFramework(forType: MessageHelper.self)
+    static let errorTitle = "Error".localizeWithinFramework(forType: MessageHelper.self)
     
     /**
      * The name of the button.
      */
-    private static let infoConfirmButtonName = "Ok".localizeWithinFramework(forType: MessageHelper.self)
-    private static let warningConfirmButtonName = "Yes".localizeWithinFramework(forType: MessageHelper.self)
-    private static let warningCancelButtonName = "No".localizeWithinFramework(forType: MessageHelper.self)
-    private static let errorConfirmButtonName = "Ok".localizeWithinFramework(forType: MessageHelper.self)
-    private static let inputConfirmButtonName = "Done".localizeWithinFramework(forType: MessageHelper.self)
-    private static let inputCancelButtonName = "Cancel".localizeWithinFramework(forType: MessageHelper.self)
+    static let infoConfirmButtonName = "Ok".localizeWithinFramework(forType: MessageHelper.self)
+    static let warningConfirmButtonName = "Yes".localizeWithinFramework(forType: MessageHelper.self)
+    static let warningCancelButtonName = "No".localizeWithinFramework(forType: MessageHelper.self)
+    static let errorConfirmButtonName = "Ok".localizeWithinFramework(forType: MessageHelper.self)
+    static let inputConfirmButtonName = "Done".localizeWithinFramework(forType: MessageHelper.self)
+    static let inputCancelButtonName = "Cancel".localizeWithinFramework(forType: MessageHelper.self)
     
     /**
      * Error message.

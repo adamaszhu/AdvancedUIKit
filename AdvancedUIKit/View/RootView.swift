@@ -59,6 +59,17 @@ open class RootView: UIView {
     /**
      * UIView
      */
+    public override init(frame: CGRect) {
+        isInitialized = false
+        isVisible = true
+        originalFrame = frame
+        super.init(frame: frame)
+        initialize()
+    }
+    
+    /**
+     * UIView
+     */
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
         if isInitialized {

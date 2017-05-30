@@ -1,29 +1,10 @@
-//import UIKit
-//
-///**
-// * CustomizedMessageHelper is used to display a customized message on the screen.
-// * - version: 0.0.4
-// * - date: 19/10/2016
-// * - author: Adamas
-// */
+/**
+ * CustomizedMessageHelper is used to display a customized message on the screen.
+ * - author: Adamas
+ * - version: 1.0.0
+ * - date: 30/05/2017
+ */
 //public class CustomizedMessageHelper: PopupView {
-//    
-//    /**
-//     * Default message title.
-//     */
-//    static let SuccessTitle = "Success"
-//    static let WarningTitle = "Warning"
-//    static let ErrorTitle = "Error"
-//    
-//    /**
-//     * The name of the button.
-//     */
-//    private static let InfoConfirmButtonName = "Ok"
-//    private static let WarningConfirmButtonName = "Yes"
-//    private static let WarningCancelButtonName = "No"
-//    private static let ErrorConfirmButtonName = "Ok"
-//    private static let InputConfirmButtonName = "Done"
-//    private static let InputCancelButtonName = "Cancel"
 //    
 //    /**
 //     * Error message.
@@ -328,3 +309,4 @@
 //    }
 //    
 //}
+import UIKit
