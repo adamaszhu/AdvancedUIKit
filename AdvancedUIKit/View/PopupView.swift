@@ -17,11 +17,6 @@ public class PopupView: RootView, RootViewVisible {
     public let hostWindow: UIWindow
     
     /**
-     * The background view.
-     */
-    private let backgroundView: UIView
-    
-    /**
      * RootViewVisible
      * - parameter shouldAnimate: Whether the animation should be performed or not.
      */
@@ -58,11 +53,9 @@ public class PopupView: RootView, RootViewVisible {
      */
     public init(application: UIApplication = UIApplication.shared) {
         hostWindow = application.windows[0]
-        backgroundView = UIView(frame: hostWindow.frame)
         super.init(frame: hostWindow.frame)
         alpha = 0
-        backgroundView.backgroundColor = defaultBackgroundColor
-        addSubview(backgroundView)
+        self.backgroundColor = defaultBackgroundColor
         super.hide()
     }
     
