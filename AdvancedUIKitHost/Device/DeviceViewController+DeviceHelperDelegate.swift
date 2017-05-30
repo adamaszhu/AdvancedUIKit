@@ -8,8 +8,11 @@ extension DeviceViewController: DeviceHelperDelegate {
     }
     
     func deviceHelper(_ deviceHelper: DeviceHelper, didSendEmail result: Bool) {
-        let message = result ? DeviceViewController.emailSendInfo : DeviceViewController.emailSendError
-        MessageHelper.standard?.showError(message)
+        if result {
+            MessageHelper.standard?.showInfo(DeviceViewController.emailSendInfo)
+        } else {
+            MessageHelper.standard?.showError(DeviceViewController.emailSendError)
+        }
     }
     
 }
