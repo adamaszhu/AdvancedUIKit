@@ -317,6 +317,14 @@
                                             <action selector="showInput:" destination="al2-BW-l9o" eventType="touchUpInside" id="JEO-aW-DyA"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yq-xW-mSY">
+                                        <rect key="frame" x="123" y="328" width="165" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Customized Default Info"/>
+                                        <connections>
+                                            <action selector="showCustomizedDefaultInfo:" destination="al2-BW-l9o" eventType="touchUpInside" id="R4V-kg-iMh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

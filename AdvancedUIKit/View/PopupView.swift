@@ -22,36 +22,33 @@ public class PopupView: RootView, RootViewVisible {
     private let backgroundView: UIView
     
     /**
-     * Show the view. Implements RootViewVisible.
+     * RootViewVisible
      * - parameter shouldAnimate: Whether the animation should be performed or not.
      */
-    public func show(withAnimation shouldAnimate: Bool = true) {
+    public override func show() {
         guard !isVisible else {
             return
         }
         hostWindow.addSubview(self)
-        let animationDuration = shouldAnimate ? UIView.defaultAnimationDuration : 0
         animate(withChange: { [unowned self] _ in
             self.alpha = 1
-        }, withDuration: animationDuration) { [unowned self] _ in
-            self.show()
+        }) {
+            super.show()
         }
     }
     
     /**
-     * Hide the view. Implements RootViewVisible.
-     * - parameter shouldAnimate: Whether the animation should be performed or not.
+     * RootViewVisible.
      */
-    public func hide(withAnimation shouldAnimate: Bool = true) {
+    public override func hide() {
         guard isVisible else {
             return
         }
-        let animationDuration = shouldAnimate ? UIView.defaultAnimationDuration : 0
         animate(withChange: {[unowned self] _ in
             self.alpha = 0
-        }, withDuration: animationDuration) { [unowned self] _ in
+        }) {
             self.removeFromSuperview()
-            self.hide()
+            super.hide()
         }
     }
     
@@ -66,6 +63,7 @@ public class PopupView: RootView, RootViewVisible {
         alpha = 0
         backgroundView.backgroundColor = defaultBackgroundColor
         addSubview(backgroundView)
+        super.hide()
     }
     
     /**

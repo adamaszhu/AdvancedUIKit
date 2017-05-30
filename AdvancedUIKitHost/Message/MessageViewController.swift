@@ -40,6 +40,9 @@ class MessageViewController: UIViewController {
         messageHelper.showInput(withTitle: "Input", withConfirmButtonName: "Confirm", withCancelButtonName: "Cancel")
     }
     
+    @IBAction func showCustomizedDefaultInfo(_ sender: Any) {
+    }
+    
 }
 
 import AdvancedUIKit
