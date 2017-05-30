@@ -11,6 +11,13 @@
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
 		28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		28D1BFF81EDCEC7300290999 /* AdvancedUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		28D1BFFD1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFFC1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift */; };
+		28D1BFFF1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */; };
+		28D1C0021EDCF3EF00290999 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0011EDCF3EF00290999 /* MainViewController.swift */; };
+		28D1C0041EDCF42A00290999 /* MainViewController+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0031EDCF42A00290999 /* MainViewController+TableViewDataSource.swift */; };
+		28D1C0061EDCF43700290999 /* MainViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0051EDCF43700290999 /* MainViewController+TableViewDelegate.swift */; };
+		28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0071EDCF5E100290999 /* FeatureTableCell.swift */; };
+		28D1C00A1EDCF62900290999 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0091EDCF62900290999 /* Feature.swift */; };
 		28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */; };
 		28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F21EDBF49D006646A3 /* DeviceType.swift */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
@@ -18,7 +25,6 @@
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
 		422DB4131EAA3CF100377AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */; };
 		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
-		422DB43F1EAAEBBB00377AB5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */; };
 		425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD111EB357A800A0ED26 /* View+Animation.swift */; };
 		425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD131EB3689000A0ED26 /* View+Gesture.swift */; };
 		425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD151EB36EA100A0ED26 /* String+Localizer.swift */; };
@@ -81,6 +87,13 @@
 
 /* Begin PBXFileReference section */
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+		28D1BFFC1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceViewController+DeviceHelperDelegate.swift"; sourceTree = "<group>"; };
+		28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PickerViewController+DataPickerDelegate.swift"; sourceTree = "<group>"; };
+		28D1C0011EDCF3EF00290999 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		28D1C0031EDCF42A00290999 /* MainViewController+TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableViewDataSource.swift"; sourceTree = "<group>"; };
+		28D1C0051EDCF43700290999 /* MainViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
+		28D1C0071EDCF5E100290999 /* FeatureTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureTableCell.swift; sourceTree = "<group>"; };
+		28D1C0091EDCF62900290999 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoAccessor.swift; sourceTree = "<group>"; };
 		28F550F21EDBF49D006646A3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdvancedUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +106,6 @@
 		422DB4141EAA3CF100377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB4191EAA3CF100377AB5 /* AdvancedUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB4281EAA3D2A00377AB5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		425DCD111EB357A800A0ED26 /* View+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
 		425DCD131EB3689000A0ED26 /* View+Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Gesture.swift"; sourceTree = "<group>"; };
 		425DCD151EB36EA100A0ED26 /* String+Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localizer.swift"; sourceTree = "<group>"; };
@@ -159,8 +171,21 @@
 			isa = PBXGroup;
 			children = (
 				28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */,
+				28D1BFFC1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		28D1C0001EDCF3DA00290999 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				28D1C0091EDCF62900290999 /* Feature.swift */,
+				28D1C0071EDCF5E100290999 /* FeatureTableCell.swift */,
+				28D1C0011EDCF3EF00290999 /* MainViewController.swift */,
+				28D1C0031EDCF42A00290999 /* MainViewController+TableViewDataSource.swift */,
+				28D1C0051EDCF43700290999 /* MainViewController+TableViewDelegate.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		28F550F01EDBF490006646A3 /* Device */ = {
@@ -222,9 +247,9 @@
 				422DB4141EAA3CF100377AB5 /* Info.plist */,
 				426939771EAB150700761FDE /* Label */,
 				422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */,
+				28D1C0001EDCF3DA00290999 /* Main */,
 				422DB40C1EAA3CF100377AB5 /* Main.storyboard */,
 				426939811EAB652C00761FDE /* Picker */,
-				422DB43E1EAAEBBB00377AB5 /* TableViewController.swift */,
 			);
 			path = AdvancedUIKitHost;
 			sourceTree = "<group>";
@@ -304,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				426939821EAB65A800761FDE /* PickerViewController.swift */,
+				28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -422,7 +448,7 @@
 					};
 					422DB4051EAA3CF100377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = XN66S2NA25;
+						DevelopmentTeam = Y2XN2Z2HA2;
 						ProvisioningStyle = Automatic;
 					};
 					422DB4181EAA3CF100377AB5 = {
@@ -569,11 +595,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D1C0021EDCF3EF00290999 /* MainViewController.swift in Sources */,
 				426939831EAB65A800761FDE /* PickerViewController.swift in Sources */,
-				422DB43F1EAAEBBB00377AB5 /* TableViewController.swift in Sources */,
+				28D1BFFD1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift in Sources */,
 				28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */,
+				28D1C0061EDCF43700290999 /* MainViewController+TableViewDelegate.swift in Sources */,
+				28D1C0041EDCF42A00290999 /* MainViewController+TableViewDataSource.swift in Sources */,
+				28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */,
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
 				426939791EAB151400761FDE /* LabelViewController.swift in Sources */,
+				28D1BFFF1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift in Sources */,
+				28D1C00A1EDCF62900290999 /* Feature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,12 +819,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XN66S2NA25;
+				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
 				INFOPLIST_FILE = AdvancedUIKitHost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikitHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -801,12 +834,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XN66S2NA25;
+				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
 				INFOPLIST_FILE = AdvancedUIKitHost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikitHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

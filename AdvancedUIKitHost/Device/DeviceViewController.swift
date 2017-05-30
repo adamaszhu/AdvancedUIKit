@@ -1,4 +1,4 @@
-class DeviceViewController: UIViewController, DeviceHelperDelegate {
+class DeviceViewController: UIViewController {
     
     private let number = "+611111111111"
     private let address = "Melbourne Australia"
@@ -12,10 +12,6 @@ class DeviceViewController: UIViewController, DeviceHelperDelegate {
         deviceHelper.deviceHelperDelegate = self
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     @IBAction func dialNumber(_ sender: Any) {
         deviceHelper.dial(withNumber: number)
     }
@@ -26,14 +22,6 @@ class DeviceViewController: UIViewController, DeviceHelperDelegate {
     
     @IBAction func sendEmail(_ sender: Any) {
         deviceHelper.email(toAddress: email.address, withSubject: email.subject, withContent: email.content, withAttachments: email.attachments, asHTMLContent: true)
-    }
-    
-    func deviceHelper(_ deviceHelper: DeviceHelper, didCatchError error: String) {
-        // TODO: Popup the error.
-    }
-    
-    func deviceHelper(_ deviceHelper: DeviceHelper, didSendEmail result: Bool) {
-        // TODO: Popup the message.
     }
     
 }

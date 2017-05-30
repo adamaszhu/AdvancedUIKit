@@ -1,4 +1,4 @@
-class PickerViewController: UIViewController, DataPickerDelegate {
+class PickerViewController: UIViewController {
     
     @IBOutlet weak var showDataPickerButton: UIButton!
     @IBOutlet weak var dataPicker: DataPicker!
@@ -15,11 +15,6 @@ class PickerViewController: UIViewController, DataPickerDelegate {
     
     @IBAction func showDataPicker(_ sender: Any) {
         dataPicker.show()
-    }
-    
-    func dataPicker(dataPicker: DataPicker, didSelectValue values: Array<String>) {
-        let value = values.first!
-        showDataPickerButton.setTitle(value, for: .normal)
     }
     
 }

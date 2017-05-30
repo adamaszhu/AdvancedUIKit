@@ -66,7 +66,7 @@ public class DeviceHelper: NSObject {
     }
     
     /**
-     * Send an email. Please let the user confirm the action beforehand.
+     * Send an email. Please let the user confirm the action beforehand. The navigation controller should be apply if there is a view hierarchy.
      * - parameter address: The email address.
      * - parameter subject: The subject of the email.
      * - parameter content: The content of the email.
