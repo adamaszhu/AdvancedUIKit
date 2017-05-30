@@ -63,6 +63,7 @@
 		42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */; };
 		42EA08B91EDD8E0400B079C0 /* MessageHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */; };
 		42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */; };
+		42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08BC1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift */; };
 		42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageHelper+Constant.swift"; sourceTree = "<group>"; };
 		42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SystemMessageHelper+Helper.swift"; sourceTree = "<group>"; };
+		42EA08BC1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomizedMessageHelper+Helper.swift"; sourceTree = "<group>"; };
 		42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfoAccessor.swift; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */,
+				42EA08BC1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift */,
 				284E5C471EDD103400C3CC86 /* MessageHelper.strings */,
 				284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */,
 				42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */,
@@ -620,6 +623,7 @@
 			files = (
 				284E5C551EDD104C00C3CC86 /* MessageHelperDelegate.swift in Sources */,
 				425EAD511EAC6F71001F1F81 /* RouteViewInitializable.swift in Sources */,
+				42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */,
 				42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
 				284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */,

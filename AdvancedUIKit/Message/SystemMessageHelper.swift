@@ -18,11 +18,6 @@ public class SystemMessageHelper {
     private let typeError = "The message type is unknown."
     
     /**
-     * The root view controller.
-     */
-    private let rootViewController: UIViewController
-    
-    /**
      * The type of current message.
      */
     var messageType: MessageType
@@ -31,6 +26,11 @@ public class SystemMessageHelper {
      * Current message controller.
      */
     var alertController: UIAlertController!
+    
+    /**
+     * The root view controller.
+     */
+    private let rootViewController: UIViewController
     
     /**
      * MessageHelper
