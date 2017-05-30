@@ -1,9 +1,11 @@
 class MessageViewController: UIViewController {
     
     private let messageHelper: MessageHelper
+    private let customizedMessageHelper: CustomizedMessageHelper
     
     required init?(coder aDecoder: NSCoder) {
         messageHelper = MessageHelper()!
+        customizedMessageHelper = CustomizedMessageHelper()
         super.init(coder: aDecoder)
         messageHelper.messageHelperDelegate = self
     }
@@ -41,6 +43,7 @@ class MessageViewController: UIViewController {
     }
     
     @IBAction func showCustomizedDefaultInfo(_ sender: Any) {
+        //customizedMessageHelper
     }
     
 }
