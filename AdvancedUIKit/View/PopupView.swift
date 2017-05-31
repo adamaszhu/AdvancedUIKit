@@ -12,6 +12,11 @@ public class PopupView: RootView {
     private let defaultBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
     
     /**
+     * System error.
+     */
+    private let initError = "Constructor init(coder) shouldn't be called."
+    
+    /**
      * The window of the app.
      */
     public let hostWindow: UIWindow
@@ -63,6 +68,7 @@ public class PopupView: RootView {
      * UIView
      */
     public required init?(coder aDecoder: NSCoder) {
+        Logger.standard.logError(initError)
         return nil
     }
     

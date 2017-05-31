@@ -43,7 +43,7 @@ class MessageViewController: UIViewController {
     }
     
     @IBAction func showCustomizedDefaultInfo(_ sender: Any) {
-        customizedMessageHelper.show()
+        customizedMessageHelper.showInfo("This is a message.")
     }
     
 }
