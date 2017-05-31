@@ -29,6 +29,11 @@ public class CustomizedMessageHelper: PopupView {
     private let defaultBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     
     /**
+     * The default separator color of the message view.
+     */
+    private let defaultSeperatorColor = UIColor.white
+    
+    /**
  * The default text color.
  */
     private let defaultTextColor = UIColor.white
@@ -98,66 +103,7 @@ public class CustomizedMessageHelper: PopupView {
      * MessageHelper
      */
     public var messageHelperDelegate: MessageHelperDelegate?
-    //
-    //    /**
-    //     * Popup a customized info message.
-    //     * - version: 0.0.4
-    //     * - date: 19/10/2016
-    //     * - parameter title: The title of the message.
-    //     * - parameter content: The content of the message.
-    //     */
-    //    public func showInfo(withTitle title: String = SuccessTitle, withContent content: String) {
-    //        hidePreviousMessage()
-    //        let localizedConfirmButtonName = CustomizedMessageHelper.InfoConfirmButtonName.localizeInBundle(forClass: self.classForCoder)
-    //        let localizedTitle = title == CustomizedMessageHelper.SuccessTitle ? title.localizeInBundle(forClass: self.classForCoder) : title
-    //        messageType = MessageType.Info
-    //        showMessage(localizedTitle, withContent: content, withConfirmButtonName: localizedConfirmButtonName)
-    //    }
-    //
-    //    /**
-    //     * Popup a customized warning message.
-    //     * - version: 0.0.4
-    //     * - date: 19/10/2016
-    //     * - parameter title: The title of the message.
-    //     * - parameter content: The content of the message.
-    //     */
-    //    public func showWarning(withTitle title: String = WarningTitle, withContent content: String) {
-    //        hidePreviousMessage()
-    //        let localizedConfirmButtonName = CustomizedMessageHelper.WarningConfirmButtonName.localizeInBundle(forClass: self.classForCoder)
-    //        let localizedCancelButtonName = CustomizedMessageHelper.WarningCancelButtonName.localizeInBundle(forClass: self.classForCoder)
-    //        let localizedTitle = title == CustomizedMessageHelper.WarningTitle ? title.localizeInBundle(forClass: self.classForCoder) : title
-    //        messageType = MessageType.Warning
-    //        showMessage(localizedTitle, withContent: content, withConfirmButtonName: localizedConfirmButtonName, withCancelButtonName: localizedCancelButtonName)
-    //    }
-    //
-    //    /**
-    //     * Popup a customized error message.
-    //     * - version: 0.0.4
-    //     * - date: 19/10/2016
-    //     * - parameter title: The title of the message.
-    //     * - parameter content: The content of the message.
-    //     */
-    //    public func showError(withTitle title: String = ErrorTitle, withContent content: String) {
-    //        hidePreviousMessage()
-    //        let localizedConfirmButtonName = CustomizedMessageHelper.ErrorConfirmButtonName.localizeInBundle(forClass: self.classForCoder)
-    //        let localizedTitle = title == CustomizedMessageHelper.ErrorTitle ? title.localizeInBundle(forClass: self.classForCoder) : title
-    //        messageType = MessageType.Error
-    //        showMessage(localizedTitle, withContent: content, withConfirmButtonName: localizedConfirmButtonName)
-    //    }
-    //
-    //    /**
-    //     * Popup a customized input dialog.
-    //     * - version: 0.0.4
-    //     * - date: 19/10/2016
-    //     * - parameter title: The title of the message.
-    //     */
-    //    public func showInput(withTitle title: String) {
-    //        hidePreviousMessage()
-    //        let localizedConfirmButtonName = CustomizedMessageHelper.InputConfirmButtonName.localizeInBundle(forClass: self.classForCoder)
-    //        let localizedCancelButtonName = CustomizedMessageHelper.InputCancelButtonName.localizeInBundle(forClass: self.classForCoder)
-    //        messageType = MessageType.Input
-    //        showMessage(title, withContent: nil, withConfirmButtonName: localizedConfirmButtonName, withCancelButtonName: localizedCancelButtonName, asInputMessage: true)
-    //    }
+
     //
     //
     //    /**
@@ -210,14 +156,15 @@ public class CustomizedMessageHelper: PopupView {
                 isSecondButtonVisible = false
                 contentHeight = 0
         super.init()
+        let contentWidth = frame.width * widthWeight - padding * 2
                 // COMMENT: Frame view.
         frameView.frame = CGRect(x: frame.width * (1 - widthWeight) / 2, y: 0, width: frame.width * widthWeight, height: 0)
         frameView.backgroundColor = defaultBackgroundColor
         frameView.layer.cornerRadius = radius
-                addSubview(frameView)
+        addSubview(frameView)
                 // COMMENT: Title label.
         titleLabel.text = " "
-        titleLabel.frame = CGRect(x: padding, y: padding * 2, width: frameView.frame.width - padding * 2, height: titleLabel.actualHeight)
+        titleLabel.frame = CGRect(x: padding, y: padding * 2, width: contentWidth, height: titleLabel.lineHeight)
                 titleLabel.textColor = defaultTextColor
         titleLabel.textAlignment = .center
         titleView.addSubview(titleLabel)
@@ -225,25 +172,26 @@ public class CustomizedMessageHelper: PopupView {
         titleView.frame = CGRect(x: 0, y: 0, width: frameView.frame.width, height: titleLabel.frame.height + padding * 3)
                 frameView.addSubview(titleView)
                 // COMMENT: Message label.
-        messageLabel.frame = CGRect(x: padding, y: 0, width: frameView.frame.width - padding * 2, height: 0)
+        messageLabel.frame = CGRect(x: padding, y: 0, width: contentWidth, height: 0)
                 messageLabel.textColor = defaultTextColor
-                messageLabel.textAlignment = .center
-        //        // COMMENT: Input text.
-        //        inputText.frame = CGRect(x: padding, y: 0, width: frameView.frame.width - padding * 2, height: 0)
-        //        inputText.textColor = defaultTextColor
-        //        contentView.addSubview(inputText)
-        //        // COMMENT: Content view.
-        //        contentView.frame = CGRectMake(0, titleView.frame.size.height, frameView.frame.size.width, 0)
-        //        contentView.addSubview(messageLabel)
-        //        frameView.addSubview(contentView)
-        //        // COMMENT: Line view.
-        //        let lineView = UIView()
-        //        lineView.backgroundColor = UIColor.whiteColor()
-        //        lineView.frame = CGRectMake(MessageMargin, 0, frameView.frame.size.width - MessageMargin * 2, 1)
-        //        // COMMENT: First button and second button.
-        //        firstButton.setDynamicText(" ")
-        //        secondButton.setDynamicText(" ")
-        //        firstButton.frame = CGRectMake(MessageMargin, lineView.frame.size.height, frameView.frame.size.width / 2 - MessageMargin, firstButton.frame.size.height + MessageMargin * 2)
+        messageLabel.textAlignment = .center
+                contentView.addSubview(messageLabel)
+                // COMMENT: Input text.
+                inputText.frame = CGRect(x: padding, y: 0, width: contentWidth, height: 0)
+                inputText.textColor = defaultTextColor
+                contentView.addSubview(inputText)
+                // COMMENT: Content view.
+        contentView.frame = CGRect(x: 0, y: titleView.frame.height, width: frameView.frame.width, height: 0)
+                frameView.addSubview(contentView)
+                // COMMENT: Line view.
+                let lineView = UIView()
+                lineView.backgroundColor = defaultSeperatorColor
+        lineView.frame = CGRect(x: padding, y: 0, width: contentWidth, height: 1)
+        buttonView.addSubview(lineView)
+                // COMMENT: First button and second button.
+                firstButton.setTitle(" ", for: .normal)
+        secondButton.setTitle(" ", for: .normal)
+        firstButton.frame = CGRect(x: padding, y: lineView.frame.size.height, width: frameView.frame.width / 2 - padding, height: firstButton.frame.height)
         //        secondButton.frame = CGRectMake(firstButton.frame.origin.x + firstButton.frame.size.width, lineView.frame.size.height, firstButton.frame.width, firstButton.frame.height)
         //        firstButton.addTarget(self, action: #selector(CustomizedMessageHelper.finish), forControlEvents: UIControlEvents.TouchUpInside)
         //        secondButton.addTarget(self, action: #selector(CustomizedMessageHelper.hide(withAnimation:)), forControlEvents: UIControlEvents.TouchUpInside)
@@ -252,7 +200,6 @@ public class CustomizedMessageHelper: PopupView {
         //        buttonSeperatorView.backgroundColor = UIColor.whiteColor()
         //        // COMMENT: Button view.
         //        buttonView.frame = CGRectMake(0, contentView.frame.origin.y, frameView.frame.size.width, lineView.frame.size.height + firstButton.frame.size.height)
-        //        buttonView.addSubview(lineView)
         //        buttonView.addSubview(firstButton)
         //        buttonView.addSubview(secondButton)
         //        buttonView.addSubview(buttonSeperatorView)
