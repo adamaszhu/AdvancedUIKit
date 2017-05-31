@@ -38,8 +38,6 @@
 		425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD131EB3689000A0ED26 /* View+Gesture.swift */; };
 		425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD151EB36EA100A0ED26 /* String+Localizer.swift */; };
 		425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD4C1EAC6EDB001F1F81 /* RootView.swift */; };
-		425EAD4F1EAC6F5E001F1F81 /* RootViewVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD4E1EAC6F5E001F1F81 /* RootViewVisible.swift */; };
-		425EAD511EAC6F71001F1F81 /* RouteViewInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD501EAC6F71001F1F81 /* RouteViewInitializable.swift */; };
 		426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939751EAB01CD00761FDE /* Label+Dynamic.swift */; };
 		426939791EAB151400761FDE /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939781EAB151400761FDE /* LabelViewController.swift */; };
 		4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269397B1EAB253700761FDE /* String+Measurer.swift */; };
@@ -60,6 +58,8 @@
 		428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */; };
 		428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */; };
 		428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */; };
+		42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */; };
+		42CA09DF1EDEE6B2009AF1BE /* Button+Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09DE1EDEE6B2009AF1BE /* Button+Support.swift */; };
 		42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */; };
 		42EA08B91EDD8E0400B079C0 /* MessageHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */; };
 		42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */; };
@@ -133,8 +133,6 @@
 		425DCD131EB3689000A0ED26 /* View+Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Gesture.swift"; sourceTree = "<group>"; };
 		425DCD151EB36EA100A0ED26 /* String+Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localizer.swift"; sourceTree = "<group>"; };
 		425EAD4C1EAC6EDB001F1F81 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		425EAD4E1EAC6F5E001F1F81 /* RootViewVisible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewVisible.swift; sourceTree = "<group>"; };
-		425EAD501EAC6F71001F1F81 /* RouteViewInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewInitializable.swift; sourceTree = "<group>"; };
 		426939751EAB01CD00761FDE /* Label+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Dynamic.swift"; sourceTree = "<group>"; };
 		426939781EAB151400761FDE /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		4269397B1EAB253700761FDE /* String+Measurer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Measurer.swift"; sourceTree = "<group>"; };
@@ -157,6 +155,8 @@
 		428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		428EAB651EDC4BE3006ED22B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeviceHelper.strings; sourceTree = "<group>"; };
 		428EAB671EDC4BE5006ED22B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceHelper.strings"; sourceTree = "<group>"; };
+		42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Dynamic.swift"; sourceTree = "<group>"; };
+		42CA09DE1EDEE6B2009AF1BE /* Button+Support.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Support.swift"; sourceTree = "<group>"; };
 		42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageHelper+Constant.swift"; sourceTree = "<group>"; };
 		42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SystemMessageHelper+Helper.swift"; sourceTree = "<group>"; };
@@ -280,6 +280,7 @@
 		422DB3C61EAA30B300377AB5 /* AdvancedUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				42CA09DB1EDEE0B7009AF1BE /* Button */,
 				28F550F01EDBF490006646A3 /* Device */,
 				422DB3C81EAA30B300377AB5 /* Info.plist */,
 				4269397D1EAB439700761FDE /* Internal */,
@@ -324,8 +325,6 @@
 				427373E31ED8FFA200DD8891 /* GestureFilterView.swift */,
 				284E5C5E1EDD426400C3CC86 /* PopupView.swift */,
 				425EAD4C1EAC6EDB001F1F81 /* RootView.swift */,
-				425EAD4E1EAC6F5E001F1F81 /* RootViewVisible.swift */,
-				425EAD501EAC6F71001F1F81 /* RouteViewInitializable.swift */,
 				425DCD111EB357A800A0ED26 /* View+Animation.swift */,
 				425DCD131EB3689000A0ED26 /* View+Gesture.swift */,
 			);
@@ -396,6 +395,15 @@
 				428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		42CA09DB1EDEE0B7009AF1BE /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */,
+				42CA09DE1EDEE6B2009AF1BE /* Button+Support.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		C0272E9011EE625BC09036CD /* Pods */ = {
@@ -626,11 +634,12 @@
 				42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */,
 				42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
+				42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */,
 				284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */,
 				284E5C581EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift in Sources */,
 				425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */,
+				42CA09DF1EDEE6B2009AF1BE /* Button+Support.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
-				425EAD4F1EAC6F5E001F1F81 /* RootViewVisible.swift in Sources */,
 				426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */,
 				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
 				284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */,

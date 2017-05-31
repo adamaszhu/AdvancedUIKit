@@ -4,7 +4,7 @@
  * - date: 22/04/2017
  * - author: Adamas
  */
-public class DataPicker: RootView, RootViewVisible, RouteViewInitializable {
+public class DataPicker: RootView {
     
     /**
      * System error.

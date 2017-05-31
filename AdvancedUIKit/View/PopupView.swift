@@ -4,7 +4,7 @@
  * - version: 1.0.0
  * - date: 30/05/2017
  */
-public class PopupView: RootView, RootViewVisible {
+public class PopupView: RootView {
     
     /**
      * The default background color of the popup view.
