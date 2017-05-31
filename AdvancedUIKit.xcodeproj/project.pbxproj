@@ -49,6 +49,8 @@
 		428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */; };
 		428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */; };
 		428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */; };
+		42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */; };
+		42CA09DF1EDEE6B2009AF1BE /* Button+Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09DE1EDEE6B2009AF1BE /* Button+Support.swift */; };
 		42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +132,8 @@
 		428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		428EAB651EDC4BE3006ED22B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeviceHelper.strings; sourceTree = "<group>"; };
 		428EAB671EDC4BE5006ED22B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceHelper.strings"; sourceTree = "<group>"; };
+		42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Dynamic.swift"; sourceTree = "<group>"; };
+		42CA09DE1EDEE6B2009AF1BE /* Button+Support.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Support.swift"; sourceTree = "<group>"; };
 		42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfoAccessor.swift; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +227,7 @@
 		422DB3C61EAA30B300377AB5 /* AdvancedUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				42CA09DB1EDEE0B7009AF1BE /* Button */,
 				28F550F01EDBF490006646A3 /* Device */,
 				422DB3C81EAA30B300377AB5 /* Info.plist */,
 				4269397D1EAB439700761FDE /* Internal */,
@@ -334,6 +339,15 @@
 				428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		42CA09DB1EDEE0B7009AF1BE /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */,
+				42CA09DE1EDEE6B2009AF1BE /* Button+Support.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		C0272E9011EE625BC09036CD /* Pods */ = {
@@ -559,7 +573,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
+				42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */,
 				425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */,
+				42CA09DF1EDEE6B2009AF1BE /* Button+Support.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
 				426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */,
 				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
