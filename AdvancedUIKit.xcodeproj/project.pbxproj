@@ -62,6 +62,7 @@
 		428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */; };
 		428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */; };
 		42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */; };
+		42CA09E21EE0461A009AF1BE /* RingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09E11EE0461A009AF1BE /* RingHelper.swift */; };
 		42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */; };
 		42EA08B91EDD8E0400B079C0 /* MessageHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */; };
 		42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */; };
@@ -161,6 +162,7 @@
 		428EAB651EDC4BE3006ED22B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeviceHelper.strings; sourceTree = "<group>"; };
 		428EAB671EDC4BE5006ED22B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceHelper.strings"; sourceTree = "<group>"; };
 		42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Dynamic.swift"; sourceTree = "<group>"; };
+		42CA09E11EE0461A009AF1BE /* RingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingHelper.swift; sourceTree = "<group>"; };
 		42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageHelper+Constant.swift"; sourceTree = "<group>"; };
 		42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SystemMessageHelper+Helper.swift"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		422DB3C61EAA30B300377AB5 /* AdvancedUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				42CA09E01EE0460F009AF1BE /* Audio */,
 				42CA09DB1EDEE0B7009AF1BE /* Button */,
 				28F550F01EDBF490006646A3 /* Device */,
 				422DB3C81EAA30B300377AB5 /* Info.plist */,
@@ -418,6 +421,14 @@
 				42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		42CA09E01EE0460F009AF1BE /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				42CA09E11EE0461A009AF1BE /* RingHelper.swift */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		C0272E9011EE625BC09036CD /* Pods */ = {
@@ -673,6 +684,7 @@
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
 				284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */,
+				42CA09E21EE0461A009AF1BE /* RingHelper.swift in Sources */,
 				426939871EAB675500761FDE /* DataPicker+PickerViewDataSource.swift in Sources */,
 				425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */,
 				284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */,
