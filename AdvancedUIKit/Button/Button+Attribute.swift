@@ -11,7 +11,7 @@ public extension UIButton {
      */
     public var title: String? {
         set {
-            setTitle(title, for: .normal)
+            setTitle(newValue, for: .normal)
         }
         get {
             return titleLabel?.text
