@@ -8,8 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */; };
+		284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 284E5C471EDD103400C3CC86 /* MessageHelper.strings */; };
+		284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */; };
+		284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */; };
+		284E5C551EDD104C00C3CC86 /* MessageHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4E1EDD104C00C3CC86 /* MessageHelperDelegate.swift */; };
+		284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4F1EDD104C00C3CC86 /* MessageType.swift */; };
+		284E5C581EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C571EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift */; };
+		284E5C5B1EDD337500C3CC86 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5A1EDD337500C3CC86 /* MessageViewController.swift */; };
+		284E5C5D1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */; };
+		284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5E1EDD426400C3CC86 /* PopupView.swift */; };
 		289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FEA1EDF92DB00203DE2 /* TextField+Attribute.swift */; };
 		289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FEB1EDF92DB00203DE2 /* TextField+Dynamic.swift */; };
+		289D5FF11EDF9A9F00203DE2 /* Button+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
 		28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		28D1BFF81EDCEC7300290999 /* AdvancedUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -52,7 +62,10 @@
 		428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */; };
 		428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */; };
 		42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */; };
-		42CA09DF1EDEE6B2009AF1BE /* Button+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09DE1EDEE6B2009AF1BE /* Button+Attribute.swift */; };
+		42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */; };
+		42EA08B91EDD8E0400B079C0 /* MessageHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */; };
+		42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */; };
+		42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08BC1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift */; };
 		42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,8 +101,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		284E5C461EDD103400C3CC86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MessageHelper.strings; sourceTree = "<group>"; };
+		284E5C481EDD103600C3CC86 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MessageHelper.strings"; sourceTree = "<group>"; };
+		284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedMessageHelper.swift; sourceTree = "<group>"; };
+		284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemMessageHelper.swift; sourceTree = "<group>"; };
+		284E5C4E1EDD104C00C3CC86 /* MessageHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelperDelegate.swift; sourceTree = "<group>"; };
+		284E5C4F1EDD104C00C3CC86 /* MessageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
+		284E5C571EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
+		284E5C5A1EDD337500C3CC86 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageViewController+MessageHelperDelegate.swift"; sourceTree = "<group>"; };
+		284E5C5E1EDD426400C3CC86 /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		289D5FEA1EDF92DB00203DE2 /* TextField+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Attribute.swift"; sourceTree = "<group>"; };
 		289D5FEB1EDF92DB00203DE2 /* TextField+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Dynamic.swift"; sourceTree = "<group>"; };
+		289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Attribute.swift"; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		28D1BFFC1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceViewController+DeviceHelperDelegate.swift"; sourceTree = "<group>"; };
 		28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PickerViewController+DataPickerDelegate.swift"; sourceTree = "<group>"; };
@@ -137,7 +161,10 @@
 		428EAB651EDC4BE3006ED22B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeviceHelper.strings; sourceTree = "<group>"; };
 		428EAB671EDC4BE5006ED22B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceHelper.strings"; sourceTree = "<group>"; };
 		42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Dynamic.swift"; sourceTree = "<group>"; };
-		42CA09DE1EDEE6B2009AF1BE /* Button+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Attribute.swift"; sourceTree = "<group>"; };
+		42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
+		42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageHelper+Constant.swift"; sourceTree = "<group>"; };
+		42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SystemMessageHelper+Helper.swift"; sourceTree = "<group>"; };
+		42EA08BC1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomizedMessageHelper+Helper.swift"; sourceTree = "<group>"; };
 		42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfoAccessor.swift; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +198,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		284E5C421EDD0FE500C3CC86 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */,
+				42EA08BC1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift */,
+				284E5C471EDD103400C3CC86 /* MessageHelper.strings */,
+				284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */,
+				42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */,
+				42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */,
+				42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */,
+				284E5C4E1EDD104C00C3CC86 /* MessageHelperDelegate.swift */,
+				284E5C571EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift */,
+				284E5C4F1EDD104C00C3CC86 /* MessageType.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		284E5C591EDD324400C3CC86 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				284E5C5A1EDD337500C3CC86 /* MessageViewController.swift */,
+				284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		289D5FE91EDF92DB00203DE2 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +298,7 @@
 				422DB3C81EAA30B300377AB5 /* Info.plist */,
 				4269397D1EAB439700761FDE /* Internal */,
 				426939741EAB01CD00761FDE /* Label */,
+				284E5C421EDD0FE500C3CC86 /* Message */,
 				426939801EAB650F00761FDE /* Picker */,
 				4269397A1EAB253700761FDE /* String */,
 				289D5FE91EDF92DB00203DE2 /* TextField */,
@@ -264,6 +318,7 @@
 				422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */,
 				28D1C0001EDCF3DA00290999 /* Main */,
 				422DB40C1EAA3CF100377AB5 /* Main.storyboard */,
+				284E5C591EDD324400C3CC86 /* Message */,
 				426939811EAB652C00761FDE /* Picker */,
 			);
 			path = AdvancedUIKitHost;
@@ -281,10 +336,11 @@
 		422DB4351EAAD2D800377AB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				427373E31ED8FFA200DD8891 /* GestureFilterView.swift */,
+				284E5C5E1EDD426400C3CC86 /* PopupView.swift */,
 				425EAD4C1EAC6EDB001F1F81 /* RootView.swift */,
 				425DCD111EB357A800A0ED26 /* View+Animation.swift */,
 				425DCD131EB3689000A0ED26 /* View+Gesture.swift */,
-				427373E31ED8FFA200DD8891 /* GestureFilterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -358,8 +414,8 @@
 		42CA09DB1EDEE0B7009AF1BE /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */,
 				42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */,
-				42CA09DE1EDEE6B2009AF1BE /* Button+Attribute.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -510,6 +566,7 @@
 			files = (
 				426939941EAB8EE000761FDE /* DataPicker.strings in Resources */,
 				422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */,
+				284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */,
 				428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,19 +643,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				289D5FF11EDF9A9F00203DE2 /* Button+Attribute.swift in Sources */,
+				284E5C551EDD104C00C3CC86 /* MessageHelperDelegate.swift in Sources */,
+				42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */,
+				42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
 				42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */,
+				284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */,
+				284E5C581EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift in Sources */,
 				425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */,
-				42CA09DF1EDEE6B2009AF1BE /* Button+Attribute.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
 				426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */,
 				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
+				284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */,
 				4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */,
 				4269397F1EAB43A400761FDE /* String+Helper.swift in Sources */,
 				426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */,
 				4269399D1EAC478600761FDE /* Logger.swift in Sources */,
 				425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */,
 				427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */,
+				42EA08B91EDD8E0400B079C0 /* MessageHelper+Constant.swift in Sources */,
 				428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */,
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
 				28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */,
@@ -608,8 +672,11 @@
 				289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */,
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
+				284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */,
 				426939871EAB675500761FDE /* DataPicker+PickerViewDataSource.swift in Sources */,
 				425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */,
+				284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */,
+				42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */,
 				428EAB5E1EDC4BD3006ED22B /* DeviceHelper.swift in Sources */,
 				28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */,
 			);
@@ -629,6 +696,8 @@
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
 				426939791EAB151400761FDE /* LabelViewController.swift in Sources */,
 				28D1BFFF1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift in Sources */,
+				284E5C5D1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift in Sources */,
+				284E5C5B1EDD337500C3CC86 /* MessageViewController.swift in Sources */,
 				28D1C00A1EDCF62900290999 /* Feature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,6 +726,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		284E5C471EDD103400C3CC86 /* MessageHelper.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				284E5C461EDD103400C3CC86 /* en */,
+				284E5C481EDD103600C3CC86 /* zh-Hans */,
+			);
+			name = MessageHelper.strings;
+			sourceTree = "<group>";
+		};
 		422DB40C1EAA3CF100377AB5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

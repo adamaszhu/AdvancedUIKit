@@ -9,7 +9,7 @@ public extension UIView {
     /**
      * The default animation period.
      */
-    private static let defaultAnimationDuration = 0.25
+    public static let defaultAnimationDuration = 0.25
     
     /**
      * Perform an animation.
