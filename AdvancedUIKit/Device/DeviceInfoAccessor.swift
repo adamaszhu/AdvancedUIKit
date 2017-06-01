@@ -43,6 +43,20 @@ public class DeviceInfoAccessor {
     }
     
     /**
+     * The width of the device screen.
+     */
+    public var screenWidth: CGFloat {
+        return screen.bounds.width
+    }
+    
+    /**
+     * The height of the device screen.
+     */
+    public var screenHeight: CGFloat {
+        return screen.bounds.height
+    }
+    
+    /**
      * The device.
      */
     private let device: UIDevice
@@ -53,13 +67,20 @@ public class DeviceInfoAccessor {
     private let processInfo: ProcessInfo
     
     /**
+     * The screen of the device.
+     */
+    private let screen: UIScreen
+    
+    /**
      * Initialize the object.
      * - parameter device: The device object.
+     * - parameter screen: The device screen.
      * - parameter processInfo: The information of the process.
      */
-    init(device: UIDevice = UIDevice.current, processInfo: ProcessInfo = ProcessInfo()) {
+    init(device: UIDevice = UIDevice.current, processInfo: ProcessInfo = ProcessInfo(), screen: UIScreen = UIScreen.main) {
         self.device = device
         self.processInfo = processInfo
+        self.screen = screen
     }
     
 }
