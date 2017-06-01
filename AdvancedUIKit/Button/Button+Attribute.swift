@@ -1,5 +1,5 @@
 /**
- * UIButton+Support contains additional support for a button
+ * Button+Attribute contains additional support for a button
  * - author: Adamas
  * - version: 1.0.0
  * - date: 31/05/2017
