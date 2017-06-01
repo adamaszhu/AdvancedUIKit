@@ -63,11 +63,14 @@ public class CustomizedMessageHelper: PopupView {
      * Set the visibility of the second button.
      */
     private var isCancelButtonVisible: Bool {
-        didSet {
+        set {
             let confirmButtonWidth = isCancelButtonVisible ? buttonView.frame.width / 2 : buttonView.frame.width
             confirmButton.frame = CGRect(x: buttonView.frame.width - confirmButtonWidth, y: confirmButton.frame.origin.y, width: confirmButtonWidth, height: confirmButton.frame.height)
             cancelButton.isHidden = !isCancelButtonVisible
             buttonSeperatorView.isHidden = !isCancelButtonVisible
+        }
+        get {
+            return !cancelButton.isHidden
         }
     }
     
@@ -75,14 +78,16 @@ public class CustomizedMessageHelper: PopupView {
      * Set the content height.
      */
     private var contentHeight: CGFloat {
-        didSet {
-            //                // COMMENT: The max height is 60 percent of the screen height.
-            //                let adjustedHeight = contentHeight > rootView.frame.size.height * MessageHeightWeightMax ? rootView.frame.size.height * MessageHeightWeightMax : contentHeight;
-            //                contentView.frame = CGRectMake(contentView.frame.origin.x, contentView.frame.origin.y, contentView.frame.width, adjustedHeight + MessageMargin)
-            //                buttonView.frame = CGRectMake(buttonView.frame.origin.x, contentView.frame.origin.y + contentView.frame.size.height, buttonView.frame.size.width, buttonView.frame.size.height)
-            //                let frameHeight = titleView.frame.size.height + contentView.frame.size.height + buttonView.frame.size.height
-            //                frameView.frame = CGRectMake(frameView.frame.origin.x, (rootView.frame.size.height - frameHeight) / 2, frameView.frame.size.width, frameHeight)
-            //                backgroundView.frame = CGRectMake(0, 0, frameView.frame.size.width, frameView.frame.size.height)
+        set {
+            // COMMENT: The max height is 60 percent of the screen height.
+            let adjustedHeight = contentHeight > frame.height * maxHeightWeight ? frame.height * maxHeightWeight : newValue
+            contentView.frame.size = CGSize(width: contentView.frame.width, height: adjustedHeight + padding)
+            buttonView.frame.origin = CGPoint(x: buttonView.frame.origin.x, y: contentView.frame.origin.y + contentView.frame.height)
+            let frameHeight = titleView.frame.height + contentView.frame.height + buttonView.frame.height
+            frameView.frame = CGRect(x: frameView.frame.origin.x, y: (frame.height - frameHeight) / 2, width: frameView.frame.width, height: frameHeight)
+        }
+        get {
+            return contentView.frame.height - padding
         }
     }
     
@@ -125,13 +130,13 @@ public class CustomizedMessageHelper: PopupView {
         let isInput = content == nil
         messageLabel.isHidden = isInput
         inputText.isHidden = !isInput
-        //            if isInput {
-        //                inputText.setDynamicText(" ")
-        //                contentHeight = inputText.frame.size.height
-        //            } else {
-        //                messageLabel.setDynamicText(content)
-        //                contentHeight = messageLabel.frame.size.height
-        //            }
+        if isInput {
+            inputText.text = " "
+            contentHeight = inputText.lineHeight
+        } else {
+            messageLabel.text = content
+            contentHeight = messageLabel.actualHeight
+        }
         show()
     }
     
@@ -150,8 +155,6 @@ public class CustomizedMessageHelper: PopupView {
         confirmButton = UIButton()
         buttonSeperatorView = UIView()
         messageType = .unknown
-        isCancelButtonVisible = false
-        contentHeight = 0
         super.init()
         let contentWidth = frame.width * widthWeight - padding * 2
         // COMMENT: Frame view.
