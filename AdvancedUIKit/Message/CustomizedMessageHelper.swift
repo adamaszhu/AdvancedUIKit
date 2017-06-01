@@ -14,8 +14,6 @@ public class CustomizedMessageHelper: PopupView {
     /**
      * Error message.
      */
-    //    private let windowError = "The window presented is invalid."
-    //    private static let ShowError = "It is impossible to show the message."
     private let typeError = "The message type is unknown."
     private let initError = "Constructor init(coder) shouldn't be called."
     
@@ -79,7 +77,6 @@ public class CustomizedMessageHelper: PopupView {
      */
     private var contentHeight: CGFloat {
         set {
-            // COMMENT: The max height is 60 percent of the screen height.
             let adjustedHeight = contentHeight > frame.height * maxHeightWeight ? frame.height * maxHeightWeight : newValue
             contentView.frame.size = CGSize(width: contentView.frame.width, height: adjustedHeight + padding)
             buttonView.frame.origin = CGPoint(x: buttonView.frame.origin.x, y: contentView.frame.origin.y + contentView.frame.height)
@@ -131,11 +128,11 @@ public class CustomizedMessageHelper: PopupView {
         messageLabel.isHidden = isInput
         inputText.isHidden = !isInput
         if isInput {
-            inputText.text = " "
-            contentHeight = inputText.lineHeight
+            contentHeight = inputText.frame.height
         } else {
             messageLabel.text = content
-            contentHeight = messageLabel.actualHeight
+            messageLabel.frame.size = CGSize(width: messageLabel.frame.width, height: messageLabel.actualHeight)
+            contentHeight = messageLabel.frame.height
         }
         show()
     }
@@ -177,7 +174,8 @@ public class CustomizedMessageHelper: PopupView {
         messageLabel.textAlignment = .center
         contentView.addSubview(messageLabel)
         // COMMENT: Input text.
-        inputText.frame = CGRect(x: padding, y: 0, width: contentWidth, height: 0)
+        inputText.text = " "
+        inputText.frame = CGRect(x: padding, y: 0, width: contentWidth, height: inputText.lineHeight)
         inputText.textColor = defaultTextColor
         contentView.addSubview(inputText)
         // COMMENT: Content view.
