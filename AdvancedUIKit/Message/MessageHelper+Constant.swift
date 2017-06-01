@@ -41,4 +41,11 @@ extension MessageHelper {
         return "Cancel".localizeWithinFramework(forType: MessageHelper.self)
     }
     
+    /**
+     * Input hint.
+     */
+    var inputHint: String {
+        return "InputHint".localizeWithinFramework(forType: MessageHelper.self)
+    }
+    
 }

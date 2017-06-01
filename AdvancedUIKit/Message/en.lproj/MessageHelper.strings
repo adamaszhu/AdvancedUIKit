@@ -5,3 +5,4 @@
 "No" = "No";
 "Done" = "Done";
 "Cancel" = "Cancel";
+"InputHint" = "Please input ";
