@@ -106,7 +106,11 @@ public class DeviceHelper: NSObject {
             deviceHelperDelegate?.deviceHelper(self, didCatchError: error.localizeWithinFramework(forType: DeviceHelper.self))
             return
         }
-        application.open(url, options: [:], completionHandler: nil)
+        if #available(iOS 10.0, *) {
+            application.open(url, options: [:], completionHandler: nil)
+        } else {
+            application.openURL(url)
+        }
     }
     
     /**

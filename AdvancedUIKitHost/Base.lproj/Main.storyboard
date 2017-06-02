@@ -188,6 +188,50 @@
             </objects>
             <point key="canvasLocation" x="665" y="-124"/>
         </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="o1Y-71-KYt">
+            <objects>
+                <viewController storyboardIdentifier="NotificationViewController" id="Wfq-aT-gYJ" customClass="NotificationViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9xW-lM-dv4"/>
+                        <viewControllerLayoutGuide type="bottom" id="XNX-O8-0dG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UiW-cl-mWJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imU-WT-BdI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFQ-iO-aI6">
+                                        <rect key="frame" x="0.0" y="10" width="375" height="30"/>
+                                        <state key="normal" title="Local Notification"/>
+                                        <connections>
+                                            <action selector="showLocalNotification:" destination="Wfq-aT-gYJ" eventType="touchUpInside" id="wRb-l5-3vv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MFQ-iO-aI6" secondAttribute="trailing" id="OCG-Iw-UhU"/>
+                                    <constraint firstItem="MFQ-iO-aI6" firstAttribute="top" secondItem="imU-WT-BdI" secondAttribute="top" constant="10" id="WOd-of-r8u"/>
+                                    <constraint firstItem="MFQ-iO-aI6" firstAttribute="leading" secondItem="imU-WT-BdI" secondAttribute="leading" id="ZNu-Z7-gjP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="imU-WT-BdI" secondAttribute="trailing" id="8aJ-2Z-p7s"/>
+                            <constraint firstItem="imU-WT-BdI" firstAttribute="top" secondItem="9xW-lM-dv4" secondAttribute="bottom" id="Nyi-p1-LgM"/>
+                            <constraint firstItem="imU-WT-BdI" firstAttribute="leading" secondItem="UiW-cl-mWJ" secondAttribute="leading" id="Ws6-5i-WCL"/>
+                            <constraint firstItem="XNX-O8-0dG" firstAttribute="top" secondItem="imU-WT-BdI" secondAttribute="bottom" id="kWY-30-fTD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6y0-eq-dGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1412" y="-124"/>
+        </scene>
         <!--Device View Controller-->
         <scene sceneID="Hom-lz-4AX">
             <objects>

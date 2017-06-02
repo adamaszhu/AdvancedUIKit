@@ -24,9 +24,9 @@ public class NotificationHelper {
     /**
      * Whether the local notification is authorized or not.
      */
-        @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
+    @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
     public var isLocalNotificationAuthorized: Bool {
-            // TODO: Implement this using the NSNotification framework.
+        // TODO: Implement this using the NSNotification framework.
         guard let setting = application.currentUserNotificationSettings else {
             Logger.standard.logError(notificationSettingError)
             return false
@@ -67,9 +67,9 @@ public class NotificationHelper {
         let notification = UILocalNotification()
         notification.timeZone = NSTimeZone.default
         notification.fireDate = Date()
-//        if #available(iOS 8.2, *) {
+        if #available(iOS 8.2, *) {
             notification.alertTitle = title
-//        }
+        }
         notification.alertBody = content
         notification.soundName = soundName
         application.scheduleLocalNotification(notification)
