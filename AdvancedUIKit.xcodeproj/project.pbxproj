@@ -11,6 +11,10 @@
 		2822A3361EE0EC8200FAA8E3 /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */; };
 		2822A3391EE0EE2600FAA8E3 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */; };
 		2822A33A1EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3381EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift */; };
+		2822A33F1EE127EA00FAA8E3 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A33C1EE127EA00FAA8E3 /* NotificationHelper.swift */; };
+		2822A3411EE127EA00FAA8E3 /* NotificationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A33E1EE127EA00FAA8E3 /* NotificationHelperDelegate.swift */; };
+		2822A3441EE127F900FAA8E3 /* NotificationHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2822A3461EE127F900FAA8E3 /* NotificationHelper.strings */; };
+		2822A3491EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3481EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift */; };
 		2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2838C2CC1EE0DD06004D5BCB /* Ring.aiff */; };
 		2838C2D01EE0DD89004D5BCB /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */; };
 		284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 284E5C471EDD103400C3CC86 /* MessageHelper.strings */; };
@@ -110,6 +114,11 @@
 		2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
 		2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		2822A3381EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationController+Storyboard.swift"; sourceTree = "<group>"; };
+		2822A33C1EE127EA00FAA8E3 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		2822A33E1EE127EA00FAA8E3 /* NotificationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelperDelegate.swift; sourceTree = "<group>"; };
+		2822A3451EE127F900FAA8E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NotificationHelper.strings; sourceTree = "<group>"; };
+		2822A3471EE127FB00FAA8E3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/NotificationHelper.strings"; sourceTree = "<group>"; };
+		2822A3481EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		2838C2CC1EE0DD06004D5BCB /* Ring.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Ring.aiff; sourceTree = "<group>"; };
 		2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		284E5C461EDD103400C3CC86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MessageHelper.strings; sourceTree = "<group>"; };
@@ -218,6 +227,17 @@
 				2822A3381EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		2822A33B1EE1278500FAA8E3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				2822A3461EE127F900FAA8E3 /* NotificationHelper.strings */,
+				2822A33C1EE127EA00FAA8E3 /* NotificationHelper.swift */,
+				2822A33E1EE127EA00FAA8E3 /* NotificationHelperDelegate.swift */,
+				2822A3481EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		2838C2CE1EE0DD79004D5BCB /* Audio */ = {
@@ -331,6 +351,7 @@
 				426939741EAB01CD00761FDE /* Label */,
 				284E5C421EDD0FE500C3CC86 /* Message */,
 				2822A3341EE0EC3B00FAA8E3 /* Navigation */,
+				2822A33B1EE1278500FAA8E3 /* Notification */,
 				426939801EAB650F00761FDE /* Picker */,
 				4269397A1EAB253700761FDE /* String */,
 				289D5FE91EDF92DB00203DE2 /* TextField */,
@@ -606,6 +627,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2822A3441EE127F900FAA8E3 /* NotificationHelper.strings in Resources */,
 				426939941EAB8EE000761FDE /* DataPicker.strings in Resources */,
 				422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */,
 				284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */,
@@ -714,8 +736,10 @@
 				42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */,
 				428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */,
 				426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */,
+				2822A3411EE127EA00FAA8E3 /* NotificationHelperDelegate.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */,
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
+				2822A3491EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
 				284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */,
 				2822A3361EE0EC8200FAA8E3 /* ViewController+Navigation.swift in Sources */,
@@ -725,6 +749,7 @@
 				284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */,
 				42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */,
 				428EAB5E1EDC4BD3006ED22B /* DeviceHelper.swift in Sources */,
+				2822A33F1EE127EA00FAA8E3 /* NotificationHelper.swift in Sources */,
 				28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -774,6 +799,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2822A3461EE127F900FAA8E3 /* NotificationHelper.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2822A3451EE127F900FAA8E3 /* en */,
+				2822A3471EE127FB00FAA8E3 /* zh-Hans */,
+			);
+			name = NotificationHelper.strings;
+			sourceTree = "<group>";
+		};
 		284E5C471EDD103400C3CC86 /* MessageHelper.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -935,6 +969,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AdvancedUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -956,6 +991,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AdvancedUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
