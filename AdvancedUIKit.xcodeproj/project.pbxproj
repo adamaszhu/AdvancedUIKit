@@ -78,6 +78,8 @@
 		42CA09ED1EE19E36009AF1BE /* Button+Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09EC1EE19E36009AF1BE /* Button+Localizer.swift */; };
 		42CA09EF1EE19F15009AF1BE /* View+Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09EE1EE19F15009AF1BE /* View+Localizer.swift */; };
 		42CA09F11EE1A1BA009AF1BE /* SegmentedControl+Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09F01EE1A1BA009AF1BE /* SegmentedControl+Localizer.swift */; };
+		42CA09F41EE1A50E009AF1BE /* LocalizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09F31EE1A50E009AF1BE /* LocalizationViewController.swift */; };
+		42CA09F61EE1A7B0009AF1BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42CA09F51EE1A7B0009AF1BE /* Localizable.strings */; };
 		42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */; };
 		42EA08B91EDD8E0400B079C0 /* MessageHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */; };
 		42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */; };
@@ -194,6 +196,8 @@
 		42CA09EC1EE19E36009AF1BE /* Button+Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Localizer.swift"; sourceTree = "<group>"; };
 		42CA09EE1EE19F15009AF1BE /* View+Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Localizer.swift"; sourceTree = "<group>"; };
 		42CA09F01EE1A1BA009AF1BE /* SegmentedControl+Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SegmentedControl+Localizer.swift"; sourceTree = "<group>"; };
+		42CA09F31EE1A50E009AF1BE /* LocalizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationViewController.swift; sourceTree = "<group>"; };
+		42CA09F51EE1A7B0009AF1BE /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageHelper+Constant.swift"; sourceTree = "<group>"; };
 		42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SystemMessageHelper+Helper.swift"; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 		2838C2CE1EE0DD79004D5BCB /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				2838C2CC1EE0DD06004D5BCB /* Ring.aiff */,
 				2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */,
 			);
 			path = Audio;
@@ -393,11 +398,11 @@
 				426939771EAB150700761FDE /* Label */,
 				422DB4111EAA3CF100377AB5 /* LaunchScreen.storyboard */,
 				28D1C0001EDCF3DA00290999 /* Main */,
+				42CA09F21EE1A454009AF1BE /* Localization */,
 				422DB40C1EAA3CF100377AB5 /* Main.storyboard */,
 				284E5C591EDD324400C3CC86 /* Message */,
 				2814AED81EE1449F007745EF /* Notification */,
 				426939811EAB652C00761FDE /* Picker */,
-				2838C2CC1EE0DD06004D5BCB /* Ring.aiff */,
 			);
 			path = AdvancedUIKitHost;
 			sourceTree = "<group>";
@@ -513,6 +518,15 @@
 				42CA09EC1EE19E36009AF1BE /* Button+Localizer.swift */,
 				42CA09EE1EE19F15009AF1BE /* View+Localizer.swift */,
 				42CA09F01EE1A1BA009AF1BE /* SegmentedControl+Localizer.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		42CA09F21EE1A454009AF1BE /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				42CA09F31EE1A50E009AF1BE /* LocalizationViewController.swift */,
+				42CA09F51EE1A7B0009AF1BE /* Localizable.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -673,6 +687,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42CA09F61EE1A7B0009AF1BE /* Localizable.strings in Resources */,
 				422DB4131EAA3CF100377AB5 /* LaunchScreen.storyboard in Resources */,
 				2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */,
 				422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */,
@@ -807,6 +822,7 @@
 				28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */,
 				42CA09E41EE19673009AF1BE /* NotificationViewController+NotificationHelperDelegate.swift in Sources */,
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
+				42CA09F41EE1A50E009AF1BE /* LocalizationViewController.swift in Sources */,
 				426939791EAB151400761FDE /* LabelViewController.swift in Sources */,
 				28D1BFFF1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift in Sources */,
 				284E5C5D1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift in Sources */,
