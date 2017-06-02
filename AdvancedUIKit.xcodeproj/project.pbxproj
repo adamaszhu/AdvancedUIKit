@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */; };
+		2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2838C2CC1EE0DD06004D5BCB /* Ring.aiff */; };
+		2838C2D01EE0DD89004D5BCB /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */; };
 		284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 284E5C471EDD103400C3CC86 /* MessageHelper.strings */; };
 		284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */; };
 		284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */; };
@@ -102,6 +104,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2838C2CC1EE0DD06004D5BCB /* Ring.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Ring.aiff; sourceTree = "<group>"; };
+		2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		284E5C461EDD103400C3CC86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MessageHelper.strings; sourceTree = "<group>"; };
 		284E5C481EDD103600C3CC86 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MessageHelper.strings"; sourceTree = "<group>"; };
 		284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedMessageHelper.swift; sourceTree = "<group>"; };
@@ -200,6 +204,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2838C2CE1EE0DD79004D5BCB /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		284E5C421EDD0FE500C3CC86 /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,7 +325,9 @@
 		422DB4071EAA3CF100377AB5 /* AdvancedUIKitHost */ = {
 			isa = PBXGroup;
 			children = (
+				2838C2CE1EE0DD79004D5BCB /* Audio */,
 				422DB4081EAA3CF100377AB5 /* AppDelegate.swift */,
+				2838C2CC1EE0DD06004D5BCB /* Ring.aiff */,
 				422DB40F1EAA3CF100377AB5 /* Assets.xcassets */,
 				28D1BFEF1EDCE0E100290999 /* Device */,
 				422DB4141EAA3CF100377AB5 /* Info.plist */,
@@ -587,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				422DB4131EAA3CF100377AB5 /* LaunchScreen.storyboard in Resources */,
+				2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */,
 				422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */,
 				422DB40E1EAA3CF100377AB5 /* Main.storyboard in Resources */,
 			);
@@ -703,6 +718,7 @@
 				28D1BFFD1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift in Sources */,
 				28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */,
 				28D1C0061EDCF43700290999 /* MainViewController+TableViewDelegate.swift in Sources */,
+				2838C2D01EE0DD89004D5BCB /* AudioViewController.swift in Sources */,
 				28D1C0041EDCF42A00290999 /* MainViewController+TableViewDataSource.swift in Sources */,
 				28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */,
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
