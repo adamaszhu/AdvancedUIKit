@@ -325,10 +325,9 @@
 		422DB4071EAA3CF100377AB5 /* AdvancedUIKitHost */ = {
 			isa = PBXGroup;
 			children = (
-				2838C2CE1EE0DD79004D5BCB /* Audio */,
 				422DB4081EAA3CF100377AB5 /* AppDelegate.swift */,
-				2838C2CC1EE0DD06004D5BCB /* Ring.aiff */,
 				422DB40F1EAA3CF100377AB5 /* Assets.xcassets */,
+				2838C2CE1EE0DD79004D5BCB /* Audio */,
 				28D1BFEF1EDCE0E100290999 /* Device */,
 				422DB4141EAA3CF100377AB5 /* Info.plist */,
 				426939771EAB150700761FDE /* Label */,
@@ -337,6 +336,7 @@
 				422DB40C1EAA3CF100377AB5 /* Main.storyboard */,
 				284E5C591EDD324400C3CC86 /* Message */,
 				426939811EAB652C00761FDE /* Picker */,
+				2838C2CC1EE0DD06004D5BCB /* Ring.aiff */,
 			);
 			path = AdvancedUIKitHost;
 			sourceTree = "<group>";
