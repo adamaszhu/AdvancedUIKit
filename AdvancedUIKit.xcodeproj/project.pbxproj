@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */; };
+		2822A3361EE0EC8200FAA8E3 /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */; };
 		2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2838C2CC1EE0DD06004D5BCB /* Ring.aiff */; };
 		2838C2D01EE0DD89004D5BCB /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */; };
 		284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 284E5C471EDD103400C3CC86 /* MessageHelper.strings */; };
@@ -104,6 +105,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
 		2838C2CC1EE0DD06004D5BCB /* Ring.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Ring.aiff; sourceTree = "<group>"; };
 		2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		284E5C461EDD103400C3CC86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MessageHelper.strings; sourceTree = "<group>"; };
@@ -204,6 +206,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2822A3341EE0EC3B00FAA8E3 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		2838C2CE1EE0DD79004D5BCB /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +324,7 @@
 				4269397D1EAB439700761FDE /* Internal */,
 				426939741EAB01CD00761FDE /* Label */,
 				284E5C421EDD0FE500C3CC86 /* Message */,
+				2822A3341EE0EC3B00FAA8E3 /* Navigation */,
 				426939801EAB650F00761FDE /* Picker */,
 				4269397A1EAB253700761FDE /* String */,
 				289D5FE91EDF92DB00203DE2 /* TextField */,
@@ -699,6 +710,7 @@
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
 				284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */,
+				2822A3361EE0EC8200FAA8E3 /* ViewController+Navigation.swift in Sources */,
 				42CA09E21EE0461A009AF1BE /* RingHelper.swift in Sources */,
 				426939871EAB675500761FDE /* DataPicker+PickerViewDataSource.swift in Sources */,
 				425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */,
