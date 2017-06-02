@@ -155,16 +155,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raB-CN-rW5">
                                         <rect key="frame" x="0.0" y="80" width="375" height="30"/>
-                                        <state key="normal" title="System Ring With VIbration"/>
-                                        <connections>
-                                            <action selector="ringWithSystemSoundAndVibration:" destination="by4-Ca-S7b" eventType="touchUpInside" id="fSz-bI-N3G"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8F-iV-WAx">
-                                        <rect key="frame" x="0.0" y="115" width="375" height="30"/>
                                         <state key="normal" title="System Ring"/>
                                         <connections>
-                                            <action selector="ringWithSystemSound:" destination="by4-Ca-S7b" eventType="touchUpInside" id="s3m-AU-ZcF"/>
+                                            <action selector="ringWithSystemSound:" destination="by4-Ca-S7b" eventType="touchUpInside" id="Rpz-gb-UI0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -172,10 +165,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="bM2-I6-Fsa" secondAttribute="trailing" id="AW2-Or-eZ7"/>
                                     <constraint firstAttribute="trailing" secondItem="ice-SY-VYs" secondAttribute="trailing" id="DUB-Qg-5eK"/>
-                                    <constraint firstItem="g8F-iV-WAx" firstAttribute="leading" secondItem="s8G-8i-axX" secondAttribute="leading" id="Gns-wS-1T5"/>
                                     <constraint firstItem="bM2-I6-Fsa" firstAttribute="leading" secondItem="s8G-8i-axX" secondAttribute="leading" id="L1w-VC-LP4"/>
-                                    <constraint firstItem="g8F-iV-WAx" firstAttribute="top" secondItem="raB-CN-rW5" secondAttribute="bottom" constant="5" id="V13-Vp-s1F"/>
-                                    <constraint firstAttribute="trailing" secondItem="g8F-iV-WAx" secondAttribute="trailing" id="Xr2-Cg-TUK"/>
                                     <constraint firstItem="ice-SY-VYs" firstAttribute="leading" secondItem="s8G-8i-axX" secondAttribute="leading" id="d7x-hH-4Pc"/>
                                     <constraint firstItem="raB-CN-rW5" firstAttribute="top" secondItem="ice-SY-VYs" secondAttribute="bottom" constant="5" id="hDh-ly-qsM"/>
                                     <constraint firstAttribute="trailing" secondItem="raB-CN-rW5" secondAttribute="trailing" id="v7p-Tb-JVe"/>

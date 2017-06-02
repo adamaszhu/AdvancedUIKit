@@ -19,7 +19,7 @@ public class RingHelper {
     /**
      * The system sound.
      */
-    private static let defaultSoundID = SystemSoundID(1104)
+    private static let defaultSoundID = SystemSoundID(1022)
     
     /**
      * System error.
@@ -57,15 +57,19 @@ public class RingHelper {
      * - parameter times: How many times the device need to ring.
      * - parameter shouldVibrate: Whether the vibration should be performed or not.
      * - parameter period: The period between two vibrations or rings.
+     * - returns: Whether the ring will be performed or not. False if a ring is being played or the sound file doesn't exist.
      */
-    public func ring(withSound soundFileName: String, forTimes times: Int = 1, withVibration shouldVibrate: Bool = true, withPeriod period: Double = defaultRingPeriod) {
+    public func ring(withSound soundFileName: String, forTimes times: Int = 1, withVibration shouldVibrate: Bool = true, withPeriod period: Double = defaultRingPeriod) -> Bool {
+        guard remainerCounter == 0 else {
+            return false
+        }
         remainerCounter = times
         self.shouldVibrate = shouldVibrate
         self.period = period
         let fileInfoAccessor = FileInfoAccessor(path: soundFileName)
         guard let path = bundle.path(forResource: fileInfoAccessor.filename, ofType: fileInfoAccessor.fileExtension) else {
             Logger.standard.logError(soundNameError, withDetail: soundFileName)
-            return
+            return false
         }
         let url = URL(fileURLWithPath: path)
         // COMMENT: Register the customized sound.
@@ -73,25 +77,30 @@ public class RingHelper {
         AudioServicesCreateSystemSoundID(url as CFURL, &newSoundID)
         guard newSoundID != 0 else {
             Logger.standard.logError(soundNameError, withDetail: soundFileName)
-            return
+            return false
         }
         soundID = newSoundID
         performRing()
+        return true
     }
     
     /**
-     * Play a system sound.
+     * Play a system sound. Vibration is decided based on system setting.
      * - parameter soundID: The ID of the system sound.
      * - parameter times: How many times the device need to ring.
-     * - parameter shouldVibrate: Whether the vibration should be performed or not.
      * - parameter period: The period between two vibrations or rings.
+     * - returns: Whether the ring will be performed or not. False if a ring is being played.
      */
-    public func ring(withSoundID soundID: SystemSoundID = defaultSoundID, forTimes times: Int = 1, withVibration shouldVibrate: Bool = true, withPeriod period: Double = defaultRingPeriod) {
+    public func ring(withSoundID soundID: SystemSoundID = defaultSoundID, forTimes times: Int = 1, withPeriod period: Double = defaultRingPeriod) -> Bool {
+        guard remainerCounter == 0 else {
+            return false
+        }
         self.soundID = soundID
         remainerCounter = times
-        self.shouldVibrate = shouldVibrate
+        shouldVibrate = false
         self.period = period
         performRing()
+        return true
     }
     
     /**

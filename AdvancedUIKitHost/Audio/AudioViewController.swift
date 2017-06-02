@@ -11,19 +11,15 @@ class AudioViewController: UIViewController {
     }
     
     @IBAction func ringWithCustomizedSoundAndVibration(_ sender: Any) {
-        ringHelper.ring(withSound: ringName, forTimes: ringTimes)
+        _ = ringHelper.ring(withSound: ringName, forTimes: ringTimes)
     }
     
     @IBAction func ringWithCustomizedSound(_ sender: Any) {
-        ringHelper.ring(withSound: ringName, forTimes: ringTimes, withVibration: true)
-    }
-    
-    @IBAction func ringWithSystemSoundAndVibration(_ sender: Any) {
-        ringHelper.ring(forTimes: ringTimes)
+        _ = ringHelper.ring(withSound: ringName, forTimes: ringTimes, withVibration: false)
     }
     
     @IBAction func ringWithSystemSound(_ sender: Any) {
-        ringHelper.ring(forTimes: ringTimes, withVibration: true)
+        _ = ringHelper.ring(forTimes: ringTimes)
     }
     
 }
