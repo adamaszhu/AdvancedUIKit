@@ -4,6 +4,7 @@ enum Feature: String {
     case label = "Label"
     case picker = "Picker"
     case message = "Message"
+    case audio = "Audio"
     
     var viewControllerID: String {
         switch self {
@@ -15,6 +16,8 @@ enum Feature: String {
             return String(describing: PickerViewController.self)
         case .message:
             return String(describing: MessageViewController.self)
+        case .audio:
+            return String(describing: AudioViewController.self)
         }
     }
     
