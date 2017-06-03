@@ -79,16 +79,6 @@ class MessageViewController: UIViewController {
         customizedMessageHelper.showInput(withTitle: "Input", withConfirmButtonName: "Confirm", withCancelButtonName: "Cancel")
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
 import AdvancedUIKit

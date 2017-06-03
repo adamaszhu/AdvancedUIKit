@@ -503,10 +503,10 @@
 		42CA09E51EE198C4009AF1BE /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				42CA09E81EE19998009AF1BE /* Label+Localizer.swift */,
 				42CA09EC1EE19E36009AF1BE /* Button+Localizer.swift */,
-				42CA09EE1EE19F15009AF1BE /* View+Localizer.swift */,
+				42CA09E81EE19998009AF1BE /* Label+Localizer.swift */,
 				42CA09F01EE1A1BA009AF1BE /* SegmentedControl+Localizer.swift */,
+				42CA09EE1EE19F15009AF1BE /* View+Localizer.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
