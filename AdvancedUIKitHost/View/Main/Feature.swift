@@ -8,6 +8,7 @@ enum Feature: String {
     case notification = "Notification"
     case localization = "Localization"
     case button = "Button"
+    case navigation = "Navigation"
     
     var viewControllerID: String {
         switch self {
@@ -27,6 +28,8 @@ enum Feature: String {
             return String(describing: LocalizationViewController.self)
         case .button:
             return String(describing: ButtonViewController.self)
+        case .navigation:
+            return String(describing: NavigationViewController.self)
         }
     }
     

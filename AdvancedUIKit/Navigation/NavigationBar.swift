@@ -28,6 +28,9 @@ public class NavigationBar: UINavigationBar {
      */
     public var rightButtonTitle: String? {
         set {
+            if topItem?.rightBarButtonItem == nil {
+                topItem?.rightBarButtonItem = UIBarButtonItem()
+            }
             topItem?.rightBarButtonItem?.title = newValue
         }
         get {
@@ -40,11 +43,23 @@ public class NavigationBar: UINavigationBar {
      */
     public var leftButtonTitle: String? {
         set {
+            if topItem?.leftBarButtonItem == nil {
+                topItem?.leftBarButtonItem = UIBarButtonItem()
+            }
             topItem?.leftBarButtonItem?.title = newValue
         }
         get {
             return topItem?.leftBarButtonItem?.title
         }
+    }
+    
+    private var leftButton: UIBarButtonItem {
+        guard let leftButton = topItem?.rightBarButtonItem else {
+            let button = UIBarButtonItem()
+            topItem?.rightBarButtonItem = button
+            return button
+        }
+        return leftButton
     }
     
     /**
