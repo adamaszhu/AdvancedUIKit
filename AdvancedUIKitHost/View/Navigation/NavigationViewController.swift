@@ -12,6 +12,7 @@ class NavigationViewController: UIViewController {
         navigationBar.rightButtonTitle = navigation.rightButtonName
         navigationBar.leftButtonTitle = navigation.leftButtonName
         navigationBar.setLeftButtonAction(action: #selector(NavigationBar.back), withTarget: navigationBar)
+        navigationBar.setRightButtonAction(action: #selector(done), withTarget: self)
     }
     
     func done() {

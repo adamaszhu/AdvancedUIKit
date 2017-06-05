@@ -40,6 +40,8 @@
 		28D1C0061EDCF43700290999 /* MainViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0051EDCF43700290999 /* MainViewController+TableViewDelegate.swift */; };
 		28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0071EDCF5E100290999 /* FeatureTableCell.swift */; };
 		28D1C00A1EDCF62900290999 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0091EDCF62900290999 /* Feature.swift */; };
+		28E66FE91EE4CF0F00073DF1 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FE81EE4CF0F00073DF1 /* TextFieldViewController.swift */; };
+		28E66FEB1EE4D06600073DF1 /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FEA1EE4D06600073DF1 /* ViewViewController.swift */; };
 		28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */; };
 		28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F21EDBF49D006646A3 /* DeviceType.swift */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
@@ -153,6 +155,8 @@
 		28D1C0051EDCF43700290999 /* MainViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		28D1C0071EDCF5E100290999 /* FeatureTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureTableCell.swift; sourceTree = "<group>"; };
 		28D1C0091EDCF62900290999 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		28E66FE81EE4CF0F00073DF1 /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
+		28E66FEA1EE4D06600073DF1 /* ViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
 		28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoAccessor.swift; sourceTree = "<group>"; };
 		28F550F21EDBF49D006646A3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdvancedUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -566,6 +570,7 @@
 		42CA0A031EE432F5009AF1BE /* TextField */ = {
 			isa = PBXGroup;
 			children = (
+				28E66FE81EE4CF0F00073DF1 /* TextFieldViewController.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -589,6 +594,7 @@
 		42CA0A061EE43363009AF1BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				28E66FEA1EE4D06600073DF1 /* ViewViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -873,6 +879,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28E66FE91EE4CF0F00073DF1 /* TextFieldViewController.swift in Sources */,
 				28D1C0021EDCF3EF00290999 /* MainViewController.swift in Sources */,
 				426939831EAB65A800761FDE /* PickerViewController.swift in Sources */,
 				28D1BFFD1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift in Sources */,
@@ -888,6 +895,7 @@
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
 				42CA09F41EE1A50E009AF1BE /* LocalizationViewController.swift in Sources */,
 				426939791EAB151400761FDE /* LabelViewController.swift in Sources */,
+				28E66FEB1EE4D06600073DF1 /* ViewViewController.swift in Sources */,
 				28D1BFFF1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift in Sources */,
 				284E5C5D1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift in Sources */,
 				284E5C5B1EDD337500C3CC86 /* MessageViewController.swift in Sources */,
