@@ -24,34 +24,76 @@ public class NavigationBar: UINavigationBar {
     }
     
     /**
-     * Set the title of the right navigation button.
-     */
-    public var rightButtonTitle: String? {
-        set {
-            topItem?.rightBarButtonItem?.title = newValue
-        }
-        get {
-            return topItem?.rightBarButtonItem?.title
-        }
-    }
-    
-    /**
      * Set the title of the left navigation button.
      */
     public var leftButtonTitle: String? {
         set {
-            topItem?.leftBarButtonItem?.title = newValue
+            leftButton?.title = newValue
         }
         get {
-            return topItem?.leftBarButtonItem?.title
+            return leftButton?.title
         }
+    }
+    
+    /**
+     * Set the title of the right navigation button.
+     */
+    public var rightButtonTitle: String? {
+        set {
+            rightButton?.title = newValue
+        }
+        get {
+            return rightButton?.title
+        }
+    }
+    
+    /**
+     * The left navigation button.
+     */
+    private var leftButton: UIBarButtonItem? {
+        guard let leftButton = topItem?.leftBarButtonItem else {
+            topItem?.leftBarButtonItem = UIBarButtonItem()
+            return topItem?.leftBarButtonItem
+        }
+        return leftButton
+    }
+    
+    /**
+     * The left navigation button.
+     */
+    private var rightButton: UIBarButtonItem? {
+        guard let rightButton = topItem?.rightBarButtonItem else {
+            topItem?.rightBarButtonItem = UIBarButtonItem()
+            return topItem?.rightBarButtonItem
+        }
+        return rightButton
+    }
+    
+    /**
+     * Set the action for the left button.
+     * - parameter action: The action to be settled.
+     * - parameter target: The object.
+     */
+    public func setLeftButtonAction(action: Selector, withTarget target: AnyObject) {
+        leftButton?.action = action
+        leftButton?.target = target
     }
     
     /**
      * Back to previous view controller.
      */
-    @IBAction func back(_ sender: Any) {
+    @IBAction public func back(_ sender: Any) {
         viewController.navigationController?.popViewController(animated: true)
+    }
+    
+    /**
+     * Set the action for the right button.
+     * - parameter action: The action to be settled.
+     * - parameter target: The object.
+     */
+    public func setRightButtonAction(action: Selector, withTarget target: AnyObject) {
+        rightButton?.action = action
+        rightButton?.target = target
     }
     
 }

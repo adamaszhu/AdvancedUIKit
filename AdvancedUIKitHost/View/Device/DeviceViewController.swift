@@ -26,5 +26,5 @@ class DeviceViewController: UIViewController {
     
 }
 
-import UIKit
 import AdvancedUIKit
+import UIKit

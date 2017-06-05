@@ -109,6 +109,8 @@ public class DataPicker: RootView {
         columns = [DataPickerColumn(items: items)]
     }
     
+    // TODO: Set picker with multiple columns
+    
     /**
      * Select an item.
      * - parameter value: The value to be selected.
@@ -150,7 +152,7 @@ public class DataPicker: RootView {
         if !isVisible {
             return
         }
-        animate(withChange: {
+        UIView.animate(withChange: {
             self.frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
         }, withPreparation: {
             self.frame = self.originalFrame
@@ -166,7 +168,7 @@ public class DataPicker: RootView {
         if isVisible {
             return
         }
-        animate(withChange: {
+        UIView.animate(withChange: {
             self.frame = self.originalFrame
         }, withPreparation: {
             self.frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)

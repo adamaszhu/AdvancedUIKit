@@ -18,7 +18,7 @@ public extension UIView {
      * - parameter preparation: The action to be done before the animation.
      * - parameter completion: The action to be done after the animation.
      */
-    public func animate(withChange change: @escaping () -> Void, withDuration duration: Double = defaultAnimationDuration, withPreparation preparation:(() -> Void)? = nil, withCompletion completion: (() -> Void)? = nil) {
+    public static func animate(withChange change: @escaping () -> Void, withDuration duration: Double = defaultAnimationDuration, withPreparation preparation:(() -> Void)? = nil, withCompletion completion: (() -> Void)? = nil) {
         // TODO: Judge whether there has been an animation or not.
         preparation?()
         UIView.animate(withDuration: duration, animations: {

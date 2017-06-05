@@ -11,6 +11,8 @@ public extension UIButton {
      */
     public var title: String? {
         set {
+            titleLabel?.numberOfLines = 0
+            titleLabel?.textAlignment = .center
             setTitle(newValue, for: .normal)
         }
         get {
