@@ -1,51 +1,42 @@
-import UIKit
-
 /**
  * KeyboardHelperDelegate is used to perform an action notified by KeyboardHelper.
- * - version: 0.0.4
- * - date: 16/10/2016
  * - author: Adamas
+ * - version: 1.0.0
+ * - date: 05/06/2016
  */
-@objc public protocol KeyboardHelperDelegate: NSObjectProtocol {
+public protocol KeyboardHelperDelegate {
     
     /**
      * The last input view has returned.
-     * - version: 0.0.4
-     * - date: 16/10/2016
      */
-    func keyboardHelperDidConfirmInput(keyboardHelper: KeyboardHelper)
+    func keyboardHelperDidConfirmInput(_ keyboardHelper: KeyboardHelper)
     
     /**
      * The content has been changed.
-     * - version: 0.0.4
-     * - date: 16/10/2016
-     * - parameter inputView: The view whose content has been changed.
+     * - parameter view: The view whose content has been changed.
      */
-    optional func keyboardHelperDidChangeContent(keyboardHelper: KeyboardHelper, ofInputView inputView: UIView)
+    func keyboardHelper(_ keyboardHelper: KeyboardHelper, didChangeContentOf view: UIView)
     
     /**
      * Whether the content should be changed or not. It is mainly used to validate the new content.
-     * - version: 0.0.4
-     * - date: 16/10/2016
-     * - parameter inputView: The view whose content will be changed.
+     * - parameter view: The view whose content will be changed.
      * - parameter content: The new content that is going to be applied.
      * - returns: Whether the content should be changed or not.
      */
-    optional func keyboardHelperShouldChangeContent(keyboardHelper: KeyboardHelper, ofInputView inputView: UIView, toContent content:NSString) -> Bool
+    func keyboardHelper(_ keyboardHelper: KeyboardHelper, shouldChangeContentOf view: UIView, toContent content: NSString) -> Bool
     
     /**
      * A input view will start editing mode.
-     * - version: 0.0.4
-     * - date: 16/10/2016
-     * - parameter inputView: The view whose content will be changed.
+     * - parameter view: The view whose content will be changed.
      */
-    optional func keyboardHelperWillEdit(keyboardHelper: KeyboardHelper, onInputView inputView: UIView)
+    func keyboardHelper(_ keyboardHelper: KeyboardHelper, willEditOn view: UIView)
     
     /**
      * A input view finished enditing mode.
-     * - version: 0.0.4
-     * - date: 16/10/2016
-     * - parameter inputView: The view whose content will be changed.
+     * - parameter view: The view whose content will be changed.
      */
-    optional func keyboardHelperDidEdit(keyboardHelper: KeyboardHelper, onInputView inputView: UIView)
+    func keyboardHelper(_ keyboardHelper: KeyboardHelper, didEditOn view: UIView)
+    
 }
+
+import UIKit
