@@ -25,8 +25,6 @@ class ViewViewController: UIViewController {
     
     @IBAction func popup(_ sender: Any) {
         popupView.show()
-        // TODO: Fix this bug
-        SystemMessageHelper.standard?.showInfo("Test")
     }
     
     @IBAction func animate(_ sender: Any) {

@@ -110,6 +110,7 @@ public class SystemMessageHelper {
         } else {
             currentController = rootViewController
         }
+        // TODO: Fix the conflict between this and a PopupView
         currentController.present(alertController, animated: true, completion: nil)
     }
     

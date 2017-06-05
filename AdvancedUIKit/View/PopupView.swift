@@ -57,7 +57,6 @@ public class PopupView: RootView {
      * - parameter application: The application that contains the window.
      */
     public init(application: UIApplication = UIApplication.shared) {
-        // TODO: Check whether it is necessary to use view controller or not.
         hostWindow = application.windows[0]
         super.init(frame: hostWindow.frame)
         alpha = 0
