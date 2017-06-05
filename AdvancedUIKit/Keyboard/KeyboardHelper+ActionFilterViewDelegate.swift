@@ -6,13 +6,13 @@
  */
 extension KeyboardHelper: ActionFilterViewDelegate {
     
-        /**
-         * ActionFilterViewDelegate
-         */
-        func actionFilterViewDidInteract(_ actionFilterView: ActionFilterView) {
-//            hideKeyboard()
-            SystemMessageHelper.standard?.showInfo("clicked")
-        }
+    /**
+     * ActionFilterViewDelegate
+     */
+    func actionFilterViewDidInteract(_ actionFilterView: ActionFilterView) {
+        hideKeyboard()
+    }
+    
 }
 
 import Foundation

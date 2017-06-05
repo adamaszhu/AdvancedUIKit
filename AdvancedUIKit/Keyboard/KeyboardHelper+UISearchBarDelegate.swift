@@ -6,22 +6,28 @@
  */
 extension KeyboardHelper: UISearchBarDelegate {
     
-    //
-    //    /**
-    //     * UISearchBarDelegate
-    //     */
-    //    public func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
-    //        changeInputView(searchBar)
-    //        return true
-    //    }
-    //
-    //    /**
-    //     * UISearchBarDelegate
-    //     */
-    //    public func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-    //        finishInput(onView: searchBar)
-    //    }
-    //
+    /**
+     * UISearchBarDelegate
+     */
+    public func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        changeInputView(searchBar)
+        return true
+    }
+    
+    /**
+     * UISearchBarDelegate
+     */
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        finishInput(onView: searchBar)
+    }
+    
+    /**
+     * UISearchBarDelegate
+     */
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        keyboardHelperDelegate?.keyboardHelper(self, didChangeContentOf: searchBar)
+    }
+    
     /**
      * UISearchBarDelegate
      */
@@ -36,13 +42,6 @@ extension KeyboardHelper: UISearchBarDelegate {
             newContent = text
         }
         return keyboardHelperDelegate.keyboardHelper(self, shouldChangeContentOf: searchBar, toContent: newContent)
-    }
-    
-    /**
-     * UISearchBarDelegate
-     */
-    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        keyboardHelperDelegate?.keyboardHelper(self, didChangeContentOf: searchBar)
     }
     
     /**

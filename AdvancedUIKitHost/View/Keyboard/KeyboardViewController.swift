@@ -18,15 +18,17 @@ class KeyboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        keyboardHelper.inputViews = [searchBar, firstnameText, lastnameText, mobileNumberText]
         firstnameText.activateUnderline(withNormal: underlineColor, withHignlighted: highlightedUnderlineColor)
         lastnameText.activateUnderline(withNormal: underlineColor, withHignlighted: highlightedUnderlineColor)
         mobileNumberText.activateUnderline(withNormal: underlineColor, withHignlighted: highlightedUnderlineColor)
+        keyboardHelper.rootView = view
+        keyboardHelper.inputViews = [searchBar, firstnameText, lastnameText, mobileNumberText]
     }
     
     required init?(coder aDecoder: NSCoder) {
         keyboardHelper = KeyboardHelper()
         super.init(coder: aDecoder)
+        keyboardHelper.keyboardHelperDelegate = self
     }
     
 }
