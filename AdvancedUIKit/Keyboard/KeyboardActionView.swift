@@ -6,8 +6,8 @@
 // * - date: 16/10/2016
 // * - author: Adamas
 // */
-//class KeyboardActionView: UIView {
-//    
+class KeyboardActionView: UIView {
+//
 //    /**
 //     * The delegate.
 //     */
@@ -52,4 +52,6 @@
 //        super.init(coder: aDecoder)
 //    }
 //    
-//}
+}
+
+import UIKit

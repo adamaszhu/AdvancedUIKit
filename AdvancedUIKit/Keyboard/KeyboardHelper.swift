@@ -1,29 +1,28 @@
-public class KeyboardHelper {
+/**
+ * KeyboarHelper is used to optimize the soft keyboard performance.
+ * - author: Adamas
+ * - version: 1.0.0
+ * - date: 05/06/2017
+ */
+public class KeyboardHelper: NSObject {
+    
+        /**
+         * The delegate
+         */
+        public var keyboardHelperDelegate: KeyboardHelperDelegate?
     
 }
 
+import UIKit
 
-//import UIKit
-//
-//
-///**
-// * KeyboarHelper is used to optimize the soft keyboard performance.
-// * - version: 0.0.3
-// * - date: 16/10/2016
-// * - author: Adamas
-// */
-//public class KeyboardHelper: NSObject, KeyboardActionViewDelegate, UITextFieldDelegate, UISearchBarDelegate {
+//public class KeyboardHelper: KeyboardActionViewDelegate,  {
 //    
 //    /**
 //     * System message.
 //     */
 //    private static let InputViewError = "The input view doesn't exist."
 //    private static let UnderlineAmountError = "The amount of underline views is not equals to the amount of input views."
-//    
-//    /**
-//     * The delegate
-//     */
-//    public var keyboardHelperDelegate: KeyboardHelperDelegate?
+//
 //    
 //    /**
 //     * A list of input views that need the help of KeyboardHelper.
@@ -335,115 +334,6 @@ public class KeyboardHelper {
 //     */
 //    func keyboardActionViewDidInteract(keyboardActionView: KeyboardActionView) {
 //        hideKeyboard()
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    public func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-//        changeInputView(textField)
-//        return true
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    public func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        finishInput(onView: textField)
-//        return false
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-//        if (keyboardHelperDelegate != nil) && keyboardHelperDelegate!.respondsToSelector(#selector(keyboardHelperDelegate!.keyboardHelperShouldChangeContent(_:ofInputView:toContent:))) {
-//            let newContent = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
-//            return keyboardHelperDelegate!.keyboardHelperShouldChangeContent!(self, ofInputView: textField, toContent: newContent)
-//        }
-//        return true
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    public func textFieldDidBeginEditing(textField: UITextField) {
-//        // COMMENT: Change the color of the underline.
-//        let underline = findUnderlineForInputView(textField)
-//        if underline != nil {
-//            underline!.backgroundColor = selectedInputViewUnderlineColor
-//        }
-//        keyboardHelperDelegate?.keyboardHelperWillEdit?(self, onInputView: textField)
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    public func textFieldDidEndEditing(textField: UITextField) {
-//        // COMMENT: Change the color of the underline.
-//        let underline = findUnderlineForInputView(textField)
-//        if underline != nil {
-//            underline!.backgroundColor = unselectedInputViewUnderlineColor
-//        }
-//        keyboardHelperDelegate?.keyboardHelperDidEdit?(self, onInputView: textField)
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    public func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
-//        changeInputView(searchBar)
-//        return true
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    public func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-//        finishInput(onView: searchBar)
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    public func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-//        if (keyboardHelperDelegate != nil) && keyboardHelperDelegate!.respondsToSelector(#selector(keyboardHelperDelegate!.keyboardHelperShouldChangeContent(_:ofInputView:toContent:))) {
-//            let newContent = (searchBar.text! as NSString).stringByReplacingCharactersInRange(range, withString: text)
-//            return keyboardHelperDelegate!.keyboardHelperShouldChangeContent!(self, ofInputView: searchBar, toContent: newContent)
-//        }
-//        return true
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    public func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-//        keyboardHelperDelegate?.keyboardHelperDidChangeContent?(self, ofInputView: searchBar)
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    public func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-//        keyboardHelperDelegate?.keyboardHelperWillEdit?(self, onInputView: searchBar)
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    public func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-//        keyboardHelperDelegate?.keyboardHelperDidEdit?(self, onInputView: searchBar)
 //    }
 //    
 //}
