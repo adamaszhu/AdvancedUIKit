@@ -23,7 +23,7 @@ public protocol KeyboardHelperDelegate {
      * - parameter content: The new content that is going to be applied.
      * - returns: Whether the content should be changed or not.
      */
-    func keyboardHelper(_ keyboardHelper: KeyboardHelper, shouldChangeContentOf view: UIView, toContent content: NSString) -> Bool
+    func keyboardHelper(_ keyboardHelper: KeyboardHelper, shouldChangeContentOf view: UIView, toContent content: String) -> Bool
     
     /**
      * A input view will start editing mode.

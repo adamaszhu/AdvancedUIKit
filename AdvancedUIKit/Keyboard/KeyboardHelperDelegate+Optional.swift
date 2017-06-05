@@ -14,7 +14,7 @@ public extension KeyboardHelperDelegate {
     /**
      * KeyboardHelperDelegate
      */
-    func keyboardHelper(_ keyboardHelper: KeyboardHelper, shouldChangeContentOf view: UIView, toContent content: NSString) -> Bool {
+    func keyboardHelper(_ keyboardHelper: KeyboardHelper, shouldChangeContentOf view: UIView, toContent content: String) -> Bool {
         return true
     }
     

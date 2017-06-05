@@ -11,6 +11,7 @@ enum Feature: String {
     case navigation = "Navigation"
     case textField = "Text Field"
     case view = "View"
+    case keyboard = "Keyboard"
     
     var viewControllerID: String {
         switch self {
@@ -36,6 +37,8 @@ enum Feature: String {
             return String(describing: TextFieldViewController.self)
         case .view:
             return String(describing: ViewViewController.self)
+        case .keyboard:
+            return String(describing: KeyboardViewController.self)
         }
     }
     

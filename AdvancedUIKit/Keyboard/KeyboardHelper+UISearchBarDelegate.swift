@@ -8,8 +8,7 @@ extension KeyboardHelper: UISearchBarDelegate {
     
     //
     //    /**
-    //     * - version: 0.0.3
-    //     * - date: 16/10/2016
+    //     * UISearchBarDelegate
     //     */
     //    public func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
     //        changeInputView(searchBar)
@@ -17,48 +16,49 @@ extension KeyboardHelper: UISearchBarDelegate {
     //    }
     //
     //    /**
-    //     * - version: 0.0.3
-    //     * - date: 16/10/2016
+    //     * UISearchBarDelegate
     //     */
     //    public func searchBarSearchButtonClicked(searchBar: UISearchBar) {
     //        finishInput(onView: searchBar)
     //    }
     //
-    //    /**
-    //     * - version: 0.0.3
-    //     * - date: 16/10/2016
-    //     */
-    //    public func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-    //        if (keyboardHelperDelegate != nil) && keyboardHelperDelegate!.respondsToSelector(#selector(keyboardHelperDelegate!.keyboardHelperShouldChangeContent(_:ofInputView:toContent:))) {
-    //            let newContent = (searchBar.text! as NSString).stringByReplacingCharactersInRange(range, withString: text)
-    //            return keyboardHelperDelegate!.keyboardHelperShouldChangeContent!(self, ofInputView: searchBar, toContent: newContent)
-    //        }
-    //        return true
-    //    }
-    //
-    //    /**
-    //     * - version: 0.0.3
-    //     * - date: 16/10/2016
-    //     */
-    //    public func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-    //        keyboardHelperDelegate?.keyboardHelperDidChangeContent?(self, ofInputView: searchBar)
-    //    }
-    //
-    //    /**
-    //     * - version: 0.0.3
-    //     * - date: 16/10/2016
-    //     */
-    //    public func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-    //        keyboardHelperDelegate?.keyboardHelperWillEdit?(self, onInputView: searchBar)
-    //    }
-    //
-    //    /**
-    //     * - version: 0.0.3
-    //     * - date: 16/10/2016
-    //     */
-    //    public func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-    //        keyboardHelperDelegate?.keyboardHelperDidEdit?(self, onInputView: searchBar)
-    //    }
+    /**
+     * UISearchBarDelegate
+     */
+    public func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard let keyboardHelperDelegate = keyboardHelperDelegate else {
+            return true
+        }
+        var newContent: String
+        if let originalText = searchBar.text as NSString? {
+            newContent = originalText.replacingCharacters(in: range, with: text)
+        } else {
+            newContent = text
+        }
+        return keyboardHelperDelegate.keyboardHelper(self, shouldChangeContentOf: searchBar, toContent: newContent)
+    }
+    
+    /**
+     * UISearchBarDelegate
+     */
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        keyboardHelperDelegate?.keyboardHelper(self, didChangeContentOf: searchBar)
+    }
+    
+    /**
+     * UISearchBarDelegate
+     */
+    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        keyboardHelperDelegate?.keyboardHelper(self, willEditOn: searchBar)
+    }
+    
+    /**
+     * UISearchBarDelegate
+     */
+    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        keyboardHelperDelegate?.keyboardHelper(self, didEditOn: searchBar)
+    }
+    
 }
 
 import UIKit

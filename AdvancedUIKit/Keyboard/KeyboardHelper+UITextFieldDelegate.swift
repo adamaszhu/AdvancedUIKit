@@ -9,8 +9,7 @@ extension KeyboardHelper: UITextFieldDelegate {
     
     //
     //    /**
-    //     * - version: 0.0.3
-    //     * - date: 16/10/2016
+    //     * UITextFieldDelegate
     //     */
     //    public func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
     //        changeInputView(textField)
@@ -18,8 +17,7 @@ extension KeyboardHelper: UITextFieldDelegate {
     //    }
     //
     //    /**
-    //     * - version: 0.0.3
-    //     * - date: 16/10/2016
+    //     * UITextFieldDelegate
     //     */
     //    public func textFieldShouldReturn(textField: UITextField) -> Bool {
     //        finishInput(onView: textField)
@@ -27,8 +25,7 @@ extension KeyboardHelper: UITextFieldDelegate {
     //    }
     //
     //    /**
-    //     * - version: 0.0.3
-    //     * - date: 16/10/2016
+    //     * UITextFieldDelegate
     //     */
     //    public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
     //        if (keyboardHelperDelegate != nil) && keyboardHelperDelegate!.respondsToSelector(#selector(keyboardHelperDelegate!.keyboardHelperShouldChangeContent(_:ofInputView:toContent:))) {
@@ -39,8 +36,7 @@ extension KeyboardHelper: UITextFieldDelegate {
     //    }
     //
     //    /**
-    //     * - version: 0.0.3
-    //     * - date: 16/10/2016
+    //     * UITextFieldDelegate
     //     */
     //    public func textFieldDidBeginEditing(textField: UITextField) {
     //        // COMMENT: Change the color of the underline.
@@ -52,8 +48,7 @@ extension KeyboardHelper: UITextFieldDelegate {
     //    }
     //
     //    /**
-    //     * - version: 0.0.3
-    //     * - date: 16/10/2016
+    //     * UITextFieldDelegate
     //     */
     //    public func textFieldDidEndEditing(textField: UITextField) {
     //        // COMMENT: Change the color of the underline.
