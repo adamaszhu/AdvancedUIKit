@@ -9,7 +9,7 @@ class KeyboardViewController: UIViewController {
     @IBOutlet weak var mobileNumberText: UITextField!
     @IBOutlet weak var addressLabel: UILabel!
     
-    private let keyboardHelper: KeyboardHelper
+    private var keyboardHelper: KeyboardHelper
     
     @IBAction func submit(_ sender: Any) {
         let info = "\(firstnameText.text ?? "")\n\(lastnameText.text ?? "")\n\(mobileNumberText.text ?? "")\n\(addressLabel.text ?? "")"
@@ -18,6 +18,7 @@ class KeyboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        keyboardHelper.inputViews = [searchBar, firstnameText, lastnameText, mobileNumberText]
         firstnameText.activateUnderline(withNormal: underlineColor, withHignlighted: highlightedUnderlineColor)
         lastnameText.activateUnderline(withNormal: underlineColor, withHignlighted: highlightedUnderlineColor)
         mobileNumberText.activateUnderline(withNormal: underlineColor, withHignlighted: highlightedUnderlineColor)

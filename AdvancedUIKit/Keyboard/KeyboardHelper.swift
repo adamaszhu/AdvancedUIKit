@@ -9,13 +9,57 @@ public class KeyboardHelper: NSObject {
         /**
          * The delegate
          */
-        public var keyboardHelperDelegate: KeyboardHelperDelegate?
+    public var keyboardHelperDelegate: KeyboardHelperDelegate?
+    
+    /**
+     * The current view controller.
+     */
+    public var viewController: UIViewController!
+    
+        /**
+         * A list of input views that need the help of KeyboardHelper.
+         */
+    public var inputViews: Array<UIView> {
+        
+                didSet {
+        //            // TODO: Consider other types of views.
+        //            for view in inputViewList {
+        //                if view.isKindOfClass(UITextField.classForCoder()) {
+        //                    (view as! UITextField).addTarget(self, action: #selector(textFieldDidChangeText), forControlEvents: UIControlEvents.EditingChanged)
+        //                    (view as! UITextField).delegate = self
+        //                } else if view.isKindOfClass(UISearchBar.classForCoder()) {
+        //                    (view as!UISearchBar).delegate = self
+        //                }
+        //            }
+                    actionFilterView.inputViews = inputViews
+                }
+    }
+    
+        /**
+         * The assistant view used to perform gesture action.
+         */
+        private var actionFilterView: ActionFilterView
+    
+    
+        /**
+     * Initialize the object. It should be initalized after the view is rendered.
+     * - parameter application: The application that contains the window.
+     */
+    public init(application: UIApplication = UIApplication.shared) {
+            inputViews = []
+            actionFilterView = ActionFilterView(frame: application.windows[0].bounds)
+//            notificationCenter = NSNotificationCenter.defaultCenter()
+//            keyboardHeight = 0
+//            keyboardPushDuration = 0
+            super.init()
+            actionFilterView.actionFilterViewDelegate = self
+        }
     
 }
 
 import UIKit
 
-//public class KeyboardHelper: KeyboardActionViewDelegate,  {
+//public class KeyboardHelper:  {
 //    
 //    /**
 //     * System message.
@@ -58,31 +102,6 @@ import UIKit
 //    }
 //    
 //    /**
-//     * A list of line view corresponding to those input views.
-//     */
-//    public var inputViewUnderlineList: Array<UIView> {
-//        /**
-//         * - version: 0.0.3
-//         * - date: 16/10/2016
-//         */
-//        didSet {
-//            for view in inputViewUnderlineList {
-//                view.backgroundColor = unselectedInputViewUnderlineColor
-//            }
-//        }
-//    }
-//    
-//    /**
-//     * The color of the underline of a selected input view.
-//     */
-//    public var selectedInputViewUnderlineColor: UIColor
-//    
-//    /**
-//     * The color of the underline of a unselected input view.
-//     */
-//    public var unselectedInputViewUnderlineColor: UIColor
-//    
-//    /**
 //     * Judge whether the view should be pushed or not according to the position of the text field.
 //     */
 //    private var pushOffset: CGFloat {
@@ -114,16 +133,7 @@ import UIKit
 //     * Current input view, which will be used to decide whether the view should be pushed up or not. It should be set either when the return button is clicked or when the begin editing is called.
 //     */
 //    private var currentInputView: UIView?
-//    
-//    /**
-//     * The current view controller.
-//     */
-//    private var viewController: UIViewController
-//    
-//    /**
-//     * The assistant view used to perform gesture action.
-//     */
-//    private var keyboardActionView: KeyboardActionView
+//
 //    
 //    /**
 //     * The height of current keyboard. It is used under the situation that the input view has been changed without the change of keyboard height.
@@ -134,28 +144,7 @@ import UIKit
 //     * The duration of pushing the keyboard. It is used under the situation that the input view has been changed without the change of keyboard height.
 //     */
 //    private var keyboardPushDuration: NSTimeInterval
-//    
-//    /**
-//     * Initialize the object.
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     * - parameter viewController: The view controller who the keyboard belongs to.
-//     */
-//    public init(withViewController viewController: UIViewController) {
-//        self.viewController = viewController
-//        inputViewList = []
-//        inputViewUnderlineList = []
-//        keyboardActionView = KeyboardActionView(frame: UIScreen.mainScreen().bounds)
-//        notificationCenter = NSNotificationCenter.defaultCenter()
-//        keyboardHeight = 0
-//        keyboardPushDuration = 0
-//        selectedInputViewUnderlineColor = UIColor.clearColor()
-//        unselectedInputViewUnderlineColor = UIColor.clearColor()
-//        super.init()
-//        keyboardActionView.keyboardActionViewDelegate = self
-//        let view = viewController.view
-//        view.addSubview(keyboardActionView)
-//    }
+//
 //    
 //    /**
 //     * Start observing the keyboard.
@@ -237,16 +226,6 @@ import UIKit
 //    }
 //    
 //    /**
-//     * The content has been changed.
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     * - parameter textField: The text field that has been changed.
-//     */
-//    func textFieldDidChangeText(textField: UITextField) {
-//        keyboardHelperDelegate?.keyboardHelperDidChangeContent?(self, ofInputView: textField)
-//    }
-//    
-//    /**
 //     * Get the offset of the push animation.
 //     * - version: 0.0.3
 //     * - date: 16/10/2016
@@ -306,34 +285,6 @@ import UIKit
 //            // COMMENT: Make this specify to iOS 8 and below, since willShowKeyboard won't be called if the keyboard keeps the same in iOS 8 and below.
 //            performSelector(#selector(adjustOffset), withObject: nil, afterDelay: 0.1)
 //        }
-//    }
-//    
-//    /**
-//     * Find corresponding underline view for a specific input view.
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     * - parameter inputView: The input view whom the underline belongs to.
-//     * - returns: The found underline view. Nil if it is not found.
-//     */
-//    private func findUnderlineForInputView(inputView: UIView) -> UIView? {
-//        if inputViewList.count != inputViewUnderlineList.count {
-//            logError(KeyboardHelper.UnderlineAmountError)
-//            return nil
-//        }
-//        let inputViewIndex = inputViewList.indexOf(inputView)
-//        if inputViewIndex == nil {
-//            logError(KeyboardHelper.InputViewError)
-//            return nil
-//        }
-//        return inputViewUnderlineList[inputViewIndex!]
-//    }
-//    
-//    /**
-//     * - version: 0.0.3
-//     * - date: 16/10/2016
-//     */
-//    func keyboardActionViewDidInteract(keyboardActionView: KeyboardActionView) {
-//        hideKeyboard()
 //    }
 //    
 //}

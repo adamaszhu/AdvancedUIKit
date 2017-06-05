@@ -10,17 +10,17 @@ class ActionFilterView: UIView {
      * Error message.
      */
     private let initError = "Constructor init(coder) shouldn't be called."
-
+    
     /**
      * The delegate.
      */
     var actionFilterViewDelegate: ActionFilterViewDelegate?
-
+    
     /**
      * A list of input view which should drag holes on the touch mask view.
      */
     var inputViews: Array<UIView>
-
+    
     /**
      * UIView
      */
@@ -33,7 +33,7 @@ class ActionFilterView: UIView {
             }
         }
         actionFilterViewDelegate?.actionFilterViewDidInteract(self)
-        return false
+        return true
     }
     
     /**

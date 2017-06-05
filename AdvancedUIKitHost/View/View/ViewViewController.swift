@@ -7,24 +7,26 @@ class ViewViewController: UIViewController {
     
     private var animationButtonOriginalFrame: CGRect!
     
-    private var popupView: PopupView!
+    private var popupView: PopupView
+    
+    required init?(coder aDecoder: NSCoder) {
+        popupView = PopupView()
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        popupView = PopupView()
         popupView.frame = view.bounds
         popupView.backgroundColor = popupViewBackgroundColor
         let tapGesture = UITapGestureRecognizer(target: popupView, action: #selector(PopupView.hide))
         popupView.addGestureRecognizer(tapGesture)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         animationButtonOriginalFrame = animationButton.frame
     }
     
     @IBAction func popup(_ sender: Any) {
         popupView.show()
+        // TODO: Fix this bug
+        SystemMessageHelper.standard?.showInfo("Test")
     }
     
     @IBAction func animate(_ sender: Any) {

@@ -6,6 +6,12 @@
  */
 extension KeyboardHelper: UITextFieldDelegate {
     
+        /**
+         * UITextFieldDelegate
+         */
+        func textFieldDidChangeText(textField: UITextField) {
+            keyboardHelperDelegate?.keyboardHelper(self, didChangeContentOf: textField)
+        }
     
     //
     //    /**
@@ -24,40 +30,35 @@ extension KeyboardHelper: UITextFieldDelegate {
     //        return false
     //    }
     //
-    //    /**
-    //     * UITextFieldDelegate
-    //     */
-    //    public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-    //        if (keyboardHelperDelegate != nil) && keyboardHelperDelegate!.respondsToSelector(#selector(keyboardHelperDelegate!.keyboardHelperShouldChangeContent(_:ofInputView:toContent:))) {
-    //            let newContent = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
-    //            return keyboardHelperDelegate!.keyboardHelperShouldChangeContent!(self, ofInputView: textField, toContent: newContent)
-    //        }
-    //        return true
-    //    }
-    //
-    //    /**
-    //     * UITextFieldDelegate
-    //     */
-    //    public func textFieldDidBeginEditing(textField: UITextField) {
-    //        // COMMENT: Change the color of the underline.
-    //        let underline = findUnderlineForInputView(textField)
-    //        if underline != nil {
-    //            underline!.backgroundColor = selectedInputViewUnderlineColor
-    //        }
-    //        keyboardHelperDelegate?.keyboardHelperWillEdit?(self, onInputView: textField)
-    //    }
-    //
-    //    /**
-    //     * UITextFieldDelegate
-    //     */
-    //    public func textFieldDidEndEditing(textField: UITextField) {
-    //        // COMMENT: Change the color of the underline.
-    //        let underline = findUnderlineForInputView(textField)
-    //        if underline != nil {
-    //            underline!.backgroundColor = unselectedInputViewUnderlineColor
-    //        }
-    //        keyboardHelperDelegate?.keyboardHelperDidEdit?(self, onInputView: textField)
-    //    }
+        /**
+         * UITextFieldDelegate
+         */
+        public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            guard let keyboardHelperDelegate = keyboardHelperDelegate else {
+                return true
+            }
+            var newContent: String
+            if let originalText = textField.text as NSString? {
+                newContent = originalText.replacingCharacters(in: range, with: string)
+            } else {
+                newContent = string
+            }
+            return keyboardHelperDelegate.keyboardHelper(self, shouldChangeContentOf: textField, toContent: newContent)
+        }
+    
+        /**
+         * UITextFieldDelegate
+         */
+        public func textFieldDidBeginEditing(_ textField: UITextField) {
+            keyboardHelperDelegate?.keyboardHelper(self, willEditOn: textField)
+        }
+    
+        /**
+         * UITextFieldDelegate
+         */
+        public func textFieldDidEndEditing(_ textField: UITextField) {
+            keyboardHelperDelegate?.keyboardHelper(self, didEditOn: textField)
+        }
     
 }
 
