@@ -4,8 +4,12 @@
  * - version: 1.0.0
  * - date: 22/04/2017
  */
-
 extension String {
+    
+    /**
+     * System warning.
+     */
+    private static let viewWidthWarning = "The width of the view is 0."
     
     /**
      * Get the width of a string with a specific font.
@@ -56,6 +60,7 @@ extension String {
      */
     func measureLines(withFont font: UIFont, inView view: UIView) -> Array<String> {
         guard view.frame.width != 0 else {
+            Logger.standard.logWarning(String.viewWidthWarning)
             return []
         }
         var displayedLines = Array<String>()
