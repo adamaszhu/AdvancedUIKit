@@ -1,6 +1,6 @@
 /**
  * DeviceHelper is used to perform an user interaction. Such as sending an email or making a phone call.
- * - version: 0.2.0
+ * - version: 1.0.0
  * - date: 17/02/2017
  */
 public class DeviceHelper: NSObject {
@@ -13,22 +13,27 @@ public class DeviceHelper: NSObject {
     /**
      * User error.
      */
-    private let dialError = "DialError"
-    private let mapError = "MapError"
+    private static let dialError = "DialError"
+    private static let mapError = "MapError"
     
     /**
      * System error.
      */
-    private let phoneNumberError = "The phone number is invalid."
-    private let addressError = "The address is incorrect."
-    private let attachmentError = "The attachment is invalid."
-    private let windowError = "The window presented is invalid."
+    private static let phoneNumberError = "The phone number is invalid."
+    private static let addressError = "The address is incorrect."
+    private static let attachmentError = "The attachment is invalid."
+    private static let windowError = "The window presented is invalid."
+    
+    /**
+ * System warning.
+ */
+    private static let navigationWarning = "The view doesn't have a navigation controller."
     
     /**
      * Function url.
      */
-    private let dailPrefix = "telprompt://"
-    private let mapPrefix = "http://maps.apple.com/?q="
+    private static let dailPrefix = "telprompt://"
+    private static let mapPrefix = "http://maps.apple.com/?q="
     
     /**
      * The delegate of the DeviceHelper.
@@ -45,11 +50,11 @@ public class DeviceHelper: NSObject {
      * - parameter number: The phone number.
      */
     public func dial(withNumber number: String) {
-        guard let dialURL = URL(string: "\(dailPrefix)\(number)") else {
-            Logger.standard.logInfo(phoneNumberError, withDetail: number)
+        guard let dialURL = URL(string: "\(DeviceHelper.dailPrefix)\(number)") else {
+            Logger.standard.logInfo(DeviceHelper.phoneNumberError, withDetail: number)
             return
         }
-        open(dialURL, withError: dialError)
+        open(dialURL, withError: DeviceHelper.dialError)
     }
     
     /**
@@ -58,11 +63,11 @@ public class DeviceHelper: NSObject {
      */
     public func showMap(ofAddress address: String) {
         let formattedAddress = address.replacingOccurrences(of: " ", with: "+")
-        guard let mapURL = URL(string: "\(mapPrefix)\(formattedAddress)") else {
-            Logger.standard.logInfo(addressError, withDetail: address)
+        guard let mapURL = URL(string: "\(DeviceHelper.mapPrefix)\(formattedAddress)") else {
+            Logger.standard.logInfo(DeviceHelper.addressError, withDetail: address)
             return
         }
-        open(mapURL, withError: mapError)
+        open(mapURL, withError: DeviceHelper.mapError)
     }
     
     /**
@@ -80,18 +85,20 @@ public class DeviceHelper: NSObject {
         mailViewController.setSubject(subject)
         for (name, data) in attachments {
             guard let mimeType = FileInfoAccessor(path: name).mimeType else {
-                Logger.standard.logError(attachmentError, withDetail: name)
+                Logger.standard.logError(DeviceHelper.attachmentError, withDetail: name)
                 continue
             }
             mailViewController.addAttachmentData(data, mimeType: mimeType, fileName: name);
         }
         mailViewController.setMessageBody(content, isHTML: isHTML)
         guard var rootViewController = application.keyWindow?.rootViewController else {
-            Logger.standard.logError(windowError)
+            Logger.standard.logError(DeviceHelper.windowError)
             return
         }
         if let navigationController = rootViewController as? UINavigationController {
             rootViewController = navigationController.viewControllers.last ?? navigationController
+        } else {
+            Logger.standard.logWarning(DeviceHelper.navigationWarning)
         }
         rootViewController.present(mailViewController, animated: true, completion: nil)
     }
