@@ -93,9 +93,9 @@ extension String {
                 let line = words.joined(separator: " ")
                 lines.append(line)
                 // COMMENT: remainLine must have the line extracted.
-                remainLine = remainLine.removePrefix(line)!
+                remainLine.removePrefix(line)
                 // COMMENT: If the remainLine is not empty, remove the space between current line and the next line.
-                remainLine = remainLine.removePrefix(" ") ?? remainLine
+                remainLine.removePrefix(" ")
                 continue
             }
             // COMMENT: Extra a line from a extra long word from the beginning of the remainLine. Only one word is left.
@@ -106,7 +106,7 @@ extension String {
             }
             lines.append(word)
             // COMMENT: remainLine must have the line extracted.
-            remainLine = remainLine.removePrefix(word)!
+            remainLine.removePrefix(word)
         }
         return lines
     }

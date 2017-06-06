@@ -24,7 +24,12 @@ public class RingHelper {
     /**
      * System error.
      */
-    private let soundNameError = "The sound file doesn't exist."
+    private static let soundNameError = "The sound file doesn't exist."
+    
+    /**
+ * System warning.
+ */
+    private static let playStatusWarning = "A sound is currently being played."
     
     /**
      * The period between two rings or vibrates.
@@ -61,6 +66,7 @@ public class RingHelper {
      */
     public func ring(withSound soundFileName: String, forTimes times: Int = 1, withVibration shouldVibrate: Bool = true, withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
+            Logger.standard.logWarning(RingHelper.playStatusWarning)
             return false
         }
         remainerCounter = times
@@ -68,7 +74,7 @@ public class RingHelper {
         self.period = period
         let fileInfoAccessor = FileInfoAccessor(path: soundFileName)
         guard let path = bundle.path(forResource: fileInfoAccessor.filename, ofType: fileInfoAccessor.fileExtension) else {
-            Logger.standard.logError(soundNameError, withDetail: soundFileName)
+            Logger.standard.logError(RingHelper.soundNameError, withDetail: soundFileName)
             return false
         }
         let url = URL(fileURLWithPath: path)
@@ -76,7 +82,7 @@ public class RingHelper {
         var newSoundID = SystemSoundID(0)
         AudioServicesCreateSystemSoundID(url as CFURL, &newSoundID)
         guard newSoundID != 0 else {
-            Logger.standard.logError(soundNameError, withDetail: soundFileName)
+            Logger.standard.logError(RingHelper.soundNameError, withDetail: soundFileName)
             return false
         }
         soundID = newSoundID
