@@ -9,9 +9,7 @@ public extension UIView {
     /**
      * The default localization file.
      */
-    static var defaultLocalizationFile: String {
-        return "Localizable"
-    }
+    private static let defaultLocalizationFile = "Localizable"
     
     /**
      * Localize the view.
