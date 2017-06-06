@@ -17,12 +17,6 @@ public class PopupView: RootView {
     private static let initError = "Constructor init(coder) shouldn't be called."
     
     /**
-     * System warning.
-     */
-    private static let showWarning = "The view has already been shown."
-    private static let hideWarning = "The view has already been hidden."
-    
-    /**
      * The window of the app.
      */
     public let hostWindow: UIWindow
@@ -33,7 +27,7 @@ public class PopupView: RootView {
      */
     public override func show() {
         guard !isVisible else {
-            Logger.standard.logWarning(PopupView.showWarning)
+            Logger.standard.logWarning(RootView.showWarning)
             return
         }
         hostWindow.addSubview(self)
@@ -49,7 +43,7 @@ public class PopupView: RootView {
      */
     public override func hide() {
         guard isVisible else {
-            Logger.standard.logWarning(PopupView.hideWarning)
+            Logger.standard.logWarning(RootView.hideWarning)
             return
         }
         UIView.animate(withChange: {[unowned self] _ in

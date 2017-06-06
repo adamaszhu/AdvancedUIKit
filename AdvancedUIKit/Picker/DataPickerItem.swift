@@ -6,6 +6,9 @@
  */
 public struct DataPickerItem {
     
+    /**
+     * Attributes.
+     */
     let name: String
     let value: String
     

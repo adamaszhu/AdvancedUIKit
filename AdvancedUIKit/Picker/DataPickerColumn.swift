@@ -6,6 +6,9 @@
  */
 public struct DataPickerColumn {
     
+    /**
+     * Attributes.
+     */
     let title: String
     let items: Array<DataPickerItem>
     
