@@ -30,7 +30,7 @@ public class PopupView: RootView {
             return
         }
         hostWindow.addSubview(self)
-        UIView.animate(withChange: { [unowned self] _ in
+        animate(withChange: { [unowned self] _ in
             self.alpha = 1
         }) {
             super.show()
@@ -44,7 +44,7 @@ public class PopupView: RootView {
         guard isVisible else {
             return
         }
-        UIView.animate(withChange: {[unowned self] _ in
+        animate(withChange: {[unowned self] _ in
             self.alpha = 0
         }) {
             self.removeFromSuperview()

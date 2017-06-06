@@ -28,12 +28,12 @@ class ViewViewController: UIViewController {
     }
     
     @IBAction func animate(_ sender: Any) {
-        UIView.animate(withChange: { [unowned self] _ in
+        animationButton.animate(withChange: { [unowned self] _ in
             self.animationButton.frame.origin = CGPoint(x: self.animationButtonOriginalFrame.origin.x, y: self.animationButtonOriginalFrame.origin.y + self.animationOffset)
         }, withPreparation: { [unowned self] _ in
             self.animationButton.frame = self.animationButtonOriginalFrame
-        }) { 
-            UIView.animate(withChange: { [unowned self] _ in
+        }) { [unowned self] _ in
+            self.animationButton.animate(withChange: { [unowned self] _ in
                 self.animationButton.frame = self.animationButtonOriginalFrame
             })
         }
