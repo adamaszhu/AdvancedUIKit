@@ -7,21 +7,30 @@
 public extension UITextField {
     
     /**
+     * System warning.
+     */
+    private static let placeholderEmptyWarning = "The placeholder is nil."
+    private static let placeholderColorWarning = "The placeholder doesn't have a color."
+    
+    /**
      * Set the font color of the UITextField.
      */
     public var placeholderColor: UIColor {
         set {
             guard let placeholder = placeholder else {
+                Logger.standard.logWarning(UITextField.placeholderEmptyWarning)
                 return
             }
             attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSForegroundColorAttributeName: newValue])
         }
         get {
             guard let placeholder = attributedPlaceholder else {
+                Logger.standard.logWarning(UITextField.placeholderEmptyWarning)
                 return UIColor(red: 0.78, green: 0.78, blue: 0.80, alpha: 1.0)
             }
             var range = NSMakeRange(0, placeholder.length)
             guard let color = placeholder.attribute(NSForegroundColorAttributeName, at: 0, effectiveRange: &range) as? UIColor else {
+                Logger.standard.logWarning(UITextField.placeholderColorWarning)
                 return UIColor(red: 0.78, green: 0.78, blue: 0.80, alpha: 1.0)
             }
             return color
