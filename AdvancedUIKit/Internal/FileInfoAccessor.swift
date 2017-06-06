@@ -1,7 +1,7 @@
 /**
  * FileInfoAccessor gets information related to a file.
  * - author: Adamas
- * - version: 1.0.0
+ * - version: 1.0.1
  * - date: 16/04/2017
  */
 class FileInfoAccessor {
@@ -9,7 +9,7 @@ class FileInfoAccessor {
     /**
      * System error.
      */
-    private let mimeTypeError = "The filename extension is not recognized."
+    private static let mimeTypeError = "The filename extension is not recognized."
     
     /**
      * The default MIME type.
@@ -25,7 +25,7 @@ class FileInfoAccessor {
         }
         // COMMENT: Decode the name of the MIME type.
         guard let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExtension as CFString, nil) else {
-            Logger.standard.logError(mimeTypeError, withDetail: url)
+            Logger.standard.logError(FileInfoAccessor.mimeTypeError, withDetail: url)
             return nil
         }
         guard let tag = UTTypeCopyPreferredTagWithClass(uti.takeRetainedValue(), kUTTagClassMIMEType) else {
