@@ -14,6 +14,6 @@ public extension NotificationHelperDelegate {
     /**
      * NotificationHelperDelegate
      */
-    func notificationHelper(_ notificationHelper: NotificationHelper, didAuthorizeLocalNotification result: Bool) {}
+    func notificationHelper(_ notificationHelper: NotificationHelper, didAuthorizeLocalNotification result: Bool) { }
     
 }

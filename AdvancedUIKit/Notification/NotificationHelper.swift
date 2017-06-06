@@ -9,12 +9,12 @@ public class NotificationHelper {
     /**
      * All messages.
      */
-    private let authorizationError = "AuthorizationError"
+    private static let authorizationError = "AuthorizationError"
     
     /**
      * The system error.
      */
-    private let notificationSettingError = "The notification setting cannot be retrieved."
+    private static let notificationSettingError = "The notification setting cannot be retrieved."
     
     /**
      * The singleton helper.
@@ -28,7 +28,7 @@ public class NotificationHelper {
     public var isLocalNotificationAuthorized: Bool {
         // TODO: Implement this using the NSNotification framework.
         guard let setting = application.currentUserNotificationSettings else {
-            Logger.standard.logError(notificationSettingError)
+            Logger.standard.logError(NotificationHelper.notificationSettingError)
             return false
         }
         return setting.types.contains(.alert)
@@ -61,7 +61,7 @@ public class NotificationHelper {
     public func createLocalNotification(withTitle title: String, withContent content: String, withSoundName soundName: String = UILocalNotificationDefaultSoundName) {
         // TODO: Implement this using the NSNotification framework.
         if !isLocalNotificationAuthorized {
-            notificationHelperDelegate?.notificationHelper(self, didCatchError: authorizationError.localizeWithinFramework(forType: NotificationHelper.self))
+            notificationHelperDelegate?.notificationHelper(self, didCatchError: NotificationHelper.authorizationError.localizeWithinFramework(forType: NotificationHelper.self))
             return
         }
         let notification = UILocalNotification()
