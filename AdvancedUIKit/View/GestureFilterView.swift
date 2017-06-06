@@ -10,7 +10,7 @@ class GestureFilterView: UIView {
     /**
      * System error.
      */
-    private let gestureRecognizersEmptyError = "Gesture recognizers have not been added to the view yet."
+    private static let gestureRecognizersEmptyError = "Gesture recognizers have not been added to the view yet."
     
     /**
      * Change the enable status of a specific gesture type.
@@ -19,7 +19,7 @@ class GestureFilterView: UIView {
      */
     func changeGestureRecognizerUsibility(ofType type: AnyClass, toUsibility shouldEnable: Bool) {
         guard let gestureRecognizers = gestureRecognizers else {
-            Logger.standard.logError(gestureRecognizersEmptyError)
+            Logger.standard.logError(GestureFilterView.gestureRecognizersEmptyError)
             return
         }
         for gestureRecognizer in gestureRecognizers {

@@ -9,12 +9,18 @@ public class PopupView: RootView {
     /**
      * The default background color of the popup view.
      */
-    private let defaultBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+    private static let defaultBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
     
     /**
      * System error.
      */
-    private let initError = "Constructor init(coder) shouldn't be called."
+    private static let initError = "Constructor init(coder) shouldn't be called."
+    
+    /**
+     * System warning.
+     */
+    private static let showWarning = "The view has already been shown."
+    private static let hideWarning = "The view has already been hidden."
     
     /**
      * The window of the app.
@@ -27,6 +33,7 @@ public class PopupView: RootView {
      */
     public override func show() {
         guard !isVisible else {
+            Logger.standard.logWarning(PopupView.showWarning)
             return
         }
         hostWindow.addSubview(self)
@@ -42,6 +49,7 @@ public class PopupView: RootView {
      */
     public override func hide() {
         guard isVisible else {
+            Logger.standard.logWarning(PopupView.hideWarning)
             return
         }
         UIView.animate(withChange: {[unowned self] _ in
@@ -60,7 +68,7 @@ public class PopupView: RootView {
         hostWindow = application.windows[0]
         super.init(frame: hostWindow.frame)
         alpha = 0
-        self.backgroundColor = defaultBackgroundColor
+        self.backgroundColor = PopupView.defaultBackgroundColor
         super.hide()
     }
     
@@ -68,7 +76,7 @@ public class PopupView: RootView {
      * UIView
      */
     public required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(initError)
+        Logger.standard.logError(PopupView.initError)
         return nil
     }
     
