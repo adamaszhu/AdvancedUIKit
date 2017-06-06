@@ -25,8 +25,8 @@ public class DeviceHelper: NSObject {
     private static let windowError = "The window presented is invalid."
     
     /**
- * System warning.
- */
+     * System warning.
+     */
     private static let navigationWarning = "The view doesn't have a navigation controller."
     
     /**

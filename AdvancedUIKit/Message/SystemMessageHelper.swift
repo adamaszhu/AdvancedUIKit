@@ -18,6 +18,11 @@ public class SystemMessageHelper {
     private static let typeError = "The message type is unknown."
     
     /**
+     * System warning.
+     */
+    private static let navigationWarning = "The view doesn't have a navigation controller."
+    
+    /**
      * The type of current message.
      */
     var messageType: MessageType
@@ -108,6 +113,7 @@ public class SystemMessageHelper {
         if let navigationController = rootViewController as? UINavigationController {
             currentController = navigationController.viewControllers.last ?? navigationController
         } else {
+            Logger.standard.logWarning(SystemMessageHelper.navigationWarning)
             currentController = rootViewController
         }
         currentController.present(alertController, animated: true, completion: nil)

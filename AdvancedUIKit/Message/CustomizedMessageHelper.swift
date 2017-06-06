@@ -14,53 +14,53 @@ public class CustomizedMessageHelper: PopupView {
     /**
      * Error message.
      */
-    private let typeError = "The message type is unknown."
-    private let initError = "Constructor init(coder) shouldn't be called."
+    private static let typeError = "The message type is unknown."
+    private static let initError = "Constructor init(coder) shouldn't be called."
     
     /**
      * The margin of the customized message content.
      */
-    private let padding = CGFloat(10)
+    private static let padding = CGFloat(10)
     
     /**
      * The default background color of the message view.
      */
-    private let defaultBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+    private static let defaultBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
     
     /**
      * The default background color of the mask view.
      */
-    private let defaultMaskBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+    private static let defaultMaskBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
     
     /**
      * The default background color of the input view.
      */
-    private let defaultInputPlaceHolderColor = UIColor(white: 1, alpha: 0.2)
+    private static let defaultInputPlaceHolderColor = UIColor(white: 1, alpha: 0.2)
     
     /**
      * The default separator color of the message view.
      */
-    private let defaultSeperatorColor = UIColor.white
+    private static let defaultSeperatorColor = UIColor.white
     
     /**
      * The default text color.
      */
-    private let defaultTextColor = UIColor.white
+    private static let defaultTextColor = UIColor.white
     
     /**
      * The radius of the message box.
      */
-    private let radius = CGFloat(5)
+    private static let radius = CGFloat(5)
     
     /**
      * The width weight of a customized message compared to the window width.
      */
-    private let widthWeight = CGFloat(0.7)
+    private static let widthWeight = CGFloat(0.7)
     
     /**
      * The maximal height weight of a customized message  compared to the height of the window.
      */
-    private let maxHeightWeight = CGFloat(0.6)
+    private static let maxHeightWeight = CGFloat(0.6)
     
     /**
      * The type of current message.
@@ -90,7 +90,7 @@ public class CustomizedMessageHelper: PopupView {
             let title = newValue?.isEmpty == true ? nil : newValue
             titleLabel.text = title
             titleLabel.frame.size = CGSize(width: titleLabel.frame.width, height: titleLabel.actualHeight)
-            let titleViewY = title == nil ? padding : padding * 2
+            let titleViewY = title == nil ? CustomizedMessageHelper.padding : CustomizedMessageHelper.padding * 2
             titleView.frame = CGRect(x: titleView.frame.origin.x, y: titleViewY, width: titleView.frame.width, height: titleLabel.frame.height)
         }
         get {
@@ -103,15 +103,15 @@ public class CustomizedMessageHelper: PopupView {
      */
     private var contentHeight: CGFloat {
         set {
-            let contentViewY = titleView.frame.height + titleView.frame.origin.y + padding
+            let contentViewY = titleView.frame.height + titleView.frame.origin.y + CustomizedMessageHelper.padding
             contentView.frame = CGRect(x: contentView.frame.origin.x ,y: contentViewY, width: contentView.frame.width, height: newValue)
-            let buttonViewY = contentViewY + contentView.frame.height + padding * 1.5
+            let buttonViewY = contentViewY + contentView.frame.height + CustomizedMessageHelper.padding * 1.5
             buttonView.frame.origin = CGPoint(x: buttonView.frame.origin.x, y: buttonViewY)
             let frameHeight = buttonViewY + buttonView.frame.height
             frameView.frame = CGRect(x: frameView.frame.origin.x, y: (frame.height - frameHeight) / 2, width: frameView.frame.width, height: frameHeight)
         }
         get {
-            return contentView.frame.height - padding * 2
+            return contentView.frame.height - CustomizedMessageHelper.padding * 2
         }
     }
     
@@ -149,12 +149,12 @@ public class CustomizedMessageHelper: PopupView {
         messageLabel.isHidden = isInput
         inputText.isHidden = !isInput
         if isInput {
-            inputText.placeholder = MessageHelper.inputHint + title.lowercased()
-            inputText.placeholderColor = defaultInputPlaceHolderColor
+            inputText.placeholder = CustomizedMessageHelper.inputHint + title.lowercased()
+            inputText.placeholderColor = CustomizedMessageHelper.defaultInputPlaceHolderColor
             contentHeight = inputText.frame.height
         } else {
             messageLabel.text = content
-            let messageHeight = messageLabel.actualHeight > frame.height * maxHeightWeight ? frame.height * maxHeightWeight : messageLabel.actualHeight
+            let messageHeight = messageLabel.actualHeight > frame.height * CustomizedMessageHelper.maxHeightWeight ? frame.height * CustomizedMessageHelper.maxHeightWeight : messageLabel.actualHeight
             // TODO: For a very long message, dynamically change the number of line.
             messageLabel.frame.size = CGSize(width: messageLabel.frame.width, height: messageHeight)
             contentHeight = messageLabel.frame.height
@@ -184,47 +184,47 @@ public class CustomizedMessageHelper: PopupView {
         buttonSeperatorView = UIView()
         messageType = .unknown
         super.init()
-        backgroundColor = defaultMaskBackgroundColor
-        let contentWidth = frame.width * widthWeight - padding * 2
+        backgroundColor = CustomizedMessageHelper.defaultMaskBackgroundColor
+        let contentWidth = frame.width * CustomizedMessageHelper.widthWeight - CustomizedMessageHelper.padding * 2
         // COMMENT: The height of messageLabel, contentView
         // COMMENT: The y location of messageView and buttonView will be settled dynamically later.
         // COMMENT: Frame view. The height and Y will be changed later.
-        frameView.frame = CGRect(x: frame.width * (1 - widthWeight) / 2, y: 0, width: frame.width * widthWeight, height: 0)
-        frameView.backgroundColor = defaultBackgroundColor
-        frameView.layer.cornerRadius = radius
+        frameView.frame = CGRect(x: frame.width * (1 - CustomizedMessageHelper.widthWeight) / 2, y: 0, width: frame.width * CustomizedMessageHelper.widthWeight, height: 0)
+        frameView.backgroundColor = CustomizedMessageHelper.defaultBackgroundColor
+        frameView.layer.cornerRadius = CustomizedMessageHelper.radius
         addSubview(frameView)
         // COMMENT: Title label. The height will be changed later.
         titleLabel.frame = CGRect(x: 0, y: 0, width: contentWidth, height: 0)
-        titleLabel.textColor = defaultTextColor
+        titleLabel.textColor = CustomizedMessageHelper.defaultTextColor
         titleLabel.font = UIFont.boldSystemFont(ofSize: titleLabel.font.pointSize)
         titleLabel.textAlignment = .center
         titleView.addSubview(titleLabel)
         // COMMENT: Title view. The height and Y will be changed later.
-        titleView.frame = CGRect(x: padding, y: 0, width: contentWidth, height: 0)
+        titleView.frame = CGRect(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 0)
         frameView.addSubview(titleView)
         // COMMENT: Message label. The height will be changed later.
         messageLabel.frame = CGRect(x: 0, y: 0, width: contentWidth, height: 0)
-        messageLabel.textColor = defaultTextColor
+        messageLabel.textColor = CustomizedMessageHelper.defaultTextColor
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
         contentView.addSubview(messageLabel)
         // COMMENT: Input text.
         inputText.frame = CGRect(x: 0, y: 0, width: contentWidth, height: inputText.lineHeight)
-        inputText.textColor = defaultTextColor
-        inputText.tintColor = defaultTextColor
+        inputText.textColor = CustomizedMessageHelper.defaultTextColor
+        inputText.tintColor = CustomizedMessageHelper.defaultTextColor
         inputText.textAlignment = .center
         contentView.addSubview(inputText)
         // COMMENT: Content view. The height and Y will be changed later.
-        contentView.frame = CGRect(x: padding, y: 0, width: contentWidth, height: 0)
+        contentView.frame = CGRect(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 0)
         frameView.addSubview(contentView)
         // COMMENT: Line view.
         let lineView = UIView()
-        lineView.backgroundColor = defaultSeperatorColor
-        lineView.frame = CGRect(x: padding, y: 0, width: contentWidth, height: 1)
+        lineView.backgroundColor = CustomizedMessageHelper.defaultSeperatorColor
+        lineView.frame = CGRect(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 1)
         buttonView.addSubview(lineView)
         // COMMENT: First button and second button.
         cancelButton.title = ""
-        cancelButton.frame = CGRect(x: 0, y: lineView.frame.size.height, width: frameView.frame.width / 2, height: cancelButton.lineHeight + padding * 2)
+        cancelButton.frame = CGRect(x: 0, y: lineView.frame.size.height, width: frameView.frame.width / 2, height: cancelButton.lineHeight + CustomizedMessageHelper.padding * 2)
         cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         buttonView.addSubview(cancelButton)
         confirmButton.title = ""
@@ -232,8 +232,8 @@ public class CustomizedMessageHelper: PopupView {
         confirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
         buttonView.addSubview(confirmButton)
         // COMMENT: Button seperate view.
-        buttonSeperatorView.frame = CGRect(x: confirmButton.frame.origin.x, y: lineView.frame.size.height + padding / 2, width: 1, height: confirmButton.frame.height - padding)
-        buttonSeperatorView.backgroundColor = defaultSeperatorColor
+        buttonSeperatorView.frame = CGRect(x: confirmButton.frame.origin.x, y: lineView.frame.size.height + CustomizedMessageHelper.padding / 2, width: 1, height: confirmButton.frame.height - CustomizedMessageHelper.padding)
+        buttonSeperatorView.backgroundColor = CustomizedMessageHelper.defaultSeperatorColor
         buttonView.addSubview(buttonSeperatorView)
         // COMMENT: Button view. The Y will be changed later.
         buttonView.frame = CGRect(x: 0, y: 0, width: frameView.frame.width, height: lineView.frame.size.height + confirmButton.frame.size.height)
@@ -258,7 +258,7 @@ public class CustomizedMessageHelper: PopupView {
             inputText.text = ""
             break
         case .unknown:
-            Logger.standard.logError(typeError)
+            Logger.standard.logError(CustomizedMessageHelper.typeError)
             break
         }
         hide()
@@ -281,7 +281,7 @@ public class CustomizedMessageHelper: PopupView {
             inputText.text = ""
             break
         case .unknown:
-            Logger.standard.logError(typeError)
+            Logger.standard.logError(CustomizedMessageHelper.typeError)
             break
         }
         hide()
@@ -292,6 +292,7 @@ public class CustomizedMessageHelper: PopupView {
      */
     func hidePreviousMessage() {
         guard messageType != .unknown else {
+            Logger.standard.logError(CustomizedMessageHelper.typeError)
             return
         }
         messageType = .unknown
@@ -302,7 +303,7 @@ public class CustomizedMessageHelper: PopupView {
      * UIView
      */
     public required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(initError)
+        Logger.standard.logError(CustomizedMessageHelper.initError)
         return nil
     }
     
