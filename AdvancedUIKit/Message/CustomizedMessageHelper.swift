@@ -149,7 +149,7 @@ public class CustomizedMessageHelper: PopupView {
         messageLabel.isHidden = isInput
         inputText.isHidden = !isInput
         if isInput {
-            inputText.placeholder = inputHint + title.lowercased()
+            inputText.placeholder = MessageHelper.inputHint + title.lowercased()
             inputText.placeholderColor = defaultInputPlaceHolderColor
             contentHeight = inputText.frame.height
         } else {

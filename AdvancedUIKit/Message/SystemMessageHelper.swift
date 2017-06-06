@@ -14,8 +14,8 @@ public class SystemMessageHelper {
     /**
      * Error message.
      */
-    private let windowError = "The window presented is invalid."
-    private let typeError = "The message type is unknown."
+    private static let windowError = "The window presented is invalid."
+    private static let typeError = "The message type is unknown."
     
     /**
      * The type of current message.
@@ -43,7 +43,7 @@ public class SystemMessageHelper {
      */
     public init?(application: UIApplication = UIApplication.shared) {
         guard let rootViewController = application.keyWindow?.rootViewController else {
-            Logger.standard.logError(windowError)
+            Logger.standard.logError(SystemMessageHelper.windowError)
             return nil
         }
         let navigationController = rootViewController as? UINavigationController
@@ -61,7 +61,7 @@ public class SystemMessageHelper {
     func createMessage(withTitle title: String, withContent content: String?, withConfirmButtonName confirmButtonName: String, withCancelButtonName cancelButtonName: String? = nil) {
         alertController = UIAlertController(title: title, message: content, preferredStyle: .alert)
         if let cancelButtonName = cancelButtonName {
-            let cancelAction = UIAlertAction(title: cancelButtonName, style: .default) { [unowned self] (action: UIAlertAction) -> Void in
+            let cancelAction = UIAlertAction(title: cancelButtonName, style: .default) { [unowned self] (action) -> Void in
                 switch self.messageType {
                 case .info:
                     break
@@ -74,7 +74,7 @@ public class SystemMessageHelper {
                     self.messageHelperDelegate?.messageHelperDidCancelInput(self)
                     break
                 case .unknown:
-                    Logger.standard.logError(self.typeError)
+                    Logger.standard.logError(SystemMessageHelper.typeError)
                     break
                 }
             }
@@ -93,7 +93,7 @@ public class SystemMessageHelper {
             case .input:
                 self.messageHelperDelegate?.messageHelper(self, didConfirmInput: self.alertController.textFields?[0].text ?? "")
             case .unknown:
-                Logger.standard.logError(self.typeError)
+                Logger.standard.logError(SystemMessageHelper.typeError)
                 break
             }
         }
