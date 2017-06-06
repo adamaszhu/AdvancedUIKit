@@ -7,6 +7,11 @@
 public extension UILabel {
     
     /**
+     * System warning.
+     */
+    private static let textWarning = "The text is nil."
+    
+    /**
      * Get the position of the last character.
      */
     public var endPosition: CGPoint {
@@ -33,6 +38,7 @@ public extension UILabel {
      */
     public var lineAmount: Int {
         guard let text = text else {
+            Logger.standard.logWarning(UILabel.textWarning)
             return 0
         }
         return text.measureLineAmount(withFont: font, inView: self)
@@ -43,6 +49,7 @@ public extension UILabel {
      */
     public var actualHeight: CGFloat {
         guard let text = text else {
+            Logger.standard.logWarning(UILabel.textWarning)
             return 0
         }
         return text.measureHeight(withFont: font, inView: self)
