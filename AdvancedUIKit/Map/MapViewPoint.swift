@@ -6,8 +6,8 @@
 // * - version: 0.0.4
 // * - date: 28/10/2016
 // */
-//public class MapViewPoint: AnyObject {
-//    
+public class MapViewPoint: AnyObject {
+//
 //    /**
 //     * The size of the detail button.
 //     */
@@ -114,4 +114,4 @@
 //        view.canShowCallout = true
 //    }
 //    
-//}
+}

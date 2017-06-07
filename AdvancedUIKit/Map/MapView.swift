@@ -6,8 +6,8 @@
 // * - version: 0.0.4
 // * - date: 28/10/2016
 // */
-//public class MapView: MKMapView, MKMapViewDelegate {
-//    
+public class MapView {//: MKMapView, MKMapViewDelegate {
+//
 //    /**
 //     * The size of a pin icon.
 //     */
@@ -360,4 +360,4 @@
 //        }
 //        return mapViewLine!.renderer
 //    }
-//}
+}
