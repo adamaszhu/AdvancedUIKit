@@ -116,6 +116,7 @@ public class SystemMessageHelper {
             Logger.standard.logWarning(SystemMessageHelper.navigationWarning)
             currentController = rootViewController
         }
+        // TODO: Fix the conflict between this and a PopupView
         currentController.present(alertController, animated: true, completion: nil)
     }
     

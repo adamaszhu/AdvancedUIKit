@@ -153,9 +153,9 @@ public class DataPicker: RootView {
             Logger.standard.logWarning(DataPicker.hideWarning)
             return
         }
-        UIView.animate(withChange: {
+        animate(withChange: { [unowned self] _ in
             self.frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
-        }, withPreparation: {
+        }, withPreparation: { [unowned self] _ in
             self.frame = self.originalFrame
         }) {
             super.hide()
@@ -170,9 +170,9 @@ public class DataPicker: RootView {
             Logger.standard.logWarning(DataPicker.showWarning)
             return
         }
-        UIView.animate(withChange: {
+        animate(withChange: { [unowned self] _ in
             self.frame = self.originalFrame
-        }, withPreparation: {
+        }, withPreparation: { [unowned self] _ in
             self.frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
         }) {
             super.show()

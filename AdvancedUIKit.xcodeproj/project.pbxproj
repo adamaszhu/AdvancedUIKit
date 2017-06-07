@@ -27,9 +27,14 @@
 		284E5C5B1EDD337500C3CC86 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5A1EDD337500C3CC86 /* MessageViewController.swift */; };
 		284E5C5D1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */; };
 		284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5E1EDD426400C3CC86 /* PopupView.swift */; };
+		2862143E1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */; };
 		289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FEA1EDF92DB00203DE2 /* TextField+Attribute.swift */; };
 		289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FEB1EDF92DB00203DE2 /* TextField+Dynamic.swift */; };
 		289D5FF11EDF9A9F00203DE2 /* Button+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */; };
+		28B1D8081EE50E8A00A5B2C4 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */; };
+		28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */; };
+		28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */; };
+		28B1D8101EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
 		28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		28D1BFF81EDCEC7300290999 /* AdvancedUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -42,6 +47,13 @@
 		28D1C00A1EDCF62900290999 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0091EDCF62900290999 /* Feature.swift */; };
 		28E66FE91EE4CF0F00073DF1 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FE81EE4CF0F00073DF1 /* TextFieldViewController.swift */; };
 		28E66FEB1EE4D06600073DF1 /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FEA1EE4D06600073DF1 /* ViewViewController.swift */; };
+		28E66FF11EE4E4C100073DF1 /* ActionFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FED1EE4E4C100073DF1 /* ActionFilterView.swift */; };
+		28E66FF21EE4E4C100073DF1 /* ActionFilterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FEE1EE4E4C100073DF1 /* ActionFilterViewDelegate.swift */; };
+		28E66FF31EE4E4C100073DF1 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FEF1EE4E4C100073DF1 /* KeyboardHelper.swift */; };
+		28E66FF41EE4E4C100073DF1 /* KeyboardHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF01EE4E4C100073DF1 /* KeyboardHelperDelegate.swift */; };
+		28E66FF61EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF51EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift */; };
+		28E66FF81EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF71EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift */; };
+		28E66FFA1EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF91EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift */; };
 		28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */; };
 		28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F21EDBF49D006646A3 /* DeviceType.swift */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
@@ -51,6 +63,7 @@
 		425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD131EB3689000A0ED26 /* View+Gesture.swift */; };
 		425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD151EB36EA100A0ED26 /* String+Localizer.swift */; };
 		425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD4C1EAC6EDB001F1F81 /* RootView.swift */; };
+		4266037C1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4266037B1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift */; };
 		426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939751EAB01CD00761FDE /* Label+Dynamic.swift */; };
 		426939791EAB151400761FDE /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939781EAB151400761FDE /* LabelViewController.swift */; };
 		4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269397B1EAB253700761FDE /* String+Measurer.swift */; };
@@ -144,9 +157,14 @@
 		284E5C5A1EDD337500C3CC86 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageViewController+MessageHelperDelegate.swift"; sourceTree = "<group>"; };
 		284E5C5E1EDD426400C3CC86 /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Pusher.swift"; sourceTree = "<group>"; };
 		289D5FEA1EDF92DB00203DE2 /* TextField+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Attribute.swift"; sourceTree = "<group>"; };
 		289D5FEB1EDF92DB00203DE2 /* TextField+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Dynamic.swift"; sourceTree = "<group>"; };
 		289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Attribute.swift"; sourceTree = "<group>"; };
+		28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+Underline.swift"; path = "AdvancedUIKit/Textfield/TextField+Underline.swift"; sourceTree = SOURCE_ROOT; };
+		28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnderlineView.swift; path = AdvancedUIKit/Textfield/UnderlineView.swift; sourceTree = SOURCE_ROOT; };
+		28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+ActionFilterViewDelegate.swift"; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		28D1BFFC1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceViewController+DeviceHelperDelegate.swift"; sourceTree = "<group>"; };
 		28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PickerViewController+DataPickerDelegate.swift"; sourceTree = "<group>"; };
@@ -157,6 +175,13 @@
 		28D1C0091EDCF62900290999 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		28E66FE81EE4CF0F00073DF1 /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		28E66FEA1EE4D06600073DF1 /* ViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
+		28E66FED1EE4E4C100073DF1 /* ActionFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionFilterView.swift; sourceTree = "<group>"; };
+		28E66FEE1EE4E4C100073DF1 /* ActionFilterViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionFilterViewDelegate.swift; sourceTree = "<group>"; };
+		28E66FEF1EE4E4C100073DF1 /* KeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
+		28E66FF01EE4E4C100073DF1 /* KeyboardHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHelperDelegate.swift; sourceTree = "<group>"; };
+		28E66FF51EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
+		28E66FF71EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		28E66FF91EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoAccessor.swift; sourceTree = "<group>"; };
 		28F550F21EDBF49D006646A3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdvancedUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +196,7 @@
 		425DCD131EB3689000A0ED26 /* View+Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Gesture.swift"; sourceTree = "<group>"; };
 		425DCD151EB36EA100A0ED26 /* String+Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localizer.swift"; sourceTree = "<group>"; };
 		425EAD4C1EAC6EDB001F1F81 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		4266037B1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+KeyboardHelperDelegate.swift"; sourceTree = "<group>"; };
 		426939751EAB01CD00761FDE /* Label+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Dynamic.swift"; sourceTree = "<group>"; };
 		426939781EAB151400761FDE /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		4269397B1EAB253700761FDE /* String+Measurer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Measurer.swift"; sourceTree = "<group>"; };
@@ -312,8 +338,19 @@
 			children = (
 				289D5FEA1EDF92DB00203DE2 /* TextField+Attribute.swift */,
 				289D5FEB1EDF92DB00203DE2 /* TextField+Dynamic.swift */,
+				28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */,
+				28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		28B1D8061EE50E7B00A5B2C4 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */,
+				4266037B1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift */,
+			);
+			path = Keyboard;
 			sourceTree = "<group>";
 		};
 		28D1BFEF1EDCE0E100290999 /* Device */ = {
@@ -335,6 +372,22 @@
 				28D1C0051EDCF43700290999 /* MainViewController+TableViewDelegate.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		28E66FEC1EE4E4C100073DF1 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				28E66FED1EE4E4C100073DF1 /* ActionFilterView.swift */,
+				28E66FEE1EE4E4C100073DF1 /* ActionFilterViewDelegate.swift */,
+				28E66FEF1EE4E4C100073DF1 /* KeyboardHelper.swift */,
+				2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */,
+				28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */,
+				28E66FF91EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift */,
+				28E66FF71EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift */,
+				28E66FF01EE4E4C100073DF1 /* KeyboardHelperDelegate.swift */,
+				28E66FF51EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift */,
+			);
+			path = Keyboard;
 			sourceTree = "<group>";
 		};
 		28F550F01EDBF490006646A3 /* Device */ = {
@@ -381,6 +434,7 @@
 				28F550F01EDBF490006646A3 /* Device */,
 				422DB3C81EAA30B300377AB5 /* Info.plist */,
 				4269397D1EAB439700761FDE /* Internal */,
+				28E66FEC1EE4E4C100073DF1 /* Keyboard */,
 				426939741EAB01CD00761FDE /* Label */,
 				42CA09E51EE198C4009AF1BE /* Localization */,
 				284E5C421EDD0FE500C3CC86 /* Message */,
@@ -553,6 +607,7 @@
 				2838C2CE1EE0DD79004D5BCB /* Audio */,
 				42CA0A051EE4333B009AF1BE /* Button */,
 				28D1BFEF1EDCE0E100290999 /* Device */,
+				28B1D8061EE50E7B00A5B2C4 /* Keyboard */,
 				426939771EAB150700761FDE /* Label */,
 				42CA09F21EE1A454009AF1BE /* Localization */,
 				28D1C0001EDCF3DA00290999 /* Main */,
@@ -830,6 +885,8 @@
 				42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */,
 				42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
+				28E66FF81EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift in Sources */,
+				28E66FF61EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift in Sources */,
 				42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */,
 				284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */,
 				284E5C581EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift in Sources */,
@@ -846,20 +903,28 @@
 				4269399D1EAC478600761FDE /* Logger.swift in Sources */,
 				2822A3391EE0EE2600FAA8E3 /* NavigationBar.swift in Sources */,
 				425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */,
+				28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */,
 				427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */,
 				42CA09E91EE19998009AF1BE /* Label+Localizer.swift in Sources */,
 				42EA08B91EDD8E0400B079C0 /* MessageHelper+Constant.swift in Sources */,
+				28E66FF31EE4E4C100073DF1 /* KeyboardHelper.swift in Sources */,
 				428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */,
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
 				28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */,
 				42CA09ED1EE19E36009AF1BE /* Button+Localizer.swift in Sources */,
+				28B1D8101EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift in Sources */,
 				42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */,
+				28E66FF11EE4E4C100073DF1 /* ActionFilterView.swift in Sources */,
+				28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */,
 				428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */,
 				426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */,
+				28E66FF41EE4E4C100073DF1 /* KeyboardHelperDelegate.swift in Sources */,
 				2822A3411EE127EA00FAA8E3 /* NotificationHelperDelegate.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */,
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
 				2822A3491EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift in Sources */,
+				2862143E1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift in Sources */,
+				28E66FF21EE4E4C100073DF1 /* ActionFilterViewDelegate.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
 				284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */,
 				2822A3361EE0EC8200FAA8E3 /* ViewController+Navigation.swift in Sources */,
@@ -870,6 +935,7 @@
 				284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */,
 				42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */,
 				428EAB5E1EDC4BD3006ED22B /* DeviceHelper.swift in Sources */,
+				28E66FFA1EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift in Sources */,
 				2822A33F1EE127EA00FAA8E3 /* NotificationHelper.swift in Sources */,
 				28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */,
 			);
@@ -891,7 +957,9 @@
 				42CA0A0A1EE43752009AF1BE /* NavigationViewController.swift in Sources */,
 				28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */,
 				42CA09E41EE19673009AF1BE /* NotificationViewController+NotificationHelperDelegate.swift in Sources */,
+				4266037C1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift in Sources */,
 				42CA0A081EE4338A009AF1BE /* ButtonViewController.swift in Sources */,
+				28B1D8081EE50E8A00A5B2C4 /* KeyboardViewController.swift in Sources */,
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
 				42CA09F41EE1A50E009AF1BE /* LocalizationViewController.swift in Sources */,
 				426939791EAB151400761FDE /* LabelViewController.swift in Sources */,

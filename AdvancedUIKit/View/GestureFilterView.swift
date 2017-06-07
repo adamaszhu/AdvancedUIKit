@@ -11,6 +11,7 @@ class GestureFilterView: UIView {
      * System error.
      */
     private static let gestureRecognizersEmptyError = "Gesture recognizers have not been added to the view yet."
+    private static let initError = "Constructor init(coder) shouldn't be called."
     
     /**
      * Change the enable status of a specific gesture type.
@@ -55,7 +56,8 @@ class GestureFilterView: UIView {
      * UIView
      */
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        Logger.standard.logError(GestureFilterView.initError)
+        return nil
     }
     
 }

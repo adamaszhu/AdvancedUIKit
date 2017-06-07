@@ -7,19 +7,19 @@ class ViewViewController: UIViewController {
     
     private var animationButtonOriginalFrame: CGRect!
     
-    private var popupView: PopupView!
+    private var popupView: PopupView
+    
+    required init?(coder aDecoder: NSCoder) {
+        popupView = PopupView()
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        popupView = PopupView()
         popupView.frame = view.bounds
         popupView.backgroundColor = popupViewBackgroundColor
         let tapGesture = UITapGestureRecognizer(target: popupView, action: #selector(PopupView.hide))
         popupView.addGestureRecognizer(tapGesture)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         animationButtonOriginalFrame = animationButton.frame
     }
     
@@ -28,12 +28,12 @@ class ViewViewController: UIViewController {
     }
     
     @IBAction func animate(_ sender: Any) {
-        UIView.animate(withChange: { [unowned self] _ in
+        animationButton.animate(withChange: { [unowned self] _ in
             self.animationButton.frame.origin = CGPoint(x: self.animationButtonOriginalFrame.origin.x, y: self.animationButtonOriginalFrame.origin.y + self.animationOffset)
         }, withPreparation: { [unowned self] _ in
             self.animationButton.frame = self.animationButtonOriginalFrame
-        }) { 
-            UIView.animate(withChange: { [unowned self] _ in
+        }) { [unowned self] _ in
+            self.animationButton.animate(withChange: { [unowned self] _ in
                 self.animationButton.frame = self.animationButtonOriginalFrame
             })
         }
