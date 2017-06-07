@@ -23,11 +23,12 @@
 		2846A9901EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */; };
 		2846A9931EE7B8CC007D4226 /* LocationHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2846A9951EE7B8CC007D4226 /* LocationHelper.strings */; };
 		2846A99E1EE7C0FA007D4226 /* ExpandableMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */; };
-		2846A99F1EE7C0FA007D4226 /* MapView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A9991EE7C0FA007D4226 /* MapView+Localization.swift */; };
 		2846A9A01EE7C0FA007D4226 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A99A1EE7C0FA007D4226 /* MapView.swift */; };
 		2846A9A11EE7C0FA007D4226 /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */; };
 		2846A9A21EE7C0FA007D4226 /* MapViewLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */; };
 		2846A9A31EE7C0FA007D4226 /* MapViewPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */; };
+		2846A9A71EE7C4AF007D4226 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A9A61EE7C4AF007D4226 /* MapViewController.swift */; };
+		2846A9A91EE7C55C007D4226 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2846A9A81EE7C55C007D4226 /* MapKit.framework */; };
 		284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 284E5C471EDD103400C3CC86 /* MessageHelper.strings */; };
 		284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */; };
 		284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */; };
@@ -166,11 +167,12 @@
 		2846A9941EE7B8CC007D4226 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocationHelper.strings; sourceTree = "<group>"; };
 		2846A9961EE7B8CD007D4226 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LocationHelper.strings"; sourceTree = "<group>"; };
 		2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableMapView.swift; sourceTree = "<group>"; };
-		2846A9991EE7C0FA007D4226 /* MapView+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapView+Localization.swift"; sourceTree = "<group>"; };
 		2846A99A1EE7C0FA007D4226 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
 		2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewLine.swift; sourceTree = "<group>"; };
 		2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewPoint.swift; sourceTree = "<group>"; };
+		2846A9A61EE7C4AF007D4226 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		2846A9A81EE7C55C007D4226 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		284E5C461EDD103400C3CC86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MessageHelper.strings; sourceTree = "<group>"; };
 		284E5C481EDD103600C3CC86 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MessageHelper.strings"; sourceTree = "<group>"; };
 		284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedMessageHelper.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2846A9A91EE7C55C007D4226 /* MapKit.framework in Frameworks */,
 				28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,11 +350,18 @@
 			isa = PBXGroup;
 			children = (
 				2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */,
-				2846A9991EE7C0FA007D4226 /* MapView+Localization.swift */,
 				2846A99A1EE7C0FA007D4226 /* MapView.swift */,
 				2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */,
 				2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */,
 				2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		2846A9A41EE7C496007D4226 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				2846A9A61EE7C4AF007D4226 /* MapViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -676,6 +686,7 @@
 				2846A98A1EE7B03F007D4226 /* Location */,
 				28D1C0001EDCF3DA00290999 /* Main */,
 				42CA0A001EE23D0F009AF1BE /* Main.storyboard */,
+				2846A9A41EE7C496007D4226 /* Map */,
 				284E5C591EDD324400C3CC86 /* Message */,
 				42CA0A041EE432FD009AF1BE /* Navigation */,
 				2814AED81EE1449F007745EF /* Notification */,
@@ -730,6 +741,7 @@
 		CBAC1959A0FE1FE370BF95C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2846A9A81EE7C55C007D4226 /* MapKit.framework */,
 				EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */,
 			);
 			name = Frameworks;
@@ -947,7 +959,6 @@
 			files = (
 				289D5FF11EDF9A9F00203DE2 /* Button+Attribute.swift in Sources */,
 				284E5C551EDD104C00C3CC86 /* MessageHelperDelegate.swift in Sources */,
-				2846A99F1EE7C0FA007D4226 /* MapView+Localization.swift in Sources */,
 				42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */,
 				42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
@@ -1039,6 +1050,7 @@
 				2846A98C1EE7B064007D4226 /* LocationViewController.swift in Sources */,
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
 				42CA09F41EE1A50E009AF1BE /* LocalizationViewController.swift in Sources */,
+				2846A9A71EE7C4AF007D4226 /* MapViewController.swift in Sources */,
 				426939791EAB151400761FDE /* LabelViewController.swift in Sources */,
 				28E66FEB1EE4D06600073DF1 /* ViewViewController.swift in Sources */,
 				28D1BFFF1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift in Sources */,
