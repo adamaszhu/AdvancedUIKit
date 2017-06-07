@@ -6,12 +6,25 @@
  */
 public struct MapViewPoint {
     
-    
-    
     /**
      * The annotation.
      */
     let annotation: MKPointAnnotation
+    
+    /**
+     * Where the coordinate point should be in the view.
+     */
+    let position: MapViewPointPosition
+    
+    /**
+     * The action of the detail button.
+     */
+    let detailButtonAction: (Any?) -> Void
+    
+    /**
+     * The icon of the map point.
+     */
+    let icon: UIImage?
     
     /**
      * The item presented by the point.
@@ -28,66 +41,27 @@ public struct MapViewPoint {
     }
     
     /**
-     * The vertical offset of the icon.
+     * Initialize the object.
+     * - parameter latitude: The latitude.
+     * - parameter longitude: The longitude.
+     * - parameter icon: The point icon.
+     * - parameter position: Where the coordinate point should be in the view.
+     * - parameter title: The title.
+     * - parameter subtitle: The subtitle.
+     * - parameter item: The item that the point represents.
+     * - parameter detailButtonAction: The thing to be performed when the detail button is clicked.
      */
-    let iconVerticalOffset: Int?
+    public init(latitude: Double, longitude: Double, icon: UIImage? = nil, position: MapViewPointPosition = .center, title: String? = nil, subtitle: String? = nil, item: Any? = nil, detailButtonAction: @escaping (Any?) -> Void = { _ in }) {
+        annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        annotation.title = title
+        annotation.subtitle = subtitle
+        self.icon = icon
+        self.position = position
+        self.item = item
+        self.detailButtonAction = detailButtonAction
+    }
     
-    /**
-     * The action of the detail button.
-     */
-    let detailButtonAction: Selector?
-    
-    /**
-     * The icon of the map point.
-     */
-    let icon: UIImage?
-    //
-    //    /**
-    //     * Initialize the object.
-    //     * - version: 0.0.4
-    //     * - date: 28/10/2016
-    //     * - parameter latitude: The latitude.
-    //     * - parameter longitude: The longitude.
-    //     * - parameter title: The title.
-    //     * - parameter subtitle: The subtitle.
-    //     * - parameter item: The item that the point represents.
-    //     * - parameter icon: The point icon.
-    //     * - parameter didClickDetailButton: The thing to be performed when the detail button is clicked.
-    //     * - parameter verticalOffset: The icon vertical offset.
-    //     */
-    //    init(withLatitude latitude: Double, withLongitude longitude: Double, withTitle title: String? = nil, withSubtitle subtitle: String? = nil, withItem item: AnyObject? = nil, withIcon icon: UIImage? = nil, withClickDetailButtonHandler didClickDetailButton: Selector? = nil, withIconVerticalOffset verticalOffset: Int? = nil) {
-    //        annotation = MKPointAnnotation()
-    //        annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-    //        annotation.title = title
-    //        annotation.subtitle = subtitle
-    //        iconVerticalOffset = verticalOffset
-    //        self.item = item
-    //        self.icon = icon
-    //        self.didClickDetailButton = didClickDetailButton
-    //    }
-    //
-    //    /**
-    //     * Initialize the object.
-    //     * - version: 0.0.4
-    //     * - date: 28/10/2016
-    //     * - parameter latitude: The latitude.
-    //     * - parameter longitude: The longitude.
-    //     * - parameter title: The title.
-    //     * - parameter subtitle: The subtitle.
-    //     * - parameter icon: The icon of the point.
-    //     * - parameter verticalOffset: The icon vertical offset.
-    //     */
-    //    public init(withLatitude latitude: Double, withLongitude longitude: Double, withTitle title: String? = nil, withSubtitle subtitle: String? = nil, withIcon icon: UIImage? = nil, withIconVerticalOffset verticalOffset: Int? = nil) {
-    //        annotation = MKPointAnnotation()
-    //        annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-    //        annotation.title = title
-    //        annotation.subtitle = subtitle
-    //        iconVerticalOffset = verticalOffset
-    //        if icon != nil {
-    //            self.icon = icon
-    //        }
-    //    }
-    //    
 }
 
 import MapKit

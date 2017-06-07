@@ -357,11 +357,11 @@
 			children = (
 				2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */,
 				2846A9AA1EE7C660007D4226 /* MapViewDelegate+Optional.swift */,
+				2846A9AE1EE7D17D007D4226 /* MapViewPointPosition.swift */,
+				2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */,
 				2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */,
 				2846A99A1EE7C0FA007D4226 /* MapView.swift */,
 				2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */,
-				2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */,
-				2846A9AE1EE7D17D007D4226 /* MapViewPointPosition.swift */,
 				2846A9AC1EE7C754007D4226 /* MKAnnotationView+Renderer.swift */,
 			);
 			path = Map;
