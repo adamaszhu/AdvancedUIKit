@@ -18,6 +18,7 @@
 		2822A3491EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3481EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift */; };
 		2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2838C2CC1EE0DD06004D5BCB /* Ring.aiff */; };
 		2838C2D01EE0DD89004D5BCB /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */; };
+		2846A98C1EE7B064007D4226 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98B1EE7B064007D4226 /* LocationViewController.swift */; };
 		284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 284E5C471EDD103400C3CC86 /* MessageHelper.strings */; };
 		284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */; };
 		284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */; };
@@ -150,6 +151,7 @@
 		2822A3481EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		2838C2CC1EE0DD06004D5BCB /* Ring.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Ring.aiff; sourceTree = "<group>"; };
 		2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		2846A98B1EE7B064007D4226 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		284E5C461EDD103400C3CC86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MessageHelper.strings; sourceTree = "<group>"; };
 		284E5C481EDD103600C3CC86 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MessageHelper.strings"; sourceTree = "<group>"; };
 		284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedMessageHelper.swift; sourceTree = "<group>"; };
@@ -311,6 +313,14 @@
 				2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		2846A98A1EE7B03F007D4226 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				2846A98B1EE7B064007D4226 /* LocationViewController.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		284E5C421EDD0FE500C3CC86 /* Message */ = {
@@ -627,6 +637,7 @@
 				28B1D8061EE50E7B00A5B2C4 /* Keyboard */,
 				426939771EAB150700761FDE /* Label */,
 				42CA09F21EE1A454009AF1BE /* Localization */,
+				2846A98A1EE7B03F007D4226 /* Location */,
 				28D1C0001EDCF3DA00290999 /* Main */,
 				42CA0A001EE23D0F009AF1BE /* Main.storyboard */,
 				284E5C591EDD324400C3CC86 /* Message */,
@@ -980,6 +991,7 @@
 				4266037C1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift in Sources */,
 				42CA0A081EE4338A009AF1BE /* ButtonViewController.swift in Sources */,
 				28B1D8081EE50E8A00A5B2C4 /* KeyboardViewController.swift in Sources */,
+				2846A98C1EE7B064007D4226 /* LocationViewController.swift in Sources */,
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
 				42CA09F41EE1A50E009AF1BE /* LocalizationViewController.swift in Sources */,
 				426939791EAB151400761FDE /* LabelViewController.swift in Sources */,

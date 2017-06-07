@@ -348,6 +348,24 @@
             </objects>
             <point key="canvasLocation" x="1412" y="573"/>
         </scene>
+        <!--Location View Controller-->
+        <scene sceneID="ehk-JN-JTT">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" id="x3W-i3-b32" customClass="LocationViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m95-5b-HPG"/>
+                        <viewControllerLayoutGuide type="bottom" id="lL3-GO-iAf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K7O-4g-aCy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sFs-ET-AIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188" y="573"/>
+        </scene>
         <!--Notification View Controller-->
         <scene sceneID="o1Y-71-KYt">
             <objects>
