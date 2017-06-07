@@ -7,7 +7,7 @@
 public enum MapViewPointPosition {
     
     case center
-    case bottonCenter
+    case bottomCenter
     // TODO: Add other positions
     
 }
