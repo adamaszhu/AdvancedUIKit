@@ -2,7 +2,7 @@
  * LocationHelperDelegate is used to perform an action when an action happens.
  * - author: Adamas
  * - version: 1.0.0
- * - date: 04/05/2017
+ * - date: 07/06/2017
  */
 public protocol LocationHelperDelegate {
     

@@ -399,8 +399,8 @@
 		28F350A71EE793E5005120B1 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				28F350A81EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift */,
 				28F350A91EE793E5005120B1 /* LocationHelper.swift */,
+				28F350A81EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift */,
 				28F350AA1EE793E5005120B1 /* LocationHelperDelegate.swift */,
 			);
 			path = Location;

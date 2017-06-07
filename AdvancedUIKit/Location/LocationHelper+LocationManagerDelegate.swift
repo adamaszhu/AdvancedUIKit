@@ -6,6 +6,9 @@
  */
 extension LocationHelper: CLLocationManagerDelegate {
     
+    /**
+     * CLLocationManagerDelegate
+     */
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch authorizingStatus {
         case .authorizedAlways:

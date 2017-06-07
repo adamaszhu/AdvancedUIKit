@@ -41,7 +41,7 @@ public class LocationHelper: CLLocationManager {
     var authorizingStatus: CLAuthorizationStatus
     
     /**
-     * CLLocationManager.
+     * CLLocationManager
      */
     public override init() {
         authorizingStatus = .notDetermined
@@ -49,7 +49,7 @@ public class LocationHelper: CLLocationManager {
     }
     
     /**
-     * CLLocationManager.
+     * CLLocationManager
      */
     public override func requestAlwaysAuthorization() {
         authorizingStatus = .authorizedAlways
@@ -57,7 +57,7 @@ public class LocationHelper: CLLocationManager {
     }
     
     /**
-     * CLLocationManager.
+     * CLLocationManager
      */
     public override func requestWhenInUseAuthorization() {
         authorizingStatus = .authorizedWhenInUse
