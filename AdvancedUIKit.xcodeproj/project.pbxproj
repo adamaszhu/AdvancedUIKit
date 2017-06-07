@@ -22,6 +22,12 @@
 		2846A98E1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */; };
 		2846A9901EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */; };
 		2846A9931EE7B8CC007D4226 /* LocationHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2846A9951EE7B8CC007D4226 /* LocationHelper.strings */; };
+		2846A99E1EE7C0FA007D4226 /* ExpandableMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */; };
+		2846A99F1EE7C0FA007D4226 /* MapView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A9991EE7C0FA007D4226 /* MapView+Localization.swift */; };
+		2846A9A01EE7C0FA007D4226 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A99A1EE7C0FA007D4226 /* MapView.swift */; };
+		2846A9A11EE7C0FA007D4226 /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */; };
+		2846A9A21EE7C0FA007D4226 /* MapViewLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */; };
+		2846A9A31EE7C0FA007D4226 /* MapViewPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */; };
 		284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 284E5C471EDD103400C3CC86 /* MessageHelper.strings */; };
 		284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */; };
 		284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */; };
@@ -159,6 +165,12 @@
 		2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		2846A9941EE7B8CC007D4226 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocationHelper.strings; sourceTree = "<group>"; };
 		2846A9961EE7B8CD007D4226 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LocationHelper.strings"; sourceTree = "<group>"; };
+		2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableMapView.swift; sourceTree = "<group>"; };
+		2846A9991EE7C0FA007D4226 /* MapView+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapView+Localization.swift"; sourceTree = "<group>"; };
+		2846A99A1EE7C0FA007D4226 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
+		2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewLine.swift; sourceTree = "<group>"; };
+		2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewPoint.swift; sourceTree = "<group>"; };
 		284E5C461EDD103400C3CC86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MessageHelper.strings; sourceTree = "<group>"; };
 		284E5C481EDD103600C3CC86 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MessageHelper.strings"; sourceTree = "<group>"; };
 		284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedMessageHelper.swift; sourceTree = "<group>"; };
@@ -331,6 +343,19 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		2846A9971EE7C0FA007D4226 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */,
+				2846A9991EE7C0FA007D4226 /* MapView+Localization.swift */,
+				2846A99A1EE7C0FA007D4226 /* MapView.swift */,
+				2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */,
+				2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */,
+				2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		284E5C421EDD0FE500C3CC86 /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +499,7 @@
 				426939741EAB01CD00761FDE /* Label */,
 				42CA09E51EE198C4009AF1BE /* Localization */,
 				28F350A71EE793E5005120B1 /* Location */,
+				2846A9971EE7C0FA007D4226 /* Map */,
 				284E5C421EDD0FE500C3CC86 /* Message */,
 				2822A3341EE0EC3B00FAA8E3 /* Navigation */,
 				2822A33B1EE1278500FAA8E3 /* Notification */,
@@ -921,6 +947,7 @@
 			files = (
 				289D5FF11EDF9A9F00203DE2 /* Button+Attribute.swift in Sources */,
 				284E5C551EDD104C00C3CC86 /* MessageHelperDelegate.swift in Sources */,
+				2846A99F1EE7C0FA007D4226 /* MapView+Localization.swift in Sources */,
 				42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */,
 				42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
@@ -935,6 +962,8 @@
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
 				426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */,
 				42CA09F11EE1A1BA009AF1BE /* SegmentedControl+Localizer.swift in Sources */,
+				2846A9A01EE7C0FA007D4226 /* MapView.swift in Sources */,
+				2846A9A11EE7C0FA007D4226 /* MapViewDelegate.swift in Sources */,
 				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
 				284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */,
 				4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */,
@@ -943,6 +972,7 @@
 				4269399D1EAC478600761FDE /* Logger.swift in Sources */,
 				2822A3391EE0EE2600FAA8E3 /* NavigationBar.swift in Sources */,
 				425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */,
+				2846A9A21EE7C0FA007D4226 /* MapViewLine.swift in Sources */,
 				28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */,
 				28F350AC1EE793E5005120B1 /* LocationHelper.swift in Sources */,
 				427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */,
@@ -956,12 +986,14 @@
 				42CA09ED1EE19E36009AF1BE /* Button+Localizer.swift in Sources */,
 				28F350AB1EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift in Sources */,
 				28B1D8101EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift in Sources */,
+				2846A99E1EE7C0FA007D4226 /* ExpandableMapView.swift in Sources */,
 				42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */,
 				28E66FF11EE4E4C100073DF1 /* ActionFilterView.swift in Sources */,
 				28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */,
 				428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */,
 				426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */,
 				28E66FF41EE4E4C100073DF1 /* KeyboardHelperDelegate.swift in Sources */,
+				2846A9A31EE7C0FA007D4226 /* MapViewPoint.swift in Sources */,
 				2822A3411EE127EA00FAA8E3 /* NotificationHelperDelegate.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */,
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
