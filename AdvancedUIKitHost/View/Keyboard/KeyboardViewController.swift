@@ -23,6 +23,7 @@ class KeyboardViewController: UIViewController {
         mobileNumberText.activateUnderline(withNormal: underlineColor, withHignlighted: highlightedUnderlineColor)
         keyboardHelper.rootView = view
         keyboardHelper.inputViews = [searchBar, firstnameText, lastnameText, mobileNumberText]
+        keyboardHelper.startObservingKeyboard()
     }
     
     required init?(coder aDecoder: NSCoder) {

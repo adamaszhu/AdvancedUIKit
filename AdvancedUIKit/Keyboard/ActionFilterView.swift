@@ -9,7 +9,7 @@ class ActionFilterView: UIView {
     /**
      * Error message.
      */
-    private let initError = "Constructor init(coder) shouldn't be called."
+    private static let initError = "Constructor init(coder) shouldn't be called."
     
     /**
      * The delegate.
@@ -48,7 +48,7 @@ class ActionFilterView: UIView {
      * UIView
      */
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(initError)
+        Logger.standard.logError(ActionFilterView.initError)
         return nil
     }
     

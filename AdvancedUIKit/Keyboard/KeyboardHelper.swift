@@ -9,7 +9,7 @@ public class KeyboardHelper: NSObject {
     /**
      * System message.
      */
-    private let inputViewError = "The input view doesn't exist."
+    private static let inputViewError = "The input view doesn't exist."
     
     /**
      * The delegate
@@ -107,13 +107,15 @@ public class KeyboardHelper: NSObject {
      */
     func changeInputView(_ view: UIView) {
         // COMMENT: If previous input view is not nil, then the keyboard is shown. As a result, the view should adjusted.
-        //            let shouldAdjustOffset = currentInputView != nil
+        let shouldAdjustOffset = currentInputView != nil
         currentInputView = view
-        // COMMENT: Wait to see if the frame of the keyboard will be changed or not.
-        //            if shouldAdjustOffset {
-        // COMMENT: Make this specify to iOS 8 and below, since willShowKeyboard won't be called if the keyboard keeps the same in iOS 8 and below.
-        //                performSelector(#selector(adjustOffset), withObject: nil, afterDelay: 0.1)
-        //            }
+        if actionFilterView.superview != nil {
+            // COMMENT: The keyboard push has been activated. So wait to see if the frame of the keyboard will be changed or not.
+            if shouldAdjustOffset {
+                // COMMENT: Make this specify to iOS 8 and below, since willShowKeyboard won't be called if the keyboard keeps the same in iOS 8 and below.
+                perform(#selector(adjustOffset), with: nil, afterDelay: 0.2)
+            }
+        }
     }
     
     /**
@@ -122,7 +124,7 @@ public class KeyboardHelper: NSObject {
      */
     func finishInput(onView view: UIView) {
         guard let index = inputViews.index(of: view) else {
-            Logger.standard.logError(inputViewError)
+            Logger.standard.logError(KeyboardHelper.inputViewError)
             return
         }
         if index < inputViews.count - 1 {
