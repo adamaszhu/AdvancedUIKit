@@ -7,6 +7,12 @@
 public protocol LocationHelperDelegate {
     
     /**
+     * An error occurs.
+     * - parameter error: The detail of the error.
+     */
+    func locationHelper(_ locationHelper: LocationHelper, didCatchError error: String)
+    
+    /**
      * Always authorization has been decided.
      * - parameter isAuthorized: Whether the authorization has been granted or not.
      */

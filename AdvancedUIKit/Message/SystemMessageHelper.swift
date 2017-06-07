@@ -51,8 +51,7 @@ public class SystemMessageHelper {
             Logger.standard.logError(SystemMessageHelper.windowError)
             return nil
         }
-        let navigationController = rootViewController as? UINavigationController
-        self.rootViewController = navigationController?.viewControllers.last ?? rootViewController
+        self.rootViewController = rootViewController
         messageType = .unknown
     }
     

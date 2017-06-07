@@ -7,9 +7,35 @@
 public class LocationHelper: CLLocationManager {
     
     /**
+     * The info key required in the Info.plist file.
+     */
+    private static let alwaysDescriptionKey = "NSLocationAlwaysUsageDescription"
+    private static let whenInUseDescriptionKey = "NSLocationWhenInUseUsageDescription"
+    
+    /**
+     * User error.
+     */
+    private static let authorizationError = "AuthorizationError"
+    
+    /**
+     * System error.
+     */
+    private static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
+    
+    /**
      * The delegate.
      */
     public var locationHelperDelegate: LocationHelperDelegate?
+    
+    /**
+     * The type of authorization that has been requested.
+     */
+    var authorizingStatus: CLAuthorizationStatus
+    
+    /**
+     * The bundle.
+     */
+    private let bundle: Bundle
     
     /**
      * Which authorization is
@@ -36,22 +62,49 @@ public class LocationHelper: CLLocationManager {
     }
     
     /**
-     * The type of authorization that has been requested.
+     * Whether the authorization is still not determinated or not.
      */
-    var authorizingStatus: CLAuthorizationStatus
+    public static var isUnauthorized: Bool {
+        switch authorizationStatus() {
+        case .notDetermined:
+            return true
+        default:
+            return false
+        }
+    }
     
     /**
      * CLLocationManager
+     * - parameter bundle: The bundle where the Info.plist file exists.
      */
-    public override init() {
+    public init(bundle: Bundle = Bundle.main) {
         authorizingStatus = .notDetermined
+        self.bundle = bundle
         super.init()
+        delegate = self
+    }
+    
+    /**
+     * Check whether a description key exsits in the Info.plist file or not.
+     * - parameter key: The key to be checked.
+     * - returns: Whether the key exists or not.
+     */
+    private func checkDescriptionKey(_ key: String) -> Bool {
+        return bundle.object(forInfoDictionaryKey: key) != nil
     }
     
     /**
      * CLLocationManager
      */
     public override func requestAlwaysAuthorization() {
+        guard LocationHelper.isUnauthorized else {
+            locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizeWithinFramework(forType: LocationHelper.self))
+            return
+        }
+        guard checkDescriptionKey(LocationHelper.alwaysDescriptionKey) == true else {
+            Logger.standard.logError(LocationHelper.descriptionKeyError, withDetail: LocationHelper.alwaysDescriptionKey)
+            return
+        }
         authorizingStatus = .authorizedAlways
         super.requestAlwaysAuthorization()
     }
@@ -60,6 +113,14 @@ public class LocationHelper: CLLocationManager {
      * CLLocationManager
      */
     public override func requestWhenInUseAuthorization() {
+        guard LocationHelper.isUnauthorized else {
+            locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizeWithinFramework(forType: LocationHelper.self))
+            return
+        }
+        guard checkDescriptionKey(LocationHelper.whenInUseDescriptionKey) == true else {
+            Logger.standard.logError(LocationHelper.descriptionKeyError, withDetail: LocationHelper.whenInUseDescriptionKey)
+            return
+        }
         authorizingStatus = .authorizedWhenInUse
         super.requestWhenInUseAuthorization()
     }
