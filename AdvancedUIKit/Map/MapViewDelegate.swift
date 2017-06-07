@@ -10,7 +10,7 @@ public protocol MapViewDelegate {
      * A point is selected and detail of the point is required to be presented.
      * - parameter item: The item attached on the point.
      */
-    func mapView(_ mapView: MapView, didSelectItem item: AnyObject?)
+    func mapView(_ mapView: MapView, didSelectItem item: Any?)
     
     /**
      * The view has been moved.

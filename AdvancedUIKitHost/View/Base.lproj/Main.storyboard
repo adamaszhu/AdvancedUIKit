@@ -438,6 +438,9 @@
                             <constraint firstItem="e0o-IS-IjZ" firstAttribute="leading" secondItem="7jI-KH-4oM" secondAttribute="leading" id="Oce-gQ-ZL6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="noe-xw-dL4" id="ngd-o5-32r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6M-AM-xCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

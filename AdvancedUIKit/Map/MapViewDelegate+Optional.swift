@@ -9,7 +9,7 @@ public extension MapViewDelegate {
     /**
      * MapViewDelegate
      */
-    func mapView(_ mapView: MapView, didSelectItem item: AnyObject?) { }
+    func mapView(_ mapView: MapView, didSelectItem item: Any?) { }
     
     /**
      * MapViewDelegate

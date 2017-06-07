@@ -30,6 +30,8 @@
 		2846A9A71EE7C4AF007D4226 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A9A61EE7C4AF007D4226 /* MapViewController.swift */; };
 		2846A9A91EE7C55C007D4226 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2846A9A81EE7C55C007D4226 /* MapKit.framework */; };
 		2846A9AB1EE7C660007D4226 /* MapViewDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A9AA1EE7C660007D4226 /* MapViewDelegate+Optional.swift */; };
+		2846A9AD1EE7C754007D4226 /* MKAnnotationView+Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A9AC1EE7C754007D4226 /* MKAnnotationView+Renderer.swift */; };
+		2846A9AF1EE7D17D007D4226 /* MapViewPointPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A9AE1EE7D17D007D4226 /* MapViewPointPosition.swift */; };
 		284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 284E5C471EDD103400C3CC86 /* MessageHelper.strings */; };
 		284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */; };
 		284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */; };
@@ -175,6 +177,8 @@
 		2846A9A61EE7C4AF007D4226 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2846A9A81EE7C55C007D4226 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2846A9AA1EE7C660007D4226 /* MapViewDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapViewDelegate+Optional.swift"; sourceTree = "<group>"; };
+		2846A9AC1EE7C754007D4226 /* MKAnnotationView+Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKAnnotationView+Renderer.swift"; sourceTree = "<group>"; };
+		2846A9AE1EE7D17D007D4226 /* MapViewPointPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewPointPosition.swift; sourceTree = "<group>"; };
 		284E5C461EDD103400C3CC86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MessageHelper.strings; sourceTree = "<group>"; };
 		284E5C481EDD103600C3CC86 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MessageHelper.strings"; sourceTree = "<group>"; };
 		284E5C491EDD104C00C3CC86 /* CustomizedMessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedMessageHelper.swift; sourceTree = "<group>"; };
@@ -351,12 +355,14 @@
 		2846A9971EE7C0FA007D4226 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */,
-				2846A99A1EE7C0FA007D4226 /* MapView.swift */,
 				2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */,
 				2846A9AA1EE7C660007D4226 /* MapViewDelegate+Optional.swift */,
+				2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */,
+				2846A99A1EE7C0FA007D4226 /* MapView.swift */,
 				2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */,
 				2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */,
+				2846A9AE1EE7D17D007D4226 /* MapViewPointPosition.swift */,
+				2846A9AC1EE7C754007D4226 /* MKAnnotationView+Renderer.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -981,6 +987,7 @@
 				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
 				284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */,
 				4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */,
+				2846A9AF1EE7D17D007D4226 /* MapViewPointPosition.swift in Sources */,
 				4269397F1EAB43A400761FDE /* String+Helper.swift in Sources */,
 				426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */,
 				4269399D1EAC478600761FDE /* Logger.swift in Sources */,
@@ -1003,6 +1010,7 @@
 				2846A99E1EE7C0FA007D4226 /* ExpandableMapView.swift in Sources */,
 				42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */,
 				28E66FF11EE4E4C100073DF1 /* ActionFilterView.swift in Sources */,
+				2846A9AD1EE7C754007D4226 /* MKAnnotationView+Renderer.swift in Sources */,
 				28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */,
 				428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */,
 				426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */,
