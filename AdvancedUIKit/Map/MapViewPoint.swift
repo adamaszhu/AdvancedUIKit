@@ -4,7 +4,7 @@
  * - version: 1.0.0
  * - date: 07/06/2017
  */
-public struct MapViewPoint {
+public class MapViewPoint {
     
     /**
      * The annotation.
@@ -65,7 +65,7 @@ public struct MapViewPoint {
     /**
      * The function to be called when the detailButtonAction need to be invoked.
      */
-    func didClickDetailButton() {
+    @objc func didClickDetailButton() {
         detailButtonAction?(item)
     }
     

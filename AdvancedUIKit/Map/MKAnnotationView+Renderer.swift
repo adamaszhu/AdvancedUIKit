@@ -6,29 +6,6 @@
  */
 extension MKAnnotationView {
     
-    
-    
-    
-
-    //
-    //
-    //    /**
-    //     * The item presented by the point.
-    //     */
-    //    let item: Any?
-    //
-    //    /**
-    //     * The action of the detail button.
-    //     */
-    //    let detailButtonAction: ((Any?) -> Void)?
-    
-    
-    
-    
-    
-    
-    
-    
     /**
      * The size of the detail button.
      */
