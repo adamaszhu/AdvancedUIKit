@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */; };
+		280E15341EE924D3003BF109 /* MapView+LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280E15331EE924D3003BF109 /* MapView+LocationHelperDelegate.swift */; };
 		2814AEDA1EE144B2007745EF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814AED91EE144B2007745EF /* NotificationViewController.swift */; };
 		2822A3361EE0EC8200FAA8E3 /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */; };
 		2822A3391EE0EE2600FAA8E3 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */; };
@@ -156,6 +157,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		280E15331EE924D3003BF109 /* MapView+LocationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapView+LocationHelperDelegate.swift"; sourceTree = "<group>"; };
 		2814AED91EE144B2007745EF /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
 		2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				2846A9AC1EE7C754007D4226 /* MKAnnotationView+Renderer.swift */,
 				2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */,
 				2846A99A1EE7C0FA007D4226 /* MapView.swift */,
+				280E15331EE924D3003BF109 /* MapView+LocationHelperDelegate.swift */,
 				288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */,
 				421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */,
 				2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */,
@@ -1022,6 +1025,7 @@
 				42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */,
 				28E66FF11EE4E4C100073DF1 /* ActionFilterView.swift in Sources */,
 				2846A9AD1EE7C754007D4226 /* MKAnnotationView+Renderer.swift in Sources */,
+				280E15341EE924D3003BF109 /* MapView+LocationHelperDelegate.swift in Sources */,
 				28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */,
 				428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */,
 				426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */,

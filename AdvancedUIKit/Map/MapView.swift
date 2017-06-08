@@ -12,6 +12,11 @@ public class MapView: MKMapView {
     private static let defaultOverviewMargin = Double(0.001)
     
     /**
+     * The default zoom level while showing user's location.
+     */
+    private static let defaultUserLocationMargin = Double(10)
+    
+    /**
      * The delegate of the map.
      */
     public var mapViewDelegate: MapViewDelegate?
@@ -25,6 +30,11 @@ public class MapView: MKMapView {
      * The line list.
      */
     var lines: Array<MapViewLine>
+    
+    /**
+     * The location helper.
+     */
+    private let locationHelper: LocationHelper
     
     /**
      * Set the view of the map.
@@ -132,6 +142,30 @@ public class MapView: MKMapView {
     }
     
     /**
+     * Request user authorization on always use location.
+     */
+    public func requestUserLocation() {
+        guard LocationHelper.isAlwaysAuthorizationAuthorized || LocationHelper.isWhenInUseAuthorizationAuthorized else {
+            locationHelper.requestAlwaysAuthorization()
+            return
+        }
+        showsUserLocation = true
+    }
+    
+    /**
+     * Show current location.
+     * - parameter zoomLevel: The zoom level while showing user's location.
+     */
+    public func showUserLocation(withZoomLevel zoomLevel: Double = defaultUserLocationMargin) {
+        guard LocationHelper.isAlwaysAuthorizationAuthorized || LocationHelper.isWhenInUseAuthorizationAuthorized else {
+            locationHelper.requestAlwaysAuthorization()
+            return
+        }
+        let userLocationCoordinate = userLocation.coordinate
+        setViewport(withCenterLatitude: userLocationCoordinate.latitude, withCenterLongitude: userLocationCoordinate.longitude, withZoomLevel: zoomLevel)
+    }
+    
+    /**
      * Clean all the points and lines on the map.
      */
     public func reset() {
@@ -149,8 +183,10 @@ public class MapView: MKMapView {
     public required init?(coder aDecoder: NSCoder) {
         points = []
         lines = []
+        locationHelper = LocationHelper()
         super.init(coder: aDecoder)
         self.delegate = self
+        locationHelper.locationHelperDelegate = self
     }
     
     /**
@@ -159,8 +195,10 @@ public class MapView: MKMapView {
     public override init(frame: CGRect) {
         points = []
         lines = []
+        locationHelper = LocationHelper()
         super.init(frame: frame)
         self.delegate = self
+        locationHelper.locationHelperDelegate = self
     }
     
 }

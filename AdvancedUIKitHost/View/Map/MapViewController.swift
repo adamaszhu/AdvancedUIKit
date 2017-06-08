@@ -72,6 +72,10 @@ class MapViewController: UIViewController {
         mapView.overview()
     }
     
+    @IBAction func showMyLocation(_ sender: Any) {
+        mapView.showUserLocation()
+    }
+    
 }
 
 import AdvancedUIKit

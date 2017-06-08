@@ -7,6 +7,12 @@
 public protocol MapViewDelegate {
     
     /**
+     * An error has been caused.
+     * - parameter error: The error message.
+     */
+    func mapView(_ mapView: MapView, didCatchError error: String)
+    
+    /**
      * A point is selected and detail of the point is required to be presented.
      * - parameter item: The item attached on the point.
      */

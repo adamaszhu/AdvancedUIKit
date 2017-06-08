@@ -549,6 +549,14 @@
                                                     <action selector="overview:" destination="99N-G8-BgA" eventType="touchUpInside" id="hiz-He-RHE"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noq-8y-3ZI">
+                                                <rect key="frame" x="5" y="492.5" width="70" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <state key="normal" title="GPS"/>
+                                                <connections>
+                                                    <action selector="showMyLocation:" destination="99N-G8-BgA" eventType="touchUpInside" id="eCK-Ft-Z7J"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -581,10 +589,13 @@
                                             <constraint firstItem="AGE-fN-fZv" firstAttribute="top" secondItem="8NO-ej-V7U" secondAttribute="bottom" constant="5" id="T2z-Fi-jZ2"/>
                                             <constraint firstItem="Nd8-m0-hB0" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="USg-PG-GQd"/>
                                             <constraint firstAttribute="trailing" secondItem="tzN-Bm-lxq" secondAttribute="trailing" constant="5" id="UzR-VI-Ncl"/>
+                                            <constraint firstItem="noq-8y-3ZI" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="VA5-uY-w0F"/>
                                             <constraint firstItem="tzm-Rz-DuR" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="Y1K-Ic-MWW"/>
                                             <constraint firstAttribute="width" constant="80" id="YD9-hD-amd"/>
                                             <constraint firstItem="5U2-l2-1kd" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="Yqi-TZ-ntk"/>
                                             <constraint firstItem="dyk-35-I4c" firstAttribute="top" secondItem="Fva-1W-08d" secondAttribute="bottom" constant="20" id="Zi3-qc-5fI"/>
+                                            <constraint firstItem="noq-8y-3ZI" firstAttribute="top" secondItem="Ryk-n3-JAE" secondAttribute="bottom" constant="5" id="ak5-ZX-8iR"/>
+                                            <constraint firstAttribute="trailing" secondItem="noq-8y-3ZI" secondAttribute="trailing" constant="5" id="dZ8-nC-Jja"/>
                                             <constraint firstItem="Otq-F3-R0C" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="dsd-lo-oqb"/>
                                             <constraint firstAttribute="trailing" secondItem="YPA-vE-9xK" secondAttribute="trailing" constant="5" id="dyw-D5-ucn"/>
                                             <constraint firstItem="dyk-35-I4c" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="fR2-ib-hKM"/>
