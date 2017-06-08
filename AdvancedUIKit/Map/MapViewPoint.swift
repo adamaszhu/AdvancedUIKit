@@ -27,14 +27,14 @@ public class MapViewPoint {
     let icon: UIImage?
     
     /**
-     * The action of the detail button. It only works if the item is not nil.
-     */
-    let detailButtonAction: ((Any) -> Void)
-    
-    /**
      * The item presented by the point.
      */
     let item: Any?
+    
+    /**
+     * The action of the detail button. It only works if the item is not nil.
+     */
+    var detailButtonAction: ((Any) -> Void)
     
     /**
      * Initialize the object.
@@ -45,9 +45,8 @@ public class MapViewPoint {
      * - parameter icon: The point icon.
      * - parameter position: Where the coordinate point should be in the view.
      * - parameter item: The item that the point represents.
-     * - parameter detailButtonAction: The thing to be performed when the detail button is clicked.
      */
-    public init(latitude: Double, longitude: Double, title: String? = nil, subtitle: String? = nil, icon: UIImage? = nil, position: MapViewPointPosition = .center, item: Any? = nil, detailButtonAction: @escaping ((Any) -> Void) = { _ in }) {
+    public init(latitude: Double, longitude: Double, title: String? = nil, subtitle: String? = nil, icon: UIImage? = nil, position: MapViewPointPosition = .center, item: Any? = nil) {
         annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         annotation.title = title
@@ -55,7 +54,7 @@ public class MapViewPoint {
         self.icon = icon
         self.position = position
         self.item = item
-        self.detailButtonAction = detailButtonAction
+        detailButtonAction = { _ in }
     }
     
     /**

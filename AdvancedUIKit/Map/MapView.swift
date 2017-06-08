@@ -7,16 +7,6 @@
 public class MapView: MKMapView {
     
     /**
-     * The size of a pin icon.
-     */
-    private static let defaultIconSize = Double(40)
-    
-    /**
-     * The size of a pin icon on the line.
-     */
-    private static let defaultLineIconSize = Double(20)
-    
-    /**
      * The default size of the viewport.
      */
     private static let defaultViewportMargin = Double(1)
@@ -138,29 +128,17 @@ public class MapView: MKMapView {
     //        self.setRegion(region, animated: shouldAnimate)
     //    }
     //
-    //    /**
-    //     * Add a point on the map.
-    //     * - version: 0.0.3
-    //     * - date: 27/10/2016
-    //     * - parameter latitude: The latitude of the point.
-    //     * - parameter longitude: The longitude of the point.
-    //     * - parameter title: The title of the point.
-    //     * - parameter subtitle: The subtitle of the point.
-    //     * - parameter item: The item attached to the point.
-    //     * - parameter icon: The icon of the point.
-    //     */
-    //    public func addPoint(withLatitude latitude: Double, withLongitude longitude: Double, withTitle title: String, withSubtitle subtitle: String, withItem item: AnyObject? = nil, withIcon icon: UIImage? = nil) { withIconSize resize
-    // if item != nil mapViewDelegate?.mapView?(self, didSelectPoint: selectedPoint?.item)
-    //var didClickDetailButton: Selector?
-    //        if shouldShowDetailButton {
-    //            didClickDetailButton = #selector(MapView.didSelectPoint)
-    //        } else {
-    //            didClickDetailButton = nil
-    //        }
-    //        let point = MapViewPoint(withLatitude: latitude, withLongitude: longitude, withTitle: title, withSubtitle: subtitle, withItem: item, withIcon: icon == nil ? pointIcon : icon!, withClickDetailButtonHandler: didClickDetailButton)
-    //        pointList.append(point)
-    //        addAnnotation(point.annotation)
-    //    }
+    /**
+     * Add a point on the map.
+     * - parameter point: The point.
+     */
+    public func addPoint(_ point: MapViewPoint) {
+        point.detailButtonAction = { [unowned self] item in
+            self.mapViewDelegate?.mapView(self, didSelectItem: item)
+        }
+        points.append(point)
+        addAnnotation(point.annotation)
+    }
     //
     //    /**
     //     * Add a line onto the map.

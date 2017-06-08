@@ -84,6 +84,10 @@ extension MapView: MKMapViewDelegate {
             Logger.standard.logError(MapView.pointError)
             return nil
         }
+        guard point.icon != nil else {
+            // COMMENT: Default pin will be applied.
+            return nil
+        }
         view.render(point)
         return view
     }
