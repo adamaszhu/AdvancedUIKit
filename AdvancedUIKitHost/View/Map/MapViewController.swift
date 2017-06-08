@@ -8,7 +8,7 @@ class MapViewController: UIViewController {
     private let hawthornPoint = (latitude: -37.826, longitude: 145.0340, title: "Hawthorn", subtitle: "Old Home", item: "Hawthorn")
     private let hawthornRegion = (leftLongitude: 145.013461, rightLongitude: 145.04951, topLatitude: -37.810614, bottmLatitude: -37.846985)
     private let hawthornRegionTitle = (leftTop: "Left Top", rightTop: "Right Top", leftBottom: "Left Bottom", rightBottom: "Right Bottom")
-    private let bulleenPoint = (latitude: -37.7669906, longitude: 145.0682016, title: "Bulleen", subtitle: "Home")
+    private let bulleenPoint = (latitude: -37.77, longitude: 145.09, title: "Bulleen", subtitle: "Home")
     private let bulleenRegion = (leftLongitude: 145.063039, rightLongitude: 145.106654, topLatitude: -37.747502, bottmLatitude: -37.784629)
     
     @IBOutlet weak var mapView: MapView!
@@ -56,12 +56,12 @@ class MapViewController: UIViewController {
             MapViewPoint(latitude: bulleenRegion.bottmLatitude, longitude: bulleenRegion.rightLongitude),
             MapViewPoint(latitude: bulleenRegion.bottmLatitude, longitude: bulleenRegion.leftLongitude),
             MapViewPoint(latitude: bulleenRegion.topLatitude, longitude: bulleenRegion.leftLongitude)]
-        let line = MapViewLine(points: points)
+        let line = MapViewLine(points: points, color: UIColor.blue)
         mapView.addLine(line)
     }
     
     @IBAction func pointBulleen(_ sender: Any) {
-        mapView.addPoint(MapViewPoint(latitude: bulleenPoint.latitude, longitude: bulleenPoint.longitude, title: bulleenPoint.title, subtitle: bulleenPoint.subtitle, icon: pointIcon))
+        mapView.addPoint(MapViewPoint(latitude: bulleenPoint.latitude, longitude: bulleenPoint.longitude, title: bulleenPoint.title, subtitle: bulleenPoint.subtitle, icon: pointIcon, position: .bottomCenter))
     }
     
     @IBAction func clean(_ sender: Any) {
