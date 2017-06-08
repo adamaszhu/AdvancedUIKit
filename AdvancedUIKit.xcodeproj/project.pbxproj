@@ -42,6 +42,7 @@
 		284E5C5D1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */; };
 		284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5E1EDD426400C3CC86 /* PopupView.swift */; };
 		2862143E1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */; };
+		288CA5091EE8CC260077784B /* MKCoordinateRegion+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */; };
 		289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FEA1EDF92DB00203DE2 /* TextField+Attribute.swift */; };
 		289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FEB1EDF92DB00203DE2 /* TextField+Dynamic.swift */; };
 		289D5FF11EDF9A9F00203DE2 /* Button+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */; };
@@ -191,6 +192,7 @@
 		284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageViewController+MessageHelperDelegate.swift"; sourceTree = "<group>"; };
 		284E5C5E1EDD426400C3CC86 /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Pusher.swift"; sourceTree = "<group>"; };
+		288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Initializer.swift"; sourceTree = "<group>"; };
 		289D5FEA1EDF92DB00203DE2 /* TextField+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Attribute.swift"; sourceTree = "<group>"; };
 		289D5FEB1EDF92DB00203DE2 /* TextField+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Dynamic.swift"; sourceTree = "<group>"; };
 		289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Attribute.swift"; sourceTree = "<group>"; };
@@ -361,9 +363,10 @@
 				2846A9AA1EE7C660007D4226 /* MapViewDelegate+Optional.swift */,
 				2846A9AE1EE7D17D007D4226 /* MapViewPointPosition.swift */,
 				2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */,
-				2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */,
 				2846A9AC1EE7C754007D4226 /* MKAnnotationView+Renderer.swift */,
+				2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */,
 				2846A99A1EE7C0FA007D4226 /* MapView.swift */,
+				288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */,
 				421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */,
 				2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */,
 			);
@@ -999,6 +1002,7 @@
 				2846A9A21EE7C0FA007D4226 /* MapViewLine.swift in Sources */,
 				28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */,
 				28F350AC1EE793E5005120B1 /* LocationHelper.swift in Sources */,
+				288CA5091EE8CC260077784B /* MKCoordinateRegion+Initializer.swift in Sources */,
 				427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */,
 				42CA09E91EE19998009AF1BE /* Label+Localizer.swift in Sources */,
 				28F350AD1EE793E5005120B1 /* LocationHelperDelegate.swift in Sources */,

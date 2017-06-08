@@ -5,114 +5,54 @@
  * - date: 07/06/2017
  */
 public class MapView: MKMapView {
-    //
-    //    /**
-    //     * The size of a pin icon.
-    //     */
-    //    public static let DefaultIconSize = Double(40)
-    //
-    //    /**
-    //     * The size of a pin icon on the line.
-    //     */
-    //    public static let DefaultLineIconSize = Double(20)
-    //
-    //    /**
-    //     * The reusable map point id.
-    //     */
-    //    private static let MapViewPointID = "MapViewPointID"
-    //
-    //    /**
-    //     * The width of the line.
-    //     */
-    //    private static let DefaultLineWidth = 2
-    //
-    //    /**
-    //     * The width of the line.
-    //     */
-    //    private static let DefaultLineColor = UIColor.blackColor()
-    //
-    //    /**
-    //     * The default size of the viewport.
-    //     */
-    //    private static let DefaultViewportMargin = Double(1)
-    //
-    //    /**
-    //     * Whether the detail button should be allowed or not.
-    //     */
-    //    public var shouldShowDetailButton: Bool
-    //
+    
+    /**
+     * The size of a pin icon.
+     */
+    private static let defaultIconSize = Double(40)
+    
+    /**
+     * The size of a pin icon on the line.
+     */
+    private static let defaultLineIconSize = Double(20)
+    
+    /**
+     * The default size of the viewport.
+     */
+    private static let defaultViewportMargin = Double(1)
     
     /**
      * The delegate of the map.
      */
     public var mapViewDelegate: MapViewDelegate?
     
-    //
-    //    /**
-    //     * The customized pin icon.
-    //     */
-    //    public var pointIcon: UIImage? {
-    //        /**
-    //         * - version: 0.0.2
-    //         * - date: 12/10/2016
-    //         */
-    //        didSet{
-    //            if pointIcon == nil {
-    //                return
-    //            }
-    //            pointIcon = pointIcon!.resize(toWidth: MapView.DefaultIconSize, toHeight: MapView.DefaultIconSize)
-    //        }
-    //    }
-    //
-    //    /**
-    //     * The customized pin icon on a line.
-    //     */
-    //    public var linePointIcon: UIImage? {
-    //        /**
-    //         * - version: 0.0.3
-    //         * - date: 27/10/2016
-    //         */
-    //        didSet{
-    //            if linePointIcon == nil {
-    //                return
-    //            }
-    //            linePointIcon = linePointIcon!.resize(toWidth: MapView.DefaultLineIconSize, toHeight: MapView.DefaultLineIconSize)
-    //        }
-    //    }
-    //
-        /**
-         * The point list.
-         */
-        var points: Array<MapViewPoint>
+    /**
+     * The point list.
+     */
+    var points: Array<MapViewPoint>
     
-        /**
-         * The line list.
-         */
-        var lines: Array<MapViewLine>
+    /**
+     * The line list.
+     */
+    var lines: Array<MapViewLine>
     
-        /**
-         * Selected point.
-         */
-        var selectedPoint: MapViewPoint?
-    //
-    //    /**
-    //     * Set the view of the map.
-    //     * - version: 0.0.2
-    //     * - date: 12/10/2016
-    //     * - parameter latitude: The center latitude of the view.
-    //     * - parameter longitude: The center longitude of the view.
-    //     * - parameter zoom: The zoom level.
-    //     * - parameter shouldAnimate: Whether the animation should be allowed or not.
-    //     */
-    //    public func setViewport(withCenterLatitude latitude: Double, withCenterLongitude longitude: Double, withZoomLevel zoom: Int, withAnimation shouldAnimate: Bool = true) {
-    //        var region = MKCoordinateRegion()
-    //        region.center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-    //        var span = MKCoordinateSpan()
-    //        span.latitudeDelta = 1.0 / Double(zoom)
-    //        span.longitudeDelta = 1.0 / Double(zoom)
-    //        region.span = span
-    //        setRegion(region, animated: shouldAnimate)
-    //    }
+    /**
+     * Set the view of the map.
+     * - parameter latitude: The center latitude of the view.
+     * - parameter longitude: The center longitude of the view.
+     * - parameter zoomLevel: The zoom level. If it is nil, zoom level will not be changed.
+     * - parameter shouldAnimate: Whether the animation should be allowed or not.
+     */
+    public func setViewport(withCenterLatitude latitude: Double, withCenterLongitude longitude: Double, withZoomLevel zoomLevel: Double? = nil, withAnimation shouldAnimate: Bool = true) {
+        var region: MKCoordinateRegion
+        if let zoomLevel = zoomLevel {
+            region = MKCoordinateRegion(centerLatitude: latitude, centerLongitude: longitude, zoomLevel: zoomLevel)
+        } else {
+            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            region = MKCoordinateRegion(center: coordinate, span: self.region.span)
+        }
+        setRegion(region, animated: shouldAnimate)
+    }
     //
     //    /**
     //     * Adjust the viewport according to the points within it.
@@ -209,8 +149,9 @@ public class MapView: MKMapView {
     //     * - parameter item: The item attached to the point.
     //     * - parameter icon: The icon of the point.
     //     */
-    //    public func addPoint(withLatitude latitude: Double, withLongitude longitude: Double, withTitle title: String, withSubtitle subtitle: String, withItem item: AnyObject? = nil, withIcon icon: UIImage? = nil) {
-    //        var didClickDetailButton: Selector?
+    //    public func addPoint(withLatitude latitude: Double, withLongitude longitude: Double, withTitle title: String, withSubtitle subtitle: String, withItem item: AnyObject? = nil, withIcon icon: UIImage? = nil) { withIconSize resize
+    // if item != nil mapViewDelegate?.mapView?(self, didSelectPoint: selectedPoint?.item)
+    //var didClickDetailButton: Selector?
     //        if shouldShowDetailButton {
     //            didClickDetailButton = #selector(MapView.didSelectPoint)
     //        } else {
@@ -229,7 +170,8 @@ public class MapView: MKMapView {
     //     * - parameter color: The color of the line.
     //     * - parameter width: The width of the line.
     //     */
-    //    public func addLine(withPointList pointList: Array<MapViewPoint>, withColor color: UIColor = DefaultLineColor, withWidth width: Int = DefaultLineWidth) {
+    //    public func addLine(withPointList pointList: Array<MapViewPoint>, withColor color: UIColor = DefaultLineColor, withWidth width: Int = DefaultLineWidth) { withIconSize resize
+    //    mapViewDelegate?.mapView?(self, didSelectPoint: selectedPoint?.item)
     //        let line = MapViewLine(withPointList: pointList, withColor: color, withLineWidth: width)
     //        for point in line.pointList {
     //            point.icon = point.icon == nil ? linePointIcon : point.icon
@@ -239,46 +181,38 @@ public class MapView: MKMapView {
     //        addOverlay(line.line)
     //    }
     //
-    //    /**
-    //     * Clean all the points on the map.
-    //     * - version: 0.0.3
-    //     * - date: 27/10/2016
-    //     */
-    //    public func reset() {
-    //        removeAnnotations(annotations)
-    //        pointList.removeAll()
-    //        lineList.removeAll()
-    //    }
-    //    
-    //    /**
-    //     * The action to be performed when the detail button of a point is clicked.
-    //     * - version: 0.0.2
-    //     * - date: 12/10/2016
-    //     */
-    //    func didSelectPoint() {
-    //        mapViewDelegate?.mapView?(self, didSelectPoint: selectedPoint?.item)
-    //    }
-    //    
-        /**
-         * MKMapView
-         */
-        public required init?(coder aDecoder: NSCoder) {
-            points = []
-            lines = []
-            super.init(coder: aDecoder)
-            self.delegate = self
-        }
+    /**
+     * Clean all the points and lines on the map.
+     */
+    public func reset() {
+        removeAnnotations(annotations)
+        removeOverlays(lines.map { line in
+            line.line
+        })
+        points.removeAll()
+        lines.removeAll()
+    }
     
-        /**
-         * MKMapView
-         */
-        public override init(frame: CGRect) {
-            points = []
-            lines = []
-            super.init(frame: frame)
-            self.delegate = self
-        }
-        
+    /**
+     * MKMapView
+     */
+    public required init?(coder aDecoder: NSCoder) {
+        points = []
+        lines = []
+        super.init(coder: aDecoder)
+        self.delegate = self
+    }
+    
+    /**
+     * MKMapView
+     */
+    public override init(frame: CGRect) {
+        points = []
+        lines = []
+        super.init(frame: frame)
+        self.delegate = self
+    }
+    
 }
 
 import MapKit

@@ -7,19 +7,34 @@
 public struct MapViewLine {
     
     /**
-     * The line object.
+     * The width of the line.
      */
-    private let line: MKPolyline
-    
-    /**
-     * The color of the line.
-     */
-    private let color: UIColor
+    private static let defaultLineColor = UIColor.black
     
     /**
      * The width of the line.
      */
-    private let width: Int
+    private static let defaultLineWidth = 2
+    
+    /**
+     * The line object.
+     */
+    let line: MKPolyline
+    
+    /**
+     * The color of the line.
+     */
+    let color: UIColor
+    
+    /**
+     * The width of the line.
+     */
+    let width: Int
+    
+    /**
+     * All points on the line.
+     */
+    let points: Array<MapViewPoint>
     
     /**
      * The renderer.
@@ -37,13 +52,14 @@ public struct MapViewLine {
      * - parameter color: The color of the line.
      * - parameter width: The width of the line.
      */
-    init(points: Array<MapViewPoint>, color: UIColor, width: Int) {
+    init(points: Array<MapViewPoint>, color: UIColor = defaultLineColor, width: Int = defaultLineWidth) {
         let coordinates = points.map { point in
             point.annotation.coordinate
         }
         line = MKPolyline(coordinates: coordinates, count: coordinates.count)
         self.width = width
         self.color = color
+        self.points = points
     }
     
 }
