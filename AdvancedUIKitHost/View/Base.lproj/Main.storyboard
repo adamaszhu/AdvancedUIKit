@@ -437,6 +437,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NO-ej-V7U">
                                                         <rect key="frame" x="5" y="40" width="365" height="30"/>
                                                         <state key="normal" title="Show Hawthorn"/>
+                                                        <connections>
+                                                            <action selector="showHawthorn:" destination="99N-G8-BgA" eventType="touchUpInside" id="IhW-tt-WeH"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzm-Rz-DuR">
                                                         <rect key="frame" x="5" y="75" width="365" height="30"/>
