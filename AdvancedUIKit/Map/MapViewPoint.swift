@@ -7,11 +7,6 @@
 public class MapViewPoint {
     
     /**
-     * System error.
-     */
-    private static let itemError = "The button click event shouldn't be called when item is nil."
-    
-    /**
      * The annotation.
      */
     let annotation: MKPointAnnotation
@@ -24,7 +19,7 @@ public class MapViewPoint {
     /**
      * The icon of the map point.
      */
-    let icon: UIImage?
+    var icon: UIImage?
     
     /**
      * The item presented by the point.
@@ -34,7 +29,7 @@ public class MapViewPoint {
     /**
      * The action of the detail button. It only works if the item is not nil.
      */
-    var detailButtonAction: ((Any) -> Void)
+    var detailButtonAction: (() -> Void)?
     
     /**
      * Initialize the object.
@@ -54,18 +49,13 @@ public class MapViewPoint {
         self.icon = icon
         self.position = position
         self.item = item
-        detailButtonAction = { _ in }
     }
     
     /**
      * The function to be called when the detailButtonAction need to be invoked.
      */
     @objc func didClickDetailButton() {
-        guard let item = item else {
-            Logger.standard.logError(MapViewPoint.itemError)
-            return
-        }
-        detailButtonAction(item)
+        detailButtonAction?()
     }
     
 }

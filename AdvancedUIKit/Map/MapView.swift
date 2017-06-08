@@ -7,11 +7,6 @@
 public class MapView: MKMapView {
     
     /**
-     * The default size of the viewport.
-     */
-    private static let defaultViewportMargin = Double(1)
-    
-    /**
      * The delegate of the map.
      */
     public var mapViewDelegate: MapViewDelegate?
@@ -44,7 +39,6 @@ public class MapView: MKMapView {
         setRegion(region, animated: shouldAnimate)
     }
     
-    
     /**
      * Set the view of the map.
      * - parameter topLatitude: The top latitude.
@@ -69,50 +63,7 @@ public class MapView: MKMapView {
         self.setRegion(region, animated: shouldAnimate)
     }
     
-    //    /**
-    //     * Set the view of the map.
-    //     * - version: 0.0.2
-    //     * - date: 12/10/2016
-    //     * - parameter topLatitude: The top latitude.
-    //     * - parameter bottomLatitude: The bottom latitude.
-    //     * - parameter leftLongitude: The left longitude.
-    //     * - parameter rightLongitude: The right longitude.
-    //     * - parameter shouldAnimate: Whether the animation should be performed or not.
-    //     */
-    //    public func setViewport(withTopLatitude topLatitude: Double, withBottomLatitude bottomLatitude: Double, withLeftLongitude leftLongitude: Double, withRightLongitude rightLongitude: Double, withAnimation shouldAnimate: Bool = true) {
-    //        // TODO: Consider about special map situation.
-    //        var centerLatitude = (topLatitude + bottomLatitude) / 2
-    //        centerLatitude = centerLatitude == 0 ? 0.001 : centerLatitude
-    //        var centerLongitude = (leftLongitude + rightLongitude) / 2
-    //        centerLongitude = centerLongitude == 0 ? 0.001 : centerLongitude
-    //        var region = MKCoordinateRegion()
-    //        region.center = CLLocationCoordinate2D(latitude: centerLatitude, longitude: centerLongitude)
-    //        var span = MKCoordinateSpan()
-    //        span.latitudeDelta = topLatitude - bottomLatitude
-    //        span.longitudeDelta = rightLongitude - leftLongitude
-    //        let pointIconWidth = pointIcon == nil ? 0 : pointIcon!.size.width
-    //        let pointIconHeight = pointIcon == nil ? 0 : pointIcon!.size.height
-    //        // COMMENT: Change ratio according to the ratio of the view.
-    //        let ratio = (frame.size.height - pointIconHeight) / (frame.size.width - pointIconWidth)
-    //        if ((span.latitudeDelta / span.longitudeDelta) > Double(ratio)) {
-    //            span.longitudeDelta = span.latitudeDelta / Double(ratio);
-    //        } else {
-    //            span.latitudeDelta = Double(ratio) * span.longitudeDelta;
-    //        }
-    //        // COMMENT: Give the margin space to the icon.
-    //        // COMMENT: self.frame.size.height / (self.frame.size.height - _pointIcon.size.height) > self.frame.size.width / (self.frame.size.width - _pointIcon.size.width)
-    //        let frameRadio = ratio * pointIconWidth / pointIconHeight < 1 ?  frame.size.height / (frame.size.height - pointIconHeight) : frame.size.width / (frame.size.width - pointIconWidth)
-    //        span.latitudeDelta *= Double(frameRadio);
-    //        span.longitudeDelta *= Double(frameRadio);
-    //        span.latitudeDelta = span.latitudeDelta > 90 ? 90 : span.latitudeDelta;
-    //        span.longitudeDelta = span.longitudeDelta > 360 ? 360 : span.longitudeDelta;
-    //        region.span = span;
-    //        // COMMENT: Set offset according to the icon.
-    //        let fixedLatitude = Double(region.center.latitude) + region.span.latitudeDelta * Double(pointIconHeight) / 2 / Double(frame.size.height)
-    //        region.center = CLLocationCoordinate2D(latitude: fixedLatitude, longitude: region.center.longitude)
-    //        self.setRegion(region, animated: shouldAnimate)
-    //    }
-
+    
     
     
     
@@ -163,32 +114,29 @@ public class MapView: MKMapView {
      * - parameter point: The point.
      */
     public func addPoint(_ point: MapViewPoint) {
-        point.detailButtonAction = { [unowned self] item in
-            self.mapViewDelegate?.mapView(self, didSelectItem: item)
+        if let item = point.item {
+            point.detailButtonAction = { [unowned self] _ in
+                self.mapViewDelegate?.mapView(self, didSelectItem: item)
+            }
         }
         points.append(point)
         addAnnotation(point.annotation)
     }
-    //
-    //    /**
-    //     * Add a line onto the map.
-    //     * - version: 0.0.3
-    //     * - date: 27/10/2016
-    //     * - parameter pointList: A list of point.
-    //     * - parameter color: The color of the line.
-    //     * - parameter width: The width of the line.
-    //     */
-    //    public func addLine(withPointList pointList: Array<MapViewPoint>, withColor color: UIColor = DefaultLineColor, withWidth width: Int = DefaultLineWidth) { withIconSize resize
-    //    mapViewDelegate?.mapView?(self, didSelectPoint: selectedPoint?.item)
-    //        let line = MapViewLine(withPointList: pointList, withColor: color, withLineWidth: width)
-    //        for point in line.pointList {
-    //            point.icon = point.icon == nil ? linePointIcon : point.icon
-    //            addAnnotation(point.annotation)
-    //        }
-    //        lineList.append(line)
-    //        addOverlay(line.line)
-    //    }
-    //
+    
+    /**
+     * Add a line onto the map.
+     * - parameter line: The line to be presented.
+     */
+    public func addLine(_ line: MapViewLine) {
+        lines.append(line)
+        add(line.line)
+        if line.pointIcon != nil {
+            for point in line.points {
+                addAnnotation(point.annotation)
+            }
+        }
+    }
+    
     /**
      * Clean all the points and lines on the map.
      */

@@ -37,6 +37,11 @@ public struct MapViewLine {
     let points: Array<MapViewPoint>
     
     /**
+     * The icon for each point on the view.
+     */
+    let pointIcon: UIImage?
+    
+    /**
      * The renderer.
      */
     var renderer: MKPolylineRenderer {
@@ -51,14 +56,21 @@ public struct MapViewLine {
      * - parameter points: A list of point list.
      * - parameter color: The color of the line.
      * - parameter width: The width of the line.
+     * - parameter pointIcon: The icon for the points on the line. Nil if the point should be shown.
      */
-    init(points: Array<MapViewPoint>, color: UIColor = defaultLineColor, width: Int = defaultLineWidth) {
+    public init(points: Array<MapViewPoint>, color: UIColor = defaultLineColor, width: Int = defaultLineWidth, withPointIcon pointIcon: UIImage? = nil) {
         let coordinates = points.map { point in
             point.annotation.coordinate
         }
         line = MKPolyline(coordinates: coordinates, count: coordinates.count)
         self.width = width
         self.color = color
+        self.pointIcon = pointIcon
+        if let icon = pointIcon {
+            for point in points {
+                point.icon = icon
+            }
+        }
         self.points = points
     }
     
