@@ -7,6 +7,11 @@
 public class MapView: MKMapView {
     
     /**
+     * The default overview margin.
+     */
+    private static let defaultOverviewMargin = Double(0.001)
+    
+    /**
      * The delegate of the map.
      */
     public var mapViewDelegate: MapViewDelegate?
@@ -59,56 +64,45 @@ public class MapView: MKMapView {
         } else {
             latitudeDelta = longitudeDelta * ratio
         }
+        latitudeDelta = min(90, latitudeDelta)
+        longitudeDelta = min(360, longitudeDelta)
         let region = MKCoordinateRegion(centerLatitude: centerLatitude, centerLongitude: centerLongitude, latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta)
         self.setRegion(region, animated: shouldAnimate)
     }
     
+    /**
+     * Adjust the viewport according to the points and lines within it.
+     */
+    public func overview() {
+        if (points.count == 0) && (lines.count == 0) {
+            setViewport(withTopLatitude: 90, withBottomLatitude: -90, withLeftLongitude: -180, withRightLongitude: 180)
+            return
+        }
+        var coordinates = self.points.map { point in
+            point.annotation.coordinate
+        }
+        for line in lines {
+            coordinates = coordinates + line.points.map { point in
+                point.annotation.coordinate
+            }
+        }
+        var maxLatitude = Double(-90)
+        var minLatitude = Double(90)
+        var maxLongitude = Double(-180)
+        var minLongitude = Double(180)
+        for coordinate in coordinates {
+            maxLatitude = max(maxLatitude, coordinate.latitude)
+            minLatitude = min(minLatitude, coordinate.latitude)
+            maxLongitude = max(maxLongitude, coordinate.longitude)
+            minLongitude = min(minLongitude, coordinate.longitude)
+        }
+        maxLatitude = min(90, maxLatitude + MapView.defaultOverviewMargin)
+        minLatitude = max(-90, minLatitude - MapView.defaultOverviewMargin)
+        maxLongitude = min(180, maxLongitude + MapView.defaultOverviewMargin)
+        minLongitude = max(-180, minLongitude - MapView.defaultOverviewMargin)
+        setViewport(withTopLatitude: maxLatitude, withBottomLatitude: minLatitude, withLeftLongitude: minLongitude, withRightLongitude: maxLongitude)
+    }
     
-    
-    
-    
-    
-    //
-    //    /**
-    //     * Adjust the viewport according to the points within it.
-    //     * - version: 0.0.3
-    //     * - date: 27/10/2016
-    //     */
-    //    public func adjustViewport() {
-    //        var maxLatitude = Double(-90)
-    //        var minLatitude = Double(90)
-    //        var maxLongitude = Double(-180)
-    //        var minLongitude = Double(180)
-    //        switch annotations.count {
-    //        case 0:
-    //            maxLatitude = 90
-    //            minLatitude = -90
-    //            maxLongitude = 180
-    //            minLongitude = -180
-    //        default:
-    //            var pointLatitude = Double(0)
-    //            var pointLongitude = Double(0)
-    //            for index in 0 ..< annotations.count {
-    //                pointLatitude = annotations[index].coordinate.latitude
-    //                pointLongitude = annotations[index].coordinate.longitude
-    //                minLatitude = pointLatitude < minLatitude ? pointLatitude : minLatitude
-    //                maxLatitude = pointLatitude > maxLatitude ? pointLatitude : maxLatitude
-    //                minLongitude = pointLongitude < minLongitude ? pointLongitude : minLongitude
-    //                maxLongitude = pointLongitude > maxLongitude ? pointLongitude : maxLongitude
-    //            }
-    //        }
-    //        maxLatitude = maxLatitude + MapView.DefaultViewportMargin / 2
-    //        maxLatitude = maxLatitude > 90 ? 90 : maxLatitude
-    //        minLatitude = minLatitude - MapView.DefaultViewportMargin / 2
-    //        minLatitude = minLatitude < -90 ? -90 : minLatitude
-    //        maxLongitude = maxLongitude + MapView.DefaultViewportMargin / 2
-    //        maxLongitude = maxLongitude > 180 ? 180 : maxLongitude
-    //        minLongitude = minLongitude - MapView.DefaultViewportMargin / 2
-    //        minLongitude = minLongitude < -180 ? -180 : minLongitude
-    //        setViewport(withTopLatitude: maxLatitude, withBottomLatitude: minLatitude, withLeftLongitude: minLongitude, withRightLongitude: maxLongitude)
-    //    }
-    //
-    //
     /**
      * Add a point on the map.
      * - parameter point: The point.

@@ -431,6 +431,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5U2-l2-1kd">
                                                 <rect key="frame" x="5" y="35" width="70" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Show"/>
                                                 <connections>
                                                     <action selector="showMelbourne:" destination="99N-G8-BgA" eventType="touchUpInside" id="F3w-3Z-Se6"/>
@@ -438,6 +439,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzm-Rz-DuR">
                                                 <rect key="frame" x="5" y="69.5" width="70" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Point"/>
                                                 <connections>
                                                     <action selector="pointMelbourne:" destination="99N-G8-BgA" eventType="touchUpInside" id="lmY-Jr-xsu"/>
@@ -458,6 +460,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NO-ej-V7U">
                                                 <rect key="frame" x="5" y="140.5" width="70" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Show"/>
                                                 <connections>
                                                     <action selector="showHawthorn:" destination="99N-G8-BgA" eventType="touchUpInside" id="IhW-tt-WeH"/>
@@ -465,6 +468,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGE-fN-fZv">
                                                 <rect key="frame" x="5" y="175.5" width="70" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Circle"/>
                                                 <connections>
                                                     <action selector="circleHawthorn:" destination="99N-G8-BgA" eventType="touchUpInside" id="MeO-XM-Ord"/>
@@ -472,6 +476,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cot-JI-Kj2">
                                                 <rect key="frame" x="5" y="210.5" width="70" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Point"/>
                                                 <connections>
                                                     <action selector="pointHawthorn:" destination="99N-G8-BgA" eventType="touchUpInside" id="oQz-wX-3si"/>
@@ -492,6 +497,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPA-vE-9xK">
                                                 <rect key="frame" x="5" y="281.5" width="70" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Show"/>
                                                 <connections>
                                                     <action selector="showBulleen:" destination="99N-G8-BgA" eventType="touchUpInside" id="2BN-tp-SH6"/>
@@ -499,6 +505,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzN-Bm-lxq">
                                                 <rect key="frame" x="5" y="316.5" width="70" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Circle"/>
                                                 <connections>
                                                     <action selector="circleBulleen:" destination="99N-G8-BgA" eventType="touchUpInside" id="pgv-rm-5Y0"/>
@@ -506,6 +513,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-TN-efM">
                                                 <rect key="frame" x="5" y="351.5" width="70" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Point"/>
                                                 <connections>
                                                     <action selector="pointBulleen:" destination="99N-G8-BgA" eventType="touchUpInside" id="xJk-pr-8co"/>
@@ -527,13 +535,22 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otq-F3-R0C">
                                                 <rect key="frame" x="5" y="422.5" width="70" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Clean"/>
                                                 <connections>
                                                     <action selector="clean:" destination="99N-G8-BgA" eventType="touchUpInside" id="8bx-XJ-LTD"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryk-n3-JAE">
+                                                <rect key="frame" x="5" y="457.5" width="70" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <state key="normal" title="Overview"/>
+                                                <connections>
+                                                    <action selector="overview:" destination="99N-G8-BgA" eventType="touchUpInside" id="hiz-He-RHE"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="wRo-Tw-Dvn" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="0Hi-3e-cXv"/>
                                             <constraint firstAttribute="trailing" secondItem="jmE-bd-OHt" secondAttribute="trailing" constant="5" id="2I0-F7-NhU"/>
@@ -554,11 +571,13 @@
                                             <constraint firstItem="cot-JI-Kj2" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="IZh-kj-sMK"/>
                                             <constraint firstAttribute="trailing" secondItem="AGE-fN-fZv" secondAttribute="trailing" constant="5" id="Ihz-1d-9cV"/>
                                             <constraint firstAttribute="trailing" secondItem="8NO-ej-V7U" secondAttribute="trailing" constant="5" id="JC8-6J-ELa"/>
+                                            <constraint firstItem="Ryk-n3-JAE" firstAttribute="top" secondItem="Otq-F3-R0C" secondAttribute="bottom" constant="5" id="JYg-ic-Xth"/>
                                             <constraint firstAttribute="trailing" secondItem="tzm-Rz-DuR" secondAttribute="trailing" constant="5" id="K8b-Xd-YRT"/>
                                             <constraint firstItem="Fva-1W-08d" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="MiV-ip-dB5"/>
                                             <constraint firstItem="Otq-F3-R0C" firstAttribute="top" secondItem="Em7-Rn-O7a" secondAttribute="bottom" constant="5" id="NlT-6I-W88"/>
                                             <constraint firstItem="AGE-fN-fZv" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="R4s-2O-b6x"/>
                                             <constraint firstItem="8NO-ej-V7U" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="RCT-Ns-pis"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ryk-n3-JAE" secondAttribute="trailing" constant="5" id="Rie-bQ-R5Q"/>
                                             <constraint firstItem="AGE-fN-fZv" firstAttribute="top" secondItem="8NO-ej-V7U" secondAttribute="bottom" constant="5" id="T2z-Fi-jZ2"/>
                                             <constraint firstItem="Nd8-m0-hB0" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="USg-PG-GQd"/>
                                             <constraint firstAttribute="trailing" secondItem="tzN-Bm-lxq" secondAttribute="trailing" constant="5" id="UzR-VI-Ncl"/>
@@ -574,6 +593,7 @@
                                             <constraint firstItem="S1k-zV-2Yd" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="jXM-3R-JEf"/>
                                             <constraint firstItem="cot-JI-Kj2" firstAttribute="top" secondItem="AGE-fN-fZv" secondAttribute="bottom" constant="5" id="jft-Ac-IeJ"/>
                                             <constraint firstItem="wRo-Tw-Dvn" firstAttribute="top" secondItem="cot-JI-Kj2" secondAttribute="bottom" constant="5" id="jk0-jx-YXu"/>
+                                            <constraint firstItem="Ryk-n3-JAE" firstAttribute="leading" secondItem="uU8-jh-m38" secondAttribute="leading" constant="5" id="n3b-Yg-d3T"/>
                                             <constraint firstItem="YPA-vE-9xK" firstAttribute="top" secondItem="S1k-zV-2Yd" secondAttribute="bottom" constant="5" id="nbE-83-jEc"/>
                                             <constraint firstAttribute="trailing" secondItem="wRo-Tw-Dvn" secondAttribute="trailing" constant="5" id="o8B-MX-yLo"/>
                                             <constraint firstAttribute="trailing" secondItem="Nd8-m0-hB0" secondAttribute="trailing" constant="5" id="obh-aa-vHS"/>

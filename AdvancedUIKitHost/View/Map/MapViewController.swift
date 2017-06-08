@@ -68,6 +68,10 @@ class MapViewController: UIViewController {
         mapView.reset()
     }
     
+    @IBAction func overview(_ sender: Any) {
+        mapView.overview()
+    }
+    
 }
 
 import AdvancedUIKit
