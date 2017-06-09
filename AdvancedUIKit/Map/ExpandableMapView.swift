@@ -128,6 +128,18 @@ public class ExpandableMapView: MapView {
     }
     
     /**
+     * Wait until the view has been added back to the original superview and add constraints.
+     */
+    func addOriginalConstraints() {
+        guard let superview = superview else {
+            Logger.standard.logError(ExpandableMapView.superviewError)
+            return
+        }
+        superview.addConstraints(originalFrameConstraints)
+        addConstraints(originalConstraints)
+    }
+    
+    /**
      * Move current view to the window.
      */
     private func moveToWindow() {
@@ -151,15 +163,12 @@ public class ExpandableMapView: MapView {
      * Remove the view from window and move it back to its original superview.
      */
     private func removeFromWindow() {
-        guard let superview = superview else {
-            Logger.standard.logError(ExpandableMapView.superviewError)
-            return
-        }
         translatesAutoresizingMaskIntoConstraints = false
         removeFromSuperview()
         originalSuperview.insertSubview(self, at: originalZIndex)
-        superview.addConstraints(originalFrameConstraints)
-        addConstraints(originalConstraints)
+        addOriginalConstraints()
+        // COMMENT: Wait the view to be refreshed and add the constraint back
+        perform(#selector(addOriginalConstraints), with: nil, afterDelay: 0.2)
     }
     
     /**
