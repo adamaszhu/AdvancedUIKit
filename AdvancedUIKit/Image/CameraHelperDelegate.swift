@@ -1,19 +1,15 @@
-import Foundation
-
 /**
  * CameraHelperDelegate is used when an authorization finished.
  * - author: Adamas
- * - version: 0.0.1
- * - date: 22/10/2016
+ * - version: 1.0.0
+ * - date: 10/06/2017
  */
-@objc public protocol CameraHelperDelegate {
+public protocol CameraHelperDelegate {
     
     /**
      * The camera has been authorized.
-     * - version: 0.0.1
-     * - date: 22/10/2016
      * - parameter result: Whether the camera has been authorized or not.
      */
-    optional func cameraHelper(cameraHelper: CameraHelper, didAuthorizeCamera result: Bool)
+    func cameraHelper(_ cameraHelper: CameraHelper, didAuthorizeCamera result: Bool)
     
 }

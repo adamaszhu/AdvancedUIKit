@@ -1,31 +1,22 @@
-import Foundation
-import AVFoundation
-
 /**
  * CameraHelper is used to access the information about the camera.
  * - author: Adamas
- * - date: 22/10/2016
- * - version: 0.0.1
+ * - version: 1.0.0
+ * - date: 10/06/2017
  */
-public class CameraHelper: NSObject {
+public class CameraHelper {
     
     
     /**
      * Whether the camera is enabled by the user or not.
      */
     public static var isCameraAuthorized: Bool {
-        /**
-         * - date: 22/10/2016
-         * - version: 0.0.1
-         */
-        get {
-            let authorizedStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
-            switch authorizedStatus {
-            case .Authorized:
-                return true
-            default:
-                return false
-            }
+        let authorizedStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        switch authorizedStatus {
+        case .authorized:
+            return true
+        default:
+            return false
         }
     }
     
@@ -36,12 +27,13 @@ public class CameraHelper: NSObject {
     
     /**
      * Authorize the camera.
-     * - date: 22/10/2016
-     * - version: 0.0.1
      */
     public func authorizeCamera() {
-        AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo, completionHandler: { (result: Bool) in
-            self.cameraHelperDelegate?.cameraHelper?(self, didAuthorizeCamera: result)
+        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { [unowned self] (result) in
+            self.cameraHelperDelegate?.cameraHelper(self, didAuthorizeCamera: result)
         })
     }
 }
+
+import Foundation
+import AVFoundation
