@@ -91,7 +91,7 @@
 		4258DDB31EEAE6A80085FCAA /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA71EEAE6A80085FCAA /* ImagePickerHelper.swift */; };
 		4258DDB41EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA81EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift */; };
 		4258DDB51EEAE6A80085FCAA /* UIImage+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA91EEAE6A80085FCAA /* UIImage+PS.swift */; };
-		4258DDB61EEAE6A80085FCAA /* UIImageView+ContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDAA1EEAE6A80085FCAA /* UIImageView+ContentMode.swift */; };
+		4258DDB61EEAE6A80085FCAA /* ImageView+Measurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDAA1EEAE6A80085FCAA /* ImageView+Measurer.swift */; };
 		425DCD121EB357A800A0ED26 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD111EB357A800A0ED26 /* View+Animation.swift */; };
 		425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD131EB3689000A0ED26 /* View+Gesture.swift */; };
 		425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD151EB36EA100A0ED26 /* String+Localizer.swift */; };
@@ -258,7 +258,7 @@
 		4258DDA71EEAE6A80085FCAA /* ImagePickerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
 		4258DDA81EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerHelperDelegate.swift; sourceTree = "<group>"; };
 		4258DDA91EEAE6A80085FCAA /* UIImage+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+PS.swift"; sourceTree = "<group>"; };
-		4258DDAA1EEAE6A80085FCAA /* UIImageView+ContentMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ContentMode.swift"; sourceTree = "<group>"; };
+		4258DDAA1EEAE6A80085FCAA /* ImageView+Measurer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+Measurer.swift"; sourceTree = "<group>"; };
 		4258DDAB1EEAE6A80085FCAA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ImagePickerHelper.strings"; sourceTree = "<group>"; };
 		425DCD111EB357A800A0ED26 /* View+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
 		425DCD131EB3689000A0ED26 /* View+Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Gesture.swift"; sourceTree = "<group>"; };
@@ -613,7 +613,7 @@
 				4258DDA71EEAE6A80085FCAA /* ImagePickerHelper.swift */,
 				4258DDA81EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift */,
 				4258DDA91EEAE6A80085FCAA /* UIImage+PS.swift */,
-				4258DDAA1EEAE6A80085FCAA /* UIImageView+ContentMode.swift */,
+				4258DDAA1EEAE6A80085FCAA /* ImageView+Measurer.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1091,7 +1091,7 @@
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
 				28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */,
 				2822A3491EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift in Sources */,
-				4258DDB61EEAE6A80085FCAA /* UIImageView+ContentMode.swift in Sources */,
+				4258DDB61EEAE6A80085FCAA /* ImageView+Measurer.swift in Sources */,
 				2862143E1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift in Sources */,
 				28E66FF21EE4E4C100073DF1 /* ActionFilterViewDelegate.swift in Sources */,
 				4258DDB41EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift in Sources */,
