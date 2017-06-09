@@ -7,9 +7,9 @@
 public extension UIView {
     
     /**
-     * The constraints related to the frame of the view.
+     * The constraints related to the frame of the view. These constraints is usually added to superview.
      */
-    private var frameConstraints: Array<NSLayoutConstraint> {
+    public var frameConstraints: Array<NSLayoutConstraint> {
         var frameConstraints = Array<NSLayoutConstraint>()
         if let superview = superview {
             for constraint in superview.constraints {
@@ -25,6 +25,8 @@ public extension UIView {
         }
         return frameConstraints
     }
+    
+    // TODO: Get self related constraints.
     
 }
 

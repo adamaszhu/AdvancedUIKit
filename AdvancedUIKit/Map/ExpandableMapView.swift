@@ -24,29 +24,35 @@ public class ExpandableMapView: MapView {
     private let gestureFilterView: UIView
     
     /**
-     * The origin superview.
+     * The original superview.
      */
-    private var originSuperview: UIView!
+    private var originalSuperview: UIView!
     
     /**
-     * The z Index.
+     * The original z Index.
      */
-    private var zIndex: Int!
+    private var originalZIndex: Int!
     
     /**
      * The origin frame in origin view.
      */
-    private var originFrame: CGRect!
+    private var originalFrame: CGRect!
+    
+    /**
+     * The original frame related constraints on the superview.
+     */
+    private var originalFrameConstraints: Array<NSLayoutConstraint>!
+    
+    /**
+     * The original constraints.
+     */
+    private var originalConstraints: Array<NSLayoutConstraint>!
     
     /**
      * Whether the view can be expanded or not.
      */
     public var isExpandable: Bool {
         set {
-            guard superview != nil else {
-                Logger.standard.logError(ExpandableMapView.superviewError)
-                return
-            }
             if newValue {
                 addSubview(gestureFilterView)
             } else {
@@ -85,9 +91,12 @@ public class ExpandableMapView: MapView {
             Logger.standard.logError(ExpandableMapView.windowError)
             return
         }
-        originSuperview = superview
-        zIndex = superview.subviews.index(of: self)
-        originFrame = frame
+        originalSuperview = superview
+        originalZIndex = superview.subviews.index(of: self)
+        originalFrame = frame
+        originalFrameConstraints = frameConstraints
+        // TODO: Exclude those constraints related to subviews.
+        originalConstraints = constraints
         animate(withChange: { [unowned self] _ in
             self.frame = window.bounds
             }, withPreparation: { [unowned self] _ in
@@ -111,7 +120,7 @@ public class ExpandableMapView: MapView {
             return
         }
         animate(withChange: { [unowned self] _ in
-            self.frame = window.convert(self.originFrame, from: self.originSuperview)
+            self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
             }, withCompletion: { [unowned self] _ in
                 self.removeFromWindow()
                 self.gestureFilterView.isHidden = false
@@ -126,9 +135,15 @@ public class ExpandableMapView: MapView {
             Logger.standard.logError(ExpandableMapView.windowError)
             return
         }
+        guard let superview = superview else {
+            Logger.standard.logError(ExpandableMapView.superviewError)
+            return
+        }
+        superview.removeConstraints(originalFrameConstraints)
+        removeConstraints(originalConstraints)
         removeFromSuperview()
         window.addSubview(self)
-        frame = window.convert(originFrame, from: originSuperview)
+        frame = window.convert(originalFrame, from: originalSuperview)
         translatesAutoresizingMaskIntoConstraints = true
     }
     
@@ -136,9 +151,15 @@ public class ExpandableMapView: MapView {
      * Remove the view from window and move it back to its original superview.
      */
     private func removeFromWindow() {
+        guard let superview = superview else {
+            Logger.standard.logError(ExpandableMapView.superviewError)
+            return
+        }
+        translatesAutoresizingMaskIntoConstraints = false
         removeFromSuperview()
-        originSuperview.insertSubview(self, at: zIndex)
-        frame = originFrame
+        originalSuperview.insertSubview(self, at: originalZIndex)
+        superview.addConstraints(originalFrameConstraints)
+        addConstraints(originalConstraints)
     }
     
     /**
