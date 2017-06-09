@@ -11,11 +11,12 @@ class MapViewController: UIViewController {
     private let bulleenPoint = (latitude: -37.77, longitude: 145.09, title: "Bulleen", subtitle: "Home")
     private let bulleenRegion = (leftLongitude: 145.063039, rightLongitude: 145.106654, topLatitude: -37.747502, bottmLatitude: -37.784629)
     
-    @IBOutlet weak var mapView: MapView!
+    @IBOutlet weak var mapView: ExpandableMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.mapViewDelegate = self
+        mapView.isExpandable = true
     }
     
     @IBAction func showMelbourne(_ sender: Any) {
