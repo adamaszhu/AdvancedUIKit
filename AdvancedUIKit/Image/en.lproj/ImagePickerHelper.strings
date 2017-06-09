@@ -1,0 +1,4 @@
+"SelectFromLibrary" = "Select From Library";
+"TakePhoto" = "Take Photo";
+"Cancel" = "Cancel";
+"CameraAuthorizationError" = "Please allow the app to use camera in the setting.";
