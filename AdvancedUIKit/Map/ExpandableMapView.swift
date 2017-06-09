@@ -24,6 +24,11 @@ public class ExpandableMapView: MapView {
     private let gestureFilterView: UIView
     
     /**
+     * The button used to collapse the view.
+     */
+    private let collapseButton: UIButton
+    
+    /**
      * The original superview.
      */
     private var originalSuperview: UIView!
@@ -55,8 +60,10 @@ public class ExpandableMapView: MapView {
         set {
             if newValue {
                 addSubview(gestureFilterView)
+                addSubview(collapseButton)
             } else {
                 gestureFilterView.removeFromSuperview()
+                collapseButton.removeFromSuperview()
             }
         }
         get {
@@ -103,7 +110,7 @@ public class ExpandableMapView: MapView {
                 self.gestureFilterView.isHidden = true
                 self.moveToWindow()
             }, withCompletion: { [unowned self] _ in
-                self.perform(#selector(self.collapse), with: nil, afterDelay: 3)
+                self.collapseButton.isHidden = false
         })
     }
     
@@ -121,6 +128,8 @@ public class ExpandableMapView: MapView {
         }
         animate(withChange: { [unowned self] _ in
             self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
+            }, withPreparation: { [unowned self] _ in
+                self.collapseButton.isHidden = true
             }, withCompletion: { [unowned self] _ in
                 self.removeFromWindow()
                 self.gestureFilterView.isHidden = false
@@ -176,7 +185,11 @@ public class ExpandableMapView: MapView {
      */
     public required init?(coder aDecoder: NSCoder) {
         gestureFilterView = UIView()
+        collapseButton = UIButton()
         super.init(coder: aDecoder)
+        collapseButton.frame = bounds
+        collapseButton.isHidden = true
+        collapseButton.addTarget(self, action: #selector(collapse), for: .touchUpInside)
         gestureFilterView.frame = bounds
         gestureFilterView.backgroundColor = UIColor.clear
         let expandGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(expand))
