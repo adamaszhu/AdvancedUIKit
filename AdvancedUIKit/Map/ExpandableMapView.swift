@@ -15,8 +15,8 @@ public class ExpandableMapView: MapView {
     /**
      * System warning.
      */
-    private static let expandWarning = "The view has been expanded."
-    private static let collapseWarning = "The view has been collapsed."
+    private static let expandWarning = "The view cannot be expanded."
+    private static let collapseWarning = "The view cannot be collapsed."
     
     /**
      * The gesture filter to expand the view.
@@ -52,6 +52,35 @@ public class ExpandableMapView: MapView {
      * The original constraints.
      */
     private var originalConstraints: Array<NSLayoutConstraint>!
+    
+    /**
+     * The icon on the collapse button.
+     */
+    public var collapseIcon: UIImage? {
+        set {
+            guard let newImage = newValue else {
+                return
+            }
+            collapseButton.setImage(newImage, for: .normal)
+            collapseButton.setImage(newImage, for: .highlighted)
+            collapseButton.frame.size = newImage.size
+        }
+        get {
+            return collapseButton.imageView?.image
+        }
+    }
+    
+    /**
+     * The origin of the collapse button.
+     */
+    public var collapseIconOrigin: CGPoint {
+        set {
+            collapseButton.frame.origin = newValue
+        }
+        get {
+            return collapseButton.frame.origin
+        }
+    }
     
     /**
      * Whether the view can be expanded or not.
@@ -106,11 +135,16 @@ public class ExpandableMapView: MapView {
         originalConstraints = constraints
         animate(withChange: { [unowned self] _ in
             self.frame = window.bounds
+            self.collapseButton.alpha = 1
             }, withPreparation: { [unowned self] _ in
                 self.gestureFilterView.isHidden = true
                 self.moveToWindow()
-            }, withCompletion: { [unowned self] _ in
                 self.collapseButton.isHidden = false
+                self.collapseButton.alpha = 0
+                self.collapseButton.isUserInteractionEnabled = false
+            }, withCompletion: { [unowned self] _ in
+                self.collapseButton.alpha = 1
+                self.collapseButton.isUserInteractionEnabled = true
         })
     }
     
@@ -128,9 +162,14 @@ public class ExpandableMapView: MapView {
         }
         animate(withChange: { [unowned self] _ in
             self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
+            self.collapseButton.alpha = 0
             }, withPreparation: { [unowned self] _ in
-                self.collapseButton.isHidden = true
+                self.collapseButton.alpha = 1
+                self.collapseButton.isUserInteractionEnabled = false
             }, withCompletion: { [unowned self] _ in
+                self.collapseButton.alpha = 1
+                self.collapseButton.isUserInteractionEnabled = true
+                self.collapseButton.isHidden = true
                 self.removeFromWindow()
                 self.gestureFilterView.isHidden = false
         })
@@ -187,7 +226,6 @@ public class ExpandableMapView: MapView {
         gestureFilterView = UIView()
         collapseButton = UIButton()
         super.init(coder: aDecoder)
-        collapseButton.frame = bounds
         collapseButton.isHidden = true
         collapseButton.addTarget(self, action: #selector(collapse), for: .touchUpInside)
         gestureFilterView.frame = bounds

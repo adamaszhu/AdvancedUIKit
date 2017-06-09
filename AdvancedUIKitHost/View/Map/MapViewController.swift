@@ -2,6 +2,7 @@ class MapViewController: UIViewController {
     
     private let pointIcon = UIImage(named: "MapPin")
     private let lineIcon = UIImage(named: "MapPoint")
+    private let collapseIcon = UIImage(named: "ExitFullScreen")
     private let lineWidth = 5
     private let melbournePoint = (latitude: -37.8136, longitude: 144.9631, title: "Melbourne")
     private let melbourneRegion = (latitude: -37.8136, longitude: 144.9631, zoomLevel: 2.0)
@@ -17,6 +18,8 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         mapView.mapViewDelegate = self
         mapView.isExpandable = true
+        mapView.collapseIcon = collapseIcon
+        mapView.collapseIconOrigin = CGPoint(x: 20, y: 20)
     }
     
     @IBAction func showMelbourne(_ sender: Any) {
