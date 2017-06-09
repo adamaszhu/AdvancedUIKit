@@ -52,6 +52,7 @@
 		28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */; };
 		28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */; };
 		28B1D8101EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */; };
+		28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B524F81EEA14970051E8D2 /* View+Constraint.swift */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
 		28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		28D1BFF81EDCEC7300290999 /* AdvancedUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -204,6 +205,7 @@
 		28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+Underline.swift"; path = "AdvancedUIKit/Textfield/TextField+Underline.swift"; sourceTree = SOURCE_ROOT; };
 		28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnderlineView.swift; path = AdvancedUIKit/Textfield/UnderlineView.swift; sourceTree = SOURCE_ROOT; };
 		28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+ActionFilterViewDelegate.swift"; sourceTree = "<group>"; };
+		28B524F81EEA14970051E8D2 /* View+Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Constraint.swift"; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		28D1BFFC1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceViewController+DeviceHelperDelegate.swift"; sourceTree = "<group>"; };
 		28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PickerViewController+DataPickerDelegate.swift"; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 				425EAD4C1EAC6EDB001F1F81 /* RootView.swift */,
 				425DCD111EB357A800A0ED26 /* View+Animation.swift */,
 				425DCD131EB3689000A0ED26 /* View+Gesture.swift */,
+				28B524F81EEA14970051E8D2 /* View+Constraint.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1035,6 +1038,7 @@
 				2822A3411EE127EA00FAA8E3 /* NotificationHelperDelegate.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */,
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
+				28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */,
 				2822A3491EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift in Sources */,
 				2862143E1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift in Sources */,
 				28E66FF21EE4E4C100073DF1 /* ActionFilterViewDelegate.swift in Sources */,

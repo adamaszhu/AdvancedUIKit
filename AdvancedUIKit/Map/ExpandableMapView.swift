@@ -1,3 +1,16 @@
+
+//let window = UIApplication.shared.windows[0]
+//let frameInWindow = window.convert(mapView.frame, from: mapView.superview)
+//mapView.deactivateFrameConstraints()
+//mapView.removeFromSuperview()
+//window.addSubview(mapView)
+//mapView.frame = frameInWindow
+//mapView.translatesAutoresizingMaskIntoConstraints = true
+//mapView.animate(withChange: { [unowned self] _ in
+//    self.mapView.frame = window.bounds
+//})
+
+
 //import MapKit
 //
 ///**
