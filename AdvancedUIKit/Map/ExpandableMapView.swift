@@ -126,7 +126,6 @@ public class ExpandableMapView: MapView {
             Logger.standard.logError(ExpandableMapView.windowError)
             return
         }
-        deactivateFrameConstraints()
         removeFromSuperview()
         window.addSubview(self)
         frame = window.convert(originFrame, from: originSuperview)
@@ -137,10 +136,8 @@ public class ExpandableMapView: MapView {
      * Remove the view from window and move it back to its original superview.
      */
     private func removeFromWindow() {
-//        translatesAutoresizingMaskIntoConstraints = false
         removeFromSuperview()
         originSuperview.insertSubview(self, at: zIndex)
-//        activateFrameConstraints()
         frame = originFrame
     }
     

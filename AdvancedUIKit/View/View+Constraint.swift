@@ -23,30 +23,7 @@ public extension UIView {
                 }
             }
         }
-        for constraint in self.constraints {
-            if constraint.secondItem != nil {
-                frameConstraints.append(constraint)
-            }
-        }
         return frameConstraints
-    }
-    
-    /**
-     * Deactive the constraints related to the frame.
-     */
-    public func deactivateFrameConstraints() {
-        for constraint in frameConstraints {
-            constraint.isActive = false
-        }
-    }
-    
-    /**
-     * Active the constraints related to the frame.
-     */
-    public func activateFrameConstraints() {
-        for constraint in frameConstraints {
-            constraint.isActive = true
-        }
     }
     
 }
