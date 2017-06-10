@@ -1,19 +1,17 @@
-//import UIKit
-//
-///**
-// * The picker action has been finished.
-// * - version: 0.0.1
-// * - date: 09/10/2016
-// * - author: Adamas
-// */
-//@objc public protocol ImagePickerHelperDelegate {
-//    
-//    /**
-//     * The image has been picked.
-//     * - version: 0.0.1
-//     * - date: 09/10/2016
-//     * - parameter image: The image picked.
-//     */
-//    func imagePickerHelper(imagePickerHelper: ImagePickerHelper, didPickImage image: UIImage)
-//    
-//}
+/**
+ * The picker action has been finished.
+ * - author: Adamas
+ * - version: 1.0.0
+ * - date: 10/06/2017
+ */
+public protocol ImagePickerHelperDelegate {
+    
+    /**
+     * The image has been picked.
+     * - parameter image: The image picked.
+     */
+    func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didPickImage image: UIImage)
+    
+}
+
+import UIKit

@@ -14,13 +14,7 @@ public class SystemMessageHelper {
     /**
      * Error message.
      */
-    private static let windowError = "The window presented is invalid."
     private static let typeError = "The message type is unknown."
-    
-    /**
-     * System warning.
-     */
-    private static let navigationWarning = "The view doesn't have a navigation controller."
     
     /**
      * The type of current message.
@@ -33,9 +27,9 @@ public class SystemMessageHelper {
     var alertController: UIAlertController!
     
     /**
-     * The root view controller.
+     * The current view controller.
      */
-    private let rootViewController: UIViewController
+    private let currentViewController: UIViewController?
     
     /**
      * MessageHelper
@@ -47,11 +41,7 @@ public class SystemMessageHelper {
      * - parameter application: The application used to make a function call.
      */
     public init?(application: UIApplication = UIApplication.shared) {
-        guard let rootViewController = application.keyWindow?.rootViewController else {
-            Logger.standard.logError(SystemMessageHelper.windowError)
-            return nil
-        }
-        self.rootViewController = rootViewController
+        currentViewController = application.currentViewController
         messageType = .unknown
     }
     
@@ -108,15 +98,8 @@ public class SystemMessageHelper {
      * Show the alert controller with the message.
      */
     func showMessage() {
-        var currentController: UIViewController
-        if let navigationController = rootViewController as? UINavigationController {
-            currentController = navigationController.viewControllers.last ?? navigationController
-        } else {
-            Logger.standard.logWarning(SystemMessageHelper.navigationWarning)
-            currentController = rootViewController
-        }
         // TODO: Fix the conflict between this and a PopupView
-        currentController.present(alertController, animated: true, completion: nil)
+        currentViewController?.present(alertController, animated: true, completion: nil)
     }
     
     /**

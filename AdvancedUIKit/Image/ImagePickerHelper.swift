@@ -1,13 +1,11 @@
-//import UIKit
+/**
+ * ImagePickerHelper is used to select an image in the image library or using the camera.
+ * - author: Adamas
+ * - version: 1.0.0
+ * - date: 10/06/2017
+ */
+public class ImagePickerHelper: NSObject {//, UINavigationControllerDelegate {
 //
-///**
-// * ImagePickerHelper is used to select an image in the image library or using the camera.
-// * - version: 0.0.2
-// * - date: 14/11/2016
-// * - author: Adamas
-// */
-//public class ImagePickerHelper: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//    
 //    /**
 //     * The content on the selector.
 //     */
@@ -21,26 +19,24 @@
 //     */
 //    private static let ImageError = "There has been error while picking the image."
 //    
-//    /**
-//     * The delegate.
-//     */
-//    public var imagePickerHelperDelegate: ImagePickerHelperDelegate?
-//    
-//    /**
-//     * The view controller that the picker belongs to.
-//     */
-//    private var viewController: UIViewController
-//    
-//    /**
-//     * Initialize the helper.
-//     * - version: 0.0.1
-//     * - date: 09/10/2016
-//     * - parameter viewController: The view controller where the image picker will be launched from.
-//     */
-//    public init(withViewController viewController: UIViewController) {
-//        self.viewController = viewController
-//        super.init()
-//    }
+    /**
+     * The delegate.
+     */
+    public var imagePickerHelperDelegate: ImagePickerHelperDelegate?
+    
+    /**
+     * The application used to do the action.
+     */
+    private let application: UIApplication
+    
+    /**
+     * Initialize the object.
+     * - parameter application: The application used to make a function call.
+     */
+    public init(application: UIApplication = UIApplication.shared) {
+        self.application = application
+        super.init()
+    }
 //    
 //    /**
 //     * Show the image picker selector.
@@ -68,31 +64,17 @@
 //        viewController.presentViewController(alertController, animated: true, completion: nil)
 //    }
 //    
-//    /**
-//     * Show the image view controller with a specific type.
-//     * - version: 0.0.1
-//     * - date: 09/10/2016
-//     * - parameter type: The type of the image view controller.
-//     */
-//    private func showImageViewController(withSourceType type:UIImagePickerControllerSourceType) {
+    /**
+     * Show the image view controller with a specific type.
+     * - parameter type: The type of the image view controller.
+     */
+//    private func showImageViewController(withSourceType type: UIImagePickerControllerSourceType) {
 //        let imagePickerController = UIImagePickerController()
-//        imagePickerController.sourceType = type;
-//        imagePickerController.delegate = self;
+//        imagePickerController.sourceType = type
+//        imagePickerController.delegate = self
 //        self.viewController.navigationController?.presentViewController(imagePickerController, animated: true, completion: nil)
 //    }
-//    
-//    /**
-//     * An image has been picked.
-//     * - version: 0.0.1
-//     * - date: 09/10/2016
-//     */
-//    public func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-//        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-//        picker.dismissViewControllerAnimated(true, completion: nil)
-//        if image == nil {
-//            logError(ImagePickerHelper.ImageError)
-//            return
-//        }
-//        imagePickerHelperDelegate?.imagePickerHelper(self, didPickImage: image!)
-//    }
-//}
+
+}
+
+import UIKit
