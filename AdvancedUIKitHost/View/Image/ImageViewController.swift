@@ -8,6 +8,14 @@ class ImageViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    private let imagePickerHelper: ImagePickerHelper
+    
+    required init?(coder aDecoder: NSCoder) {
+        imagePickerHelper = ImagePickerHelper()
+        super.init(coder: aDecoder)
+        imagePickerHelper.imagePickerHelperDelegate = self
+    }
+    
     @IBAction func addBlur(_ sender: Any) {
         imageView.image = images[0].addGaussianBlur(withRadius: gaussianRadius)
     }
@@ -28,6 +36,11 @@ class ImageViewController: UIViewController {
         imageView.image = images[0].resize(toWidth: size.width, toHeight: size.height)
     }
     
+    @IBAction func chooseImage(_ sender: Any) {
+        imagePickerHelper.showImagePicker()
+    }
+    
 }
 
+import AdvancedUIKit
 import UIKit

@@ -4,20 +4,25 @@
  * - version: 1.0.0
  * - date: 10/06/2017
  */
-extension ImagePickerHelper: UIImagePickerControllerDelegate {
+extension ImagePickerHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    //    /**
-    //     * UIImagePickerControllerDelegate
-    //     */
-    //    public func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-    //        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-    //        picker.dismissViewControllerAnimated(true, completion: nil)
-    //        if image == nil {
-    //            logError(ImagePickerHelper.ImageError)
-    //            return
-    //        }
-    //        imagePickerHelperDelegate?.imagePickerHelper(self, didPickImage: image!)
-    //    }
+    /**
+     * System error.
+     */
+    private static let imageError = "There has been error while picking the image."
+    
+    /**
+     * UIImagePickerControllerDelegate
+     */
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            Logger.standard.logError(ImagePickerHelper.imageError)
+            return
+        }
+        picker.dismiss(animated: true, completion: nil)
+        imagePickerHelperDelegate?.imagePickerHelper(self, didPickImage: image)
+    }
+    
 }
 
 import UIKit

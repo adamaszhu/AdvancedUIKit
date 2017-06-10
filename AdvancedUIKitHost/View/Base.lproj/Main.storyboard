@@ -672,7 +672,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ej-f4-05I">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageA" translatesAutoresizingMaskIntoConstraints="NO" id="2B6-yJ-NGR">
                                                         <rect key="frame" x="10" y="10" width="355" height="355"/>
@@ -715,6 +715,13 @@
                                                             <action selector="addBlur:" destination="gsr-tR-FhV" eventType="touchUpInside" id="0P0-s0-oFc"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUV-YY-Hft">
+                                                        <rect key="frame" x="5" y="545" width="365" height="30"/>
+                                                        <state key="normal" title="Choose Image"/>
+                                                        <connections>
+                                                            <action selector="chooseImage:" destination="gsr-tR-FhV" eventType="touchUpInside" id="Hz9-zy-Xfq"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -724,19 +731,22 @@
                                                     <constraint firstAttribute="trailing" secondItem="sOk-iN-cdj" secondAttribute="trailing" constant="5" id="KFn-ED-7az"/>
                                                     <constraint firstItem="2B6-yJ-NGR" firstAttribute="top" secondItem="3ej-f4-05I" secondAttribute="top" constant="10" id="Kcv-nE-27K"/>
                                                     <constraint firstItem="sOk-iN-cdj" firstAttribute="top" secondItem="So1-V2-n4r" secondAttribute="bottom" constant="5" id="L02-wf-psm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aUV-YY-Hft" secondAttribute="trailing" constant="5" id="Lcn-7V-d8h"/>
                                                     <constraint firstItem="pxY-i2-KP2" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="Q8v-ZL-fCf"/>
                                                     <constraint firstAttribute="trailing" secondItem="pxY-i2-KP2" secondAttribute="trailing" constant="5" id="Rry-ta-Zz8"/>
                                                     <constraint firstItem="fqr-ep-GUZ" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="TgE-jj-QD2"/>
                                                     <constraint firstItem="pxY-i2-KP2" firstAttribute="top" secondItem="2B6-yJ-NGR" secondAttribute="bottom" constant="5" id="Voa-lh-WM4"/>
+                                                    <constraint firstItem="aUV-YY-Hft" firstAttribute="top" secondItem="fqr-ep-GUZ" secondAttribute="bottom" constant="5" id="WXl-RU-8rJ"/>
                                                     <constraint firstItem="So1-V2-n4r" firstAttribute="top" secondItem="pxY-i2-KP2" secondAttribute="bottom" constant="5" id="Ytr-0o-pZS"/>
-                                                    <constraint firstAttribute="bottom" secondItem="fqr-ep-GUZ" secondAttribute="bottom" constant="5" id="Ywg-mm-f0B"/>
                                                     <constraint firstItem="fqr-ep-GUZ" firstAttribute="top" secondItem="2dS-ep-Iig" secondAttribute="bottom" constant="5" id="cd7-ll-eD3"/>
                                                     <constraint firstAttribute="trailing" secondItem="So1-V2-n4r" secondAttribute="trailing" constant="5" id="e3k-Vh-wwx"/>
                                                     <constraint firstItem="So1-V2-n4r" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="gfy-zN-TuC"/>
                                                     <constraint firstAttribute="trailing" secondItem="2B6-yJ-NGR" secondAttribute="trailing" constant="10" id="n4n-Pw-Paw"/>
                                                     <constraint firstItem="sOk-iN-cdj" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="njv-82-pog"/>
                                                     <constraint firstItem="2dS-ep-Iig" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="qrt-WT-qwi"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aUV-YY-Hft" secondAttribute="bottom" constant="5" id="rTV-Mw-KVL"/>
                                                     <constraint firstAttribute="trailing" secondItem="fqr-ep-GUZ" secondAttribute="trailing" constant="5" id="su9-wf-LIh"/>
+                                                    <constraint firstItem="aUV-YY-Hft" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="yMx-F6-2go"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

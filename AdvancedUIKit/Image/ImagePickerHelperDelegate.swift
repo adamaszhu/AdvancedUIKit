@@ -12,6 +12,12 @@ public protocol ImagePickerHelperDelegate {
      */
     func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didPickImage image: UIImage)
     
+    /**
+     * An error occurs.
+     * - parameter error: The detail of the error.
+     */
+    func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didCatchError error: String)
+    
 }
 
 import UIKit
