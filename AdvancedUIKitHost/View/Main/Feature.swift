@@ -14,6 +14,7 @@ enum Feature: String {
     case keyboard = "Keyboard"
     case location = "Location"
     case map = "Map"
+    case image = "Image"
     
     var viewControllerID: String {
         switch self {
@@ -45,6 +46,8 @@ enum Feature: String {
             return String(describing: LocationViewController.self)
         case .map:
             return String(describing: MapViewController.self)
+        case .image:
+            return String(describing: ImageViewController.self)
         }
     }
     
