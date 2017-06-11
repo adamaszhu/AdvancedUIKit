@@ -34,7 +34,7 @@ public class ImagePickerHelper: NSObject {
      */
     public init(application: UIApplication = UIApplication.shared, cameraHelper: CameraHelper = CameraHelper()) {
         self.cameraHelper = cameraHelper
-        currentViewController = application.currentViewController
+        currentViewController = application.rootViewController
         super.init()
         cameraHelper.cameraHelperDelegate = self
     }

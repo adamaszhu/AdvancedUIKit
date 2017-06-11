@@ -643,14 +643,14 @@
 				4258DDA91EEAE6A80085FCAA /* Image+PS.swift */,
 				4258DDAA1EEAE6A80085FCAA /* ImageView+Measurer.swift */,
 				4258DDA81EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift */,
+				4258DDA71EEAE6A80085FCAA /* ImagePickerHelper.swift */,
+				420C78E71EEBB53F00A1E3EA /* ImagePickerHelper+CameraHelperDelegate.swift */,
+				420C78E51EEB942D00A1E3EA /* ImagePickerHelper+ControllerDelegate.swift */,
 				4258DDA11EEAE6A80085FCAA /* ImagePickerHelper.strings */,
 				4258DDA31EEAE6A80085FCAA /* ExpandableGalleryView.swift */,
 				4258DDA41EEAE6A80085FCAA /* GalleryImage.swift */,
 				4258DDA51EEAE6A80085FCAA /* GalleryView.swift */,
 				4258DDA61EEAE6A80085FCAA /* GalleryViewDelegate.swift */,
-				4258DDA71EEAE6A80085FCAA /* ImagePickerHelper.swift */,
-				420C78E71EEBB53F00A1E3EA /* ImagePickerHelper+CameraHelperDelegate.swift */,
-				420C78E51EEB942D00A1E3EA /* ImagePickerHelper+ControllerDelegate.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";

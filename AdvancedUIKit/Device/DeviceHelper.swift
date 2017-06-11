@@ -85,7 +85,7 @@ public class DeviceHelper: NSObject {
             mailViewController.addAttachmentData(data, mimeType: mimeType, fileName: name);
         }
         mailViewController.setMessageBody(content, isHTML: isHTML)
-        application.currentViewController?.present(mailViewController, animated: true, completion: nil)
+        application.rootViewController?.present(mailViewController, animated: true, completion: nil)
     }
     
     /**
