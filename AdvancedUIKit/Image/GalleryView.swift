@@ -1,11 +1,9 @@
-//import UIKit
-//
-///**
-// * GalleryView is used to display a list of images.
-// * - author: Adamas
-// * - version: 0.0.5
-// * - date: 23/10/2016
-// */
+/**
+ * GalleryView is used to display a list of images.
+ * - author: Adamas
+ * - version: 1.0.0
+ * - date: 11/06/2017
+ */
 //public class GalleryView: PageView, UIScrollViewDelegate {
 //    
 //    /**
@@ -264,3 +262,5 @@
 //        horizontalSwipeOffset = 0
 //    }
 //}
+
+import UIKit

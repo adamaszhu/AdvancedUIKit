@@ -5,7 +5,8 @@ extension ImageViewController: ImagePickerHelperDelegate {
     }
     
     func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didPickImage image: UIImage) {
-        imageView.image = image
+        let imageView = getImageView(ofImage: image)
+        galleryView.add(imageView)
     }
     
 }

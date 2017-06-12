@@ -88,6 +88,7 @@
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
 		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
+		4234665B1EED21F0002A04F4 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4234665A1EED21F0002A04F4 /* PageView.swift */; };
 		4258DDAC1EEAE6A80085FCAA /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DD9F1EEAE6A80085FCAA /* CameraHelper.swift */; };
 		4258DDAD1EEAE6A80085FCAA /* CameraHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA01EEAE6A80085FCAA /* CameraHelperDelegate.swift */; };
 		4258DDAE1EEAE6A80085FCAA /* ImagePickerHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4258DDA11EEAE6A80085FCAA /* ImagePickerHelper.strings */; };
@@ -263,6 +264,7 @@
 		422DB4141EAA3CF100377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB4191EAA3CF100377AB5 /* AdvancedUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB4281EAA3D2A00377AB5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4234665A1EED21F0002A04F4 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		4258DD9F1EEAE6A80085FCAA /* CameraHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
 		4258DDA01EEAE6A80085FCAA /* CameraHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraHelperDelegate.swift; sourceTree = "<group>"; };
 		4258DDA21EEAE6A80085FCAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ImagePickerHelper.strings; sourceTree = "<group>"; };
@@ -624,11 +626,12 @@
 			isa = PBXGroup;
 			children = (
 				427373E31ED8FFA200DD8891 /* GestureFilterView.swift */,
+				4234665A1EED21F0002A04F4 /* PageView.swift */,
 				284E5C5E1EDD426400C3CC86 /* PopupView.swift */,
 				425EAD4C1EAC6EDB001F1F81 /* RootView.swift */,
 				425DCD111EB357A800A0ED26 /* View+Animation.swift */,
-				425DCD131EB3689000A0ED26 /* View+Gesture.swift */,
 				28B524F81EEA14970051E8D2 /* View+Constraint.swift */,
+				425DCD131EB3689000A0ED26 /* View+Gesture.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1127,6 +1130,7 @@
 				28E66FF41EE4E4C100073DF1 /* KeyboardHelperDelegate.swift in Sources */,
 				2846A9A31EE7C0FA007D4226 /* MapViewPoint.swift in Sources */,
 				2822A3411EE127EA00FAA8E3 /* NotificationHelperDelegate.swift in Sources */,
+				4234665B1EED21F0002A04F4 /* PageView.swift in Sources */,
 				4258DDB11EEAE6A80085FCAA /* GalleryView.swift in Sources */,
 				420C78E61EEB942D00A1E3EA /* ImagePickerHelper+ControllerDelegate.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */,
