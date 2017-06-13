@@ -7,8 +7,8 @@
 public class PageView: UIScrollView {
     
     /**
- * The default buttom margin of the page control.
- */
+     * The default buttom margin of the page control.
+     */
     private static let defaultPageControlButtomMargin = CGFloat(20)
     
     /**
@@ -19,7 +19,7 @@ public class PageView: UIScrollView {
     /**
      * The page controller.
      */
-    private var pageControl: UIPageControl
+    var pageControl: UIPageControl
     
     /**
      * Whether the paging point should be shown or not.
@@ -83,10 +83,10 @@ public class PageView: UIScrollView {
      * - parameter index: The index of the view to be removed.
      */
     public func removeView(atIndex index: Int) {
-        //        if (index < 0) || (index >= subviews.count) {
-        //            Logger.standard.logError(PageView.pageExistanceError)
-        //            return
-        //        }
+        if (index < 0) || (index >= subviews.count) {
+            Logger.standard.logError(PageView.pageExistanceError)
+            return
+        }
         //        if
         //        let view = subviews[index]
         //        view.removeFromSuperview()
@@ -95,17 +95,16 @@ public class PageView: UIScrollView {
         //        }
         //        pageControl.numberOfPages = pageControl.numberOfPages - 1
     }
-    //
-    //    /**
-    //     * Remove all sub views.
-    //     * - version: 0.1.0
-    //     * - date: 12/10/2016
-    //     */
-    //    public func removeAllSubviews() {
-    //        for _ in 0 ..< subviews.count {
-    //            removeView(atIndex: 0)
-    //        }
-    //    }
+    
+    /**
+     * Remove all sub views.
+     */
+    public func removeAllViews() {
+        for view in subviews {
+            view.removeFromSuperview()
+        }
+        contentSize = CGSize(width: 0, height: frame.height)
+    }
     //
     //    /**
     //     * Switch to next page.
@@ -148,27 +147,7 @@ public class PageView: UIScrollView {
     //            self.contentOffset = CGPointMake(CGFloat(index) * self.frame.size.width, 0)
     //        })
     //    }
-    //
-    //    /**
-    //     * Initialize the object.
-    //     * - version: 0.1.0
-    //     * - date: 12/10/2016
-    //     */
-    //    private func initialize() {
-    //        scrollEnabled = false
-    //        backgroundColor = UIColor.clearColor()
-    //        showsHorizontalScrollIndicator = false
-    //        showsVerticalScrollIndicator = false
-    //        pageControl.numberOfPages = subviews.count
-    //        // COMMENT: Add gesture.
-    //        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(PageView.showPreviousPage))
-    //        swipeRightGesture.direction = UISwipeGestureRecognizerDirection.Right
-    //        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(PageView.showNextPage))
-    //        swipeLeftGesture.direction = UISwipeGestureRecognizerDirection.Left
-    //        addGestureRecognizer(swipeLeftGesture)
-    //        addGestureRecognizer(swipeRightGesture)
-    //    }
-    //
+    
     /**
      * UIView
      */
@@ -178,18 +157,11 @@ public class PageView: UIScrollView {
         shouldShowPageControl = true
         isPagingEnabled = true
         showsHorizontalScrollIndicator = false
-        print("\(pageControlButtomMargin)")
-        print("\(frame.height)")
+        showsVerticalScrollIndicator = false
+        backgroundColor = UIColor.clear
+        pageControl.numberOfPages = subviews.count
+        delegate = self
     }
-    
-    /**
-     * UIView
-     */
-//    public override func draw(_ rect: CGRect) {
-//        super.draw(rect)
-//
-//        pageControl.frame = CGRect(x: (rect.width - pageControl.frame.width) / 2, y: rect.height - pageControl.frame.height - pageControlButtomMargin, width: pageControl.frame.width, height: pageControl.frame.height)
-//    }
     
     /**
      * UIView
@@ -203,16 +175,11 @@ public class PageView: UIScrollView {
             return
         }
         if pageControlButtomMargin == frame.height {
+            // COMMENT: The default margin will be used if the margin hasn't been settled.
             pageControlButtomMargin = PageView.defaultPageControlButtomMargin
         }
         pageControl.frame = CGRect(x: (frame.width - pageControl.frame.width) / 2, y: frame.height - pageControl.frame.height - pageControlButtomMargin, width: pageControl.frame.width, height: pageControl.frame.height)
         superview.addSubview(pageControl)
-    }
-    
-    public override func didMoveToWindow() {
-        super.didMoveToWindow()
-//        superview?.addSubview(pageControl)
-//        pageControl.backgroundColor = UIColor.purple
     }
     
     /**
