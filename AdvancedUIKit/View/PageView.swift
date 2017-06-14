@@ -17,6 +17,12 @@ public class PageView: UIScrollView {
     private static let pageExistanceError = "The page does not exist."
     
     /**
+     * System warning.
+     */
+    private static let firstPageWarning = "The page is the first page."
+    private static let lastPageWarning = "The page is the last page."
+    
+    /**
      * The page controller.
      */
     var pageControl: UIPageControl
@@ -58,7 +64,7 @@ public class PageView: UIScrollView {
      */
     public func add(_ view: UIView) {
         pageControl.numberOfPages = pageControl.numberOfPages + 1
-        view.frame = CGRect(x: CGFloat(pageControl.numberOfPages - 1) * frame.size.width, y: 0, width: frame.size.width, height: frame.size.height)
+        view.frame = CGRect(x: CGFloat(pageControl.numberOfPages - 1) * frame.width, y: 0, width: frame.width, height: frame.height)
         addSubview(view)
         contentSize = CGSize(width: view.frame.origin.x + view.frame.width, height: view.frame.height)
     }
@@ -69,7 +75,7 @@ public class PageView: UIScrollView {
      * - parameter index: The index of the replaced view.
      */
     public func replace(_ view: UIView, atIndex index: Int) {
-        if (index < 0) || (index >= subviews.count) {
+        guard (index >= 0) && (index < pageControl.numberOfPages) else {
             Logger.standard.logError(PageView.pageExistanceError)
             return
         }
@@ -83,17 +89,22 @@ public class PageView: UIScrollView {
      * - parameter index: The index of the view to be removed.
      */
     public func removeView(atIndex index: Int) {
-        if (index < 0) || (index >= subviews.count) {
+        // TODO: Add animation for the removing action.
+        guard (index >= 0) && (index < pageControl.numberOfPages) else {
             Logger.standard.logError(PageView.pageExistanceError)
             return
         }
-        //        if
-        //        let view = subviews[index]
-        //        view.removeFromSuperview()
-        //        for index in index + 1 ..< subviews.count {
-        //
-        //        }
-        //        pageControl.numberOfPages = pageControl.numberOfPages - 1
+        if (index <= currentPageIndex) && (currentPageIndex != 0)  {
+            // COMMENT: While removing the page before current page.
+            switchToPage(withIndex: currentPageIndex - 1, withAnimation: false)
+        }
+        // COMMENT: Adjust all views after the removed view.
+        for laterIndex in index + 1 ..< pageControl.numberOfPages {
+            subviews[laterIndex].frame.origin = CGPoint(x: subviews[laterIndex].frame.origin.x - frame.width, y: 0)
+        }
+        pageControl.numberOfPages = pageControl.numberOfPages - 1
+        subviews[index].removeFromSuperview()
+        contentSize = CGSize(width: CGFloat(pageControl.numberOfPages) * frame.width, height: frame.height)
     }
     
     /**
@@ -104,49 +115,50 @@ public class PageView: UIScrollView {
             view.removeFromSuperview()
         }
         contentSize = CGSize(width: 0, height: frame.height)
+        pageControl.numberOfPages = 0
     }
-    //
-    //    /**
-    //     * Switch to next page.
-    //     * - version: 0.1.0
-    //     * - date: 12/10/2016
-    //     */
-    //    public func showNextPage() {
-    //        switchToPage(pageControl.currentPage + 1)
-    //    }
-    //
-    //    /**
-    //     * Switch to previous page.
-    //     * - version: 0.1.0
-    //     * - date: 12/10/2016
-    //     */
-    //    public func showPreviousPage() {
-    //        switchToPage(pageControl.currentPage - 1)
-    //    }
-    //
-    //    /**
-    //     * Switch to a specific news page.
-    //     * - version: 0.1.0
-    //     * - date: 12/10/2016
-    //     * - parameter index: The page index of the news.
-    //     * - parameter shouldAnimate: Whether the animation should be allowed or not.
-    //     */
-    //    public func switchToPage(index: Int, withAnimation shouldAnimate: Bool = true) {
-    //        if ((index < 0) || (index >= subviews.count)) {
-    //            logError(PageView.PageExistanceError)
-    //            return
-    //        }
-    //        pageControl.currentPage = index
-    //        if !shouldAnimate {
-    //            self.contentOffset = CGPointMake(CGFloat(index) * self.frame.size.width, 0)
-    //            return
-    //        }
-    //        // TODO: Judge whether there has been an animation operating or not.
-    //        UIView.animate(withChange: { () -> Void in
-    //            // COMMENT: Change the offset of the scroll view according to the page index.
-    //            self.contentOffset = CGPointMake(CGFloat(index) * self.frame.size.width, 0)
-    //        })
-    //    }
+    
+    /**
+     * Switch to next page.
+     */
+    public func switchToNextPage() {
+        guard currentPageIndex != pageControl.numberOfPages - 1 else {
+            Logger.standard.logWarning(PageView.lastPageWarning)
+            return
+        }
+        switchToPage(withIndex: pageControl.currentPage + 1)
+    }
+    
+    /**
+     * Switch to previous page.
+     */
+    public func switchToPreviousPage() {
+        guard currentPageIndex != 0 else {
+            Logger.standard.logWarning(PageView.firstPageWarning)
+            return
+        }
+        switchToPage(withIndex: pageControl.currentPage - 1)
+    }
+    
+    /**
+     * Switch to a specific news page.
+     * - parameter index: The page index of the news.
+     * - parameter shouldAnimate: Whether the animation should be allowed or not.
+     */
+    public func switchToPage(withIndex index: Int, withAnimation shouldAnimate: Bool = true) {
+        guard (index >= 0) && (index < pageControl.numberOfPages) else {
+            Logger.standard.logError(PageView.pageExistanceError)
+            return
+        }
+        pageControl.currentPage = index
+        guard shouldAnimate else {
+            contentOffset = CGPoint(x: CGFloat(index) * frame.width, y: 0)
+            return
+        }
+        animate(withChange: { [unowned self] _ in
+            self.contentOffset = CGPoint(x: CGFloat(index) * self.frame.width, y: 0)
+        })
+    }
     
     /**
      * UIView

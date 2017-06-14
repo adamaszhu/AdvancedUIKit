@@ -672,54 +672,82 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ej-f4-05I">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="595"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                                 <subviews>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbQ-lu-0hh" customClass="PageView" customModule="AdvancedUIKit">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="kbQ-lu-0hh" secondAttribute="height" id="rbV-F5-9Tm"/>
+                                                            <constraint firstAttribute="width" secondItem="kbQ-lu-0hh" secondAttribute="height" multiplier="4:3" id="rbV-F5-9Tm"/>
                                                         </constraints>
                                                     </scrollView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="So1-V2-n4r">
-                                                        <rect key="frame" x="5" y="420" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="326" width="365" height="30"/>
                                                         <state key="normal" title="Add Opacity"/>
                                                         <connections>
                                                             <action selector="addOpacity:" destination="gsr-tR-FhV" eventType="touchUpInside" id="Iyb-PW-1mf"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOk-iN-cdj">
-                                                        <rect key="frame" x="5" y="455" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="361" width="365" height="30"/>
                                                         <state key="normal" title="Crop Square"/>
                                                         <connections>
                                                             <action selector="cropSquare:" destination="gsr-tR-FhV" eventType="touchUpInside" id="WDO-Op-o7U"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dS-ep-Iig">
-                                                        <rect key="frame" x="5" y="490" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="396" width="365" height="30"/>
                                                         <state key="normal" title="Compress"/>
                                                         <connections>
                                                             <action selector="compress:" destination="gsr-tR-FhV" eventType="touchUpInside" id="orn-4J-mFr"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqr-ep-GUZ">
-                                                        <rect key="frame" x="5" y="525" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="431" width="365" height="30"/>
                                                         <state key="normal" title="Resize"/>
                                                         <connections>
                                                             <action selector="resize:" destination="gsr-tR-FhV" eventType="touchUpInside" id="LAB-ia-gTN"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxY-i2-KP2">
-                                                        <rect key="frame" x="5" y="385" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="291" width="365" height="30"/>
                                                         <state key="normal" title="Add Blur"/>
                                                         <connections>
                                                             <action selector="addBlur:" destination="gsr-tR-FhV" eventType="touchUpInside" id="0P0-s0-oFc"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUV-YY-Hft">
-                                                        <rect key="frame" x="5" y="560" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="466" width="365" height="30"/>
                                                         <state key="normal" title="Choose Image"/>
                                                         <connections>
                                                             <action selector="chooseImage:" destination="gsr-tR-FhV" eventType="touchUpInside" id="Hz9-zy-Xfq"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2s-2C-AEe">
+                                                        <rect key="frame" x="5" y="501" width="365" height="30"/>
+                                                        <state key="normal" title="Previous Image"/>
+                                                        <connections>
+                                                            <action selector="showPreviousImage:" destination="gsr-tR-FhV" eventType="touchUpInside" id="YgC-jn-eRw"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrL-Y9-Yrg">
+                                                        <rect key="frame" x="5" y="536" width="365" height="30"/>
+                                                        <state key="normal" title="Next Image"/>
+                                                        <connections>
+                                                            <action selector="showNextImage:" destination="gsr-tR-FhV" eventType="touchUpInside" id="OWa-mE-uRz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvD-zo-0wd">
+                                                        <rect key="frame" x="5" y="571" width="365" height="30"/>
+                                                        <state key="normal" title="Remove Image"/>
+                                                        <connections>
+                                                            <action selector="removeImage:" destination="gsr-tR-FhV" eventType="touchUpInside" id="k0T-oh-Gms"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYt-dS-Eoz">
+                                                        <rect key="frame" x="5" y="606" width="365" height="30"/>
+                                                        <state key="normal" title="Remove All"/>
+                                                        <connections>
+                                                            <action selector="removeAll:" destination="gsr-tR-FhV" eventType="touchUpInside" id="OCA-rt-VFp"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -727,18 +755,27 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="2dS-ep-Iig" secondAttribute="trailing" constant="5" id="10D-0W-vK4"/>
                                                     <constraint firstItem="kbQ-lu-0hh" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" id="1Fq-cA-uAo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iYt-dS-Eoz" secondAttribute="trailing" constant="5" id="1gS-sj-EgX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rrL-Y9-Yrg" secondAttribute="trailing" constant="5" id="3Gx-GM-UPd"/>
+                                                    <constraint firstItem="rrL-Y9-Yrg" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="4TG-R3-ePQ"/>
                                                     <constraint firstItem="2dS-ep-Iig" firstAttribute="top" secondItem="sOk-iN-cdj" secondAttribute="bottom" constant="5" id="512-Cf-BjZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="kbQ-lu-0hh" secondAttribute="trailing" id="74D-C1-AGf"/>
-                                                    <constraint firstAttribute="bottom" secondItem="aUV-YY-Hft" secondAttribute="bottom" constant="5" id="DVl-CE-fqh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FvD-zo-0wd" secondAttribute="trailing" constant="5" id="7SX-5L-MRS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iYt-dS-Eoz" secondAttribute="bottom" constant="5" id="7WQ-Z3-xHj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="X2s-2C-AEe" secondAttribute="trailing" constant="5" id="AFv-k1-Yfi"/>
+                                                    <constraint firstItem="X2s-2C-AEe" firstAttribute="top" secondItem="aUV-YY-Hft" secondAttribute="bottom" constant="5" id="GX6-Ft-0O7"/>
                                                     <constraint firstAttribute="trailing" secondItem="sOk-iN-cdj" secondAttribute="trailing" constant="5" id="KFn-ED-7az"/>
                                                     <constraint firstItem="sOk-iN-cdj" firstAttribute="top" secondItem="So1-V2-n4r" secondAttribute="bottom" constant="5" id="L02-wf-psm"/>
                                                     <constraint firstAttribute="trailing" secondItem="aUV-YY-Hft" secondAttribute="trailing" constant="5" id="Lcn-7V-d8h"/>
+                                                    <constraint firstItem="iYt-dS-Eoz" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="PTk-df-ojO"/>
                                                     <constraint firstItem="pxY-i2-KP2" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="Q8v-ZL-fCf"/>
                                                     <constraint firstAttribute="trailing" secondItem="pxY-i2-KP2" secondAttribute="trailing" constant="5" id="Rry-ta-Zz8"/>
                                                     <constraint firstItem="fqr-ep-GUZ" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="TgE-jj-QD2"/>
                                                     <constraint firstItem="kbQ-lu-0hh" firstAttribute="top" secondItem="3ej-f4-05I" secondAttribute="top" id="U1C-JP-L7T"/>
                                                     <constraint firstItem="aUV-YY-Hft" firstAttribute="top" secondItem="fqr-ep-GUZ" secondAttribute="bottom" constant="5" id="WXl-RU-8rJ"/>
                                                     <constraint firstItem="So1-V2-n4r" firstAttribute="top" secondItem="pxY-i2-KP2" secondAttribute="bottom" constant="5" id="Ytr-0o-pZS"/>
+                                                    <constraint firstItem="FvD-zo-0wd" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="aXp-r4-pyS"/>
+                                                    <constraint firstItem="iYt-dS-Eoz" firstAttribute="top" secondItem="FvD-zo-0wd" secondAttribute="bottom" constant="5" id="bfC-5T-JZ1"/>
                                                     <constraint firstItem="fqr-ep-GUZ" firstAttribute="top" secondItem="2dS-ep-Iig" secondAttribute="bottom" constant="5" id="cd7-ll-eD3"/>
                                                     <constraint firstItem="pxY-i2-KP2" firstAttribute="top" secondItem="kbQ-lu-0hh" secondAttribute="bottom" constant="10" id="dnw-a5-wrb"/>
                                                     <constraint firstAttribute="trailing" secondItem="So1-V2-n4r" secondAttribute="trailing" constant="5" id="e3k-Vh-wwx"/>
@@ -746,6 +783,9 @@
                                                     <constraint firstItem="sOk-iN-cdj" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="njv-82-pog"/>
                                                     <constraint firstItem="2dS-ep-Iig" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="qrt-WT-qwi"/>
                                                     <constraint firstAttribute="trailing" secondItem="fqr-ep-GUZ" secondAttribute="trailing" constant="5" id="su9-wf-LIh"/>
+                                                    <constraint firstItem="rrL-Y9-Yrg" firstAttribute="top" secondItem="X2s-2C-AEe" secondAttribute="bottom" constant="5" id="w2X-3K-2wJ"/>
+                                                    <constraint firstItem="X2s-2C-AEe" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="xPy-4O-zDE"/>
+                                                    <constraint firstItem="FvD-zo-0wd" firstAttribute="top" secondItem="rrL-Y9-Yrg" secondAttribute="bottom" constant="5" id="xVH-hW-nbv"/>
                                                     <constraint firstItem="aUV-YY-Hft" firstAttribute="leading" secondItem="3ej-f4-05I" secondAttribute="leading" constant="5" id="yMx-F6-2go"/>
                                                 </constraints>
                                             </view>

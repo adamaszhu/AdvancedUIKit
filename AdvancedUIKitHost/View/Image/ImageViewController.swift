@@ -25,32 +25,73 @@ class ImageViewController: UIViewController {
     }
     
     @IBAction func addBlur(_ sender: Any) {
-        let imageView = galleryView.subviews[0] as! UIImageView
-        imageView.image = images[0].addGaussianBlur(withRadius: gaussianRadius)
+        guard let imageView = galleryView.subviews[galleryView.currentPageIndex] as? UIImageView else {
+            return
+        }
+        guard let image = imageView.image else {
+            return
+        }
+        imageView.image = image.addGaussianBlur(withRadius: gaussianRadius)
     }
     
     @IBAction func addOpacity(_ sender: Any) {
-        let imageView = galleryView.subviews[0] as! UIImageView
-        imageView.image = images[0].setOpacity(opacity)
+        guard let imageView = galleryView.subviews[galleryView.currentPageIndex] as? UIImageView else {
+            return
+        }
+        guard let image = imageView.image else {
+            return
+        }
+        imageView.image = image.setOpacity(opacity)
     }
     
     @IBAction func cropSquare(_ sender: Any) {
-        let imageView = galleryView.subviews[0] as! UIImageView
-        imageView.image = images[0].cropSquare()
+        guard let imageView = galleryView.subviews[galleryView.currentPageIndex] as? UIImageView else {
+            return
+        }
+        guard let image = imageView.image else {
+            return
+        }
+        imageView.image = image.cropSquare()
     }
     
     @IBAction func compress(_ sender: Any) {
-        let imageView = galleryView.subviews[0] as! UIImageView
-        imageView.image = images[0].compress(withMaxSize: compressSize)
+        guard let imageView = galleryView.subviews[galleryView.currentPageIndex] as? UIImageView else {
+            return
+        }
+        guard let image = imageView.image else {
+            return
+        }
+        imageView.image = image.compress(withMaxSize: compressSize)
     }
     
     @IBAction func resize(_ sender: Any) {
-        let imageView = galleryView.subviews[0] as! UIImageView
-        imageView.image = images[0].resize(toWidth: size.width, toHeight: size.height)
+        guard let imageView = galleryView.subviews[galleryView.currentPageIndex] as? UIImageView else {
+            return
+        }
+        guard let image = imageView.image else {
+            return
+        }
+        imageView.image = image.resize(toWidth: size.width, toHeight: size.height)
     }
     
     @IBAction func chooseImage(_ sender: Any) {
         imagePickerHelper.showImagePicker()
+    }
+    
+    @IBAction func showPreviousImage(_ sender: Any) {
+        galleryView.switchToPreviousPage()
+    }
+    
+    @IBAction func showNextImage(_ sender: Any) {
+        galleryView.switchToNextPage()
+    }
+    
+    @IBAction func removeImage(_ sender: Any) {
+        galleryView.removeView(atIndex: galleryView.currentPageIndex)
+    }
+    
+    @IBAction func removeAll(_ sender: Any) {
+        galleryView.removeAllViews()
     }
     
     func getImageView(ofImage image: UIImage) -> UIImageView {
