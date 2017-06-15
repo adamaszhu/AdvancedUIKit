@@ -178,19 +178,23 @@ public class PageView: UIScrollView {
     /**
      * UIView
      */
-    public override func didMoveToSuperview() {
-        super.didMoveToSuperview()
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        if pageControlButtomMargin == frame.height {
+            // COMMENT: The default margin will be used if the margin hasn't been settled.
+            pageControlButtomMargin = PageView.defaultPageControlButtomMargin
+        }
+        pageControl.frame = CGRect(x: (frame.width - pageControl.frame.width) / 2, y: frame.height - pageControl.frame.height - pageControlButtomMargin, width: pageControl.frame.width, height: pageControl.frame.height)
+        // COMMENT: Refresh all subviews
+        for index in 0 ..< subviews.count {
+            subviews[index].frame = CGRect(x: CGFloat(index) * frame.width, y: 0, width: frame.width, height: frame.height)
+        }
         guard let superview = superview else {
             return
         }
         guard pageControl.superview == nil else {
             return
         }
-        if pageControlButtomMargin == frame.height {
-            // COMMENT: The default margin will be used if the margin hasn't been settled.
-            pageControlButtomMargin = PageView.defaultPageControlButtomMargin
-        }
-        pageControl.frame = CGRect(x: (frame.width - pageControl.frame.width) / 2, y: frame.height - pageControl.frame.height - pageControlButtomMargin, width: pageControl.frame.width, height: pageControl.frame.height)
         superview.addSubview(pageControl)
     }
     

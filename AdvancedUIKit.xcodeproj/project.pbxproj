@@ -96,7 +96,6 @@
 		4258DDAF1EEAE6A80085FCAA /* ExpandableGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA31EEAE6A80085FCAA /* ExpandableGalleryView.swift */; };
 		4258DDB01EEAE6A80085FCAA /* GalleryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA41EEAE6A80085FCAA /* GalleryImage.swift */; };
 		4258DDB11EEAE6A80085FCAA /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA51EEAE6A80085FCAA /* GalleryView.swift */; };
-		4258DDB21EEAE6A80085FCAA /* GalleryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA61EEAE6A80085FCAA /* GalleryViewDelegate.swift */; };
 		4258DDB31EEAE6A80085FCAA /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA71EEAE6A80085FCAA /* ImagePickerHelper.swift */; };
 		4258DDB41EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA81EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift */; };
 		4258DDB51EEAE6A80085FCAA /* Image+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA91EEAE6A80085FCAA /* Image+PS.swift */; };
@@ -273,7 +272,6 @@
 		4258DDA31EEAE6A80085FCAA /* ExpandableGalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableGalleryView.swift; sourceTree = "<group>"; };
 		4258DDA41EEAE6A80085FCAA /* GalleryImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryImage.swift; sourceTree = "<group>"; };
 		4258DDA51EEAE6A80085FCAA /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
-		4258DDA61EEAE6A80085FCAA /* GalleryViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewDelegate.swift; sourceTree = "<group>"; };
 		4258DDA71EEAE6A80085FCAA /* ImagePickerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
 		4258DDA81EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerHelperDelegate.swift; sourceTree = "<group>"; };
 		4258DDA91EEAE6A80085FCAA /* Image+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+PS.swift"; sourceTree = "<group>"; };
@@ -656,7 +654,6 @@
 				4258DDA31EEAE6A80085FCAA /* ExpandableGalleryView.swift */,
 				4258DDA41EEAE6A80085FCAA /* GalleryImage.swift */,
 				4258DDA51EEAE6A80085FCAA /* GalleryView.swift */,
-				4258DDA61EEAE6A80085FCAA /* GalleryViewDelegate.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1114,7 +1111,6 @@
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
 				28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */,
 				421C9FCB1EE82C3C00D019C2 /* MapView+Delegate.swift in Sources */,
-				4258DDB21EEAE6A80085FCAA /* GalleryViewDelegate.swift in Sources */,
 				4258DDB31EEAE6A80085FCAA /* ImagePickerHelper.swift in Sources */,
 				42CA09ED1EE19E36009AF1BE /* Button+Localizer.swift in Sources */,
 				28F350AB1EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift in Sources */,

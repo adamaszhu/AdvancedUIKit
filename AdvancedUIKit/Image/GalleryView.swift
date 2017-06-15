@@ -4,8 +4,8 @@
  * - version: 1.0.0
  * - date: 11/06/2017
  */
-//public class GalleryView: PageView, UIScrollViewDelegate {
-//    
+public class GalleryView: PageView {//, UIScrollViewDelegate {
+//
 //    /**
 //     * System message.
 //     */
@@ -71,14 +71,13 @@
 //        }
 //    }
 //    
-//    /**
-//     * Add an image to the view.
-//     * - version: 0.0.5
-//     * - date: 23/10/2016
-//     * - parameter image: The image to be added.
-//     */
-//    public func addImage(image: UIImage) {
-//        let galleryImage = GalleryImage()
+    /**
+     * Add an image to the view.
+     * - parameter image: The image to be added.
+     */
+    public func add(image: UIImage) {
+        let galleryImage = GalleryImage()
+        galleryImage.image = image
 //        if shouldExpand {
 //            galleryImage.delegate = self
 //            galleryImage.maximumZoomScale = GalleryView.MaxZoomLevel
@@ -87,14 +86,12 @@
 //        }
 //        let imageView = UIImageView()
 //        imageView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height)
-//        imageView.clipsToBounds = true
 //        imageView.contentMode = imageContentMode
-//        imageView.image = image
-//        galleryImage.addSubview(imageView)
-//        addView(galleryImage)
+        galleryImage.maxZoomLevel = 10
+        add(galleryImage)
 //        galleryImageList.append(galleryImage)
-//    }
-//    
+    }
+//
 //    /**
 //     * Refresh an image to the view.
 //     * - version: 0.0.5
@@ -261,6 +258,6 @@
 //    public func scrollViewWillBeginDragging(scrollView: UIScrollView) {
 //        horizontalSwipeOffset = 0
 //    }
-//}
+}
 
 import UIKit

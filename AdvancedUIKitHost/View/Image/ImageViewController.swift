@@ -6,7 +6,7 @@ class ImageViewController: UIViewController {
     private let compressSize = 50 * 1024
     private let size = (width: 100.0, height: 50.0)
     
-    @IBOutlet weak var galleryView: PageView!
+    @IBOutlet weak var galleryView: GalleryView!
     
     private let imagePickerHelper: ImagePickerHelper
     
@@ -19,8 +19,9 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         for image in images {
-            let imageView = getImageView(ofImage: image)
-            galleryView.add(imageView)
+            galleryView.add(image: image)
+//            let imageView = getImageView(ofImage: image)
+//            galleryView.add(imageView)
         }
     }
     
