@@ -84,11 +84,10 @@ public class GalleryView: PageView {//, UIScrollViewDelegate {
 //        } else {
 //            galleryImage.maximumZoomScale = 1
 //        }
-//        let imageView = UIImageView()
-//        imageView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height)
 //        imageView.contentMode = imageContentMode
-        galleryImage.maxZoomLevel = 10
         add(galleryImage)
+        galleryImage.maxZoomLevel = 10
+        galleryImage.imageMode = .scaleAspectFit
 //        galleryImageList.append(galleryImage)
     }
 //
@@ -180,14 +179,6 @@ public class GalleryView: PageView {//, UIScrollViewDelegate {
 //        galleryViewDelegate?.galleryViewDidShowNextPage(self)
 //    }
 //    
-//    /**
-//     * - version: 0.0.5
-//     * - date: 23/10/2016
-//     */
-//    public func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-//        let galleryImage = scrollView as! GalleryImage
-//        return galleryImage.imageView
-//    }
 //    
 //    /**
 //     * - version: 0.0.5

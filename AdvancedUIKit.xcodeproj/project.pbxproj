@@ -125,6 +125,7 @@
 		428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */; };
 		428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */; };
 		428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */; };
+		429F884F1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F884E1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift */; };
 		42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */; };
 		42CA09E21EE0461A009AF1BE /* RingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09E11EE0461A009AF1BE /* RingHelper.swift */; };
 		42CA09E41EE19673009AF1BE /* NotificationViewController+NotificationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09E31EE19673009AF1BE /* NotificationViewController+NotificationHelperDelegate.swift */; };
@@ -304,6 +305,7 @@
 		428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		428EAB651EDC4BE3006ED22B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeviceHelper.strings; sourceTree = "<group>"; };
 		428EAB671EDC4BE5006ED22B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceHelper.strings"; sourceTree = "<group>"; };
+		429F884E1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GalleryImage+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
 		42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Dynamic.swift"; sourceTree = "<group>"; };
 		42CA09E11EE0461A009AF1BE /* RingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingHelper.swift; sourceTree = "<group>"; };
 		42CA09E31EE19673009AF1BE /* NotificationViewController+NotificationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationViewController+NotificationHelperDelegate.swift"; sourceTree = "<group>"; };
@@ -653,6 +655,7 @@
 				4258DDA11EEAE6A80085FCAA /* ImagePickerHelper.strings */,
 				4258DDA31EEAE6A80085FCAA /* ExpandableGalleryView.swift */,
 				4258DDA41EEAE6A80085FCAA /* GalleryImage.swift */,
+				429F884E1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift */,
 				4258DDA51EEAE6A80085FCAA /* GalleryView.swift */,
 			);
 			path = Image;
@@ -1079,6 +1082,7 @@
 				4258DDB51EEAE6A80085FCAA /* Image+PS.swift in Sources */,
 				284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */,
 				284E5C581EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift in Sources */,
+				429F884F1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift in Sources */,
 				2822A33A1EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift in Sources */,
 				425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,

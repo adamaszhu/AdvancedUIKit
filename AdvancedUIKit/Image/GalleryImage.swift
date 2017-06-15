@@ -14,7 +14,7 @@ class GalleryImage: UIScrollView {
     /**
      * The actual image view.
      */
-    private var imageView: UIImageView
+    var imageView: UIImageView
     
     /**
      * The image.
@@ -41,12 +41,26 @@ class GalleryImage: UIScrollView {
     }
     
     /**
+     * The content mode of the image.
+     */
+    var imageMode: UIViewContentMode {
+        set {
+            imageView.contentMode = newValue
+        }
+        get {
+            return imageView.contentMode
+        }
+    }
+    
+    /**
      * Initialize the image.
      */
     init() {
         imageView = UIImageView()
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         isScrollEnabled = false
+        backgroundColor = .clear
+        delegate = self
         imageView.clipsToBounds = true
     }
     
