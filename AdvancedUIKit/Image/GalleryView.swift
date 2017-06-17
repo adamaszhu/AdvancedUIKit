@@ -68,6 +68,27 @@ public class GalleryView: PageView {
     }
     
     /**
+     * The size of the GalleryView
+     */
+    var imageSize: CGSize {
+        set {
+            for index in 0 ..< subviews.count {
+                if let galleryImage = subviews[index] as? GalleryImage {
+                    galleryImage.frame.origin = CGPoint(x: CGFloat(index) * newValue.width, y: 0)
+                    galleryImage.size = newValue
+                } else {
+                    Logger.standard.logError(GalleryView.subviewTypeError)
+                }
+            }
+            setContentOffset(CGPoint(x: CGFloat(currentPageIndex) * newValue.width, y: 0), animated: false)
+            contentSize = CGSize(width: CGFloat(pageControl.numberOfPages) * newValue.width, height: newValue.height)
+        }
+        get {
+            return frame.size
+        }
+    }
+    
+    /**
      * Add an image to the view.
      * - parameter image: The image to be added.
      */
@@ -103,7 +124,7 @@ public class GalleryView: PageView {
     }
     
     /**
-     * PageView
+     * UIView
      */
     public required init?(coder aDecoder: NSCoder) {
         imageMode = GalleryView.defaultImageMode

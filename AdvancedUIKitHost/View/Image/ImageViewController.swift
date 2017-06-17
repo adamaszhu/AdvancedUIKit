@@ -18,6 +18,7 @@ class ImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        galleryView.isExpandable = true
         for image in images {
             galleryView.add(image: image)
         }

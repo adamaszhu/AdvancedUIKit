@@ -58,6 +58,19 @@ class GalleryImage: UIScrollView {
     }
     
     /**
+     * The size of the GalleryImage.
+     */
+    var size: CGSize {
+        set {
+            contentSize = newValue
+            frame.size = newValue
+        }
+        get {
+            return frame.size
+        }
+    }
+    
+    /**
      * Reset the zoom level of the image.
      */
     func resetZoomLevel() {
