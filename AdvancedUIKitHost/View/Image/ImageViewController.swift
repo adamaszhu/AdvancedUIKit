@@ -4,7 +4,7 @@ class ImageViewController: UIViewController {
     private let gaussianRadius = 10
     private let opacity = 0.4
     private let compressSize = 50 * 1024
-    private let size = (width: 100.0, height: 50.0)
+    private let size = (width: 200.0, height: 150.0)
     
     @IBOutlet weak var galleryView: GalleryView!
     
@@ -24,48 +24,38 @@ class ImageViewController: UIViewController {
     }
     
     @IBAction func addBlur(_ sender: Any) {
-        let image = galleryView.images[galleryView.currentPageIndex].addGaussianBlur(withRadius: gaussianRadius)
+        guard let image = galleryView.currentImage?.addGaussianBlur(withRadius: gaussianRadius) else {
+            return
+        }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func addOpacity(_ sender: Any) {
-        guard let imageView = galleryView.subviews[galleryView.currentPageIndex] as? UIImageView else {
+        guard let image = galleryView.currentImage?.setOpacity(opacity) else {
             return
         }
-        guard let image = imageView.image else {
-            return
-        }
-        imageView.image = image.setOpacity(opacity)
+        galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func cropSquare(_ sender: Any) {
-        guard let imageView = galleryView.subviews[galleryView.currentPageIndex] as? UIImageView else {
+        guard let image = galleryView.currentImage?.cropSquare() else {
             return
         }
-        guard let image = imageView.image else {
-            return
-        }
-        imageView.image = image.cropSquare()
+        galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func compress(_ sender: Any) {
-        guard let imageView = galleryView.subviews[galleryView.currentPageIndex] as? UIImageView else {
+        guard let image = galleryView.currentImage?.compress(withMaxSize: compressSize) else {
             return
         }
-        guard let image = imageView.image else {
-            return
-        }
-        imageView.image = image.compress(withMaxSize: compressSize)
+        galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func resize(_ sender: Any) {
-        guard let imageView = galleryView.subviews[galleryView.currentPageIndex] as? UIImageView else {
+        guard let image = galleryView.currentImage?.resize(toWidth: size.width, toHeight: size.height) else {
             return
         }
-        guard let image = imageView.image else {
-            return
-        }
-        imageView.image = image.resize(toWidth: size.width, toHeight: size.height)
+        galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func chooseImage(_ sender: Any) {
@@ -86,13 +76,6 @@ class ImageViewController: UIViewController {
     
     @IBAction func removeAll(_ sender: Any) {
         galleryView.removeAllViews()
-    }
-    
-    func getImageView(ofImage image: UIImage) -> UIImageView {
-        let imageView = UIImageView()
-        imageView.image = image
-        imageView.contentMode = .scaleAspectFit
-        return imageView
     }
     
 }
