@@ -1,13 +1,11 @@
-//import UIKit
+/**
+ * ExpandableGalleryView is a horizontal sliding image page view, which has full screen mode.
+ * - author: Adamas
+ * - version: 1.0.0
+ * - date: 17/06/2017
+ */
+public class ExpandableGalleryView: GalleryView {
 //
-///**
-// * ExpandableGalleryView is a horizontal sliding image page view, which has full screen mode.
-// * - author: Adamas
-// * - version: 0.1.2
-// * - date: 23/10/2016
-// */
-//public class ExpandableGalleryView : GalleryView, GalleryViewDelegate {
-//    
 //    /**
 //     * The default image.
 //     */
@@ -201,4 +199,6 @@
 //        }
 //    }
 //    
-//}
+}
+
+import UIKit

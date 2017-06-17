@@ -17,6 +17,10 @@ extension GalleryImage: UIScrollViewDelegate {
      * UIScrollViewDelegate
      */
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard (contentSize.width >= frame.width) && (contentSize.height >= frame.height) else {
+            setZoomScale(1, animated: false)
+            return
+        }
         var adjustOffset = contentOffset
         adjustOffset.x = max(adjustOffset.x, 0)
         adjustOffset.y = max(adjustOffset.y, 0)

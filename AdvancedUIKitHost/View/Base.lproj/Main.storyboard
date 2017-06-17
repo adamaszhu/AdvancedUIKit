@@ -668,7 +668,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHM-K8-11T">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbQ-lu-0hh" customClass="GalleryView" customModule="AdvancedUIKit">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbQ-lu-0hh" customClass="ExpandableGalleryView" customModule="AdvancedUIKit">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kbQ-lu-0hh" secondAttribute="height" multiplier="4:3" id="rbV-F5-9Tm"/>

@@ -6,7 +6,7 @@ class ImageViewController: UIViewController {
     private let compressSize = 50 * 1024
     private let size = (width: 200.0, height: 150.0)
     
-    @IBOutlet weak var galleryView: GalleryView!
+    @IBOutlet weak var galleryView: ExpandableGalleryView!
     
     private let imagePickerHelper: ImagePickerHelper
     
