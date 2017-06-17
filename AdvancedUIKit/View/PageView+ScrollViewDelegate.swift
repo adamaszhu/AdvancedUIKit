@@ -10,8 +10,8 @@ extension PageView: UIScrollViewDelegate {
      * UIScrollViewDelegate
      */
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = Int(round(scrollView.contentOffset.x / frame.width))
-        if pageIndex != pageControl.currentPage {
+        let pageIndex = Int(round(contentOffset.x / frame.width))
+        if pageIndex != currentPageIndex {
             pageControl.currentPage = pageIndex
         }
     }

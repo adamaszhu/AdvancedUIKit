@@ -13,6 +13,21 @@ extension GalleryImage: UIScrollViewDelegate {
         return imageView
     }
     
+    /**
+     * UIScrollViewDelegate
+     */
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        var adjustOffset = contentOffset
+        adjustOffset.x = max(adjustOffset.x, 0)
+        adjustOffset.y = max(adjustOffset.y, 0)
+        adjustOffset.x = min(adjustOffset.x, contentSize.width - frame.width)
+        adjustOffset.y = min(adjustOffset.y, contentSize.height - frame.height)
+        guard adjustOffset != contentOffset else {
+            return
+        }
+        setContentOffset(adjustOffset, animated: false)
+    }
+    
 }
 
 import UIKit

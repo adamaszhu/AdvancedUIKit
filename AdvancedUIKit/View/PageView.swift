@@ -14,7 +14,7 @@ public class PageView: UIScrollView {
     /**
      * System error.
      */
-    private static let pageExistanceError = "The page does not exist."
+    private static let pageIndexError = "The page does not exist."
     
     /**
      * System warning.
@@ -47,6 +47,17 @@ public class PageView: UIScrollView {
     }
     
     /**
+     * The current page presented.
+     */
+    public var currentPage: UIView? {
+        guard (currentPageIndex >= 0) && (currentPageIndex < pageControl.numberOfPages) else {
+            Logger.standard.logError(PageView.pageIndexError)
+            return nil
+        }
+        return subviews[currentPageIndex]
+    }
+    
+    /**
      * The buttom bargin of the page control.
      */
     public var pageControlButtomMargin: CGFloat {
@@ -76,7 +87,7 @@ public class PageView: UIScrollView {
      */
     public func replace(_ view: UIView, atIndex index: Int) {
         guard (index >= 0) && (index < pageControl.numberOfPages) else {
-            Logger.standard.logError(PageView.pageExistanceError)
+            Logger.standard.logError(PageView.pageIndexError)
             return
         }
         view.frame = subviews[index].frame
@@ -91,7 +102,7 @@ public class PageView: UIScrollView {
     public func removeView(atIndex index: Int) {
         // TODO: Add animation for the removing action.
         guard (index >= 0) && (index < pageControl.numberOfPages) else {
-            Logger.standard.logError(PageView.pageExistanceError)
+            Logger.standard.logError(PageView.pageIndexError)
             return
         }
         if (index <= currentPageIndex) && (currentPageIndex != 0)  {
@@ -126,7 +137,7 @@ public class PageView: UIScrollView {
             Logger.standard.logWarning(PageView.lastPageWarning)
             return
         }
-        switchToPage(withIndex: pageControl.currentPage + 1)
+        switchToPage(withIndex: currentPageIndex + 1)
     }
     
     /**
@@ -137,7 +148,7 @@ public class PageView: UIScrollView {
             Logger.standard.logWarning(PageView.firstPageWarning)
             return
         }
-        switchToPage(withIndex: pageControl.currentPage - 1)
+        switchToPage(withIndex: currentPageIndex - 1)
     }
     
     /**
@@ -147,7 +158,7 @@ public class PageView: UIScrollView {
      */
     public func switchToPage(withIndex index: Int, withAnimation shouldAnimate: Bool = true) {
         guard (index >= 0) && (index < pageControl.numberOfPages) else {
-            Logger.standard.logError(PageView.pageExistanceError)
+            Logger.standard.logError(PageView.pageIndexError)
             return
         }
         pageControl.currentPage = index

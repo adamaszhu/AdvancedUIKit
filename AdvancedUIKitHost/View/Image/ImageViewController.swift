@@ -20,19 +20,12 @@ class ImageViewController: UIViewController {
         super.viewDidLoad()
         for image in images {
             galleryView.add(image: image)
-//            let imageView = getImageView(ofImage: image)
-//            galleryView.add(imageView)
         }
     }
     
     @IBAction func addBlur(_ sender: Any) {
-        guard let imageView = galleryView.subviews[galleryView.currentPageIndex] as? UIImageView else {
-            return
-        }
-        guard let image = imageView.image else {
-            return
-        }
-        imageView.image = image.addGaussianBlur(withRadius: gaussianRadius)
+        let image = galleryView.images[galleryView.currentPageIndex].addGaussianBlur(withRadius: gaussianRadius)
+        galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func addOpacity(_ sender: Any) {
