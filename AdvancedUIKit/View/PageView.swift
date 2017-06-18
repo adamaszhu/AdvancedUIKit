@@ -200,6 +200,13 @@ public class PageView: UIScrollView {
         for index in 0 ..< subviews.count {
             subviews[index].frame = CGRect(x: CGFloat(index) * frame.width, y: 0, width: frame.width, height: frame.height)
         }
+    }
+    
+    /**
+     * UIView
+     */
+    public override func didMoveToSuperview() {
+        super.didMoveToSuperview()
         guard let superview = superview else {
             return
         }

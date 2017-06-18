@@ -327,15 +327,19 @@ public class ExpandableGalleryView: GalleryView {
         originalFrameConstraints = frameConstraints
         // TODO: Exclude those constraints related to subviews.
         originalConstraints = constraints
+        let pageControlBottomMargin = self.pageControlButtomMargin
         animate(withChange: { [unowned self] _ in
             self.frame = window.bounds
             self.imageSize = window.bounds.size
-            self.backgroundColor = .black
             }, withPreparation: { [unowned self] _ in
                 self.gestureFilterView.isHidden = true
                 self.moveToWindow()
+                self.pageControl.isHidden = true
             }, withCompletion: { [unowned self] _ in
                 self.collapseGestureRecognizer.isEnabled = true
+                self.pageControlButtomMargin = pageControlBottomMargin
+                self.pageControl.isHidden = false
+                self.backgroundColor = .black
         })
     }
 
@@ -351,15 +355,19 @@ public class ExpandableGalleryView: GalleryView {
             Logger.standard.logError(ExpandableGalleryView.windowError)
             return
         }
+        let pageControlBottomMargin = self.pageControlButtomMargin
         animate(withChange: { [unowned self] _ in
             self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
             self.imageSize = self.originalFrame.size
-            self.backgroundColor = .clear
             }, withPreparation: { [unowned self] _ in
                 self.collapseGestureRecognizer.isEnabled = false
+                self.pageControl.isHidden = true
+                self.backgroundColor = .clear
             }, withCompletion: { [unowned self] _ in
                 self.removeFromWindow()
                 self.gestureFilterView.isHidden = false
+                self.pageControlButtomMargin = pageControlBottomMargin
+                self.pageControl.isHidden = false
         })
     }
 

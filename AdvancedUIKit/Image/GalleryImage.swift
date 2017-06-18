@@ -64,6 +64,7 @@ class GalleryImage: UIScrollView {
         set {
             contentSize = newValue
             frame.size = newValue
+            imageView.frame.size = newValue
         }
         get {
             return frame.size
