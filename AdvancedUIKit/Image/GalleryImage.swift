@@ -72,6 +72,11 @@ class GalleryImage: UIScrollView {
     }
     
     /**
+     * The double tap gesture used to zoom in the image.
+     */
+    private (set) var doubleTapGestureRecognizer: UITapGestureRecognizer!
+    
+    /**
      * Reset the zoom level of the image.
      */
     func resetZoomLevel() {
@@ -98,7 +103,7 @@ class GalleryImage: UIScrollView {
         backgroundColor = .clear
         delegate = self
         imageView.clipsToBounds = true
-        let doubleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(zoomIn))
+        doubleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(zoomIn))
         doubleTapGestureRecognizer.numberOfTapsRequired = 2
         addGestureRecognizer(doubleTapGestureRecognizer)
     }

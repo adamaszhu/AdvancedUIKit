@@ -434,6 +434,37 @@ public class ExpandableGalleryView: GalleryView {
         showNextImageGestureRecognizer.direction = .left
         gestureFilterView.addGestureRecognizer(showNextImageGestureRecognizer)
     }
+    
+    /**
+     * GalleryView
+     */
+    public override func add(image: UIImage) {
+        super.add(image: image)
+        guard let galleryImage = subviews.last as? GalleryImage else {
+            Logger.standard.logError(ExpandableGalleryView.subviewTypeError)
+            return
+        }
+        collapseGestureRecognizer.require(toFail: galleryImage.doubleTapGestureRecognizer)
+    }
+    
+    /**
+     * GalleryView
+     */
+    public override var images: Array<UIImage> {
+        set {
+            super.images = newValue
+            for subview in subviews {
+            guard let galleryImage = subview as? GalleryImage else {
+                Logger.standard.logError(ExpandableGalleryView.subviewTypeError)
+                return
+            }
+            collapseGestureRecognizer.require(toFail: galleryImage.doubleTapGestureRecognizer)
+            }
+        }
+        get {
+            return super.images
+        }
+    }
 
 }
 
