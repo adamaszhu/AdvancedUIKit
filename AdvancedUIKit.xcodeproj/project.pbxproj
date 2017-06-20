@@ -94,6 +94,8 @@
 		42204B9B1EF9489000F1FA04 /* ExpandableListCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 42204B941EF9489000F1FA04 /* ExpandableListCell.h */; };
 		42204B9C1EF9489000F1FA04 /* ExpandableListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42204B951EF9489000F1FA04 /* ExpandableListCell.m */; };
 		42204B9D1EF9489000F1FA04 /* ExpandableListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B961EF9489000F1FA04 /* ExpandableListCell.swift */; };
+		42204B9F1EF954A400F1FA04 /* InfiniteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B9E1EF954A400F1FA04 /* InfiniteList.swift */; };
+		42204BA21EF9CB8F00F1FA04 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
 		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
@@ -280,6 +282,8 @@
 		42204B941EF9489000F1FA04 /* ExpandableListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandableListCell.h; sourceTree = "<group>"; };
 		42204B951EF9489000F1FA04 /* ExpandableListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandableListCell.m; sourceTree = "<group>"; };
 		42204B961EF9489000F1FA04 /* ExpandableListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableListCell.swift; sourceTree = "<group>"; };
+		42204B9E1EF954A400F1FA04 /* InfiniteList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteList.swift; sourceTree = "<group>"; };
+		42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdvancedUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB3C81EAA30B300377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB4061EAA3CF100377AB5 /* AdvancedUIKitHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedUIKitHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -597,6 +601,15 @@
 				42204B941EF9489000F1FA04 /* ExpandableListCell.h */,
 				42204B951EF9489000F1FA04 /* ExpandableListCell.m */,
 				42204B961EF9489000F1FA04 /* ExpandableListCell.swift */,
+				42204B9E1EF954A400F1FA04 /* InfiniteList.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		42204BA01EF9557D00F1FA04 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -842,6 +855,7 @@
 				420C78DF1EEB737E00A1E3EA /* Image */,
 				28B1D8061EE50E7B00A5B2C4 /* Keyboard */,
 				426939771EAB150700761FDE /* Label */,
+				42204BA01EF9557D00F1FA04 /* List */,
 				42CA09F21EE1A454009AF1BE /* Localization */,
 				2846A98A1EE7B03F007D4226 /* Location */,
 				28D1C0001EDCF3DA00290999 /* Main */,
@@ -1143,6 +1157,7 @@
 				42CA09F11EE1A1BA009AF1BE /* SegmentedControl+Localizer.swift in Sources */,
 				2846A9A01EE7C0FA007D4226 /* MapView.swift in Sources */,
 				2846A9A11EE7C0FA007D4226 /* MapViewDelegate.swift in Sources */,
+				42204B9F1EF954A400F1FA04 /* InfiniteList.swift in Sources */,
 				42204B9C1EF9489000F1FA04 /* ExpandableListCell.m in Sources */,
 				42FE508D1EF7CF9E009C0BD7 /* ExpandableView.swift in Sources */,
 				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
@@ -1238,6 +1253,7 @@
 				28D1C0061EDCF43700290999 /* MainViewController+TableViewDelegate.swift in Sources */,
 				2814AEDA1EE144B2007745EF /* NotificationViewController.swift in Sources */,
 				2846A98E1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift in Sources */,
+				42204BA21EF9CB8F00F1FA04 /* ListViewController.swift in Sources */,
 				2838C2D01EE0DD89004D5BCB /* AudioViewController.swift in Sources */,
 				28D1C0041EDCF42A00290999 /* MainViewController+TableViewDataSource.swift in Sources */,
 				420C78E11EEB73AE00A1E3EA /* ImageViewController.swift in Sources */,
