@@ -22,10 +22,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Choose an image.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Allow all time location updating.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow when in use location updating.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Take a photo.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

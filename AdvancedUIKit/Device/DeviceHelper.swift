@@ -22,12 +22,6 @@ public class DeviceHelper: NSObject {
     private static let phoneNumberError = "The phone number is invalid."
     private static let addressError = "The address is incorrect."
     private static let attachmentError = "The attachment is invalid."
-    private static let windowError = "The window presented is invalid."
-    
-    /**
-     * System warning.
-     */
-    private static let navigationWarning = "The view doesn't have a navigation controller."
     
     /**
      * Function url.
@@ -91,16 +85,7 @@ public class DeviceHelper: NSObject {
             mailViewController.addAttachmentData(data, mimeType: mimeType, fileName: name);
         }
         mailViewController.setMessageBody(content, isHTML: isHTML)
-        guard var rootViewController = application.keyWindow?.rootViewController else {
-            Logger.standard.logError(DeviceHelper.windowError)
-            return
-        }
-        if let navigationController = rootViewController as? UINavigationController {
-            rootViewController = navigationController.viewControllers.last ?? navigationController
-        } else {
-            Logger.standard.logWarning(DeviceHelper.navigationWarning)
-        }
-        rootViewController.present(mailViewController, animated: true, completion: nil)
+        application.rootViewController?.present(mailViewController, animated: true, completion: nil)
     }
     
     /**
