@@ -87,6 +87,13 @@
 		420C78F01EEBB82300A1E3EA /* CameraHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78EF1EEBB82300A1E3EA /* CameraHelperDelegate+Optional.swift */; };
 		420C78F21EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78F11EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift */; };
 		421C9FCB1EE82C3C00D019C2 /* MapView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */; };
+		42204B971EF9489000F1FA04 /* DynamicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B901EF9489000F1FA04 /* DynamicList.swift */; };
+		42204B981EF9489000F1FA04 /* DynamicListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B911EF9489000F1FA04 /* DynamicListDelegate.swift */; };
+		42204B991EF9489000F1FA04 /* DynamicListStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B921EF9489000F1FA04 /* DynamicListStatus.swift */; };
+		42204B9A1EF9489000F1FA04 /* ExpandableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B931EF9489000F1FA04 /* ExpandableList.swift */; };
+		42204B9B1EF9489000F1FA04 /* ExpandableListCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 42204B941EF9489000F1FA04 /* ExpandableListCell.h */; };
+		42204B9C1EF9489000F1FA04 /* ExpandableListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42204B951EF9489000F1FA04 /* ExpandableListCell.m */; };
+		42204B9D1EF9489000F1FA04 /* ExpandableListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B961EF9489000F1FA04 /* ExpandableListCell.swift */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
 		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
@@ -266,6 +273,13 @@
 		420C78EF1EEBB82300A1E3EA /* CameraHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		420C78F11EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageViewController+ImagePickerHelperDelegate.swift"; sourceTree = "<group>"; };
 		421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapView+Delegate.swift"; sourceTree = "<group>"; };
+		42204B901EF9489000F1FA04 /* DynamicList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicList.swift; sourceTree = "<group>"; };
+		42204B911EF9489000F1FA04 /* DynamicListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicListDelegate.swift; sourceTree = "<group>"; };
+		42204B921EF9489000F1FA04 /* DynamicListStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicListStatus.swift; sourceTree = "<group>"; };
+		42204B931EF9489000F1FA04 /* ExpandableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableList.swift; sourceTree = "<group>"; };
+		42204B941EF9489000F1FA04 /* ExpandableListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandableListCell.h; sourceTree = "<group>"; };
+		42204B951EF9489000F1FA04 /* ExpandableListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandableListCell.m; sourceTree = "<group>"; };
+		42204B961EF9489000F1FA04 /* ExpandableListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableListCell.swift; sourceTree = "<group>"; };
 		422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdvancedUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB3C81EAA30B300377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB4061EAA3CF100377AB5 /* AdvancedUIKitHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedUIKitHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -573,6 +587,20 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		42204B8F1EF9488000F1FA04 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				42204B901EF9489000F1FA04 /* DynamicList.swift */,
+				42204B911EF9489000F1FA04 /* DynamicListDelegate.swift */,
+				42204B921EF9489000F1FA04 /* DynamicListStatus.swift */,
+				42204B931EF9489000F1FA04 /* ExpandableList.swift */,
+				42204B941EF9489000F1FA04 /* ExpandableListCell.h */,
+				42204B951EF9489000F1FA04 /* ExpandableListCell.m */,
+				42204B961EF9489000F1FA04 /* ExpandableListCell.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		422DB3BA1EAA30B300377AB5 = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +635,7 @@
 				4269397D1EAB439700761FDE /* Internal */,
 				28E66FEC1EE4E4C100073DF1 /* Keyboard */,
 				426939741EAB01CD00761FDE /* Label */,
+				42204B8F1EF9488000F1FA04 /* List */,
 				42CA09E51EE198C4009AF1BE /* Localization */,
 				28F350A71EE793E5005120B1 /* Location */,
 				2846A9971EE7C0FA007D4226 /* Map */,
@@ -885,6 +914,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42204B9B1EF9489000F1FA04 /* ExpandableListCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,7 +997,7 @@
 					};
 					422DB4051EAA3CF100377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = Y2XN2Z2HA2;
+						DevelopmentTeam = 75S8MN3555;
 						ProvisioningStyle = Automatic;
 					};
 					422DB4181EAA3CF100377AB5 = {
@@ -1105,6 +1135,7 @@
 				284E5C581EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift in Sources */,
 				429F88511EF493F900C293B6 /* GalleryView+ScrollViewDelegate.swift in Sources */,
 				429F884F1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift in Sources */,
+				42204B991EF9489000F1FA04 /* DynamicListStatus.swift in Sources */,
 				2822A33A1EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift in Sources */,
 				425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
@@ -1112,6 +1143,7 @@
 				42CA09F11EE1A1BA009AF1BE /* SegmentedControl+Localizer.swift in Sources */,
 				2846A9A01EE7C0FA007D4226 /* MapView.swift in Sources */,
 				2846A9A11EE7C0FA007D4226 /* MapViewDelegate.swift in Sources */,
+				42204B9C1EF9489000F1FA04 /* ExpandableListCell.m in Sources */,
 				42FE508D1EF7CF9E009C0BD7 /* ExpandableView.swift in Sources */,
 				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
 				284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */,
@@ -1147,8 +1179,10 @@
 				2846A99E1EE7C0FA007D4226 /* ExpandableMapView.swift in Sources */,
 				4258DDAF1EEAE6A80085FCAA /* ExpandableGalleryView.swift in Sources */,
 				42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */,
+				42204B981EF9489000F1FA04 /* DynamicListDelegate.swift in Sources */,
 				28E66FF11EE4E4C100073DF1 /* ActionFilterView.swift in Sources */,
 				2846A9AD1EE7C754007D4226 /* MKAnnotationView+Renderer.swift in Sources */,
+				42204B9A1EF9489000F1FA04 /* ExpandableList.swift in Sources */,
 				4258DDB01EEAE6A80085FCAA /* GalleryImage.swift in Sources */,
 				42FE508F1EF7D33C009C0BD7 /* ExpandableMapView+Expandable.swift in Sources */,
 				280E15341EE924D3003BF109 /* MapView+LocationHelperDelegate.swift in Sources */,
@@ -1161,6 +1195,7 @@
 				2822A3411EE127EA00FAA8E3 /* NotificationHelperDelegate.swift in Sources */,
 				4234665B1EED21F0002A04F4 /* PageView.swift in Sources */,
 				4258DDB11EEAE6A80085FCAA /* GalleryView.swift in Sources */,
+				42204B971EF9489000F1FA04 /* DynamicList.swift in Sources */,
 				420C78E61EEB942D00A1E3EA /* ImagePickerHelper+ControllerDelegate.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */,
 				420C78F01EEBB82300A1E3EA /* CameraHelperDelegate+Optional.swift in Sources */,
@@ -1173,6 +1208,7 @@
 				28E66FF21EE4E4C100073DF1 /* ActionFilterViewDelegate.swift in Sources */,
 				2823EE471EF224F4009B9AC8 /* Coordinate+Measurer.swift in Sources */,
 				4258DDB41EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift in Sources */,
+				42204B9D1EF9489000F1FA04 /* ExpandableListCell.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
 				284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */,
 				2822A3361EE0EC8200FAA8E3 /* ViewController+Navigation.swift in Sources */,
@@ -1483,7 +1519,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
+				DEVELOPMENT_TEAM = 75S8MN3555;
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1499,7 +1535,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
+				DEVELOPMENT_TEAM = 75S8MN3555;
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
