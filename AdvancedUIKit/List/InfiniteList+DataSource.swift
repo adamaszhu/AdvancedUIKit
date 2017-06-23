@@ -25,6 +25,7 @@ extension InfiniteList: UITableViewDataSource {
             Logger.standard.logError(InfiniteList.nibError, withDetail: cellID)
             return UITableViewCell()
         }
+        cell.render(item.item)
         return cell
     }
     

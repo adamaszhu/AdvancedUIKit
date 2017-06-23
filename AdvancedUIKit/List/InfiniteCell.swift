@@ -6,6 +6,13 @@
  */
 open class InfiniteCell: UITableViewCell {
     
+    /**
+     * Render the cell with an item.
+     * - parameter item: The item to be rendered.
+     */
+    open func render(_ item: Any) {
+    }
+    
 }
 
 import UIKit

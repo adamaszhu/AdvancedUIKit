@@ -7,8 +7,9 @@ class ListViewController: UIViewController {
         InfiniteItem(item: 1, type: ImageCell.self),
         InfiniteItem(item: 2, type: LabelCell.self),
         InfiniteItem(item: 3, type: ImageCell.self),
-        InfiniteItem(item: 4, type: LabelCell.self),
-        InfiniteItem(item: 5, type: LabelCell.self)]
+        InfiniteItem(item: 4, type: ImageCell.self),
+        InfiniteItem(item: 5, type: LabelCell.self),
+        InfiniteItem(item: 6, type: LabelCell.self)]
     }
     
     override func viewDidLoad() {
