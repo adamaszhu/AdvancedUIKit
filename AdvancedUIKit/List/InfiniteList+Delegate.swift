@@ -6,6 +6,16 @@
  */
 extension InfiniteList: UITableViewDelegate {
     
+    /**
+     * UITableViewDelegate
+     */
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = items.element(atIndex: indexPath.row)  else {
+            return
+        }
+        infiniteListDelegate?.infiniteList(self, didSelectItem: item.item)
+    }
+    
 }
 
 import UIKit

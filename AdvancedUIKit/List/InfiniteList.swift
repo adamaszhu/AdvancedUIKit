@@ -13,12 +13,22 @@ public class InfiniteList: UITableView {
     static let indexError = "Unknown cell index is detected."
     
     /**
+     * Delegate
+     */
+    public var infiniteListDelegate: InfiniteListDelegate?
+    
+    /**
      * The items displayed on the screen.
      */
-    public var items: Array<InfiniteItem> {
-        didSet {
-            reloadData()
-        }
+    var items: Array<InfiniteItem>
+    
+    /**
+     * Reload a list of items.
+     * - parameter items: The items to be reloaded.
+     */
+    public func reload(_ items: Array<InfiniteItem>) {
+        self.items = items
+        reloadData()
     }
     
     /**

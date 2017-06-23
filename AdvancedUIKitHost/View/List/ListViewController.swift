@@ -14,9 +14,10 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        infiniteList.infiniteListDelegate = self
         infiniteList.register(UINib(nibName: String(describing: LabelCell.self), bundle: nil), for: LabelCell.self)
         infiniteList.register(UINib(nibName: String(describing: ImageCell.self), bundle: nil), for: ImageCell.self)
-        infiniteList.items = items
+        infiniteList.reload(items)
     }
     
 }
