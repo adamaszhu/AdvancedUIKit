@@ -153,6 +153,11 @@
 		42CA0A021EE23D0F009AF1BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42CA0A001EE23D0F009AF1BE /* Main.storyboard */; };
 		42CA0A081EE4338A009AF1BE /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA0A071EE4338A009AF1BE /* ButtonViewController.swift */; };
 		42CA0A0A1EE43752009AF1BE /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA0A091EE43752009AF1BE /* NavigationViewController.swift */; };
+		42CF00A31EFD167F002613E3 /* Array+Accessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF00A21EFD167F002613E3 /* Array+Accessor.swift */; };
+		42CF00A51EFD19BA002613E3 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42CF00A41EFD19BA002613E3 /* LabelCell.xib */; };
+		42CF00A71EFD19C6002613E3 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42CF00A61EFD19C6002613E3 /* ImageCell.xib */; };
+		42CF00A91EFD1CA5002613E3 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF00A81EFD1CA5002613E3 /* LabelCell.swift */; };
+		42CF00AB1EFD1CBF002613E3 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF00AA1EFD1CBF002613E3 /* ImageCell.swift */; };
 		42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */; };
 		42EA08B91EDD8E0400B079C0 /* MessageHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */; };
 		42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */; };
@@ -351,6 +356,11 @@
 		42CA0A011EE23D0F009AF1BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42CA0A071EE4338A009AF1BE /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		42CA0A091EE43752009AF1BE /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		42CF00A21EFD167F002613E3 /* Array+Accessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Accessor.swift"; sourceTree = "<group>"; };
+		42CF00A41EFD19BA002613E3 /* LabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
+		42CF00A61EFD19C6002613E3 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		42CF00A81EFD1CA5002613E3 /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
+		42CF00AA1EFD1CBF002613E3 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageHelper+Constant.swift"; sourceTree = "<group>"; };
 		42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SystemMessageHelper+Helper.swift"; sourceTree = "<group>"; };
@@ -616,6 +626,10 @@
 			isa = PBXGroup;
 			children = (
 				42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */,
+				42CF00A41EFD19BA002613E3 /* LabelCell.xib */,
+				42CF00A61EFD19C6002613E3 /* ImageCell.xib */,
+				42CF00A81EFD1CA5002613E3 /* LabelCell.swift */,
+				42CF00AA1EFD1CBF002613E3 /* ImageCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -757,6 +771,7 @@
 		4269397D1EAB439700761FDE /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				42CF00A21EFD167F002613E3 /* Array+Accessor.swift */,
 				42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */,
 				4269399C1EAC478600761FDE /* Logger.swift */,
 				425DCD151EB36EA100A0ED26 /* String+Localizer.swift */,
@@ -1069,7 +1084,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42CF00A51EFD19BA002613E3 /* LabelCell.xib in Resources */,
 				42CA09F61EE1A7B0009AF1BE /* Localizable.strings in Resources */,
+				42CF00A71EFD19C6002613E3 /* ImageCell.xib in Resources */,
 				42CA0A021EE23D0F009AF1BE /* Main.storyboard in Resources */,
 				2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */,
 				422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */,
@@ -1235,6 +1252,7 @@
 				284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */,
 				2822A3361EE0EC8200FAA8E3 /* ViewController+Navigation.swift in Sources */,
 				42CA09E21EE0461A009AF1BE /* RingHelper.swift in Sources */,
+				42CF00A31EFD167F002613E3 /* Array+Accessor.swift in Sources */,
 				426939871EAB675500761FDE /* DataPicker+PickerViewDataSource.swift in Sources */,
 				42CA09EF1EE19F15009AF1BE /* View+Localizer.swift in Sources */,
 				284474511EFCB06B0077B260 /* InfiniteItem.swift in Sources */,
@@ -1254,6 +1272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28E66FE91EE4CF0F00073DF1 /* TextFieldViewController.swift in Sources */,
+				42CF00A91EFD1CA5002613E3 /* LabelCell.swift in Sources */,
 				28D1C0021EDCF3EF00290999 /* MainViewController.swift in Sources */,
 				426939831EAB65A800761FDE /* PickerViewController.swift in Sources */,
 				28D1BFFD1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift in Sources */,
@@ -1265,6 +1284,7 @@
 				2838C2D01EE0DD89004D5BCB /* AudioViewController.swift in Sources */,
 				28D1C0041EDCF42A00290999 /* MainViewController+TableViewDataSource.swift in Sources */,
 				420C78E11EEB73AE00A1E3EA /* ImageViewController.swift in Sources */,
+				42CF00AB1EFD1CBF002613E3 /* ImageCell.swift in Sources */,
 				42CA0A0A1EE43752009AF1BE /* NavigationViewController.swift in Sources */,
 				28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */,
 				42CA09E41EE19673009AF1BE /* NotificationViewController+NotificationHelperDelegate.swift in Sources */,

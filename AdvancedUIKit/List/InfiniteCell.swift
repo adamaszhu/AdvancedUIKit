@@ -5,7 +5,7 @@
  * - date: 22/06/2017
  */
 open class InfiniteCell: UITableViewCell {
-  
+    
 }
 
 import UIKit

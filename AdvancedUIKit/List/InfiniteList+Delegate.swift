@@ -5,7 +5,7 @@
  * - date: 22/06/2017
  */
 extension InfiniteList: UITableViewDelegate {
-  
+    
 }
 
 import UIKit
