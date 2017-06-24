@@ -20,6 +20,9 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-jU-8FH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="9tW-hi-o8d"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -30,20 +33,28 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsR-Co-8hU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="xhf-wC-8kz" firstAttribute="leading" secondItem="R2k-a1-DFu" secondAttribute="leading" id="DZM-Uc-I3U"/>
                     <constraint firstItem="xQ0-jU-8FH" firstAttribute="top" secondItem="R2k-a1-DFu" secondAttribute="top" id="ICZ-BT-drt"/>
                     <constraint firstItem="xQ0-jU-8FH" firstAttribute="leading" secondItem="R2k-a1-DFu" secondAttribute="leading" id="J21-u9-Kbo"/>
-                    <constraint firstAttribute="bottom" secondItem="xQ0-jU-8FH" secondAttribute="bottom" id="WLd-Kc-moC"/>
+                    <constraint firstAttribute="trailing" secondItem="hsR-Co-8hU" secondAttribute="trailing" id="a9V-cf-SbP"/>
+                    <constraint firstItem="hsR-Co-8hU" firstAttribute="top" secondItem="R2k-a1-DFu" secondAttribute="top" id="gye-DT-16y"/>
                     <constraint firstAttribute="trailing" secondItem="xQ0-jU-8FH" secondAttribute="trailing" id="lbd-ud-xCU"/>
+                    <constraint firstItem="xhf-wC-8kz" firstAttribute="top" secondItem="hsR-Co-8hU" secondAttribute="bottom" id="t8o-uM-Ar3"/>
                     <constraint firstAttribute="trailing" secondItem="xhf-wC-8kz" secondAttribute="trailing" id="y8v-7Q-7Z9"/>
+                    <constraint firstItem="hsR-Co-8hU" firstAttribute="leading" secondItem="R2k-a1-DFu" secondAttribute="leading" id="yeZ-6F-cxG"/>
                     <constraint firstItem="xhf-wC-8kz" firstAttribute="top" secondItem="xQ0-jU-8FH" secondAttribute="bottom" id="ykn-wK-VaV"/>
                 </constraints>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
+                <outlet property="additionalView" destination="xhf-wC-8kz" id="mCU-f3-fkW"/>
                 <outlet property="label" destination="xQ0-jU-8FH" id="oiA-Nl-ibm"/>
+                <outlet property="switchButton" destination="hsR-Co-8hU" id="nju-Cy-VdV"/>
             </connections>
             <point key="canvasLocation" x="26.5" y="50"/>
         </tableViewCell>

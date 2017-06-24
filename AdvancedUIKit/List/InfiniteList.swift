@@ -13,6 +13,11 @@ public class InfiniteList: UITableView {
     static let cellError = "The cell has not been registered yet."
     
     /**
+     * System warning.
+     */
+    static let expandWarning = "The cell cannot be expanded."
+    
+    /**
      * Delegate
      */
     public var infiniteListDelegate: InfiniteListDelegate?
@@ -26,6 +31,41 @@ public class InfiniteList: UITableView {
      * All registered types.
      */
     var cellTypes: Array<InfiniteCellType>
+    
+    /**
+     * The cell that is currently expanded.
+     */
+    var expandedIndex: Int? {
+        didSet {
+            reloadData()
+        }
+    }
+    
+    /**
+     * Expand a specific cell.
+     * - parameter index: The index of the cell.
+     */
+    public func expand(atIndex index: Int) {
+        guard let item = items.element(atIndex: index) else {
+            return
+        }
+        guard let cellType = cellType(for: item.type) else {
+            return
+        }
+        guard cellType.additionalHeight != nil else {
+            Logger.standard.logWarning(InfiniteList.expandWarning, withDetail: index)
+            return
+        }
+        expandedIndex = index
+    }
+    
+    /**
+     * Collapse a specific cell.
+     * - parameter index: The index of the cell.
+     */
+    public func collapse(atIndex index: Int) {
+        expandedIndex = nil
+    }
     
     /**
      * Reload a list of items.

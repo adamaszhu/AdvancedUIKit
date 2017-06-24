@@ -25,6 +25,10 @@ extension InfiniteList: UITableViewDataSource {
             Logger.standard.logError(InfiniteList.cellError, withDetail: cellID)
             return UITableViewCell()
         }
+        cell.switchExpandStatusAction = { [unowned self] _ in
+            let index = indexPath.row
+            self.expandedIndex = self.expandedIndex == index ? nil : index
+        }
         cell.render(item.item)
         return cell
     }

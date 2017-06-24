@@ -12,10 +12,31 @@ open class InfiniteCell: UITableViewCell {
     @IBOutlet public var additionalView: UIView?
     
     /**
+     * The button used to switch expand status.
+     */
+    @IBOutlet public var switchButton: UIButton? {
+        didSet {
+            switchButton?.addTarget(self, action: #selector(switchExpandStatus), for: .touchUpInside)
+        }
+    }
+    
+    /**
+     * The action of clicking the switch button.
+     */
+    var switchExpandStatusAction: (() -> Void)!
+    
+    /**
      * Render the cell with an item.
      * - parameter item: The item to be rendered.
      */
     open func render(_ item: Any) {
+    }
+    
+    /**
+     * Switch the expand status of current cell.
+     */
+    func switchExpandStatus() {
+        switchExpandStatusAction()
     }
     
 }
