@@ -7,6 +7,11 @@
 open class InfiniteCell: UITableViewCell {
     
     /**
+     * The additional view that should be shown after being expanded. Nil stands for not expandable.
+     */
+    @IBOutlet public var additionalView: UIView?
+    
+    /**
      * Render the cell with an item.
      * - parameter item: The item to be rendered.
      */

@@ -16,6 +16,19 @@ extension InfiniteList: UITableViewDelegate {
         infiniteListDelegate?.infiniteList(self, didSelectItem: item.item)
     }
     
+    /**
+     * UITableViewDelegate
+     */
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let item = items.element(atIndex: indexPath.row)  else {
+            return 0
+        }
+        guard let cellType = cellType(for: item.type) else {
+            return 0
+        }
+        return cellType.height
+    }
+    
 }
 
 import UIKit

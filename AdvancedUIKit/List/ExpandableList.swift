@@ -71,16 +71,6 @@
 //    }
 //    
 //    /**
-//     * Remove all cells in the list.
-//     * - version: 0.0.8
-//     * - date: 23/10/2016
-//     */
-//    public func resetList() {
-//        cellList.removeAll()
-//        reloadData()
-//    }
-//    
-//    /**
 //     * Fold all cells.
 //     * - version: 0.0.8
 //     * - date: 23/10/2016
@@ -174,7 +164,6 @@
 //    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //        let cell = cellList[indexPath.row]
 //        cell.renderWithItem()
-//        cell.localize()
 //        return cell
 //    }
 //    

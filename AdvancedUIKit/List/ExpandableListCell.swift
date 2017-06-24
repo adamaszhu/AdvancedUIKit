@@ -24,11 +24,6 @@
 //    @IBOutlet weak var detailView: UIView?
 //    
 //    /**
-//     * The item that the cell is displaying.
-//     */
-//    public var item: AnyObject?
-//    
-//    /**
 //     * The height after the cell is extended.
 //     * - version: 0.0.4
 //     * - date: 24/10/2016
@@ -72,14 +67,6 @@
 //     * The expanded height value.
 //     */
 //    private var expandedHeightValue: CGFloat
-//    
-//    /**
-//     * Render the cell according to the item. This function should be overrided.
-//     * - version: 0.0.4
-//     * - date: 24/10/2016
-//     */
-//    public func renderWithItem() {
-//    }
 //    
 //    /**
 //     * - version: 0.0.4
