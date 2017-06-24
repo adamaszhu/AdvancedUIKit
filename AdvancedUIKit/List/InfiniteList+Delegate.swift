@@ -26,7 +26,7 @@ extension InfiniteList: UITableViewDelegate {
         guard let cellType = cellType(for: item.type) else {
             return 0
         }
-        if indexPath.row == expandedIndex, let additionalHeight = cellType.additionalHeight {
+        if indexPath.row == expandedCellIndex, let additionalHeight = cellType.additionalHeight {
             return cellType.height + additionalHeight
         }
         return cellType.height

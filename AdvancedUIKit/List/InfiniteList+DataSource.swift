@@ -27,7 +27,7 @@ extension InfiniteList: UITableViewDataSource {
         }
         cell.switchExpandStatusAction = { [unowned self] _ in
             let index = indexPath.row
-            self.expandedIndex = self.expandedIndex == index ? nil : index
+            self.expandedCellIndex = self.expandedCellIndex == index ? nil : index
         }
         cell.render(item.item)
         return cell

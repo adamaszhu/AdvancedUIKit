@@ -35,9 +35,10 @@ public class InfiniteList: UITableView {
     /**
      * The cell that is currently expanded.
      */
-    var expandedIndex: Int? {
+    var expandedCellIndex: Int? {
         didSet {
-            reloadData()
+            beginUpdates()
+            endUpdates()
         }
     }
     
@@ -45,7 +46,7 @@ public class InfiniteList: UITableView {
      * Expand a specific cell.
      * - parameter index: The index of the cell.
      */
-    public func expand(atIndex index: Int) {
+    public func expandCell(atIndex index: Int) {
         guard let item = items.element(atIndex: index) else {
             return
         }
@@ -56,15 +57,15 @@ public class InfiniteList: UITableView {
             Logger.standard.logWarning(InfiniteList.expandWarning, withDetail: index)
             return
         }
-        expandedIndex = index
+        expandedCellIndex = index
     }
     
     /**
      * Collapse a specific cell.
      * - parameter index: The index of the cell.
      */
-    public func collapse(atIndex index: Int) {
-        expandedIndex = nil
+    public func collapseCell(atIndex index: Int) {
+        expandedCellIndex = nil
     }
     
     /**

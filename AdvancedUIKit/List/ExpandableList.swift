@@ -23,26 +23,7 @@
 //     * Collapsed icon.
 //     */
 //    public var foldedIcon: UIImage?
-//    
-//    /**
-//     * The space between two line
-//     */
-//    public var lineSpace: CGFloat
-//    
-//    /**
-//     * A list of cell in the list.
-//     */
-//    public private(set) var cellList: Array<ExpandableListCell>
-//    
-//    /**
-//     * The index of the cell selected.
-//     */
-//    private var selectedCellIndex: Int?
-//    
-//    /**
-//     * Whether the cell is inserted during the initializing stage or not.
-//     */
-//    private var isInitialized: Bool
+//
 //    
 //    /**
 //     * Insert a new cell into the list.
