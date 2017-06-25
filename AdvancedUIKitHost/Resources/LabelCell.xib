@@ -36,12 +36,21 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsR-Co-8hU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExpandCell" translatesAutoresizingMaskIntoConstraints="NO" id="e46-He-ubI">
+                        <rect key="frame" x="345" y="10" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="BMO-S7-Mzo"/>
+                            <constraint firstAttribute="width" constant="20" id="YFD-QY-KI0"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="e46-He-ubI" secondAttribute="trailing" constant="10" id="C3w-hA-Oc8"/>
                     <constraint firstItem="xhf-wC-8kz" firstAttribute="leading" secondItem="R2k-a1-DFu" secondAttribute="leading" id="DZM-Uc-I3U"/>
                     <constraint firstItem="xQ0-jU-8FH" firstAttribute="top" secondItem="R2k-a1-DFu" secondAttribute="top" id="ICZ-BT-drt"/>
                     <constraint firstItem="xQ0-jU-8FH" firstAttribute="leading" secondItem="R2k-a1-DFu" secondAttribute="leading" id="J21-u9-Kbo"/>
                     <constraint firstAttribute="trailing" secondItem="hsR-Co-8hU" secondAttribute="trailing" id="a9V-cf-SbP"/>
+                    <constraint firstItem="e46-He-ubI" firstAttribute="top" secondItem="R2k-a1-DFu" secondAttribute="top" constant="10" id="ajP-LB-bSN"/>
                     <constraint firstItem="hsR-Co-8hU" firstAttribute="top" secondItem="R2k-a1-DFu" secondAttribute="top" id="gye-DT-16y"/>
                     <constraint firstAttribute="trailing" secondItem="xQ0-jU-8FH" secondAttribute="trailing" id="lbd-ud-xCU"/>
                     <constraint firstItem="xhf-wC-8kz" firstAttribute="top" secondItem="hsR-Co-8hU" secondAttribute="bottom" id="t8o-uM-Ar3"/>
@@ -54,9 +63,13 @@
             <connections>
                 <outlet property="additionalView" destination="xhf-wC-8kz" id="mCU-f3-fkW"/>
                 <outlet property="label" destination="xQ0-jU-8FH" id="oiA-Nl-ibm"/>
-                <outlet property="switchButton" destination="hsR-Co-8hU" id="nju-Cy-VdV"/>
+                <outlet property="switchButton" destination="hsR-Co-8hU" id="vyu-U2-Bxo"/>
+                <outlet property="switchIcon" destination="e46-He-ubI" id="OrM-b6-hIt"/>
             </connections>
             <point key="canvasLocation" x="26.5" y="50"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ExpandCell" width="300" height="300"/>
+    </resources>
 </document>

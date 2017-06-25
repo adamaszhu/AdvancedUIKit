@@ -43,6 +43,11 @@ public class InfiniteList: UITableView {
     }
     
     /**
+ * The cell that is currently expanded.
+ */
+    var expandedCell: InfiniteCell?
+    
+    /**
      * Expand a specific cell.
      * - parameter index: The index of the cell.
      */
