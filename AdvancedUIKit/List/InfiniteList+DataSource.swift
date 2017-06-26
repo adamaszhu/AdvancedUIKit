@@ -17,7 +17,8 @@ extension InfiniteList: UITableViewDataSource {
      * UITableViewDataSource
      */
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let item = items.element(atIndex: indexPath.row)  else {
+        let index = indexPath.row
+        guard let item = items.element(atIndex: index)  else {
             return UITableViewCell()
         }
         let cellID = String(describing: item.type)
@@ -25,8 +26,9 @@ extension InfiniteList: UITableViewDataSource {
             Logger.standard.logError(InfiniteList.cellError, withDetail: cellID)
             return UITableViewCell()
         }
+        cell.index = indexPath
+        cell.isExpanded = expandedCellIndex == index
         cell.switchExpandStatusAction = { [unowned self] _ in
-            let index = indexPath.row
             self.expandedCellIndex = self.expandedCellIndex == index ? nil : index
         }
         cell.render(item.item)

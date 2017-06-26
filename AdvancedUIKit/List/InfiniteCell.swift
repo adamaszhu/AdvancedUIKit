@@ -21,6 +21,16 @@ open class InfiniteCell: UITableViewCell {
     }
     
     /**
+     * Whether the cell is expanded or not.
+     */
+    open var isExpanded: Bool!
+    
+    /**
+     * The index of current cell.
+     */
+    var index: IndexPath!
+    
+    /**
      * The action of clicking the switch button.
      */
     var switchExpandStatusAction: (() -> Void)!

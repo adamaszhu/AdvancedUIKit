@@ -33,19 +33,22 @@ public class InfiniteList: UITableView {
     var cellTypes: Array<InfiniteCellType>
     
     /**
-     * The cell that is currently expanded.
-     */
-    var expandedCellIndex: Int? {
+ * The cell that is currently expanded.
+ */
+    var expandedCell: InfiniteCell? {
+        willSet {
+            guard let index = expandedCell?.index else {
+                return
+            }
+            // COMMENT: Collapse the previous cell.
+            let cell = cellForRow(at: index) as? InfiniteCell
+            cell?.isExpanded = false
+        }
         didSet {
             beginUpdates()
             endUpdates()
         }
     }
-    
-    /**
- * The cell that is currently expanded.
- */
-    var expandedCell: InfiniteCell?
     
     /**
      * Expand a specific cell.

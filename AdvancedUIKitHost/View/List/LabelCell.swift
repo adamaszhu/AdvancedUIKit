@@ -6,7 +6,7 @@ class LabelCell: InfiniteCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var switchIcon: UIImageView!
     
-    var isExpanded: Bool! {
+    override var isExpanded: Bool! {
         didSet {
             switchIcon.image = UIImage(named: isExpanded ? expandedCellIconName : collapsedCellIconName)
         }
