@@ -26,10 +26,23 @@ extension InfiniteList: UITableViewDataSource {
             Logger.standard.logError(InfiniteList.cellError, withDetail: cellID)
             return UITableViewCell()
         }
-        cell.index = indexPath
-        cell.isExpanded = expandedCellIndex == index
-        cell.switchExpandStatusAction = { [unowned self] _ in
-            self.expandedCellIndex = self.expandedCellIndex == index ? nil : index
+        if cell.isExpandable {
+            if indexPath == expandedCellIndex {
+                cell.expand()
+            } else {
+                cell.collapse()
+            }
+            cell.switchExpandStatusAction = { [unowned self] _ in
+                if self.expandedCellIndex == indexPath {
+                    self.collapseCell(atIndex: indexPath.row)
+                } else {
+                    if let previousExpandedCellIndex = self.expandedCellIndex {
+                        // COMMENT: Collapse previous expanded cell.
+                        self.collapseCell(atIndex: previousExpandedCellIndex.row)
+                    }
+                    self.expandCell(atIndex: indexPath.row)
+                }
+            }
         }
         cell.render(item.item)
         return cell

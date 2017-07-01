@@ -21,14 +21,11 @@ open class InfiniteCell: UITableViewCell {
     }
     
     /**
-     * Whether the cell is expanded or not.
+     * Whether the cell can be expanded or not.
      */
-    open var isExpanded: Bool!
-    
-    /**
-     * The index of current cell.
-     */
-    var index: IndexPath!
+    var isExpandable: Bool {
+        return additionalView != nil
+    }
     
     /**
      * The action of clicking the switch button.
@@ -40,6 +37,18 @@ open class InfiniteCell: UITableViewCell {
      * - parameter item: The item to be rendered.
      */
     open func render(_ item: Any) {
+    }
+    
+    /**
+     * Expand the cell.
+     */
+    open func expand() {
+    }
+    
+    /**
+     * Collapse the cell.
+     */
+    open func collapse() {
     }
     
     /**

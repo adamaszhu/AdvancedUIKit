@@ -10,12 +10,14 @@ public class InfiniteList: UITableView {
      * System error.
      */
     static let nibError = "The nib file doesn't contain the customized InfiniteCell."
-    static let cellError = "The cell has not been registered yet."
+    static let cellError = "The cell is not an InfiniteCell."
+    static let registerError = "The cell has not been registered yet."
     
     /**
      * System warning.
      */
     static let expandWarning = "The cell cannot be expanded."
+    static let collapseWarning = "The cell cannot be collapsed."
     
     /**
      * Delegate
@@ -33,17 +35,9 @@ public class InfiniteList: UITableView {
     var cellTypes: Array<InfiniteCellType>
     
     /**
- * The cell that is currently expanded.
- */
-    var expandedCell: InfiniteCell? {
-        willSet {
-            guard let index = expandedCell?.index else {
-                return
-            }
-            // COMMENT: Collapse the previous cell.
-            let cell = cellForRow(at: index) as? InfiniteCell
-            cell?.isExpanded = false
-        }
+     * The index of cell that is currently expanded.
+     */
+    var expandedCellIndex: IndexPath? {
         didSet {
             beginUpdates()
             endUpdates()
@@ -55,16 +49,16 @@ public class InfiniteList: UITableView {
      * - parameter index: The index of the cell.
      */
     public func expandCell(atIndex index: Int) {
-        guard let item = items.element(atIndex: index) else {
+        let index = IndexPath(row: index, section: 0)
+        guard let cell = cellForRow(at: index) as? InfiniteCell else {
+            // Comment: The cell is not visible.
             return
         }
-        guard let cellType = cellType(for: item.type) else {
-            return
-        }
-        guard cellType.additionalHeight != nil else {
+        guard cell.isExpandable else {
             Logger.standard.logWarning(InfiniteList.expandWarning, withDetail: index)
             return
         }
+        cell.expand()
         expandedCellIndex = index
     }
     
@@ -73,6 +67,16 @@ public class InfiniteList: UITableView {
      * - parameter index: The index of the cell.
      */
     public func collapseCell(atIndex index: Int) {
+        let index = IndexPath(row: index, section: 0)
+        guard let cell = cellForRow(at: index) as? InfiniteCell else {
+            // Comment: The cell is not visible.
+            return
+        }
+        guard cell.isExpandable else {
+            Logger.standard.logWarning(InfiniteList.collapseWarning, withDetail: index)
+            return
+        }
+        cell.collapse()
         expandedCellIndex = nil
     }
     
@@ -82,6 +86,7 @@ public class InfiniteList: UITableView {
      */
     public func reload(_ items: Array<InfiniteItem>) {
         self.items = items
+        expandedCellIndex = nil
         reloadData()
     }
     
@@ -118,7 +123,7 @@ public class InfiniteList: UITableView {
                 return cellType
             }
         }
-        Logger.standard.logError(InfiniteList.cellError, withDetail: type)
+        Logger.standard.logError(InfiniteList.registerError, withDetail: type)
         return nil
     }
     

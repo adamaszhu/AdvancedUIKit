@@ -20,13 +20,10 @@ extension InfiniteList: UITableViewDelegate {
      * UITableViewDelegate
      */
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let item = items.element(atIndex: indexPath.row)  else {
+        guard let item = items.element(atIndex: indexPath.row), let cellType = cellType(for: item.type)  else {
             return 0
         }
-        guard let cellType = cellType(for: item.type) else {
-            return 0
-        }
-        if indexPath.row == expandedCellIndex, let additionalHeight = cellType.additionalHeight {
+        if indexPath == expandedCellIndex, let additionalHeight = cellType.additionalHeight {
             return cellType.height + additionalHeight
         }
         return cellType.height
