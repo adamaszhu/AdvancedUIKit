@@ -60,6 +60,7 @@ public class InfiniteList: UITableView {
         }
         cell.expand()
         expandedCellIndex = index
+        adjustContentOffset()
     }
     
     /**
@@ -78,6 +79,16 @@ public class InfiniteList: UITableView {
         }
         cell.collapse()
         expandedCellIndex = nil
+    }
+    
+    /**
+     * Collapse all cells.
+     */
+    public func collapseAllCells() {
+        guard let index = expandedCellIndex?.row else {
+            return
+        }
+        collapseCell(atIndex: index)
     }
     
     /**
@@ -125,6 +136,27 @@ public class InfiniteList: UITableView {
         }
         Logger.standard.logError(InfiniteList.registerError, withDetail: type)
         return nil
+    }
+    
+    /**
+     * Adjust the content offset to fit the expanded cell.
+     */
+    private func adjustContentOffset() {
+        guard let index = expandedCellIndex, let item = items.element(atIndex: index.row), let cellType = cellType(for: item.type) else {
+            return
+        }
+        guard let cell = cellForRow(at: index) as? InfiniteCell, cell.isExpandable, let additionalHeight = cellType.additionalHeight else {
+            Logger.standard.logError(InfiniteList.cellError)
+            return
+        }
+        if cell.frame.origin.y + additionalHeight + cellType.height > contentOffset.y + frame.height {
+            let newOffset = additionalHeight > frame.size.height ? cell.frame.origin.y : cell.frame.origin.y + additionalHeight + cellType.height - frame.height
+            setContentOffset(CGPoint(x: 0, y: newOffset), animated: true)
+            return
+        }
+        if cell.frame.origin.y < contentOffset.y {
+            setContentOffset(CGPoint(x: 0, y: cell.frame.origin.y), animated: true)
+        }
     }
     
     /**
