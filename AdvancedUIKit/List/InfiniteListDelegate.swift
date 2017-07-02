@@ -12,6 +12,28 @@ public protocol InfiniteListDelegate {
      */
     func infiniteList(_ infiniteList: InfiniteList, didSelectItem item: Any)
     
+    /**
+     * When load more action is activated.
+     * - parameter pageIndex: The page index.
+     */
+    func infiniteList(_ infiniteList: InfiniteList, didRequireLoadPage page: Int)
+    
+    /**
+     * When reload action is activated.
+     */
+    func infiniteListDidRequireReload(_ infiniteList: InfiniteList)
+    
+    /**
+     * When the list is scrolled.
+     */
+    func infiniteListDidScroll(_ infiniteList: InfiniteList)
+    
+    /**
+     * When the item is deleted.
+     * - parameter item: The item to be deleted.
+     */
+    func infiniteList(_ infiniteList: InfiniteList, didDeleteItem item: Any)
+    
 }
 
 import Foundation
