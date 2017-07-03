@@ -24,6 +24,7 @@
 		284474511EFCB06B0077B260 /* InfiniteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284474501EFCB06B0077B260 /* InfiniteItem.swift */; };
 		2844824F1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844824E1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift */; };
 		284482511F09F94500DF8D82 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284482501F09F94500DF8D82 /* EmptyState.xib */; };
+		2844827F1F0A41D100DF8D82 /* ReloadBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2844827E1F0A41D100DF8D82 /* ReloadBar.xib */; };
 		2846A98C1EE7B064007D4226 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98B1EE7B064007D4226 /* LocationViewController.swift */; };
 		2846A98E1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */; };
 		2846A9901EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */; };
@@ -221,6 +222,7 @@
 		284474501EFCB06B0077B260 /* InfiniteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteItem.swift; sourceTree = "<group>"; };
 		2844824E1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteList+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
 		284482501F09F94500DF8D82 /* EmptyState.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
+		2844827E1F0A41D100DF8D82 /* ReloadBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReloadBar.xib; sourceTree = "<group>"; };
 		2846A98B1EE7B064007D4226 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationViewController+LocationHelperDelegate.swift"; sourceTree = "<group>"; };
 		2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
@@ -863,6 +865,7 @@
 				42CA09F51EE1A7B0009AF1BE /* Localizable.strings */,
 				2838C2CC1EE0DD06004D5BCB /* Ring.aiff */,
 				284482501F09F94500DF8D82 /* EmptyState.xib */,
+				2844827E1F0A41D100DF8D82 /* ReloadBar.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1040,7 +1043,7 @@
 					};
 					422DB4051EAA3CF100377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 75S8MN3555;
+						DevelopmentTeam = Y2XN2Z2HA2;
 						ProvisioningStyle = Automatic;
 					};
 					422DB4181EAA3CF100377AB5 = {
@@ -1094,6 +1097,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42CF00A51EFD19BA002613E3 /* LabelCell.xib in Resources */,
+				2844827F1F0A41D100DF8D82 /* ReloadBar.xib in Resources */,
 				42CA09F61EE1A7B0009AF1BE /* Localizable.strings in Resources */,
 				42CF00A71EFD19C6002613E3 /* ImageCell.xib in Resources */,
 				42CA0A021EE23D0F009AF1BE /* Main.storyboard in Resources */,
@@ -1575,7 +1579,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 75S8MN3555;
+				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1591,7 +1595,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 75S8MN3555;
+				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
