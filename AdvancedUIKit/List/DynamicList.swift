@@ -6,12 +6,8 @@
 // * - date: 17/11/2016
 // * - author: Adamas
 // */
-//public class DynamicList: UITableView, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+//public class DynamicList: UITableView, UITableViewDataSource, UITableViewDelegate {
 //    
-//    /**
-//     * The minimal page size.
-//     */
-//    private static let MinPageSize = 5
 //    
 //    /**
 //     * The id of the cell that will be reused.
@@ -430,13 +426,6 @@
 //        }
 //    }
 //    
-//    /**
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     */
-//    public func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-//        dynamicListDelegate?.dynamicListDidScrollList?(self)
-//    }
 //}
 //
 //

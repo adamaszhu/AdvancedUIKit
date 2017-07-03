@@ -1,5 +1,7 @@
 class ListViewController: UIViewController {
     
+    private let emptyStateNib = "EmptyState"
+    
     @IBOutlet weak var infiniteList: InfiniteList!
     
     var items: Array<InfiniteItem> {
@@ -15,12 +17,21 @@ class ListViewController: UIViewController {
         InfiniteItem(item: 9, type: LabelCell.self)]
     }
     
+    @IBAction func reloadItems(_ sender: Any) {
+        infiniteList.reload(items)
+    }
+    
+    @IBAction func clearItems(_ sender: Any) {
+        infiniteList.reload([])
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         infiniteList.infiniteListDelegate = self
         infiniteList.register(UINib(nibName: String(describing: LabelCell.self), bundle: nil), for: LabelCell.self)
         infiniteList.register(UINib(nibName: String(describing: ImageCell.self), bundle: nil), for: ImageCell.self)
-        infiniteList.reload(items)
+        infiniteList.registerEmptyState(UINib(nibName: emptyStateNib, bundle: nil))
+        infiniteList.reload([])
     }
     
 }

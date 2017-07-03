@@ -10,6 +10,9 @@ public class InfiniteList: UITableView {
      * System error.
      */
     static let nibError = "The nib file doesn't contain the customized InfiniteCell."
+    static let emptyStateError = "The nib file doesn't contain a UIView for the empty state."
+    static let reloadBarError = "The nib file doesn't contain a UIView for the reload bar."
+    static let loadMoreBarError = "The nib file doesn't contain a UIView for the load more bar."
     static let cellError = "The cell is not an InfiniteCell."
     static let registerError = "The cell has not been registered yet."
     
@@ -18,6 +21,13 @@ public class InfiniteList: UITableView {
      */
     static let expandWarning = "The cell cannot be expanded."
     static let collapseWarning = "The cell cannot be collapsed."
+    static let emptyStateShowingWarning = "The empty state has already been shown."
+    static let emptyStateHidingWarning = "The empty state has already been hidden"
+    
+    /**
+     * The minimal page size.
+     */
+    static let minPageSize = 5
     
     /**
      * Delegate
@@ -33,6 +43,21 @@ public class InfiniteList: UITableView {
      * All registered types.
      */
     var cellTypes: Array<InfiniteCellType>
+    
+    /**
+     * The empty view displayed if no item is retieved.
+     */
+    var emptyState: UIView?
+    
+    /**
+     * The reload bar at the top of the list. If it is nil, then reload function will be disabled.
+     */
+    var reloadBar: UIView?
+    
+    /**
+     * The load more bar at the bottom of the list. If it is nil, then load more function will be disabled.
+     */
+    var loadMoreBar: UIView?
     
     /**
      * The index of cell that is currently expanded.
@@ -97,8 +122,13 @@ public class InfiniteList: UITableView {
      */
     public func reload(_ items: Array<InfiniteItem>) {
         self.items = items
-        expandedCellIndex = nil
         reloadData()
+        expandedCellIndex = nil
+        if items.count == 0 {
+            showEmptyState()
+        } else {
+            hideEmptyState()
+        }
     }
     
     /**
@@ -124,6 +154,43 @@ public class InfiniteList: UITableView {
     }
     
     /**
+     * Register the empty state view for the InfiniteList.
+     * - parameter nib: The nib file containing the view.
+     */
+    public func registerEmptyState(_ nib: UINib) {
+        guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
+            Logger.standard.logError(InfiniteList.emptyStateError)
+            return
+        }
+        view.frame = bounds
+        emptyState = view
+    }
+    
+    /**
+     * Register the load more view for the InfiniteList.
+     * - parameter nib: The nib file containing the view.
+     */
+    public func registerLoadMoreBar(_ nib: UINib) {
+        guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
+            Logger.standard.logError(InfiniteList.loadMoreBarError)
+            return
+        }
+        loadMoreBar = view
+    }
+    
+    /**
+     * Register the reload view for the InfiniteList.
+     * - parameter nib: The nib file containing the view.
+     */
+    public func registerReloadBar(_ nib: UINib) {
+        guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
+            Logger.standard.logError(InfiniteList.reloadBarError)
+            return
+        }
+        reloadBar = view
+    }
+    
+    /**
      * Find the cell type for a specific cell.
      * - parameter type: The type of the cell.
      * - returns: Found cell type. Nil if it is not found.
@@ -136,6 +203,47 @@ public class InfiniteList: UITableView {
         }
         Logger.standard.logError(InfiniteList.registerError, withDetail: type)
         return nil
+    }
+    
+    /**
+     * Show the empty state.
+     */
+    func showEmptyState() {
+        guard let emptyState = emptyState else {
+            return
+        }
+        guard emptyState.superview == nil else {
+            Logger.standard.logError(InfiniteList.emptyStateShowingWarning)
+            return
+        }
+        isScrollEnabled = false
+        emptyState.animate(withChange: {
+            emptyState.alpha = 1
+        }, withPreparation: { [unowned self] _ in
+            emptyState.alpha = 0
+            self.addSubview(emptyState)
+        })
+    }
+    
+    /**
+     * Hide the empty state.
+     */
+    func hideEmptyState() {
+        guard let emptyState = emptyState else {
+            return
+        }
+        guard emptyState.superview != nil else {
+            Logger.standard.logError(InfiniteList.emptyStateHidingWarning)
+            return
+        }
+        isScrollEnabled = true
+        emptyState.animate(withChange: {
+            emptyState.alpha = 0
+        }, withPreparation: {
+            emptyState.alpha = 1
+        }, withCompletion: {
+            emptyState.removeFromSuperview()
+        })
     }
     
     /**

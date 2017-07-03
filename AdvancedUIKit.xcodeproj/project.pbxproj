@@ -22,6 +22,8 @@
 		2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2838C2CC1EE0DD06004D5BCB /* Ring.aiff */; };
 		2838C2D01EE0DD89004D5BCB /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */; };
 		284474511EFCB06B0077B260 /* InfiniteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284474501EFCB06B0077B260 /* InfiniteItem.swift */; };
+		2844824F1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844824E1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift */; };
+		284482511F09F94500DF8D82 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284482501F09F94500DF8D82 /* EmptyState.xib */; };
 		2846A98C1EE7B064007D4226 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98B1EE7B064007D4226 /* LocationViewController.swift */; };
 		2846A98E1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */; };
 		2846A9901EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */; };
@@ -93,7 +95,7 @@
 		420C78F21EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78F11EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift */; };
 		421C9FCB1EE82C3C00D019C2 /* MapView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */; };
 		42204B971EF9489000F1FA04 /* DynamicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B901EF9489000F1FA04 /* DynamicList.swift */; };
-		42204B991EF9489000F1FA04 /* DynamicListStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B921EF9489000F1FA04 /* DynamicListStatus.swift */; };
+		42204B991EF9489000F1FA04 /* InfiniteListStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B921EF9489000F1FA04 /* InfiniteListStatus.swift */; };
 		42204B9F1EF954A400F1FA04 /* InfiniteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B9E1EF954A400F1FA04 /* InfiniteList.swift */; };
 		42204BA21EF9CB8F00F1FA04 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
@@ -217,6 +219,8 @@
 		2838C2CC1EE0DD06004D5BCB /* Ring.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Ring.aiff; sourceTree = "<group>"; };
 		2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		284474501EFCB06B0077B260 /* InfiniteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteItem.swift; sourceTree = "<group>"; };
+		2844824E1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteList+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		284482501F09F94500DF8D82 /* EmptyState.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 		2846A98B1EE7B064007D4226 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationViewController+LocationHelperDelegate.swift"; sourceTree = "<group>"; };
 		2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
@@ -289,7 +293,7 @@
 		420C78F11EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageViewController+ImagePickerHelperDelegate.swift"; sourceTree = "<group>"; };
 		421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapView+Delegate.swift"; sourceTree = "<group>"; };
 		42204B901EF9489000F1FA04 /* DynamicList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicList.swift; sourceTree = "<group>"; };
-		42204B921EF9489000F1FA04 /* DynamicListStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicListStatus.swift; sourceTree = "<group>"; };
+		42204B921EF9489000F1FA04 /* InfiniteListStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteListStatus.swift; sourceTree = "<group>"; };
 		42204B9E1EF954A400F1FA04 /* InfiniteList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteList.swift; sourceTree = "<group>"; };
 		42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdvancedUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -611,15 +615,16 @@
 			isa = PBXGroup;
 			children = (
 				42204B901EF9489000F1FA04 /* DynamicList.swift */,
-				42204B921EF9489000F1FA04 /* DynamicListStatus.swift */,
-				42204B9E1EF954A400F1FA04 /* InfiniteList.swift */,
-				42CF00AC1EFD58F4002613E3 /* InfiniteListDelegate.swift */,
-				42C3F4531F08671B002A436E /* InfiniteListDelegate+Optional.swift */,
-				289B29401EFB3AA300152B53 /* InfiniteList+Delegate.swift */,
-				289B29451EFB4BFE00152B53 /* InfiniteList+DataSource.swift */,
 				289B293E1EFB356200152B53 /* InfiniteCell.swift */,
 				420A530E1EFDDFC2007E07CF /* InfiniteCellType.swift */,
 				284474501EFCB06B0077B260 /* InfiniteItem.swift */,
+				42204B9E1EF954A400F1FA04 /* InfiniteList.swift */,
+				289B29451EFB4BFE00152B53 /* InfiniteList+DataSource.swift */,
+				289B29401EFB3AA300152B53 /* InfiniteList+Delegate.swift */,
+				2844824E1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift */,
+				42CF00AC1EFD58F4002613E3 /* InfiniteListDelegate.swift */,
+				42C3F4531F08671B002A436E /* InfiniteListDelegate+Optional.swift */,
+				42204B921EF9489000F1FA04 /* InfiniteListStatus.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -857,6 +862,7 @@
 				42CA09FA1EE23C5C009AF1BE /* LaunchScreen.storyboard */,
 				42CA09F51EE1A7B0009AF1BE /* Localizable.strings */,
 				2838C2CC1EE0DD06004D5BCB /* Ring.aiff */,
+				284482501F09F94500DF8D82 /* EmptyState.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1094,6 +1100,7 @@
 				2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */,
 				422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */,
 				42CA09FC1EE23C5C009AF1BE /* LaunchScreen.storyboard in Resources */,
+				284482511F09F94500DF8D82 /* EmptyState.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1176,7 +1183,7 @@
 				429F88511EF493F900C293B6 /* GalleryView+ScrollViewDelegate.swift in Sources */,
 				289B29411EFB3AA300152B53 /* InfiniteList+Delegate.swift in Sources */,
 				429F884F1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift in Sources */,
-				42204B991EF9489000F1FA04 /* DynamicListStatus.swift in Sources */,
+				42204B991EF9489000F1FA04 /* InfiniteListStatus.swift in Sources */,
 				2822A33A1EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift in Sources */,
 				425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
@@ -1214,6 +1221,7 @@
 				28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */,
 				421C9FCB1EE82C3C00D019C2 /* MapView+Delegate.swift in Sources */,
 				42FE50911EF7D4BD009C0BD7 /* ExpandableView+Constant.swift in Sources */,
+				2844824F1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift in Sources */,
 				4258DDB31EEAE6A80085FCAA /* ImagePickerHelper.swift in Sources */,
 				42CA09ED1EE19E36009AF1BE /* Button+Localizer.swift in Sources */,
 				28F350AB1EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift in Sources */,
