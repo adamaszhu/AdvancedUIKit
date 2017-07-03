@@ -25,6 +25,9 @@
 		2844824F1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844824E1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift */; };
 		284482511F09F94500DF8D82 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284482501F09F94500DF8D82 /* EmptyState.xib */; };
 		2844827F1F0A41D100DF8D82 /* ReloadBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2844827E1F0A41D100DF8D82 /* ReloadBar.xib */; };
+		284482811F0A4C9D00DF8D82 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284482801F0A4C9D00DF8D82 /* DataGenerator.swift */; };
+		284482831F0A507F00DF8D82 /* LoadMoreBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284482821F0A507F00DF8D82 /* LoadMoreBar.xib */; };
+		284482851F0A54BB00DF8D82 /* InfiniteList+Expandable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284482841F0A54BB00DF8D82 /* InfiniteList+Expandable.swift */; };
 		2846A98C1EE7B064007D4226 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98B1EE7B064007D4226 /* LocationViewController.swift */; };
 		2846A98E1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */; };
 		2846A9901EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */; };
@@ -48,6 +51,7 @@
 		284E5C5B1EDD337500C3CC86 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5A1EDD337500C3CC86 /* MessageViewController.swift */; };
 		284E5C5D1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */; };
 		284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5E1EDD426400C3CC86 /* PopupView.swift */; };
+		2853937D1F0B11630019D288 /* InfiniteList+Infinite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2853937C1F0B11630019D288 /* InfiniteList+Infinite.swift */; };
 		2862143E1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */; };
 		288CA5091EE8CC260077784B /* MKCoordinateRegion+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */; };
 		288CA50E1EE8DF3A0077784B /* MapViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CA50D1EE8DF3A0077784B /* MapViewController+Delegate.swift */; };
@@ -223,6 +227,9 @@
 		2844824E1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteList+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
 		284482501F09F94500DF8D82 /* EmptyState.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 		2844827E1F0A41D100DF8D82 /* ReloadBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReloadBar.xib; sourceTree = "<group>"; };
+		284482801F0A4C9D00DF8D82 /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
+		284482821F0A507F00DF8D82 /* LoadMoreBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadMoreBar.xib; sourceTree = "<group>"; };
+		284482841F0A54BB00DF8D82 /* InfiniteList+Expandable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteList+Expandable.swift"; sourceTree = "<group>"; };
 		2846A98B1EE7B064007D4226 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationViewController+LocationHelperDelegate.swift"; sourceTree = "<group>"; };
 		2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
@@ -248,6 +255,7 @@
 		284E5C5A1EDD337500C3CC86 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageViewController+MessageHelperDelegate.swift"; sourceTree = "<group>"; };
 		284E5C5E1EDD426400C3CC86 /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		2853937C1F0B11630019D288 /* InfiniteList+Infinite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteList+Infinite.swift"; sourceTree = "<group>"; };
 		2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Pusher.swift"; sourceTree = "<group>"; };
 		288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Initializer.swift"; sourceTree = "<group>"; };
 		288CA50D1EE8DF3A0077784B /* MapViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapViewController+Delegate.swift"; sourceTree = "<group>"; };
@@ -621,6 +629,8 @@
 				420A530E1EFDDFC2007E07CF /* InfiniteCellType.swift */,
 				284474501EFCB06B0077B260 /* InfiniteItem.swift */,
 				42204B9E1EF954A400F1FA04 /* InfiniteList.swift */,
+				2853937C1F0B11630019D288 /* InfiniteList+Infinite.swift */,
+				284482841F0A54BB00DF8D82 /* InfiniteList+Expandable.swift */,
 				289B29451EFB4BFE00152B53 /* InfiniteList+DataSource.swift */,
 				289B29401EFB3AA300152B53 /* InfiniteList+Delegate.swift */,
 				2844824E1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift */,
@@ -634,10 +644,11 @@
 		42204BA01EF9557D00F1FA04 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				284482801F0A4C9D00DF8D82 /* DataGenerator.swift */,
+				42CF00AA1EFD1CBF002613E3 /* ImageCell.swift */,
+				42CF00A81EFD1CA5002613E3 /* LabelCell.swift */,
 				42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */,
 				42CF00AE1EFD6192002613E3 /* ListViewController+InfiniteListDelegate.swift */,
-				42CF00A81EFD1CA5002613E3 /* LabelCell.swift */,
-				42CF00AA1EFD1CBF002613E3 /* ImageCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -865,6 +876,7 @@
 				42CA09F51EE1A7B0009AF1BE /* Localizable.strings */,
 				2838C2CC1EE0DD06004D5BCB /* Ring.aiff */,
 				284482501F09F94500DF8D82 /* EmptyState.xib */,
+				284482821F0A507F00DF8D82 /* LoadMoreBar.xib */,
 				2844827E1F0A41D100DF8D82 /* ReloadBar.xib */,
 			);
 			path = Resources;
@@ -1096,6 +1108,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				284482831F0A507F00DF8D82 /* LoadMoreBar.xib in Resources */,
 				42CF00A51EFD19BA002613E3 /* LabelCell.xib in Resources */,
 				2844827F1F0A41D100DF8D82 /* ReloadBar.xib in Resources */,
 				42CA09F61EE1A7B0009AF1BE /* Localizable.strings in Resources */,
@@ -1191,6 +1204,7 @@
 				2822A33A1EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift in Sources */,
 				425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
+				284482851F0A54BB00DF8D82 /* InfiniteList+Expandable.swift in Sources */,
 				426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */,
 				42CA09F11EE1A1BA009AF1BE /* SegmentedControl+Localizer.swift in Sources */,
 				2846A9A01EE7C0FA007D4226 /* MapView.swift in Sources */,
@@ -1241,6 +1255,7 @@
 				28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */,
 				428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */,
 				426939891EAB676300761FDE /* DataPicker+PickerViewDelegate.swift in Sources */,
+				2853937D1F0B11630019D288 /* InfiniteList+Infinite.swift in Sources */,
 				2846A9AB1EE7C660007D4226 /* MapViewDelegate+Optional.swift in Sources */,
 				28E66FF41EE4E4C100073DF1 /* KeyboardHelperDelegate.swift in Sources */,
 				42C3F4541F08671B002A436E /* InfiniteListDelegate+Optional.swift in Sources */,
@@ -1290,6 +1305,7 @@
 				42CF00A91EFD1CA5002613E3 /* LabelCell.swift in Sources */,
 				28D1C0021EDCF3EF00290999 /* MainViewController.swift in Sources */,
 				426939831EAB65A800761FDE /* PickerViewController.swift in Sources */,
+				284482811F0A4C9D00DF8D82 /* DataGenerator.swift in Sources */,
 				28D1BFFD1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift in Sources */,
 				28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */,
 				28D1C0061EDCF43700290999 /* MainViewController+TableViewDelegate.swift in Sources */,

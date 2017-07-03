@@ -70,53 +70,6 @@ public class InfiniteList: UITableView {
     }
     
     /**
-     * Expand a specific cell.
-     * - parameter index: The index of the cell.
-     */
-    public func expandCell(atIndex index: Int) {
-        let index = IndexPath(row: index, section: 0)
-        guard let cell = cellForRow(at: index) as? InfiniteCell else {
-            // Comment: The cell is not visible.
-            return
-        }
-        guard cell.isExpandable else {
-            Logger.standard.logWarning(InfiniteList.expandWarning, withDetail: index)
-            return
-        }
-        cell.expand()
-        expandedCellIndex = index
-        adjustContentOffset()
-    }
-    
-    /**
-     * Collapse a specific cell.
-     * - parameter index: The index of the cell.
-     */
-    public func collapseCell(atIndex index: Int) {
-        let index = IndexPath(row: index, section: 0)
-        guard let cell = cellForRow(at: index) as? InfiniteCell else {
-            // Comment: The cell is not visible.
-            return
-        }
-        guard cell.isExpandable else {
-            Logger.standard.logWarning(InfiniteList.collapseWarning, withDetail: index)
-            return
-        }
-        cell.collapse()
-        expandedCellIndex = nil
-    }
-    
-    /**
-     * Collapse all cells.
-     */
-    public func collapseAllCells() {
-        guard let index = expandedCellIndex?.row else {
-            return
-        }
-        collapseCell(atIndex: index)
-    }
-    
-    /**
      * Reload a list of items.
      * - parameter items: The items to be reloaded.
      */
@@ -129,6 +82,7 @@ public class InfiniteList: UITableView {
         } else {
             hideEmptyState()
         }
+        loadMoreBar?.frame.origin = .init(x: 0, y: contentSize.height)
     }
     
     /**
@@ -175,6 +129,8 @@ public class InfiniteList: UITableView {
             Logger.standard.logError(InfiniteList.loadMoreBarError)
             return
         }
+        view.frame = .init(x: 0, y: 0, width: frame.width, height: view.frame.height)
+        insertSubview(view, at: 0)
         loadMoreBar = view
     }
     
@@ -189,23 +145,8 @@ public class InfiniteList: UITableView {
         }
         reloadBar?.removeFromSuperview()
         view.frame = .init(x: 0, y: -view.frame.height, width: frame.width, height: view.frame.height)
-        addSubview(view)
+        insertSubview(view, at: 0)
         reloadBar = view
-    }
-    
-    /**
-     * Find the cell type for a specific cell.
-     * - parameter type: The type of the cell.
-     * - returns: Found cell type. Nil if it is not found.
-     */
-    func cellType(for type: InfiniteCell.Type) -> InfiniteCellType? {
-        for cellType in cellTypes {
-            if cellType.type == type {
-                return cellType
-            }
-        }
-        Logger.standard.logError(InfiniteList.registerError, withDetail: type)
-        return nil
     }
     
     /**
@@ -250,24 +191,18 @@ public class InfiniteList: UITableView {
     }
     
     /**
-     * Adjust the content offset to fit the expanded cell.
+     * Find the cell type for a specific cell.
+     * - parameter type: The type of the cell.
+     * - returns: Found cell type. Nil if it is not found.
      */
-    private func adjustContentOffset() {
-        guard let index = expandedCellIndex, let item = items.element(atIndex: index.row), let cellType = cellType(for: item.type) else {
-            return
+    func cellType(for type: InfiniteCell.Type) -> InfiniteCellType? {
+        for cellType in cellTypes {
+            if cellType.type == type {
+                return cellType
+            }
         }
-        guard let cell = cellForRow(at: index) as? InfiniteCell, cell.isExpandable, let additionalHeight = cellType.additionalHeight else {
-            Logger.standard.logError(InfiniteList.cellError)
-            return
-        }
-        if cell.frame.origin.y + additionalHeight + cellType.height > contentOffset.y + frame.height {
-            let newOffset = additionalHeight > frame.size.height ? cell.frame.origin.y : cell.frame.origin.y + additionalHeight + cellType.height - frame.height
-            setContentOffset(CGPoint(x: 0, y: newOffset), animated: true)
-            return
-        }
-        if cell.frame.origin.y < contentOffset.y {
-            setContentOffset(CGPoint(x: 0, y: cell.frame.origin.y), animated: true)
-        }
+        Logger.standard.logError(InfiniteList.registerError, withDetail: type)
+        return nil
     }
     
     /**

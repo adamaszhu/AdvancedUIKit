@@ -5,8 +5,9 @@
  * - author: Adamas
  */
 enum InfiniteListStatus {
-    case initial
+    
     case idle
     case loadingMore
     case reloading
+    
 }

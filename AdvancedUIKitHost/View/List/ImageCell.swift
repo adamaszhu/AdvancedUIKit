@@ -1,7 +1,7 @@
-class ImageCell: InfiniteCell {
+final class ImageCell: InfiniteCell {
     
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var icon: UIImageView!
     
     override func render(_ item: Any) {
         label.text = "\(item)"

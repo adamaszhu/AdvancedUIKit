@@ -1,10 +1,10 @@
-class LabelCell: InfiniteCell {
+final class LabelCell: InfiniteCell {
     
     private let expandedCellIconName = "CollapseCell"
     private let collapsedCellIconName = "ExpandCell"
     
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var switchIcon: UIImageView!
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var switchIcon: UIImageView!
     
     override func render(_ item: Any) {
         label.text = "\(item)"
