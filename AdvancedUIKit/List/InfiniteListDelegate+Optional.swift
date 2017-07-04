@@ -7,19 +7,17 @@
 public extension InfiniteListDelegate {
     
     /**
-     * An item is selected.
-     * - parameter item: The item of the cell that is selected.
+     * InfiniteListDelegate
      */
     func infiniteList(_ infiniteList: InfiniteList, didSelectItem item: Any) { }
     
     /**
-     * When load more action is activated.
-     * - parameter pageIndex: The page index.
+     * InfiniteListDelegate
      */
     func infiniteList(_ infiniteList: InfiniteList, didRequireLoadPage page: Int) { }
     
     /**
-     * When reload action is activated.
+     * InfiniteListDelegate
      */
     func infiniteListDidRequireReload(_ infiniteList: InfiniteList) { }
     
@@ -29,7 +27,7 @@ public extension InfiniteListDelegate {
     func infiniteListDidScroll(_ infiniteList: InfiniteList) { }
     
     /**
-     * When the item is deleted.
+     * InfiniteListDelegate
      */
     func infiniteList(_ infiniteList: InfiniteList, didDeleteItem item: Any) { }
     

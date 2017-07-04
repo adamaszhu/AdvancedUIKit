@@ -25,9 +25,9 @@ public class InfiniteList: UITableView {
     static let emptyStateHidingWarning = "The empty state has already been hidden"
     
     /**
-     * The minimal page size.
+     * The default minimal page size.
      */
-    static let minPageSize = 5
+    static let defaultPageSize = 10
     
     /**
      * Delegate

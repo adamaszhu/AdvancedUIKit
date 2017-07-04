@@ -56,7 +56,7 @@ public extension InfiniteList {
     /**
      * Adjust the content offset to fit the expanded cell.
      */
-    private func adjustContentOffset() {
+    func adjustContentOffset() {
         guard let index = expandedCellIndex, let item = items.element(atIndex: index.row), let cellType = cellType(for: item.type) else {
             return
         }

@@ -1,12 +1,13 @@
 final class ListViewController: UIViewController {
     
-    private let emptyStateNib = "EmptyState"
-    private let reloadBar = "ReloadBar"
-    private let loadMoreBar = "LoadMoreBar"
+    fileprivate let emptyStateNib = "EmptyState"
+    fileprivate let reloadBar = "ReloadBar"
+    fileprivate let loadMoreBar = "LoadMoreBar"
+    fileprivate let selectTitle = "Select"
     
-    private lazy var dataGenerator: DataGenerator = DataGenerator()
+    fileprivate lazy var dataGenerator: DataGenerator = DataGenerator()
     
-    @IBOutlet private weak var infiniteList: InfiniteList!
+    @IBOutlet fileprivate weak var infiniteList: InfiniteList!
     
     @IBAction func reloadItems(_ sender: Any) {
         let items = dataGenerator.generateFirstPage()
@@ -25,6 +26,14 @@ final class ListViewController: UIViewController {
         infiniteList.registerEmptyState(UINib(nibName: emptyStateNib, bundle: nil))
         infiniteList.registerReloadBar(UINib(nibName: reloadBar, bundle: nil))
         infiniteList.registerLoadMoreBar(UINib(nibName: loadMoreBar, bundle: nil))
+    }
+    
+}
+
+extension ListViewController: InfiniteListDelegate {
+    
+    func infiniteList(_ infiniteList: InfiniteList, didSelectItem item: Any) {
+        SystemMessageHelper.standard?.showInfo("\(item)", withTitle: selectTitle)
     }
     
 }
