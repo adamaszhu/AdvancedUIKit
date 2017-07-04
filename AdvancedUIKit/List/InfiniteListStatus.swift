@@ -6,7 +6,10 @@
  */
 enum InfiniteListStatus {
     
-    case idle
+    case initial
+    case infinite
+    case finite
+    case empty
     case loadingMore
     case reloading
     

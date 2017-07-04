@@ -52,10 +52,6 @@
 //     */
 //    public private(set) var itemList: Array<AnyObject>
 //    
-//    /**
-//     * The status of the list.
-//     */
-//    private var status: DynamicListStatus
 //    
 //    /**
 //     * Whether there are unloaded item or not.

@@ -15,6 +15,7 @@ public class InfiniteList: UITableView {
     static let loadMoreBarError = "The nib file doesn't contain a UIView for the load more bar."
     static let cellError = "The cell is not an InfiniteCell."
     static let registerError = "The cell has not been registered yet."
+    static let registerStatusError = "Please register all components before loading the actual data."
     
     /**
      * System warning.
@@ -22,7 +23,8 @@ public class InfiniteList: UITableView {
     static let expandWarning = "The cell cannot be expanded."
     static let collapseWarning = "The cell cannot be collapsed."
     static let emptyStateShowingWarning = "The empty state has already been shown."
-    static let emptyStateHidingWarning = "The empty state has already been hidden"
+    static let emptyStateHidingWarning = "The empty state has already been hidden."
+    static let selectStatusWarning = "The list can not be selected at the moment."
     
     /**
      * The default minimal page size.
@@ -60,12 +62,34 @@ public class InfiniteList: UITableView {
     var loadMoreBar: UIView?
     
     /**
+     * The page amount.
+     */
+    var pageAmount: Int
+    
+    /**
      * The index of cell that is currently expanded.
      */
     var expandedCellIndex: IndexPath? {
         didSet {
             beginUpdates()
             endUpdates()
+        }
+    }
+    
+    /**
+     * The status of the list.
+     */
+    var status: InfiniteListStatus {
+        didSet {
+            switch status {
+            case .infinite, .loadingMore, .initial:
+                loadMoreBar?.isHidden = false
+            case .finite, .empty:
+                loadMoreBar?.isHidden = true
+            case .reloading:
+                pageAmount = 0
+                loadMoreBar?.isHidden = true
+            }
         }
     }
     
@@ -78,8 +102,10 @@ public class InfiniteList: UITableView {
         reloadData()
         expandedCellIndex = nil
         if items.count == 0 {
+            status = .empty
             showEmptyState()
         } else {
+            status = .infinite
             hideEmptyState()
         }
         loadMoreBar?.frame.origin = .init(x: 0, y: contentSize.height)
@@ -98,6 +124,10 @@ public class InfiniteList: UITableView {
      * - parameter type: The item cell type.
      */
     public func register(_ nib: UINib, for type: InfiniteCell.Type) {
+        guard status == .initial else {
+            Logger.standard.logError(InfiniteList.registerStatusError, withDetail: type)
+            return
+        }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? InfiniteCell else {
             Logger.standard.logError(InfiniteList.nibError, withDetail: type)
             return
@@ -112,41 +142,16 @@ public class InfiniteList: UITableView {
      * - parameter nib: The nib file containing the view.
      */
     public func registerEmptyState(_ nib: UINib) {
+        guard status == .initial else {
+            Logger.standard.logError(InfiniteList.registerStatusError)
+            return
+        }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
             Logger.standard.logError(InfiniteList.emptyStateError)
             return
         }
         view.frame = bounds
         emptyState = view
-    }
-    
-    /**
-     * Register the load more view for the InfiniteList.
-     * - parameter nib: The nib file containing the view.
-     */
-    public func registerLoadMoreBar(_ nib: UINib) {
-        guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
-            Logger.standard.logError(InfiniteList.loadMoreBarError)
-            return
-        }
-        view.frame = .init(x: 0, y: 0, width: frame.width, height: view.frame.height)
-        insertSubview(view, at: 0)
-        loadMoreBar = view
-    }
-    
-    /**
-     * Register the reload view for the InfiniteList.
-     * - parameter nib: The nib file containing the view.
-     */
-    public func registerReloadBar(_ nib: UINib) {
-        guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
-            Logger.standard.logError(InfiniteList.reloadBarError)
-            return
-        }
-        reloadBar?.removeFromSuperview()
-        view.frame = .init(x: 0, y: -view.frame.height, width: frame.width, height: view.frame.height)
-        insertSubview(view, at: 0)
-        reloadBar = view
     }
     
     /**
@@ -160,7 +165,6 @@ public class InfiniteList: UITableView {
             Logger.standard.logError(InfiniteList.emptyStateShowingWarning)
             return
         }
-        isScrollEnabled = false
         emptyState.animate(withChange: {
             emptyState.alpha = 1
         }, withPreparation: { [unowned self] _ in
@@ -180,7 +184,6 @@ public class InfiniteList: UITableView {
             Logger.standard.logError(InfiniteList.emptyStateHidingWarning)
             return
         }
-        isScrollEnabled = true
         emptyState.animate(withChange: {
             emptyState.alpha = 0
         }, withPreparation: {
@@ -211,6 +214,8 @@ public class InfiniteList: UITableView {
     public required init?(coder aDecoder: NSCoder) {
         items = []
         cellTypes = []
+        status = .initial
+        pageAmount = 0
         super.init(coder: aDecoder)
         delegate = self
         dataSource = self
@@ -218,5 +223,4 @@ public class InfiniteList: UITableView {
     
 }
 
-import Foundation
 import UIKit
