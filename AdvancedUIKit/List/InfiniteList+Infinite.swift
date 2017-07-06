@@ -20,7 +20,6 @@ public extension InfiniteList {
             return
         }
         view.frame = .init(x: 0, y: 0, width: frame.width, height: view.frame.height)
-        insertSubview(view, at: 0)
         view.isHidden = true
         loadMoreBar = view
     }
@@ -38,11 +37,7 @@ public extension InfiniteList {
             Logger.standard.logError(InfiniteList.reloadBarError)
             return
         }
-        reloadBar?.removeFromSuperview()
         view.frame = .init(x: 0, y: -view.frame.height, width: frame.width, height: view.frame.height)
-        insertSubview(view, at: 0)
-        // COMMENT: Adjust the scroll offset.
-        scrollViewDidScroll(self)
         reloadBar = view
     }
     

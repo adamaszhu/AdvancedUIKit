@@ -151,7 +151,20 @@ public class InfiniteList: UITableView {
             return
         }
         view.frame = bounds
+        emptyState?.removeFromSuperview()
         emptyState = view
+    }
+    
+    public override func didMoveToWindow() {
+        super.didMoveToWindow()
+        if let reloadBar = reloadBar, reloadBar.superview == nil {
+            insertSubview(reloadBar, at: 0)
+            // COMMENT: Adjust the scroll offset.
+            scrollViewDidScroll(self)
+        }
+        if let loadMoreBar = loadMoreBar, loadMoreBar.superview == nil {
+            addSubview(loadMoreBar)
+        }
     }
     
     /**
