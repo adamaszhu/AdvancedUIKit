@@ -30,11 +30,11 @@ extension InfiniteList: UIScrollViewDelegate {
             contentOffset = .init(x: 0, y: loadMoreOffsetY)
             return
         case .finite, .empty:
-            if contentOffset.y > bottomOffsetY {
+            if contentOffset.y >= bottomOffsetY {
                 contentOffset = .init(x: 0, y: bottomOffsetY)
             }
         case .infinite:
-            if contentOffset.y > loadMoreOffsetY {
+            if contentOffset.y >= loadMoreOffsetY {
                 contentOffset = .init(x: 0, y: loadMoreOffsetY)
                 if loadMoreBar != nil {
                     status = .loadingMore
@@ -42,13 +42,12 @@ extension InfiniteList: UIScrollViewDelegate {
                 }
             }
         }
-        if contentOffset.y < reloadOffsetY {
+        if contentOffset.y <= reloadOffsetY {
             contentOffset = .init(x: 0, y: reloadOffsetY)
             if reloadBar != nil {
                 status = .reloading
                 infiniteListDelegate?.infiniteListDidRequireReload(self)
             }
-            return
         }
     }
     

@@ -82,9 +82,15 @@ public class InfiniteList: UITableView {
     var status: InfiniteListStatus {
         didSet {
             switch status {
-            case .infinite, .loadingMore, .initial:
+            case .infinite:
+                setContentOffset(.init(x: 0, y: 0), animated: true)
                 loadMoreBar?.isHidden = false
-            case .finite, .empty:
+            case .loadingMore, .initial:
+                loadMoreBar?.isHidden = false
+            case .finite:
+                loadMoreBar?.isHidden = true
+            case .empty:
+                setContentOffset(.init(x: 0, y: 0), animated: true)
                 loadMoreBar?.isHidden = true
             case .reloading:
                 pageAmount = 0
@@ -151,7 +157,6 @@ public class InfiniteList: UITableView {
             return
         }
         view.frame = bounds
-        emptyState?.removeFromSuperview()
         emptyState = view
     }
     
@@ -159,8 +164,12 @@ public class InfiniteList: UITableView {
         super.didMoveToWindow()
         if let reloadBar = reloadBar, reloadBar.superview == nil {
             insertSubview(reloadBar, at: 0)
-            // COMMENT: Adjust the scroll offset.
-            scrollViewDidScroll(self)
+            let height = reloadBar.frame.height
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                reloadBar.frame.size = CGSize(width: reloadBar.frame.width, height: height)
+                // COMMENT: Adjust the scroll offset.
+                self.scrollViewDidScroll(self)
+            })
         }
         if let loadMoreBar = loadMoreBar, loadMoreBar.superview == nil {
             addSubview(loadMoreBar)

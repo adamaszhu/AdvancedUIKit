@@ -34,14 +34,14 @@ extension InfiniteList: UITableViewDataSource {
             }
             cell.switchExpandStatusAction = { [unowned self] _ in
                 if self.expandedCellIndex == indexPath {
-                    self.collapseCell(atIndex: indexPath.row)
+                    self.collapseCell(atIndex: index)
                     return
                 }
                 if let previousExpandedCellIndex = self.expandedCellIndex {
                     // COMMENT: Collapse previous expanded cell.
                     self.collapseCell(atIndex: previousExpandedCellIndex.row)
                 }
-                self.expandCell(atIndex: indexPath.row)
+                self.expandCell(atIndex: index)
             }
         }
         cell.render(item.item)

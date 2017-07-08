@@ -23,11 +23,6 @@
 //    private static let StatusError = "The status is invalid."
 //    
 //    /**
-//     * The delegate of the list.
-//     */
-//    public var dynamicListDelegate: DynamicListDelegate?
-//    
-//    /**
 //     * Whether load more action is allowed or not.
 //     */
 //    public var shouldLoadMore: Bool
