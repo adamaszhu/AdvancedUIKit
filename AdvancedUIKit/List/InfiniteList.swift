@@ -41,6 +41,11 @@ public class InfiniteList: UITableView {
  */
     public var pageSize: Int
     
+        /**
+         * Whether the list can be edited or not.
+         */
+        public var isEditable: Bool
+    
     /**
      * The items displayed on the screen.
      */
@@ -104,6 +109,36 @@ public class InfiniteList: UITableView {
         }
     }
     
+    
+    
+    //    /**
+    //     * Reload the list.
+    //     * - version: 0.0.9
+    //     * - date: 23/10/2016
+    //     * - parameter itemList: The list to be reload.
+    //     */
+    //    public func reloadList(itemList: Array<AnyObject>) {
+    //        self.itemList.removeAll()
+    //        for item in itemList {
+    //            self.itemList.append(item)
+    //        }
+    //        switch status {
+    //        case .Initial, .Reloading:
+    //            if shouldLoadMore {
+    //                hasMoreItem = itemList.count < DynamicList.MinPageSize ? false : true
+    //            } else {
+    //                hasMoreItem = false
+    //            }
+    //            pageCount = 1
+    //            pageSize = hasMoreItem ? itemList.count : DynamicList.MinPageSize
+    //            reloadData()
+    //            stopReloading()
+    //        case .LoadingMore, .Idle:
+    //            logError(DynamicList.StatusError)
+    //        }
+    //    }
+    
+    
     /**
      * Reload a list of items.
      * - parameter items: The items to be reloaded.
@@ -132,12 +167,38 @@ public class InfiniteList: UITableView {
         reload([])
     }
     
+    //
+    //    /**
+    //     * Append a list to the end of the item list.
+    //     * - version: 0.0.9
+    //     * - date: 23/10/2016
+    //     * - parameter itemList: The list to be appended.
+    //     */
+    //    public func appendList(itemList: Array<AnyObject>) {
+    //        switch status {
+    //        case .LoadingMore:
+    //            for item in itemList {
+    //                self.itemList.append(item)
+    //            }
+    //            status = DynamicListStatus.Idle
+    //            // COMMENT: Not enough new items found.
+    //            if itemList.count < pageSize {
+    //                hasMoreItem = false
+    //            }
+    //            pageCount += 1
+    //            reloadData()
+    //        case .Initial, .Reloading, .Idle:
+    //            logError(DynamicList.StatusError)
+    //        }
+    //    }
+    
     /**
      * Append a list of items.
      * - parameter items: The items to be append.
      */
     public func append(_ items: Array<InfiniteItem>) {
         self.items = self.items + items
+        pageAmount = pageAmount + 1
         reloadData()
         if items.count < pageSize {
             status = .finite
@@ -262,6 +323,7 @@ public class InfiniteList: UITableView {
         cellTypes = []
         status = .initial
         pageAmount = 0
+        isEditable = false
         pageSize = InfiniteList.defaultPageSize
         super.init(coder: aDecoder)
         delegate = self

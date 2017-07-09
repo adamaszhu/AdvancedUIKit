@@ -1,27 +1,4 @@
-//import UIKit
-//
-///**
-// * DynamicList is a customized list with reload and load more functions.
-// * - version: 0.1.0
-// * - date: 17/11/2016
-// * - author: Adamas
-// */
-//public class DynamicList: UITableView, UITableViewDataSource, UITableViewDelegate {
-//    
-//    
-//    /**
-//     * The id of the cell that will be reused.
-//     */
-//    private static let ItemListCellId = "ItemCell"
-//    private static let ReloadListCellId = "ReloadCell"
-//    private static let NoResultListCellId = "NoResultCell"
-//    private static let LoadMoreListCellId = "LoadMoreCell"
-//    
-//    /**
-//     * Error messages.
-//     */
-//    private static let StatusError = "The status is invalid."
-//    
+
 //    /**
 //     * Whether load more action is allowed or not.
 //     */
@@ -32,36 +9,18 @@
 //     */
 //    public var shouldReload: Bool
 //    
-//    /**
-//     * Whether the list can be edited or not.
-//     */
-//    public var shouldEdit: Bool
 //    
 //    /**
 //     * The height of the item cell.
 //     */
 //    public var itemCellHeight: CGFloat
-//    
-//    /**
-//     * The items displayed.
-//     */
-//    public private(set) var itemList: Array<AnyObject>
-//    
+//    //
 //    
 //    /**
 //     * Whether there are unloaded item or not.
 //     */
 //    private var hasMoreItem: Bool
 //    
-//    /**
-//     * The page amount.
-//     */
-//    private var pageCount: Int
-//    
-//    /**
-//     * The size of each page.
-//     */
-//    private var pageSize: Int
 //    
 //    /**
 //     * The amount of rows in the list.
@@ -83,198 +42,11 @@
 //     */
 //    private var noResultCellHeight: CGFloat
 //    
-//    /**
-//     * Reload the list.
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     * - parameter itemList: The list to be reload.
-//     */
-//    public func reloadList(itemList: Array<AnyObject>) {
-//        self.itemList.removeAll()
-//        for item in itemList {
-//            self.itemList.append(item)
-//        }
-//        switch status {
-//        case .Initial, .Reloading:
-//            if shouldLoadMore {
-//                hasMoreItem = itemList.count < DynamicList.MinPageSize ? false : true
-//            } else {
-//                hasMoreItem = false
-//            }
-//            pageCount = 1
-//            pageSize = hasMoreItem ? itemList.count : DynamicList.MinPageSize
-//            reloadData()
-//            stopReloading()
-//        case .LoadingMore, .Idle:
-//            logError(DynamicList.StatusError)
-//        }
-//    }
 //    
-//    /**
-//     * Append a list to the end of the item list.
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     * - parameter itemList: The list to be appended.
-//     */
-//    public func appendList(itemList: Array<AnyObject>) {
-//        switch status {
-//        case .LoadingMore:
-//            for item in itemList {
-//                self.itemList.append(item)
-//            }
-//            status = DynamicListStatus.Idle
-//            // COMMENT: Not enough new items found.
-//            if itemList.count < pageSize {
-//                hasMoreItem = false
-//            }
-//            pageCount += 1
-//            reloadData()
-//        case .Initial, .Reloading, .Idle:
-//            logError(DynamicList.StatusError)
-//        }
-//    }
 //    
-//    /**
-//     * The list should go into reload mode.
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     */
-//    public func startReloading() {
-//        switch status {
-//        case .Initial, .Reloading:
-//            break
-//        case .LoadingMore, .Idle:
-//            // COMMENT: Display the loading cell.
-//            status = DynamicListStatus.Reloading
-//            reloadData()
-//            setContentOffset(CGPointMake(0, reloadCellHeight), animated: false)
-//            UIView.animate(withChange: {
-//                self.contentOffset = CGPointMake(0, 0)
-//            })
-//        }
-//    }
+
 //    
-//    /**
-//     * Stop reloading status.
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     */
-//    private func stopReloading() {
-//        switch status {
-//        case .Idle, .LoadingMore:
-//            logError(DynamicList.StatusError)
-//        case .Initial, .Reloading:
-//            UIView.animate(withChange: { () -> Void in
-//                self.setContentOffset(CGPointMake(0, self.reloadCellHeight - 1), animated: false)
-//                }, withCompletionHandle: {
-//                    self.status = DynamicListStatus.Idle
-//                    self.reloadData()
-//                    self.contentOffset = CGPointMake(0, 0)
-//            })
-//        }
-//    }
-//    
-//    /**
-//     * Start the loading animation in a view.
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     * - parameter view: The view that the operation will be operated on.
-//     */
-//    private func startActivityIndicatorAnimation(inView view: UIView) {
-//        for subview in view.subviews {
-//            if subview.isKindOfClass(UIActivityIndicatorView) {
-//                (subview as! UIActivityIndicatorView).startAnimating()
-//            } else if subview.subviews.count != 0 {
-//                startActivityIndicatorAnimation(inView: subview)
-//            }
-//        }
-//    }
-//    
-//    /**
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     */
-//    required public init?(coder aDecoder: NSCoder) {
-//        itemList = []
-//        status = DynamicListStatus.Initial
-//        hasMoreItem = false
-//        pageCount = 0
-//        pageSize = 0
-//        shouldLoadMore = true
-//        shouldReload = true
-//        reloadCellHeight = -1
-//        loadMoreCellHeight = -1
-//        noResultCellHeight = -1
-//        itemCellHeight = -1
-//        rowAmount = 0
-//        shouldEdit = false
-//        super.init(coder: aDecoder)
-//        self.dataSource = self
-//        self.delegate = self
-//    }
-//    
-//    /**
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     */
-//    public func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-//        switch status {
-//        case .Idle:
-//            if itemList.count != 0 {
-//                dynamicListDelegate?.dynamicList?(self, didSelectItem: itemList[indexPath.row])
-//            }
-//        case .Initial, .Reloading, .LoadingMore:
-//            logError(DynamicList.StatusError)
-//        }
-//        return indexPath
-//    }
-//    
-//    /**
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     */
-//    public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        switch status {
-//        case .Idle:
-//            if ((indexPath.row == rowAmount - 1) && hasMoreItem) {
-//                // COMMENT: Fetch next page
-//                status = DynamicListStatus.LoadingMore
-//                dynamicListDelegate?.dynamicList?(self, didRequireLoadMore: pageCount)
-//            }
-//        case .Initial, .Reloading, .LoadingMore:
-//            break
-//        }
-//    }
-//    
-//    /**
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     */
-//    public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        return shouldEdit
-//    }
-//    
-//    /**
-//     * - version: 0.1.0
-//     * - date: 17/11/2016
-//     */
-//    public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        switch editingStyle {
-//        case .Delete:
-//            let item = itemList[indexPath.row]
-//            itemList.removeAtIndex(indexPath.row)
-//            if itemList.count != 0 {
-//                deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-//            } else {
-//                reloadData()
-//                editing = false;
-//            }
-//            // TODO: Delay the call.
-//            dynamicListDelegate?.dynamicList?(self, didDeleteItem: item)
-//        default:
-//            break
-//        }
-//    }
+
 //    
 //    /**
 //     * - version: 0.0.9
@@ -315,24 +87,6 @@
 //            
 //        }
 //    }
-//    
-//    /**
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     */
-//    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let count = itemList.count == 0 ? 1 : itemList.count
-//        switch status {
-//        case .Initial:
-//            rowAmount = 1
-//        case .Reloading:
-//            rowAmount = count + 1
-//        case .Idle, .LoadingMore:
-//            rowAmount = hasMoreItem ? count + 1 : count
-//        }
-//        return rowAmount
-//    }
-//    
 //    /**
 //     * - version: 0.0.9
 //     * - date: 23/10/2016

@@ -54,6 +54,22 @@ extension InfiniteList: UIScrollViewDelegate {
         switch status {
         case .infinite:
             if contentOffset.y == loadMoreOffsetY, loadMoreBar != nil {
+                //    /**
+                //     * - version: 0.0.9
+                //     * - date: 23/10/2016
+                //     */
+                //    public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+                //        switch status {
+                //        case .Idle:
+                //            if ((indexPath.row == rowAmount - 1) && hasMoreItem) {
+                //                // COMMENT: Fetch next page
+                //                status = DynamicListStatus.LoadingMore
+                //                dynamicListDelegate?.dynamicList?(self, didRequireLoadMore: pageCount)
+                //            }
+                //        case .Initial, .Reloading, .LoadingMore:
+                //            break
+                //        }
+                //    }
                 status = .loadingMore
                 infiniteListDelegate?.infiniteList(self, didRequireLoadPage: pageAmount)
             }

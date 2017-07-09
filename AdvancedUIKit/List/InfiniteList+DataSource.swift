@@ -48,6 +48,40 @@ extension InfiniteList: UITableViewDataSource {
         return cell
     }
     
+    /**
+     * UITableViewDataSource
+     */
+    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return isEditable
+    }
+    
+    /**
+     * UITableViewDataSource
+     */
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //    /**
+        //     * - version: 0.1.0
+        //     * - date: 17/11/2016
+        //     */
+        //    public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        //        switch editingStyle {
+        //        case .Delete:
+        //            let item = itemList[indexPath.row]
+        //            itemList.removeAtIndex(indexPath.row)
+        //            if itemList.count != 0 {
+        //                deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        //            } else {
+        //                reloadData()
+        //                editing = false;
+        //            }
+        //            // TODO: Delay the call.
+        //            dynamicListDelegate?.dynamicList?(self, didDeleteItem: item)
+        //        default:
+        //            break
+        //        }
+        //    }
+    }
+    
 }
 
 import UIKit
