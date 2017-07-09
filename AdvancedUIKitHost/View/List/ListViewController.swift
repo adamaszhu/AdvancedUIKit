@@ -36,6 +36,15 @@ extension ListViewController: InfiniteListDelegate {
         SystemMessageHelper.standard?.showInfo("\(item)", withTitle: selectTitle)
     }
     
+    func infiniteListDidRequireReload(_ infiniteList: InfiniteList) {
+        reloadItems(self)
+    }
+    
+    func infiniteList(_ infiniteList: InfiniteList, didRequireLoadPage page: Int) {
+        let items = dataGenerator.generateNextPage()
+        infiniteList.append(items)
+    }
+    
 }
 
 import AdvancedUIKit

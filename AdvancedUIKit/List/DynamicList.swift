@@ -377,46 +377,5 @@
 //        return cell!
 //    }
 //    
-//    /**
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     */
-//    public func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if shouldReload {
-//            switch status {
-//            case .Idle:
-//                if scrollView.contentOffset.y == -reloadCellHeight {
-//                    scrollView.contentOffset = CGPointMake(0, 0)
-//                    status = DynamicListStatus.Reloading
-//                    reloadData()
-//                    dynamicListDelegate?.dynamicListDidRequireReload?(self)
-//                }
-//            case .Reloading, .Initial, .LoadingMore:
-//                break
-//            }
-//        }
-//    }
 //    
-//    /**
-//     * - version: 0.0.9
-//     * - date: 23/10/2016
-//     */
-//    public func scrollViewDidScroll(scrollView: UIScrollView) {
-//        switch status {
-//        case .Reloading, .Initial, .LoadingMore:
-//            if scrollView.contentOffset.y < 0 {
-//                scrollView.contentOffset = CGPointMake(0, 0)
-//            }
-//        case .Idle:
-//            if (shouldReload && (scrollView.contentOffset.y < -reloadCellHeight)) {
-//                scrollView.contentOffset = CGPointMake(0, -reloadCellHeight)
-//            } else if (!shouldReload && (scrollView.contentOffset.y < 0)) {
-//                scrollView.contentOffset = CGPointMake(0, 0)
-//            }
-//            
-//        }
-//    }
-//    
-//}
-//
 //

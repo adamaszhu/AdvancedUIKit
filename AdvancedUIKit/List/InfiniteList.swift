@@ -37,6 +37,11 @@ public class InfiniteList: UITableView {
     public var infiniteListDelegate: InfiniteListDelegate?
     
     /**
+ * The item amount of each page.
+ */
+    public var pageSize: Int
+    
+    /**
      * The items displayed on the screen.
      */
     var items: Array<InfiniteItem>
@@ -110,6 +115,9 @@ public class InfiniteList: UITableView {
         if items.count == 0 {
             status = .empty
             showEmptyState()
+        } else if items.count < pageSize {
+            status = .finite
+            hideEmptyState()
         } else {
             status = .infinite
             hideEmptyState()
@@ -122,6 +130,21 @@ public class InfiniteList: UITableView {
      */
     public func clear() {
         reload([])
+    }
+    
+    /**
+     * Append a list of items.
+     * - parameter items: The items to be append.
+     */
+    public func append(_ items: Array<InfiniteItem>) {
+        self.items = self.items + items
+        reloadData()
+        if items.count < pageSize {
+            status = .finite
+        } else {
+            status = .infinite
+        }
+        loadMoreBar?.frame.origin = .init(x: 0, y: contentSize.height)
     }
     
     /**
@@ -163,10 +186,11 @@ public class InfiniteList: UITableView {
     public override func didMoveToWindow() {
         super.didMoveToWindow()
         if let reloadBar = reloadBar, reloadBar.superview == nil {
-            insertSubview(reloadBar, at: 0)
+            addSubview(reloadBar)
             let height = reloadBar.frame.height
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                reloadBar.frame.size = CGSize(width: reloadBar.frame.width, height: height)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { [unowned self] _ in
+                // COMMENT: Wait for the subview to be resized.
+                reloadBar.frame.size = .init(width: reloadBar.frame.width, height: height)
                 // COMMENT: Adjust the scroll offset.
                 self.scrollViewDidScroll(self)
             })
@@ -238,6 +262,7 @@ public class InfiniteList: UITableView {
         cellTypes = []
         status = .initial
         pageAmount = 0
+        pageSize = InfiniteList.defaultPageSize
         super.init(coder: aDecoder)
         delegate = self
         dataSource = self
