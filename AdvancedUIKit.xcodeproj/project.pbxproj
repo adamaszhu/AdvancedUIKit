@@ -21,6 +21,7 @@
 		28365BC41EF0AF9300E51B5C /* PageView+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28365BC31EF0AF9300E51B5C /* PageView+ScrollViewDelegate.swift */; };
 		2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2838C2CC1EE0DD06004D5BCB /* Ring.aiff */; };
 		2838C2D01EE0DD89004D5BCB /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */; };
+		283B01C81F1306E700AF2097 /* InfiniteListStatus+Managable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283B01C71F1306E700AF2097 /* InfiniteListStatus+Managable.swift */; };
 		284474511EFCB06B0077B260 /* InfiniteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284474501EFCB06B0077B260 /* InfiniteItem.swift */; };
 		2844824F1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844824E1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift */; };
 		284482511F09F94500DF8D82 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284482501F09F94500DF8D82 /* EmptyState.xib */; };
@@ -99,7 +100,6 @@
 		420C78F01EEBB82300A1E3EA /* CameraHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78EF1EEBB82300A1E3EA /* CameraHelperDelegate+Optional.swift */; };
 		420C78F21EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78F11EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift */; };
 		421C9FCB1EE82C3C00D019C2 /* MapView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */; };
-		42204B971EF9489000F1FA04 /* DynamicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B901EF9489000F1FA04 /* DynamicList.swift */; };
 		42204B991EF9489000F1FA04 /* InfiniteListStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B921EF9489000F1FA04 /* InfiniteListStatus.swift */; };
 		42204B9F1EF954A400F1FA04 /* InfiniteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B9E1EF954A400F1FA04 /* InfiniteList.swift */; };
 		42204BA21EF9CB8F00F1FA04 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */; };
@@ -222,6 +222,7 @@
 		28365BC31EF0AF9300E51B5C /* PageView+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageView+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
 		2838C2CC1EE0DD06004D5BCB /* Ring.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Ring.aiff; sourceTree = "<group>"; };
 		2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		283B01C71F1306E700AF2097 /* InfiniteListStatus+Managable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteListStatus+Managable.swift"; sourceTree = "<group>"; };
 		284474501EFCB06B0077B260 /* InfiniteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteItem.swift; sourceTree = "<group>"; };
 		2844824E1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteList+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
 		284482501F09F94500DF8D82 /* EmptyState.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
@@ -301,7 +302,6 @@
 		420C78EF1EEBB82300A1E3EA /* CameraHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		420C78F11EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageViewController+ImagePickerHelperDelegate.swift"; sourceTree = "<group>"; };
 		421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapView+Delegate.swift"; sourceTree = "<group>"; };
-		42204B901EF9489000F1FA04 /* DynamicList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicList.swift; sourceTree = "<group>"; };
 		42204B921EF9489000F1FA04 /* InfiniteListStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteListStatus.swift; sourceTree = "<group>"; };
 		42204B9E1EF954A400F1FA04 /* InfiniteList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteList.swift; sourceTree = "<group>"; };
 		42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -622,7 +622,6 @@
 		42204B8F1EF9488000F1FA04 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				42204B901EF9489000F1FA04 /* DynamicList.swift */,
 				289B293E1EFB356200152B53 /* InfiniteCell.swift */,
 				420A530E1EFDDFC2007E07CF /* InfiniteCellType.swift */,
 				284474501EFCB06B0077B260 /* InfiniteItem.swift */,
@@ -635,6 +634,7 @@
 				42CF00AC1EFD58F4002613E3 /* InfiniteListDelegate.swift */,
 				42C3F4531F08671B002A436E /* InfiniteListDelegate+Optional.swift */,
 				42204B921EF9489000F1FA04 /* InfiniteListStatus.swift */,
+				283B01C71F1306E700AF2097 /* InfiniteListStatus+Managable.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -1217,6 +1217,7 @@
 				426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */,
 				4269399D1EAC478600761FDE /* Logger.swift in Sources */,
 				2822A3391EE0EE2600FAA8E3 /* NavigationBar.swift in Sources */,
+				283B01C81F1306E700AF2097 /* InfiniteListStatus+Managable.swift in Sources */,
 				425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */,
 				2846A9A21EE7C0FA007D4226 /* MapViewLine.swift in Sources */,
 				28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */,
@@ -1261,7 +1262,6 @@
 				4234665B1EED21F0002A04F4 /* PageView.swift in Sources */,
 				289B29461EFB4BFE00152B53 /* InfiniteList+DataSource.swift in Sources */,
 				4258DDB11EEAE6A80085FCAA /* GalleryView.swift in Sources */,
-				42204B971EF9489000F1FA04 /* DynamicList.swift in Sources */,
 				420C78E61EEB942D00A1E3EA /* ImagePickerHelper+ControllerDelegate.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */,
 				420C78F01EEBB82300A1E3EA /* CameraHelperDelegate+Optional.swift in Sources */,

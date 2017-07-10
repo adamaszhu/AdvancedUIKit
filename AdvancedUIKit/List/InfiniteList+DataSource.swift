@@ -52,34 +52,33 @@ extension InfiniteList: UITableViewDataSource {
      * UITableViewDataSource
      */
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return isEditable
+        return isEditable && status.isEditingAvailable
     }
     
     /**
      * UITableViewDataSource
      */
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        //    /**
-        //     * - version: 0.1.0
-        //     * - date: 17/11/2016
-        //     */
-        //    public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        //        switch editingStyle {
-        //        case .Delete:
-        //            let item = itemList[indexPath.row]
-        //            itemList.removeAtIndex(indexPath.row)
-        //            if itemList.count != 0 {
-        //                deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        //            } else {
-        //                reloadData()
-        //                editing = false;
-        //            }
-        //            // TODO: Delay the call.
-        //            dynamicListDelegate?.dynamicList?(self, didDeleteItem: item)
-        //        default:
-        //            break
-        //        }
-        //    }
+        switch editingStyle {
+        case .delete:
+            guard status.isEditingAvailable else {
+                return
+            }
+            let item = items.element(atIndex: indexPath.row)
+            items.remove(at: indexPath.row)
+            if items.count != 0 {
+                deleteRows(at: [indexPath], with: .automatic)
+            } else {
+                status = .empty
+                reloadData()
+            }
+            guard let realItem = item?.item  else {
+                return
+            }
+            infiniteListDelegate?.infiniteList(self, didDeleteItem: realItem)
+        default:
+            break
+        }
     }
     
 }

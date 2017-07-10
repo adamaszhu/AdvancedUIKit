@@ -13,11 +13,8 @@ extension InfiniteList: UITableViewDelegate {
         guard let item = items.element(atIndex: indexPath.row)  else {
             return
         }
-        switch status {
-        case .finite, .infinite:
+        if status.isSelectingAvailable {
             infiniteListDelegate?.infiniteList(self, didSelectItem: item.item)
-        default:
-            Logger.standard.logWarning(InfiniteList.selectStatusWarning)
         }
     }
     
