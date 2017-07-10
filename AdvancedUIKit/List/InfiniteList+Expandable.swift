@@ -45,18 +45,24 @@ public extension InfiniteList {
     
     /// Adjust the content offset to fit the expanded cell.
     private func adjustContentOffset() {
-        guard let indexPath = expandedCellIndexPath, let item = items.element(atIndex: indexPath.row), let cellType = cellType(for: item.type),
-            let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
+        guard let indexPath = expandedCellIndexPath else {
             Logger.standard.logError(InfiniteList.contentOffsetAdjustionError)
+            return
+        }
+        guard let item = items.element(atIndex: indexPath.row), let cellType = cellType(for: item.type) else {
+            return
+        }
+        guard let cell = cellForRow(at: indexPath) as? InfiniteCell else {
+            Logger.standard.logError(InfiniteList.contentOffsetAdjustionError)
+            return
+        }
+        if cell.frame.origin.y < contentOffset.y {
+            setContentOffset(.init(x: 0, y: cell.frame.origin.y), animated: true)
             return
         }
         if cell.frame.origin.y + cellType.height > contentOffset.y + frame.height {
             let newOffset = cellType.height > frame.size.height ? cell.frame.origin.y : cell.frame.origin.y + cellType.height - frame.height
             setContentOffset(.init(x: 0, y: newOffset), animated: true)
-            return
-        }
-        if cell.frame.origin.y < contentOffset.y {
-            setContentOffset(.init(x: 0, y: cell.frame.origin.y), animated: true)
         }
     }
     

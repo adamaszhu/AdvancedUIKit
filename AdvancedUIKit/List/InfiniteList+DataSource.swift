@@ -54,7 +54,6 @@ extension InfiniteList: UITableViewDataSource {
             guard status.isEditionAvailable else {
                 return
             }
-            let item = items.element(atIndex: indexPath.row)
             items.remove(at: indexPath.row)
             if items.count != 0 {
                 deleteRows(at: [indexPath], with: .automatic)
@@ -62,10 +61,10 @@ extension InfiniteList: UITableViewDataSource {
                 status = .empty
                 reloadData()
             }
-            guard let realItem = item?.item  else {
+            guard let item = items.element(atIndex: indexPath.row)?.item  else {
                 return
             }
-            infiniteListDelegate?.infiniteList(self, didDeleteItem: realItem)
+            infiniteListDelegate?.infiniteList(self, didDeleteItem: item)
         default:
             break
         }

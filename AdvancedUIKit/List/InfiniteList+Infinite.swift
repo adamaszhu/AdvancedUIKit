@@ -5,7 +5,6 @@
 public extension InfiniteList {
     
     /// System errors.
-    private static let emptyStateNibError = "The nib file doesn't contain a UIView for the empty state."
     private static let reloadingBarNibError = "The nib file doesn't contain a UIView for the reloading bar."
     private static let loadingMoreBarNibError = "The nib file doesn't contain a UIView for the loading more bar."
     

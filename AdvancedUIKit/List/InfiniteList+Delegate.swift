@@ -4,16 +4,12 @@
 /// - date: 22/06/2017
 extension InfiniteList: UITableViewDelegate {
     
-    /**
-     * UITableViewDelegate
-     */
+    /// UITableViewDelegate
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = items.element(atIndex: indexPath.row)  else {
+        guard let item = items.element(atIndex: indexPath.row), status.isSelectingAvailable else {
             return
         }
-        if status.isSelectingAvailable {
-            infiniteListDelegate?.infiniteList(self, didSelectItem: item.item)
-        }
+        infiniteListDelegate?.infiniteList(self, didSelectItem: item.item)
     }
     
     /// UITableViewDelegate
