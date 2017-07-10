@@ -1,37 +1,38 @@
+protocol DataGeneratorDelegate {
+    
+    func dataGenerator(_ dataGenerator: DataGenerator, didGenerate items: [InfiniteItem], forPage page: Int)
+    
+}
+
 final class DataGenerator {
     
     private let itemAmount = 55
     private let pageSize = 10
+    private let generationDelay = 2.0
     
-    private var pageIndex: Int
+    var delegate: DataGeneratorDelegate?
     
-    init() {
-        pageIndex = 0
-    }
-    
-    func generateFirstPage() -> Array<InfiniteItem> {
-        pageIndex = 0
-        return generateNextPage()
-    }
-    
-    func generateNextPage() -> Array<InfiniteItem> {
-        let items = generateItem(forPage: pageIndex)
-        pageIndex = pageIndex + 1
-        return items
-    }
-    
-    private func generateItem(forPage page: Int) -> Array<InfiniteItem> {
-        var items = Array<InfiniteItem>()
+    func generateItems(forPage page: Int) {
+        var items = [InfiniteItem]()
         for index in page * pageSize ..< (page + 1) * pageSize {
             guard index <= itemAmount else {
-                return items
+                break
             }
             let cellType = index % 3 != 2 ? LabelCell.self : ImageCell.self
             items.append(InfiniteItem(item: index, type: cellType))
         }
-        return items
+        DispatchQueue.main.asyncAfter(deadline: .now() + generationDelay) {
+            self.delegate?.dataGenerator(self, didGenerate: items, forPage: page)
+        }
+    }
+    
+    func generateNoItems() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + generationDelay) {
+            self.delegate?.dataGenerator(self, didGenerate: [], forPage: 0)
+        }
     }
     
 }
 
 import AdvancedUIKit
+import Foundation

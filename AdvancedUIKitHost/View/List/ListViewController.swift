@@ -1,21 +1,27 @@
 final class ListViewController: UIViewController {
     
-    fileprivate let emptyStateNib = "EmptyState"
-    fileprivate let reloadBar = "ReloadBar"
-    fileprivate let loadMoreBar = "LoadMoreBar"
+    fileprivate let emptyStateNibName = "EmptyState"
+    fileprivate let reloadBarNibName = "ReloadBar"
+    fileprivate let loadMoreBarNibName = "LoadMoreBar"
     fileprivate let selectTitle = "Select"
-    
-    fileprivate lazy var dataGenerator: DataGenerator = DataGenerator()
     
     @IBOutlet fileprivate weak var infiniteList: InfiniteList!
     
+    fileprivate lazy var dataGenerator: DataGenerator = {
+        let dataGenerator = DataGenerator()
+        dataGenerator.delegate = self
+        return dataGenerator
+    }()
+    fileprivate var isLoadingEmptyPage: Bool = false
+    
     @IBAction func reloadItems(_ sender: Any) {
-        let items = dataGenerator.generateFirstPage()
-        infiniteList.reload(items)
+        isLoadingEmptyPage = false
+        infiniteList.startReloading()
     }
     
     @IBAction func clearItems(_ sender: Any) {
-        infiniteList.reload([])
+        isLoadingEmptyPage = true
+        infiniteList.startReloading()
     }
     
     override func viewDidLoad() {
@@ -23,9 +29,9 @@ final class ListViewController: UIViewController {
         infiniteList.infiniteListDelegate = self
         infiniteList.register(UINib(nibName: String(describing: LabelCell.self), bundle: nil), for: LabelCell.self)
         infiniteList.register(UINib(nibName: String(describing: ImageCell.self), bundle: nil), for: ImageCell.self)
-        infiniteList.registerEmptyState(UINib(nibName: emptyStateNib, bundle: nil))
-        infiniteList.registerReloadBar(UINib(nibName: reloadBar, bundle: nil))
-        infiniteList.registerLoadMoreBar(UINib(nibName: loadMoreBar, bundle: nil))
+        infiniteList.registerEmptyState(UINib(nibName: emptyStateNibName, bundle: nil))
+        infiniteList.registerReloadBar(UINib(nibName: reloadBarNibName, bundle: nil))
+        infiniteList.registerLoadMoreBar(UINib(nibName: loadMoreBarNibName, bundle: nil))
     }
     
 }
@@ -37,12 +43,27 @@ extension ListViewController: InfiniteListDelegate {
     }
     
     func infiniteListDidRequireReload(_ infiniteList: InfiniteList) {
-        reloadItems(self)
+        if isLoadingEmptyPage {
+            dataGenerator.generateNoItems()
+        } else {
+            dataGenerator.generateItems(forPage: 0)
+        }
     }
     
     func infiniteList(_ infiniteList: InfiniteList, didRequireLoadPage page: Int) {
-        let items = dataGenerator.generateNextPage()
-        infiniteList.append(items)
+        dataGenerator.generateItems(forPage: page)
+    }
+    
+}
+
+extension ListViewController: DataGeneratorDelegate {
+    
+    func dataGenerator(_ dataGenerator: DataGenerator, didGenerate items: [InfiniteItem], forPage page: Int) {
+        if page == 0 {
+            infiniteList.reload(items)
+        } else {
+            infiniteList.append(items)
+        }
     }
     
 }

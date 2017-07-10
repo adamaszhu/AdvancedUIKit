@@ -1,17 +1,16 @@
 final class ImageCell: InfiniteCell {
     
+    private let firstImageName = "ImageA"
+    private let secondImageName = "ImageB"
+    
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var icon: UIImageView!
     
     override func render(_ item: Any) {
         label.text = "\(item)"
-        guard let number = item as? Int else {
-            return
-        }
-        if number % 2 == 0 {
-            icon.image = UIImage(named: "ImageA")
-        } else {
-            icon.image = UIImage(named: "ImageB")
+        if let number = item as? Int {
+            let imageName = number % 2 == 0 ? firstImageName : secondImageName
+            icon.image = UIImage(named: imageName)
         }
     }
     
