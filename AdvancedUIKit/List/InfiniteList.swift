@@ -33,7 +33,13 @@ public class InfiniteList: UITableView {
   /**
    * Delegate
    */
-  public var infiniteListDelegate: InfiniteListDelegate?
+    public var infiniteListDelegate: InfiniteListDelegate? {
+        didSet {
+            if status.isReloading {
+                infiniteListDelegate?.infiniteListDidRequireReload(self)
+            }
+        }
+    }
   
   /**
    * The item amount of each page.

@@ -21,14 +21,16 @@ final class DataGenerator {
             let cellType = index % 3 != 2 ? LabelCell.self : ImageCell.self
             items.append(InfiniteItem(item: index, type: cellType))
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + generationDelay) {
-            self.delegate?.dataGenerator(self, didGenerate: items, forPage: page)
-        }
+        dispatch(items, forPage: page)
     }
     
     func generateNoItems() {
+        dispatch([], forPage: 0)
+    }
+    
+    func dispatch(_ items: [InfiniteItem], forPage page: Int) {
         DispatchQueue.main.asyncAfter(deadline: .now() + generationDelay) {
-            self.delegate?.dataGenerator(self, didGenerate: [], forPage: 0)
+            self.delegate?.dataGenerator(self, didGenerate: items, forPage: page)
         }
     }
     

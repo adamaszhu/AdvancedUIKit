@@ -7,12 +7,12 @@ final class ListViewController: UIViewController {
     
     @IBOutlet fileprivate weak var infiniteList: InfiniteList!
     
+    fileprivate var isLoadingEmptyPage: Bool = false
     fileprivate lazy var dataGenerator: DataGenerator = {
         let dataGenerator = DataGenerator()
         dataGenerator.delegate = self
         return dataGenerator
     }()
-    fileprivate var isLoadingEmptyPage: Bool = false
     
     @IBAction func reloadItems(_ sender: Any) {
         isLoadingEmptyPage = false

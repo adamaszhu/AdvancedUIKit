@@ -8,10 +8,11 @@ final class ImageCell: InfiniteCell {
     
     override func render(_ item: Any) {
         label.text = "\(item)"
-        if let number = item as? Int {
-            let imageName = number % 2 == 0 ? firstImageName : secondImageName
-            icon.image = UIImage(named: imageName)
+        guard let number = item as? Int else {
+            return
         }
+        let imageName = number % 2 == 0 ? firstImageName : secondImageName
+        icon.image = UIImage(named: imageName)
     }
     
 }
