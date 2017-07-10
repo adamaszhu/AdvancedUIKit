@@ -1,9 +1,9 @@
 final class ListViewController: UIViewController {
     
     fileprivate let emptyStateNibName = "EmptyState"
-    fileprivate let reloadBarNibName = "ReloadBar"
-    fileprivate let loadMoreBarNibName = "LoadMoreBar"
-    fileprivate let selectTitle = "Select"
+    fileprivate let reloadingBarNibName = "ReloadingBar"
+    fileprivate let loadingMoreBarNibName = "LoadingMoreBar"
+    fileprivate let selectionTitle = "Select"
     
     @IBOutlet fileprivate weak var infiniteList: InfiniteList!
     
@@ -30,8 +30,8 @@ final class ListViewController: UIViewController {
         infiniteList.register(UINib(nibName: String(describing: LabelCell.self), bundle: nil), for: LabelCell.self)
         infiniteList.register(UINib(nibName: String(describing: ImageCell.self), bundle: nil), for: ImageCell.self)
         infiniteList.registerEmptyState(UINib(nibName: emptyStateNibName, bundle: nil))
-        infiniteList.registerReloadBar(UINib(nibName: reloadBarNibName, bundle: nil))
-        infiniteList.registerLoadMoreBar(UINib(nibName: loadMoreBarNibName, bundle: nil))
+        infiniteList.registerReloadBar(UINib(nibName: reloadingBarNibName, bundle: nil))
+        infiniteList.registerLoadMoreBar(UINib(nibName: loadingMoreBarNibName, bundle: nil))
     }
     
 }
@@ -39,7 +39,7 @@ final class ListViewController: UIViewController {
 extension ListViewController: InfiniteListDelegate {
     
     func infiniteList(_ infiniteList: InfiniteList, didSelectItem item: Any) {
-        SystemMessageHelper.standard?.showInfo("\(item)", withTitle: selectTitle)
+        SystemMessageHelper.standard?.showInfo("\(item)", withTitle: selectionTitle)
     }
     
     func infiniteListDidRequireReload(_ infiniteList: InfiniteList) {

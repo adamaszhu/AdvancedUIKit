@@ -6,7 +6,7 @@ final class ImageCell: InfiniteCell {
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var icon: UIImageView!
     
-    override func render(_ item: Any) {
+    override func render(item: Any) {
         label.text = "\(item)"
         guard let number = item as? Int else {
             return

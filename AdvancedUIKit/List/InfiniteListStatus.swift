@@ -4,7 +4,7 @@
 /// - author: Adamas
 enum InfiniteListStatus {
     
-    /// The initial status
+    /// The list has just been initialized.
     case initial
     
     /// More items are available.
@@ -16,10 +16,10 @@ enum InfiniteListStatus {
     /// No item is available.
     case empty
     
-    /// Waiting for more items to be loaded.
+    /// More items are expected to be loaded.
     case loadingMore
     
-    /// Waiting for reloading all items.
+    /// All items are expected to be reloaded.
     case reloading
     
 }

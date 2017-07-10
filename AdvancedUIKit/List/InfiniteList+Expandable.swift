@@ -1,76 +1,62 @@
-/**
- * InfiniteList+Expandable implements the function related to expanding and collapsing.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 03/07/2017
- */
+/// InfiniteList+Expandable implements the function related to expanding and collapsing.
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 03/07/2017
 public extension InfiniteList {
     
-    /**
-     * Expand a specific cell.
-     * - parameter index: The index of the cell.
-     */
+    /// System warnings.
+    private static let cellExpansionWarning = "The cell cannot be expanded."
+    private static let cellCollapsionWarning = "The cell cannot be collapsed."
+    private static let contentOffsetAdjustionError = "The content offset cannot be adjusted."
+    
+    /// Expand a specific cell.
+    ///- parameter index: The index of the cell.
     public func expandCell(atIndex index: Int) {
-        let index = IndexPath(row: index, section: 0)
-        guard let cell = cellForRow(at: index) as? InfiniteCell else {
-            // Comment: The cell is not visible.
-            return
-        }
-        guard cell.isExpandable else {
-            Logger.standard.logWarning(InfiniteList.expandWarning, withDetail: index)
+        let indexPath = IndexPath(row: index, section: 0)
+        guard let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
+            Logger.standard.logWarning(InfiniteList.cellExpansionWarning, withDetail: index)
             return
         }
         cell.expand()
-        expandedCellIndex = index
+        expandedCellIndexPath = indexPath
         adjustContentOffset()
     }
     
-    /**
-     * Collapse a specific cell.
-     * - parameter index: The index of the cell.
-     */
+    /// Collapse a specific cell.
+    /// - parameter index: The index of the cell.
     public func collapseCell(atIndex index: Int) {
         let index = IndexPath(row: index, section: 0)
-        guard let cell = cellForRow(at: index) as? InfiniteCell else {
-            // Comment: The cell is not visible.
-            return
-        }
-        guard cell.isExpandable else {
-            Logger.standard.logWarning(InfiniteList.collapseWarning, withDetail: index)
+        guard let cell = cellForRow(at: index) as? InfiniteCell, cell.isExpandable else {
+            Logger.standard.logWarning(InfiniteList.cellCollapsionWarning, withDetail: index)
             return
         }
         cell.collapse()
-        expandedCellIndex = nil
+        expandedCellIndexPath = nil
     }
     
-    /**
-     * Collapse all cells.
-     */
+    /// Collapse all cells.
     public func collapseAllCells() {
-        guard let index = expandedCellIndex?.row else {
+        guard let index = expandedCellIndexPath?.row else {
+            Logger.standard.logWarning(InfiniteList.cellCollapsionWarning)
             return
         }
         collapseCell(atIndex: index)
     }
     
-    /**
-     * Adjust the content offset to fit the expanded cell.
-     */
-    func adjustContentOffset() {
-        guard let index = expandedCellIndex, let item = items.element(atIndex: index.row), let cellType = cellType(for: item.type) else {
+    /// Adjust the content offset to fit the expanded cell.
+    private func adjustContentOffset() {
+        guard let indexPath = expandedCellIndexPath, let item = items.element(atIndex: indexPath.row), let cellType = cellType(for: item.type),
+            let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
+            Logger.standard.logError(InfiniteList.contentOffsetAdjustionError)
             return
         }
-        guard let cell = cellForRow(at: index) as? InfiniteCell, cell.isExpandable, let additionalHeight = cellType.additionalHeight else {
-            Logger.standard.logError(InfiniteList.cellError)
-            return
-        }
-        if cell.frame.origin.y + additionalHeight + cellType.height > contentOffset.y + frame.height {
-            let newOffset = additionalHeight > frame.size.height ? cell.frame.origin.y : cell.frame.origin.y + additionalHeight + cellType.height - frame.height
-            setContentOffset(CGPoint(x: 0, y: newOffset), animated: true)
+        if cell.frame.origin.y + cellType.height > contentOffset.y + frame.height {
+            let newOffset = cellType.height > frame.size.height ? cell.frame.origin.y : cell.frame.origin.y + cellType.height - frame.height
+            setContentOffset(.init(x: 0, y: newOffset), animated: true)
             return
         }
         if cell.frame.origin.y < contentOffset.y {
-            setContentOffset(CGPoint(x: 0, y: cell.frame.origin.y), animated: true)
+            setContentOffset(.init(x: 0, y: cell.frame.origin.y), animated: true)
         }
     }
     
