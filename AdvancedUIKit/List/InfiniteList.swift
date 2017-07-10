@@ -86,7 +86,7 @@ public class InfiniteList: UITableView {
             return
         }
         self.items = items
-        pageAmount = 0
+        pageAmount = 1
         reloadData()
         expandedCellIndexPath = nil
         switch items.count {
@@ -219,6 +219,11 @@ public class InfiniteList: UITableView {
         }
         if let loadingMoreBar = loadingMoreBar, loadingMoreBar.superview == nil {
             addSubview(loadingMoreBar)
+            let height = loadingMoreBar.frame.height
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                // COMMENT: Wait for the subview to be resized.
+                loadingMoreBar.frame.size = .init(width: loadingMoreBar.frame.width, height: height)
+            })
         }
     }
     

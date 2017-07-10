@@ -49,10 +49,11 @@ public extension InfiniteList {
     
     /// Perform drag and reload function programmatically.
     public func startReloading() {
-        guard status.isReloadingAvailable else {
+        guard reloadingBar != nil, status.isReloadingAvailable else {
             return
         }
         status = .reloading
+        infiniteListDelegate?.infiniteListDidRequireReload(self)
     }
     
 }
