@@ -46,7 +46,11 @@ extension InfiniteList: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         switch status {
         case .finite, .infinite:
-            return isEditable
+            guard let cell = cellForRow(at: indexPath) as? InfiniteCell else {
+                return false
+            }
+            // Comment: If a cell can be expanded, it should implement those editable feature in the additional view.
+            return isEditable && !cell.isExpandable
         default:
             return false
         }
