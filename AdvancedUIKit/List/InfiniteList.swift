@@ -79,9 +79,19 @@ public class InfiniteList: UITableView {
         }
     }
     
+    /// Display a list of item depending on the status of the InfiniteList.
+    /// - parameter items: The item to be displayed.
+    public func display(_ items: [InfiniteItem]) {
+        if status.isReloading {
+            reload(items)
+        } else if status.isLoadingMore {
+            append(items)
+        }
+    }
+    
     /// Reload a list of items.
     /// - parameter items: The items to be reloaded.
-    public func reload(_ items: [InfiniteItem]) {
+    private func reload(_ items: [InfiniteItem]) {
         guard status.isReloading else {
             return
         }
@@ -102,14 +112,9 @@ public class InfiniteList: UITableView {
         }
     }
     
-    /// Clear all items
-    public func clear() {
-        reload([])
-    }
-    
     /// Append a list of items.
     /// - parameter items: The items to be append.
-    public func append(_ items: [InfiniteItem]) {
+    private func append(_ items: [InfiniteItem]) {
         guard status.isLoadingMore else {
             return
         }

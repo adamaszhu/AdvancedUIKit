@@ -4,23 +4,25 @@ final class ListViewController: UIViewController {
     fileprivate let reloadingBarNibName = "ReloadingBar"
     fileprivate let loadingMoreBarNibName = "LoadingMoreBar"
     fileprivate let selectionTitle = "Select"
+    fileprivate let defaultItemAmount = 55
+    fileprivate let emptyItemAmount = 0
     
     @IBOutlet fileprivate weak var infiniteList: InfiniteList!
     
-    fileprivate var isLoadingEmptyPage: Bool = false
     fileprivate lazy var dataGenerator: DataGenerator = {
         let dataGenerator = DataGenerator()
         dataGenerator.delegate = self
+        dataGenerator.itemAmount = self.defaultItemAmount
         return dataGenerator
     }()
     
     @IBAction func reloadItems(_ sender: Any) {
-        isLoadingEmptyPage = false
+        dataGenerator.itemAmount = defaultItemAmount
         infiniteList.startReloading()
     }
     
     @IBAction func clearItems(_ sender: Any) {
-        isLoadingEmptyPage = true
+        dataGenerator.itemAmount = emptyItemAmount
         infiniteList.startReloading()
     }
     
@@ -43,11 +45,7 @@ extension ListViewController: InfiniteListDelegate {
     }
     
     func infiniteListDidRequireReload(_ infiniteList: InfiniteList) {
-        if isLoadingEmptyPage {
-            dataGenerator.generateNoItems()
-        } else {
-            dataGenerator.generateItems(forPage: 0)
-        }
+        dataGenerator.generateItems(forPage: 0)
     }
     
     func infiniteList(_ infiniteList: InfiniteList, didRequireLoadPage page: Int) {
@@ -58,12 +56,8 @@ extension ListViewController: InfiniteListDelegate {
 
 extension ListViewController: DataGeneratorDelegate {
     
-    func dataGenerator(_ dataGenerator: DataGenerator, didGenerate items: [InfiniteItem], forPage page: Int) {
-        if page == 0 {
-            infiniteList.reload(items)
-        } else {
-            infiniteList.append(items)
-        }
+    func dataGenerator(_ dataGenerator: DataGenerator, didGenerate items: [InfiniteItem]) {
+        infiniteList.display(items)
     }
     
 }

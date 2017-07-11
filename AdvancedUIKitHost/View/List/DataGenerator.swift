@@ -1,16 +1,16 @@
 protocol DataGeneratorDelegate {
     
-    func dataGenerator(_ dataGenerator: DataGenerator, didGenerate items: [InfiniteItem], forPage page: Int)
+    func dataGenerator(_ dataGenerator: DataGenerator, didGenerate items: [InfiniteItem])
     
 }
 
 final class DataGenerator {
     
-    private let itemAmount = 55
     private let pageSize = 10
     private let generationDelay = 2.0
     
     var delegate: DataGeneratorDelegate?
+    var itemAmount = 0
     
     func generateItems(forPage page: Int) {
         var items = [InfiniteItem]()
@@ -21,16 +21,12 @@ final class DataGenerator {
             let cellType = index % 3 != 2 ? LabelCell.self : ImageCell.self
             items.append(InfiniteItem(item: index, type: cellType))
         }
-        dispatch(items, forPage: page)
+        dispatch(items)
     }
     
-    func generateNoItems() {
-        dispatch([], forPage: 0)
-    }
-    
-    func dispatch(_ items: [InfiniteItem], forPage page: Int) {
+    private func dispatch(_ items: [InfiniteItem]) {
         DispatchQueue.main.asyncAfter(deadline: .now() + generationDelay) {
-            self.delegate?.dataGenerator(self, didGenerate: items, forPage: page)
+            self.delegate?.dataGenerator(self, didGenerate: items)
         }
     }
     
