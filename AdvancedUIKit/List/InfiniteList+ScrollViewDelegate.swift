@@ -49,12 +49,12 @@ extension InfiniteList: UIScrollViewDelegate {
     
     /// UIScrollViewDelegate
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if contentOffset.y == loadingMoreOffsetY, loadingMoreBar != nil, status.isLoadingMoreAvailable {
+        if contentOffset.y == loadingMoreOffsetY, let _ = loadingMoreBar, status.isLoadingMoreAvailable {
             status = .loadingMore
             infiniteListDelegate?.infiniteList(self, didRequireLoadPage: pageAmount)
             return
         }
-        if contentOffset.y == reloadingOffsetY, reloadingBar != nil, status.isReloadingAvailable {
+        if contentOffset.y == reloadingOffsetY, let _ = reloadingBar, status.isReloadingAvailable {
             status = .reloading
             infiniteListDelegate?.infiniteListDidRequireReload(self)
         }

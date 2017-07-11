@@ -5,7 +5,7 @@ final class ListViewController: UIViewController {
     fileprivate let loadingMoreBarNibName = "LoadingMoreBar"
     fileprivate let selectionTitle = "Select"
     fileprivate let defaultItemAmount = 55
-    fileprivate let emptyItemAmount = 0
+    fileprivate let emptyItemAmount = -1
     
     @IBOutlet fileprivate weak var infiniteList: InfiniteList!
     

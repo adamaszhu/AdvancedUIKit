@@ -7,7 +7,6 @@ public extension InfiniteList {
     /// System warnings.
     private static let cellExpansionWarning = "The cell cannot be expanded."
     private static let cellCollapsionWarning = "The cell cannot be collapsed."
-    private static let contentOffsetAdjustionError = "The content offset cannot be adjusted."
     
     /// Expand a specific cell.
     ///- parameter index: The index of the cell.
@@ -19,7 +18,7 @@ public extension InfiniteList {
         }
         cell.expand()
         expandedCellIndexPath = indexPath
-        adjustContentOffset()
+        adjustContentOffset(for: cell, at: indexPath)
     }
     
     /// Collapse a specific cell.
@@ -44,16 +43,10 @@ public extension InfiniteList {
     }
     
     /// Adjust the content offset to fit the expanded cell.
-    private func adjustContentOffset() {
-        guard let indexPath = expandedCellIndexPath else {
-            Logger.standard.logError(InfiniteList.contentOffsetAdjustionError)
-            return
-        }
+    /// - parameter cell: The cell that the content offset should be adjusted based on.
+    /// - parameter indexPath: The index of the cell.
+    private func adjustContentOffset(for cell: InfiniteCell, at indexPath: IndexPath) {
         guard let item = items.element(atIndex: indexPath.row), let cellType = cellType(for: item.type) else {
-            return
-        }
-        guard let cell = cellForRow(at: indexPath) as? InfiniteCell else {
-            Logger.standard.logError(InfiniteList.contentOffsetAdjustionError)
             return
         }
         if cell.frame.origin.y < contentOffset.y {

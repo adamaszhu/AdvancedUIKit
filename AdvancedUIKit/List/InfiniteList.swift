@@ -19,13 +19,7 @@ public class InfiniteList: UITableView {
     static let defaultPageSize = 10
     
     /// Delegate for action related to the InfiniteList.
-    public var infiniteListDelegate: InfiniteListDelegate? {
-        didSet {
-            if status.isReloading {
-                infiniteListDelegate?.infiniteListDidRequireReload(self)
-            }
-        }
-    }
+    public var infiniteListDelegate: InfiniteListDelegate?
     
     /// The item amount of each page.
     public var pageSize: Int
@@ -55,6 +49,7 @@ public class InfiniteList: UITableView {
     var expandedCellIndexPath: IndexPath? {
         didSet {
             beginUpdates()
+            loadingMoreBar?.frame.origin = .init(x: 0, y: contentSize.height)
             endUpdates()
         }
     }
@@ -63,68 +58,7 @@ public class InfiniteList: UITableView {
     var status: InfiniteListStatus {
         didSet {
             loadingMoreBar?.isHidden = status.isLoadingMoreBarHidden
-            var newContentOffset = contentOffset
-            switch status {
-            case .infinite, .empty:
-                newContentOffset = .init(x: 0, y: 0)
-                setContentOffset(newContentOffset, animated: true)
-            case .loadingMore:
-                newContentOffset = .init(x: 0, y: loadingMoreOffsetY)
-                setContentOffset(newContentOffset, animated: true)
-            default:
-                break
-            }
             loadingMoreBar?.frame.origin = .init(x: 0, y: contentSize.height)
-        }
-    }
-    
-    /// Display a list of item depending on the status of the InfiniteList.
-    /// - parameter items: The item to be displayed.
-    public func display(_ items: [InfiniteItem]) {
-        if status.isReloading {
-            reload(items)
-        } else if status.isLoadingMore {
-            append(items)
-        }
-    }
-    
-    /// Reload a list of items.
-    /// - parameter items: The items to be reloaded.
-    private func reload(_ items: [InfiniteItem]) {
-        guard status.isReloading else {
-            return
-        }
-        self.items = items
-        pageAmount = 1
-        reloadData()
-        expandedCellIndexPath = nil
-        switch items.count {
-        case 0:
-            status = .empty
-            showEmptyState()
-        case 1 ..< pageSize:
-            status = .finite
-            hideEmptyState()
-        default:
-            status = .infinite
-            hideEmptyState()
-        }
-    }
-    
-    /// Append a list of items.
-    /// - parameter items: The items to be append.
-    private func append(_ items: [InfiniteItem]) {
-        guard status.isLoadingMore else {
-            return
-        }
-        self.items = self.items + items
-        pageAmount = pageAmount + 1
-        reloadData()
-        switch items.count {
-        case 0 ..< pageSize:
-            status = .finite
-        default:
-            status = .infinite
         }
     }
     
@@ -211,25 +145,8 @@ public class InfiniteList: UITableView {
     /// UIView
     public override func didMoveToWindow() {
         super.didMoveToWindow()
-        if let reloadingBar = reloadingBar, reloadingBar.superview == nil {
-            addSubview(reloadingBar)
-            let height = reloadingBar.frame.height
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                // COMMENT: Wait for the subview to be resized.
-                reloadingBar.frame.size = .init(width: reloadingBar.frame.width, height: height)
-                // COMMENT: Adjust the scroll offset.
-                self.scrollViewDidScroll(self)
-            })
-        }
-        if let loadingMoreBar = loadingMoreBar, loadingMoreBar.superview == nil {
-            addSubview(loadingMoreBar)
-            loadingMoreBar.isHidden = true
-            let height = loadingMoreBar.frame.height
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                // COMMENT: Wait for the subview to be resized.
-                loadingMoreBar.frame.size = .init(width: loadingMoreBar.frame.width, height: height)
-            })
-        }
+        addReloadingBar()
+        addLoadingMoreBar()
     }
     
     /// UIView
