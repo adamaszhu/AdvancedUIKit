@@ -38,7 +38,7 @@ extension InfiniteList: UITableViewDataSource {
                 self.expandCell(atIndex: index)
             }
         }
-        cell.render(item: item.item)
+        cell.render(withItem: item.item)
         return cell
     }
     

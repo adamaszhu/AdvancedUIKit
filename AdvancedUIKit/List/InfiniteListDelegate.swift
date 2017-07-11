@@ -23,5 +23,3 @@ public protocol InfiniteListDelegate {
     func infiniteList(_ infiniteList: InfiniteList, didDeleteItem item: Any)
     
 }
-
-import Foundation

@@ -29,7 +29,6 @@ public extension InfiniteList {
             return
         }
         view.frame = .init(x: 0, y: 0, width: frame.width, height: view.frame.height)
-        view.isHidden = true
         loadingMoreBar = view
     }
     
@@ -52,8 +51,12 @@ public extension InfiniteList {
         guard reloadingBar != nil, status.isReloadingAvailable else {
             return
         }
-        status = .reloading
-        infiniteListDelegate?.infiniteListDidRequireReload(self)
+        animate(withChange: {
+            self.contentOffset = .init(x: 0, y: self.reloadingOffsetY)
+        }, withCompletion: {
+            self.status = .reloading
+            self.infiniteListDelegate?.infiniteListDidRequireReload(self)
+        })
     }
     
 }

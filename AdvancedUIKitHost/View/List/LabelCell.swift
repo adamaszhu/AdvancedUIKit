@@ -6,7 +6,7 @@ final class LabelCell: InfiniteCell {
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var switchIcon: UIImageView!
     
-    override func render(item: Any) {
+    override func render(withItem item: Any) {
         label.text = "\(item)"
     }
     

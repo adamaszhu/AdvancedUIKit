@@ -6,14 +6,14 @@ extension InfiniteListStatus {
     
     /// System errors.
     private static let registrationAvailabilityError = "Register components without initial status."
-    private static let reloadingStatusError = "Reload items without reloading status."
-    private static let loadingMoreStatusError = "Load more items without loading more status."
     
     /// System warnings.
     private static let selectionAvailabilityWarning = "The status doesn't allow selecting an item."
     private static let reloadingAvailabilityWarning = "The status doesn't allow reloading items."
     private static let loadingMoreAvailabilityWarning = "The status doesn't allow loading more items."
     private static let editionAvailabilityWarning = "The status doesn't allow editing an item."
+    private static let reloadingStatusWarning = "Reload items without reloading status."
+    private static let loadingMoreStatusWarning = "Load more items without loading more status."
     
     /// Whether the reloading status has been settled or not.
     var isReloading: Bool {
@@ -21,7 +21,7 @@ extension InfiniteListStatus {
         case .initial, .reloading:
             return true
         default:
-            Logger.standard.logError(InfiniteListStatus.reloadingStatusError)
+            Logger.standard.logWarning(InfiniteListStatus.reloadingStatusWarning)
             return false
         }
     }
@@ -32,7 +32,7 @@ extension InfiniteListStatus {
         case .loadingMore:
             return true
         default:
-            Logger.standard.logError(InfiniteListStatus.loadingMoreStatusError)
+            Logger.standard.logWarning(InfiniteListStatus.loadingMoreStatusWarning)
             return false
         }
     }

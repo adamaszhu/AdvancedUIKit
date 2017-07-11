@@ -24,7 +24,7 @@ open class InfiniteCell: UITableViewCell {
     
     /// Render the cell with an item.
     /// - parameter item: The item to be rendered.
-    open func render(item: Any) {
+    open func render(withItem item: Any) {
     }
     
     /// Expand the cell.

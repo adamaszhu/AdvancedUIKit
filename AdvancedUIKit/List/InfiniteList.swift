@@ -67,14 +67,13 @@ public class InfiniteList: UITableView {
             switch status {
             case .infinite, .empty:
                 newContentOffset = .init(x: 0, y: 0)
-            case .reloading:
-                newContentOffset = .init(x: 0, y: reloadingOffsetY)
+                setContentOffset(newContentOffset, animated: true)
             case .loadingMore:
                 newContentOffset = .init(x: 0, y: loadingMoreOffsetY)
+                setContentOffset(newContentOffset, animated: true)
             default:
                 break
             }
-            setContentOffset(newContentOffset, animated: true)
             loadingMoreBar?.frame.origin = .init(x: 0, y: contentSize.height)
         }
     }
@@ -224,6 +223,7 @@ public class InfiniteList: UITableView {
         }
         if let loadingMoreBar = loadingMoreBar, loadingMoreBar.superview == nil {
             addSubview(loadingMoreBar)
+            loadingMoreBar.isHidden = true
             let height = loadingMoreBar.frame.height
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 // COMMENT: Wait for the subview to be resized.
