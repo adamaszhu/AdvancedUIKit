@@ -44,7 +44,12 @@ extension InfiniteList: UITableViewDataSource {
     
     /// UITableViewDataSource
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return isEditable && status.isEditionAvailable
+        switch status {
+        case .finite, .infinite:
+            return isEditable
+        default:
+            return false
+        }
     }
     
     /// UITableViewDataSource
@@ -59,8 +64,9 @@ extension InfiniteList: UITableViewDataSource {
                 deleteRows(at: [indexPath], with: .automatic)
             } else {
                 status = .empty
-                reloadData()
             }
+            reloadData()
+            loadingMoreBar?.frame.origin = .init(x: 0, y: contentSize.height)
             infiniteListDelegate?.infiniteList(self, didDeleteItem: item)
         default:
             break

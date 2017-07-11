@@ -4,6 +4,7 @@ final class ListViewController: UIViewController {
     fileprivate let reloadingBarNibName = "ReloadingBar"
     fileprivate let loadingMoreBarNibName = "LoadingMoreBar"
     fileprivate let selectionTitle = "Select"
+    fileprivate let deletionTitle = "Delete"
     fileprivate let defaultItemAmount = 55
     fileprivate let emptyItemAmount = -1
     
@@ -28,6 +29,7 @@ final class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        infiniteList.isEditable = true
         infiniteList.infiniteListDelegate = self
         infiniteList.register(LabelCell.self, with: UINib(nibName: String(describing: LabelCell.self), bundle: nil))
         infiniteList.register(ImageCell.self, with: UINib(nibName: String(describing: ImageCell.self), bundle: nil))
@@ -39,6 +41,10 @@ final class ListViewController: UIViewController {
 }
 
 extension ListViewController: InfiniteListDelegate {
+    
+    func infiniteList(_ infiniteList: InfiniteList, didDeleteItem item: Any) {
+        SystemMessageHelper.standard?.showInfo("\(item)", withTitle: deletionTitle)
+    }
     
     func infiniteList(_ infiniteList: InfiniteList, didSelectItem item: Any) {
         SystemMessageHelper.standard?.showInfo("\(item)", withTitle: selectionTitle)
