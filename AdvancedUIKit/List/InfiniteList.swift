@@ -49,7 +49,6 @@ public class InfiniteList: UITableView {
     var expandedCellIndexPath: IndexPath? {
         didSet {
             beginUpdates()
-            loadingMoreBar?.frame.origin = .init(x: 0, y: contentSize.height)
             endUpdates()
         }
     }

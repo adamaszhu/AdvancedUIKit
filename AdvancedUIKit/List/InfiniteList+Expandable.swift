@@ -17,6 +17,9 @@ public extension InfiniteList {
             return
         }
         cell.expand()
+        if expandedCellIndexPath == nil, let item = items.element(atIndex: index), let cellType = cellType(for: item.type), let loadingMoreBar = loadingMoreBar {
+            loadingMoreBar.frame.origin = .init(x: 0, y: loadingMoreBar.frame.origin.y + (cellType.additionalHeight ?? 0))
+        }
         expandedCellIndexPath = indexPath
         adjustContentOffset(for: cell, at: indexPath)
     }
@@ -24,12 +27,15 @@ public extension InfiniteList {
     /// Collapse a specific cell.
     /// - parameter index: The index of the cell.
     public func collapseCell(atIndex index: Int) {
-        let index = IndexPath(row: index, section: 0)
-        guard let cell = cellForRow(at: index) as? InfiniteCell, cell.isExpandable else {
+        let indexPath = IndexPath(row: index, section: 0)
+        guard let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
             Logger.standard.logWarning(InfiniteList.cellCollapsionWarning, withDetail: index)
             return
         }
         cell.collapse()
+        if let _ = expandedCellIndexPath, let item = items.element(atIndex: index), let cellType = cellType(for: item.type), let loadingMoreBar = loadingMoreBar {
+            loadingMoreBar.frame.origin = .init(x: 0, y: loadingMoreBar.frame.origin.y - (cellType.additionalHeight ?? 0))
+        }
         expandedCellIndexPath = nil
     }
     
