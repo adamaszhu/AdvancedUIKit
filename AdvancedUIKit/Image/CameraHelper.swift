@@ -1,31 +1,22 @@
-/**
- * CameraHelper is used to access the information about the camera.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 10/06/2017
- */
+/// CameraHelper is used to access the information about the camera.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 10/06/2017
 public class CameraHelper {
     
-    /**
-     * The info key required in the Info.plist file.
-     */
+    /// The info key required in the Info.plist file.
     private static let cameraDescriptionKey = "NSCameraUsageDescription"
     private static let libraryDescriptionKey = "NSPhotoLibraryUsageDescription"
     
-    /**
-     * User error.
-     */
+    /// User error.
     private static let cameraAuthorizationError = "CameraAuthorizationError"
     private static let libraryAuthorizationError = "LibraryAuthorizationError"
     
-    /**
-     * System error.
-     */
+    /// System error.
     private static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
     
-    /**
-     * Whether the camera is enabled by the user or not.
-     */
+    /// Whether the camera is enabled by the user or not.
     public static var isCameraAuthorized: Bool {
         let authorizedStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         switch authorizedStatus {
@@ -36,9 +27,7 @@ public class CameraHelper {
         }
     }
     
-    /**
-     * Whether the camera authorization is still not determinated or not.
-     */
+    /// Whether the camera authorization is still not determinated or not.
     public static var isCameraUnauthorized: Bool {
         let authorizedStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         switch authorizedStatus {
@@ -49,9 +38,7 @@ public class CameraHelper {
         }
     }
     
-    /**
-     * Whether the library is enabled by the user or not.
-     */
+    /// Whether the library is enabled by the user or not.
     public static var isLibraryAuthorized: Bool {
         let authorizedStatus = PHPhotoLibrary.authorizationStatus()
         switch authorizedStatus {
@@ -62,9 +49,7 @@ public class CameraHelper {
         }
     }
     
-    /**
-     * Whether the library authorization is still not determinated or not.
-     */
+    /// Whether the library authorization is still not determinated or not.
     public static var isLibraryUnauthorized: Bool {
         let authorizedStatus = PHPhotoLibrary.authorizationStatus()
         switch authorizedStatus {
@@ -75,19 +60,13 @@ public class CameraHelper {
         }
     }
     
-    /**
-     * The delegate.
-     */
+    /// The delegate.
     public var cameraHelperDelegate: CameraHelperDelegate?
     
-    /**
-     * The bundle.
-     */
+    /// The bundle.
     private let bundle: Bundle
     
-    /**
-     * Authorize the camera.
-     */
+    /// Authorize the camera.
     public func requestCameraAuthorization() {
         guard CameraHelper.isCameraUnauthorized else {
             cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.cameraAuthorizationError.localizeWithinFramework(forType: CameraHelper.self))
@@ -102,9 +81,7 @@ public class CameraHelper {
         })
     }
     
-    /**
-     * Authorize the library.
-     */
+    /// Authorize the library.
     public func requestLibraryAuthorization() {
         guard CameraHelper.isLibraryUnauthorized else {
             cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.libraryAuthorizationError.localizeWithinFramework(forType: CameraHelper.self))
@@ -119,19 +96,17 @@ public class CameraHelper {
         }
     }
     
-    /**
-     * CLLocationManager
-     * - parameter bundle: The bundle where the Info.plist file exists.
-     */
+    /// CLLocationManager
+    ///
+    /// - Parameter bundle: The bundle where the Info.plist file exists.
     public init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
     }
     
-    /**
-     * Check whether a description key exsits in the Info.plist file or not.
-     * - parameter key: The key to be checked.
-     * - returns: Whether the key exists or not.
-     */
+    /// Check whether a description key exsits in the Info.plist file or not.
+    ///
+    /// - Parameter key: The key to be checked.
+    /// - Returns: Whether the key exists or not.
     private func checkDescriptionKey(_ key: String) -> Bool {
         return bundle.object(forInfoDictionaryKey: key) != nil
     }

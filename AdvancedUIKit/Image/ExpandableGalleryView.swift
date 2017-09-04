@@ -1,24 +1,16 @@
-/**
- * ExpandableGalleryView is a horizontal sliding image page view, which has full screen mode.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 17/06/2017
- */
+/// ExpandableGalleryView is a horizontal sliding image page view, which has full screen mode.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 17/06/2017
 public class ExpandableGalleryView: GalleryView {
     
-    /**
-     * The gesture filter to expand the view.
-     */
+    /// The gesture filter to expand the view.
     let gestureFilterView: UIView
 
-    /**
-     * The gesture used to collapse the view.
-     */
+    /// The gesture used to collapse the view.
     let collapseGestureRecognizer: UITapGestureRecognizer
 
-    /**
-     * GalleryView
-     */
     public required init?(coder aDecoder: NSCoder) {
         gestureFilterView = UIView()
         collapseGestureRecognizer = UITapGestureRecognizer()
@@ -36,9 +28,6 @@ public class ExpandableGalleryView: GalleryView {
         gestureFilterView.addGestureRecognizer(showNextImageGestureRecognizer)
     }
     
-    /**
-     * GalleryView
-     */
     public override func add(image: UIImage) {
         super.add(image: image)
         guard let galleryImage = subviews.last as? GalleryImage else {
@@ -48,9 +37,6 @@ public class ExpandableGalleryView: GalleryView {
         collapseGestureRecognizer.require(toFail: galleryImage.doubleTapGestureRecognizer)
     }
     
-    /**
-     * GalleryView
-     */
     public override var images: Array<UIImage> {
         set {
             super.images = newValue
@@ -67,35 +53,13 @@ public class ExpandableGalleryView: GalleryView {
         }
     }
     
-    /**
-     * ExpandableView
-     */
     var originalSuperview: UIView!
-    
-    /**
-     * ExpandableView
-     */
     var originalZIndex: Int!
-    
-    /**
-     * ExpandableView
-     */
     var originalFrame: CGRect!
-    
-    /**
-     * ExpandableView
-     */
-    public var originalFrameConstraints: Array<NSLayoutConstraint>!
-    
-    /**
-     * ExpandableView
-     */
+    var originalFrameConstraints: Array<NSLayoutConstraint>!
     var originalConstraints: Array<NSLayoutConstraint>!
     
-    /**
-     * ExpandableView
-     */
-    public var isExpandable: Bool {
+    var isExpandable: Bool {
         set {
             if newValue {
                 guard let superview = superview else {
