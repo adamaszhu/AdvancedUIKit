@@ -57,9 +57,9 @@ public extension InfiniteList {
         guard status.isReloadingAvailable else {
             return
         }
-        animate(withChange: {
+        animate(withChange: { [unowned self] _ in
             self.contentOffset = .init(x: 0, y: self.reloadingOffsetY)
-        }, withCompletion: {
+        }, withCompletion: { [unowned self] _ in
             self.status = .reloading
             self.infiniteListDelegate?.infiniteListDidRequireReload(self)
         })
@@ -89,7 +89,7 @@ public extension InfiniteList {
         }
         addSubview(reloadingBar)
         let height = reloadingBar.frame.height
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { [unowned self] _ in
             // COMMENT: Wait for the subview to be resized.
             reloadingBar.frame.size = .init(width: reloadingBar.frame.width, height: height)
             // COMMENT: Adjust the scroll offset for the init status.
