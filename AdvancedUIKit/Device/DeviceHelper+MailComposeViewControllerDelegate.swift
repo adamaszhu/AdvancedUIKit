@@ -5,7 +5,6 @@
 /// - date: 29/05/2017
 extension DeviceHelper: MFMailComposeViewControllerDelegate {
     
-    /// MailComposeViewControllerDelegate
     public func mailComposeController(_ controller: MFMailComposeViewController,
                                       didFinishWith result: MFMailComposeResult,
                                       error: Error?) {

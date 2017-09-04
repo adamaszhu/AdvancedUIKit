@@ -1,14 +1,10 @@
-/**
- * GalleryView+ScrollViewDelegate override the paging switching.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 17/06/2017
- */
+/// GalleryView+ScrollViewDelegate override the paging switching.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 17/06/2017
 extension GalleryView {
     
-    /**
-     * UIScrollViewDelegate
-     */
     public override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var adjustedOffset = contentOffset
         adjustedOffset.x = max(adjustedOffset.x, 0)

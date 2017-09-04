@@ -59,7 +59,7 @@ public class ExpandableGalleryView: GalleryView {
     var originalFrameConstraints: Array<NSLayoutConstraint>!
     var originalConstraints: Array<NSLayoutConstraint>!
     
-    var isExpandable: Bool {
+    public var isExpandable: Bool {
         set {
             if newValue {
                 guard let superview = superview else {

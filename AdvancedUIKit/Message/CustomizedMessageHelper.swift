@@ -1,75 +1,48 @@
-/**
- * CustomizedMessageHelper is used to display a customized message on the screen.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 30/05/2017
- */
+/// CustomizedMessageHelper is used to display a customized message on the screen.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 30/05/2017
 public class CustomizedMessageHelper: PopupView {
     
-    /**
-     * Get the shared instance of the CustomizedMessageHelper. If the protocol will be implemented, please create a new object.
-     */
+    /// Get the shared instance of the CustomizedMessageHelper. If the protocol will be implemented, please create a new object.
     public static let standard: CustomizedMessageHelper = CustomizedMessageHelper()
     
-    /**
-     * Error message.
-     */
+    /// Error message.
     private static let typeError = "The message type is unknown."
     private static let initError = "Constructor init(coder) shouldn't be called."
     
-    /**
-     * The margin of the customized message content.
-     */
+    /// The margin of the customized message content.
     private static let padding = CGFloat(10)
     
-    /**
-     * The default background color of the message view.
-     */
+    /// The default background color of the message view.
     private static let defaultBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
     
-    /**
-     * The default background color of the mask view.
-     */
+    /// The default background color of the mask view.
     private static let defaultMaskBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
     
-    /**
-     * The default background color of the input view.
-     */
+    /// The default background color of the input view.
     private static let defaultInputPlaceHolderColor = UIColor(white: 1, alpha: 0.2)
     
-    /**
-     * The default separator color of the message view.
-     */
+    /// The default separator color of the message view.
     private static let defaultSeperatorColor = UIColor.white
     
-    /**
-     * The default text color.
-     */
+    /// The default text color.
     private static let defaultTextColor = UIColor.white
     
-    /**
-     * The radius of the message box.
-     */
+    /// The radius of the message box.
     private static let radius = CGFloat(5)
     
-    /**
-     * The width weight of a customized message compared to the window width.
-     */
+    /// The width weight of a customized message compared to the window width.
     private static let widthWeight = CGFloat(0.7)
     
-    /**
-     * The maximal height weight of a customized message  compared to the height of the window.
-     */
+    /// The maximal height weight of a customized message  compared to the height of the window.
     private static let maxHeightWeight = CGFloat(0.6)
     
-    /**
-     * The type of current message.
-     */
+    /// The type of current message.
     var messageType: MessageType
     
-    /**
-     * The visibility of the second button.
-     */
+    /// The visibility of the second button.
     private var isCancelButtonVisible: Bool {
         set {
             let confirmButtonWidth = newValue ? buttonView.frame.width / 2 : buttonView.frame.width
@@ -82,9 +55,7 @@ public class CustomizedMessageHelper: PopupView {
         }
     }
     
-    /**
-     * The title of the message.
-     */
+    /// The title of the message.
     private var title: String? {
         set {
             let title = newValue?.isEmpty == true ? nil : newValue
@@ -98,9 +69,7 @@ public class CustomizedMessageHelper: PopupView {
         }
     }
     
-    /**
-     * The content height.
-     */
+    /// The content height.
     private var contentHeight: CGFloat {
         set {
             let contentViewY = titleView.frame.height + titleView.frame.origin.y + CustomizedMessageHelper.padding
@@ -115,9 +84,7 @@ public class CustomizedMessageHelper: PopupView {
         }
     }
     
-    /**
-     * The components of a customized view.
-     */
+    /// The components of a customized view.
     private var frameView: UIView
     private var titleView: UIView
     private var titleLabel: UILabel
@@ -129,18 +96,16 @@ public class CustomizedMessageHelper: PopupView {
     private var confirmButton: UIButton
     private var buttonSeperatorView: UIView
     
-    /**
-     * MessageHelper
-     */
+    /// MessageHelper
     public var messageHelperDelegate: MessageHelperDelegate?
     
-    /**
-     * Display a customized message.
-     * - parameter title: The title.
-     * - parameter content: The content of the message. If it is nil, then it will be an input message
-     * - parameter confirmButtonName: The name of the confirm button. If this is nil, the confirm button will not be shown.
-     * - parameter cancelButtonName: The name of the cancel button.
-     */
+    /// Display a customized message.
+    ///
+    /// - Parameters:
+    ///   - title: The title.
+    ///   - content: The content of the message. If it is nil, then it will be an input message
+    ///   - confirmButtonName: The name of the confirm button. If this is nil, the confirm button will not be shown.
+    ///   - cancelButtonName: The name of the cancel button.
     func showMessage(withTitle title: String, withContent content: String?, withConfirmButtonName confirmButtonName: String,  withCancelButtonName cancelButtonName: String? = nil) {
         self.title = title
         messageLabel.text = content
@@ -168,9 +133,7 @@ public class CustomizedMessageHelper: PopupView {
         show()
     }
     
-    /**
-     * Initialize the object
-     */
+    /// Initialize the object
     public init() {
         frameView = UIView()
         titleView = UIView()
@@ -240,9 +203,7 @@ public class CustomizedMessageHelper: PopupView {
         frameView.addSubview(buttonView)
     }
     
-    /**
-     * A message has been confirmed.
-     */
+    /// A message has been confirmed.
     func confirm() {
         switch messageType {
         case .info:
@@ -264,9 +225,7 @@ public class CustomizedMessageHelper: PopupView {
         hide()
     }
     
-    /**
-     * A message has been cancelled.
-     */
+    /// A message has been cancelled.
     func cancel() {
         switch messageType {
         case .info:
@@ -287,9 +246,7 @@ public class CustomizedMessageHelper: PopupView {
         hide()
     }
     
-    /**
-     * Hide previous message.
-     */
+    /// Hide previous message.
     func hidePreviousMessage() {
         guard messageType != .unknown else {
             Logger.standard.logError(CustomizedMessageHelper.typeError)
@@ -299,9 +256,6 @@ public class CustomizedMessageHelper: PopupView {
         hide()
     }
     
-    /**
-     * UIView
-     */
     public required init?(coder aDecoder: NSCoder) {
         Logger.standard.logError(CustomizedMessageHelper.initError)
         return nil

@@ -1,4 +1,5 @@
 /// InfiniteListStatus+Managable defines which actions are availabled under a status.
+///
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 10/07/2017

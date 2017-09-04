@@ -1,49 +1,32 @@
-/**
- * MapViewLine record the information of a line on the map.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 07/06/2017
- */
+/// MapViewLine record the information of a line on the map.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 07/06/2017
 public struct MapViewLine {
     
-    /**
-     * The width of the line.
-     */
+    /// The width of the line.
     private static let defaultLineColor = UIColor.black
     
-    /**
-     * The width of the line.
-     */
+    /// The width of the line.
     private static let defaultLineWidth = 2
     
-    /**
-     * The line object.
-     */
+    /// The line object.
     let line: MKPolyline
     
-    /**
-     * The color of the line.
-     */
+    /// The color of the line.
     let color: UIColor
     
-    /**
-     * The width of the line.
-     */
+    /// The width of the line.
     let width: Int
     
-    /**
-     * All points on the line.
-     */
+    /// All points on the line.
     let points: Array<MapViewPoint>
     
-    /**
-     * The icon for each point on the view.
-     */
+    /// The icon for each point on the view.
     let pointIcon: UIImage?
     
-    /**
-     * The renderer.
-     */
+    /// The renderer.
     var renderer: MKPolylineRenderer {
         let polylineRenderer = MKPolylineRenderer(overlay: line)
         polylineRenderer.strokeColor = color
@@ -51,13 +34,13 @@ public struct MapViewLine {
         return polylineRenderer
     }
     
-    /**
-     * Initialize the object.
-     * - parameter points: A list of point list.
-     * - parameter color: The color of the line.
-     * - parameter width: The width of the line.
-     * - parameter pointIcon: The icon for the points on the line. Nil if the point should be shown.
-     */
+    /// Initialize the object.
+    ///
+    /// - Parameters:
+    ///   - points: A list of point list.
+    ///   - color: The color of the line.
+    ///   - width: The width of the line.
+    ///   - pointIcon: The icon for the points on the line. Nil if the point should be shown.
     public init(points: Array<MapViewPoint>, color: UIColor = defaultLineColor, width: Int = defaultLineWidth, withPointIcon pointIcon: UIImage? = nil) {
         let coordinates = points.map { point in
             point.annotation.coordinate

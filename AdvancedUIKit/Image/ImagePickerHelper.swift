@@ -1,37 +1,27 @@
-/**
- * ImagePickerHelper is used to select an image in the image library or using the camera.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 10/06/2017
- */
+/// ImagePickerHelper is used to select an image in the image library or using the camera.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 10/06/2017
 public class ImagePickerHelper: NSObject {
     
-    /**
-     * The content on the selector.
-     */
+    /// The content on the selector.
     private static let selectFromLibraryActionName = "SelectFromLibrary"
     private static let takePhotoActionName = "TakePhoto"
     private static let cancelActionName = "Cancel"
     
-    /**
-     * The delegate.
-     */
+    /// The delegate.
     public var imagePickerHelperDelegate: ImagePickerHelperDelegate?
     
-    /**
-     * The camera authorization helper.
-     */
+    /// The camera authorization helper.
     private let cameraHelper: CameraHelper
     
-    /**
-     * The current view controller.
-     */
+    /// The current view controller.
     private let currentViewController: UIViewController?
     
-    /**
-     * Initialize the object.
-     * - parameter application: The application used to make a function call.
-     */
+    /// Initialize the object.
+    ///
+    /// - Parameter application: The application used to make a function call.
     public init(application: UIApplication = UIApplication.shared, cameraHelper: CameraHelper = CameraHelper()) {
         self.cameraHelper = cameraHelper
         currentViewController = application.rootViewController
@@ -39,9 +29,7 @@ public class ImagePickerHelper: NSObject {
         cameraHelper.cameraHelperDelegate = self
     }
     
-    /**
-     * Show the image picker selector.
-     */
+    /// Show the image picker selector.
     public func showImagePicker() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let selectFromLibraryActionTitle = ImagePickerHelper.selectFromLibraryActionName.localizeWithinFramework(forType: self.classForCoder)
@@ -70,10 +58,9 @@ public class ImagePickerHelper: NSObject {
         currentViewController?.present(alertController, animated: true, completion: nil)
     }
     
-    /**
-     * Show the image view controller with a specific type.
-     * - parameter type: The type of the image view controller.
-     */
+    /// Show the image view controller with a specific type.
+    ///
+    /// - Parameter type: The type of the image view controller.
     func showImageViewController(withSourceType type: UIImagePickerControllerSourceType) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = type

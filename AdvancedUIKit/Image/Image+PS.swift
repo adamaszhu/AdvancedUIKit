@@ -1,28 +1,22 @@
-/**
- * Image+PS adds PS function to an UIImage.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 10/06/2017
- */
+/// Image+PS adds PS function to an UIImage.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 10/06/2017
 public extension UIImage {
     
-    /**
-     * System error.
-     */
+    /// System error.
     private static let filterError = "The filter cannot be intialized."
     private static let inputImageError = "The image is invalid."
     private static let outputImageError = "The image cannot be changed."
     
-    /**
-     * The filter names.
-     */
+    /// The filter names.
     private static let gaussianBlurFilterName = "CIGaussianBlur"
     
-    /**
-     * Add blur effect to an image.
-     * - parameter radius: The radius of the blur.
-     * - returns: The image with blur effect.
-     */
+    /// Add blur effect to an image.
+    ///
+    /// - Parameter radius: The radius of the blur.
+    /// - Returns: The image with blur effect.
     public func addGaussianBlur(withRadius radius: Int) -> UIImage {
         guard let gaussianBlurFilter = CIFilter(name: UIImage.gaussianBlurFilterName) else {
             Logger.standard.logError(UIImage.filterError)
@@ -47,11 +41,10 @@ public extension UIImage {
         return UIImage(cgImage: cgImage)
     }
     
-    /**
-     * Add the opacity to the image.
-     * - parameter opacity: The opacity.
-     * - returns: The image with opacity.
-     */
+    /// Add the opacity to the image.
+    ///
+    /// - Parameter opacity: The opacity.
+    /// - Returns: The image with opacity.
     public func setOpacity(_ opacity: Double) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         draw(at: .zero, blendMode: .normal, alpha: CGFloat(opacity))
@@ -64,10 +57,9 @@ public extension UIImage {
         return image
     }
 
-    /**
-     * Crop an image into a square one.
-     * - returns: The cropped image.
-     */
+    /// Crop an image into a square one.
+    ///
+    /// - Returns: The cropped image.
     public func cropSquare() -> UIImage {
         let width = size.width
         let height = size.height
@@ -88,11 +80,10 @@ public extension UIImage {
         return UIImage(cgImage: outputImage)
     }
 
-    /**
-     * Compress an image with a maximum size provided.
-     * - parameter maxSize: The max size of the new image.
-     * - returns: The compressed image.
-     */
+    /// Compress an image with a maximum size provided.
+    ///
+    /// - Parameter maxSize: The max size of the new image.
+    /// - Returns: The compressed image.
     public func compress(withMaxSize maxSize: Int) -> UIImage {
         guard let imageData = UIImageJPEGRepresentation(self, 1) else {
             Logger.standard.logError(UIImage.inputImageError)
@@ -112,11 +103,11 @@ public extension UIImage {
         return image
     }
 
-    /**
-     * Resize the image
-     * - parameter width: The new width.
-     * - parameter height: The new height.
-     */
+    /// Resize the image
+    ///
+    /// - Parameters:
+    ///   - width: The new width.
+    ///   - height: The new height.
     public func resize(toWidth width: Double, toHeight height: Double) -> UIImage {
         let size = CGSize(width: width, height: height)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)

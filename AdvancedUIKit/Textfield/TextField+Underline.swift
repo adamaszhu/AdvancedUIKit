@@ -1,24 +1,17 @@
-/**
- * TextField+Underline add underline support for a text field.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 05/06/2017
- */
+/// TextField+Underline add underline support for a text field.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 05/06/2017
 public extension UITextField {
     
-    /**
-     * The default height of the underline.
-     */
+    /// The default height of the underline.
     private static let defaultUnderlineHeight = CGFloat(1)
     
-    /**
-     * System error.
-     */
+    /// System error.
     private static let activationError = "The underline has been activated."
     
-    /**
-     * The underline view.
-     */
+    /// The underline view.
     internal var underlineView: UnderlineView? {
         for view in subviews {
             if let underlineView = view as? UnderlineView {
@@ -28,11 +21,11 @@ public extension UITextField {
         return nil
     }
     
-    /**
-     * Activate the underline view.
-     * - parameter color: The normal color of the underline.
-     * - parameter highlightedColor: The highlighted color of the underline.
-     */
+    /// Activate the underline view.
+    ///
+    /// - Parameters:
+    ///   - color: The normal color of the underline.
+    ///   - highlightedColor: The highlighted color of the underline.
     public func activateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
         guard underlineView == nil else {
             Logger.standard.logError(UITextField.activationError)
@@ -47,9 +40,7 @@ public extension UITextField {
         addTarget(self, action: #selector(finishEditing), for: .editingDidEnd)
     }
     
-    /**
-     * Deactivate the underline view.
-     */
+    /// Deactivate the underline view.
     public func deactivateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
         guard let underlineView = underlineView else {
             Logger.standard.logError(UITextField.activationError)
@@ -58,16 +49,12 @@ public extension UITextField {
         underlineView.removeFromSuperview()
     }
     
-    /**
-     * Start editing and highlight the underline view.
-     */
+    /// Start editing and highlight the underline view.
     func startEditing() {
         underlineView?.isHighlighted = true
     }
     
-    /**
-     * Finish the editing and dehighlight the underline view.
-     */
+    /// Finish the editing and dehighlight the underline view.
     func finishEditing() {
         underlineView?.isHighlighted = false
     }

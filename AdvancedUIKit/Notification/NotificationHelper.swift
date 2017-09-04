@@ -1,29 +1,20 @@
-/**
- * NotificationHelper is used to manage the notification.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 02/06/2017
- */
+/// NotificationHelper is used to manage the notification.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 02/06/2017
 public class NotificationHelper {
     
-    /**
-     * All messages.
-     */
+    /// All messages.
     private static let authorizationError = "AuthorizationError"
     
-    /**
-     * The system error.
-     */
+    /// The system error.
     private static let notificationSettingError = "The notification setting cannot be retrieved."
     
-    /**
-     * The singleton helper.
-     */
+    /// The singleton helper.
     public static var shared: NotificationHelper = NotificationHelper()
     
-    /**
-     * Whether the local notification is authorized or not.
-     */
+    /// Whether the local notification is authorized or not.
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
     public var isLocalNotificationAuthorized: Bool {
         // TODO: Implement this using the NSNotification framework.
@@ -34,29 +25,23 @@ public class NotificationHelper {
         return setting.types.contains(.alert)
     }
     
-    /**
-     * Whether the remote notification is authorized or not.
-     */
+    /// Whether the remote notification is authorized or not.
     public var isRemoteNotificationAuthorized: Bool {
         return application.isRegisteredForRemoteNotifications
     }
     
-    /**
-     * The delegate.
-     */
+    /// The delegate.
     public var notificationHelperDelegate: NotificationHelperDelegate?
     
-    /**
-     * The application object.
-     */
+    /// The application object.
     private var application: UIApplication
     
-    /**
-     * Post a local notification.
-     * - parameter title: The title of the notification.
-     * - parameter content: The content of the notification.
-     * - parameter soundName: The name of the sound.
-     */
+    /// Post a local notification.
+    ///
+    /// - Parameters:
+    ///   - title: The title of the notification.
+    ///   - content: The content of the notification.
+    ///   - soundName: The name of the sound.
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
     public func createLocalNotification(withTitle title: String, withContent content: String, withSoundName soundName: String = UILocalNotificationDefaultSoundName) {
         // TODO: Implement this using the NSNotification framework.
@@ -75,9 +60,7 @@ public class NotificationHelper {
         application.scheduleLocalNotification(notification)
     }
     
-    /**
-     * Register the local notification function.
-     */
+    /// Register the local notification function.
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
     public func authorizeLocalNotification() {
         // TODO: Implement this using the NSNotification framework.
@@ -92,10 +75,9 @@ public class NotificationHelper {
     
     // TODO: Register remote notification
     
-    /**
-     * Initialize the object.
-     * - parameter application: The application that the notification belongs to.
-     */
+    /// Initialize the object.
+    ///
+    /// - Parameter application: The application that the notification belongs to.
     private init(application: UIApplication = UIApplication.shared) {
         self.application = application
     }

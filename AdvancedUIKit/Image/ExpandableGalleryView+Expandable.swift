@@ -1,14 +1,11 @@
-/**
- * ExpandableGalleryView+Expandable defines what an expandable gallery view should do.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 19/06/2017
- */
+/// ExpandableGalleryView+Expandable defines what an expandable gallery view should do.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 19/06/2017
 extension ExpandableGalleryView: ExpandableView {
     
-    /**
-     * Expand the frame with animation
-     */
+    /// Expand the frame with animation
     private func expandFrame() {
         guard let window = window else {
             Logger.standard.logError(ExpandableGalleryView.windowError)
@@ -31,9 +28,7 @@ extension ExpandableGalleryView: ExpandableView {
         })
     }
     
-    /**
-     * Add background color with animation.
-     */
+    /// Add background color with animation.
     private func addBackground() {
         animate(withChange: { [unowned self] _ in
             self.currentGalleryImage?.imageView.backgroundColor = .black
@@ -42,9 +37,7 @@ extension ExpandableGalleryView: ExpandableView {
         }
     }
     
-    /**
-     * Collapse the frame with animation
-     */
+    /// Collapse the frame with animation
     private func collapseFrame() {
         guard let window = window else {
             Logger.standard.logError(ExpandableGalleryView.windowError)
@@ -65,9 +58,7 @@ extension ExpandableGalleryView: ExpandableView {
         })
     }
     
-    /**
-     * Remove the background color with animation.
-     */
+    /// Remove the background color with animation.
     private func removeBackgroundColor() {
         animate(withChange: { [unowned self] _ in
             self.currentGalleryImage?.imageView.backgroundColor = .clear
@@ -77,10 +68,9 @@ extension ExpandableGalleryView: ExpandableView {
         }
     }
     
-    /**
-     * Set the background color of all subvies.
-     * - parameter color: The color to be settled.
-     */
+    /// Set the background color of all subvies.
+    ///
+    /// - Parameter color: The color to be settled.
     private func setBackgroundColor(_ color: UIColor) {
         let subviews = self.subviews.map{ (subview) in
             subview as? GalleryImage
@@ -90,9 +80,6 @@ extension ExpandableGalleryView: ExpandableView {
         }
     }
     
-    /**
-     * ExpandableView
-     */
     public var isExpanded: Bool {
         guard superview != nil else {
             Logger.standard.logError(ExpandableGalleryView.superviewError)
@@ -101,9 +88,6 @@ extension ExpandableGalleryView: ExpandableView {
         return superview == window
     }
     
-    /**
-     * ExpandableView
-     */
     public func expand() {
         guard !isExpanded && isExpandable else {
             Logger.standard.logWarning(ExpandableGalleryView.expandWarning)
@@ -112,9 +96,6 @@ extension ExpandableGalleryView: ExpandableView {
         expandFrame()
     }
     
-    /**
-     * ExpandableView
-     */
     public func collapse() {
         guard isExpanded && isExpandable else {
             Logger.standard.logWarning(ExpandableGalleryView.collapseWarning)
