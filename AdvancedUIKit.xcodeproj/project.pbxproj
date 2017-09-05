@@ -121,6 +121,8 @@
 		425DCD141EB3689000A0ED26 /* View+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD131EB3689000A0ED26 /* View+Gesture.swift */; };
 		425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD151EB36EA100A0ED26 /* String+Localizer.swift */; };
 		425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD4C1EAC6EDB001F1F81 /* RootView.swift */; };
+		4260E16A1F5EC1E400A5A5EC /* AdvancedFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4260E1681F5EC1E400A5A5EC /* AdvancedFoundation.framework */; };
+		4260E16B1F5EC1E400A5A5EC /* AdvancedFoundation.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 4260E1691F5EC1E400A5A5EC /* AdvancedFoundation.framework.dSYM */; };
 		42621F391EF9206000907066 /* ExpandableView+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42621F381EF9206000907066 /* ExpandableView+Action.swift */; };
 		4266037C1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4266037B1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift */; };
 		426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939751EAB01CD00761FDE /* Label+Dynamic.swift */; };
@@ -329,6 +331,8 @@
 		425DCD131EB3689000A0ED26 /* View+Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Gesture.swift"; sourceTree = "<group>"; };
 		425DCD151EB36EA100A0ED26 /* String+Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localizer.swift"; sourceTree = "<group>"; };
 		425EAD4C1EAC6EDB001F1F81 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		4260E1681F5EC1E400A5A5EC /* AdvancedFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdvancedFoundation.framework; path = Frameworks/AdvancedFoundation.framework; sourceTree = "<group>"; };
+		4260E1691F5EC1E400A5A5EC /* AdvancedFoundation.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = AdvancedFoundation.framework.dSYM; path = Frameworks/AdvancedFoundation.framework.dSYM; sourceTree = "<group>"; };
 		42621F381EF9206000907066 /* ExpandableView+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExpandableView+Action.swift"; sourceTree = "<group>"; };
 		4266037B1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+KeyboardHelperDelegate.swift"; sourceTree = "<group>"; };
 		426939751EAB01CD00761FDE /* Label+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Dynamic.swift"; sourceTree = "<group>"; };
@@ -394,6 +398,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4260E16A1F5EC1E400A5A5EC /* AdvancedFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -957,6 +962,8 @@
 		CBAC1959A0FE1FE370BF95C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4260E1681F5EC1E400A5A5EC /* AdvancedFoundation.framework */,
+				4260E1691F5EC1E400A5A5EC /* AdvancedFoundation.framework.dSYM */,
 				2846A9A81EE7C55C007D4226 /* MapKit.framework */,
 				EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */,
 			);
@@ -1091,6 +1098,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2822A3441EE127F900FAA8E3 /* NotificationHelper.strings in Resources */,
+				4260E16B1F5EC1E400A5A5EC /* AdvancedFoundation.framework.dSYM in Resources */,
 				2846A9931EE7B8CC007D4226 /* LocationHelper.strings in Resources */,
 				426939941EAB8EE000761FDE /* DataPicker.strings in Resources */,
 				422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */,
@@ -1553,6 +1561,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = AdvancedUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1575,6 +1587,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = AdvancedUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
