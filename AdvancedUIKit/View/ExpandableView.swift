@@ -1,54 +1,35 @@
-/**
- * ExpandableView defines what an expandable view should do.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 19/06/2017
- */
+/// ExpandableView defines what an expandable view should do.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 19/06/2017
 protocol ExpandableView: class {
     
-    /**
-     * The original superview.
-     */
+    /// The original superview.
     var originalSuperview: UIView! { get set }
     
-    /**
-     * The original z Index.
-     */
+    /// The original z Index.
     var originalZIndex: Int! { get set }
     
-    /**
-     * The origin frame in origin view.
-     */
+    /// The origin frame in origin view.
     var originalFrame: CGRect! { get set }
     
-    /**
-     * The original frame related constraints on the superview.
-     */
+    /// The original frame related constraints on the superview.
     var originalFrameConstraints: Array<NSLayoutConstraint>! { get set }
     
-    /**
-     * The original constraints.
-     */
+    /// The original constraints.
     var originalConstraints: Array<NSLayoutConstraint>! { get set }
     
-    /**
-     * Whether the view can be expanded or not.
-     */
+    /// Whether the view can be expanded or not.
     var isExpandable: Bool { get set }
     
-    /**
-     * Whether the view is expanded or not.
-     */
+    /// Whether the view is expanded or not.
     var isExpanded: Bool { get }
     
-    /**
-     * Expand the view.
-     */
+    /// Expand the view.
     func expand()
     
-    /**
-     * Collapse the view.
-     */
+    /// Collapse the view.
     func collapse()
     
 }

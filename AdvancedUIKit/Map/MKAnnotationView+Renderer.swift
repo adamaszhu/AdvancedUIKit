@@ -1,20 +1,16 @@
-/**
- * MKAnnotationView+Renderer renders a point.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 07/06/2017
- */
+/// MKAnnotationView+Renderer renders a point.
+/// 
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 07/06/2017
 extension MKAnnotationView {
     
-    /**
-     * The size of the detail button.
-     */
+    /// The size of the detail button.
     private static let defaultDetailButtonSize = CGFloat(30)
     
-    /**
-     * Render the annotation.
-     * - parameter point: The point presented by the view.
-     */
+    /// Render the annotation.
+    /// 
+    /// - Parameter point: The point presented by the view.
     func render(_ point: MapViewPoint) {
         if let icon = point.icon {
             image = point.icon

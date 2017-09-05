@@ -1,39 +1,26 @@
-/**
- * GalleryView is used to display a list of images.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 11/06/2017
- */
+/// GalleryView is used to display a list of images.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 11/06/2017
 public class GalleryView: PageView {
     
-    /**
-     * System error.
-     */
+    /// System error.
     static let subviewTypeError = "A subview is not a GalleryImage."
     
-    /**
-     * The maximal zoom level of an image.
-     */
+    /// The maximal zoom level of an image.
     private static let defaultMaxZoomLevel = CGFloat(8)
     
-    /**
-     * The image content mode.
-     */
+    /// The image content mode.
     private static let defaultImageMode = UIViewContentMode.scaleAspectFit
     
-    /**
-     * The mode of the images displayed.
-     */
+    /// The mode of the images displayed.
     public var imageMode: UIViewContentMode
     
-    /**
-     * The max zoom level.
-     */
+    /// The max zoom level.
     public var maxZoomLevel: CGFloat
     
-    /**
-     * The images presented.
-     */
+    /// The images presented.
     public var images: Array<UIImage> {
         set {
             removeAllViews()
@@ -49,16 +36,12 @@ public class GalleryView: PageView {
         }
     }
     
-    /**
-     * The image presented.
-     */
+    /// The image presented.
     public var currentImage: UIImage? {
         return currentGalleryImage?.image
     }
     
-    /**
-     * The gallery image presented.
-     */
+    /// The gallery image presented.
     var currentGalleryImage: GalleryImage? {
         guard let galleryImage = currentPage as? GalleryImage else {
             Logger.standard.logError(GalleryView.subviewTypeError)
@@ -67,9 +50,7 @@ public class GalleryView: PageView {
         return galleryImage
     }
     
-    /**
-     * The size of the GalleryView
-     */
+    /// The size of the GalleryView
     var imageSize: CGSize {
         set {
             for index in 0 ..< subviews.count {
@@ -88,10 +69,9 @@ public class GalleryView: PageView {
         }
     }
     
-    /**
-     * Add an image to the view.
-     * - parameter image: The image to be added.
-     */
+    /// Add an image to the view.
+    ///
+    /// - Parameter image: The image to be added.
     public func add(image: UIImage) {
         let galleryImage = GalleryImage()
         galleryImage.image = image
@@ -100,32 +80,25 @@ public class GalleryView: PageView {
         add(galleryImage)
     }
     
-    /**
-     * Refresy an image to the view.
-     * - parameter index: The index of the new image.
-     * - parameter image: The image. Any object other than UIImage object will be replaced by a default image.
-     */
+    /// Refresh an image to the view.
+    ///
+    /// - Parameters:
+    ///   - index: The index of the new image.
+    ///   - image: The image. Any object other than UIImage object will be replaced by a default image.
     public func refresh(_ image: UIImage, atIndex index: Int) {
         currentGalleryImage?.image = image
     }
     
-    /**
-     * Show previous image
-     */
+    /// Show previous image
     public func showPreviousImage() {
         switchToPreviousPage()
     }
     
-    /**
-     * Show next image
-     */
+    /// Show next image
     public func showNextImage() {
         switchToNextPage()
     }
     
-    /**
-     * UIView
-     */
     public required init?(coder aDecoder: NSCoder) {
         imageMode = GalleryView.defaultImageMode
         maxZoomLevel = GalleryView.defaultMaxZoomLevel

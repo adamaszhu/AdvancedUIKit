@@ -1,20 +1,15 @@
-/**
- * ImageView+Measurer is used to scale the image according to the resolution of the image.
- * - author: Adamas
- * - date: 23/10/2016
- * - version: 0.0.2
- */
+/// ImageView+Measurer is used to scale the image according to the resolution of the image.
+///
+/// - author: Adamas
+/// - date: 23/10/2016
+/// - version: 1.0.0
 public extension UIImageView {
     
-    /**
-     * System messages.
-     */
+    /// System messages.
     private static let imageError = "No image has been allocated to the image view yet."
     private static let contentModeError = "The content mode has not been supported yet."
     
-    /**
-     * Calculate the real frame if the image within the UIImageView.
-     */
+    /// Calculate the real frame if the image within the UIImageView.
     public var imageFrame: CGRect? {
         guard let image = image else {
             Logger.standard.logError(UIImageView.imageError)

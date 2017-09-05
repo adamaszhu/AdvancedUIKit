@@ -1,4 +1,5 @@
 /// InfiniteList is a list that can load infinite items.
+///
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 21/06/2017
@@ -62,8 +63,10 @@ public class InfiniteList: UITableView {
     }
     
     /// Define the nib file used to render an item cell.
-    /// - parameter nib: The nib file.
-    /// - parameter type: The item cell type.
+    ///
+    /// - Parameters:
+    ///   - nib: The nib file.
+    ///   - type: The item cell type.
     public func register(_ type: InfiniteCell.Type, with nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
@@ -78,7 +81,8 @@ public class InfiniteList: UITableView {
     }
     
     /// Register the empty state view for the InfiniteList.
-    /// - parameter nib: The nib file containing the view.
+    ///
+    /// - Parameter nib: The nib file containing the view.
     public func registerEmptyState(_ nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
@@ -129,8 +133,9 @@ public class InfiniteList: UITableView {
     }
     
     /// Find the cell type for a specific cell.
-    /// - parameter type: The type of the cell.
-    /// - returns: Found cell type. Nil if it is not found.
+    ///
+    /// - Parameter type: The type of the cell.
+    /// - Returns: Found cell type. Nil if it is not found.
     func cellType(for type: InfiniteCell.Type) -> InfiniteCellType? {
         for cellType in cellTypes {
             if cellType.type == type {
@@ -141,14 +146,12 @@ public class InfiniteList: UITableView {
         return nil
     }
     
-    /// UIView
     public override func didMoveToWindow() {
         super.didMoveToWindow()
         addReloadingBar()
         addLoadingMoreBar()
     }
     
-    /// UIView
     public required init?(coder aDecoder: NSCoder) {
         items = []
         cellTypes = []

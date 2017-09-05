@@ -1,14 +1,11 @@
-/**
- * View+Constraint provides additional support to manipulate the constraint.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 09/06/2017
- */
+/// View+Constraint provides additional support to manipulate the constraint.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 09/06/2017
 public extension UIView {
     
-    /**
-     * The constraints related to the frame of the view. These constraints is usually added to superview.
-     */
+    /// The constraints related to the frame of the view. These constraints is usually added to superview.
     public var frameConstraints: Array<NSLayoutConstraint> {
         var frameConstraints = Array<NSLayoutConstraint>()
         if let superview = superview {

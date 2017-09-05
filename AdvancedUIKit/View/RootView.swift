@@ -1,59 +1,39 @@
-/**
- * RootView is the root view of all customized view. It provides show and hide control and initialization control.
- * - author: Adamas
- * - date: 23/04/2017
- * - version: 1.0.0
- */
+/// RootView is the root view of all customized view. It provides show and hide control and initialization control.
+///
+/// - author: Adamas
+/// - date: 23/04/2017
+/// - version: 1.0.0
 open class RootView: UIView {
     
-    /**
-     * System warning.
-     */
+    /// System warning.
     static let showWarning = "The view has already been shown."
     static let hideWarning = "The view has already been hidden."
     
-    /**
-     * Whether the view is visible or not.
-     */
+    /// Whether the view is visible or not.
     public var isVisible: Bool
     
-    /**
-     * The original frame of the view.
-     */
+    /// The original frame of the view.
     private (set) var originalFrame: CGRect
     
-    /**
-     * Whether the view has been initialized or not.
-     */
+    /// Whether the view has been initialized or not.
     private var isInitialized: Bool
     
-    /**
-     * Show the view.
-     */
+    /// Show the view.
     open func show() {
         isVisible = true
     }
     
-    /**
-     * Hide the view.
-     */
+    /// Hide the view.
     open func hide() {
         isVisible = false
     }
     
-    /**
-     * Initialize the view.
-     */
+    /// Initialize the view.
     open func initialize() {}
     
-    /**
-     * Render the views inside right after being allocated the frame.
-     */
+    /// Render the views inside right after being allocated the frame.
     open func render() {}
     
-    /**
-     * UIView
-     */
     public required init?(coder aDecoder: NSCoder) {
         isInitialized = false
         isVisible = true
@@ -62,9 +42,6 @@ open class RootView: UIView {
         initialize()
     }
     
-    /**
-     * UIView
-     */
     public override init(frame: CGRect) {
         isInitialized = false
         isVisible = true
@@ -73,9 +50,6 @@ open class RootView: UIView {
         initialize()
     }
     
-    /**
-     * UIView
-     */
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
         if isInitialized {

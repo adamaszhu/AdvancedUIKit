@@ -1,14 +1,10 @@
-/**
- * LocationHelper+LocationManagerDelegate wrap the action of a CLLocationManagerDelegate
- * - author: Adamas
- * - version: 1.0.0
- * - date: 04/05/2017
- */
+/// LocationHelper+LocationManagerDelegate wrap the action of a CLLocationManagerDelegate
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 04/05/2017
 extension LocationHelper: CLLocationManagerDelegate {
     
-    /**
-     * CLLocationManagerDelegate
-     */
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch authorizingStatus {
         case .authorizedAlways:
@@ -20,6 +16,7 @@ extension LocationHelper: CLLocationManagerDelegate {
         }
         authorizingStatus = .notDetermined
     }
+    
 }
 
 import CoreLocation

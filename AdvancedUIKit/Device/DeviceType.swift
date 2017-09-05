@@ -1,9 +1,8 @@
-/**
- * DeviceType is the type of the device.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 29/05/2017
- */
+/// DeviceType is the type of the device.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 29/05/2017
 public enum DeviceType: String {
     
     case phone = "Phone"
