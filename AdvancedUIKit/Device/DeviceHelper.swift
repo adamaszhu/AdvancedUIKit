@@ -59,7 +59,7 @@ public class DeviceHelper: NSObject {
     public func email(toAddress address: String,
                       withSubject subject: String,
                       withContent content: String,
-                      withAttachments attachments: Dictionary<String, Data> = [:],
+                      withAttachments attachments: [String: Data] = [:],
                       asHTMLContent isHTML: Bool = false) {
         let mailViewController = MFMailComposeViewController()
         mailViewController.mailComposeDelegate = self
