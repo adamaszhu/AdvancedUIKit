@@ -1,42 +1,26 @@
-/**
- * FileInfoAccessor gets information related to a file.
- * - author: Adamas
- * - version: 1.0.1
- * - date: 16/04/2017
- */
+/// FileInfoAccessor gets information related to a file.
+///
+/// - author: Adamas
+/// - version: 1.1.0
+/// - date: 12/07/2017
 class FileInfoAccessor {
     
-    /**
-     * System error.
-     */
-    private static let mimeTypeError = "The filename extension is not recognized."
+    /// The default MIME type.
+    private static let defaultMIMEType = "application/octet-stream"
     
-    /**
-     * The default MIME type.
-     */
-    private let defaultMIMEType = "application/octet-stream"
-    
-    /**
-     * Get the MIME type of the file.
-     */
-    var mimeType: String? {
+    /// Get the MIME type of the file.
+    var mimeType: String {
         guard !fileExtension.isEmpty else {
-            return defaultMIMEType
+            return FileInfoAccessor.defaultMIMEType
         }
-        // COMMENT: Decode the name of the MIME type.
-        guard let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExtension as CFString, nil) else {
-            Logger.standard.logError(FileInfoAccessor.mimeTypeError, withDetail: url)
-            return nil
-        }
-        guard let tag = UTTypeCopyPreferredTagWithClass(uti.takeRetainedValue(), kUTTagClassMIMEType) else {
-            return defaultMIMEType
+        // Decode the name of the MIME type.
+        guard let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExtension as CFString, nil), let tag = UTTypeCopyPreferredTagWithClass(uti.takeRetainedValue(), kUTTagClassMIMEType) else {
+            return FileInfoAccessor.defaultMIMEType
         }
         return tag.takeRetainedValue() as String
     }
     
-    /**
-     * Get the file name.
-     */
+    /// Get the file name.
     var filename: String {
         let lastPathComponent = url.lastPathComponent
         guard !fileExtension.isEmpty else {
@@ -47,22 +31,17 @@ class FileInfoAccessor {
         return lastPathComponent.substring(to: fileExtensionIndex)
     }
     
-    /**
-     * Get the file extension.
-     */
+    /// Get the file extension.
     var fileExtension: String {
         return url.pathExtension
     }
     
-    /**
-     * The url object of the file.
-     */
+    /// The url object of the file.
     private let url: URL
     
-    /**
-     * Initialize the object.
-     * - parameter path: The path of the file.
-     */
+    /// Initialize the object.
+    ///
+    /// - Parameter path: The path of the file.
     init(path: String) {
         url = URL(fileURLWithPath: path)
     }
