@@ -13,7 +13,7 @@ public extension UILabel {
         guard lineAmount != 0 else {
             return frame.origin
         }
-        // COMMENT: If lastLine is nil, then the logic should be fixed.
+        // If lastLine is nil, then the logic should be fixed.
         let lastLine = text!.measureLines(withFont: font, inView: self).last!
         let lastLineLength = lastLine.measureWidth(withFont: font)
         let offsetX = lastLineLength

@@ -13,7 +13,7 @@ extension UIView {
                 return gestureFilterView
             }
         }
-        // COMMENT: The view doesn't exist.
+        // The view doesn't exist.
         let gestureFilterView = GestureFilterView(frame: bounds)
         addSubview(gestureFilterView)
         return gestureFilterView

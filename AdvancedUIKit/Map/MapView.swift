@@ -56,7 +56,7 @@ public class MapView: MKMapView {
         let centerLongitude = (leftLongitude + rightLongitude) / 2
         var latitudeDelta = topLatitude - bottomLatitude
         var longitudeDelta = rightLongitude - leftLongitude
-        // COMMENT: Change ratio according to the ratio of the view.
+        // Change ratio according to the ratio of the view.
         let ratio = Double(frame.size.height / frame.size.width)
         if ((latitudeDelta / longitudeDelta) > ratio) {
             longitudeDelta = latitudeDelta / ratio
@@ -141,7 +141,7 @@ public class MapView: MKMapView {
     public func showUserLocation(withZoomLevel zoomLevel: Double = defaultUserLocationMargin) {
         requestUserLocation()
         guard showsUserLocation else {
-            // COMMENT: The authorization is declined.
+            // The authorization is declined.
             return
         }
         let userLocationCoordinate = userLocation.coordinate

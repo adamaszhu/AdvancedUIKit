@@ -60,7 +60,7 @@ public class RingHelper {
             return false
         }
         let url = URL(fileURLWithPath: path)
-        // COMMENT: Register the customized sound.
+        // Register the customized sound.
         var newSoundID = SystemSoundID(0)
         AudioServicesCreateSystemSoundID(url as CFURL, &newSoundID)
         guard newSoundID != 0 else {

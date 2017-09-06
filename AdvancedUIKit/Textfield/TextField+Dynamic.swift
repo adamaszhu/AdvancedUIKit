@@ -33,7 +33,7 @@ public extension UITextField {
     
     /// The actual height of the text.
     public var actualHeight: CGFloat {
-        // COMMENT: If it will be changed to multiple line in the future, a default line space around 5 should be considered.
+        // If it will be changed to multiple line in the future, a default line space around 5 should be considered.
         return lineHeight
     }
     

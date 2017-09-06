@@ -81,8 +81,8 @@ extension String {
         var lines = [String]()
         var remainLine = self
         while !remainLine.isEmpty {
-            // COMMENT: Extract a line from the beginning of the remainLine. For better performance, words seperating strategy is considered prior to character seperating strategy.
-            // COMMENT: Extract a line containing several words from the beginning of the remainLine.
+            // Extract a line from the beginning of the remainLine. For better performance, words seperating strategy is considered prior to character seperating strategy.
+            // Extract a line containing several words from the beginning of the remainLine.
             var words = remainLine.components(separatedBy: .whitespaces)
             var width = words.joined(separator: " ").measureWidth(withFont: font)
             while (width > view.frame.width) && (words.count > 1) {
@@ -92,20 +92,20 @@ extension String {
             if width <= view.frame.width {
                 let line = words.joined(separator: " ")
                 lines.append(line)
-                // COMMENT: remainLine must have the line extracted.
+                // remainLine must have the line extracted.
                 remainLine.remove(prefix: line)
-                // COMMENT: If the remainLine is not empty, remove the space between current line and the next line.
+                // If the remainLine is not empty, remove the space between current line and the next line.
                 remainLine.remove(prefix: " ")
                 continue
             }
-            // COMMENT: Extra a line from a extra long word from the beginning of the remainLine. Only one word is left.
+            // Extra a line from a extra long word from the beginning of the remainLine. Only one word is left.
             var word = words.first!
             while width > view.frame.width {
                 word = word.substring(to: word.index(word.endIndex, offsetBy: -1))
                 width = word.measureWidth(withFont: font)
             }
             lines.append(word)
-            // COMMENT: remainLine must have the line extracted.
+            // remainLine must have the line extracted.
             remainLine.remove(prefix: word)
         }
         return lines

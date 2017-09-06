@@ -18,7 +18,7 @@ class ActionFilterView: UIView {
         for inputView in inputViews {
             let inputViewFrame = convert(inputView.frame, from: inputView.superview)
             guard !inputViewFrame.contains(point) else {
-                // COMMENT: Ignore the touch within an input component.
+                // Ignore the touch within an input component.
                 return false
             }
         }

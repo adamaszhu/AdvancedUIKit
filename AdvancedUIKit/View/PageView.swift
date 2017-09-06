@@ -87,10 +87,10 @@ public class PageView: UIScrollView {
             return
         }
         if (index <= currentPageIndex) && (currentPageIndex != 0)  {
-            // COMMENT: While removing the page before current page.
+            // While removing the page before current page.
             switchToPage(withIndex: currentPageIndex - 1, withAnimation: false)
         }
-        // COMMENT: Adjust all views after the removed view.
+        // Adjust all views after the removed view.
         for laterIndex in index + 1 ..< pageControl.numberOfPages {
             subviews[laterIndex].frame.origin = CGPoint(x: subviews[laterIndex].frame.origin.x - frame.width, y: 0)
         }
@@ -161,11 +161,11 @@ public class PageView: UIScrollView {
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
         if pageControlButtomMargin == frame.height {
-            // COMMENT: The default margin will be used if the margin hasn't been settled.
+            // The default margin will be used if the margin hasn't been settled.
             pageControlButtomMargin = PageView.defaultPageControlButtomMargin
         }
         pageControl.frame = CGRect(x: (frame.width - pageControl.frame.width) / 2, y: frame.height - pageControl.frame.height - pageControlButtomMargin, width: pageControl.frame.width, height: pageControl.frame.height)
-        // COMMENT: Refresh all subviews
+        // Refresh all subviews
         for index in 0 ..< subviews.count {
             subviews[index].frame = CGRect(x: CGFloat(index) * frame.width, y: 0, width: frame.width, height: frame.height)
         }

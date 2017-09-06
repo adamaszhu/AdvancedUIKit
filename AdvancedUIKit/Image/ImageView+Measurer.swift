@@ -22,21 +22,21 @@ public extension UIImageView {
         switch contentMode {
         case .scaleAspectFit:
             if imageRatio > viewRatio {
-                // COMMENT: Fit by width.
+                // Fit by width.
                 imageHeight = frame.size.width / imageRatio
                 imageWidth = frame.size.width
             } else {
-                // COMMENT: Fit by height.
+                // Fit by height.
                 imageWidth = imageRatio * frame.size.height
                 imageHeight = frame.size.height
             }
         case .scaleAspectFill:
             if imageRatio > viewRatio {
-                // COMMENT: Fit by height.
+                // Fit by height.
                 imageWidth = imageRatio * frame.size.height
                 imageHeight = frame.size.height
             } else {
-                // COMMENT: Fit by width.
+                // Fit by width.
                 imageHeight = frame.size.width / imageRatio
                 imageWidth = frame.size.width
             }

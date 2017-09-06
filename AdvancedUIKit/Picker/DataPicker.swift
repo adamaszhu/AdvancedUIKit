@@ -101,7 +101,7 @@ public class DataPicker: RootView {
             selections.append(columns[index].items[pickerView.selectedRow(inComponent: index)].value)
         }
         dataPickerDelegate?.dataPicker(dataPicker: self, didSelectValue: selections)
-        // COMMENT: Waiting for the view to be refreshed for a button text change.
+        // Waiting for the view to be refreshed for a button text change.
         perform(#selector(hide), with: nil, afterDelay: 0.2)
     }
     

@@ -44,13 +44,13 @@ public class KeyboardHelper: NSObject {
     /// Judge whether the view should be pushed or not according to the position of the text field.
     private var pushOffset: CGFloat {
         guard let currentInputView = currentInputView else {
-            // COMMENT: The keyboard is going to be hide.
+            // The keyboard is going to be hide.
             return 0
         }
         let currentViewFrame = rootView.convert(currentInputView.frame, from: currentInputView.superview)
         let currentViewBottomSpace = rootView.frame.height - currentViewFrame.origin.y - currentViewFrame.size.height
         if currentViewBottomSpace < keyboardHeight {
-            // COMMENT: 30 is the gap between current view and the keyboard after the view being pushed up.
+            // 30 is the gap between current view and the keyboard after the view being pushed up.
             return currentViewBottomSpace - keyboardHeight// - 30
         }
         return 0
@@ -72,7 +72,7 @@ public class KeyboardHelper: NSObject {
     /// Hide the keyboard.
     public func hideKeyboard() {
         currentInputView = nil
-        // COMMENT: No text field has been selected.
+        // No text field has been selected.
         rootView.resignFirstResponder()
         rootView.endEditing(true)
     }
@@ -81,13 +81,13 @@ public class KeyboardHelper: NSObject {
     ///
     /// - Parameter view: The new view.
     func changeInputView(_ view: UIView) {
-        // COMMENT: If previous input view is not nil, then the keyboard is shown. As a result, the view should adjusted.
+        // If previous input view is not nil, then the keyboard is shown. As a result, the view should adjusted.
         let shouldAdjustOffset = currentInputView != nil
         currentInputView = view
         if actionFilterView.superview != nil {
-            // COMMENT: The keyboard push has been activated. So wait to see if the frame of the keyboard will be changed or not.
+            // The keyboard push has been activated. So wait to see if the frame of the keyboard will be changed or not.
             if shouldAdjustOffset {
-                // COMMENT: Make this specify to iOS 8 and below, since willShowKeyboard won't be called if the keyboard keeps the same in iOS 8 and below.
+                // Make this specify to iOS 8 and below, since willShowKeyboard won't be called if the keyboard keeps the same in iOS 8 and below.
                 perform(#selector(adjustOffset), with: nil, afterDelay: 0.2)
             }
         }
