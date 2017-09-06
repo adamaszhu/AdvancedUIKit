@@ -67,8 +67,6 @@
 		28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */; };
 		28B1D8101EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */; };
 		28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B524F81EEA14970051E8D2 /* View+Constraint.swift */; };
-		28BC1B381F5FE26800C74DA2 /* AdvancedFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC1B361F5FE26800C74DA2 /* AdvancedFoundation.framework */; };
-		28BC1B391F5FE26800C74DA2 /* AdvancedFoundation.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 28BC1B371F5FE26800C74DA2 /* AdvancedFoundation.framework.dSYM */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
 		28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		28D1BFF81EDCEC7300290999 /* AdvancedUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -272,8 +270,6 @@
 		28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnderlineView.swift; path = AdvancedUIKit/Textfield/UnderlineView.swift; sourceTree = SOURCE_ROOT; };
 		28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+ActionFilterViewDelegate.swift"; sourceTree = "<group>"; };
 		28B524F81EEA14970051E8D2 /* View+Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Constraint.swift"; sourceTree = "<group>"; };
-		28BC1B361F5FE26800C74DA2 /* AdvancedFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdvancedFoundation.framework; path = Frameworks/AdvancedFoundation.framework; sourceTree = "<group>"; };
-		28BC1B371F5FE26800C74DA2 /* AdvancedFoundation.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = AdvancedFoundation.framework.dSYM; path = Frameworks/AdvancedFoundation.framework.dSYM; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		28D1BFFC1EDCF1B900290999 /* DeviceViewController+DeviceHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceViewController+DeviceHelperDelegate.swift"; sourceTree = "<group>"; };
 		28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PickerViewController+DataPickerDelegate.swift"; sourceTree = "<group>"; };
@@ -398,7 +394,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28BC1B381F5FE26800C74DA2 /* AdvancedFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,8 +957,6 @@
 		CBAC1959A0FE1FE370BF95C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				28BC1B361F5FE26800C74DA2 /* AdvancedFoundation.framework */,
-				28BC1B371F5FE26800C74DA2 /* AdvancedFoundation.framework.dSYM */,
 				2846A9A81EE7C55C007D4226 /* MapKit.framework */,
 				EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */,
 			);
@@ -1098,7 +1091,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2822A3441EE127F900FAA8E3 /* NotificationHelper.strings in Resources */,
-				28BC1B391F5FE26800C74DA2 /* AdvancedFoundation.framework.dSYM in Resources */,
 				2846A9931EE7B8CC007D4226 /* LocationHelper.strings in Resources */,
 				426939941EAB8EE000761FDE /* DataPicker.strings in Resources */,
 				422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */,
