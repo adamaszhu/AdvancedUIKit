@@ -1,66 +1,61 @@
-/**
- * String+Measurer add additional support for displaying a string on the screen.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 22/04/2017
- */
+/// String+Measurer add additional support for displaying a string on the screen.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 22/04/2017
 extension String {
     
-    /**
-     * System warning.
-     */
+    /// System warning.
     private static let viewWidthWarning = "The width of the view is 0."
     
-    /**
-     * Get the width of a string with a specific font.
-     * - parameter font: The font.
-     * - returns: The width.
-     */
+    /// Get the width of a string with a specific font.
+    ///
+    /// - Parameter font: The font.
+    /// - Returns: The width.
     func measureWidth(withFont font: UIFont) -> CGFloat {
         return self.size(attributes: [NSFontAttributeName: font]).width
     }
     
-    /**
-     * Get the width of a string with a specific font.
-     * - parameter font: The font.
-     * - returns: The height.
-     */
+    /// Get the width of a string with a specific font.
+    ///
+    /// - Parameter font: The font.
+    /// - Returns: The height.
     func measureHeight(withFont font: UIFont) -> CGFloat {
         return self.size(attributes: [NSFontAttributeName: font]).height
     }
     
-    /**
-     * Get the actual line amount displayed on the screen.
-     * - parameter font: The font that is applied.
-     * - parameter view: The view that text is in.
-     * - returns: The actual line amount displayed on the view.
-     */
+    /// Get the actual line amount displayed on the screen.
+    ///
+    /// - Parameters:
+    ///   - font: The font that is applied.
+    ///   - view: The view that text is in.
+    /// - Returns: The actual line amount displayed on the view.
     func measureLineAmount(withFont font: UIFont, inView view: UIView) -> Int {
         let height = measureHeight(withFont: font, inView: view)
         return Int(height / font.lineHeight)
     }
     
-    /**
-     * Get the actual height of the string displayed on the screen.
-     * - parameter font: The font that is applied.
-     * - parameter view: The view that text is in.
-     * - returns: The actual height displayed on the view.
-     */
+    /// Get the actual height of the string displayed on the screen.
+    ///
+    /// - Parameters:
+    ///   - font: The font that is applied.
+    ///   - view: The view that text is in.
+    /// - Returns: The actual height displayed on the view.
     func measureHeight(withFont font: UIFont, inView view: UIView) -> CGFloat {
         let maxBounds = CGSize(width: view.frame.width, height: .greatestFiniteMagnitude)
         let bounds = self.boundingRect(with: maxBounds, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
         return bounds.height
     }
     
-    /**
-     * Get the actual lines displayed on the screen.
-     * - parameter font: The font that is applied.
-     * - parameter view: The view that text is in.
-     * - returns: The actual lines displayed on the view.
-     */
+    /// Get the actual lines displayed on the screen.
+    ///
+    /// - Parameters:
+    ///   - font: The font that is applied.
+    ///   - view: The view that text is in.
+    /// - Returns: The actual lines displayed on the view.
     func measureLines(withFont font: UIFont, inView view: UIView) -> Array<String> {
         guard view.frame.width != 0 else {
-            Logger.standard.logWarning(String.viewWidthWarning)
+            Logger.standard.log(warning: String.viewWidthWarning)
             return []
         }
         var displayedLines = Array<String>()
@@ -73,12 +68,12 @@ extension String {
         return displayedLines
     }
     
-    /**
-     * Measure lines displayed on the screen for a single line according to the font and view contains it.
-     * - parameter font: The font that is applied.
-     * - parameter view: The view that text is in.
-     * - returns: The actual line amount displayed on the view.
-     */
+    /// Measure lines displayed on the screen for a single line according to the font and view contains it.
+    /// 
+    /// - Parameters:
+    ///   - font: The font that is applied.
+    ///   - view: The view that text is in.
+    /// - Returns: The actual line amount displayed on the view.
     private func measureLine(withFont font: UIFont, inView view: UIView) -> Array<String> {
         guard !isEmpty else {
             return [""]
@@ -98,9 +93,9 @@ extension String {
                 let line = words.joined(separator: " ")
                 lines.append(line)
                 // COMMENT: remainLine must have the line extracted.
-                remainLine.removePrefix(line)
+                remainLine.remove(prefix: line)
                 // COMMENT: If the remainLine is not empty, remove the space between current line and the next line.
-                remainLine.removePrefix(" ")
+                remainLine.remove(prefix: " ")
                 continue
             }
             // COMMENT: Extra a line from a extra long word from the beginning of the remainLine. Only one word is left.
@@ -111,7 +106,7 @@ extension String {
             }
             lines.append(word)
             // COMMENT: remainLine must have the line extracted.
-            remainLine.removePrefix(word)
+            remainLine.remove(prefix: word)
         }
         return lines
     }

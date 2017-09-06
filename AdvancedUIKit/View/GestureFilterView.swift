@@ -1,26 +1,23 @@
-/**
- * GestureFilterView filters the gesture within the view.
- * TODO: Pass invalid gesture to the view below.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 27/05/2017
- */
+/// GestureFilterView filters the gesture within the view.
+/// TODO: Pass invalid gesture to the view below.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 27/05/2017
 class GestureFilterView: UIView {
     
-    /**
-     * System error.
-     */
+    /// System error.
     private static let gestureRecognizersEmptyError = "Gesture recognizers have not been added to the view yet."
     private static let initError = "Constructor init(coder) shouldn't be called."
     
-    /**
-     * Change the enable status of a specific gesture type.
-     * - parameter type: The type of the gesture.
-     * - parameter shouldEnable: Whether the gesture recognizer should be enabled or not.
-     */
+    /// Change the enable status of a specific gesture type.
+    ///
+    /// - Parameters:
+    ///   - type: The type of the gesture.
+    ///   - shouldEnable: Whether the gesture recognizer should be enabled or not.
     func changeGestureRecognizerUsibility(ofType type: AnyClass, toUsibility shouldEnable: Bool) {
         guard let gestureRecognizers = gestureRecognizers else {
-            Logger.standard.logError(GestureFilterView.gestureRecognizersEmptyError)
+            Logger.standard.log(error: GestureFilterView.gestureRecognizersEmptyError)
             return
         }
         for gestureRecognizer in gestureRecognizers {
@@ -30,15 +27,10 @@ class GestureFilterView: UIView {
         }
     }
     
-    /**
-     * Do nothing for a gesture.
-     */
+    /// Do nothing for a gesture.
     func ignoreAction() {
     }
     
-    /**
-     * UIView
-     */
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.clear
@@ -52,11 +44,8 @@ class GestureFilterView: UIView {
         }
     }
     
-    /**
-     * UIView
-     */
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(GestureFilterView.initError)
+        Logger.standard.log(error: GestureFilterView.initError)
         return nil
     }
     

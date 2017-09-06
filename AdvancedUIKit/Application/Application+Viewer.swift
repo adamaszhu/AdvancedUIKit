@@ -1,24 +1,17 @@
-/**
- * Application+Viewer extracts the attributes related to the view in the app.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 10/06/2017
- */
+/// Application+Viewer extracts the attributes related to the view in the app.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 10/06/2017
 public extension UIApplication {
     
-    /**
-     * System error.
-     */
+    /// System error.
     private static let windowError = "The window presented is invalid."
     
-    /**
-     * System warning.
-     */
+    /// System warning.
     private static let navigationWarning = "The window doesn't have a navigation controller."
     
-    /**
-     * The current view controller.
-     */
+    /// The current view controller.
     public var currentViewController: UIViewController? {
         if let navigationController = rootViewController as? UINavigationController {
             return navigationController.viewControllers.last ?? navigationController
@@ -27,16 +20,14 @@ public extension UIApplication {
         }
     }
     
-    /**
-     * The root view controller.
-     */
+    /// The root view controller.
     public var rootViewController: UIViewController? {
         guard let window = keyWindow else {
-            Logger.standard.logError(UIApplication.windowError)
+            Logger.standard.log(error: UIApplication.windowError)
             return nil
         }
         if !(window.rootViewController is UINavigationController) {
-            Logger.standard.logWarning(UIApplication.navigationWarning)
+            Logger.standard.log(warning: UIApplication.navigationWarning)
         }
         return window.rootViewController
     }

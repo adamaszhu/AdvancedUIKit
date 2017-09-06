@@ -1,14 +1,10 @@
-/**
- * MessageHelper defines the action that a message helper should do.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 30/05/2017
- */
+/// MessageHelper defines the action that a message helper should do.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 30/05/2017
 extension SystemMessageHelper: MessageHelper {
     
-    /**
-     * MessageHelper
-     */
     public func showInfo(_ content: String, withTitle title: String = successTitle, withConfirmButtonName confirmButtonName: String = infoConfirmButtonName) {
         hidePreviousMessage()
         messageType = .info
@@ -16,9 +12,6 @@ extension SystemMessageHelper: MessageHelper {
         showMessage()
     }
     
-    /**
-     * MessageHelper
-     */
     public func showWarning(_ content: String, withTitle title: String = warningTitle, withConfirmButtonName confirmButtonName: String = warningConfirmButtonName, withCancelButtonName cancelButtonName: String = warningCancelButtonName) {
         hidePreviousMessage()
         messageType = .warning
@@ -26,9 +19,6 @@ extension SystemMessageHelper: MessageHelper {
         showMessage()
     }
     
-    /**
-     * MessageHelper
-     */
     public func showError(_ content: String, withTitle title: String = errorTitle, withConfirmButtonName confirmButtonName: String = errorConfirmButtonName) {
         hidePreviousMessage()
         messageType = .error
@@ -36,9 +26,6 @@ extension SystemMessageHelper: MessageHelper {
         showMessage()
     }
     
-    /**
-     * MessageHelper
-     */
     public func showInput(withTitle title: String, withConfirmButtonName confirmButtonName: String = inputConfirmButtonName, withCancelButtonName cancelButtonName: String = inputCancelButtonName) {
         hidePreviousMessage()
         messageType = .input

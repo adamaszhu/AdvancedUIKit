@@ -1,53 +1,38 @@
-/**
- * A customized MapView with additional actions.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 07/06/2017
- */
+/// A customized MapView with additional actions.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 07/06/2017
 public class MapView: MKMapView {
     
-    /**
-     * The default overview margin.
-     */
+    /// The default overview margin.
     private static let defaultOverviewMargin = Double(0.001)
     
-    /**
-     * The default zoom level while showing user's location.
-     */
+    /// The default zoom level while showing user's location.
     private static let defaultUserLocationMargin = Double(10)
     
-    /**
-     * System warning.
-     */
+    /// System warning.
     private static let userLocationUnretrievedWarning = "The user location hasn't been retrieved yet."
     
-    /**
-     * The delegate of the map.
-     */
+    /// The delegate of the map.
     public var mapViewDelegate: MapViewDelegate?
     
-    /**
-     * The point list.
-     */
+    /// The point list.
     var points: Array<MapViewPoint>
     
-    /**
-     * The line list.
-     */
+    /// The line list.
     var lines: Array<MapViewLine>
     
-    /**
-     * The location helper.
-     */
+    /// The location helper.
     private let locationHelper: LocationHelper
     
-    /**
-     * Set the view of the map.
-     * - parameter latitude: The center latitude of the view.
-     * - parameter longitude: The center longitude of the view.
-     * - parameter zoomLevel: The zoom level. If it is nil, zoom level will not be changed.
-     * - parameter shouldAnimate: Whether the animation should be allowed or not.
-     */
+    /// Set the view of the map.
+    ///
+    /// - Parameters:
+    ///   - latitude: The center latitude of the view.
+    ///   - longitude: The center longitude of the view.
+    ///   - zoomLevel: The zoom level. If it is nil, zoom level will not be changed.
+    ///   - shouldAnimate: Whether the animation should be allowed or not.
     public func setViewport(withCenterLatitude latitude: Double, withCenterLongitude longitude: Double, withZoomLevel zoomLevel: Double? = nil, withAnimation shouldAnimate: Bool = true) {
         var region: MKCoordinateRegion
         if let zoomLevel = zoomLevel {
@@ -59,14 +44,13 @@ public class MapView: MKMapView {
         setRegion(region, animated: shouldAnimate)
     }
     
-    /**
-     * Set the view of the map.
-     * - parameter topLatitude: The top latitude.
-     * - parameter bottomLatitude: The bottom latitude.
-     * - parameter leftLongitude: The left longitude.
-     * - parameter rightLongitude: The right longitude.
-     * - parameter shouldAnimate: Whether the animation should be performed or not.
-     */
+    /// Set the view of the map.
+    /// - Parameters:
+    ///   - topLatitude: The top latitude.
+    ///   - bottomLatitude: The bottom latitude.
+    ///   - leftLongitude: The left longitude.
+    ///   - rightLongitude: The right longitude.
+    ///   - shouldAnimate: Whether the animation should be performed or not.
     public func setViewport(withTopLatitude topLatitude: Double, withBottomLatitude bottomLatitude: Double, withLeftLongitude leftLongitude: Double, withRightLongitude rightLongitude: Double, withAnimation shouldAnimate: Bool = true) {
         let centerLatitude = (topLatitude + bottomLatitude) / 2
         let centerLongitude = (leftLongitude + rightLongitude) / 2
@@ -85,9 +69,7 @@ public class MapView: MKMapView {
         self.setRegion(region, animated: shouldAnimate)
     }
     
-    /**
-     * Adjust the viewport according to the points and lines within it.
-     */
+    /// Adjust the viewport according to the points and lines within it.
     public func overview() {
         if (points.count == 0) && (lines.count == 0) {
             setViewport(withTopLatitude: 90, withBottomLatitude: -90, withLeftLongitude: -180, withRightLongitude: 180)
@@ -118,10 +100,9 @@ public class MapView: MKMapView {
         setViewport(withTopLatitude: maxLatitude, withBottomLatitude: minLatitude, withLeftLongitude: minLongitude, withRightLongitude: maxLongitude)
     }
     
-    /**
-     * Add a point on the map.
-     * - parameter point: The point.
-     */
+    /// Add a point on the map.
+    ///
+    /// - Parameter point: The point.
     public func addPoint(_ point: MapViewPoint) {
         if let item = point.item {
             point.detailButtonAction = { [unowned self] _ in
@@ -132,10 +113,9 @@ public class MapView: MKMapView {
         addAnnotation(point.annotation)
     }
     
-    /**
-     * Add a line onto the map.
-     * - parameter line: The line to be presented.
-     */
+    /// Add a line onto the map.
+    ///
+    /// - Parameter line: The line to be presented.
     public func addLine(_ line: MapViewLine) {
         lines.append(line)
         add(line.line)
@@ -146,9 +126,7 @@ public class MapView: MKMapView {
         }
     }
     
-    /**
-     * Request user authorization on always use location.
-     */
+    /// Request user authorization on always use location.
     public func requestUserLocation() {
         guard LocationHelper.isAlwaysAuthorizationAuthorized || LocationHelper.isWhenInUseAuthorizationAuthorized else {
             locationHelper.requestAlwaysAuthorization()
@@ -157,10 +135,9 @@ public class MapView: MKMapView {
         showsUserLocation = true
     }
     
-    /**
-     * Show current location.
-     * - parameter zoomLevel: The zoom level while showing user's location.
-     */
+    /// Show current location.
+    ///
+    /// - Parameter zoomLevel: The zoom level while showing user's location.
     public func showUserLocation(withZoomLevel zoomLevel: Double = defaultUserLocationMargin) {
         requestUserLocation()
         guard showsUserLocation else {
@@ -169,15 +146,13 @@ public class MapView: MKMapView {
         }
         let userLocationCoordinate = userLocation.coordinate
         guard (userLocationCoordinate.latitude != 0) && (userLocationCoordinate.longitude != 0) else {
-            Logger.standard.logWarning(MapView.userLocationUnretrievedWarning)
+            Logger.standard.log(warning: MapView.userLocationUnretrievedWarning)
             return
         }
         setViewport(withCenterLatitude: userLocationCoordinate.latitude, withCenterLongitude: userLocationCoordinate.longitude, withZoomLevel: zoomLevel)
     }
     
-    /**
-     * Clean all the points and lines on the map.
-     */
+    /// Clean all the points and lines on the map.
     public func reset() {
         removeAnnotations(annotations)
         removeOverlays(lines.map { line in
@@ -187,9 +162,6 @@ public class MapView: MKMapView {
         lines.removeAll()
     }
     
-    /**
-     * MKMapView
-     */
     public required init?(coder aDecoder: NSCoder) {
         points = []
         lines = []
@@ -199,9 +171,6 @@ public class MapView: MKMapView {
         locationHelper.locationHelperDelegate = self
     }
     
-    /**
-     * MKMapView
-     */
     public override init(frame: CGRect) {
         points = []
         lines = []

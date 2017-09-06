@@ -1,29 +1,19 @@
-/**
- * ActionFilterView is used to intercept action outside the keyboard.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 05/06/2017
- */
+/// ActionFilterView is used to intercept action outside the keyboard.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 05/06/2017
 class ActionFilterView: UIView {
     
-    /**
-     * Error message.
-     */
+    /// Error message.
     private static let initError = "Constructor init(coder) shouldn't be called."
     
-    /**
-     * The delegate.
-     */
+    /// The delegate.
     var actionFilterViewDelegate: ActionFilterViewDelegate?
     
-    /**
-     * A list of input view which should drag holes on the touch mask view.
-     */
+    /// A list of input view which should drag holes on the touch mask view.
     var inputViews: Array<UIView>
     
-    /**
-     * UIView
-     */
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         for inputView in inputViews {
             let inputViewFrame = convert(inputView.frame, from: inputView.superview)
@@ -36,19 +26,13 @@ class ActionFilterView: UIView {
         return true
     }
     
-    /**
-     * UIView
-     */
     override init(frame: CGRect) {
         inputViews = []
         super.init(frame: frame)
     }
     
-    /**
-     * UIView
-     */
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(ActionFilterView.initError)
+        Logger.standard.log(error: ActionFilterView.initError)
         return nil
     }
     

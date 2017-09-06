@@ -1,32 +1,25 @@
-/**
- * ExpandableMapView+Expandable defines what an expandable MapView should do.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 19/06/2017
- */
+/// ExpandableMapView+Expandable defines what an expandable MapView should do.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 19/06/2017
 extension ExpandableMapView: ExpandableView {
     
-    /**
-     * ExpandableView
-     */
     var isExpanded: Bool {
         guard superview != nil else {
-            Logger.standard.logError(ExpandableMapView.superviewError)
+            Logger.standard.log(error: ExpandableMapView.superviewError)
             return false
         }
         return superview == window
     }
     
-    /**
-     * ExpandableView
-     */
     public func expand() {
         guard !isExpanded && isExpandable else {
-            Logger.standard.logWarning(ExpandableMapView.expandWarning)
+            Logger.standard.log(warning: ExpandableMapView.expandWarning)
             return
         }
         guard let window = window else {
-            Logger.standard.logError(ExpandableMapView.windowError)
+            Logger.standard.log(error: ExpandableMapView.windowError)
             return
         }
         saveOriginalConstraints(of: self)
@@ -45,16 +38,13 @@ extension ExpandableMapView: ExpandableView {
         })
     }
     
-    /**
-     * ExpandableView
-     */
     public func collapse() {
         guard isExpanded && isExpandable else {
-            Logger.standard.logWarning(ExpandableMapView.collapseWarning)
+            Logger.standard.log(warning: ExpandableMapView.collapseWarning)
             return
         }
         guard let window = window else {
-            Logger.standard.logError(ExpandableMapView.windowError)
+            Logger.standard.log(error: ExpandableMapView.windowError)
             return
         }
         animate(withChange: { [unowned self] _ in

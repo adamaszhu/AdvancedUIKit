@@ -1,4 +1,5 @@
 /// InfiniteList+Expandable implements the function related to expanding and collapsing.
+///
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 03/07/2017
@@ -9,11 +10,12 @@ public extension InfiniteList {
     private static let cellCollapsionWarning = "The cell cannot be collapsed."
     
     /// Expand a specific cell.
-    ///- parameter index: The index of the cell.
+    ///
+    /// - Parameter index: The index of the cell.
     public func expandCell(atIndex index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         guard let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
-            Logger.standard.logWarning(InfiniteList.cellExpansionWarning, withDetail: index)
+            Logger.standard.log(warning: InfiniteList.cellExpansionWarning, withDetail: index)
             return
         }
         cell.expand()
@@ -29,11 +31,12 @@ public extension InfiniteList {
     }
     
     /// Collapse a specific cell.
-    /// - parameter index: The index of the cell.
+    ///
+    /// - Parameter index: The index of the cell.
     public func collapseCell(atIndex index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         guard let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
-            Logger.standard.logWarning(InfiniteList.cellCollapsionWarning, withDetail: index)
+            Logger.standard.log(warning: InfiniteList.cellCollapsionWarning, withDetail: index)
             return
         }
         cell.collapse()
@@ -50,15 +53,17 @@ public extension InfiniteList {
     /// Collapse all cells.
     public func collapseAllCells() {
         guard let index = expandedCellIndexPath?.row else {
-            Logger.standard.logWarning(InfiniteList.cellCollapsionWarning)
+            Logger.standard.log(warning: InfiniteList.cellCollapsionWarning)
             return
         }
         collapseCell(atIndex: index)
     }
     
     /// Adjust the content offset to fit the expanded cell.
-    /// - parameter cell: The cell that the content offset should be adjusted based on.
-    /// - parameter indexPath: The index of the cell.
+    ///
+    /// - Parameters:
+    ///   - cell: The cell that the content offset should be adjusted based on.
+    ///   - indexPath: The index of the cell.
     private func adjustContentOffset(for cell: InfiniteCell, at indexPath: IndexPath) {
         guard let item = items.element(atIndex: indexPath.row), let cellType = cellType(for: item.type) else {
             return

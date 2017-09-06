@@ -1,4 +1,5 @@
 /// InfiniteList+Infinite defines all things related to loading infinite items
+///
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 04/07/2017
@@ -21,13 +22,14 @@ public extension InfiniteList {
     }
     
     /// Register the load more view for the InfiniteList.
-    /// - parameter nib: The nib file containing the view.
+    ///
+    /// - Parameter nib: The nib file containing the view.
     public func registerLoadingMoreBar(with nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
         }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
-            Logger.standard.logError(InfiniteList.loadingMoreBarNibError)
+            Logger.standard.log(error: InfiniteList.loadingMoreBarNibError)
             return
         }
         view.frame = .init(x: 0, y: 0, width: frame.width, height: view.frame.height)
@@ -35,13 +37,14 @@ public extension InfiniteList {
     }
     
     /// Register the reload view for the InfiniteList.
-    /// - parameter nib: The nib file containing the view.
+    ///
+    /// - Parameter nib: The nib file containing the view.
     public func registerReloadingBar(with nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
         }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
-            Logger.standard.logError(InfiniteList.reloadingBarNibError)
+            Logger.standard.log(error: InfiniteList.reloadingBarNibError)
             return
         }
         view.frame = .init(x: 0, y: -view.frame.height, width: frame.width, height: view.frame.height)
@@ -51,7 +54,7 @@ public extension InfiniteList {
     /// Perform drag and reload function programmatically.
     public func startReloading() {
         guard let _ = reloadingBar else {
-            Logger.standard.logError(InfiniteList.reloadingBarRegistrationError)
+            Logger.standard.log(error: InfiniteList.reloadingBarRegistrationError)
             return
         }
         guard status.isReloadingAvailable else {
@@ -66,7 +69,8 @@ public extension InfiniteList {
     }
     
     /// Display a list of item depending on the status of the InfiniteList.
-    /// - parameter items: The item to be displayed.
+    ///
+    /// - Parameter items: The item to be displayed.
     public func display(_ items: [InfiniteItem]) {
         switch status {
         case .initial, .reloading:
@@ -74,7 +78,7 @@ public extension InfiniteList {
         case .loadingMore:
             append(items)
         default:
-            Logger.standard.logError(InfiniteList.displayStatusError)
+            Logger.standard.log(error: InfiniteList.displayStatusError)
         }
         // COMMENT: Adjust the content offset.
         if contentOffset.y < 0 {
@@ -114,7 +118,8 @@ public extension InfiniteList {
     }
     
     /// Reload a list of items.
-    /// - parameter items: The items to be reloaded.
+    ///
+    /// - Parameter items: The items to be reloaded.
     func reload(_ items: [InfiniteItem]) {
         guard status.isReloading else {
             return
@@ -137,7 +142,8 @@ public extension InfiniteList {
     }
     
     /// Append a list of items.
-    /// - parameter items: The items to be append.
+    ///
+    /// - Parameter items: The items to be append.
     func append(_ items: [InfiniteItem]) {
         guard status.isLoadingMore else {
             return

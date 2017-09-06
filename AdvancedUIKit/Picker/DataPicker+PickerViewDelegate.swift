@@ -1,14 +1,10 @@
-/**
- * DataPicker+PickerViewDelegate presents the action to be done on a picker view.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 23/04/2017
- */
+/// DataPicker+PickerViewDelegate presents the action to be done on a picker view.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 23/04/2017
 extension DataPicker: UIPickerViewDelegate {
     
-    /**
-     * UIPickerViewDelegate
-     */
     public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label: UILabel
         if let reusableLabel = view as? UILabel {

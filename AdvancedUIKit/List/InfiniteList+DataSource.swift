@@ -1,15 +1,14 @@
 /// InfiniteList+DataSource implements the data source of UITableView
+///
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 22/06/2017
 extension InfiniteList: UITableViewDataSource {
     
-    /// UITableViewDataSource
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    /// UITableViewDataSource
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
         guard let item = items.element(atIndex: index)  else {
@@ -17,7 +16,7 @@ extension InfiniteList: UITableViewDataSource {
         }
         let cellID = String(describing: item.type)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as? InfiniteCell else {
-            Logger.standard.logError(InfiniteList.cellError, withDetail: cellID)
+            Logger.standard.log(error: InfiniteList.cellError, withDetail: cellID)
             return UITableViewCell()
         }
         if cell.isExpandable {
@@ -42,7 +41,6 @@ extension InfiniteList: UITableViewDataSource {
         return cell
     }
     
-    /// UITableViewDataSource
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         switch status {
         case .finite, .infinite:
@@ -56,7 +54,6 @@ extension InfiniteList: UITableViewDataSource {
         }
     }
     
-    /// UITableViewDataSource
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:

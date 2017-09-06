@@ -1,4 +1,5 @@
 /// InfiniteCellType contains the attributes of an InfiniteCell.
+///
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 24/06/2017
@@ -19,9 +20,11 @@ struct InfiniteCellType {
     let additionalHeight: CGFloat?
     
     /// Initialize the type.
-    /// - parameter type: The type of the cell.
-    /// - parameter basicHeight: The height of the cell.
-    /// - parameter additionalHeight: The height of the additional cell.
+    ///
+    /// - Parameters:
+    ///   - type: The type of the cell.
+    ///   - basicHeight: The height of the cell.
+    ///   - additionalHeight: The height of the additional cell.
     init(type: InfiniteCell.Type, basicHeight: CGFloat = 0, additionalHeight: CGFloat? = nil) {
         self.type = type
         self.basicHeight = basicHeight

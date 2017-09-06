@@ -1,29 +1,20 @@
-/**
- * GalleryImage view present an image in a GalleryView.
- * - author: Adamas
- * - version: 1.0.0
- * - date: 15/06/2017
- */
+/// GalleryImage view present an image in a GalleryView.
+///
+/// - author: Adamas
+/// - version: 1.0.0
+/// - date: 15/06/2017
 class GalleryImage: UIScrollView {
     
-    /**
-     * Error message.
-     */
+    /// Error message.
     private static let initError = "Constructor init(coder) shouldn't be called."
     
-    /**
-     * The zoom in increment for double tapping.
-     */
+    /// The zoom in increment for double tapping.
     private static let zoomInIncrement = CGFloat(2)
     
-    /**
-     * The actual image view.
-     */
+    /// The actual image view.
     var imageView: UIImageView
     
-    /**
-     * The image.
-     */
+    /// The image.
     var image: UIImage? {
         set {
             imageView.image = newValue
@@ -33,9 +24,7 @@ class GalleryImage: UIScrollView {
         }
     }
     
-    /**
-     * The maximum zoom level.
-     */
+    /// The maximum zoom level.
     var maxZoomLevel: CGFloat {
         set {
             maximumZoomScale = newValue
@@ -45,9 +34,7 @@ class GalleryImage: UIScrollView {
         }
     }
     
-    /**
-     * The content mode of the image.
-     */
+    /// The content mode of the image.
     var imageMode: UIViewContentMode {
         set {
             imageView.contentMode = newValue
@@ -57,9 +44,7 @@ class GalleryImage: UIScrollView {
         }
     }
     
-    /**
-     * The size of the GalleryImage.
-     */
+    /// The size of the GalleryImage.
     var size: CGSize {
         set {
             contentSize = newValue
@@ -71,30 +56,22 @@ class GalleryImage: UIScrollView {
         }
     }
     
-    /**
-     * The double tap gesture used to zoom in the image.
-     */
+    /// The double tap gesture used to zoom in the image.
     private (set) var doubleTapGestureRecognizer: UITapGestureRecognizer!
     
-    /**
-     * Reset the zoom level of the image.
-     */
+    /// Reset the zoom level of the image.
     func resetZoomLevel() {
         setZoomScale(1, animated: true)
     }
     
-    /**
-     * Perform a zoom in.
-     */
+    /// Perform a zoom in.
     func zoomIn() {
         var zoomLevel = zoomScale + GalleryImage.zoomInIncrement
         zoomLevel = min(zoomLevel, maxZoomLevel)
         setZoomScale(zoomLevel, animated: true)
     }
     
-    /**
-     * Initialize the image.
-     */
+    /// Initialize the image.
     init() {
         imageView = UIImageView()
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -108,17 +85,11 @@ class GalleryImage: UIScrollView {
         addGestureRecognizer(doubleTapGestureRecognizer)
     }
     
-    /**
-     * UIView
-     */
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(GalleryImage.initError)
+        Logger.standard.log(error: GalleryImage.initError)
         return nil
     }
     
-    /**
-     * UIView
-     */
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         imageView.frame = bounds

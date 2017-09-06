@@ -1,4 +1,5 @@
 /// InfiniteList is a list that can load infinite items.
+///
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 21/06/2017
@@ -62,14 +63,16 @@ public class InfiniteList: UITableView {
     }
     
     /// Define the nib file used to render an item cell.
-    /// - parameter nib: The nib file.
-    /// - parameter type: The item cell type.
+    ///
+    /// - Parameters:
+    ///   - nib: The nib file.
+    ///   - type: The item cell type.
     public func register(_ type: InfiniteCell.Type, with nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
         }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? InfiniteCell else {
-            Logger.standard.logError(InfiniteList.cellNibError, withDetail: type)
+            Logger.standard.log(error: InfiniteList.cellNibError, withDetail: type)
             return
         }
         let cellType = InfiniteCellType(type: type, basicHeight: view.frame.height, additionalHeight: view.additionalView?.frame.height)
@@ -78,13 +81,14 @@ public class InfiniteList: UITableView {
     }
     
     /// Register the empty state view for the InfiniteList.
-    /// - parameter nib: The nib file containing the view.
+    ///
+    /// - Parameter nib: The nib file containing the view.
     public func registerEmptyState(_ nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
         }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
-            Logger.standard.logError(InfiniteList.emptyStateNibError)
+            Logger.standard.log(error: InfiniteList.emptyStateNibError)
             return
         }
         view.frame = bounds
@@ -94,11 +98,11 @@ public class InfiniteList: UITableView {
     /// Show the empty state.
     func showEmptyState() {
         guard let emptyState = emptyState else {
-            Logger.standard.logError(InfiniteList.emptyStateRegistrationError)
+            Logger.standard.log(error: InfiniteList.emptyStateRegistrationError)
             return
         }
         guard emptyState.superview == nil else {
-            Logger.standard.logWarning(InfiniteList.emptyStateShowWarning)
+            Logger.standard.log(warning: InfiniteList.emptyStateShowWarning)
             return
         }
         emptyState.animate(withChange: {
@@ -112,11 +116,11 @@ public class InfiniteList: UITableView {
     /// Hide the empty state.
     func hideEmptyState() {
         guard let emptyState = emptyState else {
-            Logger.standard.logError(InfiniteList.emptyStateRegistrationError)
+            Logger.standard.log(error: InfiniteList.emptyStateRegistrationError)
             return
         }
         guard emptyState.superview != nil else {
-            Logger.standard.logWarning(InfiniteList.emptyStateHideWarning)
+            Logger.standard.log(warning: InfiniteList.emptyStateHideWarning)
             return
         }
         emptyState.animate(withChange: {
@@ -129,26 +133,25 @@ public class InfiniteList: UITableView {
     }
     
     /// Find the cell type for a specific cell.
-    /// - parameter type: The type of the cell.
-    /// - returns: Found cell type. Nil if it is not found.
+    ///
+    /// - Parameter type: The type of the cell.
+    /// - Returns: Found cell type. Nil if it is not found.
     func cellType(for type: InfiniteCell.Type) -> InfiniteCellType? {
         for cellType in cellTypes {
             if cellType.type == type {
                 return cellType
             }
         }
-        Logger.standard.logError(InfiniteList.cellRegistrationError, withDetail: type)
+        Logger.standard.log(error: InfiniteList.cellRegistrationError, withDetail: type)
         return nil
     }
     
-    /// UIView
     public override func didMoveToWindow() {
         super.didMoveToWindow()
         addReloadingBar()
         addLoadingMoreBar()
     }
     
-    /// UIView
     public required init?(coder aDecoder: NSCoder) {
         items = []
         cellTypes = []
