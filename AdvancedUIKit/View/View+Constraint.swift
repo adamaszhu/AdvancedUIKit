@@ -6,8 +6,8 @@
 public extension UIView {
     
     /// The constraints related to the frame of the view. These constraints is usually added to superview.
-    public var frameConstraints: Array<NSLayoutConstraint> {
-        var frameConstraints = Array<NSLayoutConstraint>()
+    public var frameConstraints: [NSLayoutConstraint] {
+        var frameConstraints = [NSLayoutConstraint]()
         if let superview = superview {
             for constraint in superview.constraints {
                 if let firstItem = constraint.firstItem as? UIView, firstItem == self {

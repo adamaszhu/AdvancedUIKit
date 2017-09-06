@@ -46,7 +46,7 @@ public class DataPicker: RootView {
     }
     
     /// The column list, which is a list of column name and item tuple. Value is the value for each selection. Name is the name of the value which will be displayed on the screen.
-    public private(set) var columns: Array<DataPickerColumn> {
+    public private(set) var columns: [DataPickerColumn] {
         didSet {
             pickerView.reloadAllComponents()
         }
@@ -67,7 +67,7 @@ public class DataPicker: RootView {
     /// Set the DataPicker with a single column.
     ///
     /// - Parameter items: The item list.
-    public func setSingleColumn(_ items: Array<DataPickerItem>) {
+    public func setSingleColumn(_ items: [DataPickerItem]) {
         columns = [DataPickerColumn(items: items)]
     }
     
@@ -96,7 +96,7 @@ public class DataPicker: RootView {
     
     /// The selected values are confirmed by clicking the done button.
     func confirmSelection() {
-        var selections = Array<String>()
+        var selections = [String]()
         for index in 0 ..< columns.count {
             selections.append(columns[index].items[pickerView.selectedRow(inComponent: index)].value)
         }

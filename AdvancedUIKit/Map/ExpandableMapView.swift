@@ -51,8 +51,8 @@ public class ExpandableMapView: MapView {
     var originalSuperview: UIView!
     var originalZIndex: Int!
     var originalFrame: CGRect!
-    var originalFrameConstraints: Array<NSLayoutConstraint>!
-    var originalConstraints: Array<NSLayoutConstraint>!
+    var originalFrameConstraints: [NSLayoutConstraint]!
+    var originalConstraints: [NSLayoutConstraint]!
     
     public var isExpandable: Bool {
         set {

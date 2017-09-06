@@ -7,14 +7,14 @@ public struct DataPickerColumn {
     
     /// Attributes.
     let title: String
-    let items: Array<DataPickerItem>
+    let items: [DataPickerItem]
     
     /// Initialize the column.
     ///
     /// - Parameters:
     ///   - title: The title of the column. Empty is the default value.
     ///   - items: The column items.
-    init(title: String = "", items: Array<DataPickerItem>) {
+    init(title: String = "", items: [DataPickerItem]) {
         self.title = title
         self.items = items
     }

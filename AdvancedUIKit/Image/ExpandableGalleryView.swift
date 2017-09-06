@@ -37,7 +37,7 @@ public class ExpandableGalleryView: GalleryView {
         collapseGestureRecognizer.require(toFail: galleryImage.doubleTapGestureRecognizer)
     }
     
-    public override var images: Array<UIImage> {
+    public override var images: [UIImage] {
         set {
             super.images = newValue
             for subview in subviews {
@@ -56,8 +56,8 @@ public class ExpandableGalleryView: GalleryView {
     var originalSuperview: UIView!
     var originalZIndex: Int!
     var originalFrame: CGRect!
-    var originalFrameConstraints: Array<NSLayoutConstraint>!
-    var originalConstraints: Array<NSLayoutConstraint>!
+    var originalFrameConstraints: [NSLayoutConstraint]!
+    var originalConstraints: [NSLayoutConstraint]!
     
     public var isExpandable: Bool {
         set {

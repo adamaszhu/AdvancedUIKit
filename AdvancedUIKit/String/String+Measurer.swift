@@ -53,12 +53,12 @@ extension String {
     ///   - font: The font that is applied.
     ///   - view: The view that text is in.
     /// - Returns: The actual lines displayed on the view.
-    func measureLines(withFont font: UIFont, inView view: UIView) -> Array<String> {
+    func measureLines(withFont font: UIFont, inView view: UIView) -> [String] {
         guard view.frame.width != 0 else {
             Logger.standard.log(warning: String.viewWidthWarning)
             return []
         }
-        var displayedLines = Array<String>()
+        var displayedLines = [String]()
         let lines = components(separatedBy: CharacterSet.newlines)
         for line in lines {
             for displayedLine in line.measureLine(withFont: font, inView: view) {
@@ -74,11 +74,11 @@ extension String {
     ///   - font: The font that is applied.
     ///   - view: The view that text is in.
     /// - Returns: The actual line amount displayed on the view.
-    private func measureLine(withFont font: UIFont, inView view: UIView) -> Array<String> {
+    private func measureLine(withFont font: UIFont, inView view: UIView) -> [String] {
         guard !isEmpty else {
             return [""]
         }
-        var lines = Array<String>()
+        var lines = [String]()
         var remainLine = self
         while !remainLine.isEmpty {
             // COMMENT: Extract a line from the beginning of the remainLine. For better performance, words seperating strategy is considered prior to character seperating strategy.

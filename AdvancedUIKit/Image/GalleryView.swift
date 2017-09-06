@@ -21,7 +21,7 @@ public class GalleryView: PageView {
     public var maxZoomLevel: CGFloat
     
     /// The images presented.
-    public var images: Array<UIImage> {
+    public var images: [UIImage] {
         set {
             removeAllViews()
             for image in newValue {

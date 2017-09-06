@@ -15,7 +15,7 @@ public class KeyboardHelper: NSObject {
     public var rootView: UIView!
     
     /// A list of input views that need the help of KeyboardHelper.
-    public var inputViews: Array<UIView> {
+    public var inputViews: [UIView] {
         willSet {
             deactiveInputChain()
         }

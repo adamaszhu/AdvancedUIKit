@@ -21,7 +21,7 @@ public struct MapViewLine {
     let width: Int
     
     /// All points on the line.
-    let points: Array<MapViewPoint>
+    let points: [MapViewPoint]
     
     /// The icon for each point on the view.
     let pointIcon: UIImage?
@@ -41,7 +41,7 @@ public struct MapViewLine {
     ///   - color: The color of the line.
     ///   - width: The width of the line.
     ///   - pointIcon: The icon for the points on the line. Nil if the point should be shown.
-    public init(points: Array<MapViewPoint>, color: UIColor = defaultLineColor, width: Int = defaultLineWidth, withPointIcon pointIcon: UIImage? = nil) {
+    public init(points: [MapViewPoint], color: UIColor = defaultLineColor, width: Int = defaultLineWidth, withPointIcon pointIcon: UIImage? = nil) {
         let coordinates = points.map { point in
             point.annotation.coordinate
         }

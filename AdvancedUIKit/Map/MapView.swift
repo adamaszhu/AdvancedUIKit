@@ -18,10 +18,10 @@ public class MapView: MKMapView {
     public var mapViewDelegate: MapViewDelegate?
     
     /// The point list.
-    var points: Array<MapViewPoint>
+    var points: [MapViewPoint]
     
     /// The line list.
-    var lines: Array<MapViewLine>
+    var lines: [MapViewLine]
     
     /// The location helper.
     private let locationHelper: LocationHelper
