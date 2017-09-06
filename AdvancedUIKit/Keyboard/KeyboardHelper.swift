@@ -98,7 +98,7 @@ public class KeyboardHelper: NSObject {
     /// - Parameter view: The view that has finished inputing action.
     func finishInput(onView view: UIView) {
         guard let index = inputViews.index(of: view) else {
-            Logger.standard.logError(KeyboardHelper.inputViewError)
+            Logger.standard.log(error: KeyboardHelper.inputViewError)
             return
         }
         if index < inputViews.count - 1 {

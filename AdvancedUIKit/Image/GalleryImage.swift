@@ -86,7 +86,7 @@ class GalleryImage: UIScrollView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(GalleryImage.initError)
+        Logger.standard.log(error: GalleryImage.initError)
         return nil
     }
     

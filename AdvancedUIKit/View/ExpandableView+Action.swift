@@ -10,7 +10,7 @@ extension ExpandableView {
     /// - Parameter view: The view.
     func addOriginalConstraints(of view: UIView) {
         guard let superview = view.superview else {
-            Logger.standard.logError(Self.superviewError)
+            Logger.standard.log(error: Self.superviewError)
             return
         }
         superview.addConstraints(originalFrameConstraints)
@@ -22,7 +22,7 @@ extension ExpandableView {
     /// - Parameter view: The view.
     func saveOriginalConstraints(of view: UIView) {
         guard let superview = view.superview else {
-            Logger.standard.logError(Self.superviewError)
+            Logger.standard.log(error: Self.superviewError)
             return
         }
         originalSuperview = superview
@@ -38,11 +38,11 @@ extension ExpandableView {
     /// - Parameter view: The view.
     func moveToWindow(of view: UIView) {
         guard let window = view.window else {
-            Logger.standard.logError(ExpandableMapView.windowError)
+            Logger.standard.log(error: ExpandableMapView.windowError)
             return
         }
         guard let superview = view.superview else {
-            Logger.standard.logError(ExpandableMapView.superviewError)
+            Logger.standard.log(error: ExpandableMapView.superviewError)
             return
         }
         superview.removeConstraints(originalFrameConstraints)

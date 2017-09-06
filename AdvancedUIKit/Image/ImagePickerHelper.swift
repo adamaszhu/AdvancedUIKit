@@ -32,7 +32,7 @@ public class ImagePickerHelper: NSObject {
     /// Show the image picker selector.
     public func showImagePicker() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let selectFromLibraryActionTitle = ImagePickerHelper.selectFromLibraryActionName.localizeWithinFramework(forType: self.classForCoder)
+        let selectFromLibraryActionTitle = ImagePickerHelper.selectFromLibraryActionName.localizedInternalString(forType: self.classForCoder)
         let selectFromLibraryAction = UIAlertAction(title: selectFromLibraryActionTitle, style: .default) { [unowned self] _ in
             guard CameraHelper.isLibraryAuthorized else {
                 self.cameraHelper.requestLibraryAuthorization()
@@ -40,7 +40,7 @@ public class ImagePickerHelper: NSObject {
             }
             self.showImageViewController(withSourceType: .photoLibrary)
         }
-        let takePhotoActionTitle = ImagePickerHelper.takePhotoActionName.localizeWithinFramework(forType: self.classForCoder)
+        let takePhotoActionTitle = ImagePickerHelper.takePhotoActionName.localizedInternalString(forType: self.classForCoder)
         let takePhotoAction = UIAlertAction(title: takePhotoActionTitle, style: .default) { [unowned self] _ in
             guard CameraHelper.isCameraAuthorized else {
                 self.cameraHelper.requestCameraAuthorization()
@@ -48,7 +48,7 @@ public class ImagePickerHelper: NSObject {
             }
             self.showImageViewController(withSourceType: .camera)
         }
-        let cancelActionTitle = ImagePickerHelper.cancelActionName.localizeWithinFramework(forType: self.classForCoder)
+        let cancelActionTitle = ImagePickerHelper.cancelActionName.localizedInternalString(forType: self.classForCoder)
         let cancelAction = UIAlertAction(title: cancelActionTitle, style: .default) { [unowned self] _ in
             self.currentViewController?.dismiss(animated: true, completion: nil)
         }

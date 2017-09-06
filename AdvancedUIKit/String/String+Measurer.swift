@@ -55,7 +55,7 @@ extension String {
     /// - Returns: The actual lines displayed on the view.
     func measureLines(withFont font: UIFont, inView view: UIView) -> Array<String> {
         guard view.frame.width != 0 else {
-            Logger.standard.logWarning(String.viewWidthWarning)
+            Logger.standard.log(warning: String.viewWidthWarning)
             return []
         }
         var displayedLines = Array<String>()
@@ -93,9 +93,9 @@ extension String {
                 let line = words.joined(separator: " ")
                 lines.append(line)
                 // COMMENT: remainLine must have the line extracted.
-                remainLine.removePrefix(line)
+                remainLine.remove(prefix: line)
                 // COMMENT: If the remainLine is not empty, remove the space between current line and the next line.
-                remainLine.removePrefix(" ")
+                remainLine.remove(prefix: " ")
                 continue
             }
             // COMMENT: Extra a line from a extra long word from the beginning of the remainLine. Only one word is left.
@@ -106,7 +106,7 @@ extension String {
             }
             lines.append(word)
             // COMMENT: remainLine must have the line extracted.
-            remainLine.removePrefix(word)
+            remainLine.remove(prefix: word)
         }
         return lines
     }

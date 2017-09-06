@@ -44,7 +44,7 @@ public class GalleryView: PageView {
     /// The gallery image presented.
     var currentGalleryImage: GalleryImage? {
         guard let galleryImage = currentPage as? GalleryImage else {
-            Logger.standard.logError(GalleryView.subviewTypeError)
+            Logger.standard.log(error: GalleryView.subviewTypeError)
             return nil
         }
         return galleryImage
@@ -58,7 +58,7 @@ public class GalleryView: PageView {
                     galleryImage.frame.origin = CGPoint(x: CGFloat(index) * newValue.width, y: 0)
                     galleryImage.size = newValue
                 } else {
-                    Logger.standard.logError(GalleryView.subviewTypeError)
+                    Logger.standard.log(error: GalleryView.subviewTypeError)
                 }
             }
             setContentOffset(CGPoint(x: CGFloat(currentPageIndex) * newValue.width, y: 0), animated: false)

@@ -219,7 +219,7 @@ public class CustomizedMessageHelper: PopupView {
             inputText.text = ""
             break
         case .unknown:
-            Logger.standard.logError(CustomizedMessageHelper.typeError)
+            Logger.standard.log(error: CustomizedMessageHelper.typeError)
             break
         }
         hide()
@@ -240,7 +240,7 @@ public class CustomizedMessageHelper: PopupView {
             inputText.text = ""
             break
         case .unknown:
-            Logger.standard.logError(CustomizedMessageHelper.typeError)
+            Logger.standard.log(error: CustomizedMessageHelper.typeError)
             break
         }
         hide()
@@ -249,7 +249,7 @@ public class CustomizedMessageHelper: PopupView {
     /// Hide previous message.
     func hidePreviousMessage() {
         guard messageType != .unknown else {
-            Logger.standard.logError(CustomizedMessageHelper.typeError)
+            Logger.standard.log(error: CustomizedMessageHelper.typeError)
             return
         }
         messageType = .unknown
@@ -257,7 +257,7 @@ public class CustomizedMessageHelper: PopupView {
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(CustomizedMessageHelper.initError)
+        Logger.standard.log(error: CustomizedMessageHelper.initError)
         return nil
     }
     

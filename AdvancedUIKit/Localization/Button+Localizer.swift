@@ -9,7 +9,7 @@ public extension UIButton {
         guard let title = title else {
             return
         }
-        self.title = title.localize(withLocalizationFile: localizationFile)
+        self.title = title.localizedString(withLocalizationFile: localizationFile)
     }
     
 }

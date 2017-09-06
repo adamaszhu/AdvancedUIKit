@@ -74,11 +74,11 @@ public class LocationHelper: CLLocationManager {
     
     public override func requestAlwaysAuthorization() {
         guard LocationHelper.isUnauthorized else {
-            locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizeWithinFramework(forType: LocationHelper.self))
+            locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizedInternalString(forType: LocationHelper.self))
             return
         }
         guard checkDescriptionKey(LocationHelper.alwaysDescriptionKey) == true else {
-            Logger.standard.logError(LocationHelper.descriptionKeyError, withDetail: LocationHelper.alwaysDescriptionKey)
+            Logger.standard.log(error: LocationHelper.descriptionKeyError, withDetail: LocationHelper.alwaysDescriptionKey)
             return
         }
         authorizingStatus = .authorizedAlways
@@ -87,11 +87,11 @@ public class LocationHelper: CLLocationManager {
     
     public override func requestWhenInUseAuthorization() {
         guard LocationHelper.isUnauthorized else {
-            locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizeWithinFramework(forType: LocationHelper.self))
+            locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizedInternalString(forType: LocationHelper.self))
             return
         }
         guard checkDescriptionKey(LocationHelper.whenInUseDescriptionKey) == true else {
-            Logger.standard.logError(LocationHelper.descriptionKeyError, withDetail: LocationHelper.whenInUseDescriptionKey)
+            Logger.standard.log(error: LocationHelper.descriptionKeyError, withDetail: LocationHelper.whenInUseDescriptionKey)
             return
         }
         authorizingStatus = .authorizedWhenInUse

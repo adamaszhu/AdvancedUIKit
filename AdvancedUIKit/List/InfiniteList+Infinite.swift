@@ -29,7 +29,7 @@ public extension InfiniteList {
             return
         }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
-            Logger.standard.logError(InfiniteList.loadingMoreBarNibError)
+            Logger.standard.log(error: InfiniteList.loadingMoreBarNibError)
             return
         }
         view.frame = .init(x: 0, y: 0, width: frame.width, height: view.frame.height)
@@ -44,7 +44,7 @@ public extension InfiniteList {
             return
         }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
-            Logger.standard.logError(InfiniteList.reloadingBarNibError)
+            Logger.standard.log(error: InfiniteList.reloadingBarNibError)
             return
         }
         view.frame = .init(x: 0, y: -view.frame.height, width: frame.width, height: view.frame.height)
@@ -54,7 +54,7 @@ public extension InfiniteList {
     /// Perform drag and reload function programmatically.
     public func startReloading() {
         guard let _ = reloadingBar else {
-            Logger.standard.logError(InfiniteList.reloadingBarRegistrationError)
+            Logger.standard.log(error: InfiniteList.reloadingBarRegistrationError)
             return
         }
         guard status.isReloadingAvailable else {
@@ -78,7 +78,7 @@ public extension InfiniteList {
         case .loadingMore:
             append(items)
         default:
-            Logger.standard.logError(InfiniteList.displayStatusError)
+            Logger.standard.log(error: InfiniteList.displayStatusError)
         }
         // COMMENT: Adjust the content offset.
         if contentOffset.y < 0 {

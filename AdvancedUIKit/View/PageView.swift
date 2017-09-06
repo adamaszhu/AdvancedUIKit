@@ -36,7 +36,7 @@ public class PageView: UIScrollView {
     /// The current page presented.
     public var currentPage: UIView? {
         guard (currentPageIndex >= 0) && (currentPageIndex < pageControl.numberOfPages) else {
-            Logger.standard.logError(PageView.pageIndexError)
+            Logger.standard.log(error: PageView.pageIndexError)
             return nil
         }
         return subviews[currentPageIndex]
@@ -69,7 +69,7 @@ public class PageView: UIScrollView {
     ///   - index: The index of the replaced view.
     public func replace(_ view: UIView, atIndex index: Int) {
         guard (index >= 0) && (index < pageControl.numberOfPages) else {
-            Logger.standard.logError(PageView.pageIndexError)
+            Logger.standard.log(error: PageView.pageIndexError)
             return
         }
         view.frame = subviews[index].frame
@@ -83,7 +83,7 @@ public class PageView: UIScrollView {
     public func removeView(atIndex index: Int) {
         // TODO: Add animation for the removing action.
         guard (index >= 0) && (index < pageControl.numberOfPages) else {
-            Logger.standard.logError(PageView.pageIndexError)
+            Logger.standard.log(error: PageView.pageIndexError)
             return
         }
         if (index <= currentPageIndex) && (currentPageIndex != 0)  {
@@ -111,7 +111,7 @@ public class PageView: UIScrollView {
     /// Switch to next page.
     public func switchToNextPage() {
         guard currentPageIndex != pageControl.numberOfPages - 1 else {
-            Logger.standard.logWarning(PageView.lastPageWarning)
+            Logger.standard.log(warning: PageView.lastPageWarning)
             return
         }
         switchToPage(withIndex: currentPageIndex + 1)
@@ -120,7 +120,7 @@ public class PageView: UIScrollView {
     /// Switch to previous page.
     public func switchToPreviousPage() {
         guard currentPageIndex != 0 else {
-            Logger.standard.logWarning(PageView.firstPageWarning)
+            Logger.standard.log(warning: PageView.firstPageWarning)
             return
         }
         switchToPage(withIndex: currentPageIndex - 1)
@@ -133,7 +133,7 @@ public class PageView: UIScrollView {
     ///   - shouldAnimate: Whether the animation should be allowed or not.
     public func switchToPage(withIndex index: Int, withAnimation shouldAnimate: Bool = true) {
         guard (index >= 0) && (index < pageControl.numberOfPages) else {
-            Logger.standard.logError(PageView.pageIndexError)
+            Logger.standard.log(error: PageView.pageIndexError)
             return
         }
         pageControl.currentPage = index

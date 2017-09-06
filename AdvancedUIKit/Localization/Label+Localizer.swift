@@ -9,7 +9,7 @@ public extension UILabel {
         guard let text = text else {
             return
         }
-        self.text = text.localize(withLocalizationFile: localizationFile)
+        self.text = text.localizedString(withLocalizationFile: localizationFile)
     }
     
 }

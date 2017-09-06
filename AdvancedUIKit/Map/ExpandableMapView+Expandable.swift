@@ -7,7 +7,7 @@ extension ExpandableMapView: ExpandableView {
     
     var isExpanded: Bool {
         guard superview != nil else {
-            Logger.standard.logError(ExpandableMapView.superviewError)
+            Logger.standard.log(error: ExpandableMapView.superviewError)
             return false
         }
         return superview == window
@@ -15,11 +15,11 @@ extension ExpandableMapView: ExpandableView {
     
     public func expand() {
         guard !isExpanded && isExpandable else {
-            Logger.standard.logWarning(ExpandableMapView.expandWarning)
+            Logger.standard.log(warning: ExpandableMapView.expandWarning)
             return
         }
         guard let window = window else {
-            Logger.standard.logError(ExpandableMapView.windowError)
+            Logger.standard.log(error: ExpandableMapView.windowError)
             return
         }
         saveOriginalConstraints(of: self)
@@ -40,11 +40,11 @@ extension ExpandableMapView: ExpandableView {
     
     public func collapse() {
         guard isExpanded && isExpandable else {
-            Logger.standard.logWarning(ExpandableMapView.collapseWarning)
+            Logger.standard.log(warning: ExpandableMapView.collapseWarning)
             return
         }
         guard let window = window else {
-            Logger.standard.logError(ExpandableMapView.windowError)
+            Logger.standard.log(error: ExpandableMapView.windowError)
             return
         }
         animate(withChange: { [unowned self] _ in

@@ -27,7 +27,7 @@ public class PopupView: RootView {
     
     public override func show() {
         guard !isVisible else {
-            Logger.standard.logWarning(RootView.showWarning)
+            Logger.standard.log(warning: RootView.showWarning)
             return
         }
         hostWindow.addSubview(self)
@@ -40,7 +40,7 @@ public class PopupView: RootView {
     
     public override func hide() {
         guard isVisible else {
-            Logger.standard.logWarning(RootView.hideWarning)
+            Logger.standard.log(warning: RootView.hideWarning)
             return
         }
         animate(withChange: {[unowned self] _ in
@@ -52,7 +52,7 @@ public class PopupView: RootView {
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(PopupView.initError)
+        Logger.standard.log(error: PopupView.initError)
         return nil
     }
     

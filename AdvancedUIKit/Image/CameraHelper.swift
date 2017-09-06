@@ -69,11 +69,11 @@ public class CameraHelper {
     /// Authorize the camera.
     public func requestCameraAuthorization() {
         guard CameraHelper.isCameraUnauthorized else {
-            cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.cameraAuthorizationError.localizeWithinFramework(forType: CameraHelper.self))
+            cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.cameraAuthorizationError.localizedInternalString(forType: CameraHelper.self))
             return
         }
         guard checkDescriptionKey(CameraHelper.cameraDescriptionKey) == true else {
-            Logger.standard.logError(CameraHelper.descriptionKeyError, withDetail: CameraHelper.cameraDescriptionKey)
+            Logger.standard.log(error: CameraHelper.descriptionKeyError, withDetail: CameraHelper.cameraDescriptionKey)
             return
         }
         AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { [unowned self] (result) in
@@ -84,11 +84,11 @@ public class CameraHelper {
     /// Authorize the library.
     public func requestLibraryAuthorization() {
         guard CameraHelper.isLibraryUnauthorized else {
-            cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.libraryAuthorizationError.localizeWithinFramework(forType: CameraHelper.self))
+            cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.libraryAuthorizationError.localizedInternalString(forType: CameraHelper.self))
             return
         }
         guard checkDescriptionKey(CameraHelper.libraryDescriptionKey) == true else {
-            Logger.standard.logError(CameraHelper.descriptionKeyError, withDetail: CameraHelper.libraryDescriptionKey)
+            Logger.standard.log(error: CameraHelper.descriptionKeyError, withDetail: CameraHelper.libraryDescriptionKey)
             return
         }
         PHPhotoLibrary.requestAuthorization { [unowned self] (result) in

@@ -80,7 +80,7 @@ public class DataPicker: RootView {
     ///   - index: The index of the column.
     public func selectValue(_ value: String, atColumn index: Int = 0) {
         guard (index >= 0) && (index < columns.count) else {
-            Logger.standard.logError(DataPicker.columnError)
+            Logger.standard.log(error: DataPicker.columnError)
             return
         }
         var item: DataPickerItem
@@ -91,7 +91,7 @@ public class DataPicker: RootView {
                 return
             }
         }
-        Logger.standard.logError(DataPicker.itemError)
+        Logger.standard.log(error: DataPicker.itemError)
     }
     
     /// The selected values are confirmed by clicking the done button.
@@ -116,7 +116,7 @@ public class DataPicker: RootView {
     
     public override func hide() {
         if !isVisible {
-            Logger.standard.logWarning(DataPicker.hideWarning)
+            Logger.standard.log(warning: DataPicker.hideWarning)
             return
         }
         animate(withChange: { [unowned self] _ in
@@ -130,7 +130,7 @@ public class DataPicker: RootView {
     
     public override func show() {
         if isVisible {
-            Logger.standard.logWarning(DataPicker.showWarning)
+            Logger.standard.log(warning: DataPicker.showWarning)
             return
         }
         animate(withChange: { [unowned self] _ in
@@ -146,10 +146,10 @@ public class DataPicker: RootView {
         titleBackgroundColor = UIColor.gray
         let titleTextColor = UIColor.white
         cancelButton.backgroundColor = titleBackgroundColor
-        cancelButton.setTitle(DataPicker.cancelButtonName.localizeWithinFramework(forType: self), for: .normal)
+        cancelButton.setTitle(DataPicker.cancelButtonName.localizedInternalString(forType: self), for: .normal)
         cancelButton.addTarget(self, action: #selector(hide), for: .touchUpInside)
         doneButton.backgroundColor = titleBackgroundColor
-        doneButton.setTitle(DataPicker.doneButtonName.localizeWithinFramework(forType: self), for: .normal)
+        doneButton.setTitle(DataPicker.doneButtonName.localizedInternalString(forType: self), for: .normal)
         doneButton.addTarget(self, action: #selector(confirmSelection), for: .touchUpInside)
         titleLabel.backgroundColor = titleBackgroundColor
         titleLabel.textColor = titleTextColor

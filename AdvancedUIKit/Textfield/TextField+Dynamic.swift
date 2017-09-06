@@ -12,7 +12,7 @@ public extension UITextField {
     /// Get the height of each line.
     public var lineHeight: CGFloat {
         guard let font = font else {
-            Logger.standard.logWarning(UITextField.fontEmptyWarning)
+            Logger.standard.log(warning: UITextField.fontEmptyWarning)
             return 0
         }
         return font.lineHeight
@@ -21,11 +21,11 @@ public extension UITextField {
     /// How many lines are presented.
     public var lineAmount: Int {
         guard let text = text else {
-            Logger.standard.logWarning(UITextField.textEmptyWarning)
+            Logger.standard.log(warning: UITextField.textEmptyWarning)
             return 0
         }
         guard let font = font else {
-            Logger.standard.logWarning(UITextField.fontEmptyWarning)
+            Logger.standard.log(warning: UITextField.fontEmptyWarning)
             return 0
         }
         return text.measureLineAmount(withFont: font, inView: self)

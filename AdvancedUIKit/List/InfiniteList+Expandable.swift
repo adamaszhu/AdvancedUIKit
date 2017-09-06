@@ -15,7 +15,7 @@ public extension InfiniteList {
     public func expandCell(atIndex index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         guard let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
-            Logger.standard.logWarning(InfiniteList.cellExpansionWarning, withDetail: index)
+            Logger.standard.log(warning: InfiniteList.cellExpansionWarning, withDetail: index)
             return
         }
         cell.expand()
@@ -36,7 +36,7 @@ public extension InfiniteList {
     public func collapseCell(atIndex index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         guard let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
-            Logger.standard.logWarning(InfiniteList.cellCollapsionWarning, withDetail: index)
+            Logger.standard.log(warning: InfiniteList.cellCollapsionWarning, withDetail: index)
             return
         }
         cell.collapse()
@@ -53,7 +53,7 @@ public extension InfiniteList {
     /// Collapse all cells.
     public func collapseAllCells() {
         guard let index = expandedCellIndexPath?.row else {
-            Logger.standard.logWarning(InfiniteList.cellCollapsionWarning)
+            Logger.standard.log(warning: InfiniteList.cellCollapsionWarning)
             return
         }
         collapseCell(atIndex: index)

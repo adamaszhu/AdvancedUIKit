@@ -19,23 +19,23 @@ public extension UIImage {
     /// - Returns: The image with blur effect.
     public func addGaussianBlur(withRadius radius: Int) -> UIImage {
         guard let gaussianBlurFilter = CIFilter(name: UIImage.gaussianBlurFilterName) else {
-            Logger.standard.logError(UIImage.filterError)
+            Logger.standard.log(error: UIImage.filterError)
             return self
         }
         gaussianBlurFilter.setDefaults()
         guard let inputImage = CIImage(image: self) else {
-            Logger.standard.logError(UIImage.inputImageError)
+            Logger.standard.log(error: UIImage.inputImageError)
             return self
         }
         gaussianBlurFilter.setValue(inputImage, forKey: kCIInputImageKey)
         gaussianBlurFilter.setValue(radius, forKey: kCIInputRadiusKey)
         guard let outputImage = gaussianBlurFilter.outputImage else {
-            Logger.standard.logError(UIImage.outputImageError)
+            Logger.standard.log(error: UIImage.outputImageError)
             return self
         }
         let context = CIContext(options: nil)
         guard let cgImage = context.createCGImage(outputImage, from: inputImage.extent) else {
-            Logger.standard.logError(UIImage.outputImageError)
+            Logger.standard.log(error: UIImage.outputImageError)
             return self
         }
         return UIImage(cgImage: cgImage)
@@ -49,7 +49,7 @@ public extension UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         draw(at: .zero, blendMode: .normal, alpha: CGFloat(opacity))
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
-            Logger.standard.logError(UIImage.outputImageError)
+            Logger.standard.log(error: UIImage.outputImageError)
             UIGraphicsEndImageContext()
             return self
         }
@@ -70,11 +70,11 @@ public extension UIImage {
             rect = CGRect(x: 0, y: (height - width) / 2, width: width, height: width)
         }
         guard let inputImage = cgImage else {
-            Logger.standard.logError(UIImage.inputImageError)
+            Logger.standard.log(error: UIImage.inputImageError)
             return self
         }
         guard let outputImage = inputImage.cropping(to: rect) else {
-            Logger.standard.logError(UIImage.outputImageError)
+            Logger.standard.log(error: UIImage.outputImageError)
             return self
         }
         return UIImage(cgImage: outputImage)
@@ -86,18 +86,18 @@ public extension UIImage {
     /// - Returns: The compressed image.
     public func compress(withMaxSize maxSize: Int) -> UIImage {
         guard let imageData = UIImageJPEGRepresentation(self, 1) else {
-            Logger.standard.logError(UIImage.inputImageError)
+            Logger.standard.log(error: UIImage.inputImageError)
             return self
         }
         if imageData.count <= maxSize {
             return self
         }
         guard let comressedData = UIImageJPEGRepresentation(self, CGFloat(maxSize) / CGFloat(imageData.count)) else {
-            Logger.standard.logError(UIImage.outputImageError)
+            Logger.standard.log(error: UIImage.outputImageError)
             return self
         }
         guard let image = UIImage(data: comressedData) else {
-            Logger.standard.logError(UIImage.outputImageError)
+            Logger.standard.log(error: UIImage.outputImageError)
             return self
         }
         return image
@@ -114,7 +114,7 @@ public extension UIImage {
         let bound = CGRect(x: 0, y: 0, width: width, height: height)
         draw(in: bound)
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
-            Logger.standard.logError(UIImage.outputImageError)
+            Logger.standard.log(error: UIImage.outputImageError)
             UIGraphicsEndImageContext()
             return self
         }

@@ -32,7 +32,7 @@ class ActionFilterView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(ActionFilterView.initError)
+        Logger.standard.log(error: ActionFilterView.initError)
         return nil
     }
     

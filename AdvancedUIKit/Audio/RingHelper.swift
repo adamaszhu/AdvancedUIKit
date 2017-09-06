@@ -48,7 +48,7 @@ public class RingHelper {
                      withVibration shouldVibrate: Bool = true,
                      withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
-            Logger.standard.logWarning(RingHelper.playStatusWarning)
+            Logger.standard.log(warning: RingHelper.playStatusWarning)
             return false
         }
         remainerCounter = times
@@ -56,7 +56,7 @@ public class RingHelper {
         self.period = period
         let fileInfoAccessor = FileInfoAccessor(path: soundFileName)
         guard let path = bundle.path(forResource: fileInfoAccessor.filename, ofType: fileInfoAccessor.fileExtension) else {
-            Logger.standard.logError(RingHelper.soundNameError, withDetail: soundFileName)
+            Logger.standard.log(error: RingHelper.soundNameError, withDetail: soundFileName)
             return false
         }
         let url = URL(fileURLWithPath: path)
@@ -64,7 +64,7 @@ public class RingHelper {
         var newSoundID = SystemSoundID(0)
         AudioServicesCreateSystemSoundID(url as CFURL, &newSoundID)
         guard newSoundID != 0 else {
-            Logger.standard.logError(RingHelper.soundNameError, withDetail: soundFileName)
+            Logger.standard.log(error: RingHelper.soundNameError, withDetail: soundFileName)
             return false
         }
         soundID = newSoundID

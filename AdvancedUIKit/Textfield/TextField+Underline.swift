@@ -28,7 +28,7 @@ public extension UITextField {
     ///   - highlightedColor: The highlighted color of the underline.
     public func activateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
         guard underlineView == nil else {
-            Logger.standard.logError(UITextField.activationError)
+            Logger.standard.log(error: UITextField.activationError)
             return
         }
         let newUnderlineView = UnderlineView(frame: CGRect(x: 0, y: frame.height - UITextField.defaultUnderlineHeight, width: frame.width, height: UITextField.defaultUnderlineHeight))
@@ -43,7 +43,7 @@ public extension UITextField {
     /// Deactivate the underline view.
     public func deactivateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
         guard let underlineView = underlineView else {
-            Logger.standard.logError(UITextField.activationError)
+            Logger.standard.log(error: UITextField.activationError)
             return
         }
         underlineView.removeFromSuperview()

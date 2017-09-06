@@ -22,7 +22,7 @@ extension InfiniteListStatus {
         case .initial, .reloading:
             return true
         default:
-            Logger.standard.logWarning(InfiniteListStatus.reloadingStatusWarning)
+            Logger.standard.log(warning: InfiniteListStatus.reloadingStatusWarning)
             return false
         }
     }
@@ -33,7 +33,7 @@ extension InfiniteListStatus {
         case .loadingMore:
             return true
         default:
-            Logger.standard.logWarning(InfiniteListStatus.loadingMoreStatusWarning)
+            Logger.standard.log(warning: InfiniteListStatus.loadingMoreStatusWarning)
             return false
         }
     }
@@ -44,7 +44,7 @@ extension InfiniteListStatus {
         case .infinite, .finite, .empty:
             return true
         default:
-            Logger.standard.logWarning(InfiniteListStatus.reloadingAvailabilityWarning)
+            Logger.standard.log(warning: InfiniteListStatus.reloadingAvailabilityWarning)
             return false
         }
     }
@@ -55,7 +55,7 @@ extension InfiniteListStatus {
         case .infinite:
             return true
         default:
-            Logger.standard.logWarning(InfiniteListStatus.loadingMoreAvailabilityWarning)
+            Logger.standard.log(warning: InfiniteListStatus.loadingMoreAvailabilityWarning)
             return false
         }
     }
@@ -66,7 +66,7 @@ extension InfiniteListStatus {
         case .finite, .infinite:
             return true
         default:
-            Logger.standard.logWarning(InfiniteListStatus.selectionAvailabilityWarning)
+            Logger.standard.log(warning: InfiniteListStatus.selectionAvailabilityWarning)
             return false
         }
     }
@@ -77,7 +77,7 @@ extension InfiniteListStatus {
         case .finite, .infinite:
             return true
         default:
-            Logger.standard.logWarning(InfiniteListStatus.editionAvailabilityWarning)
+            Logger.standard.log(warning: InfiniteListStatus.editionAvailabilityWarning)
             return false
         }
     }
@@ -88,7 +88,7 @@ extension InfiniteListStatus {
         case .initial:
             return true
         default:
-            Logger.standard.logError(InfiniteListStatus.registrationAvailabilityError)
+            Logger.standard.log(error: InfiniteListStatus.registrationAvailabilityError)
             return false
         }
     }

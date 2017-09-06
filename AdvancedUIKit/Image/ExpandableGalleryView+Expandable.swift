@@ -8,7 +8,7 @@ extension ExpandableGalleryView: ExpandableView {
     /// Expand the frame with animation
     private func expandFrame() {
         guard let window = window else {
-            Logger.standard.logError(ExpandableGalleryView.windowError)
+            Logger.standard.log(error: ExpandableGalleryView.windowError)
             return
         }
         saveOriginalConstraints(of: self)
@@ -40,7 +40,7 @@ extension ExpandableGalleryView: ExpandableView {
     /// Collapse the frame with animation
     private func collapseFrame() {
         guard let window = window else {
-            Logger.standard.logError(ExpandableGalleryView.windowError)
+            Logger.standard.log(error: ExpandableGalleryView.windowError)
             return
         }
         let pageControlBottomMargin = self.pageControlButtomMargin
@@ -82,7 +82,7 @@ extension ExpandableGalleryView: ExpandableView {
     
     public var isExpanded: Bool {
         guard superview != nil else {
-            Logger.standard.logError(ExpandableGalleryView.superviewError)
+            Logger.standard.log(error: ExpandableGalleryView.superviewError)
             return false
         }
         return superview == window
@@ -90,7 +90,7 @@ extension ExpandableGalleryView: ExpandableView {
     
     public func expand() {
         guard !isExpanded && isExpandable else {
-            Logger.standard.logWarning(ExpandableGalleryView.expandWarning)
+            Logger.standard.log(warning: ExpandableGalleryView.expandWarning)
             return
         }
         expandFrame()
@@ -98,7 +98,7 @@ extension ExpandableGalleryView: ExpandableView {
     
     public func collapse() {
         guard isExpanded && isExpandable else {
-            Logger.standard.logWarning(ExpandableGalleryView.collapseWarning)
+            Logger.standard.log(warning: ExpandableGalleryView.collapseWarning)
             return
         }
         removeBackgroundColor()

@@ -17,7 +17,7 @@ class GestureFilterView: UIView {
     ///   - shouldEnable: Whether the gesture recognizer should be enabled or not.
     func changeGestureRecognizerUsibility(ofType type: AnyClass, toUsibility shouldEnable: Bool) {
         guard let gestureRecognizers = gestureRecognizers else {
-            Logger.standard.logError(GestureFilterView.gestureRecognizersEmptyError)
+            Logger.standard.log(error: GestureFilterView.gestureRecognizersEmptyError)
             return
         }
         for gestureRecognizer in gestureRecognizers {
@@ -45,7 +45,7 @@ class GestureFilterView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(GestureFilterView.initError)
+        Logger.standard.log(error: GestureFilterView.initError)
         return nil
     }
     

@@ -19,7 +19,7 @@ public class NotificationHelper {
     public var isLocalNotificationAuthorized: Bool {
         // TODO: Implement this using the NSNotification framework.
         guard let setting = application.currentUserNotificationSettings else {
-            Logger.standard.logError(NotificationHelper.notificationSettingError)
+            Logger.standard.log(error: NotificationHelper.notificationSettingError)
             return false
         }
         return setting.types.contains(.alert)
@@ -46,7 +46,7 @@ public class NotificationHelper {
     public func createLocalNotification(withTitle title: String, withContent content: String, withSoundName soundName: String = UILocalNotificationDefaultSoundName) {
         // TODO: Implement this using the NSNotification framework.
         if !isLocalNotificationAuthorized {
-            notificationHelperDelegate?.notificationHelper(self, didCatchError: NotificationHelper.authorizationError.localizeWithinFramework(forType: NotificationHelper.self))
+            notificationHelperDelegate?.notificationHelper(self, didCatchError: NotificationHelper.authorizationError.localizedInternalString(forType: NotificationHelper.self))
             return
         }
         let notification = UILocalNotification()

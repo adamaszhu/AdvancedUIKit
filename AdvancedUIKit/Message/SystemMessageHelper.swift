@@ -54,7 +54,7 @@ public class SystemMessageHelper {
                     self.messageHelperDelegate?.messageHelperDidCancelInput(self)
                     break
                 case .unknown:
-                    Logger.standard.logError(SystemMessageHelper.typeError)
+                    Logger.standard.log(error: SystemMessageHelper.typeError)
                     break
                 }
             }
@@ -73,7 +73,7 @@ public class SystemMessageHelper {
             case .input:
                 self.messageHelperDelegate?.messageHelper(self, didConfirmInput: self.alertController.textFields?[0].text ?? "")
             case .unknown:
-                Logger.standard.logError(SystemMessageHelper.typeError)
+                Logger.standard.log(error: SystemMessageHelper.typeError)
                 break
             }
         }

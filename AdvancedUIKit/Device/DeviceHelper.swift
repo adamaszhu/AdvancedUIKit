@@ -14,7 +14,6 @@ public class DeviceHelper: NSObject {
     /// System error.
     private static let phoneNumberError = "The phone number is invalid."
     private static let addressError = "The address is incorrect."
-    private static let attachmentError = "The attachment is invalid."
     
     /// Function url.
     private static let dailPrefix = "telprompt://"
@@ -31,7 +30,7 @@ public class DeviceHelper: NSObject {
     /// - Parameter number: The phone number.
     public func dial(withNumber number: String) {
         guard let dialURL = URL(string: "\(DeviceHelper.dailPrefix)\(number)") else {
-            Logger.standard.logInfo(DeviceHelper.phoneNumberError, withDetail: number)
+            Logger.standard.log(info: DeviceHelper.phoneNumberError, withDetail: number)
             return
         }
         open(dialURL, withError: DeviceHelper.dialError)
@@ -43,7 +42,7 @@ public class DeviceHelper: NSObject {
     public func showMap(ofAddress address: String) {
         let formattedAddress = address.replacingOccurrences(of: " ", with: "+")
         guard let mapURL = URL(string: "\(DeviceHelper.mapPrefix)\(formattedAddress)") else {
-            Logger.standard.logInfo(DeviceHelper.addressError, withDetail: address)
+            Logger.standard.log(info: DeviceHelper.addressError, withDetail: address)
             return
         }
         open(mapURL, withError: DeviceHelper.mapError)
@@ -67,10 +66,7 @@ public class DeviceHelper: NSObject {
         mailViewController.setToRecipients([address])
         mailViewController.setSubject(subject)
         for (name, data) in attachments {
-            guard let mimeType = FileInfoAccessor(path: name).mimeType else {
-                Logger.standard.logError(DeviceHelper.attachmentError, withDetail: name)
-                continue
-            }
+            let mimeType = FileInfoAccessor(path: name).mimeType
             mailViewController.addAttachmentData(data, mimeType: mimeType, fileName: name);
         }
         mailViewController.setMessageBody(content, isHTML: isHTML)
@@ -84,7 +80,7 @@ public class DeviceHelper: NSObject {
     ///   - message: The message to be performed if the URL is not available.
     private func open(_ url: URL, withError error: String) {
         guard application.canOpenURL(url) else {
-            deviceHelperDelegate?.deviceHelper(self, didCatchError: error.localizeWithinFramework(forType: DeviceHelper.self))
+            deviceHelperDelegate?.deviceHelper(self, didCatchError: error.localizedInternalString(forType: DeviceHelper.self))
             return
         }
         if #available(iOS 10.0, *) {

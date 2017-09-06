@@ -31,7 +31,7 @@ class UnderlineView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(initError)
+        Logger.standard.log(error: initError)
         return nil
     }
     
