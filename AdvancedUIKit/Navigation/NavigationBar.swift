@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 02/06/2017
-public class NavigationBar: UINavigationBar {
+final public class NavigationBar: UINavigationBar {
     
     /// The view controller that the navigation bar belongs to.
     @IBOutlet public weak var viewController: UIViewController!
