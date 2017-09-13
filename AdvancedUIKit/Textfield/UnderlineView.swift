@@ -25,8 +25,8 @@ class UnderlineView: UIView {
     }
     
     override init(frame: CGRect) {
-        color = UIColor.clear
-        highlightedColor = UIColor.clear
+        color = .clear
+        highlightedColor = .clear
         super.init(frame: frame)
     }
     
