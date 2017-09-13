@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 15/06/2017
-class GalleryImage: UIScrollView {
+final class GalleryImage: UIScrollView {
     
     /// Error message.
     private static let initError = "Constructor init(coder) shouldn't be called."

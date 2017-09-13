@@ -72,16 +72,16 @@ extension ExpandableGalleryView: ExpandableView {
     ///
     /// - Parameter color: The color to be settled.
     private func setBackgroundColor(_ color: UIColor) {
-        let subviews = self.subviews.map{ (subview) in
-            subview as? GalleryImage
+        let subviews = self.subviews.flatMap {
+            $0 as? GalleryImage
         }
-        for view in subviews {
-            view?.imageView.backgroundColor = color
+        subviews.forEach {
+            $0.imageView.backgroundColor = color
         }
     }
     
     public var isExpanded: Bool {
-        guard superview != nil else {
+        guard let _ = superview else {
             Logger.standard.log(error: ExpandableGalleryView.superviewError)
             return false
         }
@@ -89,7 +89,7 @@ extension ExpandableGalleryView: ExpandableView {
     }
     
     public func expand() {
-        guard !isExpanded && isExpandable else {
+        guard !isExpanded, isExpandable else {
             Logger.standard.log(warning: ExpandableGalleryView.expandWarning)
             return
         }
@@ -97,7 +97,7 @@ extension ExpandableGalleryView: ExpandableView {
     }
     
     public func collapse() {
-        guard isExpanded && isExpandable else {
+        guard isExpanded, isExpandable else {
             Logger.standard.log(warning: ExpandableGalleryView.collapseWarning)
             return
         }

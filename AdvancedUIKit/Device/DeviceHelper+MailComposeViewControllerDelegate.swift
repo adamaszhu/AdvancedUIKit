@@ -5,9 +5,7 @@
 /// - date: 29/05/2017
 extension DeviceHelper: MFMailComposeViewControllerDelegate {
     
-    public func mailComposeController(_ controller: MFMailComposeViewController,
-                                      didFinishWith result: MFMailComposeResult,
-                                      error: Error?) {
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
         switch result {
         case .sent:

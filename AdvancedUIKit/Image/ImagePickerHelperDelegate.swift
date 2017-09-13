@@ -8,7 +8,7 @@ public protocol ImagePickerHelperDelegate {
     /// The image has been picked.
     ///
     /// - Parameter image: The image picked.
-    func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didPickImage image: UIImage)
+    func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didPick image: UIImage)
     
     /// An error occurs.
     ///

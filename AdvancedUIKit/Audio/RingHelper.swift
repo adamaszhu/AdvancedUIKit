@@ -3,10 +3,10 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 01/06/2017
-public class RingHelper {
+final public class RingHelper {
     
     /// The singleton instance.
-    public static let shared: RingHelper = RingHelper()
+    public static let shared: RingHelper = .init()
     
     /// The default period between two rings or vibrations.
     private static let defaultRingPeriod = 1.5
@@ -43,10 +43,7 @@ public class RingHelper {
     ///   - shouldVibrate: Whether the vibration should be performed or not.
     ///   - period: The period between two vibrations or rings.
     /// - Returns: Whether the ring will be performed or not. False if a ring is being played or the sound file doesn't exist.
-    public func ring(withSound soundFileName: String,
-                     forTimes times: Int = 1,
-                     withVibration shouldVibrate: Bool = true,
-                     withPeriod period: Double = defaultRingPeriod) -> Bool {
+    public func ring(withSound soundFileName: String, forTimes times: Int = 1, withVibration shouldVibrate: Bool = true, withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
             Logger.standard.log(warning: RingHelper.playStatusWarning)
             return false
@@ -79,9 +76,7 @@ public class RingHelper {
     ///   - times: How many times the device need to ring.
     ///   - period: The period between two vibrations or rings.
     /// - Returns: Whether the ring will be performed or not. False if a ring is being played.
-    public func ring(withSoundID soundID: SystemSoundID = defaultSoundID,
-                     forTimes times: Int = 1,
-                     withPeriod period: Double = defaultRingPeriod) -> Bool {
+    public func ring(withSoundID soundID: SystemSoundID = defaultSoundID, forTimes times: Int = 1, withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
             return false
         }

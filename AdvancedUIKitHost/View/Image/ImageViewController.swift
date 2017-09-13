@@ -25,35 +25,35 @@ class ImageViewController: UIViewController {
     }
     
     @IBAction func addBlur(_ sender: Any) {
-        guard let image = galleryView.currentImage?.addGaussianBlur(withRadius: gaussianRadius) else {
+        guard let image = galleryView.currentImage?.addingGaussianBlur(withRadius: gaussianRadius) else {
             return
         }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func addOpacity(_ sender: Any) {
-        guard let image = galleryView.currentImage?.setOpacity(opacity) else {
+        guard let image = galleryView.currentImage?.addingOpacity(opacity) else {
             return
         }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func cropSquare(_ sender: Any) {
-        guard let image = galleryView.currentImage?.cropSquare() else {
+        guard let image = galleryView.currentImage?.croppingSquare() else {
             return
         }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func compress(_ sender: Any) {
-        guard let image = galleryView.currentImage?.compress(withMaxSize: compressSize) else {
+        guard let image = galleryView.currentImage?.compressing(withMaxSize: compressSize) else {
             return
         }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func resize(_ sender: Any) {
-        guard let image = galleryView.currentImage?.resize(toWidth: size.width, toHeight: size.height) else {
+        guard let image = galleryView.currentImage?.resizing(toWidth: size.width, toHeight: size.height) else {
             return
         }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)

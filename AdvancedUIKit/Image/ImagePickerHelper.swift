@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 10/06/2017
-public class ImagePickerHelper: NSObject {
+final public class ImagePickerHelper: NSObject {
     
     /// The content on the selector.
     private static let selectFromLibraryActionName = "SelectFromLibrary"
@@ -22,7 +22,7 @@ public class ImagePickerHelper: NSObject {
     /// Initialize the object.
     ///
     /// - Parameter application: The application used to make a function call.
-    public init(application: UIApplication = UIApplication.shared, cameraHelper: CameraHelper = CameraHelper()) {
+    public init(application: UIApplication = UIApplication.shared, cameraHelper: CameraHelper = .init()) {
         self.cameraHelper = cameraHelper
         currentViewController = application.rootViewController
         super.init()
@@ -38,7 +38,7 @@ public class ImagePickerHelper: NSObject {
                 self.cameraHelper.requestLibraryAuthorization()
                 return
             }
-            self.showImageViewController(withSourceType: .photoLibrary)
+            self.showImageViewController(of: .photoLibrary)
         }
         let takePhotoActionTitle = ImagePickerHelper.takePhotoActionName.localizedInternalString(forType: self.classForCoder)
         let takePhotoAction = UIAlertAction(title: takePhotoActionTitle, style: .default) { [unowned self] _ in
@@ -46,7 +46,7 @@ public class ImagePickerHelper: NSObject {
                 self.cameraHelper.requestCameraAuthorization()
                 return
             }
-            self.showImageViewController(withSourceType: .camera)
+            self.showImageViewController(of: .camera)
         }
         let cancelActionTitle = ImagePickerHelper.cancelActionName.localizedInternalString(forType: self.classForCoder)
         let cancelAction = UIAlertAction(title: cancelActionTitle, style: .default) { [unowned self] _ in
@@ -61,7 +61,7 @@ public class ImagePickerHelper: NSObject {
     /// Show the image view controller with a specific type.
     ///
     /// - Parameter type: The type of the image view controller.
-    func showImageViewController(withSourceType type: UIImagePickerControllerSourceType) {
+    func showImageViewController(of type: UIImagePickerControllerSourceType) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = type
         imagePickerController.delegate = self

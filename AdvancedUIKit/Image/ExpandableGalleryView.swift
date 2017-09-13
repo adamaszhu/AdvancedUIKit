@@ -3,14 +3,14 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 17/06/2017
-public class ExpandableGalleryView: GalleryView {
+final public class ExpandableGalleryView: GalleryView {
     
     /// The gesture filter to expand the view.
     let gestureFilterView: UIView
-
+    
     /// The gesture used to collapse the view.
     let collapseGestureRecognizer: UITapGestureRecognizer
-
+    
     public required init?(coder aDecoder: NSCoder) {
         gestureFilterView = UIView()
         collapseGestureRecognizer = UITapGestureRecognizer()
@@ -41,11 +41,11 @@ public class ExpandableGalleryView: GalleryView {
         set {
             super.images = newValue
             for subview in subviews {
-            guard let galleryImage = subview as? GalleryImage else {
-                Logger.standard.log(error: ExpandableGalleryView.subviewTypeError)
-                return
-            }
-            collapseGestureRecognizer.require(toFail: galleryImage.doubleTapGestureRecognizer)
+                guard let galleryImage = subview as? GalleryImage else {
+                    Logger.standard.log(error: ExpandableGalleryView.subviewTypeError)
+                    return
+                }
+                collapseGestureRecognizer.require(toFail: galleryImage.doubleTapGestureRecognizer)
             }
         }
         get {
@@ -61,24 +61,25 @@ public class ExpandableGalleryView: GalleryView {
     
     public var isExpandable: Bool {
         set {
-            if newValue {
-                guard let superview = superview else {
-                    Logger.standard.log(error: ExpandableGalleryView.superviewError)
-                    return
-                }
-                superview.addSubview(gestureFilterView)
-                addGestureRecognizer(collapseGestureRecognizer)
-                collapseGestureRecognizer.isEnabled = false
-            } else {
+            guard newValue else {
                 gestureFilterView.removeFromSuperview()
                 removeGestureRecognizer(collapseGestureRecognizer)
+                return
             }
+            guard let superview = superview else {
+                Logger.standard.log(error: ExpandableGalleryView.superviewError)
+                return
+            }
+            superview.addSubview(gestureFilterView)
+            addGestureRecognizer(collapseGestureRecognizer)
+            collapseGestureRecognizer.isEnabled = false
+            
         }
         get {
             return gestureRecognizers?.contains(collapseGestureRecognizer) == true
         }
     }
-
+    
 }
 
 import UIKit

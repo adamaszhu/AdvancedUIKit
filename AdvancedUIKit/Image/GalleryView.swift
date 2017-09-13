@@ -12,7 +12,7 @@ public class GalleryView: PageView {
     private static let defaultMaxZoomLevel = CGFloat(8)
     
     /// The image content mode.
-    private static let defaultImageMode = UIViewContentMode.scaleAspectFit
+    private static let defaultImageMode: UIViewContentMode = .scaleAspectFit
     
     /// The mode of the images displayed.
     public var imageMode: UIViewContentMode
@@ -24,13 +24,13 @@ public class GalleryView: PageView {
     public var images: [UIImage] {
         set {
             removeAllViews()
-            for image in newValue {
-                add(image: image)
+            newValue.forEach {
+                add(image: $0)
             }
         }
         get {
-            return subviews.flatMap { subview in
-                let galleryImage = subview as? GalleryImage
+            return subviews.flatMap {
+                let galleryImage = $0 as? GalleryImage
                 return galleryImage?.image
             }
         }
@@ -54,12 +54,12 @@ public class GalleryView: PageView {
     var imageSize: CGSize {
         set {
             for index in 0 ..< subviews.count {
-                if let galleryImage = subviews[index] as? GalleryImage {
-                    galleryImage.frame.origin = CGPoint(x: CGFloat(index) * newValue.width, y: 0)
-                    galleryImage.size = newValue
-                } else {
+                guard let galleryImage = subviews[index] as? GalleryImage else {
                     Logger.standard.log(error: GalleryView.subviewTypeError)
+                    return
                 }
+                galleryImage.frame.origin = CGPoint(x: CGFloat(index) * newValue.width, y: 0)
+                galleryImage.size = newValue
             }
             setContentOffset(CGPoint(x: CGFloat(currentPageIndex) * newValue.width, y: 0), animated: false)
             contentSize = CGSize(width: CGFloat(pageControl.numberOfPages) * newValue.width, height: newValue.height)

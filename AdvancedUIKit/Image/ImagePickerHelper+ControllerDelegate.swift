@@ -14,7 +14,7 @@ extension ImagePickerHelper: UIImagePickerControllerDelegate, UINavigationContro
             return
         }
         picker.dismiss(animated: true, completion: nil)
-        imagePickerHelperDelegate?.imagePickerHelper(self, didPickImage: image)
+        imagePickerHelperDelegate?.imagePickerHelper(self, didPick: image)
     }
     
 }
