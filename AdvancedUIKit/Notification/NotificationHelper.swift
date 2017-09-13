@@ -3,13 +3,13 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 02/06/2017
-public class NotificationHelper {
+final public class NotificationHelper {
     
     /// All messages.
     private static let authorizationError = "AuthorizationError"
     
     /// The system error.
-    private static let notificationSettingError = "The notification setting cannot be retrieved."
+    private static let settingError = "The notification setting cannot be retrieved."
     
     /// The singleton helper.
     public static var shared: NotificationHelper = NotificationHelper()
@@ -19,7 +19,7 @@ public class NotificationHelper {
     public var isLocalNotificationAuthorized: Bool {
         // TODO: Implement this using the NSNotification framework.
         guard let setting = application.currentUserNotificationSettings else {
-            Logger.standard.log(error: NotificationHelper.notificationSettingError)
+            Logger.standard.log(error: NotificationHelper.settingError)
             return false
         }
         return setting.types.contains(.alert)
