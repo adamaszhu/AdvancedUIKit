@@ -6,7 +6,7 @@
 public struct MapViewLine {
     
     /// The width of the line.
-    private static let defaultLineColor: UIColor = .black
+    private static let defaultLineColor = UIColor.black
     
     /// The width of the line.
     private static let defaultLineWidth = 2

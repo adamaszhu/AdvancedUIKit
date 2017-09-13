@@ -5,7 +5,7 @@
 final public class DeviceHelper: NSObject {
     
     /// The singleton instance in the system.
-    public static let standard: DeviceHelper = .init()
+    public static let standard = DeviceHelper()
     
     /// User error.
     private static let dialError = "DialError"

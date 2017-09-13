@@ -6,7 +6,7 @@
 final public class RingHelper {
     
     /// The singleton instance.
-    public static let shared: RingHelper = .init()
+    public static let shared = RingHelper()
     
     /// The default period between two rings or vibrations.
     private static let defaultRingPeriod = 1.5

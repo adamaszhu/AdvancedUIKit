@@ -12,7 +12,7 @@ public class GalleryView: PageView {
     private static let defaultMaxZoomLevel = CGFloat(8)
     
     /// The image content mode.
-    private static let defaultImageMode: UIViewContentMode = .scaleAspectFit
+    private static let defaultImageMode = UIViewContentMode.scaleAspectFit
     
     /// The mode of the images displayed.
     public var imageMode: UIViewContentMode
