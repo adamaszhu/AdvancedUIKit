@@ -5,16 +5,6 @@
 /// - date: 11/06/2017
 public class PageView: UIScrollView {
     
-    /// The default buttom margin of the page control.
-    private static let defaultPageControlButtomMargin = CGFloat(20)
-    
-    /// System error.
-    private static let pageIndexError = "The page does not exist."
-    
-    /// System warning.
-    private static let firstPageWarning = "The page is the first page."
-    private static let lastPageWarning = "The page is the last page."
-    
     /// The page controller.
     var pageControl: UIPageControl
     

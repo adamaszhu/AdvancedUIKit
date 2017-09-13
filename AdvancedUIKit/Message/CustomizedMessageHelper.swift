@@ -8,37 +8,6 @@ final public class CustomizedMessageHelper: PopupView {
     /// Get the shared instance of the CustomizedMessageHelper. If the protocol will be implemented, please create a new object.
     public static let standard: CustomizedMessageHelper = CustomizedMessageHelper()
     
-    /// Error message.
-    private static let typeError = "The message type is unknown."
-    private static let initError = "Constructor init(coder) shouldn't be called."
-    
-    /// The margin of the customized message content.
-    private static let padding = CGFloat(10)
-    
-    /// The default background color of the message view.
-    private static let defaultBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
-    
-    /// The default background color of the mask view.
-    private static let defaultMaskBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-    
-    /// The default background color of the input view.
-    private static let defaultInputPlaceHolderColor = UIColor(white: 1, alpha: 0.2)
-    
-    /// The default separator color of the message view.
-    private static let defaultSeperatorColor = UIColor.white
-    
-    /// The default text color.
-    private static let defaultTextColor = UIColor.white
-    
-    /// The radius of the message box.
-    private static let radius = CGFloat(5)
-    
-    /// The width weight of a customized message compared to the window width.
-    private static let widthWeight = CGFloat(0.7)
-    
-    /// The maximal height weight of a customized message  compared to the height of the window.
-    private static let maxHeightWeight = CGFloat(0.6)
-    
     /// The type of current message.
     var messageType: MessageType
     
@@ -153,7 +122,7 @@ final public class CustomizedMessageHelper: PopupView {
         // The y location of messageView and buttonView will be settled dynamically later.
         // Frame view. The height and Y will be changed later.
         frameView.frame = .init(x: frame.width * (1 - CustomizedMessageHelper.widthWeight) / 2, y: 0, width: frame.width * CustomizedMessageHelper.widthWeight, height: 0)
-        frameView.backgroundColor = CustomizedMessageHelper.defaultBackgroundColor
+        frameView.backgroundColor = CustomizedMessageHelper.defaultMessageBackgroundColor
         frameView.layer.cornerRadius = CustomizedMessageHelper.radius
         addSubview(frameView)
         // Title label. The height will be changed later.

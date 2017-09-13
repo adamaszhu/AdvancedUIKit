@@ -5,9 +5,6 @@
 /// - date: 05/06/2017
 final class ActionFilterView: UIView {
     
-    /// Error message.
-    private static let initError = "Constructor init(coder) shouldn't be called."
-    
     /// The delegate.
     var actionFilterViewDelegate: ActionFilterViewDelegate?
     

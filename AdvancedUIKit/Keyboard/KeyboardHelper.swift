@@ -5,9 +5,6 @@
 /// - date: 05/06/2017
 final public class KeyboardHelper: NSObject {
     
-    /// System message.
-    private static let inputViewError = "The input view doesn't exist."
-    
     /// The delegate
     public var keyboardHelperDelegate: KeyboardHelperDelegate?
     

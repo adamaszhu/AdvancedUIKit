@@ -5,21 +5,6 @@
 /// - author: Adamas
 final public class DataPicker: RootView {
     
-    /// System error.
-    private static let columnError = "The column doesn't exist."
-    private static let itemError = "The item doesn't exist."
-    
-    /// The name of two buttons.
-    private static let cancelButtonName = "Cancel"
-    private static let doneButtonName = "Done"
-    
-    /// The duration of the show and hide animation.
-    private static let animationDuration = 0.25
-    
-    /// The size of the button.
-    private static let buttonHeight = CGFloat(40)
-    private static let buttonWidth = CGFloat(80)
-    
     /// The delegate of the DataPicker.
     public var dataPickerDelegate: DataPickerDelegate?
     

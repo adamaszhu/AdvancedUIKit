@@ -5,10 +5,6 @@
 /// - date: 03/07/2017
 public extension InfiniteList {
     
-    /// System warnings.
-    private static let cellExpansionWarning = "The cell cannot be expanded."
-    private static let cellCollapsionWarning = "The cell cannot be collapsed."
-    
     /// Expand a specific cell.
     ///
     /// - Parameter index: The index of the cell.

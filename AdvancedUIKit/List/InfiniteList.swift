@@ -5,20 +5,6 @@
 /// - date: 21/06/2017
 public class InfiniteList: UITableView {
     
-    /// System errors.
-    static let cellNibError = "The nib file doesn't contain the customized InfiniteCell."
-    static let cellError = "The cell is not an InfiniteCell."
-    static let cellRegistrationError = "The cell has not been registered yet."
-    static let emptyStateNibError = "The nib file doesn't contain a UIView for the empty state."
-    static let emptyStateRegistrationError = "The empty state has not been registered yet."
-    
-    /// System warnings.
-    static let emptyStateShowWarning = "The empty state has already been shown."
-    static let emptyStateHideWarning = "The empty state has already been hidden."
-    
-    /// The default minimal page size.
-    static let defaultPageSize = 10
-    
     /// Delegate for action related to the InfiniteList.
     public var infiniteListDelegate: InfiniteListDelegate?
     

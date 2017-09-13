@@ -5,15 +5,6 @@
 /// - date: 07/06/2017
 public class MapView: MKMapView {
     
-    /// The default overview margin.
-    private static let defaultOverviewMargin = Double(0.001)
-    
-    /// The default zoom level while showing user's location.
-    private static let defaultUserLocationMargin = Double(10)
-    
-    /// System warning.
-    private static let userLocationUnretrievedWarning = "The user location hasn't been retrieved yet."
-    
     /// The delegate of the map.
     public var mapViewDelegate: MapViewDelegate?
     

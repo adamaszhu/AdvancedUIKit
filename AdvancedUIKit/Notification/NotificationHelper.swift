@@ -5,14 +5,8 @@
 /// - date: 02/06/2017
 final public class NotificationHelper {
     
-    /// All messages.
-    private static let authorizationError = "AuthorizationError"
-    
-    /// The system error.
-    private static let settingError = "The notification setting cannot be retrieved."
-    
     /// The singleton helper.
-    public static var shared: NotificationHelper = NotificationHelper()
+    public static let shared = NotificationHelper()
     
     /// Whether the local notification is authorized or not.
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")

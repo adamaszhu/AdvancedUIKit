@@ -5,12 +5,6 @@
 /// - date: 04/07/2017
 public extension InfiniteList {
     
-    /// System errors.
-    private static let reloadingBarNibError = "The nib file doesn't contain a UIView for the reloading bar."
-    private static let loadingMoreBarNibError = "The nib file doesn't contain a UIView for the loading more bar."
-    private static let reloadingBarRegistrationError = "The reloading bar hasn't been registered yet."
-    private static let displayStatusError = "The items cannot be displayed under current status."
-    
     /// The height of the reloading bar.
     var reloadingBarHeight: CGFloat {
         return reloadingBar?.frame.height ?? 0

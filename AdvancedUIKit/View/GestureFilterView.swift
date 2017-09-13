@@ -6,10 +6,6 @@
 /// - date: 27/05/2017
 final class GestureFilterView: UIView {
     
-    /// System error.
-    private static let gestureRecognizersError = "Gesture recognizers have not been added to the view yet."
-    private static let initError = "Constructor init(coder) shouldn't be called."
-    
     /// Change the enable status of a specific gesture type.
     ///
     /// - Parameters:

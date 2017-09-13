@@ -5,16 +5,6 @@
 /// - date: 04/05/2017
 final public class LocationHelper: CLLocationManager {
     
-    /// The info key required in the Info.plist file.
-    private static let alwaysDescriptionKey = "NSLocationAlwaysUsageDescription"
-    private static let whenInUseDescriptionKey = "NSLocationWhenInUseUsageDescription"
-    
-    /// User error.
-    private static let authorizationError = "AuthorizationError"
-    
-    /// System error.
-    private static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
-    
     /// The delegate.
     public var locationHelperDelegate: LocationHelperDelegate?
     
