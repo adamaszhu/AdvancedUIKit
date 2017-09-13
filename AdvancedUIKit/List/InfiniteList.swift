@@ -83,7 +83,7 @@ public class InfiniteList: UITableView {
     /// Register the empty state view for the InfiniteList.
     ///
     /// - Parameter nib: The nib file containing the view.
-    public func registerEmptyState(_ nib: UINib) {
+    public func registerEmptyState(with nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
         }
@@ -107,7 +107,7 @@ public class InfiniteList: UITableView {
         }
         emptyState.animate(withChange: {
             emptyState.alpha = 1
-        }, withPreparation: {
+        }, withPreparation: { [unowned self] _ in
             emptyState.alpha = 0
             self.addSubview(emptyState)
         })

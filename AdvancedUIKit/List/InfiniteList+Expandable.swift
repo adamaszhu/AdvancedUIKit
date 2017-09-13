@@ -19,10 +19,7 @@ public extension InfiniteList {
             return
         }
         cell.expand()
-        if expandedCellIndexPath == nil,
-            let item = items.element(atIndex: index),
-            let cellType = cellType(for: item.type),
-            let loadingMoreBar = loadingMoreBar {
+        if expandedCellIndexPath == nil, let item = items.element(atIndex: index), let cellType = cellType(for: item.type), let loadingMoreBar = loadingMoreBar {
             // Adjust the loading more bar if a cell has been expanded
             loadingMoreBar.frame.origin = .init(x: 0, y: loadingMoreBar.frame.origin.y + (cellType.additionalHeight ?? 0))
         }
@@ -40,10 +37,7 @@ public extension InfiniteList {
             return
         }
         cell.collapse()
-        if let _ = expandedCellIndexPath,
-            let item = items.element(atIndex: index),
-            let cellType = cellType(for: item.type),
-            let loadingMoreBar = loadingMoreBar {
+        if let _ = expandedCellIndexPath, let item = items.element(atIndex: index), let cellType = cellType(for: item.type), let loadingMoreBar = loadingMoreBar {
             // Adjust the loading more bar if a cell has been collapsed
             loadingMoreBar.frame.origin = .init(x: 0, y: loadingMoreBar.frame.origin.y - (cellType.additionalHeight ?? 0))
         }
