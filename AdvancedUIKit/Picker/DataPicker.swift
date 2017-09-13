@@ -3,7 +3,7 @@
 /// - version: 1.0.0
 /// - date: 22/04/2017
 /// - author: Adamas
-public class DataPicker: RootView {
+final public class DataPicker: RootView {
     
     /// System error.
     private static let columnError = "The column doesn't exist."
@@ -79,7 +79,7 @@ public class DataPicker: RootView {
     ///   - value: The value to be selected.
     ///   - index: The index of the column.
     public func selectValue(_ value: String, atColumn index: Int = 0) {
-        guard (index >= 0) && (index < columns.count) else {
+        guard 0 ..< columns.count ~= index else {
             Logger.standard.log(error: DataPicker.columnError)
             return
         }
@@ -106,21 +106,21 @@ public class DataPicker: RootView {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        cancelButton = UIButton()
-        doneButton = UIButton()
-        titleLabel = UILabel()
-        pickerView = UIPickerView()
+        cancelButton = .init()
+        doneButton = .init()
+        titleLabel = .init()
+        pickerView = .init()
         columns = []
         super.init(coder: aDecoder)
     }
     
     public override func hide() {
-        if !isVisible {
-            Logger.standard.log(warning: DataPicker.hideWarning)
+        guard isVisible else {
+            Logger.standard.log(warning: DataPicker.hidingWarning)
             return
         }
         animate(withChange: { [unowned self] _ in
-            self.frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
+            self.frame = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
         }, withPreparation: { [unowned self] _ in
             self.frame = self.originalFrame
         }) {
@@ -129,21 +129,21 @@ public class DataPicker: RootView {
     }
     
     public override func show() {
-        if isVisible {
-            Logger.standard.log(warning: DataPicker.showWarning)
+        guard !isVisible else {
+            Logger.standard.log(warning: DataPicker.showingWarning)
             return
         }
         animate(withChange: { [unowned self] _ in
             self.frame = self.originalFrame
         }, withPreparation: { [unowned self] _ in
-            self.frame = CGRect(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
+            self.frame = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
         }) {
             super.show()
         }
     }
     
     public override func initialize() {
-        titleBackgroundColor = UIColor.gray
+        titleBackgroundColor = .gray
         let titleTextColor = UIColor.white
         cancelButton.backgroundColor = titleBackgroundColor
         cancelButton.setTitle(DataPicker.cancelButtonName.localizedInternalString(forType: self), for: .normal)
@@ -158,16 +158,16 @@ public class DataPicker: RootView {
         addSubview(doneButton)
         addSubview(pickerView)
         addSubview(titleLabel)
-        pickerView.backgroundColor = UIColor.white
+        pickerView.backgroundColor = .white
         pickerView.delegate = self
     }
     
     public override func render() {
-        cancelButton.frame = CGRect(x: 0, y: 0, width: DataPicker.buttonWidth, height: DataPicker.buttonHeight)
-        titleLabel.frame = CGRect(x: DataPicker.buttonWidth, y: 0, width: frame.width - 2 * DataPicker.buttonWidth, height: DataPicker.buttonHeight)
-        doneButton.frame = CGRect(x: frame.width - DataPicker.buttonWidth, y: 0, width: DataPicker.buttonWidth, height: DataPicker.buttonHeight)
-        pickerView.frame = CGRect(x: 0, y: DataPicker.buttonHeight, width: frame.width, height: frame.height - DataPicker.buttonHeight)
-        frame = CGRect(x: originalFrame.origin.x, y: originalFrame.origin.y + originalFrame.height, width: originalFrame.width, height: originalFrame.height)
+        cancelButton.frame = .init(x: 0, y: 0, width: DataPicker.buttonWidth, height: DataPicker.buttonHeight)
+        titleLabel.frame = .init(x: DataPicker.buttonWidth, y: 0, width: frame.width - 2 * DataPicker.buttonWidth, height: DataPicker.buttonHeight)
+        doneButton.frame = .init(x: frame.width - DataPicker.buttonWidth, y: 0, width: DataPicker.buttonWidth, height: DataPicker.buttonHeight)
+        pickerView.frame = .init(x: 0, y: DataPicker.buttonHeight, width: frame.width, height: frame.height - DataPicker.buttonHeight)
+        frame = .init(x: originalFrame.origin.x, y: originalFrame.origin.y + originalFrame.height, width: originalFrame.width, height: originalFrame.height)
         super.hide()
     }
     

@@ -6,8 +6,8 @@
 open class RootView: UIView {
     
     /// System warning.
-    static let showWarning = "The view has already been shown."
-    static let hideWarning = "The view has already been hidden."
+    static let showingWarning = "The view has already been shown."
+    static let hidingWarning = "The view has already been hidden."
     
     /// Whether the view is visible or not.
     public var isVisible: Bool
