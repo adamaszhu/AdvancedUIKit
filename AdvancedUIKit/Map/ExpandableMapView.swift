@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 09/06/2017
-public class ExpandableMapView: MapView {
+final public class ExpandableMapView: MapView {
     
     /// The gesture filter to expand the view.
     let gestureFilterView: UIView

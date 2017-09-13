@@ -71,7 +71,7 @@ extension MapView: MKMapViewDelegate {
             Logger.standard.log(error: MapView.pointError)
             return nil
         }
-        guard point.icon != nil else {
+        guard let _ = point.icon else {
             // Default pin will be applied.
             return nil
         }
