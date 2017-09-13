@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 30/05/2017
-public class CustomizedMessageHelper: PopupView {
+final public class CustomizedMessageHelper: PopupView {
     
     /// Get the shared instance of the CustomizedMessageHelper. If the protocol will be implemented, please create a new object.
     public static let standard: CustomizedMessageHelper = CustomizedMessageHelper()
@@ -46,7 +46,7 @@ public class CustomizedMessageHelper: PopupView {
     private var isCancelButtonVisible: Bool {
         set {
             let confirmButtonWidth = newValue ? buttonView.frame.width / 2 : buttonView.frame.width
-            confirmButton.frame = CGRect(x: buttonView.frame.width - confirmButtonWidth, y: confirmButton.frame.origin.y, width: confirmButtonWidth, height: confirmButton.frame.height)
+            confirmButton.frame = .init(x: buttonView.frame.width - confirmButtonWidth, y: confirmButton.frame.origin.y, width: confirmButtonWidth, height: confirmButton.frame.height)
             cancelButton.isHidden = !newValue
             buttonSeperatorView.isHidden = !newValue
         }
@@ -60,9 +60,9 @@ public class CustomizedMessageHelper: PopupView {
         set {
             let title = newValue?.isEmpty == true ? nil : newValue
             titleLabel.text = title
-            titleLabel.frame.size = CGSize(width: titleLabel.frame.width, height: titleLabel.actualHeight)
+            titleLabel.frame.size = .init(width: titleLabel.frame.width, height: titleLabel.actualHeight)
             let titleViewY = title == nil ? CustomizedMessageHelper.padding : CustomizedMessageHelper.padding * 2
-            titleView.frame = CGRect(x: titleView.frame.origin.x, y: titleViewY, width: titleView.frame.width, height: titleLabel.frame.height)
+            titleView.frame = .init(x: titleView.frame.origin.x, y: titleViewY, width: titleView.frame.width, height: titleLabel.frame.height)
         }
         get {
             return titleLabel.text
@@ -73,11 +73,11 @@ public class CustomizedMessageHelper: PopupView {
     private var contentHeight: CGFloat {
         set {
             let contentViewY = titleView.frame.height + titleView.frame.origin.y + CustomizedMessageHelper.padding
-            contentView.frame = CGRect(x: contentView.frame.origin.x ,y: contentViewY, width: contentView.frame.width, height: newValue)
+            contentView.frame = .init(x: contentView.frame.origin.x ,y: contentViewY, width: contentView.frame.width, height: newValue)
             let buttonViewY = contentViewY + contentView.frame.height + CustomizedMessageHelper.padding * 1.5
-            buttonView.frame.origin = CGPoint(x: buttonView.frame.origin.x, y: buttonViewY)
+            buttonView.frame.origin = .init(x: buttonView.frame.origin.x, y: buttonViewY)
             let frameHeight = buttonViewY + buttonView.frame.height
-            frameView.frame = CGRect(x: frameView.frame.origin.x, y: (frame.height - frameHeight) / 2, width: frameView.frame.width, height: frameHeight)
+            frameView.frame = .init(x: frameView.frame.origin.x, y: (frame.height - frameHeight) / 2, width: frameView.frame.width, height: frameHeight)
         }
         get {
             return contentView.frame.height - CustomizedMessageHelper.padding * 2
@@ -135,16 +135,16 @@ public class CustomizedMessageHelper: PopupView {
     
     /// Initialize the object
     public init() {
-        frameView = UIView()
-        titleView = UIView()
-        titleLabel = UILabel()
-        contentView = UIView()
-        messageLabel = UILabel()
-        inputText = UITextField()
-        buttonView = UIView()
-        cancelButton = UIButton()
-        confirmButton = UIButton()
-        buttonSeperatorView = UIView()
+        frameView = .init()
+        titleView = .init()
+        titleLabel = .init()
+        contentView = .init()
+        messageLabel = .init()
+        inputText = .init()
+        buttonView = .init()
+        cancelButton = .init()
+        confirmButton = .init()
+        buttonSeperatorView = .init()
         messageType = .unknown
         super.init()
         backgroundColor = CustomizedMessageHelper.defaultMaskBackgroundColor
@@ -152,54 +152,54 @@ public class CustomizedMessageHelper: PopupView {
         // The height of messageLabel, contentView
         // The y location of messageView and buttonView will be settled dynamically later.
         // Frame view. The height and Y will be changed later.
-        frameView.frame = CGRect(x: frame.width * (1 - CustomizedMessageHelper.widthWeight) / 2, y: 0, width: frame.width * CustomizedMessageHelper.widthWeight, height: 0)
+        frameView.frame = .init(x: frame.width * (1 - CustomizedMessageHelper.widthWeight) / 2, y: 0, width: frame.width * CustomizedMessageHelper.widthWeight, height: 0)
         frameView.backgroundColor = CustomizedMessageHelper.defaultBackgroundColor
         frameView.layer.cornerRadius = CustomizedMessageHelper.radius
         addSubview(frameView)
         // Title label. The height will be changed later.
-        titleLabel.frame = CGRect(x: 0, y: 0, width: contentWidth, height: 0)
+        titleLabel.frame = .init(x: 0, y: 0, width: contentWidth, height: 0)
         titleLabel.textColor = CustomizedMessageHelper.defaultTextColor
         titleLabel.font = UIFont.boldSystemFont(ofSize: titleLabel.font.pointSize)
         titleLabel.textAlignment = .center
         titleView.addSubview(titleLabel)
         // Title view. The height and Y will be changed later.
-        titleView.frame = CGRect(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 0)
+        titleView.frame = .init(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 0)
         frameView.addSubview(titleView)
         // Message label. The height will be changed later.
-        messageLabel.frame = CGRect(x: 0, y: 0, width: contentWidth, height: 0)
+        messageLabel.frame = .init(x: 0, y: 0, width: contentWidth, height: 0)
         messageLabel.textColor = CustomizedMessageHelper.defaultTextColor
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
         contentView.addSubview(messageLabel)
         // Input text.
-        inputText.frame = CGRect(x: 0, y: 0, width: contentWidth, height: inputText.lineHeight)
+        inputText.frame = .init(x: 0, y: 0, width: contentWidth, height: inputText.lineHeight)
         inputText.textColor = CustomizedMessageHelper.defaultTextColor
         inputText.tintColor = CustomizedMessageHelper.defaultTextColor
         inputText.textAlignment = .center
         contentView.addSubview(inputText)
         // Content view. The height and Y will be changed later.
-        contentView.frame = CGRect(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 0)
+        contentView.frame = .init(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 0)
         frameView.addSubview(contentView)
         // Line view.
         let lineView = UIView()
         lineView.backgroundColor = CustomizedMessageHelper.defaultSeperatorColor
-        lineView.frame = CGRect(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 1)
+        lineView.frame = .init(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 1)
         buttonView.addSubview(lineView)
         // First button and second button.
         cancelButton.title = ""
-        cancelButton.frame = CGRect(x: 0, y: lineView.frame.size.height, width: frameView.frame.width / 2, height: cancelButton.lineHeight + CustomizedMessageHelper.padding * 2)
+        cancelButton.frame = .init(x: 0, y: lineView.frame.size.height, width: frameView.frame.width / 2, height: cancelButton.lineHeight + CustomizedMessageHelper.padding * 2)
         cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         buttonView.addSubview(cancelButton)
         confirmButton.title = ""
-        confirmButton.frame = CGRect(x: cancelButton.frame.width, y: lineView.frame.height, width: cancelButton.frame.width, height: cancelButton.frame.height)
+        confirmButton.frame = .init(x: cancelButton.frame.width, y: lineView.frame.height, width: cancelButton.frame.width, height: cancelButton.frame.height)
         confirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
         buttonView.addSubview(confirmButton)
         // Button seperate view.
-        buttonSeperatorView.frame = CGRect(x: confirmButton.frame.origin.x, y: lineView.frame.size.height + CustomizedMessageHelper.padding / 2, width: 1, height: confirmButton.frame.height - CustomizedMessageHelper.padding)
+        buttonSeperatorView.frame = .init(x: confirmButton.frame.origin.x, y: lineView.frame.size.height + CustomizedMessageHelper.padding / 2, width: 1, height: confirmButton.frame.height - CustomizedMessageHelper.padding)
         buttonSeperatorView.backgroundColor = CustomizedMessageHelper.defaultSeperatorColor
         buttonView.addSubview(buttonSeperatorView)
         // Button view. The Y will be changed later.
-        buttonView.frame = CGRect(x: 0, y: 0, width: frameView.frame.width, height: lineView.frame.size.height + confirmButton.frame.size.height)
+        buttonView.frame = .init(x: 0, y: 0, width: frameView.frame.width, height: lineView.frame.size.height + confirmButton.frame.size.height)
         frameView.addSubview(buttonView)
     }
     

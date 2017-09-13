@@ -8,6 +8,7 @@ extension SystemMessageHelper: MessageHelper {
     public func showInfo(_ content: String, withTitle title: String = successTitle, withConfirmButtonName confirmButtonName: String = infoConfirmButtonName) {
         hidePreviousMessage()
         messageType = .info
+        // TODO: Use AlertFactory instead
         createMessage(withTitle: title, withContent: content, withConfirmButtonName: confirmButtonName)
         showMessage()
     }

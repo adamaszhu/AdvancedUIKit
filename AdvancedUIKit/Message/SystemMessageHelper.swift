@@ -3,10 +3,10 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 18/10/2017
-public class SystemMessageHelper {
+final public class SystemMessageHelper {
     
     /// Get the shared instance of the SystemMessageHelper. If the protocol will be implemented, please create a new object.
-    public static let standard: SystemMessageHelper? = SystemMessageHelper()
+    public static let standard = SystemMessageHelper()
     
     /// Error message.
     private static let typeError = "The message type is unknown."
