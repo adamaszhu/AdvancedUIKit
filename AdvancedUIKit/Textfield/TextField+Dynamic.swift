@@ -28,7 +28,7 @@ public extension UITextField {
             Logger.standard.log(warning: UITextField.fontEmptyWarning)
             return 0
         }
-        return text.measureLineAmount(withFont: font, inView: self)
+        return text.measuredLineAmount(withFont: font, inView: self)
     }
     
     /// The actual height of the text.
