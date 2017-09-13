@@ -33,7 +33,7 @@ final class ListViewController: UIViewController {
         infiniteList.infiniteListDelegate = self
         infiniteList.register(LabelCell.self, with: UINib(nibName: String(describing: LabelCell.self), bundle: nil))
         infiniteList.register(ImageCell.self, with: UINib(nibName: String(describing: ImageCell.self), bundle: nil))
-        infiniteList.registerEmptyState(UINib(nibName: emptyStateNibName, bundle: nil))
+        infiniteList.registerEmptyState(with: UINib(nibName: emptyStateNibName, bundle: nil))
         infiniteList.registerReloadingBar(with: UINib(nibName: reloadingBarNibName, bundle: nil))
         infiniteList.registerLoadingMoreBar(with: UINib(nibName: loadingMoreBarNibName, bundle: nil))
     }
