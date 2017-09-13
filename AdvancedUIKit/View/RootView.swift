@@ -37,7 +37,7 @@ open class RootView: UIView {
     public required init?(coder aDecoder: NSCoder) {
         isInitialized = false
         isVisible = true
-        originalFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        originalFrame = .init(x: 0, y: 0, width: 0, height: 0)
         super.init(coder: aDecoder)
         initialize()
     }
@@ -52,7 +52,7 @@ open class RootView: UIView {
     
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
-        if isInitialized {
+        guard !isInitialized else {
             return
         }
         isInitialized = true

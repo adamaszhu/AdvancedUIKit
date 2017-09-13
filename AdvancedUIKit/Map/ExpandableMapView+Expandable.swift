@@ -15,7 +15,7 @@ extension ExpandableMapView: ExpandableView {
     
     public func expand() {
         guard !isExpanded, isExpandable else {
-            Logger.standard.log(warning: ExpandableMapView.expandWarning)
+            Logger.standard.log(warning: ExpandableMapView.expandingWarning)
             return
         }
         guard let window = window else {
@@ -40,7 +40,7 @@ extension ExpandableMapView: ExpandableView {
     
     public func collapse() {
         guard isExpanded, isExpandable else {
-            Logger.standard.log(warning: ExpandableMapView.collapseWarning)
+            Logger.standard.log(warning: ExpandableMapView.collapsingWarning)
             return
         }
         guard let window = window else {

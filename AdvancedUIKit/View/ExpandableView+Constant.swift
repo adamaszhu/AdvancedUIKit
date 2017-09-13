@@ -10,7 +10,7 @@ extension ExpandableView {
     static var windowError: String { return"The window is nil." }
     
     /// System warning.
-    static var expandWarning: String { return "The view cannot be expanded." }
-    static var collapseWarning: String { return "The view cannot be collapsed." }
+    static var expandingWarning: String { return "The view cannot be expanded." }
+    static var collapsingWarning: String { return "The view cannot be collapsed." }
     
 }

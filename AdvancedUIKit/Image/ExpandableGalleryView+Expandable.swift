@@ -90,7 +90,7 @@ extension ExpandableGalleryView: ExpandableView {
     
     public func expand() {
         guard !isExpanded, isExpandable else {
-            Logger.standard.log(warning: ExpandableGalleryView.expandWarning)
+            Logger.standard.log(warning: ExpandableGalleryView.expandingWarning)
             return
         }
         expandFrame()
@@ -98,7 +98,7 @@ extension ExpandableGalleryView: ExpandableView {
     
     public func collapse() {
         guard isExpanded, isExpandable else {
-            Logger.standard.log(warning: ExpandableGalleryView.collapseWarning)
+            Logger.standard.log(warning: ExpandableGalleryView.collapsingWarning)
             return
         }
         removeBackgroundColor()

@@ -35,7 +35,7 @@ public class PageView: UIScrollView {
     
     /// The current page presented.
     public var currentPage: UIView? {
-        guard (currentPageIndex >= 0) && (currentPageIndex < pageControl.numberOfPages) else {
+        guard 0 ..< pageControl.numberOfPages ~= currentPageIndex else {
             Logger.standard.log(error: PageView.pageIndexError)
             return nil
         }
@@ -45,7 +45,7 @@ public class PageView: UIScrollView {
     /// The buttom bargin of the page control.
     public var pageControlButtomMargin: CGFloat {
         set {
-            pageControl.frame.origin = CGPoint(x: (frame.width - pageControl.frame.width) / 2, y: frame.height - pageControl.frame.height - newValue)
+            pageControl.frame.origin = .init(x: (frame.width - pageControl.frame.width) / 2, y: frame.height - pageControl.frame.height - newValue)
         }
         get {
             return frame.height - pageControl.frame.origin.y - pageControl.frame.height
@@ -57,9 +57,9 @@ public class PageView: UIScrollView {
     /// - Parameter view: The view to be added.
     public func add(_ view: UIView) {
         pageControl.numberOfPages = pageControl.numberOfPages + 1
-        view.frame = CGRect(x: CGFloat(pageControl.numberOfPages - 1) * frame.width, y: 0, width: frame.width, height: frame.height)
+        view.frame = .init(x: CGFloat(pageControl.numberOfPages - 1) * frame.width, y: 0, width: frame.width, height: frame.height)
         addSubview(view)
-        contentSize = CGSize(width: view.frame.origin.x + view.frame.width, height: view.frame.height)
+        contentSize = .init(width: view.frame.origin.x + view.frame.width, height: view.frame.height)
     }
     
     /// Replace a view.
@@ -68,7 +68,7 @@ public class PageView: UIScrollView {
     ///   - view: The view to be replaced.
     ///   - index: The index of the replaced view.
     public func replace(_ view: UIView, atIndex index: Int) {
-        guard (index >= 0) && (index < pageControl.numberOfPages) else {
+        guard 0 ..< pageControl.numberOfPages ~= index else {
             Logger.standard.log(error: PageView.pageIndexError)
             return
         }
@@ -82,11 +82,11 @@ public class PageView: UIScrollView {
     /// - Parameter index: The index of the view to be removed.
     public func removeView(atIndex index: Int) {
         // TODO: Add animation for the removing action.
-        guard (index >= 0) && (index < pageControl.numberOfPages) else {
+        guard 0 ..< pageControl.numberOfPages ~= index else {
             Logger.standard.log(error: PageView.pageIndexError)
             return
         }
-        if (index <= currentPageIndex) && (currentPageIndex != 0)  {
+        if index <= currentPageIndex, currentPageIndex != 0  {
             // While removing the page before current page.
             switchToPage(withIndex: currentPageIndex - 1, withAnimation: false)
         }
@@ -96,15 +96,15 @@ public class PageView: UIScrollView {
         }
         pageControl.numberOfPages = pageControl.numberOfPages - 1
         subviews[index].removeFromSuperview()
-        contentSize = CGSize(width: CGFloat(pageControl.numberOfPages) * frame.width, height: frame.height)
+        contentSize = .init(width: CGFloat(pageControl.numberOfPages) * frame.width, height: frame.height)
     }
     
     /// Remove all sub views.
     public func removeAllViews() {
-        for view in subviews {
-            view.removeFromSuperview()
+        subviews.forEach {
+            $0.removeFromSuperview()
         }
-        contentSize = CGSize(width: 0, height: frame.height)
+        contentSize = .init(width: 0, height: frame.height)
         pageControl.numberOfPages = 0
     }
     
@@ -132,22 +132,22 @@ public class PageView: UIScrollView {
     ///   - index: The page index of the news.
     ///   - shouldAnimate: Whether the animation should be allowed or not.
     public func switchToPage(withIndex index: Int, withAnimation shouldAnimate: Bool = true) {
-        guard (index >= 0) && (index < pageControl.numberOfPages) else {
+        guard 0 ..< pageControl.numberOfPages ~= index else {
             Logger.standard.log(error: PageView.pageIndexError)
             return
         }
         pageControl.currentPage = index
         guard shouldAnimate else {
-            contentOffset = CGPoint(x: CGFloat(index) * frame.width, y: 0)
+            contentOffset = .init(x: CGFloat(index) * frame.width, y: 0)
             return
         }
         animate(withChange: { [unowned self] _ in
-            self.contentOffset = CGPoint(x: CGFloat(index) * self.frame.width, y: 0)
+            self.contentOffset = .init(x: CGFloat(index) * self.frame.width, y: 0)
         })
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        pageControl = UIPageControl()
+        pageControl = .init()
         super.init(coder: aDecoder)
         shouldShowPageControl = true
         isPagingEnabled = true
@@ -164,10 +164,10 @@ public class PageView: UIScrollView {
             // The default margin will be used if the margin hasn't been settled.
             pageControlButtomMargin = PageView.defaultPageControlButtomMargin
         }
-        pageControl.frame = CGRect(x: (frame.width - pageControl.frame.width) / 2, y: frame.height - pageControl.frame.height - pageControlButtomMargin, width: pageControl.frame.width, height: pageControl.frame.height)
+        pageControl.frame = .init(x: (frame.width - pageControl.frame.width) / 2, y: frame.height - pageControl.frame.height - pageControlButtomMargin, width: pageControl.frame.width, height: pageControl.frame.height)
         // Refresh all subviews
         for index in 0 ..< subviews.count {
-            subviews[index].frame = CGRect(x: CGFloat(index) * frame.width, y: 0, width: frame.width, height: frame.height)
+            subviews[index].frame = .init(x: CGFloat(index) * frame.width, y: 0, width: frame.width, height: frame.height)
         }
     }
     
