@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 05/06/2017
-class ActionFilterView: UIView {
+final class ActionFilterView: UIView {
     
     /// Error message.
     private static let initError = "Constructor init(coder) shouldn't be called."

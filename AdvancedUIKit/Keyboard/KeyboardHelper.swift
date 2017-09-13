@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 05/06/2017
-public class KeyboardHelper: NSObject {
+final public class KeyboardHelper: NSObject {
     
     /// System message.
     private static let inputViewError = "The input view doesn't exist."
@@ -49,11 +49,11 @@ public class KeyboardHelper: NSObject {
         }
         let currentViewFrame = rootView.convert(currentInputView.frame, from: currentInputView.superview)
         let currentViewBottomSpace = rootView.frame.height - currentViewFrame.origin.y - currentViewFrame.size.height
-        if currentViewBottomSpace < keyboardHeight {
-            // 30 is the gap between current view and the keyboard after the view being pushed up.
-            return currentViewBottomSpace - keyboardHeight// - 30
+        guard currentViewBottomSpace < keyboardHeight else {
+            return 0
         }
-        return 0
+        // 30 is the gap between current view and the keyboard after the view being pushed up.
+        return currentViewBottomSpace - keyboardHeight// - 30
     }
     
     /// Initialize the object. It should be initalized after the view is rendered.
@@ -84,12 +84,10 @@ public class KeyboardHelper: NSObject {
         // If previous input view is not nil, then the keyboard is shown. As a result, the view should adjusted.
         let shouldAdjustOffset = currentInputView != nil
         currentInputView = view
-        if actionFilterView.superview != nil {
+        if let _ = actionFilterView.superview, shouldAdjustOffset {
             // The keyboard push has been activated. So wait to see if the frame of the keyboard will be changed or not.
-            if shouldAdjustOffset {
-                // Make this specify to iOS 8 and below, since willShowKeyboard won't be called if the keyboard keeps the same in iOS 8 and below.
-                perform(#selector(adjustOffset), with: nil, afterDelay: 0.2)
-            }
+            // Make this specify to iOS 8 and below, since willShowKeyboard won't be called if the keyboard keeps the same in iOS 8 and below.
+            perform(#selector(adjustOffset), with: nil, afterDelay: 0.2)
         }
     }
     
@@ -101,12 +99,12 @@ public class KeyboardHelper: NSObject {
             Logger.standard.log(error: KeyboardHelper.inputViewError)
             return
         }
-        if index < inputViews.count - 1 {
-            inputViews[index + 1].becomeFirstResponder()
-        } else {
+        guard index < inputViews.count - 1 else {
             hideKeyboard()
             keyboardHelperDelegate?.keyboardHelperDidConfirmInput(self)
+            return
         }
+        inputViews[index + 1].becomeFirstResponder()
     }
     
     /// adjust the offset of the view.
@@ -119,12 +117,12 @@ public class KeyboardHelper: NSObject {
     /// Activate monitoring the input chain.
     private func activateInputChain() {
         // TODO: Consider other types of views.
-        for view in inputViews {
-            if let textField = view as? UITextField {
+        inputViews.forEach {
+            if let textField = $0 as? UITextField {
                 textField.addTarget(self, action: #selector(textFieldDidChangeText), for: .editingChanged)
                 // TODO: Use target instead of using delegate.
                 textField.delegate = self
-            } else if let searchBar = view as? UISearchBar {
+            } else if let searchBar = $0 as? UISearchBar {
                 // TODO: Use target instead of using delegate.
                 searchBar.delegate = self
             }
@@ -133,8 +131,8 @@ public class KeyboardHelper: NSObject {
     
     /// Stop monitoring the input chain.
     private func deactiveInputChain() {
-        for view in inputViews {
-            if let textField = view as? UITextField {
+        inputViews.forEach {
+            if let textField = $0 as? UITextField {
                 textField.removeTarget(self, action: #selector(textFieldDidChangeText), for: .editingChanged)
             }
         }
