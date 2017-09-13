@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 04/05/2017
-public class LocationHelper: CLLocationManager {
+final public class LocationHelper: CLLocationManager {
     
     /// The info key required in the Info.plist file.
     private static let alwaysDescriptionKey = "NSLocationAlwaysUsageDescription"

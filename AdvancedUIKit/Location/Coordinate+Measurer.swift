@@ -9,7 +9,7 @@ public extension CLLocationCoordinate2D {
     ///
     /// - Parameter coordinate: The second coordinate.
     /// - Returns: The distance in meter.
-    public func distanceTo(_ coordinate: CLLocationCoordinate2D) -> Double {
+    public func distance(to coordinate: CLLocationCoordinate2D) -> Double {
         let currentLocation = CLLocation(latitude: latitude, longitude: longitude)
         let remoteLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         return currentLocation.distance(from: remoteLocation)
