@@ -5,15 +5,6 @@
 /// - date: 11/06/2017
 public class GalleryView: PageView {
     
-    /// System error.
-    static let subviewTypeError = "A subview is not a GalleryImage."
-    
-    /// The maximal zoom level of an image.
-    private static let defaultMaxZoomLevel = CGFloat(8)
-    
-    /// The image content mode.
-    private static let defaultImageMode = UIViewContentMode.scaleAspectFit
-    
     /// The mode of the images displayed.
     public var imageMode: UIViewContentMode
     

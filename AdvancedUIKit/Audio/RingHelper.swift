@@ -8,18 +8,6 @@ final public class RingHelper {
     /// The singleton instance.
     public static let shared = RingHelper()
     
-    /// The default period between two rings or vibrations.
-    private static let defaultRingPeriod = 1.5
-    
-    /// The system sound.
-    private static let defaultSoundID = SystemSoundID(1022)
-    
-    /// System error.
-    private static let soundNameError = "The sound file doesn't exist."
-    
-    /// System warning.
-    private static let playStatusWarning = "A sound is currently being played."
-    
     /// The period between two rings or vibrates.
     private var period: Double
     

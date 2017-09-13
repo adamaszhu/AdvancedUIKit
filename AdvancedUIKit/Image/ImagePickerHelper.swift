@@ -5,11 +5,6 @@
 /// - date: 10/06/2017
 final public class ImagePickerHelper: NSObject {
     
-    /// The content on the selector.
-    private static let selectFromLibraryActionName = "SelectFromLibrary"
-    private static let takePhotoActionName = "TakePhoto"
-    private static let cancelActionName = "Cancel"
-    
     /// The delegate.
     public var imagePickerHelperDelegate: ImagePickerHelperDelegate?
     

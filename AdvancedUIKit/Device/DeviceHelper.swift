@@ -7,18 +7,6 @@ final public class DeviceHelper: NSObject {
     /// The singleton instance in the system.
     public static let standard = DeviceHelper()
     
-    /// User error.
-    private static let dialError = "DialError"
-    private static let mapError = "MapError"
-    
-    /// System error.
-    private static let phoneNumberError = "The phone number is invalid."
-    private static let addressError = "The address is incorrect."
-    
-    /// Function url.
-    private static let dailPrefix = "telprompt://"
-    private static let mapPrefix = "http://maps.apple.com/?q="
-    
     /// The delegate of the DeviceHelper.
     public var deviceHelperDelegate: DeviceHelperDelegate?
     

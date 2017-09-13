@@ -5,17 +5,6 @@
 /// - date: 10/06/2017
 final public class CameraHelper {
     
-    /// The info key required in the Info.plist file.
-    private static let cameraDescriptionKey = "NSCameraUsageDescription"
-    private static let libraryDescriptionKey = "NSPhotoLibraryUsageDescription"
-    
-    /// User error.
-    private static let cameraAuthorizationError = "CameraAuthorizationError"
-    private static let libraryAuthorizationError = "LibraryAuthorizationError"
-    
-    /// System error.
-    private static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
-    
     /// Whether the camera is enabled by the user or not.
     public static var isCameraAuthorized: Bool {
         let authorizedStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
