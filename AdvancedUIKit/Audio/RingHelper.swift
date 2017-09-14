@@ -31,6 +31,7 @@ final public class RingHelper {
     ///   - shouldVibrate: Whether the vibration should be performed or not.
     ///   - period: The period between two vibrations or rings.
     /// - Returns: Whether the ring will be performed or not. False if a ring is being played or the sound file doesn't exist.
+    @discardableResult
     public func ring(withSound soundFileName: String, forTimes times: Int = 1, withVibration shouldVibrate: Bool = true, withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
             Logger.standard.log(warning: RingHelper.playStatusWarning)
@@ -64,6 +65,7 @@ final public class RingHelper {
     ///   - times: How many times the device need to ring.
     ///   - period: The period between two vibrations or rings.
     /// - Returns: Whether the ring will be performed or not. False if a ring is being played.
+    @discardableResult
     public func ring(withSoundID soundID: SystemSoundID = defaultSoundID, forTimes times: Int = 1, withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
             return false
