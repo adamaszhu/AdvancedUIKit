@@ -14,9 +14,14 @@
         <scene sceneID="aSQ-Hv-Anj">
             <objects>
                 <navigationController id="H8X-S2-nBJ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rLA-DB-wnz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rLA-DB-wnz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.48982244729995728" green="0.71186602115631104" blue="0.84542196989059448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="PSa-q8-Lla" kind="relationship" relationship="rootViewController" id="2zn-jt-OSd"/>
