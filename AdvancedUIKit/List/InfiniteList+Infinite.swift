@@ -5,12 +5,6 @@
 /// - date: 04/07/2017
 public extension InfiniteList {
     
-    /// System errors.
-    private static let reloadingBarNibError = "The nib file doesn't contain a UIView for the reloading bar."
-    private static let loadingMoreBarNibError = "The nib file doesn't contain a UIView for the loading more bar."
-    private static let reloadingBarRegistrationError = "The reloading bar hasn't been registered yet."
-    private static let displayStatusError = "The items cannot be displayed under current status."
-    
     /// The height of the reloading bar.
     var reloadingBarHeight: CGFloat {
         return reloadingBar?.frame.height ?? 0
@@ -80,7 +74,7 @@ public extension InfiniteList {
         default:
             Logger.standard.log(error: InfiniteList.displayStatusError)
         }
-        // COMMENT: Adjust the content offset.
+        // Adjust the content offset.
         if contentOffset.y < 0 {
             setContentOffset(.init(x: 0, y: 0), animated: true)
         }
@@ -94,9 +88,9 @@ public extension InfiniteList {
         addSubview(reloadingBar)
         let height = reloadingBar.frame.height
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { [unowned self] _ in
-            // COMMENT: Wait for the subview to be resized.
+            // Wait for the subview to be resized.
             reloadingBar.frame.size = .init(width: reloadingBar.frame.width, height: height)
-            // COMMENT: Adjust the scroll offset for the init status.
+            // Adjust the scroll offset for the init status.
             self.contentOffset = .init(x: 0, y: -height)
             self.infiniteListDelegate?.infiniteListDidRequireReload(self)
         })
@@ -110,9 +104,9 @@ public extension InfiniteList {
         addSubview(loadingMoreBar)
         let height = loadingMoreBar.frame.height
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-            // COMMENT: Wait for the subview to be resized.
+            // Wait for the subview to be resized.
             loadingMoreBar.frame.size = .init(width: loadingMoreBar.frame.width, height: height)
-            // COMMENT: Hide the loading more bar for the init status.
+            // Hide the loading more bar for the init status.
             loadingMoreBar.isHidden = true
         })
     }

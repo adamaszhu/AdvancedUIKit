@@ -2,8 +2,8 @@
 ///
 /// - author: Adamas
 /// - version: 1.1.0
-/// - date: 12/07/2017
-class FileInfoAccessor {
+/// - date: 07/09/2017
+final class FileInfoAccessor {
     
     /// The default MIME type.
     private static let defaultMIMEType = "application/octet-stream"

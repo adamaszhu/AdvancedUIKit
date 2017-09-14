@@ -15,10 +15,10 @@ protocol ExpandableView: class {
     var originalFrame: CGRect! { get set }
     
     /// The original frame related constraints on the superview.
-    var originalFrameConstraints: Array<NSLayoutConstraint>! { get set }
+    var originalFrameConstraints: [NSLayoutConstraint]! { get set }
     
     /// The original constraints.
-    var originalConstraints: Array<NSLayoutConstraint>! { get set }
+    var originalConstraints: [NSLayoutConstraint]! { get set }
     
     /// Whether the view can be expanded or not.
     var isExpandable: Bool { get set }

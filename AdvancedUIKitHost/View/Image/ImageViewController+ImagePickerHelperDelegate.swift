@@ -4,7 +4,7 @@ extension ImageViewController: ImagePickerHelperDelegate {
         SystemMessageHelper.standard?.showInfo(error)
     }
     
-    func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didPickImage image: UIImage) {
+    func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didPick image: UIImage) {
         galleryView.add(image: image)
     }
     

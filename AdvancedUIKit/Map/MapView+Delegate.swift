@@ -29,7 +29,7 @@ extension MapView: MKMapViewDelegate {
     ///   - annotation: The annotation.
     ///   - list: The point list.
     /// - Returns: The point. Nil if it is not found.
-    private func findPoint(with annotation: MKAnnotation, in list: Array<MapViewPoint>) -> MapViewPoint? {
+    private func findPoint(with annotation: MKAnnotation, in list: [MapViewPoint]) -> MapViewPoint? {
         for point in list {
             if point.annotation === annotation {
                 return point
@@ -71,8 +71,8 @@ extension MapView: MKMapViewDelegate {
             Logger.standard.log(error: MapView.pointError)
             return nil
         }
-        guard point.icon != nil else {
-            // COMMENT: Default pin will be applied.
+        guard let _ = point.icon else {
+            // Default pin will be applied.
             return nil
         }
         view.render(point)

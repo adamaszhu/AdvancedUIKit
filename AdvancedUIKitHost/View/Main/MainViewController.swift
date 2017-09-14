@@ -1,13 +1,8 @@
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     @IBOutlet weak var featureTable: UITableView!
     
-    var features: Array<Feature>
-    
-    required init?(coder aDecoder: NSCoder) {
-        features = [.audio, .button, .device, .image, .keyboard, .label, .list, .localization, .location, .map, .message, .navigation, .notification, .picker, .textField, .view]
-        super.init(coder: aDecoder)
-    }
+    let features = [.audio, .button, .device, .image, .keyboard, .label, .list, .localization, .location, .map, .message, .navigation, .notification, .picker, .textField, .view] as [Feature]
     
     override func viewDidLoad() {
         super.viewDidLoad()

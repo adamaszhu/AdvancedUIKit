@@ -12,7 +12,7 @@ extension String {
     ///
     /// - Parameter font: The font.
     /// - Returns: The width.
-    func measureWidth(withFont font: UIFont) -> CGFloat {
+    func measuredWidth(withFont font: UIFont) -> CGFloat {
         return self.size(attributes: [NSFontAttributeName: font]).width
     }
     
@@ -20,7 +20,7 @@ extension String {
     ///
     /// - Parameter font: The font.
     /// - Returns: The height.
-    func measureHeight(withFont font: UIFont) -> CGFloat {
+    func measuredHeight(withFont font: UIFont) -> CGFloat {
         return self.size(attributes: [NSFontAttributeName: font]).height
     }
     
@@ -30,8 +30,8 @@ extension String {
     ///   - font: The font that is applied.
     ///   - view: The view that text is in.
     /// - Returns: The actual line amount displayed on the view.
-    func measureLineAmount(withFont font: UIFont, inView view: UIView) -> Int {
-        let height = measureHeight(withFont: font, inView: view)
+    func measuredLineAmount(withFont font: UIFont, inView view: UIView) -> Int {
+        let height = measuredHeight(withFont: font, inView: view)
         return Int(height / font.lineHeight)
     }
     
@@ -41,7 +41,7 @@ extension String {
     ///   - font: The font that is applied.
     ///   - view: The view that text is in.
     /// - Returns: The actual height displayed on the view.
-    func measureHeight(withFont font: UIFont, inView view: UIView) -> CGFloat {
+    func measuredHeight(withFont font: UIFont, inView view: UIView) -> CGFloat {
         let maxBounds = CGSize(width: view.frame.width, height: .greatestFiniteMagnitude)
         let bounds = self.boundingRect(with: maxBounds, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
         return bounds.height
@@ -53,17 +53,15 @@ extension String {
     ///   - font: The font that is applied.
     ///   - view: The view that text is in.
     /// - Returns: The actual lines displayed on the view.
-    func measureLines(withFont font: UIFont, inView view: UIView) -> Array<String> {
+    func measuredLines(withFont font: UIFont, inView view: UIView) -> [String] {
         guard view.frame.width != 0 else {
             Logger.standard.log(warning: String.viewWidthWarning)
             return []
         }
-        var displayedLines = Array<String>()
+        var displayedLines = [String]()
         let lines = components(separatedBy: CharacterSet.newlines)
-        for line in lines {
-            for displayedLine in line.measureLine(withFont: font, inView: view) {
-                displayedLines.append(displayedLine)
-            }
+        lines.forEach {
+            displayedLines = displayedLines + $0.measureLine(withFont: font, inView: view)
         }
         return displayedLines
     }
@@ -74,38 +72,38 @@ extension String {
     ///   - font: The font that is applied.
     ///   - view: The view that text is in.
     /// - Returns: The actual line amount displayed on the view.
-    private func measureLine(withFont font: UIFont, inView view: UIView) -> Array<String> {
+    private func measureLine(withFont font: UIFont, inView view: UIView) -> [String] {
         guard !isEmpty else {
             return [""]
         }
-        var lines = Array<String>()
+        var lines = [String]()
         var remainLine = self
         while !remainLine.isEmpty {
-            // COMMENT: Extract a line from the beginning of the remainLine. For better performance, words seperating strategy is considered prior to character seperating strategy.
-            // COMMENT: Extract a line containing several words from the beginning of the remainLine.
+            // Extract a line from the beginning of the remainLine. For better performance, words seperating strategy is considered prior to character seperating strategy.
+            // Extract a line containing several words from the beginning of the remainLine.
             var words = remainLine.components(separatedBy: .whitespaces)
-            var width = words.joined(separator: " ").measureWidth(withFont: font)
-            while (width > view.frame.width) && (words.count > 1) {
+            var width = words.joined(separator: " ").measuredWidth(withFont: font)
+            while width > view.frame.width, words.count > 1 {
                 words.removeLast()
-                width = words.joined(separator: " ").measureWidth(withFont: font)
+                width = words.joined(separator: " ").measuredWidth(withFont: font)
             }
             if width <= view.frame.width {
                 let line = words.joined(separator: " ")
                 lines.append(line)
-                // COMMENT: remainLine must have the line extracted.
+                // remainLine must have the line extracted.
                 remainLine.remove(prefix: line)
-                // COMMENT: If the remainLine is not empty, remove the space between current line and the next line.
+                // If the remainLine is not empty, remove the space between current line and the next line.
                 remainLine.remove(prefix: " ")
                 continue
             }
-            // COMMENT: Extra a line from a extra long word from the beginning of the remainLine. Only one word is left.
-            var word = words.first!
+            // Extra a line from a extra long word from the beginning of the remainLine. Only one word is left.
+            var word = words.first ?? ""
             while width > view.frame.width {
                 word = word.substring(to: word.index(word.endIndex, offsetBy: -1))
-                width = word.measureWidth(withFont: font)
+                width = word.measuredWidth(withFont: font)
             }
             lines.append(word)
-            // COMMENT: remainLine must have the line extracted.
+            // remainLine must have the line extracted.
             remainLine.remove(prefix: word)
         }
         return lines

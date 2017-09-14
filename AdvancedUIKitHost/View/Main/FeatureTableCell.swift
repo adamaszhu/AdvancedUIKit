@@ -1,6 +1,6 @@
-class FeatureTableCell: UITableViewCell {
+final class FeatureTableCell: UITableViewCell {
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
     
     func render(for feature: Feature) {
         nameLabel.text = feature.rawValue

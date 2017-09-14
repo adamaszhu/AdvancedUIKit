@@ -7,7 +7,7 @@ extension ImagePickerHelper: CameraHelperDelegate {
     
     public func cameraHelper(_ cameraHelper: CameraHelper, didAuthorizeCamera result: Bool) {
         if result {
-            showImageViewController(withSourceType: .camera)
+            showImageViewController(of: .camera)
         } else {
             cameraHelper.requestCameraAuthorization()
         }
@@ -15,7 +15,7 @@ extension ImagePickerHelper: CameraHelperDelegate {
     
     public func cameraHelper(_ cameraHelper: CameraHelper, didAuthorizeLibrary result: Bool) {
         if result {
-            showImageViewController(withSourceType: .photoLibrary)
+            showImageViewController(of: .photoLibrary)
         } else {
             cameraHelper.requestLibraryAuthorization()
         }

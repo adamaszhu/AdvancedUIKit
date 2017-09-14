@@ -6,7 +6,7 @@
 extension ExpandableMapView: ExpandableView {
     
     var isExpanded: Bool {
-        guard superview != nil else {
+        guard let _ = superview else {
             Logger.standard.log(error: ExpandableMapView.superviewError)
             return false
         }
@@ -14,8 +14,8 @@ extension ExpandableMapView: ExpandableView {
     }
     
     public func expand() {
-        guard !isExpanded && isExpandable else {
-            Logger.standard.log(warning: ExpandableMapView.expandWarning)
+        guard !isExpanded, isExpandable else {
+            Logger.standard.log(warning: ExpandableMapView.expandingWarning)
             return
         }
         guard let window = window else {
@@ -39,8 +39,8 @@ extension ExpandableMapView: ExpandableView {
     }
     
     public func collapse() {
-        guard isExpanded && isExpandable else {
-            Logger.standard.log(warning: ExpandableMapView.collapseWarning)
+        guard isExpanded, isExpandable else {
+            Logger.standard.log(warning: ExpandableMapView.collapsingWarning)
             return
         }
         guard let window = window else {

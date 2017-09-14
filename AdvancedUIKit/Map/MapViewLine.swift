@@ -21,7 +21,7 @@ public struct MapViewLine {
     let width: Int
     
     /// All points on the line.
-    let points: Array<MapViewPoint>
+    let points: [MapViewPoint]
     
     /// The icon for each point on the view.
     let pointIcon: UIImage?
@@ -41,17 +41,17 @@ public struct MapViewLine {
     ///   - color: The color of the line.
     ///   - width: The width of the line.
     ///   - pointIcon: The icon for the points on the line. Nil if the point should be shown.
-    public init(points: Array<MapViewPoint>, color: UIColor = defaultLineColor, width: Int = defaultLineWidth, withPointIcon pointIcon: UIImage? = nil) {
-        let coordinates = points.map { point in
-            point.annotation.coordinate
+    public init(points: [MapViewPoint], color: UIColor = defaultLineColor, width: Int = defaultLineWidth, pointIcon: UIImage? = nil) {
+        let coordinates = points.map {
+            $0.annotation.coordinate
         }
         line = MKPolyline(coordinates: coordinates, count: coordinates.count)
         self.width = width
         self.color = color
         self.pointIcon = pointIcon
         if let icon = pointIcon {
-            for point in points {
-                point.icon = icon
+            points.forEach {
+                $0.icon = icon
             }
         }
         self.points = points

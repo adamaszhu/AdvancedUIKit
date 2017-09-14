@@ -6,13 +6,13 @@
 extension InfiniteListStatus {
     
     /// System errors.
-    private static let registrationAvailabilityError = "Register components without initial status."
+    private static let registrationError = "Register components without initial status."
     
     /// System warnings.
-    private static let selectionAvailabilityWarning = "The status doesn't allow selecting an item."
-    private static let reloadingAvailabilityWarning = "The status doesn't allow reloading items."
-    private static let loadingMoreAvailabilityWarning = "The status doesn't allow loading more items."
-    private static let editionAvailabilityWarning = "The status doesn't allow editing an item."
+    private static let selectionWarning = "The status doesn't allow selecting an item."
+    private static let reloadingWarning = "The status doesn't allow reloading items."
+    private static let loadingMoreWarning = "The status doesn't allow loading more items."
+    private static let editionWarning = "The status doesn't allow editing an item."
     private static let reloadingStatusWarning = "Reload items without reloading status."
     private static let loadingMoreStatusWarning = "Load more items without loading more status."
     
@@ -44,7 +44,7 @@ extension InfiniteListStatus {
         case .infinite, .finite, .empty:
             return true
         default:
-            Logger.standard.log(warning: InfiniteListStatus.reloadingAvailabilityWarning)
+            Logger.standard.log(warning: InfiniteListStatus.reloadingWarning)
             return false
         }
     }
@@ -55,7 +55,7 @@ extension InfiniteListStatus {
         case .infinite:
             return true
         default:
-            Logger.standard.log(warning: InfiniteListStatus.loadingMoreAvailabilityWarning)
+            Logger.standard.log(warning: InfiniteListStatus.loadingMoreWarning)
             return false
         }
     }
@@ -66,7 +66,7 @@ extension InfiniteListStatus {
         case .finite, .infinite:
             return true
         default:
-            Logger.standard.log(warning: InfiniteListStatus.selectionAvailabilityWarning)
+            Logger.standard.log(warning: InfiniteListStatus.selectionWarning)
             return false
         }
     }
@@ -77,7 +77,7 @@ extension InfiniteListStatus {
         case .finite, .infinite:
             return true
         default:
-            Logger.standard.log(warning: InfiniteListStatus.editionAvailabilityWarning)
+            Logger.standard.log(warning: InfiniteListStatus.editionWarning)
             return false
         }
     }
@@ -88,7 +88,7 @@ extension InfiniteListStatus {
         case .initial:
             return true
         default:
-            Logger.standard.log(error: InfiniteListStatus.registrationAvailabilityError)
+            Logger.standard.log(error: InfiniteListStatus.registrationError)
             return false
         }
     }

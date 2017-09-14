@@ -13,9 +13,9 @@ public extension UILabel {
         guard lineAmount != 0 else {
             return frame.origin
         }
-        // COMMENT: If lastLine is nil, then the logic should be fixed.
-        let lastLine = text!.measureLines(withFont: font, inView: self).last!
-        let lastLineLength = lastLine.measureWidth(withFont: font)
+        // If lastLine is nil, then the logic should be fixed.
+        let lastLine = text!.measuredLines(withFont: font, inView: self).last!
+        let lastLineLength = lastLine.measuredWidth(withFont: font)
         let offsetX = lastLineLength
         let offsetY = frame.height - lineHeight
         return CGPoint(x: frame.origin.x + offsetX, y: frame.origin.y + offsetY)
@@ -32,7 +32,7 @@ public extension UILabel {
             Logger.standard.log(warning: UILabel.textWarning)
             return 0
         }
-        return text.measureLineAmount(withFont: font, inView: self)
+        return text.measuredLineAmount(withFont: font, inView: self)
     }
     
     /// The actual height of the text.
@@ -41,7 +41,7 @@ public extension UILabel {
             Logger.standard.log(warning: UILabel.textWarning)
             return 0
         }
-        return text.measureHeight(withFont: font, inView: self)
+        return text.measuredHeight(withFont: font, inView: self)
     }
     
 }

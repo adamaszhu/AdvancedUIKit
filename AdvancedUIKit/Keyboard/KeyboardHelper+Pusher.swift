@@ -31,33 +31,33 @@ extension KeyboardHelper {
     /// Dismiss the keyboard. It only happens when the view is forced to remove focus or the hide keyboard method has been called.
     ///
     /// - Parameter notification: The notification of the keyboard action.
-    public func willHideKeyboard(withNotification notification: NSNotification) {
+    public func willHideKeyboard(with notification: NSNotification) {
         actionFilterView.isHidden = true
-        willChangeKeyboardFrame(withNotification: notification)
+        willChangeKeyboardFrame(with: notification)
         adjustOffset()
     }
     
     /// Show the keyboard.
     ///
     /// - Parameter notification: The notification of the keyboard action.
-    func willShowKeyboard(withNotification notification: NSNotification) {
+    func willShowKeyboard(with notification: NSNotification) {
         actionFilterView.isHidden = false
-        willChangeKeyboardFrame(withNotification: notification)
+        willChangeKeyboardFrame(with: notification)
         adjustOffset()
     }
     
     /// The frame of the keyboard will be changed. Get the height of the keyboard and duration while waiting for the adjustion.
     ///
     /// - Parameter notification: The notification of the keyboard action.
-    func willChangeKeyboardFrame(withNotification notification: NSNotification) {
-        refreshKeyboardHeight(withNotification: notification)
-        refreshPushDuration(withNotification: notification)
+    func willChangeKeyboardFrame(with notification: NSNotification) {
+        refreshKeyboardHeight(with: notification)
+        refreshPushDuration(with: notification)
     }
     
     /// Get the offset of the push animation.
     ///
     /// - Parameter notification: The notification of the keyboard action.
-    private func refreshKeyboardHeight(withNotification notification: NSNotification) {
+    private func refreshKeyboardHeight(with notification: NSNotification) {
         guard let value = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
             Logger.standard.log(error: KeyboardHelper.keyboardInfoError)
             keyboardHeight = 0
@@ -69,7 +69,7 @@ extension KeyboardHelper {
     /// Refresh the duration of the animation.
     ///
     /// - Parameter notification: The notification of the keyboard action.
-    private func refreshPushDuration(withNotification notification: NSNotification) {
+    private func refreshPushDuration(with notification: NSNotification) {
         guard let value = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber else {
             Logger.standard.log(error: KeyboardHelper.keyboardInfoError)
             keyboardPushDuration = KeyboardHelper.defaultKeyboardPushDuration

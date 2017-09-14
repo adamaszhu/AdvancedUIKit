@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 07/06/2017
-public class MapViewPoint {
+final public class MapViewPoint {
     
     /// The annotation.
     let annotation: MKPointAnnotation

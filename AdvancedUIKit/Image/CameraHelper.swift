@@ -3,18 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 10/06/2017
-public class CameraHelper {
-    
-    /// The info key required in the Info.plist file.
-    private static let cameraDescriptionKey = "NSCameraUsageDescription"
-    private static let libraryDescriptionKey = "NSPhotoLibraryUsageDescription"
-    
-    /// User error.
-    private static let cameraAuthorizationError = "CameraAuthorizationError"
-    private static let libraryAuthorizationError = "LibraryAuthorizationError"
-    
-    /// System error.
-    private static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
+final public class CameraHelper {
     
     /// Whether the camera is enabled by the user or not.
     public static var isCameraAuthorized: Bool {
@@ -72,7 +61,7 @@ public class CameraHelper {
             cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.cameraAuthorizationError.localizedInternalString(forType: CameraHelper.self))
             return
         }
-        guard checkDescriptionKey(CameraHelper.cameraDescriptionKey) == true else {
+        guard isDescriptionKeyExisted(CameraHelper.cameraDescriptionKey) == true else {
             Logger.standard.log(error: CameraHelper.descriptionKeyError, withDetail: CameraHelper.cameraDescriptionKey)
             return
         }
@@ -87,7 +76,7 @@ public class CameraHelper {
             cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.libraryAuthorizationError.localizedInternalString(forType: CameraHelper.self))
             return
         }
-        guard checkDescriptionKey(CameraHelper.libraryDescriptionKey) == true else {
+        guard isDescriptionKeyExisted(CameraHelper.libraryDescriptionKey) == true else {
             Logger.standard.log(error: CameraHelper.descriptionKeyError, withDetail: CameraHelper.libraryDescriptionKey)
             return
         }
@@ -107,7 +96,7 @@ public class CameraHelper {
     ///
     /// - Parameter key: The key to be checked.
     /// - Returns: Whether the key exists or not.
-    private func checkDescriptionKey(_ key: String) -> Bool {
+    private func isDescriptionKeyExisted(_ key: String) -> Bool {
         return bundle.object(forInfoDictionaryKey: key) != nil
     }
     

@@ -3,23 +3,17 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 02/06/2017
-public class NotificationHelper {
-    
-    /// All messages.
-    private static let authorizationError = "AuthorizationError"
-    
-    /// The system error.
-    private static let notificationSettingError = "The notification setting cannot be retrieved."
+final public class NotificationHelper {
     
     /// The singleton helper.
-    public static var shared: NotificationHelper = NotificationHelper()
+    public static let shared = NotificationHelper()
     
     /// Whether the local notification is authorized or not.
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
     public var isLocalNotificationAuthorized: Bool {
         // TODO: Implement this using the NSNotification framework.
         guard let setting = application.currentUserNotificationSettings else {
-            Logger.standard.log(error: NotificationHelper.notificationSettingError)
+            Logger.standard.log(error: NotificationHelper.settingError)
             return false
         }
         return setting.types.contains(.alert)

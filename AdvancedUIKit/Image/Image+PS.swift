@@ -17,7 +17,7 @@ public extension UIImage {
     ///
     /// - Parameter radius: The radius of the blur.
     /// - Returns: The image with blur effect.
-    public func addGaussianBlur(withRadius radius: Int) -> UIImage {
+    public func addingGaussianBlur(withRadius radius: Int) -> UIImage {
         guard let gaussianBlurFilter = CIFilter(name: UIImage.gaussianBlurFilterName) else {
             Logger.standard.log(error: UIImage.filterError)
             return self
@@ -45,7 +45,7 @@ public extension UIImage {
     ///
     /// - Parameter opacity: The opacity.
     /// - Returns: The image with opacity.
-    public func setOpacity(_ opacity: Double) -> UIImage {
+    public func addingOpacity(_ opacity: Double) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         draw(at: .zero, blendMode: .normal, alpha: CGFloat(opacity))
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
@@ -60,7 +60,7 @@ public extension UIImage {
     /// Crop an image into a square one.
     ///
     /// - Returns: The cropped image.
-    public func cropSquare() -> UIImage {
+    public func croppingSquare() -> UIImage {
         let width = size.width
         let height = size.height
         var rect: CGRect
@@ -84,12 +84,12 @@ public extension UIImage {
     ///
     /// - Parameter maxSize: The max size of the new image.
     /// - Returns: The compressed image.
-    public func compress(withMaxSize maxSize: Int) -> UIImage {
+    public func compressing(withMaxSize maxSize: Int) -> UIImage {
         guard let imageData = UIImageJPEGRepresentation(self, 1) else {
             Logger.standard.log(error: UIImage.inputImageError)
             return self
         }
-        if imageData.count <= maxSize {
+        guard imageData.count > maxSize else {
             return self
         }
         guard let comressedData = UIImageJPEGRepresentation(self, CGFloat(maxSize) / CGFloat(imageData.count)) else {
@@ -108,7 +108,7 @@ public extension UIImage {
     /// - Parameters:
     ///   - width: The new width.
     ///   - height: The new height.
-    public func resize(toWidth width: Double, toHeight height: Double) -> UIImage {
+    public func resizing(toWidth width: Double, toHeight height: Double) -> UIImage {
         let size = CGSize(width: width, height: height)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         let bound = CGRect(x: 0, y: 0, width: width, height: height)

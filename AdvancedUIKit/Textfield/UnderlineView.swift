@@ -3,10 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 05/06/2017
-class UnderlineView: UIView {
-    
-    /// System error.
-    private let initError = "Constructor init(coder) shouldn't be called."
+final class UnderlineView: UIView {
     
     /// The normal color of the underline.
     var color: UIColor
@@ -25,13 +22,13 @@ class UnderlineView: UIView {
     }
     
     override init(frame: CGRect) {
-        color = UIColor.clear
-        highlightedColor = UIColor.clear
+        color = .clear
+        highlightedColor = .clear
         super.init(frame: frame)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.log(error: initError)
+        Logger.standard.log(error: UnderlineView.initError)
         return nil
     }
     

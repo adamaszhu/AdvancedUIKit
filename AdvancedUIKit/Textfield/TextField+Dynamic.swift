@@ -28,12 +28,12 @@ public extension UITextField {
             Logger.standard.log(warning: UITextField.fontEmptyWarning)
             return 0
         }
-        return text.measureLineAmount(withFont: font, inView: self)
+        return text.measuredLineAmount(withFont: font, inView: self)
     }
     
     /// The actual height of the text.
     public var actualHeight: CGFloat {
-        // COMMENT: If it will be changed to multiple line in the future, a default line space around 5 should be considered.
+        // If it will be changed to multiple line in the future, a default line space around 5 should be considered.
         return lineHeight
     }
     

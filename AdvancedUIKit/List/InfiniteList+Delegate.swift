@@ -16,10 +16,10 @@ extension InfiniteList: UITableViewDelegate {
         guard let item = items.element(atIndex: indexPath.row), let cellType = cellType(for: item.type)  else {
             return 0
         }
-        if indexPath == expandedCellIndexPath {
-            return cellType.height
+        guard indexPath == expandedCellIndexPath else {
+            return cellType.basicHeight
         }
-        return cellType.basicHeight
+        return cellType.height
     }
     
 }

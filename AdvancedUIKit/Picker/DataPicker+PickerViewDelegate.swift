@@ -10,9 +10,9 @@ extension DataPicker: UIPickerViewDelegate {
         if let reusableLabel = view as? UILabel {
             label = reusableLabel
         } else {
-            label = UILabel()
+            label = .init()
             label.textAlignment = .center
-            label.textColor = UIColor.black
+            label.textColor = .black
         }
         label.text = columns[component].items[row].name
         return label

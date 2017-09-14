@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 09/06/2017
-public class ExpandableMapView: MapView {
+final public class ExpandableMapView: MapView {
     
     /// The gesture filter to expand the view.
     let gestureFilterView: UIView
@@ -51,8 +51,8 @@ public class ExpandableMapView: MapView {
     var originalSuperview: UIView!
     var originalZIndex: Int!
     var originalFrame: CGRect!
-    var originalFrameConstraints: Array<NSLayoutConstraint>!
-    var originalConstraints: Array<NSLayoutConstraint>!
+    var originalFrameConstraints: [NSLayoutConstraint]!
+    var originalConstraints: [NSLayoutConstraint]!
     
     public var isExpandable: Bool {
         set {

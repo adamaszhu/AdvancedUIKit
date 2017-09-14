@@ -34,7 +34,7 @@ public extension UINavigationController {
     public func showViewController(ofStoryboard storyboardName: String? = nil, withIdentifier identifier: String, withAnimation shouldAnimate: Bool = true, withInitialization initialization: ((UIViewController) -> Void) = { _ in }) {
         let storyboard: UIStoryboard
         if let storyboardName = storyboardName {
-          storyboard  = UIStoryboard(name: storyboardName, bundle: nil)
+          storyboard  = .init(name: storyboardName, bundle: nil)
         } else if let currentStoryboard = self.storyboard {
             storyboard = currentStoryboard
         } else {

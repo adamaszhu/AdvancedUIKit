@@ -5,12 +5,6 @@
 /// - date: 30/05/2017
 public class PopupView: RootView {
     
-    /// The default background color of the popup view.
-    private static let defaultBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-    
-    /// System error.
-    private static let initError = "Constructor init(coder) shouldn't be called."
-    
     /// The window of the app.
     public let hostWindow: UIWindow
     
@@ -27,7 +21,7 @@ public class PopupView: RootView {
     
     public override func show() {
         guard !isVisible else {
-            Logger.standard.log(warning: RootView.showWarning)
+            Logger.standard.log(warning: RootView.showingWarning)
             return
         }
         hostWindow.addSubview(self)
@@ -40,7 +34,7 @@ public class PopupView: RootView {
     
     public override func hide() {
         guard isVisible else {
-            Logger.standard.log(warning: RootView.hideWarning)
+            Logger.standard.log(warning: RootView.hidingWarning)
             return
         }
         animate(withChange: {[unowned self] _ in

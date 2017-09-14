@@ -25,16 +25,13 @@ open class InfiniteCell: UITableViewCell {
     
     /// Render the cell with an item.
     /// - parameter item: The item to be rendered.
-    open func render(withItem item: Any) {
-    }
+    open func render(withItem item: Any) { }
     
     /// Expand the cell.
-    open func expand() {
-    }
+    open func expand() { }
     
     /// Collapse the cell.
-    open func collapse() {
-    }
+    open func collapse() { }
     
     /// Switch the expand status of current cell.
     func switchExpandStatus() {

@@ -8,6 +8,6 @@ public protocol DataPickerDelegate {
     /// DataPicker has a selected value.
     ///
     /// - Parameter values: The value for each column.
-    func dataPicker(dataPicker: DataPicker, didSelectValue values: Array<String>)
+    func dataPicker(dataPicker: DataPicker, didSelectValue values: [String])
     
 }

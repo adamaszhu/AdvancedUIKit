@@ -2,22 +2,10 @@
 ///
 /// - version: 1.0.0
 /// - date: 17/02/2017
-public class DeviceHelper: NSObject {
+final public class DeviceHelper: NSObject {
     
     /// The singleton instance in the system.
-    public static let standard: DeviceHelper = DeviceHelper()
-    
-    /// User error.
-    private static let dialError = "DialError"
-    private static let mapError = "MapError"
-    
-    /// System error.
-    private static let phoneNumberError = "The phone number is invalid."
-    private static let addressError = "The address is incorrect."
-    
-    /// Function url.
-    private static let dailPrefix = "telprompt://"
-    private static let mapPrefix = "http://maps.apple.com/?q="
+    public static let standard = DeviceHelper()
     
     /// The delegate of the DeviceHelper.
     public var deviceHelperDelegate: DeviceHelperDelegate?
@@ -56,16 +44,12 @@ public class DeviceHelper: NSObject {
     ///   - content: The content of the email.
     ///   - isHTMLContent: Whether the content is a html or not.
     ///   - attachments: A list of attachments of the email. It is a list of name and data pair
-    public func email(toAddress address: String,
-                      withSubject subject: String,
-                      withContent content: String,
-                      withAttachments attachments: Dictionary<String, Data> = [:],
-                      asHTMLContent isHTML: Bool = false) {
+    public func email(toAddress address: String, withSubject subject: String, withContent content: String, withAttachments attachments: [String: Data] = [:], asHTMLContent isHTML: Bool = false) {
         let mailViewController = MFMailComposeViewController()
         mailViewController.mailComposeDelegate = self
         mailViewController.setToRecipients([address])
         mailViewController.setSubject(subject)
-        for (name, data) in attachments {
+        attachments.forEach { (name, data) in
             let mimeType = FileInfoAccessor(path: name).mimeType
             mailViewController.addAttachmentData(data, mimeType: mimeType, fileName: name);
         }

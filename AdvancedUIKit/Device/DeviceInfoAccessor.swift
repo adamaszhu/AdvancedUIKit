@@ -3,10 +3,10 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 29/05/2017
-public class DeviceInfoAccessor {
+final public class DeviceInfoAccessor {
     
     /// The singleton instance in the system.
-    public static let shared: DeviceInfoAccessor = DeviceInfoAccessor()
+    public static let shared: DeviceInfoAccessor = .init()
     
     /// The system version of the device.
     public var systemVersion: String {

@@ -22,7 +22,7 @@ extension MKAnnotationView {
                 break
             }
         }
-        if point.detailButtonAction != nil {
+        if let _ = point.detailButtonAction {
             let detailButton = UIButton(type: .detailDisclosure)
             detailButton.frame = CGRect(x: 0, y: 0, width: MKAnnotationView.defaultDetailButtonSize, height: MKAnnotationView.defaultDetailButtonSize)
             detailButton.addTarget(point, action: #selector(MapViewPoint.didClickDetailButton), for: .touchUpInside)

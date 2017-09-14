@@ -5,23 +5,14 @@
 /// - date: 07/06/2017
 public class MapView: MKMapView {
     
-    /// The default overview margin.
-    private static let defaultOverviewMargin = Double(0.001)
-    
-    /// The default zoom level while showing user's location.
-    private static let defaultUserLocationMargin = Double(10)
-    
-    /// System warning.
-    private static let userLocationUnretrievedWarning = "The user location hasn't been retrieved yet."
-    
     /// The delegate of the map.
     public var mapViewDelegate: MapViewDelegate?
     
     /// The point list.
-    var points: Array<MapViewPoint>
+    var points: [MapViewPoint]
     
     /// The line list.
-    var lines: Array<MapViewLine>
+    var lines: [MapViewLine]
     
     /// The location helper.
     private let locationHelper: LocationHelper
@@ -56,7 +47,7 @@ public class MapView: MKMapView {
         let centerLongitude = (leftLongitude + rightLongitude) / 2
         var latitudeDelta = topLatitude - bottomLatitude
         var longitudeDelta = rightLongitude - leftLongitude
-        // COMMENT: Change ratio according to the ratio of the view.
+        // Change ratio according to the ratio of the view.
         let ratio = Double(frame.size.height / frame.size.width)
         if ((latitudeDelta / longitudeDelta) > ratio) {
             longitudeDelta = latitudeDelta / ratio
@@ -71,27 +62,27 @@ public class MapView: MKMapView {
     
     /// Adjust the viewport according to the points and lines within it.
     public func overview() {
-        if (points.count == 0) && (lines.count == 0) {
+        if points.count == 0, lines.count == 0 {
             setViewport(withTopLatitude: 90, withBottomLatitude: -90, withLeftLongitude: -180, withRightLongitude: 180)
             return
         }
         var coordinates = self.points.map { point in
             point.annotation.coordinate
         }
-        for line in lines {
-            coordinates = coordinates + line.points.map { point in
-                point.annotation.coordinate
+        lines.forEach {
+            coordinates = coordinates + $0.points.map {
+                $0.annotation.coordinate
             }
         }
         var maxLatitude = Double(-90)
         var minLatitude = Double(90)
         var maxLongitude = Double(-180)
         var minLongitude = Double(180)
-        for coordinate in coordinates {
-            maxLatitude = max(maxLatitude, coordinate.latitude)
-            minLatitude = min(minLatitude, coordinate.latitude)
-            maxLongitude = max(maxLongitude, coordinate.longitude)
-            minLongitude = min(minLongitude, coordinate.longitude)
+        coordinates.forEach {
+            maxLatitude = max(maxLatitude, $0.latitude)
+            minLatitude = min(minLatitude, $0.latitude)
+            maxLongitude = max(maxLongitude, $0.longitude)
+            minLongitude = min(minLongitude, $0.longitude)
         }
         maxLatitude = min(90, maxLatitude + MapView.defaultOverviewMargin)
         minLatitude = max(-90, minLatitude - MapView.defaultOverviewMargin)
@@ -103,7 +94,7 @@ public class MapView: MKMapView {
     /// Add a point on the map.
     ///
     /// - Parameter point: The point.
-    public func addPoint(_ point: MapViewPoint) {
+    public func add(_ point: MapViewPoint) {
         if let item = point.item {
             point.detailButtonAction = { [unowned self] _ in
                 self.mapViewDelegate?.mapView(self, didSelectItem: item)
@@ -116,12 +107,12 @@ public class MapView: MKMapView {
     /// Add a line onto the map.
     ///
     /// - Parameter line: The line to be presented.
-    public func addLine(_ line: MapViewLine) {
+    public func add(_ line: MapViewLine) {
         lines.append(line)
         add(line.line)
-        if line.pointIcon != nil {
-            for point in line.points {
-                addAnnotation(point.annotation)
+        if let _ = line.pointIcon {
+            line.points.forEach {
+                addAnnotation($0.annotation)
             }
         }
     }
@@ -141,11 +132,11 @@ public class MapView: MKMapView {
     public func showUserLocation(withZoomLevel zoomLevel: Double = defaultUserLocationMargin) {
         requestUserLocation()
         guard showsUserLocation else {
-            // COMMENT: The authorization is declined.
+            // The authorization is declined.
             return
         }
         let userLocationCoordinate = userLocation.coordinate
-        guard (userLocationCoordinate.latitude != 0) && (userLocationCoordinate.longitude != 0) else {
+        guard userLocationCoordinate.latitude != 0, userLocationCoordinate.longitude != 0 else {
             Logger.standard.log(warning: MapView.userLocationUnretrievedWarning)
             return
         }
@@ -155,8 +146,8 @@ public class MapView: MKMapView {
     /// Clean all the points and lines on the map.
     public func reset() {
         removeAnnotations(annotations)
-        removeOverlays(lines.map { line in
-            line.line
+        removeOverlays(lines.map {
+            $0.line
         })
         points.removeAll()
         lines.removeAll()

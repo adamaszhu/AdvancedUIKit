@@ -31,7 +31,7 @@ extension InfiniteList: UITableViewDataSource {
                     return
                 }
                 if let previousExpandedCellIndex = self.expandedCellIndexPath {
-                    // COMMENT: Collapse previous expanded cell.
+                    // Collapse previous expanded cell.
                     self.collapseCell(atIndex: previousExpandedCellIndex.row)
                 }
                 self.expandCell(atIndex: index)
@@ -47,7 +47,7 @@ extension InfiniteList: UITableViewDataSource {
             guard let cell = cellForRow(at: indexPath) as? InfiniteCell else {
                 return false
             }
-            // Comment: If a cell can be expanded, it should implement those editable feature in the additional view.
+            // If a cell can be expanded, it should implement those editable feature in the additional view.
             return isEditable && !cell.isExpandable
         default:
             return false

@@ -3,10 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 15/06/2017
-class GalleryImage: UIScrollView {
-    
-    /// Error message.
-    private static let initError = "Constructor init(coder) shouldn't be called."
+final class GalleryImage: UIScrollView {
     
     /// The zoom in increment for double tapping.
     private static let zoomInIncrement = CGFloat(2)

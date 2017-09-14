@@ -3,22 +3,10 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 01/06/2017
-public class RingHelper {
+final public class RingHelper {
     
     /// The singleton instance.
-    public static let shared: RingHelper = RingHelper()
-    
-    /// The default period between two rings or vibrations.
-    private static let defaultRingPeriod = 1.5
-    
-    /// The system sound.
-    private static let defaultSoundID = SystemSoundID(1022)
-    
-    /// System error.
-    private static let soundNameError = "The sound file doesn't exist."
-    
-    /// System warning.
-    private static let playStatusWarning = "A sound is currently being played."
+    public static let shared = RingHelper()
     
     /// The period between two rings or vibrates.
     private var period: Double
@@ -43,10 +31,8 @@ public class RingHelper {
     ///   - shouldVibrate: Whether the vibration should be performed or not.
     ///   - period: The period between two vibrations or rings.
     /// - Returns: Whether the ring will be performed or not. False if a ring is being played or the sound file doesn't exist.
-    public func ring(withSound soundFileName: String,
-                     forTimes times: Int = 1,
-                     withVibration shouldVibrate: Bool = true,
-                     withPeriod period: Double = defaultRingPeriod) -> Bool {
+    @discardableResult
+    public func ring(withSound soundFileName: String, forTimes times: Int = 1, withVibration shouldVibrate: Bool = true, withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
             Logger.standard.log(warning: RingHelper.playStatusWarning)
             return false
@@ -60,7 +46,7 @@ public class RingHelper {
             return false
         }
         let url = URL(fileURLWithPath: path)
-        // COMMENT: Register the customized sound.
+        // Register the customized sound.
         var newSoundID = SystemSoundID(0)
         AudioServicesCreateSystemSoundID(url as CFURL, &newSoundID)
         guard newSoundID != 0 else {
@@ -79,9 +65,8 @@ public class RingHelper {
     ///   - times: How many times the device need to ring.
     ///   - period: The period between two vibrations or rings.
     /// - Returns: Whether the ring will be performed or not. False if a ring is being played.
-    public func ring(withSoundID soundID: SystemSoundID = defaultSoundID,
-                     forTimes times: Int = 1,
-                     withPeriod period: Double = defaultRingPeriod) -> Bool {
+    @discardableResult
+    public func ring(withSoundID soundID: SystemSoundID = defaultSoundID, forTimes times: Int = 1, withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
             return false
         }
