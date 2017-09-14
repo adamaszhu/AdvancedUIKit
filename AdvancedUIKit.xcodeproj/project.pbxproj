@@ -39,6 +39,8 @@
 		283844841F69F77000AAD1E0 /* PageView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844831F69F77000AAD1E0 /* PageView+Constant.swift */; };
 		283844861F69F79200AAD1E0 /* PopupView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844851F69F79200AAD1E0 /* PopupView+Constant.swift */; };
 		283844881F69F7AB00AAD1E0 /* RootView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844871F69F7AB00AAD1E0 /* RootView+Constant.swift */; };
+		283844911F6B381E00AAD1E0 /* Button.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283844901F6B381E00AAD1E0 /* Button.storyboard */; };
+		283844931F6B383A00AAD1E0 /* Audio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283844921F6B383A00AAD1E0 /* Audio.storyboard */; };
 		2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2838C2CC1EE0DD06004D5BCB /* Ring.aiff */; };
 		2838C2D01EE0DD89004D5BCB /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */; };
 		283B01C81F1306E700AF2097 /* InfiniteListStatus+Managable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283B01C71F1306E700AF2097 /* InfiniteListStatus+Managable.swift */; };
@@ -260,6 +262,8 @@
 		283844831F69F77000AAD1E0 /* PageView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageView+Constant.swift"; sourceTree = "<group>"; };
 		283844851F69F79200AAD1E0 /* PopupView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PopupView+Constant.swift"; sourceTree = "<group>"; };
 		283844871F69F7AB00AAD1E0 /* RootView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RootView+Constant.swift"; sourceTree = "<group>"; };
+		283844901F6B381E00AAD1E0 /* Button.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Button.storyboard; sourceTree = "<group>"; };
+		283844921F6B383A00AAD1E0 /* Audio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Audio.storyboard; sourceTree = "<group>"; };
 		2838C2CC1EE0DD06004D5BCB /* Ring.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Ring.aiff; sourceTree = "<group>"; };
 		2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		283B01C71F1306E700AF2097 /* InfiniteListStatus+Managable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteListStatus+Managable.swift"; sourceTree = "<group>"; };
@@ -492,6 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				2838C2CF1EE0DD89004D5BCB /* AudioViewController.swift */,
+				283844921F6B383A00AAD1E0 /* Audio.storyboard */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -993,6 +998,7 @@
 			isa = PBXGroup;
 			children = (
 				42CA0A071EE4338A009AF1BE /* ButtonViewController.swift */,
+				283844901F6B381E00AAD1E0 /* Button.storyboard */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -1168,8 +1174,10 @@
 				42CA09F61EE1A7B0009AF1BE /* Localizable.strings in Resources */,
 				42CF00A71EFD19C6002613E3 /* ImageCell.xib in Resources */,
 				42CA0A021EE23D0F009AF1BE /* Main.storyboard in Resources */,
+				283844911F6B381E00AAD1E0 /* Button.storyboard in Resources */,
 				2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */,
 				422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */,
+				283844931F6B383A00AAD1E0 /* Audio.storyboard in Resources */,
 				42CA09FC1EE23C5C009AF1BE /* LaunchScreen.storyboard in Resources */,
 				284482511F09F94500DF8D82 /* EmptyState.xib in Resources */,
 			);

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +13,7 @@
         <scene sceneID="aSQ-Hv-Anj">
             <objects>
                 <navigationController id="H8X-S2-nBJ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" misplaced="YES" id="rLA-DB-wnz">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="rLA-DB-wnz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -124,105 +123,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GsP-jb-osd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-118" y="-124"/>
-        </scene>
-        <!--Audio View Controller-->
-        <scene sceneID="6Ol-Tw-8c7">
-            <objects>
-                <viewController storyboardIdentifier="AudioViewController" id="by4-Ca-S7b" customClass="AudioViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DcT-ST-R1T"/>
-                        <viewControllerLayoutGuide type="bottom" id="nPJ-hs-yOl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nUD-iu-zJL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8G-8i-axX">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DnH-ez-sEH">
-                                        <rect key="frame" x="15" y="248.5" width="345" height="150"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-I6-Fsa">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
-                                                <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="3Z1-HW-aVw"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                <state key="normal" title="Customized Ring With Vibration">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="ringWithCustomizedSoundAndVibration:" destination="by4-Ca-S7b" eventType="touchUpInside" id="fLj-Gt-1tO"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ice-SY-VYs">
-                                                <rect key="frame" x="0.0" y="55" width="345" height="40"/>
-                                                <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="LG2-VH-rDr"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                <state key="normal" title="Customized Ring">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="ringWithCustomizedSound:" destination="by4-Ca-S7b" eventType="touchUpInside" id="kJZ-dA-tEV"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raB-CN-rW5">
-                                                <rect key="frame" x="0.0" y="110" width="345" height="40"/>
-                                                <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Gp9-LZ-rSN"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                <state key="normal" title="System Ring">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="ringWithSystemSound:" destination="by4-Ca-S7b" eventType="touchUpInside" id="Rpz-gb-UI0"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="DnH-ez-sEH" firstAttribute="leading" secondItem="s8G-8i-axX" secondAttribute="leading" constant="15" id="EOc-8P-tpt"/>
-                                    <constraint firstAttribute="trailing" secondItem="DnH-ez-sEH" secondAttribute="trailing" constant="15" id="aLb-Vq-5PN"/>
-                                    <constraint firstItem="DnH-ez-sEH" firstAttribute="centerY" secondItem="s8G-8i-axX" secondAttribute="centerY" id="mcv-kr-HiZ"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="s8G-8i-axX" secondAttribute="trailing" id="44D-AW-eIR"/>
-                            <constraint firstItem="s8G-8i-axX" firstAttribute="leading" secondItem="nUD-iu-zJL" secondAttribute="leading" id="Qtf-zE-bD5"/>
-                            <constraint firstItem="s8G-8i-axX" firstAttribute="top" secondItem="DcT-ST-R1T" secondAttribute="bottom" id="WWi-me-2k7"/>
-                            <constraint firstItem="nPJ-hs-yOl" firstAttribute="top" secondItem="s8G-8i-axX" secondAttribute="bottom" id="cBB-HR-C4F"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cRY-UX-FXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="665" y="-124"/>
         </scene>
         <!--View View Controller-->
         <scene sceneID="lFs-bq-mpw">
@@ -1051,50 +951,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIE-7F-bOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2188" y="-125"/>
-        </scene>
-        <!--Button View Controller-->
-        <scene sceneID="Tls-dN-HiP">
-            <objects>
-                <viewController storyboardIdentifier="ButtonViewController" id="6Ec-e9-7SW" customClass="ButtonViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="chN-ws-dFE"/>
-                        <viewControllerLayoutGuide type="bottom" id="mCM-tS-oIa"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dg4-f7-a11">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEB-7o-7FY">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwb-4z-BE1">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Lwb-4z-BE1" firstAttribute="top" secondItem="YEB-7o-7FY" secondAttribute="top" id="CQi-gB-qEQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Lwb-4z-BE1" secondAttribute="trailing" id="aFG-IN-LYb"/>
-                                    <constraint firstItem="Lwb-4z-BE1" firstAttribute="leading" secondItem="YEB-7o-7FY" secondAttribute="leading" id="l4f-UV-x7f"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="YEB-7o-7FY" firstAttribute="top" secondItem="chN-ws-dFE" secondAttribute="bottom" id="DpS-IW-hj3"/>
-                            <constraint firstAttribute="trailing" secondItem="YEB-7o-7FY" secondAttribute="trailing" id="G6y-1B-epz"/>
-                            <constraint firstItem="mCM-tS-oIa" firstAttribute="top" secondItem="YEB-7o-7FY" secondAttribute="bottom" id="WXU-Y3-vmL"/>
-                            <constraint firstItem="YEB-7o-7FY" firstAttribute="leading" secondItem="dg4-f7-a11" secondAttribute="leading" id="nmd-Vg-Ua9"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="button" destination="Lwb-4z-BE1" id="jye-wp-1hu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Diy-zu-mg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3017" y="-124"/>
         </scene>
         <!--Text Field View Controller-->
         <scene sceneID="pTp-pf-xBV">
