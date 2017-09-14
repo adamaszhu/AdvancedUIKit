@@ -692,6 +692,11 @@
 		42204BA01EF9557D00F1FA04 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				284482501F09F94500DF8D82 /* EmptyState.xib */,
+				42CF00A61EFD19C6002613E3 /* ImageCell.xib */,
+				42CF00A41EFD19BA002613E3 /* LabelCell.xib */,
+				284482821F0A507F00DF8D82 /* LoadingMoreBar.xib */,
+				2844827E1F0A41D100DF8D82 /* ReloadingBar.xib */,
 				284482801F0A4C9D00DF8D82 /* DataGenerator.swift */,
 				42CF00AA1EFD1CBF002613E3 /* ImageCell.swift */,
 				42CF00A81EFD1CA5002613E3 /* LabelCell.swift */,
@@ -927,13 +932,8 @@
 			isa = PBXGroup;
 			children = (
 				422DB40F1EAA3CF100377AB5 /* Assets.xcassets */,
-				284482501F09F94500DF8D82 /* EmptyState.xib */,
-				42CF00A61EFD19C6002613E3 /* ImageCell.xib */,
-				42CF00A41EFD19BA002613E3 /* LabelCell.xib */,
 				42CA09FA1EE23C5C009AF1BE /* LaunchScreen.storyboard */,
-				284482821F0A507F00DF8D82 /* LoadingMoreBar.xib */,
 				42CA09F51EE1A7B0009AF1BE /* Localizable.strings */,
-				2844827E1F0A41D100DF8D82 /* ReloadingBar.xib */,
 				2838C2CC1EE0DD06004D5BCB /* Ring.aiff */,
 			);
 			path = Resources;
