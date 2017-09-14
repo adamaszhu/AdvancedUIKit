@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tkp-6b-vJt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lP8-na-aQr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,29 +8,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Audio View Controller-->
-        <scene sceneID="ob4-GU-OUj">
+        <!--Device View Controller-->
+        <scene sceneID="u2A-gh-jsQ">
             <objects>
-                <viewController storyboardIdentifier="AudioViewController" id="Tkp-6b-vJt" customClass="AudioViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeviceViewController" id="lP8-na-aQr" customClass="DeviceViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7qL-AC-vyp"/>
-                        <viewControllerLayoutGuide type="bottom" id="PEl-M1-mGo"/>
+                        <viewControllerLayoutGuide type="top" id="3n6-SE-Rcr"/>
+                        <viewControllerLayoutGuide type="bottom" id="TIZ-vy-mRx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="w2a-Rj-mWL">
+                    <view key="view" contentMode="scaleToFill" id="wXk-Jb-vpI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BxH-Y8-S5r">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Qgk-qJ-CeI">
                                 <rect key="frame" x="15" y="258" width="345" height="150"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRI-2P-z1G">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66X-HG-ze3">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
                                         <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="h3s-Fi-LZV"/>
+                                            <constraint firstAttribute="height" constant="40" id="RKc-oI-pBh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <state key="normal" title="Customized Ring With Vibration">
+                                        <state key="normal" title="Dail">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -39,17 +38,16 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="ringWithCustomizedSoundAndVibration:" destination="Tkp-6b-vJt" eventType="touchUpInside" id="flZ-Sw-G2a"/>
+                                            <action selector="dialNumber:" destination="lP8-na-aQr" eventType="touchUpInside" id="rWr-Iy-0PH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAw-NG-910">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXA-OY-cTj">
                                         <rect key="frame" x="0.0" y="55" width="345" height="40"/>
                                         <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="NTT-Kf-CVP"/>
+                                            <constraint firstAttribute="height" constant="40" id="NAD-8M-zOb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <state key="normal" title="Customized Ring">
+                                        <state key="normal" title="Map">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -58,17 +56,16 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="ringWithCustomizedSound:" destination="Tkp-6b-vJt" eventType="touchUpInside" id="74e-L2-xQk"/>
+                                            <action selector="showMap:" destination="lP8-na-aQr" eventType="touchUpInside" id="C0U-jH-uYC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4y-hN-XJg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHq-Gw-54g">
                                         <rect key="frame" x="0.0" y="110" width="345" height="40"/>
                                         <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Xna-cH-M3p"/>
+                                            <constraint firstAttribute="height" constant="40" id="5jz-nh-pI8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <state key="normal" title="System Ring">
+                                        <state key="normal" title="Email">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -77,7 +74,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="ringWithSystemSound:" destination="Tkp-6b-vJt" eventType="touchUpInside" id="DTv-2O-Xp4"/>
+                                            <action selector="sendEmail:" destination="lP8-na-aQr" eventType="touchUpInside" id="M0B-Wq-VML"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -85,15 +82,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="BxH-Y8-S5r" secondAttribute="trailing" constant="15" id="XSr-nc-NN8"/>
-                            <constraint firstItem="BxH-Y8-S5r" firstAttribute="centerY" secondItem="w2a-Rj-mWL" secondAttribute="centerY" id="cs2-wW-G3D"/>
-                            <constraint firstItem="BxH-Y8-S5r" firstAttribute="leading" secondItem="w2a-Rj-mWL" secondAttribute="leading" constant="15" id="oMR-xw-9Ke"/>
+                            <constraint firstItem="Qgk-qJ-CeI" firstAttribute="centerY" secondItem="wXk-Jb-vpI" secondAttribute="centerY" id="UD4-TM-XjI"/>
+                            <constraint firstItem="Qgk-qJ-CeI" firstAttribute="leading" secondItem="wXk-Jb-vpI" secondAttribute="leading" constant="15" id="WzK-0j-EUG"/>
+                            <constraint firstAttribute="trailing" secondItem="Qgk-qJ-CeI" secondAttribute="trailing" constant="15" id="wLC-TA-jhr"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0M3-t0-2uT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3n8-Nd-PI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="665" y="-124"/>
+            <point key="canvasLocation" x="665" y="-817"/>
         </scene>
     </scenes>
 </document>
