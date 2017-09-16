@@ -29,6 +29,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="RKc-oI-pBh"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Dail">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -47,6 +48,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="NAD-8M-zOb"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Map">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -65,6 +67,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="5jz-nh-pI8"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Email">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>

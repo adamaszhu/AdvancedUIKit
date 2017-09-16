@@ -2,7 +2,7 @@ final class ButtonViewController: UIViewController {
     
     static private let buttonTitle = "Button\nTitle"
     
-    @IBOutlet private weak var button: UIButton!
+    @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
