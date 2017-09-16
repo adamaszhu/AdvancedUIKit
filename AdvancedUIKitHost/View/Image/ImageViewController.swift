@@ -4,7 +4,7 @@ final class ImageViewController: UIViewController {
     private static let gaussianRadius = 10
     private static let opacity = 0.4
     private static let compressSize = 50 * 1024
-    private static let size = (width: 200.0, height: 150.0)
+    private static let size = (width: 800.0, height: 400.0)
     
     @IBOutlet weak var galleryView: ExpandableGalleryView!
     
