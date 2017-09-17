@@ -14,18 +14,20 @@ final class ImageViewController: UIViewController {
         return imagePickerHelper
     }()
     
+    private let cameraHelper = CameraHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         galleryView.isExpandable = true
         ImageViewController.images.forEach {
             galleryView.add(image: $0)
         }
-        self.navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.isOpaque = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        cameraHelper.requestCameraAuthorization()
+        cameraHelper.requestLibraryAuthorization()
     }
     
     @IBAction func addBlur(_ sender: Any) {
