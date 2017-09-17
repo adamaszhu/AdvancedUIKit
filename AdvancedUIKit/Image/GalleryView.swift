@@ -1,4 +1,4 @@
-/// GalleryView is used to display a list of images.
+/// GalleryView is used to display a list of images. If the navigation bar is translucent, GalleryView should be put inside a ScrollView.
 ///
 /// - author: Adamas
 /// - version: 1.0.0
