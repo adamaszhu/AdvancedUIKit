@@ -1,8 +1,8 @@
 final class DeviceViewController: UIViewController {
     
-    static private let number = "+611111111111"
-    static private let address = "Melbourne Australia"
-    static private let email = (address: "info@mail.com", subject: "Subject", content: "<b>Content</b>", attachments: ["File.png": Data()])
+    private let number = "+611111111111"
+    private let address = "Melbourne Australia"
+    private let email = (address: "info@mail.com", subject: "Subject", content: "<b>Content</b>", attachments: ["File.png": Data()])
     
     private lazy var deviceHelper: DeviceHelper = {
         let deviceHelper = DeviceHelper.standard
@@ -11,15 +11,15 @@ final class DeviceViewController: UIViewController {
     }()
     
     @IBAction func dialNumber(_ sender: Any) {
-        deviceHelper.dial(withNumber: DeviceViewController.number)
+        deviceHelper.dial(withNumber: number)
     }
     
     @IBAction func showMap(_ sender: Any) {
-        deviceHelper.showMap(ofAddress: DeviceViewController.address)
+        deviceHelper.showMap(ofAddress: address)
     }
     
     @IBAction func sendEmail(_ sender: Any) {
-        deviceHelper.email(toAddress: DeviceViewController.email.address, withSubject: DeviceViewController.email.subject, withContent: DeviceViewController.email.content, withAttachments: DeviceViewController.email.attachments, asHTMLContent: true)
+        deviceHelper.email(toAddress: email.address, withSubject: email.subject, withContent: email.content, withAttachments: email.attachments, asHTMLContent: true)
     }
     
 }

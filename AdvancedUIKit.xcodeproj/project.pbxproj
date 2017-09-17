@@ -75,6 +75,7 @@
 		284E5C5B1EDD337500C3CC86 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5A1EDD337500C3CC86 /* MessageViewController.swift */; };
 		284E5C5D1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */; };
 		284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E5C5E1EDD426400C3CC86 /* PopupView.swift */; };
+		2851F9D61F6E24DC00E961DA /* Keyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2851F9D51F6E24DC00E961DA /* Keyboard.storyboard */; };
 		2853937D1F0B11630019D288 /* InfiniteList+Infinite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2853937C1F0B11630019D288 /* InfiniteList+Infinite.swift */; };
 		2862143E1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */; };
 		288CA5091EE8CC260077784B /* MKCoordinateRegion+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */; };
@@ -302,6 +303,7 @@
 		284E5C5A1EDD337500C3CC86 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageViewController+MessageHelperDelegate.swift"; sourceTree = "<group>"; };
 		284E5C5E1EDD426400C3CC86 /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		2851F9D51F6E24DC00E961DA /* Keyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Keyboard.storyboard; sourceTree = "<group>"; };
 		2853937C1F0B11630019D288 /* InfiniteList+Infinite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteList+Infinite.swift"; sourceTree = "<group>"; };
 		2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Pusher.swift"; sourceTree = "<group>"; };
 		288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Initializer.swift"; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 			children = (
 				28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */,
 				4266037B1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift */,
+				2851F9D51F6E24DC00E961DA /* Keyboard.storyboard */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -1182,6 +1185,7 @@
 				2844827F1F0A41D100DF8D82 /* ReloadingBar.xib in Resources */,
 				42CA09F61EE1A7B0009AF1BE /* Localizable.strings in Resources */,
 				42CF00A71EFD19C6002613E3 /* ImageCell.xib in Resources */,
+				2851F9D61F6E24DC00E961DA /* Keyboard.storyboard in Resources */,
 				42CA0A021EE23D0F009AF1BE /* Main.storyboard in Resources */,
 				283844911F6B381E00AAD1E0 /* Button.storyboard in Resources */,
 				2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */,

@@ -1,12 +1,12 @@
 final class ButtonViewController: UIViewController {
     
-    static private let buttonTitle = "Button\nTitle"
+    private let buttonTitle = "Button\nTitle"
     
     @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        button.title = ButtonViewController.buttonTitle
+        button.title = buttonTitle
     }
     
     override func viewWillAppear(_ animated: Bool) {

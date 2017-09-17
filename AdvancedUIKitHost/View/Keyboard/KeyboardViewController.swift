@@ -1,7 +1,7 @@
-class KeyboardViewController: UIViewController {
+final class KeyboardViewController: UIViewController {
     
-    private let highlightedUnderlineColor = UIColor.blue
-    private let underlineColor = UIColor(red: 0, green: 0, blue: 1, alpha: 0.2)
+    private let highlightedUnderlineColor = UIColor(red: 125/255, green: 182/255, blue: 216/255, alpha: 1)
+    private let underlineColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 0.6)
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var firstnameText: UITextField!
@@ -9,10 +9,18 @@ class KeyboardViewController: UIViewController {
     @IBOutlet weak var mobileNumberText: UITextField!
     @IBOutlet weak var addressLabel: UILabel!
     
-    private var keyboardHelper: KeyboardHelper
+    private lazy var keyboardHelper: KeyboardHelper = {
+        let keyboardHelper = KeyboardHelper()
+        keyboardHelper.keyboardHelperDelegate = self
+        return keyboardHelper
+    }()
     
     @IBAction func submit(_ sender: Any) {
-        let info = "\(firstnameText.text ?? "")\n\(lastnameText.text ?? "")\n\(mobileNumberText.text ?? "")\n\(addressLabel.text ?? "")"
+        let firstname = firstnameText.text ?? ""
+        let lastname = lastnameText.text ?? ""
+        let mobileNumber = mobileNumberText.text ?? ""
+        let address = addressLabel.text ?? ""
+        let info = "Firstname: \(firstname)\nLastname: \(lastname)\nMobile: \(mobileNumber)\nAddress: \(address)"
         SystemMessageHelper.standard?.showInfo(info)
     }
     
@@ -24,12 +32,6 @@ class KeyboardViewController: UIViewController {
         keyboardHelper.rootView = view
         keyboardHelper.inputViews = [searchBar, firstnameText, lastnameText, mobileNumberText]
         keyboardHelper.startObservingKeyboard()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        keyboardHelper = KeyboardHelper()
-        super.init(coder: aDecoder)
-        keyboardHelper.keyboardHelperDelegate = self
     }
     
 }
