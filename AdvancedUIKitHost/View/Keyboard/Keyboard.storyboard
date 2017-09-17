@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkD-BV-8an">
-                                <rect key="frame" x="0.0" y="-1" width="375" height="628"/>
+                                <rect key="frame" x="0.0" y="-1" width="375" height="608"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Et-Bq-kKK">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
@@ -39,7 +39,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Yiq-p6-CXb"/>
                                                         </constraints>
-                                                        <color key="textColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet"/>
                                                     </textField>
@@ -48,7 +48,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="QXs-Mn-pfP"/>
                                                         </constraints>
-                                                        <color key="textColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet"/>
                                                     </textField>
@@ -57,7 +57,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Tvc-Ys-beE"/>
                                                         </constraints>
-                                                        <color key="textColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
@@ -67,7 +67,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="XWL-en-0Qr"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                        <color key="textColor" red="0.49019607840000001" green="0.71186602119999998" blue="0.84542196989999996" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -94,10 +94,10 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipy-hW-mBT">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="NaY-1Y-6RZ"/>
+                                    <constraint firstAttribute="height" constant="60" id="NaY-1Y-6RZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Submit">
