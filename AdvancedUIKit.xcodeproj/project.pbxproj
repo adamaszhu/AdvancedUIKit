@@ -90,6 +90,9 @@
 		28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */; };
 		28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */; };
 		28B1D8101EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */; };
+		28B36E621F6FAD40005996E6 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B36E611F6FAD40005996E6 /* List.storyboard */; };
+		28B36E641F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B36E631F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift */; };
+		28B36E661F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B36E651F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift */; };
 		28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B524F81EEA14970051E8D2 /* View+Constraint.swift */; };
 		28B975871F6F285D001239EB /* Label.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B975861F6F285D001239EB /* Label.storyboard */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
@@ -319,6 +322,9 @@
 		28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+Underline.swift"; path = "AdvancedUIKit/Textfield/TextField+Underline.swift"; sourceTree = SOURCE_ROOT; };
 		28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnderlineView.swift; path = AdvancedUIKit/Textfield/UnderlineView.swift; sourceTree = SOURCE_ROOT; };
 		28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+ActionFilterViewDelegate.swift"; sourceTree = "<group>"; };
+		28B36E611F6FAD40005996E6 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		28B36E631F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListViewController+DataGeneratorDelegate.swift"; sourceTree = "<group>"; };
+		28B36E651F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListViewController+DynamicListDelegate.swift"; sourceTree = "<group>"; };
 		28B524F81EEA14970051E8D2 /* View+Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Constraint.swift"; sourceTree = "<group>"; };
 		28B975861F6F285D001239EB /* Label.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Label.storyboard; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
@@ -708,15 +714,18 @@
 		42204BA01EF9557D00F1FA04 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				284482801F0A4C9D00DF8D82 /* DataGenerator.swift */,
 				284482501F09F94500DF8D82 /* EmptyState.xib */,
+				42CF00AA1EFD1CBF002613E3 /* ImageCell.swift */,
 				42CF00A61EFD19C6002613E3 /* ImageCell.xib */,
+				42CF00A81EFD1CA5002613E3 /* LabelCell.swift */,
 				42CF00A41EFD19BA002613E3 /* LabelCell.xib */,
+				28B36E611F6FAD40005996E6 /* List.storyboard */,
+				42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */,
+				28B36E651F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift */,
+				28B36E631F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift */,
 				284482821F0A507F00DF8D82 /* LoadingMoreBar.xib */,
 				2844827E1F0A41D100DF8D82 /* ReloadingBar.xib */,
-				284482801F0A4C9D00DF8D82 /* DataGenerator.swift */,
-				42CF00AA1EFD1CBF002613E3 /* ImageCell.swift */,
-				42CF00A81EFD1CA5002613E3 /* LabelCell.swift */,
-				42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -1186,6 +1195,7 @@
 				284482831F0A507F00DF8D82 /* LoadingMoreBar.xib in Resources */,
 				42CF00A51EFD19BA002613E3 /* LabelCell.xib in Resources */,
 				2844827F1F0A41D100DF8D82 /* ReloadingBar.xib in Resources */,
+				28B36E621F6FAD40005996E6 /* List.storyboard in Resources */,
 				42CA09F61EE1A7B0009AF1BE /* Localizable.strings in Resources */,
 				42CF00A71EFD19C6002613E3 /* ImageCell.xib in Resources */,
 				28B975871F6F285D001239EB /* Label.storyboard in Resources */,
@@ -1415,6 +1425,7 @@
 				28D1C0041EDCF42A00290999 /* MainViewController+TableViewDataSource.swift in Sources */,
 				420C78E11EEB73AE00A1E3EA /* ImageViewController.swift in Sources */,
 				42CF00AB1EFD1CBF002613E3 /* ImageCell.swift in Sources */,
+				28B36E641F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift in Sources */,
 				42CA0A0A1EE43752009AF1BE /* NavigationViewController.swift in Sources */,
 				28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */,
 				42CA09E41EE19673009AF1BE /* NotificationViewController+NotificationHelperDelegate.swift in Sources */,
@@ -1427,6 +1438,7 @@
 				288CA50E1EE8DF3A0077784B /* MapViewController+Delegate.swift in Sources */,
 				2846A9A71EE7C4AF007D4226 /* MapViewController.swift in Sources */,
 				426939791EAB151400761FDE /* LabelViewController.swift in Sources */,
+				28B36E661F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift in Sources */,
 				28E66FEB1EE4D06600073DF1 /* ViewViewController.swift in Sources */,
 				420C78F21EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift in Sources */,
 				28D1BFFF1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift in Sources */,
