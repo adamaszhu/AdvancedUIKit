@@ -1,6 +1,6 @@
 final class AudioViewController: UIViewController {
     
-    private let ring = (name: "Ring.aiff", times: 3)
+    let ring = (name: "Ring.aiff", times: 3)
     
     private let ringHelper = RingHelper.shared
     

@@ -1,8 +1,8 @@
 final class DeviceViewController: UIViewController {
     
-    private let number = "+611111111111"
-    private let address = "Melbourne Australia"
-    private let email = (address: "info@mail.com", subject: "Subject", content: "<b>Content</b>", attachments: ["File.png": Data()])
+    let number = "+611111111111"
+    let address = "Melbourne Australia"
+    let email = (address: "info@mail.com", subject: "Subject", content: "<b>Content</b>", attachments: ["File.png": Data()])
     
     private lazy var deviceHelper: DeviceHelper = {
         let deviceHelper = DeviceHelper.standard

@@ -133,6 +133,7 @@
 		42204BA21EF9CB8F00F1FA04 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */; };
 		4224C4781F6C8E640072F7FC /* Image.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4224C4771F6C8E640072F7FC /* Image.storyboard */; };
 		4224C47C1F6FDCD30072F7FC /* Localization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4224C47B1F6FDCD30072F7FC /* Localization.storyboard */; };
+		4224C47E1F6FEA4C0072F7FC /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4224C47D1F6FEA4C0072F7FC /* Location.storyboard */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
 		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
@@ -365,6 +366,7 @@
 		42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		4224C4771F6C8E640072F7FC /* Image.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Image.storyboard; sourceTree = "<group>"; };
 		4224C47B1F6FDCD30072F7FC /* Localization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Localization.storyboard; sourceTree = "<group>"; };
+		4224C47D1F6FEA4C0072F7FC /* Location.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 		422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdvancedUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB3C81EAA30B300377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB4061EAA3CF100377AB5 /* AdvancedUIKitHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedUIKitHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -522,6 +524,7 @@
 			children = (
 				2846A98B1EE7B064007D4226 /* LocationViewController.swift */,
 				2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */,
+				4224C47D1F6FEA4C0072F7FC /* Location.storyboard */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -724,8 +727,8 @@
 				42CF00A41EFD19BA002613E3 /* LabelCell.xib */,
 				28B36E611F6FAD40005996E6 /* List.storyboard */,
 				42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */,
-				28B36E651F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift */,
 				28B36E631F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift */,
+				28B36E651F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift */,
 				284482821F0A507F00DF8D82 /* LoadingMoreBar.xib */,
 				2844827E1F0A41D100DF8D82 /* ReloadingBar.xib */,
 			);
@@ -1205,6 +1208,7 @@
 				28B975871F6F285D001239EB /* Label.storyboard in Resources */,
 				2851F9D61F6E24DC00E961DA /* Keyboard.storyboard in Resources */,
 				42CA0A021EE23D0F009AF1BE /* Main.storyboard in Resources */,
+				4224C47E1F6FEA4C0072F7FC /* Location.storyboard in Resources */,
 				283844911F6B381E00AAD1E0 /* Button.storyboard in Resources */,
 				2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */,
 				422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */,
