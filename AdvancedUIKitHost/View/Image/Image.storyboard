@@ -12,7 +12,7 @@
         <!--Image View Controller-->
         <scene sceneID="nys-vc-ont">
             <objects>
-                <viewController storyboardIdentifier="ImageViewController" automaticallyAdjustsScrollViewInsets="NO" id="795-Rz-CqR" customClass="ImageViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageViewController" id="795-Rz-CqR" customClass="ImageViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SgP-hu-ZIS"/>
                         <viewControllerLayoutGuide type="bottom" id="ErC-tU-MW4"/>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEN-Lg-pDb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="393"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="413"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0O-UH-z1g">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="274.5"/>
@@ -215,8 +215,8 @@
                             <constraint firstItem="vjT-9x-Nzx" firstAttribute="leading" secondItem="i4G-JZ-pDz" secondAttribute="leading" id="MkM-EL-sUw"/>
                             <constraint firstAttribute="trailing" secondItem="vjT-9x-Nzx" secondAttribute="trailing" id="PWT-s1-vhI"/>
                             <constraint firstItem="wEN-Lg-pDb" firstAttribute="leading" secondItem="i4G-JZ-pDz" secondAttribute="leading" id="VuL-s0-tSk"/>
-                            <constraint firstItem="wEN-Lg-pDb" firstAttribute="top" secondItem="SgP-hu-ZIS" secondAttribute="bottom" id="Wf4-iE-5Wj"/>
                             <constraint firstAttribute="trailing" secondItem="wEN-Lg-pDb" secondAttribute="trailing" id="b7X-nd-ikD"/>
+                            <constraint firstItem="wEN-Lg-pDb" firstAttribute="top" secondItem="i4G-JZ-pDz" secondAttribute="top" id="l9J-T4-G9b"/>
                             <constraint firstItem="ErC-tU-MW4" firstAttribute="top" secondItem="vjT-9x-Nzx" secondAttribute="bottom" id="yeC-P0-t9E"/>
                         </constraints>
                     </view>

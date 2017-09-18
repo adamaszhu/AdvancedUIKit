@@ -132,6 +132,7 @@
 		42204B9F1EF954A400F1FA04 /* InfiniteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B9E1EF954A400F1FA04 /* InfiniteList.swift */; };
 		42204BA21EF9CB8F00F1FA04 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */; };
 		4224C4781F6C8E640072F7FC /* Image.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4224C4771F6C8E640072F7FC /* Image.storyboard */; };
+		4224C47C1F6FDCD30072F7FC /* Localization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4224C47B1F6FDCD30072F7FC /* Localization.storyboard */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
 		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
@@ -363,6 +364,7 @@
 		42204B9E1EF954A400F1FA04 /* InfiniteList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteList.swift; sourceTree = "<group>"; };
 		42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		4224C4771F6C8E640072F7FC /* Image.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Image.storyboard; sourceTree = "<group>"; };
+		4224C47B1F6FDCD30072F7FC /* Localization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Localization.storyboard; sourceTree = "<group>"; };
 		422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdvancedUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		422DB3C81EAA30B300377AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422DB4061EAA3CF100377AB5 /* AdvancedUIKitHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedUIKitHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -950,6 +952,7 @@
 			isa = PBXGroup;
 			children = (
 				42CA09F31EE1A50E009AF1BE /* LocalizationViewController.swift */,
+				4224C47B1F6FDCD30072F7FC /* Localization.storyboard */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -1138,7 +1141,7 @@
 					};
 					422DB4051EAA3CF100377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = Y2XN2Z2HA2;
+						DevelopmentTeam = 75S8MN3555;
 						ProvisioningStyle = Automatic;
 					};
 					422DB4181EAA3CF100377AB5 = {
@@ -1197,6 +1200,7 @@
 				2844827F1F0A41D100DF8D82 /* ReloadingBar.xib in Resources */,
 				28B36E621F6FAD40005996E6 /* List.storyboard in Resources */,
 				42CA09F61EE1A7B0009AF1BE /* Localizable.strings in Resources */,
+				4224C47C1F6FDCD30072F7FC /* Localization.storyboard in Resources */,
 				42CF00A71EFD19C6002613E3 /* ImageCell.xib in Resources */,
 				28B975871F6F285D001239EB /* Label.storyboard in Resources */,
 				2851F9D61F6E24DC00E961DA /* Keyboard.storyboard in Resources */,
@@ -1713,7 +1717,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
+				DEVELOPMENT_TEAM = 75S8MN3555;
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1729,7 +1733,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
+				DEVELOPMENT_TEAM = 75S8MN3555;
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

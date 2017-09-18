@@ -12,7 +12,7 @@
         <scene sceneID="aSQ-Hv-Anj">
             <objects>
                 <navigationController id="H8X-S2-nBJ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="rLA-DB-wnz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rLA-DB-wnz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -522,66 +522,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6y0-eq-dGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1412" y="-124"/>
-        </scene>
-        <!--Localization View Controller-->
-        <scene sceneID="3H6-B6-yGx">
-            <objects>
-                <viewController storyboardIdentifier="LocalizationViewController" id="mlx-Rt-sLf" customClass="LocalizationViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Gem-Od-iFZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="lEO-CE-Ywj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EzI-58-Iaf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQG-7U-6Uu">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocalizedLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEa-S1-iea">
-                                        <rect key="frame" x="5" y="10" width="365" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ye1-gL-F2R">
-                                        <rect key="frame" x="5" y="36" width="365" height="30"/>
-                                        <state key="normal" title="LocalizedButton"/>
-                                    </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O3C-ay-ZCG">
-                                        <rect key="frame" x="5" y="71" width="365" height="29"/>
-                                        <segments>
-                                            <segment title="LocalizedSegmentFirst"/>
-                                            <segment title="LocalizedSegmentSecond"/>
-                                        </segments>
-                                    </segmentedControl>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Ye1-gL-F2R" firstAttribute="top" secondItem="AEa-S1-iea" secondAttribute="bottom" constant="5" id="DV8-wh-OJW"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ye1-gL-F2R" secondAttribute="trailing" constant="5" id="Em4-SP-B65"/>
-                                    <constraint firstItem="AEa-S1-iea" firstAttribute="top" secondItem="zQG-7U-6Uu" secondAttribute="top" constant="10" id="Gn5-qe-oRa"/>
-                                    <constraint firstItem="AEa-S1-iea" firstAttribute="leading" secondItem="zQG-7U-6Uu" secondAttribute="leading" constant="5" id="R2r-Kw-vaW"/>
-                                    <constraint firstAttribute="trailing" secondItem="O3C-ay-ZCG" secondAttribute="trailing" constant="5" id="Tdb-a7-nv0"/>
-                                    <constraint firstItem="O3C-ay-ZCG" firstAttribute="top" secondItem="Ye1-gL-F2R" secondAttribute="bottom" constant="5" id="fo0-05-DZn"/>
-                                    <constraint firstAttribute="trailing" secondItem="AEa-S1-iea" secondAttribute="trailing" constant="5" id="ijg-l3-or9"/>
-                                    <constraint firstItem="O3C-ay-ZCG" firstAttribute="leading" secondItem="zQG-7U-6Uu" secondAttribute="leading" constant="5" id="jQf-eF-5hf"/>
-                                    <constraint firstItem="Ye1-gL-F2R" firstAttribute="leading" secondItem="zQG-7U-6Uu" secondAttribute="leading" constant="5" id="xQW-Nf-q0b"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zQG-7U-6Uu" secondAttribute="trailing" id="Ooz-ED-e1Z"/>
-                            <constraint firstItem="zQG-7U-6Uu" firstAttribute="leading" secondItem="EzI-58-Iaf" secondAttribute="leading" id="QwS-xn-ta6"/>
-                            <constraint firstItem="zQG-7U-6Uu" firstAttribute="top" secondItem="Gem-Od-iFZ" secondAttribute="bottom" id="mIg-WK-THl"/>
-                            <constraint firstItem="lEO-CE-Ywj" firstAttribute="top" secondItem="zQG-7U-6Uu" secondAttribute="bottom" id="xZr-UP-1BA"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iIE-7F-bOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2188" y="-125"/>
         </scene>
         <!--Text Field View Controller-->
         <scene sceneID="pTp-pf-xBV">
