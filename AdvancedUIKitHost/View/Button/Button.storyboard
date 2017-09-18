@@ -11,7 +11,7 @@
         <!--Button View Controller-->
         <scene sceneID="Ie8-RI-12r">
             <objects>
-                <viewController storyboardIdentifier="ButtonViewController" id="8Nn-3W-gzO" customClass="ButtonViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ButtonViewController" automaticallyAdjustsScrollViewInsets="NO" id="8Nn-3W-gzO" customClass="ButtonViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dnS-5e-Gzw"/>
                         <viewControllerLayoutGuide type="bottom" id="YVY-d6-ZFb"/>

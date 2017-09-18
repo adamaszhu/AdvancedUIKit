@@ -24,9 +24,11 @@ final class ImageViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    @IBAction func requestCameraAuthorization(_ sender: Any) {
         cameraHelper.requestCameraAuthorization()
+    }
+    
+    @IBAction func requestLibraryAuthorization(_ sender: Any) {
         cameraHelper.requestLibraryAuthorization()
     }
     
