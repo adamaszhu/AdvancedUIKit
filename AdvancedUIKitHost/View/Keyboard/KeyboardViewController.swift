@@ -1,7 +1,7 @@
 final class KeyboardViewController: UIViewController {
     
-    private let highlightedUnderlineColor = UIColor(red: 125/255, green: 182/255, blue: 216/255, alpha: 1)
-    private let underlineColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 0.6)
+    let highlightedUnderlineColor = UIColor(red: 125/255, green: 182/255, blue: 216/255, alpha: 1)
+    let underlineColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 0.6)
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var firstnameText: UITextField!

@@ -20,62 +20,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BxH-Y8-S5r">
-                                <rect key="frame" x="15" y="258" width="345" height="150"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="BxH-Y8-S5r">
+                                <rect key="frame" x="0.0" y="515" width="375" height="152"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRI-2P-z1G">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="h3s-Fi-LZV"/>
+                                            <constraint firstAttribute="height" constant="50" id="h3s-Fi-LZV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Customized Ring With Vibration">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="ringWithCustomizedSoundAndVibration:" destination="Tkp-6b-vJt" eventType="touchUpInside" id="flZ-Sw-G2a"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAw-NG-910">
-                                        <rect key="frame" x="0.0" y="55" width="345" height="40"/>
+                                        <rect key="frame" x="0.0" y="51" width="375" height="50"/>
                                         <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="NTT-Kf-CVP"/>
+                                            <constraint firstAttribute="height" constant="50" id="NTT-Kf-CVP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Customized Ring">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="ringWithCustomizedSound:" destination="Tkp-6b-vJt" eventType="touchUpInside" id="74e-L2-xQk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4y-hN-XJg">
-                                        <rect key="frame" x="0.0" y="110" width="345" height="40"/>
+                                        <rect key="frame" x="0.0" y="102" width="375" height="50"/>
                                         <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Xna-cH-M3p"/>
+                                            <constraint firstAttribute="height" constant="50" id="Xna-cH-M3p"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="System Ring">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="ringWithSystemSound:" destination="Tkp-6b-vJt" eventType="touchUpInside" id="DTv-2O-Xp4"/>
                                         </connections>
@@ -85,9 +70,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="BxH-Y8-S5r" secondAttribute="trailing" constant="15" id="XSr-nc-NN8"/>
-                            <constraint firstItem="BxH-Y8-S5r" firstAttribute="centerY" secondItem="w2a-Rj-mWL" secondAttribute="centerY" id="cs2-wW-G3D"/>
-                            <constraint firstItem="BxH-Y8-S5r" firstAttribute="leading" secondItem="w2a-Rj-mWL" secondAttribute="leading" constant="15" id="oMR-xw-9Ke"/>
+                            <constraint firstItem="PEl-M1-mGo" firstAttribute="top" secondItem="BxH-Y8-S5r" secondAttribute="bottom" id="3Lb-kz-XWR"/>
+                            <constraint firstItem="BxH-Y8-S5r" firstAttribute="leading" secondItem="w2a-Rj-mWL" secondAttribute="leading" id="lMi-0W-qqf"/>
+                            <constraint firstAttribute="trailing" secondItem="BxH-Y8-S5r" secondAttribute="trailing" id="thg-it-JDG"/>
                         </constraints>
                     </view>
                 </viewController>

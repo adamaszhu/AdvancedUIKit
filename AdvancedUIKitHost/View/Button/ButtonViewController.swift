@@ -9,11 +9,6 @@ final class ButtonViewController: UIViewController {
         button.title = buttonTitle
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        button.layer.cornerRadius = button.actualHeight
-    }
-    
 }
 
 import UIKit
