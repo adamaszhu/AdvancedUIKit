@@ -5,7 +5,7 @@ final class MapViewController: UIViewController {
     let collapseIcon = UIImage(named: "ExitFullScreen")
     let lineWidth = 5
     let distanceColor = UIColor(red: 125 / 255, green: 182 / 255, blue: 216 / 255, alpha: 1)
-    let distanceBackgroundColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 0.4)
+    let distanceBackgroundColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 0.5)
     let distanceBackgroundRadius = CGFloat(10)
     let melbournePoint = (latitude: -37.8136, longitude: 144.9631, title: "Melbourne")
     let melbourneRegion = (latitude: -37.8136, longitude: 144.9631, zoomLevel: 2.0)
@@ -35,6 +35,9 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.mapViewDelegate = self
+        mapView.isExpandable = true
+        mapView.collapseIcon = collapseIcon
+        mapView.collapseIconOrigin = .init(x: 20, y: 20)
     }
     
     @IBAction func showMelbourne(_ sender: Any) {
