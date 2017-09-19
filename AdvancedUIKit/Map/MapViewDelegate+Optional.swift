@@ -6,7 +6,10 @@
 public extension MapViewDelegate {
     
     func mapView(_ mapView: MapView, didSelectItem item: Any) { }
+    func mapView(_ mapView: MapView, didUpdate location: CLLocation) { }
     func mapViewDidMoveView(_ mapView: MapView) { }
     func mapViewWillMoveView(_ mapView: MapView) { }
     
 }
+
+import CoreLocation

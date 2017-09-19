@@ -51,6 +51,13 @@ extension MapView: MKMapViewDelegate {
         return nil
     }
     
+    public func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        guard let location = userLocation.location else {
+            return
+        }
+        mapViewDelegate?.mapView(self, didUpdate: location)
+    }
+    
     public func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         mapViewDelegate?.mapViewDidMoveView(self)
     }

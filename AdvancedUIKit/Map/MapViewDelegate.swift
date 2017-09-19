@@ -15,6 +15,12 @@ public protocol MapViewDelegate {
     /// - Parameter item: The item attached on the point.
     func mapView(_ mapView: MapView, didSelectItem item: Any)
     
+    
+    /// A new user location has been detected
+    ///
+    /// - Parameter location: Updated user location
+    func mapView(_ mapView: MapView, didUpdate location: CLLocation)
+    
     /// The view has been moved.
     func mapViewDidMoveView(_ mapView: MapView)
     
@@ -22,3 +28,5 @@ public protocol MapViewDelegate {
     func mapViewWillMoveView(_ mapView: MapView)
     
 }
+
+import CoreLocation
