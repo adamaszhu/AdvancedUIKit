@@ -8,6 +8,7 @@ final class DataGenerator {
     
     private let pageSize = 10
     private let generationDelay = 2.0
+    private let imageFilter = 3
     
     var delegate: DataGeneratorDelegate?
     var itemAmount = 0
@@ -18,7 +19,7 @@ final class DataGenerator {
             guard index <= itemAmount else {
                 break
             }
-            let cellType = index % 3 != 2 ? LabelCell.self : ImageCell.self
+            let cellType = index % imageFilter != 1 ? LabelCell.self : ImageCell.self
             items.append(InfiniteItem(item: index, type: cellType))
         }
         dispatch(items)

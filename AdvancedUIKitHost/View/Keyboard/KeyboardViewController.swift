@@ -2,6 +2,8 @@ final class KeyboardViewController: UIViewController {
     
     let highlightedUnderlineColor = UIColor(red: 125/255, green: 182/255, blue: 216/255, alpha: 1)
     let underlineColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 0.6)
+    let submissionPattern = "Firstname: %s\nLastname: %s\nMobile: %s\nAddress: %s"
+    let emptyString = ""
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var firstnameText: UITextField!
@@ -16,11 +18,11 @@ final class KeyboardViewController: UIViewController {
     }()
     
     @IBAction func submit(_ sender: Any) {
-        let firstname = firstnameText.text ?? ""
-        let lastname = lastnameText.text ?? ""
-        let mobileNumber = mobileNumberText.text ?? ""
-        let address = addressLabel.text ?? ""
-        let info = "Firstname: \(firstname)\nLastname: \(lastname)\nMobile: \(mobileNumber)\nAddress: \(address)"
+        let firstname = firstnameText.text ?? emptyString
+        let lastname = lastnameText.text ?? emptyString
+        let mobileNumber = mobileNumberText.text ?? emptyString
+        let address = addressLabel.text ?? emptyString
+        let info = String(format: submissionPattern, firstname, lastname, mobileNumber, address)
         SystemMessageHelper.standard?.showInfo(info)
     }
     

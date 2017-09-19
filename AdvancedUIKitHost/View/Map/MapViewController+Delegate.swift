@@ -23,8 +23,7 @@ extension MapViewController: MapViewDelegate {
     
     private func updateDistance(to coordinate: CLLocationCoordinate2D) {
         let distance = coordinate.distance(to: mapView.centerCoordinate) / 1000
-        let distanceString = String(format: "%.1f", distance)
-        distanceLabel.text = "\(distanceString) km"
+        distanceLabel.text = String(format: distancePattern, distance)
     }
     
 }

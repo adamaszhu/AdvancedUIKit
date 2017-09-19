@@ -5,6 +5,11 @@ final class MessageViewController: UIViewController {
     let error = (content: "This is an error.", title: "Error", confirmButtonName: "Confirm")
     let warning = (content: "This is a warning.", title: "Warning", confirmButtonName: "Confirm", cancelButtonName: "Cancel")
     let input = (title: "Input", confirmButtonName: "Confirm", cancelButtonName: "Cancel")
+    let errorConfirmation = "Confirm error"
+    let warningConfirmation = "Confirm warning"
+    let warningCancellation = "Cancel warning"
+    let inputConfirmationPattern = "Confirm input %s"
+    let inputCancellation = "Cancel input"
     
     private lazy var systemMessageHelper: SystemMessageHelper? = {
         let systemMessageHelper = SystemMessageHelper.standard

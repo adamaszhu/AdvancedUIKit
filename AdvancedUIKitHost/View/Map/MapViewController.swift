@@ -4,9 +4,11 @@ final class MapViewController: UIViewController {
     let lineIcon = UIImage(named: "MapPoint")
     let collapseIcon = UIImage(named: "ExitFullScreen")
     let lineWidth = 5
+    let distancePattern = "%.1f km"
     let distanceColor = UIColor(red: 125 / 255, green: 182 / 255, blue: 216 / 255, alpha: 1)
     let distanceBackgroundColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 0.5)
     let distanceBackgroundRadius = CGFloat(10)
+    let distanceLabelSize = CGSize(width: 100, height: 40)
     let melbournePoint = (latitude: -37.8136, longitude: 144.9631, title: "Melbourne")
     let melbourneRegion = (latitude: -37.8136, longitude: 144.9631, zoomLevel: 2.0)
     let hawthornPoint = (latitude: -37.826, longitude: 145.0340, title: "Hawthorn", subtitle: "Old Home", item: "Hawthorn")
@@ -16,13 +18,14 @@ final class MapViewController: UIViewController {
     let bulleenPoint = (latitude: -37.77, longitude: 145.09, title: "Bulleen", subtitle: "Home")
     let bulleenRegion = (leftLongitude: 145.063039, rightLongitude: 145.106654, topLatitude: -37.747502, bottmLatitude: -37.784629)
     let bulleenRegionColor = UIColor(red: 125 / 255, green: 182 / 255, blue: 216 / 255, alpha: 1)
+    let collapseIconOrigin = CGPoint(x: 20, y: 20)
     
     @IBOutlet weak var mapView: ExpandableMapView!
     
     lazy var distanceLabel: UILabel = {
         let distanceLabel = UILabel()
         distanceLabel.center = self.mapView.center
-        distanceLabel.bounds.size = CGSize(width: 100, height: 40)
+        distanceLabel.bounds.size = self.distanceLabelSize
         distanceLabel.textAlignment = .center
         distanceLabel.textColor = self.distanceColor
         distanceLabel.backgroundColor = self.distanceBackgroundColor
@@ -37,7 +40,7 @@ final class MapViewController: UIViewController {
         mapView.mapViewDelegate = self
         mapView.isExpandable = true
         mapView.collapseIcon = collapseIcon
-        mapView.collapseIconOrigin = .init(x: 20, y: 20)
+        mapView.collapseIconOrigin = collapseIconOrigin
     }
     
     @IBAction func showMelbourne(_ sender: Any) {
