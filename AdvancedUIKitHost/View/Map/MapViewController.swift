@@ -8,9 +8,11 @@ final class MapViewController: UIViewController {
     let melbourneRegion = (latitude: -37.8136, longitude: 144.9631, zoomLevel: 2.0)
     let hawthornPoint = (latitude: -37.826, longitude: 145.0340, title: "Hawthorn", subtitle: "Old Home", item: "Hawthorn")
     let hawthornRegion = (leftLongitude: 145.013461, rightLongitude: 145.04951, topLatitude: -37.810614, bottmLatitude: -37.846985)
+    let hawthornRegionColor = UIColor(red: 125 / 255, green: 182 / 255, blue: 216 / 255, alpha: 0.4)
     let hawthornRegionTitle = (leftTop: "Left Top", rightTop: "Right Top", leftBottom: "Left Bottom", rightBottom: "Right Bottom")
     let bulleenPoint = (latitude: -37.77, longitude: 145.09, title: "Bulleen", subtitle: "Home")
     let bulleenRegion = (leftLongitude: 145.063039, rightLongitude: 145.106654, topLatitude: -37.747502, bottmLatitude: -37.784629)
+    let bulleenRegionColor = UIColor(red: 125 / 255, green: 182 / 255, blue: 216 / 255, alpha: 1)
     
     @IBOutlet weak var mapView: ExpandableMapView!
     
@@ -41,7 +43,7 @@ final class MapViewController: UIViewController {
             MapViewPoint(latitude: hawthornRegion.bottmLatitude, longitude: hawthornRegion.rightLongitude, title: hawthornRegionTitle.rightBottom),
             MapViewPoint(latitude: hawthornRegion.bottmLatitude, longitude: hawthornRegion.leftLongitude, title: hawthornRegionTitle.leftBottom),
             MapViewPoint(latitude: hawthornRegion.topLatitude, longitude: hawthornRegion.leftLongitude, title: hawthornRegionTitle.leftTop)]
-        let line = MapViewLine(points: points, color: UIColor.red, width: lineWidth, pointIcon: lineIcon)
+        let line = MapViewLine(points: points, color: hawthornRegionColor, width: lineWidth, pointIcon: lineIcon)
         mapView.add(line)
     }
     
@@ -60,7 +62,7 @@ final class MapViewController: UIViewController {
             MapViewPoint(latitude: bulleenRegion.bottmLatitude, longitude: bulleenRegion.rightLongitude),
             MapViewPoint(latitude: bulleenRegion.bottmLatitude, longitude: bulleenRegion.leftLongitude),
             MapViewPoint(latitude: bulleenRegion.topLatitude, longitude: bulleenRegion.leftLongitude)]
-        let line = MapViewLine(points: points, color: UIColor.blue)
+        let line = MapViewLine(points: points, color: bulleenRegionColor)
         mapView.add(line)
     }
     
