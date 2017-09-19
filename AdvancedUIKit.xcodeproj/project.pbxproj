@@ -93,6 +93,8 @@
 		28B36E621F6FAD40005996E6 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B36E611F6FAD40005996E6 /* List.storyboard */; };
 		28B36E641F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B36E631F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift */; };
 		28B36E661F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B36E651F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift */; };
+		28B36E681F7077D3005996E6 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B36E671F7077D3005996E6 /* Map.storyboard */; };
+		28B36E6A1F70791D005996E6 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B36E691F70791D005996E6 /* Message.storyboard */; };
 		28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B524F81EEA14970051E8D2 /* View+Constraint.swift */; };
 		28B975871F6F285D001239EB /* Label.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B975861F6F285D001239EB /* Label.storyboard */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
@@ -327,6 +329,8 @@
 		28B36E611F6FAD40005996E6 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		28B36E631F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListViewController+DataGeneratorDelegate.swift"; sourceTree = "<group>"; };
 		28B36E651F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListViewController+DynamicListDelegate.swift"; sourceTree = "<group>"; };
+		28B36E671F7077D3005996E6 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		28B36E691F70791D005996E6 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		28B524F81EEA14970051E8D2 /* View+Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Constraint.swift"; sourceTree = "<group>"; };
 		28B975861F6F285D001239EB /* Label.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Label.storyboard; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
@@ -554,6 +558,7 @@
 			children = (
 				2846A9A61EE7C4AF007D4226 /* MapViewController.swift */,
 				288CA50D1EE8DF3A0077784B /* MapViewController+Delegate.swift */,
+				28B36E671F7077D3005996E6 /* Map.storyboard */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -582,6 +587,7 @@
 			children = (
 				284E5C5A1EDD337500C3CC86 /* MessageViewController.swift */,
 				284E5C5C1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift */,
+				28B36E691F70791D005996E6 /* Message.storyboard */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -1203,11 +1209,13 @@
 				2844827F1F0A41D100DF8D82 /* ReloadingBar.xib in Resources */,
 				28B36E621F6FAD40005996E6 /* List.storyboard in Resources */,
 				42CA09F61EE1A7B0009AF1BE /* Localizable.strings in Resources */,
+				28B36E681F7077D3005996E6 /* Map.storyboard in Resources */,
 				4224C47C1F6FDCD30072F7FC /* Localization.storyboard in Resources */,
 				42CF00A71EFD19C6002613E3 /* ImageCell.xib in Resources */,
 				28B975871F6F285D001239EB /* Label.storyboard in Resources */,
 				2851F9D61F6E24DC00E961DA /* Keyboard.storyboard in Resources */,
 				42CA0A021EE23D0F009AF1BE /* Main.storyboard in Resources */,
+				28B36E6A1F70791D005996E6 /* Message.storyboard in Resources */,
 				4224C47E1F6FEA4C0072F7FC /* Location.storyboard in Resources */,
 				283844911F6B381E00AAD1E0 /* Button.storyboard in Resources */,
 				2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */,

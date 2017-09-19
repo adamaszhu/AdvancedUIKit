@@ -1,16 +1,16 @@
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
     
-    private let pointIcon = UIImage(named: "MapPin")
-    private let lineIcon = UIImage(named: "MapPoint")
-    private let collapseIcon = UIImage(named: "ExitFullScreen")
-    private let lineWidth = 5
-    private let melbournePoint = (latitude: -37.8136, longitude: 144.9631, title: "Melbourne")
-    private let melbourneRegion = (latitude: -37.8136, longitude: 144.9631, zoomLevel: 2.0)
-    private let hawthornPoint = (latitude: -37.826, longitude: 145.0340, title: "Hawthorn", subtitle: "Old Home", item: "Hawthorn")
-    private let hawthornRegion = (leftLongitude: 145.013461, rightLongitude: 145.04951, topLatitude: -37.810614, bottmLatitude: -37.846985)
-    private let hawthornRegionTitle = (leftTop: "Left Top", rightTop: "Right Top", leftBottom: "Left Bottom", rightBottom: "Right Bottom")
-    private let bulleenPoint = (latitude: -37.77, longitude: 145.09, title: "Bulleen", subtitle: "Home")
-    private let bulleenRegion = (leftLongitude: 145.063039, rightLongitude: 145.106654, topLatitude: -37.747502, bottmLatitude: -37.784629)
+    let pointIcon = UIImage(named: "MapPin")
+    let lineIcon = UIImage(named: "MapPoint")
+    let collapseIcon = UIImage(named: "ExitFullScreen")
+    let lineWidth = 5
+    let melbournePoint = (latitude: -37.8136, longitude: 144.9631, title: "Melbourne")
+    let melbourneRegion = (latitude: -37.8136, longitude: 144.9631, zoomLevel: 2.0)
+    let hawthornPoint = (latitude: -37.826, longitude: 145.0340, title: "Hawthorn", subtitle: "Old Home", item: "Hawthorn")
+    let hawthornRegion = (leftLongitude: 145.013461, rightLongitude: 145.04951, topLatitude: -37.810614, bottmLatitude: -37.846985)
+    let hawthornRegionTitle = (leftTop: "Left Top", rightTop: "Right Top", leftBottom: "Left Bottom", rightBottom: "Right Bottom")
+    let bulleenPoint = (latitude: -37.77, longitude: 145.09, title: "Bulleen", subtitle: "Home")
+    let bulleenRegion = (leftLongitude: 145.063039, rightLongitude: 145.106654, topLatitude: -37.747502, bottmLatitude: -37.784629)
     
     @IBOutlet weak var mapView: ExpandableMapView!
     
@@ -19,7 +19,7 @@ class MapViewController: UIViewController {
         mapView.mapViewDelegate = self
         mapView.isExpandable = true
         mapView.collapseIcon = collapseIcon
-        mapView.collapseIconOrigin = CGPoint(x: 20, y: 20)
+        mapView.collapseIconOrigin = .init(x: 20, y: 20)
     }
     
     @IBAction func showMelbourne(_ sender: Any) {
