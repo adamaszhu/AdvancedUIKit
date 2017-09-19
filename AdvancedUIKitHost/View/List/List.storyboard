@@ -11,7 +11,7 @@
         <!--List View Controller-->
         <scene sceneID="ZpC-3c-0dw">
             <objects>
-                <viewController storyboardIdentifier="ListViewController" automaticallyAdjustsScrollViewInsets="NO" id="78u-nH-8pO" customClass="ListViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" id="78u-nH-8pO" customClass="ListViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="chJ-h8-0QF"/>
                         <viewControllerLayoutGuide type="bottom" id="B5W-sp-45y"/>

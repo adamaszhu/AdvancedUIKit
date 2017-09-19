@@ -11,7 +11,7 @@
         <!--Device View Controller-->
         <scene sceneID="u2A-gh-jsQ">
             <objects>
-                <viewController storyboardIdentifier="DeviceViewController" automaticallyAdjustsScrollViewInsets="NO" id="lP8-na-aQr" customClass="DeviceViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeviceViewController" id="lP8-na-aQr" customClass="DeviceViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3n6-SE-Rcr"/>
                         <viewControllerLayoutGuide type="bottom" id="TIZ-vy-mRx"/>

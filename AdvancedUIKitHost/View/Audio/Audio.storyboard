@@ -11,7 +11,7 @@
         <!--Audio View Controller-->
         <scene sceneID="ob4-GU-OUj">
             <objects>
-                <viewController storyboardIdentifier="AudioViewController" automaticallyAdjustsScrollViewInsets="NO" id="Tkp-6b-vJt" customClass="AudioViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AudioViewController" id="Tkp-6b-vJt" customClass="AudioViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7qL-AC-vyp"/>
                         <viewControllerLayoutGuide type="bottom" id="PEl-M1-mGo"/>

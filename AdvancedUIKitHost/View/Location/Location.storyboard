@@ -11,7 +11,7 @@
         <!--Location View Controller-->
         <scene sceneID="GQV-df-iN0">
             <objects>
-                <viewController storyboardIdentifier="LocationViewController" automaticallyAdjustsScrollViewInsets="NO" id="K5g-kc-0q3" customClass="LocationViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationViewController" id="K5g-kc-0q3" customClass="LocationViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ot4-Fa-PTS"/>
                         <viewControllerLayoutGuide type="bottom" id="OiQ-GX-AK5"/>
