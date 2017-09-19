@@ -12,7 +12,7 @@
         <!--Image View Controller-->
         <scene sceneID="nys-vc-ont">
             <objects>
-                <viewController storyboardIdentifier="ImageViewController" id="795-Rz-CqR" customClass="ImageViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageViewController" automaticallyAdjustsScrollViewInsets="NO" id="795-Rz-CqR" customClass="ImageViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SgP-hu-ZIS"/>
                         <viewControllerLayoutGuide type="bottom" id="ErC-tU-MW4"/>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dy4-p9-kfb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="372"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="234.5"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zc-8x-hkJ" customClass="ExpandableGalleryView" customModule="AdvancedUIKit">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="234.5"/>
@@ -33,14 +33,16 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="5zc-8x-hkJ" secondAttribute="bottom" id="DQp-Aa-Jjb"/>
+                                    <constraint firstAttribute="width" secondItem="Dy4-p9-kfb" secondAttribute="height" multiplier="125:78" id="HAX-BX-k9h"/>
                                     <constraint firstItem="5zc-8x-hkJ" firstAttribute="width" secondItem="Dy4-p9-kfb" secondAttribute="width" id="IEO-qu-D0f"/>
+                                    <constraint firstItem="5zc-8x-hkJ" firstAttribute="height" secondItem="Dy4-p9-kfb" secondAttribute="height" id="aa6-Jy-l2E"/>
                                     <constraint firstAttribute="trailing" secondItem="5zc-8x-hkJ" secondAttribute="trailing" id="d34-d2-FOu"/>
                                     <constraint firstItem="5zc-8x-hkJ" firstAttribute="leading" secondItem="Dy4-p9-kfb" secondAttribute="leading" id="lM2-cF-wPZ"/>
                                     <constraint firstItem="5zc-8x-hkJ" firstAttribute="top" secondItem="Dy4-p9-kfb" secondAttribute="top" id="xqA-AW-bGJ"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSB-Qf-EHf">
-                                <rect key="frame" x="0.0" y="372" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="254.5" width="375" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAP-mo-FxH">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
@@ -218,7 +220,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbf-jH-qzm">
-                                <rect key="frame" x="0.0" y="413" width="375" height="254"/>
+                                <rect key="frame" x="0.0" y="295.5" width="375" height="371.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="vjT-9x-Nzx">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="356"/>
@@ -329,7 +331,6 @@
                                     <constraint firstAttribute="bottom" secondItem="vjT-9x-Nzx" secondAttribute="bottom" id="CHt-JK-ZSH"/>
                                     <constraint firstItem="vjT-9x-Nzx" firstAttribute="width" secondItem="bbf-jH-qzm" secondAttribute="width" id="hyQ-VB-pDd"/>
                                     <constraint firstAttribute="trailing" secondItem="vjT-9x-Nzx" secondAttribute="trailing" id="kAz-1w-hna"/>
-                                    <constraint firstAttribute="height" constant="254" id="krh-jx-Wb2"/>
                                     <constraint firstItem="vjT-9x-Nzx" firstAttribute="top" secondItem="bbf-jH-qzm" secondAttribute="top" id="whA-dE-mTN"/>
                                 </constraints>
                             </scrollView>
@@ -342,9 +343,9 @@
                             <constraint firstAttribute="trailing" secondItem="Dy4-p9-kfb" secondAttribute="trailing" id="GjB-Du-zeW"/>
                             <constraint firstItem="ErC-tU-MW4" firstAttribute="top" secondItem="bbf-jH-qzm" secondAttribute="bottom" id="Huu-V4-J3d"/>
                             <constraint firstItem="Dy4-p9-kfb" firstAttribute="leading" secondItem="i4G-JZ-pDz" secondAttribute="leading" id="If3-CK-MW2"/>
+                            <constraint firstItem="Dy4-p9-kfb" firstAttribute="top" secondItem="SgP-hu-ZIS" secondAttribute="bottom" id="M2t-tb-NAe"/>
                             <constraint firstItem="VSB-Qf-EHf" firstAttribute="top" secondItem="Dy4-p9-kfb" secondAttribute="bottom" id="PAw-GV-LWE"/>
                             <constraint firstAttribute="trailing" secondItem="VSB-Qf-EHf" secondAttribute="trailing" id="RV2-aj-wyK"/>
-                            <constraint firstItem="Dy4-p9-kfb" firstAttribute="top" secondItem="i4G-JZ-pDz" secondAttribute="top" id="vaV-Sp-Xot"/>
                             <constraint firstItem="VSB-Qf-EHf" firstAttribute="leading" secondItem="i4G-JZ-pDz" secondAttribute="leading" id="yGa-OW-ZdP"/>
                         </constraints>
                     </view>
