@@ -60,10 +60,6 @@ final class MessageViewController: UIViewController {
     }
     
     @IBAction func showCustomizedInfo(_ sender: Any) {
-        customizedMessageHelper.showInfo(info.content, withTitle: info.title, withConfirmButtonName: info.confirmButtonName)
-    }
-    
-    @IBAction func showCustomizedLongInfo(_ sender: Any) {
         customizedMessageHelper.showInfo(longInfo.content, withTitle: longInfo.title, withConfirmButtonName: longInfo.confirmButtonName)
     }
     
