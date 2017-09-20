@@ -179,6 +179,7 @@
 		428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */; };
 		429F884F1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F884E1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift */; };
 		429F88511EF493F900C293B6 /* GalleryView+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F88501EF493F900C293B6 /* GalleryView+ScrollViewDelegate.swift */; };
+		42AD90E01F7296540086D4B9 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42AD90DF1F7296540086D4B9 /* Notification.storyboard */; };
 		42C3F4541F08671B002A436E /* InfiniteListDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C3F4531F08671B002A436E /* InfiniteListDelegate+Optional.swift */; };
 		42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */; };
 		42CA09E21EE0461A009AF1BE /* RingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA09E11EE0461A009AF1BE /* RingHelper.swift */; };
@@ -423,6 +424,7 @@
 		428EAB671EDC4BE5006ED22B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceHelper.strings"; sourceTree = "<group>"; };
 		429F884E1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GalleryImage+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
 		429F88501EF493F900C293B6 /* GalleryView+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GalleryView+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		42AD90DF1F7296540086D4B9 /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		42C3F4531F08671B002A436E /* InfiniteListDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteListDelegate+Optional.swift"; sourceTree = "<group>"; };
 		42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Dynamic.swift"; sourceTree = "<group>"; };
 		42CA09E11EE0461A009AF1BE /* RingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingHelper.swift; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 			children = (
 				2814AED91EE144B2007745EF /* NotificationViewController.swift */,
 				42CA09E31EE19673009AF1BE /* NotificationViewController+NotificationHelperDelegate.swift */,
+				42AD90DF1F7296540086D4B9 /* Notification.storyboard */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -1224,6 +1227,7 @@
 				283844911F6B381E00AAD1E0 /* Button.storyboard in Resources */,
 				2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */,
 				422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */,
+				42AD90E01F7296540086D4B9 /* Notification.storyboard in Resources */,
 				283844931F6B383A00AAD1E0 /* Audio.storyboard in Resources */,
 				42CA09FC1EE23C5C009AF1BE /* LaunchScreen.storyboard in Resources */,
 				284482511F09F94500DF8D82 /* EmptyState.xib in Resources */,
