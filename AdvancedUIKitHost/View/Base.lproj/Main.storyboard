@@ -270,52 +270,6 @@
             </objects>
             <point key="canvasLocation" x="3790" y="-125"/>
         </scene>
-        <!--Navigation View Controller-->
-        <scene sceneID="xzq-Rc-EZW">
-            <objects>
-                <viewController storyboardIdentifier="NavigationViewController" id="0du-gA-J5Z" customClass="NavigationViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lUR-0u-nks"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qif-ux-I9F"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MUz-tA-4Ty">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUs-0P-7uu">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Mr-6h-zMc" customClass="NavigationBar" customModule="AdvancedUIKit">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                        <items>
-                                            <navigationItem title="Title" id="Lxd-lh-jJv"/>
-                                        </items>
-                                    </navigationBar>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="4Mr-6h-zMc" firstAttribute="top" secondItem="hUs-0P-7uu" secondAttribute="top" id="7rY-PE-eQu"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Mr-6h-zMc" secondAttribute="trailing" id="ObI-KG-xHn"/>
-                                    <constraint firstItem="4Mr-6h-zMc" firstAttribute="leading" secondItem="hUs-0P-7uu" secondAttribute="leading" id="gZp-4i-maw"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="hUs-0P-7uu" secondAttribute="trailing" id="2U2-bd-JFU"/>
-                            <constraint firstItem="Qif-ux-I9F" firstAttribute="top" secondItem="hUs-0P-7uu" secondAttribute="bottom" id="9us-Jz-kvC"/>
-                            <constraint firstItem="hUs-0P-7uu" firstAttribute="leading" secondItem="MUz-tA-4Ty" secondAttribute="leading" id="FzY-QQ-hEa"/>
-                            <constraint firstItem="hUs-0P-7uu" firstAttribute="top" secondItem="lUR-0u-nks" secondAttribute="bottom" id="qJx-X8-Qn6"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="navigationBar" destination="4Mr-6h-zMc" id="dKN-Jj-Fax"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="htZ-qM-ICB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3790" y="-817"/>
-        </scene>
         <!--Picker View Controller-->
         <scene sceneID="AyQ-fK-EKK">
             <objects>
