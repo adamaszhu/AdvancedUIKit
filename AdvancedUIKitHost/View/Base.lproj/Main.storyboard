@@ -12,11 +12,11 @@
         <scene sceneID="aSQ-Hv-Anj">
             <objects>
                 <navigationController id="H8X-S2-nBJ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rLA-DB-wnz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rLA-DB-wnz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.48982244729995728" green="0.71186602115631104" blue="0.84542196989059448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.49019607843137253" green="0.71372549019607845" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -225,64 +225,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fic-gE-cxo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3790" y="-125"/>
-        </scene>
-        <!--Picker View Controller-->
-        <scene sceneID="AyQ-fK-EKK">
-            <objects>
-                <viewController storyboardIdentifier="PickerViewController" id="XmV-GN-Y0T" customClass="PickerViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Bnw-6M-Fyp"/>
-                        <viewControllerLayoutGuide type="bottom" id="VFT-6U-yg1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1NP-1v-gWG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHM-NA-UFI">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhq-1F-PrZ">
-                                        <rect key="frame" x="0.0" y="10" width="375" height="30"/>
-                                        <state key="normal" title="Australia"/>
-                                        <connections>
-                                            <action selector="showDataPicker:" destination="XmV-GN-Y0T" eventType="touchUpInside" id="MlL-fy-WW9"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="dhq-1F-PrZ" firstAttribute="top" secondItem="SHM-NA-UFI" secondAttribute="top" constant="10" id="HH1-jk-XBk"/>
-                                    <constraint firstItem="dhq-1F-PrZ" firstAttribute="leading" secondItem="SHM-NA-UFI" secondAttribute="leading" id="Ynh-Na-uC5"/>
-                                    <constraint firstAttribute="trailing" secondItem="dhq-1F-PrZ" secondAttribute="trailing" id="irW-iH-oUe"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcj-k5-oL2" customClass="DataPicker" customModule="AdvancedUIKit">
-                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="8DU-Zc-Wah"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="SHM-NA-UFI" firstAttribute="top" secondItem="Bnw-6M-Fyp" secondAttribute="bottom" id="76N-Fo-D5O"/>
-                            <constraint firstItem="VFT-6U-yg1" firstAttribute="top" secondItem="SHM-NA-UFI" secondAttribute="bottom" id="7en-j8-8b2"/>
-                            <constraint firstAttribute="trailing" secondItem="zcj-k5-oL2" secondAttribute="trailing" id="Tmu-XY-EdQ"/>
-                            <constraint firstItem="VFT-6U-yg1" firstAttribute="top" secondItem="zcj-k5-oL2" secondAttribute="bottom" id="fkO-0l-pbS"/>
-                            <constraint firstItem="SHM-NA-UFI" firstAttribute="leading" secondItem="1NP-1v-gWG" secondAttribute="leading" id="jLs-5d-X5Z"/>
-                            <constraint firstAttribute="trailing" secondItem="SHM-NA-UFI" secondAttribute="trailing" id="mQb-bt-WEj"/>
-                            <constraint firstItem="zcj-k5-oL2" firstAttribute="leading" secondItem="1NP-1v-gWG" secondAttribute="leading" id="ybh-cW-iyw"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="dataPicker" destination="zcj-k5-oL2" id="7wN-Dg-sLW"/>
-                        <outlet property="showDataPickerButton" destination="dhq-1F-PrZ" id="69E-Yv-2eV"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cNw-xC-TOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2188" y="-817"/>
         </scene>
     </scenes>
 </document>

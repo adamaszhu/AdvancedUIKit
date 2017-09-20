@@ -122,6 +122,7 @@
 		28F350AD1EE793E5005120B1 /* LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F350AA1EE793E5005120B1 /* LocationHelperDelegate.swift */; };
 		28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */; };
 		28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F21EDBF49D006646A3 /* DeviceType.swift */; };
+		28FD8CEE1F731B050067E378 /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FD8CED1F731B050067E378 /* Picker.storyboard */; };
 		420A530F1EFDDFC2007E07CF /* InfiniteCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420A530E1EFDDFC2007E07CF /* InfiniteCellType.swift */; };
 		420C78E11EEB73AE00A1E3EA /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */; };
 		420C78E41EEB93E500A1E3EA /* Application+Viewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E31EEB93E500A1E3EA /* Application+Viewer.swift */; };
@@ -358,6 +359,7 @@
 		28F350AA1EE793E5005120B1 /* LocationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelperDelegate.swift; sourceTree = "<group>"; };
 		28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoAccessor.swift; sourceTree = "<group>"; };
 		28F550F21EDBF49D006646A3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		28FD8CED1F731B050067E378 /* Picker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
 		420A530E1EFDDFC2007E07CF /* InfiniteCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteCellType.swift; sourceTree = "<group>"; };
 		420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		420C78E31EEB93E500A1E3EA /* Application+Viewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Application+Viewer.swift"; sourceTree = "<group>"; };
@@ -921,6 +923,7 @@
 			children = (
 				426939821EAB65A800761FDE /* PickerViewController.swift */,
 				28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */,
+				28FD8CED1F731B050067E378 /* Picker.storyboard */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -1222,6 +1225,7 @@
 				2851F9D61F6E24DC00E961DA /* Keyboard.storyboard in Resources */,
 				42CA0A021EE23D0F009AF1BE /* Main.storyboard in Resources */,
 				28B36E6A1F70791D005996E6 /* Message.storyboard in Resources */,
+				28FD8CEE1F731B050067E378 /* Picker.storyboard in Resources */,
 				2851A0D91F72592200893C39 /* Navigation.storyboard in Resources */,
 				4224C47E1F6FEA4C0072F7FC /* Location.storyboard in Resources */,
 				283844911F6B381E00AAD1E0 /* Button.storyboard in Resources */,
