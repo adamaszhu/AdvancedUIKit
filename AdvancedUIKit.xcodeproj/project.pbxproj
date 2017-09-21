@@ -1159,7 +1159,7 @@
 					};
 					422DB4051EAA3CF100377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 75S8MN3555;
+						DevelopmentTeam = Y2XN2Z2HA2;
 						ProvisioningStyle = Automatic;
 					};
 					422DB4181EAA3CF100377AB5 = {
@@ -1741,7 +1741,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 75S8MN3555;
+				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1757,7 +1757,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 75S8MN3555;
+				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -16,6 +16,7 @@ final class PickerViewController: UIViewController {
         dataPicker.title = pickerTitle
         dataPicker.titleBackgroundColor = pickerTitleColor
         dataPicker.setSingleColumn(items)
+        dataPicker.controller = showDataPickerButton
         if let title = showDataPickerButton.titleLabel?.text {
             dataPicker.selectValue(title)
         }
