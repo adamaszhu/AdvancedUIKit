@@ -6,7 +6,7 @@
 final public class CustomizedMessageHelper: PopupView {
     
     /// Get the shared instance of the CustomizedMessageHelper. If the protocol will be implemented, please create a new object.
-    public static let standard: CustomizedMessageHelper = CustomizedMessageHelper()
+    public static let standard = CustomizedMessageHelper()
     
     /// The type of current message.
     var messageType: MessageType

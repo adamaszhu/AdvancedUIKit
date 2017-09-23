@@ -1,7 +1,8 @@
-class PickerViewController: UIViewController {
+final class PickerViewController: UIViewController {
     
-    private let countries = ["China", "Australia", "America"]
-    private let country = "Country"
+    let pickerOptions = ["China", "Australia", "America"]
+    let pickerTitle = "Country"
+    let pickerTitleColor = UIColor(red: 125 / 255, green: 182 / 255, blue: 216 / 255, alpha: 1)
     
     @IBOutlet weak var showDataPickerButton: UIButton!
     @IBOutlet weak var dataPicker: DataPicker!
@@ -9,12 +10,13 @@ class PickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataPicker.dataPickerDelegate = self
-        let items = countries.map { (country) -> DataPickerItem in
-            DataPickerItem(value: country)
+        let items = pickerOptions.map {
+            DataPickerItem(value: $0)
         }
-        dataPicker.title = country
-        dataPicker.titleBackgroundColor = UIColor.brown
+        dataPicker.title = pickerTitle
+        dataPicker.titleBackgroundColor = pickerTitleColor
         dataPicker.setSingleColumn(items)
+        dataPicker.controller = showDataPickerButton
         if let title = showDataPickerButton.titleLabel?.text {
             dataPicker.selectValue(title)
         }

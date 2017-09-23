@@ -1,27 +1,35 @@
-class ImageViewController: UIViewController {
+final class ImageViewController: UIViewController {
     
-    private let images = [UIImage(named: "ImageA")!, UIImage(named: "ImageB")!]
-    private let gaussianRadius = 10
-    private let opacity = 0.4
-    private let compressSize = 50 * 1024
-    private let size = (width: 200.0, height: 150.0)
+    let images = [UIImage(named: "ImageA")!, UIImage(named: "ImageB")!]
+    let gaussianRadius = 10
+    let opacity = 0.4
+    let compressSize = 50 * 1024
+    let size = (width: 800.0, height: 400.0)
+    
+    let cameraHelper = CameraHelper()
     
     @IBOutlet weak var galleryView: ExpandableGalleryView!
     
-    private let imagePickerHelper: ImagePickerHelper
-    
-    required init?(coder aDecoder: NSCoder) {
-        imagePickerHelper = ImagePickerHelper()
-        super.init(coder: aDecoder)
+    lazy var imagePickerHelper: ImagePickerHelper = {
+        let imagePickerHelper = ImagePickerHelper()
         imagePickerHelper.imagePickerHelperDelegate = self
-    }
+        return imagePickerHelper
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         galleryView.isExpandable = true
-        for image in images {
-            galleryView.add(image: image)
+        images.forEach {
+            galleryView.add(image: $0)
         }
+    }
+    
+    @IBAction func requestCameraAuthorization(_ sender: Any) {
+        cameraHelper.requestCameraAuthorization()
+    }
+    
+    @IBAction func requestLibraryAuthorization(_ sender: Any) {
+        cameraHelper.requestLibraryAuthorization()
     }
     
     @IBAction func addBlur(_ sender: Any) {

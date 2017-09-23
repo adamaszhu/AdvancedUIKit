@@ -1,8 +1,8 @@
 final class MainViewController: UIViewController {
     
-    @IBOutlet weak var featureTable: UITableView!
-    
     let features = [.audio, .button, .device, .image, .keyboard, .label, .list, .localization, .location, .map, .message, .navigation, .notification, .picker, .textField, .view] as [Feature]
+    
+    @IBOutlet weak var featureTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
