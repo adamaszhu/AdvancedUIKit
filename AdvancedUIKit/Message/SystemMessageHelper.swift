@@ -71,7 +71,7 @@ final public class SystemMessageHelper {
                 self.messageHelperDelegate?.messageHelperDidConfirmWarning(self)
                 break
             case .input:
-                self.messageHelperDelegate?.messageHelper(self, didConfirmInput: self.alertController.textFields?[0].text ?? "")
+                self.messageHelperDelegate?.messageHelper(self, didConfirmInput: self.alertController.textFields?[0].text ?? .empty)
             case .unknown:
                 Logger.standard.log(error: SystemMessageHelper.typeError)
                 break

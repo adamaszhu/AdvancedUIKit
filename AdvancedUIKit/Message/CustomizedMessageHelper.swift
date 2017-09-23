@@ -154,11 +154,11 @@ final public class CustomizedMessageHelper: PopupView {
         lineView.frame = .init(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 1)
         buttonView.addSubview(lineView)
         // First button and second button.
-        cancelButton.title = ""
+        cancelButton.title = .empty
         cancelButton.frame = .init(x: 0, y: lineView.frame.size.height, width: frameView.frame.width / 2, height: cancelButton.lineHeight + CustomizedMessageHelper.padding * 2)
         cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         buttonView.addSubview(cancelButton)
-        confirmButton.title = ""
+        confirmButton.title = .empty
         confirmButton.frame = .init(x: cancelButton.frame.width, y: lineView.frame.height, width: cancelButton.frame.width, height: cancelButton.frame.height)
         confirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
         buttonView.addSubview(confirmButton)
@@ -183,8 +183,8 @@ final public class CustomizedMessageHelper: PopupView {
             messageHelperDelegate?.messageHelperDidConfirmError(self)
             break
         case .input:
-            messageHelperDelegate?.messageHelper(self, didConfirmInput: inputText.text ?? "")
-            inputText.text = ""
+            messageHelperDelegate?.messageHelper(self, didConfirmInput: inputText.text ?? .empty)
+            inputText.text = .empty
             break
         case .unknown:
             Logger.standard.log(error: CustomizedMessageHelper.typeError)
@@ -205,7 +205,7 @@ final public class CustomizedMessageHelper: PopupView {
             break
         case .input:
             messageHelperDelegate?.messageHelperDidCancelInput(self)
-            inputText.text = ""
+            inputText.text = .empty
             break
         case .unknown:
             Logger.standard.log(error: CustomizedMessageHelper.typeError)
