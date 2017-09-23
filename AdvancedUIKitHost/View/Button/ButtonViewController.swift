@@ -1,6 +1,6 @@
-class ButtonViewController: UIViewController {
+final class ButtonViewController: UIViewController {
     
-    private let buttonTitle = "Button\nTitle"
+    let buttonTitle = "Button\nTitle"
     
     @IBOutlet weak var button: UIButton!
     

@@ -1,19 +1,17 @@
-class NotificationViewController: UIViewController {
+final class NotificationViewController: UIViewController {
     
-    private let notification = (title: "Title", content: "Content")
+    let notification = (title: "Title", content: "Content")
+    let notificationDelay = 5.0
     
-    private let notificationHelper: NotificationHelper
+    var backgroundTask = UIBackgroundTaskInvalid
     
-    private var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
-    
-    required init?(coder aDecoder: NSCoder) {
-        notificationHelper = NotificationHelper.shared
-        super.init(coder: aDecoder)
+    lazy var notificationHelper: NotificationHelper = {
+        let notificationHelper = NotificationHelper.shared
         notificationHelper.notificationHelperDelegate = self
-    }
+        return notificationHelper
+    }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func requestNotificationAuthorization(_ sender: Any) {
         notificationHelper.authorizeLocalNotification()
     }
     
@@ -22,12 +20,12 @@ class NotificationViewController: UIViewController {
         showLocalNotification()
     }
     
-    func showLocalNotification() {
-        let dispatchTime = DispatchTime.now() + 5
+    private func showLocalNotification() {
+        let dispatchTime = DispatchTime.now() + notificationDelay
         DispatchQueue.main.asyncAfter(deadline: dispatchTime) { [unowned self] _ in
             self.notificationHelper.createLocalNotification(withTitle: self.notification.title, withContent: self.notification.content)
-            UIApplication.shared.endBackgroundTask(self.backgroundTask)
             self.backgroundTask = UIBackgroundTaskInvalid
+            UIApplication.shared.endBackgroundTask(self.backgroundTask)
         }
     }
     

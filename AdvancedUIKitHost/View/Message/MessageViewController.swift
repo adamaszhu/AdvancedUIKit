@@ -1,52 +1,58 @@
-class MessageViewController: UIViewController {
+final class MessageViewController: UIViewController {
     
-    private let info = (content: "This is a message.", title: "Information", confirmButtonName: "Confirm")
-    private let longInfo = (content: "This is a very very very long message.", title: "Information", confirmButtonName: "Confirm")
-    private let error = (content: "This is an error.", title: "Error", confirmButtonName: "Confirm")
-    private let warning = (content: "This is a warning.", title: "Warning", confirmButtonName: "Confirm", cancelButtonName: "Cancel")
-    private let input = (title: "Input", confirmButtonName: "Confirm", cancelButtonName: "Cancel")
+    let info = (content: "This is a message.", title: "Information", confirmButtonName: "Confirm")
+    let longInfo = (content: "This is a very very very long message.", title: "Information", confirmButtonName: "Confirm")
+    let error = (content: "This is an error.", title: "Error", confirmButtonName: "Confirm")
+    let warning = (content: "This is a warning.", title: "Warning", confirmButtonName: "Confirm", cancelButtonName: "Cancel")
+    let input = (title: "Input", confirmButtonName: "Confirm", cancelButtonName: "Cancel")
+    let errorConfirmation = "Confirm error"
+    let warningConfirmation = "Confirm warning"
+    let warningCancellation = "Cancel warning"
+    let inputConfirmationPattern = "Confirm input %s"
+    let inputCancellation = "Cancel input"
     
-    private let systemMessageHelper: SystemMessageHelper
-    private let customizedMessageHelper: CustomizedMessageHelper
+    lazy var systemMessageHelper: SystemMessageHelper? = {
+        let systemMessageHelper = SystemMessageHelper.standard
+        systemMessageHelper?.messageHelperDelegate = self
+        return systemMessageHelper
+    }()
     
-    required init?(coder aDecoder: NSCoder) {
-        systemMessageHelper = SystemMessageHelper()!
-        customizedMessageHelper = CustomizedMessageHelper()
-        super.init(coder: aDecoder)
-        systemMessageHelper.messageHelperDelegate = self
+    lazy var customizedMessageHelper: CustomizedMessageHelper = {
+        let customizedMessageHelper = CustomizedMessageHelper.standard
         customizedMessageHelper.messageHelperDelegate = self
-    }
+        return customizedMessageHelper
+    }()
     
     @IBAction func showDefaultInfo(_ sender: Any) {
-        systemMessageHelper.showInfo(info.content)
+        systemMessageHelper?.showInfo(info.content)
     }
     
     @IBAction func showInfo(_ sender: Any) {
-        systemMessageHelper.showInfo(info.content, withTitle: info.title, withConfirmButtonName: info.confirmButtonName)
+        systemMessageHelper?.showInfo(info.content, withTitle: info.title, withConfirmButtonName: info.confirmButtonName)
     }
     
     @IBAction func showDefaultError(_ sender: Any) {
-        systemMessageHelper.showError(error.content)
+        systemMessageHelper?.showError(error.content)
     }
     
     @IBAction func showError(_ sender: Any) {
-        systemMessageHelper.showError(error.content, withTitle: error.title, withConfirmButtonName: error.confirmButtonName)
+        systemMessageHelper?.showError(error.content, withTitle: error.title, withConfirmButtonName: error.confirmButtonName)
     }
     
     @IBAction func showDefaultWarning(_ sender: Any) {
-        systemMessageHelper.showWarning(warning.content)
+        systemMessageHelper?.showWarning(warning.content)
     }
     
     @IBAction func showWarning(_ sender: Any) {
-        systemMessageHelper.showWarning(warning.content, withTitle: warning.title, withConfirmButtonName: warning.confirmButtonName, withCancelButtonName: warning.cancelButtonName)
+        systemMessageHelper?.showWarning(warning.content, withTitle: warning.title, withConfirmButtonName: warning.confirmButtonName, withCancelButtonName: warning.cancelButtonName)
     }
     
     @IBAction func showDefaultInput(_ sender: Any) {
-        systemMessageHelper.showInput(withTitle: input.title)
+        systemMessageHelper?.showInput(withTitle: input.title)
     }
     
     @IBAction func showInput(_ sender: Any) {
-        systemMessageHelper.showInput(withTitle: input.title, withConfirmButtonName: input.confirmButtonName, withCancelButtonName: input.cancelButtonName)
+        systemMessageHelper?.showInput(withTitle: input.title, withConfirmButtonName: input.confirmButtonName, withCancelButtonName: input.cancelButtonName)
     }
     
     @IBAction func showCustomizedDefaultInfo(_ sender: Any) {
@@ -54,10 +60,6 @@ class MessageViewController: UIViewController {
     }
     
     @IBAction func showCustomizedInfo(_ sender: Any) {
-        customizedMessageHelper.showInfo(info.content, withTitle: info.title, withConfirmButtonName: info.confirmButtonName)
-    }
-    
-    @IBAction func showCustomizedLongInfo(_ sender: Any) {
         customizedMessageHelper.showInfo(longInfo.content, withTitle: longInfo.title, withConfirmButtonName: longInfo.confirmButtonName)
     }
     

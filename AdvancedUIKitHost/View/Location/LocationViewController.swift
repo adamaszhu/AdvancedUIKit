@@ -1,12 +1,13 @@
-class LocationViewController: UIViewController {
+final class LocationViewController: UIViewController {
     
-    private let locationHelper: LocationHelper
+    let allTimeLocationAuthorization = "All time location authorization is authorized."
+    let whenInUseLocationAuthorization = "When in use location uthorization is authorized."
     
-    required init?(coder aDecoder: NSCoder) {
-        locationHelper = LocationHelper()
-        super.init(coder: aDecoder)
+    lazy var locationHelper: LocationHelper = {
+        let locationHelper = LocationHelper()
         locationHelper.locationHelperDelegate = self
-    }
+        return locationHelper
+    }()
     
     @IBAction func registerAlwaysLocation(_ sender: Any) {
         locationHelper.requestAlwaysAuthorization()

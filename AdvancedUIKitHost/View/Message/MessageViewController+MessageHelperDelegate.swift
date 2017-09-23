@@ -1,23 +1,24 @@
 extension MessageViewController: MessageHelperDelegate {
     
     func messageHelperDidConfirmError(_ messageHelper: MessageHelper) {
-        SystemMessageHelper.standard?.showInfo("Confirm error")
+        SystemMessageHelper.standard?.showInfo(errorConfirmation)
     }
     
     func messageHelperDidConfirmWarning(_ messageHelper: MessageHelper) {
-        SystemMessageHelper.standard?.showInfo("Confirm warning")
+        SystemMessageHelper.standard?.showInfo(warningConfirmation)
     }
     
     func messageHelperDidCancelWarning(_ messageHelper: MessageHelper) {
-        SystemMessageHelper.standard?.showInfo("Cancel warning")
+        SystemMessageHelper.standard?.showInfo(warningCancellation)
     }
     
     func messageHelper(_ messageHelper: MessageHelper, didConfirmInput content: String) {
-        SystemMessageHelper.standard?.showInfo("Confirm input \(content)")
+        let message = String(format: inputConfirmationPattern, content)
+        SystemMessageHelper.standard?.showInfo(message)
     }
     
     func messageHelperDidCancelInput(_ messageHelper: MessageHelper) {
-        SystemMessageHelper.standard?.showInfo("Cancel input")
+        SystemMessageHelper.standard?.showInfo(inputCancellation)
     }
     
 }

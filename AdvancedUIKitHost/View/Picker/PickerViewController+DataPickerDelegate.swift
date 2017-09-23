@@ -1,7 +1,7 @@
 extension PickerViewController: DataPickerDelegate {
     
     func dataPicker(dataPicker: DataPicker, didSelectValue values: [String]) {
-        let value = values.first!
+        let value = values.first
         showDataPickerButton.setTitle(value, for: .normal)
     }
     

@@ -37,6 +37,21 @@ final public class DataPicker: RootView {
         }
     }
     
+    /// The distance that the controller should be pushed up.
+    private var pushDistance: CGFloat {
+        guard let controller = controller, let superview = superview else {
+            return 0
+        }
+        let controllerFrame = superview.convert(controller.frame, from: controller.superview)
+        return controllerFrame.origin.y + controllerFrame.height - self.frame.origin.y - self.frame.height
+    }
+    
+    /// The view that is used to control the picker.
+    public var controller: UIView?
+    
+    /// The original frame of the controller.
+    private var controllerOriginalFrame: CGRect?
+    
     /// The picker view.
     private var pickerView: UIPickerView
     
@@ -85,9 +100,11 @@ final public class DataPicker: RootView {
         for index in 0 ..< columns.count {
             selections.append(columns[index].items[pickerView.selectedRow(inComponent: index)].value)
         }
-        dataPickerDelegate?.dataPicker(dataPicker: self, didSelectValue: selections)
-        // Waiting for the view to be refreshed for a button text change.
-        perform(#selector(hide), with: nil, afterDelay: 0.2)
+        hide()
+        DispatchQueue.main.asyncAfter(deadline: .now() + DataPicker.animationDuration) { [unowned self] _ in
+            // Wait for finishing the hide animation
+            self.dataPickerDelegate?.dataPicker(dataPicker: self, didSelectValue: selections)
+        }
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -105,11 +122,16 @@ final public class DataPicker: RootView {
             return
         }
         animate(withChange: { [unowned self] _ in
-            self.frame = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
-        }, withPreparation: { [unowned self] _ in
-            self.frame = self.originalFrame
+            self.frame.origin = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
+            // Push down the controller
+            if let controllerOriginalFrame = self.controllerOriginalFrame {
+                self.controller?.frame = controllerOriginalFrame
+            }
+            }, withDuration: DataPicker.animationDuration, withPreparation: { [unowned self] _ in
+                self.frame = self.originalFrame
         }) {
             super.hide()
+            self.isHidden = true
         }
     }
     
@@ -118,10 +140,17 @@ final public class DataPicker: RootView {
             Logger.standard.log(warning: DataPicker.showingWarning)
             return
         }
+        controllerOriginalFrame = controller?.frame
+        let pushDistance = self.pushDistance - 1
         animate(withChange: { [unowned self] _ in
+            // Push up the controller
+            if let controllerOrigin = self.controllerOriginalFrame?.origin {
+                self.controller?.frame.origin = .init(x: controllerOrigin.x, y: controllerOrigin.y + pushDistance)
+            }
             self.frame = self.originalFrame
-        }, withPreparation: { [unowned self] _ in
-            self.frame = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
+            }, withDuration: DataPicker.animationDuration, withPreparation: { [unowned self] _ in
+                self.frame.origin = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
+                self.isHidden = false
         }) {
             super.show()
         }

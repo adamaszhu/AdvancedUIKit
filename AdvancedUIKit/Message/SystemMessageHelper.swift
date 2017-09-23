@@ -24,7 +24,10 @@ final public class SystemMessageHelper {
     ///
     /// - Parameter application: The application used to make a function call.
     public init?(application: UIApplication = UIApplication.shared) {
-        currentViewController = application.rootViewController
+        guard let rootViewController = application.rootViewController else {
+            return nil
+        }
+        currentViewController = rootViewController
         messageType = .unknown
     }
     

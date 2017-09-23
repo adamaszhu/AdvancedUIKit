@@ -1,4 +1,4 @@
-/// ExpandableGalleryView is a horizontal sliding image page view, which has full screen mode.
+/// ExpandableGalleryView is a horizontal sliding image page view, which has full screen mode. If the navigation bar is translucent, GalleryView should be put inside a ScrollView.
 ///
 /// - author: Adamas
 /// - version: 1.0.0

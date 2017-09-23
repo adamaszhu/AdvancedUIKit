@@ -1,14 +1,11 @@
 extension LocationViewController: LocationHelperDelegate {
     
-    private static let allTimeLocationAuthorization = "All time location authorization is authorized."
-    private static let whenInUseLocationAuthorization = "When in use location uthorization is authorized."
-    
     func locationHelper(_ locationHelper: LocationHelper, didAuthorizeAlwaysAuthorization isAuthorized: Bool) {
-        SystemMessageHelper.standard?.showInfo(LocationViewController.allTimeLocationAuthorization)
+        SystemMessageHelper.standard?.showInfo(allTimeLocationAuthorization)
     }
     
     func locationHelper(_ locationHelper: LocationHelper, didAuthorizeWhenInUseAuthorization isAuthorized: Bool) {
-        SystemMessageHelper.standard?.showInfo(LocationViewController.whenInUseLocationAuthorization)
+        SystemMessageHelper.standard?.showInfo(whenInUseLocationAuthorization)
     }
     
     func locationHelper(_ locationHelper: LocationHelper, didCatchError error: String) {

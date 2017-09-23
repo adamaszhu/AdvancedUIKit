@@ -1,4 +1,4 @@
-class LocalizationViewController: UIViewController {
+final class LocalizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
