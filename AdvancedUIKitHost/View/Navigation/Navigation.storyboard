@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H4A-TS-dqP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation View Controller-->
+        <scene sceneID="bAj-tw-ok8">
+            <objects>
+                <viewController storyboardIdentifier="NavigationViewController" id="H4A-TS-dqP" customClass="NavigationViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ns6-EV-LGP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ech-P0-fzq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gor-Gj-dTe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIs-5B-d4v" customClass="NavigationBar" customModule="AdvancedUIKit">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="vYx-Zn-wO5"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="6W8-52-TIQ"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mIs-5B-d4v" secondAttribute="trailing" id="kK3-zU-Hi4"/>
+                            <constraint firstItem="mIs-5B-d4v" firstAttribute="top" secondItem="Gor-Gj-dTe" secondAttribute="top" id="r8I-Gs-m4f"/>
+                            <constraint firstItem="mIs-5B-d4v" firstAttribute="leading" secondItem="Gor-Gj-dTe" secondAttribute="leading" id="rgq-AG-Ff1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="mIs-5B-d4v" id="1Um-8j-erz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gid-Zi-b8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3790" y="-817"/>
+        </scene>
+    </scenes>
+</document>
