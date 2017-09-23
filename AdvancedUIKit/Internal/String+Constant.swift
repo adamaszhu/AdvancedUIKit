@@ -10,4 +10,6 @@ extension String {
     static let linebreak = "\n"
     static let empty = ""
     static let plus = "+"
+    static let tab = "\t"
+    static let comma = ","
 }
