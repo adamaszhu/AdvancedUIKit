@@ -1,6 +1,6 @@
 class TextFieldViewController: UIViewController {
     
-    private let highlightedUnderlineColor = UIColor(red: 125 / 255, green: 182 / 255, blue: 216 / 255, alpha: 1)
+    let highlightedUnderlineColor = UIColor(red: 125 / 255, green: 182 / 255, blue: 216 / 255, alpha: 1)
     
     @IBOutlet weak var textField: UITextField!
     

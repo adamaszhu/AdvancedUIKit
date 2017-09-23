@@ -3,7 +3,7 @@ final class LocationViewController: UIViewController {
     let allTimeLocationAuthorization = "All time location authorization is authorized."
     let whenInUseLocationAuthorization = "When in use location uthorization is authorized."
     
-    private lazy var locationHelper: LocationHelper = {
+    lazy var locationHelper: LocationHelper = {
         let locationHelper = LocationHelper()
         locationHelper.locationHelperDelegate = self
         return locationHelper

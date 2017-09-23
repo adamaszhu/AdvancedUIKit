@@ -11,6 +11,7 @@
 		280E15341EE924D3003BF109 /* MapView+LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280E15331EE924D3003BF109 /* MapView+LocationHelperDelegate.swift */; };
 		2814AEDA1EE144B2007745EF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814AED91EE144B2007745EF /* NotificationViewController.swift */; };
 		281F02F51F761554000B3AEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281F02F41F761554000B3AEC /* Main.storyboard */; };
+		281F02F71F7619EC000B3AEC /* View.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281F02F61F7619EC000B3AEC /* View.storyboard */; };
 		2822A3361EE0EC8200FAA8E3 /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */; };
 		2822A3391EE0EE2600FAA8E3 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */; };
 		2822A33A1EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3381EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift */; };
@@ -248,6 +249,7 @@
 		280E15331EE924D3003BF109 /* MapView+LocationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapView+LocationHelperDelegate.swift"; sourceTree = "<group>"; };
 		2814AED91EE144B2007745EF /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		281F02F41F761554000B3AEC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		281F02F61F7619EC000B3AEC /* View.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = View.storyboard; sourceTree = "<group>"; };
 		2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
 		2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		2822A3381EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationController+Storyboard.swift"; sourceTree = "<group>"; };
@@ -1052,6 +1054,7 @@
 			isa = PBXGroup;
 			children = (
 				28E66FEA1EE4D06600073DF1 /* ViewViewController.swift */,
+				281F02F61F7619EC000B3AEC /* View.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1222,6 +1225,7 @@
 				2844827F1F0A41D100DF8D82 /* ReloadingBar.xib in Resources */,
 				28B36E621F6FAD40005996E6 /* List.storyboard in Resources */,
 				42CA09F61EE1A7B0009AF1BE /* Localizable.strings in Resources */,
+				281F02F71F7619EC000B3AEC /* View.storyboard in Resources */,
 				28B36E681F7077D3005996E6 /* Map.storyboard in Resources */,
 				4224C47C1F6FDCD30072F7FC /* Localization.storyboard in Resources */,
 				42CF00A71EFD19C6002613E3 /* ImageCell.xib in Resources */,

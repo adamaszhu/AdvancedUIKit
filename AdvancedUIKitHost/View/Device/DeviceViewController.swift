@@ -3,8 +3,10 @@ final class DeviceViewController: UIViewController {
     let number = "+611111111111"
     let address = "Melbourne Australia"
     let email = (address: "info@mail.com", subject: "Subject", content: "<b>Content</b>", attachments: ["File.png": Data()])
+    let emailSendInfo = "The email has been sent successfully."
+    let emailSendError = "The email cannot be sent."
     
-    private lazy var deviceHelper: DeviceHelper = {
+    lazy var deviceHelper: DeviceHelper = {
         let deviceHelper = DeviceHelper.standard
         deviceHelper.deviceHelperDelegate = self
         return deviceHelper

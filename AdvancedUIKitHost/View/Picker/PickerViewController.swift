@@ -1,8 +1,8 @@
 final class PickerViewController: UIViewController {
     
-    private let pickerOptions = ["China", "Australia", "America"]
-    private let pickerTitle = "Country"
-    private let pickerTitleColor = UIColor(red: 125 / 255, green: 182 / 255, blue: 216 / 255, alpha: 1)
+    let pickerOptions = ["China", "Australia", "America"]
+    let pickerTitle = "Country"
+    let pickerTitleColor = UIColor(red: 125 / 255, green: 182 / 255, blue: 216 / 255, alpha: 1)
     
     @IBOutlet weak var showDataPickerButton: UIButton!
     @IBOutlet weak var dataPicker: DataPicker!

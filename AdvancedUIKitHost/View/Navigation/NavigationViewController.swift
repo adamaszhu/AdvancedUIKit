@@ -1,9 +1,9 @@
 final class NavigationViewController: UIViewController {
     
-    private let navigation = (title: "Navigation", leftButtonName: "Back", rightButtonName: "Done")
-    private let navigationColor = UIColor.red
-    private let navigationTintColor = UIColor.white
-    private let doneMessage = "Click the done button."
+    let navigation = (title: "Navigation", leftButtonName: "Back", rightButtonName: "Done")
+    let navigationColor = UIColor.red
+    let navigationTintColor = UIColor.white
+    let doneMessage = "Click the done button."
     
     @IBOutlet weak var navigationBar: NavigationBar!
     

@@ -11,7 +11,7 @@ final class KeyboardViewController: UIViewController {
     @IBOutlet weak var mobileNumberText: UITextField!
     @IBOutlet weak var addressLabel: UILabel!
     
-    private lazy var keyboardHelper: KeyboardHelper = {
+    lazy var keyboardHelper: KeyboardHelper = {
         let keyboardHelper = KeyboardHelper()
         keyboardHelper.keyboardHelperDelegate = self
         return keyboardHelper

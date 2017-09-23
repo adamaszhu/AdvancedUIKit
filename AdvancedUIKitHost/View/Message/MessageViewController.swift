@@ -11,13 +11,13 @@ final class MessageViewController: UIViewController {
     let inputConfirmationPattern = "Confirm input %s"
     let inputCancellation = "Cancel input"
     
-    private lazy var systemMessageHelper: SystemMessageHelper? = {
+    lazy var systemMessageHelper: SystemMessageHelper? = {
         let systemMessageHelper = SystemMessageHelper.standard
         systemMessageHelper?.messageHelperDelegate = self
         return systemMessageHelper
     }()
     
-    private lazy var customizedMessageHelper: CustomizedMessageHelper = {
+    lazy var customizedMessageHelper: CustomizedMessageHelper = {
         let customizedMessageHelper = CustomizedMessageHelper.standard
         customizedMessageHelper.messageHelperDelegate = self
         return customizedMessageHelper

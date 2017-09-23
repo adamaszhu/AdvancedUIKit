@@ -2,7 +2,7 @@ final class AudioViewController: UIViewController {
     
     let ring = (name: "Ring.aiff", times: 3)
     
-    private let ringHelper = RingHelper.shared
+    let ringHelper = RingHelper.shared
     
     @IBAction func ringWithCustomizedSoundAndVibration(_ sender: Any) {
         ringHelper.ring(withSound: ring.name, forTimes: ring.times)

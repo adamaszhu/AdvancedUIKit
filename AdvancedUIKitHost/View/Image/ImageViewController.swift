@@ -8,13 +8,13 @@ final class ImageViewController: UIViewController {
     
     @IBOutlet weak var galleryView: ExpandableGalleryView!
     
-    private lazy var imagePickerHelper: ImagePickerHelper = {
+    lazy var imagePickerHelper: ImagePickerHelper = {
         let imagePickerHelper = ImagePickerHelper()
         imagePickerHelper.imagePickerHelperDelegate = self
         return imagePickerHelper
     }()
     
-    private let cameraHelper = CameraHelper()
+    let cameraHelper = CameraHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
