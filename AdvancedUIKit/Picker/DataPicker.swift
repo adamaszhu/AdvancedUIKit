@@ -100,9 +100,11 @@ final public class DataPicker: RootView {
         for index in 0 ..< columns.count {
             selections.append(columns[index].items[pickerView.selectedRow(inComponent: index)].value)
         }
-        dataPickerDelegate?.dataPicker(dataPicker: self, didSelectValue: selections)
-        // Waiting for the view to be refreshed for a button text change.
-        perform(#selector(hide), with: nil, afterDelay: 0.2)
+        hide()
+        DispatchQueue.main.asyncAfter(deadline: .now() + DataPicker.animationDuration) { [unowned self] _ in
+            // Wait for finishing the hide animation
+            self.dataPickerDelegate?.dataPicker(dataPicker: self, didSelectValue: selections)
+        }
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -120,12 +122,12 @@ final public class DataPicker: RootView {
             return
         }
         animate(withChange: { [unowned self] _ in
-            self.frame = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
+            self.frame.origin = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
             // Push down the controller
             if let controllerOriginalFrame = self.controllerOriginalFrame {
                 self.controller?.frame = controllerOriginalFrame
             }
-            }, withPreparation: { [unowned self] _ in
+            }, withDuration: DataPicker.animationDuration, withPreparation: { [unowned self] _ in
                 self.frame = self.originalFrame
         }) {
             super.hide()
@@ -146,8 +148,8 @@ final public class DataPicker: RootView {
                 self.controller?.frame.origin = .init(x: controllerOrigin.x, y: controllerOrigin.y + pushDistance)
             }
             self.frame = self.originalFrame
-            }, withPreparation: { [unowned self] _ in
-                self.frame = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height, width: self.originalFrame.width, height: self.originalFrame.height)
+            }, withDuration: DataPicker.animationDuration, withPreparation: { [unowned self] _ in
+                self.frame.origin = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
                 self.isHidden = false
         }) {
             super.show()
