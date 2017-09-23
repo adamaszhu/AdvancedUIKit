@@ -12,7 +12,7 @@
         <scene sceneID="aSQ-Hv-Anj">
             <objects>
                 <navigationController id="H8X-S2-nBJ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rLA-DB-wnz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rLA-DB-wnz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,52 +179,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhD-qp-0Af" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="665" y="573"/>
-        </scene>
-        <!--Text Field View Controller-->
-        <scene sceneID="pTp-pf-xBV">
-            <objects>
-                <viewController storyboardIdentifier="TextFieldViewController" id="lfX-5Y-3Sc" customClass="TextFieldViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0zG-h4-adv"/>
-                        <viewControllerLayoutGuide type="bottom" id="MtN-Pn-o3G"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="401-7e-ajB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xt3-wN-Tbd">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input content here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j0A-Pj-iyK">
-                                        <rect key="frame" x="5" y="10" width="365" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="j0A-Pj-iyK" firstAttribute="leading" secondItem="xt3-wN-Tbd" secondAttribute="leading" constant="5" id="5fI-kP-FwO"/>
-                                    <constraint firstItem="j0A-Pj-iyK" firstAttribute="top" secondItem="xt3-wN-Tbd" secondAttribute="top" constant="10" id="QRq-8b-5hR"/>
-                                    <constraint firstAttribute="trailing" secondItem="j0A-Pj-iyK" secondAttribute="trailing" constant="5" id="jLK-9f-698"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="xt3-wN-Tbd" firstAttribute="leading" secondItem="401-7e-ajB" secondAttribute="leading" id="3HG-4b-dHV"/>
-                            <constraint firstItem="xt3-wN-Tbd" firstAttribute="top" secondItem="0zG-h4-adv" secondAttribute="bottom" id="IJm-DU-4UI"/>
-                            <constraint firstAttribute="trailing" secondItem="xt3-wN-Tbd" secondAttribute="trailing" id="JeM-v2-czj"/>
-                            <constraint firstItem="MtN-Pn-o3G" firstAttribute="top" secondItem="xt3-wN-Tbd" secondAttribute="bottom" id="Sfc-su-Oyd"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="textField" destination="j0A-Pj-iyK" id="env-U1-OBo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fic-gE-cxo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3790" y="-125"/>
         </scene>
     </scenes>
 </document>

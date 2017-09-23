@@ -104,5 +104,4 @@ final class MapViewController: UIViewController {
 }
 
 import AdvancedUIKit
-import MapKit
 import UIKit
