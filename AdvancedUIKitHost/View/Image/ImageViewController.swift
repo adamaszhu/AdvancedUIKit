@@ -6,6 +6,8 @@ final class ImageViewController: UIViewController {
     let compressSize = 50 * 1024
     let size = (width: 800.0, height: 400.0)
     
+    let cameraHelper = CameraHelper()
+    
     @IBOutlet weak var galleryView: ExpandableGalleryView!
     
     lazy var imagePickerHelper: ImagePickerHelper = {
@@ -13,8 +15,6 @@ final class ImageViewController: UIViewController {
         imagePickerHelper.imagePickerHelperDelegate = self
         return imagePickerHelper
     }()
-    
-    let cameraHelper = CameraHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()

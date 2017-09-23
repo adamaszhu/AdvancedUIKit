@@ -3,13 +3,13 @@ final class NotificationViewController: UIViewController {
     let notification = (title: "Title", content: "Content")
     let notificationDelay = 5.0
     
+    var backgroundTask = UIBackgroundTaskInvalid
+    
     lazy var notificationHelper: NotificationHelper = {
         let notificationHelper = NotificationHelper.shared
         notificationHelper.notificationHelperDelegate = self
         return notificationHelper
     }()
-    
-    var backgroundTask = UIBackgroundTaskInvalid
     
     @IBAction func requestNotificationAuthorization(_ sender: Any) {
         notificationHelper.authorizeLocalNotification()
