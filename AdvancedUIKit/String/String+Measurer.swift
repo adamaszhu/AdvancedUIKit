@@ -74,7 +74,7 @@ extension String {
     /// - Returns: The actual line amount displayed on the view.
     private func measureLine(withFont font: UIFont, inView view: UIView) -> [String] {
         guard !isEmpty else {
-            return [""]
+            return [.empty]
         }
         var lines = [String]()
         var remainLine = self
@@ -82,22 +82,22 @@ extension String {
             // Extract a line from the beginning of the remainLine. For better performance, words seperating strategy is considered prior to character seperating strategy.
             // Extract a line containing several words from the beginning of the remainLine.
             var words = remainLine.components(separatedBy: .whitespaces)
-            var width = words.joined(separator: " ").measuredWidth(withFont: font)
+            var width = words.joined(separator: .space).measuredWidth(withFont: font)
             while width > view.frame.width, words.count > 1 {
                 words.removeLast()
-                width = words.joined(separator: " ").measuredWidth(withFont: font)
+                width = words.joined(separator: .space).measuredWidth(withFont: font)
             }
             if width <= view.frame.width {
-                let line = words.joined(separator: " ")
+                let line = words.joined(separator: .space)
                 lines.append(line)
                 // remainLine must have the line extracted.
                 remainLine.remove(prefix: line)
                 // If the remainLine is not empty, remove the space between current line and the next line.
-                remainLine.remove(prefix: " ")
+                remainLine.remove(prefix: .space)
                 continue
             }
             // Extra a line from a extra long word from the beginning of the remainLine. Only one word is left.
-            var word = words.first ?? ""
+            var word = words.first ?? .empty
             while width > view.frame.width {
                 word = word.substring(to: word.index(word.endIndex, offsetBy: -1))
                 width = word.measuredWidth(withFont: font)

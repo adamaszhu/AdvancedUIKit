@@ -9,4 +9,5 @@ extension String {
     static let space = " "
     static let linebreak = "\n"
     static let empty = ""
+    static let plus = "+"
 }
