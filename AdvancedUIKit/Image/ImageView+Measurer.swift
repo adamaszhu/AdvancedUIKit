@@ -41,7 +41,6 @@ public extension UIImageView {
                 imageWidth = frame.size.width
             }
         default:
-            // TODO: Support more modes.
             Logger.standard.log(error: UIImageView.contentModeError)
             return nil
         }

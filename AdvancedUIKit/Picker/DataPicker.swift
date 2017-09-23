@@ -56,8 +56,6 @@ final public class DataPicker: RootView {
         columns = [DataPickerColumn(items: items)]
     }
     
-    // TODO: Set picker with multiple columns
-    
     /// Select an item.
     ///
     /// - Parameters:

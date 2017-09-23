@@ -21,8 +21,6 @@ public extension UIView {
         return frameConstraints
     }
     
-    // TODO: Get self related constraints.
-    
 }
 
 import UIKit

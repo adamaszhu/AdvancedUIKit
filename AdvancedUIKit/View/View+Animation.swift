@@ -16,7 +16,6 @@ public extension UIView {
     ///   - preparation: The action to be done before the animation.
     ///   - completion: The action to be done after the animation.
     public func animate(withChange change: @escaping () -> Void, withDuration duration: Double = defaultAnimationDuration, withPreparation preparation:(() -> Void)? = nil, withCompletion completion: (() -> Void)? = nil) {
-        // TODO: Judge whether there has been an animation or not.
         layer.removeAllAnimations()
         preparation?()
         UIView.animate(withDuration: duration, animations: {
