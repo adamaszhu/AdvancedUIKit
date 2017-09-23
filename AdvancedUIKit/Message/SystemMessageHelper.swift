@@ -82,7 +82,6 @@ final public class SystemMessageHelper {
     
     /// Show the alert controller with the message.
     func showMessage() {
-        // TODO: Fix the conflict between this and a PopupView
         currentViewController?.present(alertController, animated: true, completion: nil)
     }
     

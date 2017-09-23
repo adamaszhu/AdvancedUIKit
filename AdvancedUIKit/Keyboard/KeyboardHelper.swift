@@ -113,14 +113,11 @@ final public class KeyboardHelper: NSObject {
     
     /// Activate monitoring the input chain.
     private func activateInputChain() {
-        // TODO: Consider other types of views.
         inputViews.forEach {
             if let textField = $0 as? UITextField {
                 textField.addTarget(self, action: #selector(textFieldDidChangeText), for: .editingChanged)
-                // TODO: Use target instead of using delegate.
                 textField.delegate = self
             } else if let searchBar = $0 as? UISearchBar {
-                // TODO: Use target instead of using delegate.
                 searchBar.delegate = self
             }
         }

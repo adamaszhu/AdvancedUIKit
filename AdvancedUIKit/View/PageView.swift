@@ -71,7 +71,6 @@ public class PageView: UIScrollView {
     ///
     /// - Parameter index: The index of the view to be removed.
     public func removeView(atIndex index: Int) {
-        // TODO: Add animation for the removing action.
         guard 0 ..< pageControl.numberOfPages ~= index else {
             Logger.standard.log(error: PageView.pageIndexError)
             return

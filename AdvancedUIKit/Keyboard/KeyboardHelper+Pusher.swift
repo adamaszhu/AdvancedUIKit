@@ -15,7 +15,6 @@ extension KeyboardHelper {
     public func startObservingKeyboard() {
         rootView.addSubview(actionFilterView)
         actionFilterView.isHidden = true
-        // TODO: Judge whether the keyboard has already been shown or not.
         notificationCenter.addObserver(self, selector: #selector(willShowKeyboard), name: .UIKeyboardWillShow, object: nil)
         notificationCenter.addObserver(self, selector: #selector(willHideKeyboard), name: .UIKeyboardWillHide, object: nil)
         notificationCenter.addObserver(self, selector: #selector(willChangeKeyboardFrame), name: .UIKeyboardWillChangeFrame, object: nil)

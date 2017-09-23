@@ -1,5 +1,4 @@
 /// View+Gesture is used to add additional function to a uiview relating to the gesture function.
-/// TODO: Please use isUserInteractionEnabled at the moment.
 ///
 /// - author: Adamas
 /// - version: 1.0.0

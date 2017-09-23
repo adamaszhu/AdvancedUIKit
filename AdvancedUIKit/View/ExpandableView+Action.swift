@@ -29,7 +29,6 @@ extension ExpandableView {
         originalZIndex = superview.subviews.index(of: view)
         originalFrame = view.frame
         originalFrameConstraints = view.frameConstraints
-        // TODO: Exclude those constraints related to subviews.
         originalConstraints = view.constraints
     }
     

@@ -11,7 +11,6 @@ final public class NotificationHelper {
     /// Whether the local notification is authorized or not.
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
     public var isLocalNotificationAuthorized: Bool {
-        // TODO: Implement this using the NSNotification framework.
         guard let setting = application.currentUserNotificationSettings else {
             Logger.standard.log(error: NotificationHelper.settingError)
             return false
@@ -38,7 +37,6 @@ final public class NotificationHelper {
     ///   - soundName: The name of the sound.
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
     public func createLocalNotification(withTitle title: String, withContent content: String, withSoundName soundName: String = UILocalNotificationDefaultSoundName) {
-        // TODO: Implement this using the NSNotification framework.
         if !isLocalNotificationAuthorized {
             notificationHelperDelegate?.notificationHelper(self, didCatchError: NotificationHelper.authorizationError.localizedInternalString(forType: NotificationHelper.self))
             return
@@ -57,7 +55,6 @@ final public class NotificationHelper {
     /// Register the local notification function.
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
     public func authorizeLocalNotification() {
-        // TODO: Implement this using the NSNotification framework.
         guard !isLocalNotificationAuthorized else {
             return
         }
@@ -66,8 +63,6 @@ final public class NotificationHelper {
         application.registerUserNotificationSettings(setting)
         notificationHelperDelegate?.notificationHelper(self, didAuthorizeLocalNotification: isLocalNotificationAuthorized)
     }
-    
-    // TODO: Register remote notification
     
     /// Initialize the object.
     ///

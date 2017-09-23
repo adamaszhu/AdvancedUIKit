@@ -89,7 +89,6 @@ final public class CustomizedMessageHelper: PopupView {
         } else {
             messageLabel.text = content
             let messageHeight = messageLabel.actualHeight > frame.height * CustomizedMessageHelper.maxHeightWeight ? frame.height * CustomizedMessageHelper.maxHeightWeight : messageLabel.actualHeight
-            // TODO: For a very long message, dynamically change the number of line.
             messageLabel.frame.size = CGSize(width: messageLabel.frame.width, height: messageHeight)
             contentHeight = messageLabel.frame.height
         }

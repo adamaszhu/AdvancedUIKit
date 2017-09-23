@@ -1,5 +1,4 @@
 /// GestureFilterView filters the gesture within the view.
-/// TODO: Pass invalid gesture to the view below.
 ///
 /// - author: Adamas
 /// - version: 1.0.0
@@ -30,7 +29,6 @@ final class GestureFilterView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
-        // TODO: Support other gestures.
         let gestureRecognizers = [UISwipeGestureRecognizer(target: self, action: #selector(ignoreAction)),
                                   UITapGestureRecognizer(target: self, action: #selector(ignoreAction)),
                                   UIPanGestureRecognizer(target: self, action: #selector(ignoreAction))]
