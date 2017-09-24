@@ -20,18 +20,9 @@ final class NavigationViewController: UIViewController {
         navigationBar.setRightButtonAction(action: #selector(done), withTarget: self)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationBar.animate(withChange: { [unowned self] _ in
-            self.navigationController?.navigationBar.alpha = 0
-            }, withCompletion: { [unowned self] _ in
-                self.navigationController?.isNavigationBarHidden = true
-        })
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
     
     func done() {

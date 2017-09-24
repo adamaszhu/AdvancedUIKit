@@ -21,9 +21,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input content here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNh-pw-Gcm">
-                                <rect key="frame" x="15" y="35" width="345" height="50"/>
+                                <rect key="frame" x="15" y="35" width="345" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="AML-FS-Uny"/>
+                                    <constraint firstAttribute="height" constant="40" id="AML-FS-Uny"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

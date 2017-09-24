@@ -12,6 +12,11 @@ final class MainViewController: UIViewController {
         featureTable.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
 }
 
 import UIKit
