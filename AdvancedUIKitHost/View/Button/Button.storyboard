@@ -21,15 +21,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="od4-tp-4dZ">
-                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIn-VM-8Lb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                        <color key="backgroundColor" red="0.49019607843137253" green="0.71186602115631104" blue="0.84542196989059448" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIz-WT-JzJ" customClass="Checkbox" customModule="AdvancedUIKit">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vBD-w9-EXl"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checkedCheckbox"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="uncheckedCheckbox"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIn-VM-8Lb">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="30"/>
+                                        <color key="backgroundColor" red="0.49019607840000001" green="0.71372549019999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="checkStatus:" destination="8Nn-3W-gzO" eventType="touchUpInside" id="ndZ-VU-Qtb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -43,6 +56,7 @@
                     </view>
                     <connections>
                         <outlet property="button" destination="RIn-VM-8Lb" id="Psh-Iy-PRO"/>
+                        <outlet property="checkbox" destination="zIz-WT-JzJ" id="8hR-OF-yD8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Da-kJ-3DN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,4 +64,8 @@
             <point key="canvasLocation" x="3017" y="-124"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checkedCheckbox" width="22" height="22"/>
+        <image name="uncheckedCheckbox" width="22" height="22"/>
+    </resources>
 </document>
