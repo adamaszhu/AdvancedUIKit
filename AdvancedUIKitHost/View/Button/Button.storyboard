@@ -28,6 +28,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="vBD-w9-EXl"/>
                                         </constraints>
+                                        <state key="normal" image="uncheckedCheckbox"/>
+                                        <state key="selected" image="checkedCheckbox"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checkedCheckbox"/>
                                             <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="uncheckedCheckbox"/>

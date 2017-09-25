@@ -9,7 +9,7 @@ final class ButtonViewController: UIViewController {
     @IBOutlet weak var checkbox: Checkbox!
     
     @IBAction func checkStatus(_ sender: Any) {
-        let message = checkbox.isChecked ? checkedStatusMessage : uncheckedStatusMessage
+        let message = checkbox.isSelected ? checkedStatusMessage : uncheckedStatusMessage
         SystemMessageHelper.standard?.showInfo(message, withTitle: checkStatusTitle)
     }
     
