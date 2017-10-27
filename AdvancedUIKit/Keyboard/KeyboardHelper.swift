@@ -68,6 +68,8 @@ final public class KeyboardHelper: NSObject {
     
     /// Hide the keyboard.
     public func hideKeyboard() {
+        currentInputView?.resignFirstResponder()
+        currentInputView?.endEditing(true)
         currentInputView = nil
         // No text field has been selected.
         rootView.resignFirstResponder()
