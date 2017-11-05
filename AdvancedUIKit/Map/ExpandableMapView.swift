@@ -1,7 +1,7 @@
 /// ExpandableMapView is used to add full screen function to the map view.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
+/// - version: 1.0.3
 /// - date: 09/06/2017
 final public class ExpandableMapView: MapView {
     
@@ -27,12 +27,12 @@ final public class ExpandableMapView: MapView {
     }
     
     /// The origin of the collapse button.
-    public var collapseIconOrigin: CGPoint {
+    public var collapseIconFrame: CGRect {
         set {
-            collapseButton.frame.origin = newValue
+            collapseButton.frame = newValue
         }
         get {
-            return collapseButton.frame.origin
+            return collapseButton.frame
         }
     }
     

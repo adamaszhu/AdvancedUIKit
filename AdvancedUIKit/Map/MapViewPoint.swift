@@ -1,7 +1,7 @@
 /// MapViewPoint records the information of a point on the map.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
+/// - version: 1.0.3
 /// - date: 07/06/2017
 final public class MapViewPoint {
     
@@ -13,6 +13,9 @@ final public class MapViewPoint {
     
     /// The icon of the map point.
     var icon: UIImage?
+    
+    /// The frame of the point.
+    var iconFrame: CGRect?
     
     /// The item presented by the point.
     let item: Any?
@@ -30,7 +33,8 @@ final public class MapViewPoint {
     ///   - icon: The point icon.
     ///   - position: Where the coordinate point should be in the view.
     ///   - item: The item that the point represents.
-    public init(latitude: Double, longitude: Double, title: String? = nil, subtitle: String? = nil, icon: UIImage? = nil, position: MapViewPointPosition = .center, item: Any? = nil) {
+    ///   - iconFrame: The frame of the icon.
+    public init(latitude: Double, longitude: Double, title: String? = nil, subtitle: String? = nil, icon: UIImage? = nil, iconFrame: CGRect? = nil, position: MapViewPointPosition = .center, item: Any? = nil) {
         annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         annotation.title = title
@@ -38,6 +42,7 @@ final public class MapViewPoint {
         self.icon = icon
         self.position = position
         self.item = item
+        self.iconFrame = iconFrame
     }
     
     /// The function to be called when the detailButtonAction need to be invoked.
