@@ -83,9 +83,6 @@ extension MapView: MKMapViewDelegate {
             return nil
         }
         view.render(point)
-        if let iconFrame = point.iconFrame {
-            view.frame = iconFrame
-        }
         return view
     }
     
