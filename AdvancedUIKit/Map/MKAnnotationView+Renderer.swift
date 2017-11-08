@@ -16,7 +16,8 @@ extension MKAnnotationView {
             image = point.icon
             switch point.position {
             case .bottomCenter:
-                centerOffset = CGPoint(x: 0, y: -icon.size.height / 2)
+                let size = point.iconSize ?? icon.size
+                centerOffset = CGPoint(x: 0, y: -size.height / 2)
                 break
             case .center:
                 break
