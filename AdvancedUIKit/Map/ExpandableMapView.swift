@@ -11,6 +11,9 @@ final public class ExpandableMapView: MapView {
     /// The button used to collapse the view.
     let collapseButton: UIButton
     
+    /// The blur effect background of the collapse button.
+    let collapseButtonBackgroundView: UIVisualEffectView
+    
     /// The icon on the collapse button.
     public var collapseIcon: UIImage? {
         set {
@@ -20,6 +23,7 @@ final public class ExpandableMapView: MapView {
             collapseButton.setImage(newImage, for: .normal)
             collapseButton.setImage(newImage, for: .highlighted)
             collapseButton.frame.size = newImage.size
+            collapseButtonBackgroundView.frame.size = newImage.size
         }
         get {
             return collapseButton.imageView?.image
@@ -30,6 +34,7 @@ final public class ExpandableMapView: MapView {
     public var collapseIconFrame: CGRect {
         set {
             collapseButton.frame = newValue
+            collapseButtonBackgroundView.frame = newValue
         }
         get {
             return collapseButton.frame
@@ -39,9 +44,12 @@ final public class ExpandableMapView: MapView {
     public required init?(coder aDecoder: NSCoder) {
         gestureFilterView = UIView()
         collapseButton = UIButton()
+        collapseButtonBackgroundView = UIVisualEffectView()
         super.init(coder: aDecoder)
         collapseButton.isHidden = true
         collapseButton.addTarget(self, action: #selector(collapse), for: .touchUpInside)
+        collapseButtonBackgroundView.effect = UIBlurEffect()
+        collapseButtonBackgroundView.isHidden = true
         gestureFilterView.frame = bounds
         gestureFilterView.backgroundColor = UIColor.clear
         let expandGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(expand))
@@ -58,10 +66,12 @@ final public class ExpandableMapView: MapView {
         set {
             if newValue {
                 addSubview(gestureFilterView)
+                addSubview(collapseButtonBackgroundView)
                 addSubview(collapseButton)
             } else {
                 gestureFilterView.removeFromSuperview()
                 collapseButton.removeFromSuperview()
+                collapseButtonBackgroundView.removeFromSuperview()
             }
         }
         get {
