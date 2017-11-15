@@ -41,6 +41,18 @@ final public class ExpandableMapView: MapView {
         }
     }
     
+    public var collapseButtonBackgroundMargin: Int {
+        set {
+            let margin = CGFloat(newValue)
+            collapseButtonBackgroundView.frame.origin = .init(x: collapseButton.frame.origin.x - margin, y: collapseButton.frame.origin.y - margin)
+            collapseButtonBackgroundView.frame.size = .init(width: collapseButton.frame.width + 2 * margin, height: collapseButton.frame.height + 2 * margin)
+        }
+        get {
+            let margin = collapseButtonBackgroundView.frame.origin.x - collapseButton.frame.origin.x
+            return abs(Int(margin))
+        }
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
         gestureFilterView = UIView()
         collapseButton = UIButton()
