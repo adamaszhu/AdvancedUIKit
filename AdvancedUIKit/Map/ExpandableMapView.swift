@@ -45,6 +45,7 @@ final public class ExpandableMapView: MapView {
     public var collapseButtonBackgroundRadius: Int {
         set {
             collapseButtonBackgroundView.layer.cornerRadius = CGFloat(newValue)
+            collapseButtonBackgroundView.clipsToBounds = true
         }
         get {
             return Int(collapseButtonBackgroundView.layer.cornerRadius)
