@@ -1,7 +1,7 @@
 /// NotificationHelper is used to manage the notification.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
+/// - version: 1.0.3
 /// - date: 02/06/2017
 final public class NotificationHelper {
     
@@ -61,7 +61,8 @@ final public class NotificationHelper {
         let types = [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound] as UIUserNotificationType
         let setting = UIUserNotificationSettings(types: types, categories: nil)
         application.registerUserNotificationSettings(setting)
-        notificationHelperDelegate?.notificationHelper(self, didAuthorizeLocalNotification: isLocalNotificationAuthorized)
+        // TODO: Fix the call back
+        // notificationHelperDelegate?.notificationHelper(self, didAuthorizeLocalNotification: isLocalNotificationAuthorized)
     }
     
     /// Initialize the object.
