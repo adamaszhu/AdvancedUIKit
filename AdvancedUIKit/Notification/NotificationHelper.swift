@@ -1,8 +1,8 @@
 /// NotificationHelper is used to manage the notification.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 02/06/2017
+/// - version: 1.1.0
+/// - date: 30/11/2017
 final public class NotificationHelper {
     
     /// The singleton helper.
@@ -34,16 +34,17 @@ final public class NotificationHelper {
     /// - Parameters:
     ///   - title: The title of the notification.
     ///   - content: The content of the notification.
+    ///   - delay: Delay in second for showing the notification
     ///   - soundName: The name of the sound.
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
-    public func createLocalNotification(withTitle title: String, withContent content: String, withSoundName soundName: String = UILocalNotificationDefaultSoundName) {
+    public func createLocalNotification(withTitle title: String, withContent content: String, withDelay delay: Double = 0, withSoundName soundName: String = UILocalNotificationDefaultSoundName) {
         if !isLocalNotificationAuthorized {
             notificationHelperDelegate?.notificationHelper(self, didCatchError: NotificationHelper.authorizationError.localizedInternalString(forType: NotificationHelper.self))
             return
         }
         let notification = UILocalNotification()
         notification.timeZone = NSTimeZone.default
-        notification.fireDate = Date()
+        notification.fireDate = Date().addingTimeInterval(delay)
         if #available(iOS 8.2, *) {
             notification.alertTitle = title
         }
@@ -61,7 +62,8 @@ final public class NotificationHelper {
         let types = [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound] as UIUserNotificationType
         let setting = UIUserNotificationSettings(types: types, categories: nil)
         application.registerUserNotificationSettings(setting)
-        notificationHelperDelegate?.notificationHelper(self, didAuthorizeLocalNotification: isLocalNotificationAuthorized)
+        // TODO: Fix the call back
+        // notificationHelperDelegate?.notificationHelper(self, didAuthorizeLocalNotification: isLocalNotificationAuthorized)
     }
     
     /// Initialize the object.

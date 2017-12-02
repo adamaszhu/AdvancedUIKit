@@ -1,12 +1,32 @@
 /// CustomizedMessageHelper is used to display a customized message on the screen.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
+/// - version: 1.0.3
 /// - date: 30/05/2017
 final public class CustomizedMessageHelper: PopupView {
     
     /// Get the shared instance of the CustomizedMessageHelper. If the protocol will be implemented, please create a new object.
     public static let standard = CustomizedMessageHelper()
+    
+    /// The mask color.
+    public var maskColor: UIColor? {
+        set {
+            backgroundColor = newValue
+        }
+        get {
+            return backgroundColor
+        }
+    }
+    
+    /// The background color of the message frame.
+    public var frameColor: UIColor? {
+        set {
+            frameView.backgroundColor = newValue
+        }
+        get {
+            return frameView.backgroundColor
+        }
+    }
     
     /// The type of current message.
     var messageType: MessageType

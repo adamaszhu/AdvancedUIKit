@@ -26,15 +26,19 @@ extension ExpandableMapView: ExpandableView {
         animate(withChange: { [unowned self] _ in
             self.frame = window.bounds
             self.collapseButton.alpha = 1
+            self.collapseButtonBackgroundView.alpha = 1
             }, withPreparation: { [unowned self] _ in
                 self.gestureFilterView.isHidden = true
                 self.moveToWindow(of: self)
                 self.collapseButton.isHidden = false
                 self.collapseButton.alpha = 0
                 self.collapseButton.isUserInteractionEnabled = false
+                self.collapseButtonBackgroundView.isHidden = false
+                self.collapseButtonBackgroundView.alpha = 0
             }, withCompletion: { [unowned self] _ in
                 self.collapseButton.alpha = 1
                 self.collapseButton.isUserInteractionEnabled = true
+                self.collapseButtonBackgroundView.alpha = 1
         })
     }
     
@@ -50,13 +54,17 @@ extension ExpandableMapView: ExpandableView {
         animate(withChange: { [unowned self] _ in
             self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
             self.collapseButton.alpha = 0
+            self.collapseButtonBackgroundView.alpha = 0
             }, withPreparation: { [unowned self] _ in
                 self.collapseButton.alpha = 1
                 self.collapseButton.isUserInteractionEnabled = false
+                self.collapseButtonBackgroundView.alpha = 1
             }, withCompletion: { [unowned self] _ in
                 self.collapseButton.alpha = 1
                 self.collapseButton.isUserInteractionEnabled = true
                 self.collapseButton.isHidden = true
+                self.collapseButtonBackgroundView.isHidden = true
+                self.collapseButtonBackgroundView.alpha = 1
                 self.removeFromWindow(of: self)
                 self.gestureFilterView.isHidden = false
         })
