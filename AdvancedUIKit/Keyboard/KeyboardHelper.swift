@@ -68,6 +68,8 @@ final public class KeyboardHelper: NSObject {
     
     /// Hide the keyboard.
     public func hideKeyboard() {
+        currentInputView?.resignFirstResponder()
+        currentInputView?.endEditing(true)
         currentInputView = nil
         // No text field has been selected.
         rootView.resignFirstResponder()
@@ -107,7 +109,7 @@ final public class KeyboardHelper: NSObject {
     /// adjust the offset of the view.
     func adjustOffset() {
         rootView.animate(withChange: { [unowned self] _ in
-            self.rootView.frame.origin = CGPoint(x: 0, y: self.pushOffset)
+            self.rootView.frame.origin = CGPoint(x: 0, y: self.rootView.frame.origin.y + self.pushOffset)
             }, withDuration: keyboardPushDuration)
     }
     

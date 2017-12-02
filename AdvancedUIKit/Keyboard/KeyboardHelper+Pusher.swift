@@ -1,7 +1,7 @@
 /// KeyboardHelper+Pusher pushes the view up if the keyboard overlaps the input view.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
+/// - version: 1.0.3
 /// - date: 06/06/2017
 extension KeyboardHelper {
     

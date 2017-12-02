@@ -18,7 +18,7 @@ final class MapViewController: UIViewController {
     let bulleenPoint = (latitude: -37.77, longitude: 145.09, title: "Bulleen", subtitle: "Home")
     let bulleenRegion = (leftLongitude: 145.063039, rightLongitude: 145.106654, topLatitude: -37.747502, bottmLatitude: -37.784629)
     let bulleenRegionColor = UIColor(red: 125 / 255, green: 182 / 255, blue: 216 / 255, alpha: 1)
-    let collapseIconOrigin = CGPoint(x: 20, y: 20)
+    let collapseIconFrame = CGRect(x: 20, y: 20, width: 100, height: 100)
     
     @IBOutlet weak var mapView: ExpandableMapView!
     
@@ -40,7 +40,7 @@ final class MapViewController: UIViewController {
         mapView.mapViewDelegate = self
         mapView.isExpandable = true
         mapView.collapseIcon = collapseIcon
-        mapView.collapseIconOrigin = collapseIconOrigin
+        mapView.collapseIconFrame = collapseIconFrame
     }
     
     @IBAction func showMelbourne(_ sender: Any) {
