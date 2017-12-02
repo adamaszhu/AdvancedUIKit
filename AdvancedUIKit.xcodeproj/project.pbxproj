@@ -99,6 +99,7 @@
 		28B36E6A1F70791D005996E6 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B36E691F70791D005996E6 /* Message.storyboard */; };
 		28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B524F81EEA14970051E8D2 /* View+Constraint.swift */; };
 		28B975871F6F285D001239EB /* Label.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B975861F6F285D001239EB /* Label.storyboard */; };
+		28BA02911F78624F00F635DE /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA02901F78624F00F635DE /* Checkbox.swift */; };
 		28CB19341F747512006CFE05 /* TextField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28CB19331F747512006CFE05 /* TextField.storyboard */; };
 		28CB19381F7476BE006CFE05 /* String+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB19371F7476BE006CFE05 /* String+Constant.swift */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
@@ -340,6 +341,7 @@
 		28B36E691F70791D005996E6 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		28B524F81EEA14970051E8D2 /* View+Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Constraint.swift"; sourceTree = "<group>"; };
 		28B975861F6F285D001239EB /* Label.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Label.storyboard; sourceTree = "<group>"; };
+		28BA02901F78624F00F635DE /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		28CB19331F747512006CFE05 /* TextField.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextField.storyboard; sourceTree = "<group>"; };
 		28CB19371F7476BE006CFE05 /* String+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Constant.swift"; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
@@ -946,6 +948,7 @@
 			children = (
 				289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */,
 				42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */,
+				28BA02901F78624F00F635DE /* Checkbox.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -1353,6 +1356,7 @@
 				2822A3391EE0EE2600FAA8E3 /* NavigationBar.swift in Sources */,
 				28CB19381F7476BE006CFE05 /* String+Constant.swift in Sources */,
 				283B01C81F1306E700AF2097 /* InfiniteListStatus+Managable.swift in Sources */,
+				28BA02911F78624F00F635DE /* Checkbox.swift in Sources */,
 				425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */,
 				2846A9A21EE7C0FA007D4226 /* MapViewLine.swift in Sources */,
 				28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */,
