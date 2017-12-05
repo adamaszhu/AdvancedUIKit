@@ -2,14 +2,14 @@
 ///
 /// - author: Adamas
 /// - date: 23/04/2017
-/// - version: 1.0.0
+/// - version: 1.0.4
 open class RootView: UIView {
     
     /// Whether the view is visible or not.
     public var isVisible: Bool
     
     /// The original frame of the view.
-    private (set) var originalFrame: CGRect
+    public private (set) var originalFrame: CGRect
     
     /// Whether the view has been initialized or not.
     private var isInitialized: Bool
