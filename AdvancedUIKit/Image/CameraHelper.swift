@@ -1,12 +1,18 @@
 /// CameraHelper is used to access the information about the camera.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 10/06/2017
+/// - version: 1.0.4
+/// - date: 08/12/2017
 final public class CameraHelper {
     
+    /// The delegate.
+    public var cameraHelperDelegate: CameraHelperDelegate?
+    
+    /// The bundle.
+    private let bundle: Bundle
+    
     /// Whether the camera is enabled by the user or not.
-    public static var isCameraAuthorized: Bool {
+    public var isCameraAuthorized: Bool {
         let authorizedStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         switch authorizedStatus {
         case .authorized:
@@ -17,7 +23,7 @@ final public class CameraHelper {
     }
     
     /// Whether the camera authorization is still not determinated or not.
-    public static var isCameraUnauthorized: Bool {
+    public var isCameraUnauthorized: Bool {
         let authorizedStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         switch authorizedStatus {
         case .notDetermined:
@@ -28,7 +34,7 @@ final public class CameraHelper {
     }
     
     /// Whether the library is enabled by the user or not.
-    public static var isLibraryAuthorized: Bool {
+    public var isLibraryAuthorized: Bool {
         let authorizedStatus = PHPhotoLibrary.authorizationStatus()
         switch authorizedStatus {
         case .authorized:
@@ -39,7 +45,7 @@ final public class CameraHelper {
     }
     
     /// Whether the library authorization is still not determinated or not.
-    public static var isLibraryUnauthorized: Bool {
+    public var isLibraryUnauthorized: Bool {
         let authorizedStatus = PHPhotoLibrary.authorizationStatus()
         switch authorizedStatus {
         case .notDetermined:
@@ -49,15 +55,9 @@ final public class CameraHelper {
         }
     }
     
-    /// The delegate.
-    public var cameraHelperDelegate: CameraHelperDelegate?
-    
-    /// The bundle.
-    private let bundle: Bundle
-    
     /// Authorize the camera.
     public func requestCameraAuthorization() {
-        guard CameraHelper.isCameraUnauthorized else {
+        guard isCameraUnauthorized else {
             cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.cameraAuthorizationError.localizedInternalString(forType: CameraHelper.self))
             return
         }
@@ -72,7 +72,7 @@ final public class CameraHelper {
     
     /// Authorize the library.
     public func requestLibraryAuthorization() {
-        guard CameraHelper.isLibraryUnauthorized else {
+        guard isLibraryUnauthorized else {
             cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.libraryAuthorizationError.localizedInternalString(forType: CameraHelper.self))
             return
         }

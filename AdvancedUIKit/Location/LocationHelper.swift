@@ -1,8 +1,8 @@
 /// LocationHelper provides additional support for LocationManager.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 04/05/2017
+/// - version: 1.0.4
+/// - date: 08/12/2017
 final public class LocationHelper: CLLocationManager {
     
     /// The delegate.
@@ -15,8 +15,8 @@ final public class LocationHelper: CLLocationManager {
     private let bundle: Bundle
     
     /// Which authorization is
-    public static var isAlwaysAuthorizationAuthorized: Bool {
-        switch authorizationStatus() {
+    public var isAlwaysAuthorizationAuthorized: Bool {
+        switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
             return true
         default:
@@ -25,8 +25,8 @@ final public class LocationHelper: CLLocationManager {
     }
     
     /// Whether the when in use authorization is authorized or not.
-    public static var isWhenInUseAuthorizationAuthorized: Bool {
-        switch authorizationStatus() {
+    public var isWhenInUseAuthorizationAuthorized: Bool {
+        switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             return true
         default:
@@ -35,8 +35,8 @@ final public class LocationHelper: CLLocationManager {
     }
     
     /// Whether the authorization is still not determinated or not.
-    public static var isUnauthorized: Bool {
-        switch authorizationStatus() {
+    public var isUnauthorized: Bool {
+        switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             return true
         default:
@@ -63,7 +63,7 @@ final public class LocationHelper: CLLocationManager {
     }
     
     public override func requestAlwaysAuthorization() {
-        guard LocationHelper.isUnauthorized else {
+        guard isUnauthorized else {
             locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizedInternalString(forType: LocationHelper.self))
             return
         }
@@ -76,7 +76,7 @@ final public class LocationHelper: CLLocationManager {
     }
     
     public override func requestWhenInUseAuthorization() {
-        guard LocationHelper.isUnauthorized else {
+        guard isUnauthorized else {
             locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizedInternalString(forType: LocationHelper.self))
             return
         }

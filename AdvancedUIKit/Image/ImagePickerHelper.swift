@@ -29,7 +29,7 @@ final public class ImagePickerHelper: NSObject {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let selectFromLibraryActionTitle = ImagePickerHelper.selectFromLibraryActionName.localizedInternalString(forType: self.classForCoder)
         let selectFromLibraryAction = UIAlertAction(title: selectFromLibraryActionTitle, style: .default) { [unowned self] _ in
-            guard CameraHelper.isLibraryAuthorized else {
+            guard self.cameraHelper.isLibraryAuthorized else {
                 self.cameraHelper.requestLibraryAuthorization()
                 return
             }
@@ -37,7 +37,7 @@ final public class ImagePickerHelper: NSObject {
         }
         let takePhotoActionTitle = ImagePickerHelper.takePhotoActionName.localizedInternalString(forType: self.classForCoder)
         let takePhotoAction = UIAlertAction(title: takePhotoActionTitle, style: .default) { [unowned self] _ in
-            guard CameraHelper.isCameraAuthorized else {
+            guard self.cameraHelper.isCameraAuthorized else {
                 self.cameraHelper.requestCameraAuthorization()
                 return
             }
