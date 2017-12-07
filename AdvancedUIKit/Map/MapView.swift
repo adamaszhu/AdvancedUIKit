@@ -119,7 +119,7 @@ public class MapView: MKMapView {
     
     /// Request user authorization on always use location.
     public func requestUserLocation() {
-        guard LocationHelper.isAlwaysAuthorizationAuthorized || LocationHelper.isWhenInUseAuthorizationAuthorized else {
+        guard locationHelper.isAlwaysAuthorizationAuthorized || locationHelper.isWhenInUseAuthorizationAuthorized else {
             locationHelper.requestAlwaysAuthorization()
             return
         }
