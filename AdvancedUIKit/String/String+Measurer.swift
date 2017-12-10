@@ -99,7 +99,7 @@ extension String {
             // Extra a line from a extra long word from the beginning of the remainLine. Only one word is left.
             var word = words.first ?? .empty
             while width > view.frame.width {
-                word = word.substring(to: word.index(word.endIndex, offsetBy: -1))
+                word = .init(word[..<word.index(word.endIndex, offsetBy: -1)])
                 width = word.measuredWidth(withFont: font)
             }
             lines.append(word)
