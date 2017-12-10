@@ -15,7 +15,7 @@ open class LocationHelper: CLLocationManager {
     private let bundle: Bundle
     
     /// Which authorization is
-    @objc public var isAlwaysAuthorizationAuthorized: Bool {
+    @objc open var isAlwaysAuthorizationAuthorized: Bool {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
             return true
@@ -25,7 +25,7 @@ open class LocationHelper: CLLocationManager {
     }
     
     /// Whether the when in use authorization is authorized or not.
-    @objc public var isWhenInUseAuthorizationAuthorized: Bool {
+    @objc open var isWhenInUseAuthorizationAuthorized: Bool {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             return true
@@ -35,7 +35,7 @@ open class LocationHelper: CLLocationManager {
     }
     
     /// Whether the authorization is still not determinated or not.
-    @objc public var isUnauthorized: Bool {
+    @objc open var isUnauthorized: Bool {
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             return true
