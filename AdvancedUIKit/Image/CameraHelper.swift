@@ -12,7 +12,7 @@ open class CameraHelper {
     private let bundle: Bundle
     
     /// Whether the camera is enabled by the user or not.
-    public var isCameraAuthorized: Bool {
+    open var isCameraAuthorized: Bool {
         let authorizedStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         switch authorizedStatus {
         case .authorized:
@@ -23,7 +23,7 @@ open class CameraHelper {
     }
     
     /// Whether the camera authorization is still not determinated or not.
-    public var isCameraUnauthorized: Bool {
+    open var isCameraUnauthorized: Bool {
         let authorizedStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         switch authorizedStatus {
         case .notDetermined:
@@ -34,7 +34,7 @@ open class CameraHelper {
     }
     
     /// Whether the library is enabled by the user or not.
-    public var isLibraryAuthorized: Bool {
+    open var isLibraryAuthorized: Bool {
         let authorizedStatus = PHPhotoLibrary.authorizationStatus()
         switch authorizedStatus {
         case .authorized:
@@ -45,7 +45,7 @@ open class CameraHelper {
     }
     
     /// Whether the library authorization is still not determinated or not.
-    public var isLibraryUnauthorized: Bool {
+    open var isLibraryUnauthorized: Bool {
         let authorizedStatus = PHPhotoLibrary.authorizationStatus()
         switch authorizedStatus {
         case .notDetermined:

@@ -9,17 +9,17 @@ open class DeviceInfoAccessor {
     public static let shared: DeviceInfoAccessor = .init()
     
     /// The system version of the device.
-    public var systemVersion: String {
+    open var systemVersion: String {
         return device.systemVersion
     }
     
     /// The major system version.
-    public var majorSystemVersion: Int {
+    open var majorSystemVersion: Int {
         return processInfo.operatingSystemVersion.majorVersion
     }
     
     /// The type of the device.
-    public var deviceType: DeviceType {
+    open var deviceType: DeviceType {
         let deviceModel = device.model
         if deviceModel.contains(DeviceType.phone.rawValue) {
             return .phone
