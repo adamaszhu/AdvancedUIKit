@@ -19,14 +19,14 @@ extension UIView {
     }
     
     /// Enable the any gesture on the view.
-    public func enableAnyGesture() {
+    @objc public func enableAnyGesture() {
         enableGesture(ofType: UIPanGestureRecognizer.self)
         enableGesture(ofType: UITapGestureRecognizer.self)
         enableGesture(ofType: UISwipeGestureRecognizer.self)
     }
     
     /// Disable the any gesture on the view.
-    public func disableAnyGesture() {
+    @objc public func disableAnyGesture() {
         disableGesture(ofType: UIPanGestureRecognizer.self)
         disableGesture(ofType: UITapGestureRecognizer.self)
         disableGesture(ofType: UISwipeGestureRecognizer.self)
@@ -35,14 +35,14 @@ extension UIView {
     /// Enable a gesture.
     ///
     /// - Parameter type: The type of gesture to be disabled.
-    public func enableGesture(ofType type: AnyClass) {
+    @objc public func enableGesture(ofType type: AnyClass) {
         gestureFilterView.changeGestureRecognizerUsibility(ofType: type, toUsibility: false)
     }
     
     /// Disable a gesture.
     ///
     /// - Parameter type: The gesture to be disabled.
-    public func disableGesture(ofType type: AnyClass) {
+    @objc public func disableGesture(ofType type: AnyClass) {
         gestureFilterView.changeGestureRecognizerUsibility(ofType: type, toUsibility: true)
     }
     

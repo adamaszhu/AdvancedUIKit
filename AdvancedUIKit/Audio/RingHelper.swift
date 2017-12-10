@@ -87,7 +87,7 @@ final public class RingHelper {
         remainerCounter = remainerCounter - 1
         if remainerCounter > 0 {
             let dispatchTime = DispatchTime.now() + period
-            DispatchQueue.main.asyncAfter(deadline: dispatchTime) { [unowned self] _ in
+            DispatchQueue.main.asyncAfter(deadline: dispatchTime) { [unowned self] in
                 self.performRing()
             }
         }

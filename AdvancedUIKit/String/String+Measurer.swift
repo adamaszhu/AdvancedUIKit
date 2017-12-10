@@ -13,7 +13,7 @@ extension String {
     /// - Parameter font: The font.
     /// - Returns: The width.
     func measuredWidth(withFont font: UIFont) -> CGFloat {
-        return self.size(attributes: [NSFontAttributeName: font]).width
+        return self.size(withAttributes: [NSAttributedStringKey.font: font]).width
     }
     
     /// Get the width of a string with a specific font.
@@ -21,7 +21,7 @@ extension String {
     /// - Parameter font: The font.
     /// - Returns: The height.
     func measuredHeight(withFont font: UIFont) -> CGFloat {
-        return self.size(attributes: [NSFontAttributeName: font]).height
+        return self.size(withAttributes: [NSAttributedStringKey.font: font]).height
     }
     
     /// Get the actual line amount displayed on the screen.
@@ -43,7 +43,7 @@ extension String {
     /// - Returns: The actual height displayed on the view.
     func measuredHeight(withFont font: UIFont, inView view: UIView) -> CGFloat {
         let maxBounds = CGSize(width: view.frame.width, height: .greatestFiniteMagnitude)
-        let bounds = self.boundingRect(with: maxBounds, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        let bounds = self.boundingRect(with: maxBounds, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
         return bounds.height
     }
     

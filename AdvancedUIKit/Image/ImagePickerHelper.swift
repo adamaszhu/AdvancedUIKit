@@ -25,7 +25,7 @@ final public class ImagePickerHelper: NSObject {
     }
     
     /// Show the image picker selector.
-    public func showImagePicker() {
+    @objc public func showImagePicker() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let selectFromLibraryActionTitle = ImagePickerHelper.selectFromLibraryActionName.localizedInternalString(forType: self.classForCoder)
         let selectFromLibraryAction = UIAlertAction(title: selectFromLibraryActionTitle, style: .default) { [unowned self] _ in
@@ -56,7 +56,7 @@ final public class ImagePickerHelper: NSObject {
     /// Show the image view controller with a specific type.
     ///
     /// - Parameter type: The type of the image view controller.
-    func showImageViewController(of type: UIImagePickerControllerSourceType) {
+    @objc func showImageViewController(of type: UIImagePickerControllerSourceType) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = type
         imagePickerController.delegate = self

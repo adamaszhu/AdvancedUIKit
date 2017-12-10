@@ -6,6 +6,8 @@
 extension KeyboardHelper {
     
     /// System message.
-    static let inputViewError = "The input view doesn't exist."
+    @objc static let inputViewError = "The input view doesn't exist."
     
 }
+
+import Foundation

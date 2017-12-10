@@ -6,17 +6,17 @@
 extension InfiniteList: UIScrollViewDelegate {
     
     /// The y offset for reloading status.
-    var reloadingOffsetY: CGFloat {
+    @objc var reloadingOffsetY: CGFloat {
         return -reloadingBarHeight
     }
     
     /// The y offset for loading more status.
-    var loadingMoreOffsetY: CGFloat {
+    @objc var loadingMoreOffsetY: CGFloat {
         return max(contentSize.height + loadingMoreBarHeight - frame.height, 0)
     }
     
     /// The y offset for displaying the last item.
-    var bottomOffsetY: CGFloat {
+    @objc var bottomOffsetY: CGFloat {
         return max(contentSize.height - frame.height, 0)
     }
     

@@ -9,7 +9,7 @@ final public class NavigationBar: UINavigationBar {
     @IBOutlet public weak var viewController: UIViewController!
     
     /// Set the title of the navigation bar.
-    public var title: String? {
+    @objc public var title: String? {
         set {
             topItem?.title = newValue
         }
@@ -19,7 +19,7 @@ final public class NavigationBar: UINavigationBar {
     }
     
     /// Set the title of the left navigation button.
-    public var leftButtonTitle: String? {
+    @objc public var leftButtonTitle: String? {
         set {
             leftButton?.title = newValue
         }
@@ -29,7 +29,7 @@ final public class NavigationBar: UINavigationBar {
     }
     
     /// Set the title of the right navigation button.
-    public var rightButtonTitle: String? {
+    @objc public var rightButtonTitle: String? {
         set {
             rightButton?.title = newValue
         }
@@ -60,7 +60,7 @@ final public class NavigationBar: UINavigationBar {
     ///
     /// - parameter action: The action to be settled.
     /// - parameter target: The object.
-    public func setLeftButtonAction(action: Selector, withTarget target: AnyObject) {
+    @objc public func setLeftButtonAction(action: Selector, withTarget target: AnyObject) {
         leftButton?.action = action
         leftButton?.target = target
     }
@@ -75,7 +75,7 @@ final public class NavigationBar: UINavigationBar {
     /// - Parameters:
     ///   - action: The action to be settled.
     ///   - target: The object.
-    public func setRightButtonAction(action: Selector, withTarget target: AnyObject) {
+    @objc public func setRightButtonAction(action: Selector, withTarget target: AnyObject) {
         rightButton?.action = action
         rightButton?.target = target
     }

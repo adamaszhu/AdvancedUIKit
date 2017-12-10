@@ -6,7 +6,7 @@
 final public class Checkbox: UIButton {
     
     /// Switch the status of the checkbox
-    func switchStatus() {
+    @objc func switchStatus() {
         isSelected = !isSelected
     }
     

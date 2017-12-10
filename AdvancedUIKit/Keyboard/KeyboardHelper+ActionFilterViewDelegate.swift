@@ -5,7 +5,7 @@
 /// - date: 05/06/2017
 extension KeyboardHelper: ActionFilterViewDelegate {
 
-    func actionFilterViewDidInteract(_ actionFilterView: ActionFilterView) {
+    @objc func actionFilterViewDidInteract(_ actionFilterView: ActionFilterView) {
         hideKeyboard()
     }
     

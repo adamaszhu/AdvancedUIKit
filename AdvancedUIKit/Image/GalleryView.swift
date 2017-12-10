@@ -6,13 +6,13 @@
 public class GalleryView: PageView {
     
     /// The mode of the images displayed.
-    public var imageMode: UIViewContentMode
+    @objc public var imageMode: UIViewContentMode
     
     /// The max zoom level.
-    public var maxZoomLevel: CGFloat
+    @objc public var maxZoomLevel: CGFloat
     
     /// The images presented.
-    public var images: [UIImage] {
+    @objc public var images: [UIImage] {
         set {
             removeAllViews()
             newValue.forEach {
@@ -28,12 +28,12 @@ public class GalleryView: PageView {
     }
     
     /// The image presented.
-    public var currentImage: UIImage? {
+    @objc public var currentImage: UIImage? {
         return currentGalleryImage?.image
     }
     
     /// The gallery image presented.
-    var currentGalleryImage: GalleryImage? {
+    @objc var currentGalleryImage: GalleryImage? {
         guard let galleryImage = currentPage as? GalleryImage else {
             Logger.standard.log(error: GalleryView.subviewTypeError)
             return nil
@@ -42,7 +42,7 @@ public class GalleryView: PageView {
     }
     
     /// The size of the GalleryView
-    var imageSize: CGSize {
+    @objc var imageSize: CGSize {
         set {
             for index in 0 ..< subviews.count {
                 guard let galleryImage = subviews[index] as? GalleryImage else {
@@ -63,7 +63,7 @@ public class GalleryView: PageView {
     /// Add an image to the view.
     ///
     /// - Parameter image: The image to be added.
-    public func add(image: UIImage) {
+    @objc public func add(image: UIImage) {
         let galleryImage = GalleryImage()
         galleryImage.image = image
         galleryImage.maxZoomLevel = maxZoomLevel
@@ -76,17 +76,17 @@ public class GalleryView: PageView {
     /// - Parameters:
     ///   - index: The index of the new image.
     ///   - image: The image. Any object other than UIImage object will be replaced by a default image.
-    public func refresh(_ image: UIImage, atIndex index: Int) {
+    @objc public func refresh(_ image: UIImage, atIndex index: Int) {
         currentGalleryImage?.image = image
     }
     
     /// Show previous image
-    public func showPreviousImage() {
+    @objc public func showPreviousImage() {
         switchToPreviousPage()
     }
     
     /// Show next image
-    public func showNextImage() {
+    @objc public func showNextImage() {
         switchToNextPage()
     }
     

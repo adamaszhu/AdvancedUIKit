@@ -5,7 +5,7 @@
 /// - date: 19/06/2017
 extension ExpandableMapView: ExpandableView {
     
-    var isExpanded: Bool {
+    @objc var isExpanded: Bool {
         guard let _ = superview else {
             Logger.standard.log(error: ExpandableMapView.superviewError)
             return false
@@ -13,7 +13,7 @@ extension ExpandableMapView: ExpandableView {
         return superview == window
     }
     
-    public func expand() {
+    @objc public func expand() {
         guard !isExpanded, isExpandable else {
             Logger.standard.log(warning: ExpandableMapView.expandingWarning)
             return
@@ -23,11 +23,11 @@ extension ExpandableMapView: ExpandableView {
             return
         }
         saveOriginalConstraints(of: self)
-        animate(withChange: { [unowned self] _ in
+        animate(withChange: { [unowned self] in
             self.frame = window.bounds
             self.collapseButton.alpha = 1
             self.collapseButtonBackgroundView.alpha = 1
-            }, withPreparation: { [unowned self] _ in
+            }, withPreparation: { [unowned self] in
                 self.gestureFilterView.isHidden = true
                 self.moveToWindow(of: self)
                 self.collapseButton.isHidden = false
@@ -35,14 +35,14 @@ extension ExpandableMapView: ExpandableView {
                 self.collapseButton.isUserInteractionEnabled = false
                 self.collapseButtonBackgroundView.isHidden = false
                 self.collapseButtonBackgroundView.alpha = 0
-            }, withCompletion: { [unowned self] _ in
+            }, withCompletion: { [unowned self] in
                 self.collapseButton.alpha = 1
                 self.collapseButton.isUserInteractionEnabled = true
                 self.collapseButtonBackgroundView.alpha = 1
         })
     }
     
-    public func collapse() {
+    @objc public func collapse() {
         guard isExpanded, isExpandable else {
             Logger.standard.log(warning: ExpandableMapView.collapsingWarning)
             return
@@ -51,15 +51,15 @@ extension ExpandableMapView: ExpandableView {
             Logger.standard.log(error: ExpandableMapView.windowError)
             return
         }
-        animate(withChange: { [unowned self] _ in
+        animate(withChange: { [unowned self] in
             self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
             self.collapseButton.alpha = 0
             self.collapseButtonBackgroundView.alpha = 0
-            }, withPreparation: { [unowned self] _ in
+            }, withPreparation: { [unowned self] in
                 self.collapseButton.alpha = 1
                 self.collapseButton.isUserInteractionEnabled = false
                 self.collapseButtonBackgroundView.alpha = 1
-            }, withCompletion: { [unowned self] _ in
+            }, withCompletion: { [unowned self] in
                 self.collapseButton.alpha = 1
                 self.collapseButton.isUserInteractionEnabled = true
                 self.collapseButton.isHidden = true

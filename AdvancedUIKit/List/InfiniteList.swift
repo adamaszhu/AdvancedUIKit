@@ -9,10 +9,10 @@ public class InfiniteList: UITableView {
     public var infiniteListDelegate: InfiniteListDelegate?
     
     /// The item amount of each page.
-    public var pageSize: Int
+    @objc public var pageSize: Int
     
     /// Whether the list can be edited or not.
-    public var isEditable: Bool
+    @objc public var isEditable: Bool
     
     /// The items displayed on the screen.
     var items: [InfiniteItem]
@@ -21,19 +21,19 @@ public class InfiniteList: UITableView {
     var cellTypes: [InfiniteCellType]
     
     /// The empty view displayed if no item is retieved.
-    var emptyState: UIView?
+    @objc var emptyState: UIView?
     
     /// The reloading bar at the top of the list. If it is nil, then reload function will be disabled.
-    var reloadingBar: UIView?
+    @objc var reloadingBar: UIView?
     
     /// The loading more bar at the bottom of the list. If it is nil, then load more function will be disabled.
-    var loadingMoreBar: UIView?
+    @objc var loadingMoreBar: UIView?
     
     /// The page amount.
-    var pageAmount: Int
+    @objc var pageAmount: Int
     
     /// The index of cell that is currently expanded.
-    var expandedCellIndexPath: IndexPath? {
+    @objc var expandedCellIndexPath: IndexPath? {
         didSet {
             beginUpdates()
             endUpdates()
@@ -53,7 +53,7 @@ public class InfiniteList: UITableView {
     /// - Parameters:
     ///   - nib: The nib file.
     ///   - type: The item cell type.
-    public func register(_ type: InfiniteCell.Type, with nib: UINib) {
+    @objc public func register(_ type: InfiniteCell.Type, with nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
         }
@@ -69,7 +69,7 @@ public class InfiniteList: UITableView {
     /// Register the empty state view for the InfiniteList.
     ///
     /// - Parameter nib: The nib file containing the view.
-    public func registerEmptyState(with nib: UINib) {
+    @objc public func registerEmptyState(with nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
         }
@@ -82,7 +82,7 @@ public class InfiniteList: UITableView {
     }
     
     /// Show the empty state.
-    func showEmptyState() {
+    @objc func showEmptyState() {
         guard let emptyState = emptyState else {
             Logger.standard.log(error: InfiniteList.emptyStateRegistrationError)
             return
@@ -93,14 +93,14 @@ public class InfiniteList: UITableView {
         }
         emptyState.animate(withChange: {
             emptyState.alpha = 1
-        }, withPreparation: { [unowned self] _ in
+        }, withPreparation: { [unowned self] in
             emptyState.alpha = 0
             self.addSubview(emptyState)
         })
     }
     
     /// Hide the empty state.
-    func hideEmptyState() {
+    @objc func hideEmptyState() {
         guard let emptyState = emptyState else {
             Logger.standard.log(error: InfiniteList.emptyStateRegistrationError)
             return

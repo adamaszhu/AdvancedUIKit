@@ -28,7 +28,7 @@ final public class DeviceHelper: NSObject {
     ///
     /// - Parameter address: The address to be shown.
     public func showMap(ofAddress address: String) {
-        let formattedAddress = address.replacingOccurrences(of: .space, with: .plus)
+        let formattedAddress = address.replacingOccurrences(of: String.space, with: String.plus)
         guard let mapURL = URL(string: "\(DeviceHelper.mapPrefix)\(formattedAddress)") else {
             Logger.standard.log(info: DeviceHelper.addressError, withDetail: address)
             return

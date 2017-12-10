@@ -6,10 +6,10 @@
 public class PageView: UIScrollView {
     
     /// The page controller.
-    var pageControl: UIPageControl
+    @objc var pageControl: UIPageControl
     
     /// Whether the paging point should be shown or not.
-    public var shouldShowPageControl: Bool {
+    @objc public var shouldShowPageControl: Bool {
         set {
             pageControl.isHidden = !newValue
         }
@@ -19,12 +19,12 @@ public class PageView: UIScrollView {
     }
     
     /// The index of the current page.
-    public var currentPageIndex: Int {
+    @objc public var currentPageIndex: Int {
         return pageControl.currentPage
     }
     
     /// The current page presented.
-    public var currentPage: UIView? {
+    @objc public var currentPage: UIView? {
         guard 0 ..< pageControl.numberOfPages ~= currentPageIndex else {
             Logger.standard.log(error: PageView.pageIndexError)
             return nil
@@ -33,7 +33,7 @@ public class PageView: UIScrollView {
     }
     
     /// The buttom bargin of the page control.
-    public var pageControlButtomMargin: CGFloat {
+    @objc public var pageControlButtomMargin: CGFloat {
         set {
             pageControl.frame.origin = .init(x: (frame.width - pageControl.frame.width) / 2, y: frame.height - pageControl.frame.height - newValue)
         }
@@ -45,7 +45,7 @@ public class PageView: UIScrollView {
     /// Add a new view.
     ///
     /// - Parameter view: The view to be added.
-    public func add(_ view: UIView) {
+    @objc public func add(_ view: UIView) {
         pageControl.numberOfPages = pageControl.numberOfPages + 1
         view.frame = .init(x: CGFloat(pageControl.numberOfPages - 1) * frame.width, y: 0, width: frame.width, height: frame.height)
         addSubview(view)
@@ -57,7 +57,7 @@ public class PageView: UIScrollView {
     /// - Parameters:
     ///   - view: The view to be replaced.
     ///   - index: The index of the replaced view.
-    public func replace(_ view: UIView, atIndex index: Int) {
+    @objc public func replace(_ view: UIView, atIndex index: Int) {
         guard 0 ..< pageControl.numberOfPages ~= index else {
             Logger.standard.log(error: PageView.pageIndexError)
             return
@@ -70,7 +70,7 @@ public class PageView: UIScrollView {
     /// Remove a view.
     ///
     /// - Parameter index: The index of the view to be removed.
-    public func removeView(atIndex index: Int) {
+    @objc public func removeView(atIndex index: Int) {
         guard 0 ..< pageControl.numberOfPages ~= index else {
             Logger.standard.log(error: PageView.pageIndexError)
             return
@@ -89,7 +89,7 @@ public class PageView: UIScrollView {
     }
     
     /// Remove all sub views.
-    public func removeAllViews() {
+    @objc public func removeAllViews() {
         subviews.forEach {
             $0.removeFromSuperview()
         }
@@ -98,7 +98,7 @@ public class PageView: UIScrollView {
     }
     
     /// Switch to next page.
-    public func switchToNextPage() {
+    @objc public func switchToNextPage() {
         guard currentPageIndex != pageControl.numberOfPages - 1 else {
             Logger.standard.log(warning: PageView.lastPageWarning)
             return
@@ -107,7 +107,7 @@ public class PageView: UIScrollView {
     }
     
     /// Switch to previous page.
-    public func switchToPreviousPage() {
+    @objc public func switchToPreviousPage() {
         guard currentPageIndex != 0 else {
             Logger.standard.log(warning: PageView.firstPageWarning)
             return
@@ -120,7 +120,7 @@ public class PageView: UIScrollView {
     /// - Parameters:
     ///   - index: The page index of the news.
     ///   - shouldAnimate: Whether the animation should be allowed or not.
-    public func switchToPage(withIndex index: Int, withAnimation shouldAnimate: Bool = true) {
+    @objc public func switchToPage(withIndex index: Int, withAnimation shouldAnimate: Bool = true) {
         guard 0 ..< pageControl.numberOfPages ~= index else {
             Logger.standard.log(error: PageView.pageIndexError)
             return
@@ -130,7 +130,7 @@ public class PageView: UIScrollView {
             contentOffset = .init(x: CGFloat(index) * frame.width, y: 0)
             return
         }
-        animate(withChange: { [unowned self] _ in
+        animate(withChange: { [unowned self] in
             self.contentOffset = .init(x: CGFloat(index) * self.frame.width, y: 0)
         })
     }

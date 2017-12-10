@@ -12,7 +12,7 @@ public extension UIApplication {
     private static let navigationWarning = "The window doesn't have a navigation controller."
     
     /// The current view controller.
-    public var currentViewController: UIViewController? {
+    @objc public var currentViewController: UIViewController? {
         if let navigationController = rootViewController as? UINavigationController {
             return navigationController.viewControllers.last ?? navigationController
         } else {
@@ -21,7 +21,7 @@ public extension UIApplication {
     }
     
     /// The root view controller.
-    public var rootViewController: UIViewController? {
+    @objc public var rootViewController: UIViewController? {
         guard let window = keyWindow else {
             Logger.standard.log(error: UIApplication.windowError)
             return nil

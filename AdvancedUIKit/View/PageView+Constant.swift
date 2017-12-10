@@ -6,14 +6,14 @@
 extension PageView {
     
     /// The default buttom margin of the page control.
-    static let defaultPageControlButtomMargin = CGFloat(20)
+    @objc static let defaultPageControlButtomMargin = CGFloat(20)
     
     /// System error.
-    static let pageIndexError = "The page does not exist."
+    @objc static let pageIndexError = "The page does not exist."
     
     /// System warning.
-    static let firstPageWarning = "The page is the first page."
-    static let lastPageWarning = "The page is the last page."
+    @objc static let firstPageWarning = "The page is the first page."
+    @objc static let lastPageWarning = "The page is the last page."
 
 }
 
