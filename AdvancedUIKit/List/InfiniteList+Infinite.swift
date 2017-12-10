@@ -6,19 +6,19 @@
 public extension InfiniteList {
     
     /// The height of the reloading bar.
-    var reloadingBarHeight: CGFloat {
+    @objc var reloadingBarHeight: CGFloat {
         return reloadingBar?.frame.height ?? 0
     }
     
     /// The height of the loading more bar.
-    var loadingMoreBarHeight: CGFloat {
+    @objc var loadingMoreBarHeight: CGFloat {
         return loadingMoreBar?.frame.height ?? 0
     }
     
     /// Register the load more view for the InfiniteList.
     ///
     /// - Parameter nib: The nib file containing the view.
-    public func registerLoadingMoreBar(with nib: UINib) {
+    @objc public func registerLoadingMoreBar(with nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
         }
@@ -33,7 +33,7 @@ public extension InfiniteList {
     /// Register the reload view for the InfiniteList.
     ///
     /// - Parameter nib: The nib file containing the view.
-    public func registerReloadingBar(with nib: UINib) {
+    @objc public func registerReloadingBar(with nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
         }
@@ -46,7 +46,7 @@ public extension InfiniteList {
     }
     
     /// Perform drag and reload function programmatically.
-    public func startReloading() {
+    @objc public func startReloading() {
         guard let _ = reloadingBar else {
             Logger.standard.log(error: InfiniteList.reloadingBarRegistrationError)
             return
@@ -54,9 +54,9 @@ public extension InfiniteList {
         guard status.isReloadingAvailable else {
             return
         }
-        animate(withChange: { [unowned self] _ in
+        animate(withChange: { [unowned self] in
             self.contentOffset = .init(x: 0, y: self.reloadingOffsetY)
-        }, withCompletion: { [unowned self] _ in
+        }, withCompletion: { [unowned self] in
             self.status = .reloading
             self.infiniteListDelegate?.infiniteListDidRequireReload(self)
         })
@@ -81,13 +81,13 @@ public extension InfiniteList {
     }
     
     /// Add the reloading bar to the window.
-    func addReloadingBar() {
+    @objc func addReloadingBar() {
         guard let reloadingBar = reloadingBar, reloadingBar.superview == nil else {
             return
         }
         addSubview(reloadingBar)
         let height = reloadingBar.frame.height
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { [unowned self] _ in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { [unowned self] in
             // Wait for the subview to be resized.
             reloadingBar.frame.size = .init(width: reloadingBar.frame.width, height: height)
             // Adjust the scroll offset for the init status.
@@ -97,7 +97,7 @@ public extension InfiniteList {
     }
     
     /// Add the loading more bar to the window.
-    func addLoadingMoreBar() {
+    @objc func addLoadingMoreBar() {
         guard let loadingMoreBar = loadingMoreBar, loadingMoreBar.superview == nil else {
             return
         }

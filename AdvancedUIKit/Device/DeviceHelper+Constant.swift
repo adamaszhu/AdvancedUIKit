@@ -6,15 +6,17 @@
 extension DeviceHelper {
     
     /// User error.
-    static let dialError = "DialError"
-    static let mapError = "MapError"
+    @objc static let dialError = "DialError"
+    @objc static let mapError = "MapError"
     
     /// System error.
-    static let phoneNumberError = "The phone number is invalid."
-    static let addressError = "The address is incorrect."
+    @objc static let phoneNumberError = "The phone number is invalid."
+    @objc static let addressError = "The address is incorrect."
     
     /// Function url.
-    static let dailPrefix = "telprompt://"
-    static let mapPrefix = "http://maps.apple.com/?q="
+    @objc static let dailPrefix = "telprompt://"
+    @objc static let mapPrefix = "http://maps.apple.com/?q="
     
 }
+
+import Foundation

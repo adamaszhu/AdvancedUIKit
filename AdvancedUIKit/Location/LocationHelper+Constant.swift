@@ -6,13 +6,15 @@
 extension LocationHelper {
     
     /// The info key required in the Info.plist file.
-    static let alwaysDescriptionKey = "NSLocationAlwaysUsageDescription"
-    static let whenInUseDescriptionKey = "NSLocationWhenInUseUsageDescription"
+    @objc static let alwaysDescriptionKey = "NSLocationAlwaysUsageDescription"
+    @objc static let whenInUseDescriptionKey = "NSLocationWhenInUseUsageDescription"
     
     /// User error.
-    static let authorizationError = "AuthorizationError"
+    @objc static let authorizationError = "AuthorizationError"
     
     /// System error.
-    static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
+    @objc static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
     
 }
+
+import Foundation

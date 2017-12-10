@@ -12,7 +12,7 @@ extension KeyboardHelper {
     private static let keyboardInfoError = "The information of the keyboard cannot be retrieved."
     
     /// Start observing the keyboard.
-    public func startObservingKeyboard() {
+    @objc public func startObservingKeyboard() {
         rootView.addSubview(actionFilterView)
         actionFilterView.isHidden = true
         notificationCenter.addObserver(self, selector: #selector(willShowKeyboard), name: .UIKeyboardWillShow, object: nil)
@@ -21,7 +21,7 @@ extension KeyboardHelper {
     }
     
     /// Stop observing the keyboard and perform the push action.
-    public func stopObservingKeyboard() {
+    @objc public func stopObservingKeyboard() {
         notificationCenter.removeObserver(self)
         currentInputView = nil
         actionFilterView.removeFromSuperview()
@@ -30,7 +30,7 @@ extension KeyboardHelper {
     /// Dismiss the keyboard. It only happens when the view is forced to remove focus or the hide keyboard method has been called.
     ///
     /// - Parameter notification: The notification of the keyboard action.
-    public func willHideKeyboard(with notification: NSNotification) {
+    @objc public func willHideKeyboard(with notification: NSNotification) {
         actionFilterView.isHidden = true
         willChangeKeyboardFrame(with: notification)
         adjustOffset()
@@ -39,7 +39,7 @@ extension KeyboardHelper {
     /// Show the keyboard.
     ///
     /// - Parameter notification: The notification of the keyboard action.
-    func willShowKeyboard(with notification: NSNotification) {
+    @objc func willShowKeyboard(with notification: NSNotification) {
         actionFilterView.isHidden = false
         willChangeKeyboardFrame(with: notification)
         adjustOffset()
@@ -48,7 +48,7 @@ extension KeyboardHelper {
     /// The frame of the keyboard will be changed. Get the height of the keyboard and duration while waiting for the adjustion.
     ///
     /// - Parameter notification: The notification of the keyboard action.
-    func willChangeKeyboardFrame(with notification: NSNotification) {
+    @objc func willChangeKeyboardFrame(with notification: NSNotification) {
         refreshKeyboardHeight(with: notification)
         refreshPushDuration(with: notification)
     }

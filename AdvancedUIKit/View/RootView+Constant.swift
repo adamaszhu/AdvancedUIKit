@@ -6,7 +6,9 @@
 extension RootView {
     
     /// System warning.
-    static let showingWarning = "The view has already been shown."
-    static let hidingWarning = "The view has already been hidden."
+    @objc static let showingWarning = "The view has already been shown."
+    @objc static let hidingWarning = "The view has already been hidden."
 
 }
+
+import Foundation

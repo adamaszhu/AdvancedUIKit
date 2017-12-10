@@ -1,21 +1,21 @@
 /// LocationHelper provides additional support for LocationManager.
 ///
 /// - author: Adamas
-/// - version: 1.0.4
+/// - version: 1.1.0
 /// - date: 08/12/2017
-final public class LocationHelper: CLLocationManager {
+open class LocationHelper: CLLocationManager {
     
     /// The delegate.
     public var locationHelperDelegate: LocationHelperDelegate?
     
     /// The type of authorization that has been requested.
-    var authorizingStatus: CLAuthorizationStatus
+    @objc var authorizingStatus: CLAuthorizationStatus
     
     /// The bundle.
     private let bundle: Bundle
     
     /// Which authorization is
-    public var isAlwaysAuthorizationAuthorized: Bool {
+    @objc public var isAlwaysAuthorizationAuthorized: Bool {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
             return true
@@ -25,7 +25,7 @@ final public class LocationHelper: CLLocationManager {
     }
     
     /// Whether the when in use authorization is authorized or not.
-    public var isWhenInUseAuthorizationAuthorized: Bool {
+    @objc public var isWhenInUseAuthorizationAuthorized: Bool {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             return true
@@ -35,7 +35,7 @@ final public class LocationHelper: CLLocationManager {
     }
     
     /// Whether the authorization is still not determinated or not.
-    public var isUnauthorized: Bool {
+    @objc public var isUnauthorized: Bool {
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             return true
@@ -47,7 +47,7 @@ final public class LocationHelper: CLLocationManager {
     /// CLLocationManager
     ///
     /// - Parameter bundle: The bundle where the Info.plist file exists.
-    public init(bundle: Bundle = Bundle.main) {
+    @objc public init(bundle: Bundle = Bundle.main) {
         authorizingStatus = .notDetermined
         self.bundle = bundle
         super.init()
@@ -62,7 +62,7 @@ final public class LocationHelper: CLLocationManager {
         return bundle.object(forInfoDictionaryKey: key) != nil
     }
     
-    public override func requestAlwaysAuthorization() {
+    open override func requestAlwaysAuthorization() {
         guard isUnauthorized else {
             locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizedInternalString(forType: LocationHelper.self))
             return
@@ -75,7 +75,7 @@ final public class LocationHelper: CLLocationManager {
         super.requestAlwaysAuthorization()
     }
     
-    public override func requestWhenInUseAuthorization() {
+    open override func requestWhenInUseAuthorization() {
         guard isUnauthorized else {
             locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizedInternalString(forType: LocationHelper.self))
             return

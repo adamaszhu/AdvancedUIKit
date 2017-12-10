@@ -9,7 +9,7 @@ final class ActionFilterView: UIView {
     var actionFilterViewDelegate: ActionFilterViewDelegate?
     
     /// A list of input view which should drag holes on the touch mask view.
-    var inputViews: [UIView]
+    @objc var inputViews: [UIView]
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         for inputView in inputViews {

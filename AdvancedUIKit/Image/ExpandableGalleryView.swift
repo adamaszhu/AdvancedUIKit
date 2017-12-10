@@ -6,10 +6,10 @@
 final public class ExpandableGalleryView: GalleryView {
     
     /// The gesture filter to expand the view.
-    let gestureFilterView: UIView
+    @objc let gestureFilterView: UIView
     
     /// The gesture used to collapse the view.
-    let collapseGestureRecognizer: UITapGestureRecognizer
+    @objc let collapseGestureRecognizer: UITapGestureRecognizer
     
     public required init?(coder aDecoder: NSCoder) {
         gestureFilterView = UIView()
@@ -53,13 +53,13 @@ final public class ExpandableGalleryView: GalleryView {
         }
     }
     
-    var originalSuperview: UIView!
+    @objc var originalSuperview: UIView!
     var originalZIndex: Int!
     var originalFrame: CGRect!
-    var originalFrameConstraints: [NSLayoutConstraint]!
-    var originalConstraints: [NSLayoutConstraint]!
+    @objc var originalFrameConstraints: [NSLayoutConstraint]!
+    @objc var originalConstraints: [NSLayoutConstraint]!
     
-    public var isExpandable: Bool {
+    @objc public var isExpandable: Bool {
         set {
             guard newValue else {
                 gestureFilterView.removeFromSuperview()

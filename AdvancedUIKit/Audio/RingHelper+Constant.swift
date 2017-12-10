@@ -6,10 +6,10 @@
 extension RingHelper {
     
     /// The default period between two rings or vibrations.
-    static let defaultRingPeriod = 1.5
+    public static let defaultRingPeriod = 1.5
     
     /// The system sound.
-    static let defaultSoundID = SystemSoundID(1022)
+    public static let defaultSoundID = SystemSoundID(1022)
     
     /// System error.
     static let soundNameError = "The sound file doesn't exist."

@@ -6,16 +6,16 @@
 final public class ExpandableMapView: MapView {
     
     /// The gesture filter to expand the view.
-    let gestureFilterView: UIView
+    @objc let gestureFilterView: UIView
     
     /// The button used to collapse the view.
-    let collapseButton: UIButton
+    @objc let collapseButton: UIButton
     
     /// The blur effect background of the collapse button.
-    let collapseButtonBackgroundView: UIVisualEffectView
+    @objc let collapseButtonBackgroundView: UIVisualEffectView
     
     /// The icon on the collapse button.
-    public var collapseIcon: UIImage? {
+    @objc public var collapseIcon: UIImage? {
         set {
             guard let newImage = newValue else {
                 return
@@ -31,7 +31,7 @@ final public class ExpandableMapView: MapView {
     }
     
     /// The origin of the collapse button.
-    public var collapseIconFrame: CGRect {
+    @objc public var collapseIconFrame: CGRect {
         set {
             collapseButton.frame = newValue
             collapseButtonBackgroundView.frame = newValue
@@ -42,7 +42,7 @@ final public class ExpandableMapView: MapView {
     }
     
     /// The radius of the background view.
-    public var collapseButtonBackgroundRadius: Int {
+    @objc public var collapseButtonBackgroundRadius: Int {
         set {
             collapseButtonBackgroundView.layer.cornerRadius = CGFloat(newValue)
             collapseButtonBackgroundView.clipsToBounds = true
@@ -53,7 +53,7 @@ final public class ExpandableMapView: MapView {
     }
     
     /// The background margin.
-    public var collapseButtonBackgroundMargin: Int {
+    @objc public var collapseButtonBackgroundMargin: Int {
         set {
             let margin = CGFloat(newValue)
             collapseButtonBackgroundView.frame.origin = .init(x: collapseButton.frame.origin.x - margin, y: collapseButton.frame.origin.y - margin)
@@ -80,13 +80,13 @@ final public class ExpandableMapView: MapView {
         gestureFilterView.addGestureRecognizer(expandGestureRecognizer)
     }
     
-    var originalSuperview: UIView!
+    @objc var originalSuperview: UIView!
     var originalZIndex: Int!
     var originalFrame: CGRect!
-    var originalFrameConstraints: [NSLayoutConstraint]!
-    var originalConstraints: [NSLayoutConstraint]!
+    @objc var originalFrameConstraints: [NSLayoutConstraint]!
+    @objc var originalConstraints: [NSLayoutConstraint]!
     
-    public var isExpandable: Bool {
+    @objc public var isExpandable: Bool {
         set {
             if newValue {
                 addSubview(gestureFilterView)

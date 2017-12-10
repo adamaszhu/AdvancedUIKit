@@ -8,7 +8,7 @@ public extension InfiniteList {
     /// Expand a specific cell.
     ///
     /// - Parameter index: The index of the cell.
-    public func expandCell(atIndex index: Int) {
+    @objc public func expandCell(atIndex index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         guard let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
             Logger.standard.log(warning: InfiniteList.cellExpansionWarning, withDetail: index)
@@ -26,7 +26,7 @@ public extension InfiniteList {
     /// Collapse a specific cell.
     ///
     /// - Parameter index: The index of the cell.
-    public func collapseCell(atIndex index: Int) {
+    @objc public func collapseCell(atIndex index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         guard let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
             Logger.standard.log(warning: InfiniteList.cellCollapsionWarning, withDetail: index)
@@ -41,7 +41,7 @@ public extension InfiniteList {
     }
     
     /// Collapse all cells.
-    public func collapseAllCells() {
+    @objc public func collapseAllCells() {
         guard let index = expandedCellIndexPath?.row else {
             Logger.standard.log(warning: InfiniteList.cellCollapsionWarning)
             return

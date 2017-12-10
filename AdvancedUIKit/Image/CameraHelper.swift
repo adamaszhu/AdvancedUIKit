@@ -1,9 +1,9 @@
 /// CameraHelper is used to access the information about the camera.
 ///
 /// - author: Adamas
-/// - version: 1.0.4
+/// - version: 1.1.0
 /// - date: 08/12/2017
-final public class CameraHelper {
+open class CameraHelper {
     
     /// The delegate.
     public var cameraHelperDelegate: CameraHelperDelegate?
@@ -13,7 +13,7 @@ final public class CameraHelper {
     
     /// Whether the camera is enabled by the user or not.
     public var isCameraAuthorized: Bool {
-        let authorizedStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        let authorizedStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         switch authorizedStatus {
         case .authorized:
             return true
@@ -24,7 +24,7 @@ final public class CameraHelper {
     
     /// Whether the camera authorization is still not determinated or not.
     public var isCameraUnauthorized: Bool {
-        let authorizedStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        let authorizedStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         switch authorizedStatus {
         case .notDetermined:
             return true
@@ -65,7 +65,7 @@ final public class CameraHelper {
             Logger.standard.log(error: CameraHelper.descriptionKeyError, withDetail: CameraHelper.cameraDescriptionKey)
             return
         }
-        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { [unowned self] (result) in
+        AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { [unowned self] (result) in
             self.cameraHelperDelegate?.cameraHelper(self, didAuthorizeCamera: result)
         })
     }

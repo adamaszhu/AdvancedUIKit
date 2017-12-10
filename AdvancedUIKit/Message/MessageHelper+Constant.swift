@@ -6,17 +6,17 @@
 extension MessageHelper {
     
     /// Default message title.
-    static var successTitle: String { return "" }
-    static var warningTitle: String { return "Warning".localizedInternalString(forType: MessageHelper.self) }
-    static var errorTitle: String { return "Error".localizedInternalString(forType: MessageHelper.self) }
+    public static var successTitle: String { return "" }
+    public static var warningTitle: String { return "Warning".localizedInternalString(forType: MessageHelper.self) }
+    public static var errorTitle: String { return "Error".localizedInternalString(forType: MessageHelper.self) }
     
     /// The name of the button.
-    static var infoConfirmButtonName: String { return "Ok".localizedInternalString(forType: MessageHelper.self) }
-    static var warningConfirmButtonName: String { return "Yes".localizedInternalString(forType: MessageHelper.self) }
-    static var warningCancelButtonName: String { return "No".localizedInternalString(forType: MessageHelper.self) }
-    static var errorConfirmButtonName: String { return "Ok".localizedInternalString(forType: MessageHelper.self) }
-    static var inputConfirmButtonName: String { return "Done".localizedInternalString(forType: MessageHelper.self) }
-    static var inputCancelButtonName: String { return "Cancel".localizedInternalString(forType: MessageHelper.self) }
+    public static var infoConfirmButtonName: String { return "Ok".localizedInternalString(forType: MessageHelper.self) }
+    public static var warningConfirmButtonName: String { return "Yes".localizedInternalString(forType: MessageHelper.self) }
+    public static var warningCancelButtonName: String { return "No".localizedInternalString(forType: MessageHelper.self) }
+    public static var errorConfirmButtonName: String { return "Ok".localizedInternalString(forType: MessageHelper.self) }
+    public static var inputConfirmButtonName: String { return "Done".localizedInternalString(forType: MessageHelper.self) }
+    public static var inputCancelButtonName: String { return "Cancel".localizedInternalString(forType: MessageHelper.self) }
     
     /// Input hint.
     static var inputHint: String { return "InputHint".localizedInternalString(forType: MessageHelper.self) }

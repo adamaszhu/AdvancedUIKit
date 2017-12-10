@@ -9,7 +9,7 @@ final public class DataPicker: RootView {
     public var dataPickerDelegate: DataPickerDelegate?
     
     /// The title of the picker view.
-    public var title: String? {
+    @objc public var title: String? {
         set {
             titleLabel.text = newValue
         }
@@ -19,7 +19,7 @@ final public class DataPicker: RootView {
     }
     
     /// The background color of the title.
-    public var titleBackgroundColor: UIColor? {
+    @objc public var titleBackgroundColor: UIColor? {
         set {
             titleLabel.backgroundColor = newValue
             doneButton.backgroundColor = newValue
@@ -47,7 +47,7 @@ final public class DataPicker: RootView {
     }
     
     /// The view that is used to control the picker.
-    public var controller: UIView?
+    @objc public var controller: UIView?
     
     /// The original frame of the controller.
     private var controllerOriginalFrame: CGRect?
@@ -76,7 +76,7 @@ final public class DataPicker: RootView {
     /// - Parameters:
     ///   - value: The value to be selected.
     ///   - index: The index of the column.
-    public func selectValue(_ value: String, atColumn index: Int = 0) {
+    @objc public func selectValue(_ value: String, atColumn index: Int = 0) {
         guard 0 ..< columns.count ~= index else {
             Logger.standard.log(error: DataPicker.columnError)
             return
@@ -93,13 +93,13 @@ final public class DataPicker: RootView {
     }
     
     /// The selected values are confirmed by clicking the done button.
-    func confirmSelection() {
+    @objc func confirmSelection() {
         var selections = [String]()
         for index in 0 ..< columns.count {
             selections.append(columns[index].items[pickerView.selectedRow(inComponent: index)].value)
         }
         hide()
-        DispatchQueue.main.asyncAfter(deadline: .now() + DataPicker.animationDuration) { [unowned self] _ in
+        DispatchQueue.main.asyncAfter(deadline: .now() + DataPicker.animationDuration) { [unowned self]  in
             // Wait for finishing the hide animation
             self.dataPickerDelegate?.dataPicker(dataPicker: self, didSelectValue: selections)
         }
@@ -119,13 +119,13 @@ final public class DataPicker: RootView {
             Logger.standard.log(warning: DataPicker.hidingWarning)
             return
         }
-        animate(withChange: { [unowned self] _ in
+        animate(withChange: { [unowned self] in
             self.frame.origin = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
             // Push down the controller
             if let controllerOriginalFrame = self.controllerOriginalFrame {
                 self.controller?.frame = controllerOriginalFrame
             }
-            }, withDuration: DataPicker.animationDuration, withPreparation: { [unowned self] _ in
+            }, withDuration: DataPicker.animationDuration, withPreparation: { [unowned self] in
                 self.frame = self.originalFrame
         }) {
             super.hide()
@@ -140,13 +140,13 @@ final public class DataPicker: RootView {
         }
         controllerOriginalFrame = controller?.frame
         let pushDistance = self.pushDistance - 1
-        animate(withChange: { [unowned self] _ in
+        animate(withChange: { [unowned self] in
             // Push up the controller
             if let controllerOrigin = self.controllerOriginalFrame?.origin {
                 self.controller?.frame.origin = .init(x: controllerOrigin.x, y: controllerOrigin.y + pushDistance)
             }
             self.frame = self.originalFrame
-            }, withDuration: DataPicker.animationDuration, withPreparation: { [unowned self] _ in
+            }, withDuration: DataPicker.animationDuration, withPreparation: { [unowned self] in
                 self.frame.origin = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
                 self.isHidden = false
         }) {

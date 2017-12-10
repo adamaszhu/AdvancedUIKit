@@ -19,12 +19,12 @@ final class ViewViewController: UIViewController {
     }
     
     @IBAction func animate(_ sender: Any) {
-        animationButton.animate(withChange: { [unowned self] _ in
+        animationButton.animate(withChange: { [unowned self] in
             self.animationButton.frame.origin = .init(x: self.animationButtonOriginalFrame.origin.x, y: self.animationButtonOriginalFrame.origin.y - self.animationOffset)
-        }, withPreparation: { [unowned self] _ in
+        }, withPreparation: { [unowned self] in
             self.animationButton.frame = self.animationButtonOriginalFrame
-        }) { [unowned self] _ in
-            self.animationButton.animate(withChange: { [unowned self] _ in
+        }) { [unowned self] in
+            self.animationButton.animate(withChange: { [unowned self] in
                 self.animationButton.frame = self.animationButtonOriginalFrame
             })
         }

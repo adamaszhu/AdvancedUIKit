@@ -22,7 +22,7 @@ final class NotificationViewController: UIViewController {
     
     private func showLocalNotification() {
         let dispatchTime = DispatchTime.now() + notificationDelay
-        DispatchQueue.main.asyncAfter(deadline: dispatchTime) { [unowned self] _ in
+        DispatchQueue.main.asyncAfter(deadline: dispatchTime) { [unowned self] in
             self.notificationHelper.createLocalNotification(withTitle: self.notification.title, withContent: self.notification.content)
             self.backgroundTask = UIBackgroundTaskInvalid
             UIApplication.shared.endBackgroundTask(self.backgroundTask)

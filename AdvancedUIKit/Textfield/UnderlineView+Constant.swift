@@ -6,6 +6,8 @@
 extension UnderlineView {
     
     /// System error.
-    static let initError = "Constructor init(coder) shouldn't be called."
+    @objc static let initError = "Constructor init(coder) shouldn't be called."
     
 }
+
+import Foundation

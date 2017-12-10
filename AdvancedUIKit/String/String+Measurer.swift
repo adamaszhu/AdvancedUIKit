@@ -13,7 +13,7 @@ extension String {
     /// - Parameter font: The font.
     /// - Returns: The width.
     func measuredWidth(withFont font: UIFont) -> CGFloat {
-        return self.size(attributes: [NSFontAttributeName: font]).width
+        return self.size(withAttributes: [NSAttributedStringKey.font: font]).width
     }
     
     /// Get the width of a string with a specific font.
@@ -21,7 +21,7 @@ extension String {
     /// - Parameter font: The font.
     /// - Returns: The height.
     func measuredHeight(withFont font: UIFont) -> CGFloat {
-        return self.size(attributes: [NSFontAttributeName: font]).height
+        return self.size(withAttributes: [NSAttributedStringKey.font: font]).height
     }
     
     /// Get the actual line amount displayed on the screen.
@@ -43,7 +43,7 @@ extension String {
     /// - Returns: The actual height displayed on the view.
     func measuredHeight(withFont font: UIFont, inView view: UIView) -> CGFloat {
         let maxBounds = CGSize(width: view.frame.width, height: .greatestFiniteMagnitude)
-        let bounds = self.boundingRect(with: maxBounds, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        let bounds = self.boundingRect(with: maxBounds, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
         return bounds.height
     }
     
@@ -99,7 +99,7 @@ extension String {
             // Extra a line from a extra long word from the beginning of the remainLine. Only one word is left.
             var word = words.first ?? .empty
             while width > view.frame.width {
-                word = word.substring(to: word.index(word.endIndex, offsetBy: -1))
+                word = .init(word[..<word.index(word.endIndex, offsetBy: -1)])
                 width = word.measuredWidth(withFont: font)
             }
             lines.append(word)

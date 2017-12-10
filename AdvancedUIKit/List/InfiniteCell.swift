@@ -16,25 +16,25 @@ open class InfiniteCell: UITableViewCell {
     }
     
     /// Whether the cell can be expanded or not.
-    var isExpandable: Bool {
+    @objc var isExpandable: Bool {
         return additionalView != nil
     }
     
     /// The action of clicking the switch button.
-    var switchExpandStatusAction: (() -> Void)!
+    @objc var switchExpandStatusAction: (() -> Void)!
     
     /// Render the cell with an item.
     /// - parameter item: The item to be rendered.
-    open func render(withItem item: Any) { }
+    @objc open func render(withItem item: Any) { }
     
     /// Expand the cell.
-    open func expand() { }
+    @objc open func expand() { }
     
     /// Collapse the cell.
-    open func collapse() { }
+    @objc open func collapse() { }
     
     /// Switch the expand status of current cell.
-    func switchExpandStatus() {
+    @objc func switchExpandStatus() {
         switchExpandStatusAction()
     }
     
