@@ -1,9 +1,9 @@
 /// LocationHelper provides additional support for LocationManager.
 ///
 /// - author: Adamas
-/// - version: 1.0.4
+/// - version: 1.1.0
 /// - date: 08/12/2017
-final public class LocationHelper: CLLocationManager {
+open class LocationHelper: CLLocationManager {
     
     /// The delegate.
     public var locationHelperDelegate: LocationHelperDelegate?
@@ -62,7 +62,7 @@ final public class LocationHelper: CLLocationManager {
         return bundle.object(forInfoDictionaryKey: key) != nil
     }
     
-    public override func requestAlwaysAuthorization() {
+    open override func requestAlwaysAuthorization() {
         guard isUnauthorized else {
             locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizedInternalString(forType: LocationHelper.self))
             return
@@ -75,7 +75,7 @@ final public class LocationHelper: CLLocationManager {
         super.requestAlwaysAuthorization()
     }
     
-    public override func requestWhenInUseAuthorization() {
+    open override func requestWhenInUseAuthorization() {
         guard isUnauthorized else {
             locationHelperDelegate?.locationHelper(self, didCatchError: LocationHelper.authorizationError.localizedInternalString(forType: LocationHelper.self))
             return

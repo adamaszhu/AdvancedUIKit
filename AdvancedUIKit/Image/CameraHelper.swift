@@ -1,9 +1,9 @@
 /// CameraHelper is used to access the information about the camera.
 ///
 /// - author: Adamas
-/// - version: 1.0.4
+/// - version: 1.1.0
 /// - date: 08/12/2017
-final public class CameraHelper {
+open class CameraHelper {
     
     /// The delegate.
     public var cameraHelperDelegate: CameraHelperDelegate?

@@ -1,9 +1,9 @@
 /// DeviceInfoAccessor is used to access info related to the device.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
+/// - version: 1.1.0
 /// - date: 29/05/2017
-final public class DeviceInfoAccessor {
+open class DeviceInfoAccessor {
     
     /// The singleton instance in the system.
     public static let shared: DeviceInfoAccessor = .init()

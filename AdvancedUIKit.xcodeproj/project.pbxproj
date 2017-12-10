@@ -507,9 +507,9 @@
 		2822A3341EE0EC3B00FAA8E3 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */,
 				2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */,
 				2822A3381EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift */,
+				2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -548,19 +548,19 @@
 		2846A9971EE7C0FA007D4226 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */,
-				2846A9AA1EE7C660007D4226 /* MapViewDelegate+Optional.swift */,
-				2846A9AE1EE7D17D007D4226 /* MapViewPointPosition.swift */,
-				2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */,
-				2846A9AC1EE7C754007D4226 /* MKAnnotationView+Renderer.swift */,
-				2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */,
-				2846A99A1EE7C0FA007D4226 /* MapView.swift */,
-				283844751F69F65400AAD1E0 /* MapView+Constant.swift */,
-				280E15331EE924D3003BF109 /* MapView+LocationHelperDelegate.swift */,
-				288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */,
-				421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */,
 				2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */,
 				42FE508E1EF7D33C009C0BD7 /* ExpandableMapView+Expandable.swift */,
+				2846A99A1EE7C0FA007D4226 /* MapView.swift */,
+				283844751F69F65400AAD1E0 /* MapView+Constant.swift */,
+				421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */,
+				280E15331EE924D3003BF109 /* MapView+LocationHelperDelegate.swift */,
+				2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */,
+				2846A9AA1EE7C660007D4226 /* MapViewDelegate+Optional.swift */,
+				2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */,
+				2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */,
+				2846A9AE1EE7D17D007D4226 /* MapViewPointPosition.swift */,
+				2846A9AC1EE7C754007D4226 /* MKAnnotationView+Renderer.swift */,
+				288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -582,14 +582,14 @@
 				283844771F69F68600AAD1E0 /* CustomizedMessageHelper+Constant.swift */,
 				42EA08BC1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift */,
 				284E5C471EDD103400C3CC86 /* MessageHelper.strings */,
-				284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */,
-				283844791F69F6AD00AAD1E0 /* SystemMessageHelper+Constant.swift */,
-				42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */,
 				42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */,
 				42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */,
 				284E5C4E1EDD104C00C3CC86 /* MessageHelperDelegate.swift */,
 				284E5C571EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift */,
 				284E5C4F1EDD104C00C3CC86 /* MessageType.swift */,
+				284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */,
+				283844791F69F6AD00AAD1E0 /* SystemMessageHelper+Constant.swift */,
+				42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
