@@ -1,7 +1,7 @@
 /// DeviceHelper is used to perform an user interaction. Such as sending an email or making a phone call.
 ///
-/// - version: 1.0.0
-/// - date: 17/02/2017
+/// - version: 1.1.0
+/// - date: 14/12/2017
 final public class DeviceHelper: NSObject {
     
     /// The singleton instance in the system.
@@ -12,6 +12,17 @@ final public class DeviceHelper: NSObject {
     
     /// The application used to do the action.
     private let application: UIApplication
+    
+    /// Open a website.
+    ///
+    /// - Parameter link: The website address.
+    public func showWebsite(withLink link: String) {
+        guard let websiteURL = URL(string: link) else {
+            Logger.standard.log(info: DeviceHelper.linkError, withDetail: link)
+            abort()
+        }
+        open(websiteURL, withError: DeviceHelper.BrowserError)
+    }
     
     /// Make a phone call.
     ///

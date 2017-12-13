@@ -1,2 +1,3 @@
 "DialError" = "The device cannot be used to make a phone call.";
 "MapError" = "The map application is not installed.";
+"BrowserError" = "The browser is not installed.";
