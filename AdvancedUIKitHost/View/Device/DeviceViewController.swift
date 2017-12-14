@@ -17,7 +17,7 @@ final class DeviceViewController: UIViewController {
     }
     
     @IBAction func showMap(_ sender: Any) {
-        deviceHelper.showMap(ofAddress: address)
+        deviceHelper.openMap(withAddress: address)
     }
     
     @IBAction func sendEmail(_ sender: Any) {

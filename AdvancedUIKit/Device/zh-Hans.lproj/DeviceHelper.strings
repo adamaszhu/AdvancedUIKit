@@ -1,3 +1,4 @@
 "DialError" = "本设备不具备通话功能";
 "MapError" = "本设备未安装地图软件";
 "BrowserError" = "本设备未安装游览器软件";
+"SystemSettingError" = "无法打开系统设置";

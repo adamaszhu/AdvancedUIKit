@@ -8,12 +8,14 @@ extension DeviceHelper {
     /// User error.
     @objc static let dialError = "DialError"
     @objc static let mapError = "MapError"
-    @objc static let BrowserError = "BrowserError"
+    @objc static let browserError = "BrowserError"
+    @objc static let systemSettingError = "SystemSettingError"
     
     /// System error.
     @objc static let phoneNumberError = "The phone number is invalid."
     @objc static let addressError = "The address is incorrect."
     @objc static let linkError = "The link is incorrect."
+    @objc static let systemLinkError = "The system link is incorrect."
     
     /// Function url.
     @objc static let dailPrefix = "telprompt://"
