@@ -12,7 +12,7 @@ public extension UITextField {
     private static let activationError = "The underline has been activated."
     
     /// The underline view.
-    internal var underlineView: UnderlineView? {
+    @objc internal var underlineView: UnderlineView? {
         for view in subviews {
             if let underlineView = view as? UnderlineView {
                 return underlineView
@@ -26,7 +26,7 @@ public extension UITextField {
     /// - Parameters:
     ///   - color: The normal color of the underline.
     ///   - highlightedColor: The highlighted color of the underline.
-    public func activateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
+    @objc public func activateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
         guard underlineView == nil else {
             Logger.standard.log(error: UITextField.activationError)
             return
@@ -41,7 +41,7 @@ public extension UITextField {
     }
     
     /// Deactivate the underline view.
-    public func deactivateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
+    @objc public func deactivateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
         guard let underlineView = underlineView else {
             Logger.standard.log(error: UITextField.activationError)
             return
@@ -50,12 +50,12 @@ public extension UITextField {
     }
     
     /// Start editing and highlight the underline view.
-    func startEditing() {
+    @objc func startEditing() {
         underlineView?.isHighlighted = true
     }
     
     /// Finish the editing and dehighlight the underline view.
-    func finishEditing() {
+    @objc func finishEditing() {
         underlineView?.isHighlighted = false
     }
     

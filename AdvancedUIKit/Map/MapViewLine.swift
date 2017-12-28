@@ -6,10 +6,10 @@
 public struct MapViewLine {
     
     /// The width of the line.
-    private static let defaultLineColor = UIColor.black
+    public static let defaultLineColor = UIColor.black
     
     /// The width of the line.
-    private static let defaultLineWidth = 2
+    public static let defaultLineWidth = 2
     
     /// The line object.
     let line: MKPolyline

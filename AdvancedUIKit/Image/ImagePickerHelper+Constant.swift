@@ -6,8 +6,10 @@
 extension ImagePickerHelper {
     
     /// The content on the selector.
-    static let selectFromLibraryActionName = "SelectFromLibrary"
-    static let takePhotoActionName = "TakePhoto"
-    static let cancelActionName = "Cancel"
+    @objc static let selectFromLibraryActionName = "SelectFromLibrary"
+    @objc static let takePhotoActionName = "TakePhoto"
+    @objc static let cancelActionName = "Cancel"
     
 }
+
+import Foundation

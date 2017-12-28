@@ -9,10 +9,10 @@ final public class KeyboardHelper: NSObject {
     public var keyboardHelperDelegate: KeyboardHelperDelegate?
     
     /// The root view.
-    public var rootView: UIView!
+    @objc public var rootView: UIView!
     
     /// A list of input views that need the help of KeyboardHelper.
-    public var inputViews: [UIView] {
+    @objc public var inputViews: [UIView] {
         willSet {
             deactiveInputChain()
         }
@@ -24,19 +24,19 @@ final public class KeyboardHelper: NSObject {
     }
     
     /// The assistant view used to perform gesture action.
-    var actionFilterView: ActionFilterView
+    @objc var actionFilterView: ActionFilterView
     
     /// Current input view, which will be used to decide whether the view should be pushed up or not. It should be set when the begin editing is called.
-    var currentInputView: UIView?
+    @objc var currentInputView: UIView?
     
     /// The notification center.
-    var notificationCenter: NotificationCenter
+    @objc var notificationCenter: NotificationCenter
     
     /// The height of current keyboard. It is used under the situation that the input view has been changed without the change of keyboard height.
-    var keyboardHeight: CGFloat
+    @objc var keyboardHeight: CGFloat
     
     /// The duration of pushing the keyboard. It is used under the situation that the input view has been changed without the change of keyboard height.
-    var keyboardPushDuration: TimeInterval
+    @objc var keyboardPushDuration: TimeInterval
     
     /// Judge whether the view should be pushed or not according to the position of the text field.
     private var pushOffset: CGFloat {
@@ -56,7 +56,7 @@ final public class KeyboardHelper: NSObject {
     /// Initialize the object. It should be initalized after the view is rendered.
     ///
     /// - Parameter application: The application that contains the window.
-    public init(application: UIApplication = UIApplication.shared, notificationCenter: NotificationCenter = NotificationCenter.default) {
+    @objc public init(application: UIApplication = UIApplication.shared, notificationCenter: NotificationCenter = NotificationCenter.default) {
         inputViews = []
         actionFilterView = ActionFilterView(frame: application.windows[0].bounds)
         self.notificationCenter = notificationCenter
@@ -67,7 +67,7 @@ final public class KeyboardHelper: NSObject {
     }
     
     /// Hide the keyboard.
-    public func hideKeyboard() {
+    @objc public func hideKeyboard() {
         currentInputView?.resignFirstResponder()
         currentInputView?.endEditing(true)
         currentInputView = nil
@@ -79,7 +79,7 @@ final public class KeyboardHelper: NSObject {
     /// Change input view.
     ///
     /// - Parameter view: The new view.
-    func changeInputView(_ view: UIView) {
+    @objc func changeInputView(_ view: UIView) {
         // If previous input view is not nil, then the keyboard is shown. As a result, the view should adjusted.
         let shouldAdjustOffset = currentInputView != nil
         currentInputView = view
@@ -93,7 +93,7 @@ final public class KeyboardHelper: NSObject {
     /// Finished inputing on an input view.
     ///
     /// - Parameter view: The view that has finished inputing action.
-    func finishInput(onView view: UIView) {
+    @objc func finishInput(onView view: UIView) {
         guard let index = inputViews.index(of: view) else {
             Logger.standard.log(error: KeyboardHelper.inputViewError)
             return
@@ -107,8 +107,8 @@ final public class KeyboardHelper: NSObject {
     }
     
     /// adjust the offset of the view.
-    func adjustOffset() {
-        rootView.animate(withChange: { [unowned self] _ in
+    @objc func adjustOffset() {
+        rootView.animate(withChange: { [unowned self] in
             self.rootView.frame.origin = CGPoint(x: 0, y: self.rootView.frame.origin.y + self.pushOffset)
             }, withDuration: keyboardPushDuration)
     }

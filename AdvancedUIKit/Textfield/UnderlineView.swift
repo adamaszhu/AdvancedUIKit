@@ -6,13 +6,13 @@
 final class UnderlineView: UIView {
     
     /// The normal color of the underline.
-    var color: UIColor
+    @objc var color: UIColor
     
     /// The highlighted color of the underline.
-    var highlightedColor: UIColor
+    @objc var highlightedColor: UIColor
     
     /// Whether the underline is under highlighted status or not.
-    var isHighlighted: Bool {
+    @objc var isHighlighted: Bool {
         set {
             backgroundColor = newValue ? highlightedColor : color
         }

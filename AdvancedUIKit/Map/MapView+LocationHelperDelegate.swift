@@ -5,15 +5,15 @@
 /// - date: 08/07/2017
 extension MapView: LocationHelperDelegate {
     
-    public func locationHelper(_ locationHelper: LocationHelper, didCatchError error: String) {
+    @objc public func locationHelper(_ locationHelper: LocationHelper, didCatchError error: String) {
         mapViewDelegate?.mapView(self, didCatchError: error)
     }
     
-    public func locationHelper(_ locationHelper: LocationHelper, didAuthorizeAlwaysAuthorization isAuthorized: Bool) {
+    @objc public func locationHelper(_ locationHelper: LocationHelper, didAuthorizeAlwaysAuthorization isAuthorized: Bool) {
         showsUserLocation = true
     }
     
-    public func locationHelper(_ locationHelper: LocationHelper, didAuthorizeWhenInUseAuthorization isAuthorized: Bool) {
+    @objc public func locationHelper(_ locationHelper: LocationHelper, didAuthorizeWhenInUseAuthorization isAuthorized: Bool) {
         showsUserLocation = true
     }
     

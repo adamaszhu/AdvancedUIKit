@@ -25,7 +25,7 @@ extension InfiniteList: UITableViewDataSource {
             } else {
                 cell.collapse()
             }
-            cell.switchExpandStatusAction = { [unowned self] _ in
+            cell.switchExpandStatusAction = { [unowned self] in
                 if self.expandedCellIndexPath == indexPath {
                     self.collapseCell(atIndex: index)
                     return

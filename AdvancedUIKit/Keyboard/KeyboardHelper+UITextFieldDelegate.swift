@@ -15,7 +15,7 @@ extension KeyboardHelper: UITextFieldDelegate {
         return false
     }
     
-    func textFieldDidChangeText(textField: UITextField) {
+    @objc func textFieldDidChangeText(textField: UITextField) {
         keyboardHelperDelegate?.keyboardHelper(self, didChangeContentOf: textField)
     }
     

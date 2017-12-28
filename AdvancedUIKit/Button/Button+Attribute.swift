@@ -6,7 +6,7 @@
 public extension UIButton {
     
     /// Set and get the title of the button.
-    public var title: String? {
+    @objc public var title: String? {
         set {
             titleLabel?.numberOfLines = 0
             titleLabel?.textAlignment = .center

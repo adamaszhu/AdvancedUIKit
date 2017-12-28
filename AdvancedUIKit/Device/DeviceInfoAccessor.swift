@@ -1,25 +1,25 @@
 /// DeviceInfoAccessor is used to access info related to the device.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
+/// - version: 1.1.0
 /// - date: 29/05/2017
-final public class DeviceInfoAccessor {
+open class DeviceInfoAccessor {
     
     /// The singleton instance in the system.
     public static let shared: DeviceInfoAccessor = .init()
     
     /// The system version of the device.
-    public var systemVersion: String {
+    open var systemVersion: String {
         return device.systemVersion
     }
     
     /// The major system version.
-    public var majorSystemVersion: Int {
+    open var majorSystemVersion: Int {
         return processInfo.operatingSystemVersion.majorVersion
     }
     
     /// The type of the device.
-    public var deviceType: DeviceType {
+    open var deviceType: DeviceType {
         let deviceModel = device.model
         if deviceModel.contains(DeviceType.phone.rawValue) {
             return .phone

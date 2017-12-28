@@ -6,7 +6,9 @@
 extension GestureFilterView {
     
     /// System error.
-    static let gestureRecognizersError = "Gesture recognizers have not been added to the view yet."
-    static let initError = "Constructor init(coder) shouldn't be called."
+    @objc static let gestureRecognizersError = "Gesture recognizers have not been added to the view yet."
+    @objc static let initError = "Constructor init(coder) shouldn't be called."
 
 }
+
+import Foundation

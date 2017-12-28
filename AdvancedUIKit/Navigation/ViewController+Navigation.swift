@@ -6,7 +6,7 @@
 public extension UIViewController {
     
     /// Whether the view controller is a root view controller or not.
-    public var isRootViewController: Bool {
+    @objc public var isRootViewController: Bool {
         guard let navigationController = navigationController else {
             return true
         }

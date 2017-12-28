@@ -61,7 +61,7 @@ extension ExpandableView {
         originalSuperview.insertSubview(view, at: originalZIndex)
         addOriginalConstraints(of: view)
         // Wait the view to be refreshed and add the constraint back
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) { [unowned self] _ in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) { [unowned self] in
             self.addOriginalConstraints(of: view)
         }
     }

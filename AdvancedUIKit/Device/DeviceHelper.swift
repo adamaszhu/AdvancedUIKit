@@ -1,7 +1,7 @@
 /// DeviceHelper is used to perform an user interaction. Such as sending an email or making a phone call.
 ///
-/// - version: 1.0.0
-/// - date: 17/02/2017
+/// - version: 1.1.0
+/// - date: 14/12/2017
 final public class DeviceHelper: NSObject {
     
     /// The singleton instance in the system.
@@ -12,6 +12,26 @@ final public class DeviceHelper: NSObject {
     
     /// The application used to do the action.
     private let application: UIApplication
+    
+    /// Open the system setting.
+    public func openSystemSetting() {
+        guard let systemSettingURL = URL(string: UIApplicationOpenSettingsURLString) else {
+            Logger.standard.log(error: DeviceHelper.systemLinkError)
+            abort()
+        }
+        open(systemSettingURL, withError: DeviceHelper.systemSettingError)
+    }
+    
+    /// Open a website.
+    ///
+    /// - Parameter link: The website address.
+    public func openWebsite(withLink link: String) {
+        guard let websiteURL = URL(string: link) else {
+            Logger.standard.log(info: DeviceHelper.linkError, withDetail: link)
+            abort()
+        }
+        open(websiteURL, withError: DeviceHelper.browserError)
+    }
     
     /// Make a phone call.
     ///
@@ -27,8 +47,8 @@ final public class DeviceHelper: NSObject {
     /// Show a location in the map application. Please let the user confirm the action beforehand.
     ///
     /// - Parameter address: The address to be shown.
-    public func showMap(ofAddress address: String) {
-        let formattedAddress = address.replacingOccurrences(of: .space, with: .plus)
+    public func openMap(withAddress address: String) {
+        let formattedAddress = address.replacingOccurrences(of: String.space, with: String.plus)
         guard let mapURL = URL(string: "\(DeviceHelper.mapPrefix)\(formattedAddress)") else {
             Logger.standard.log(info: DeviceHelper.addressError, withDetail: address)
             return
@@ -86,3 +106,4 @@ final public class DeviceHelper: NSObject {
 
 import Foundation
 import MessageUI
+import UIKit

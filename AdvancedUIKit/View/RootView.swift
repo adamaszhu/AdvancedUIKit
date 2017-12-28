@@ -6,29 +6,29 @@
 open class RootView: UIView {
     
     /// Whether the view is visible or not.
-    public var isVisible: Bool
+    @objc public var isVisible: Bool
     
     /// The original frame of the view.
-    public private (set) var originalFrame: CGRect
+    @objc public private (set) var originalFrame: CGRect
     
     /// Whether the view has been initialized or not.
     private var isInitialized: Bool
     
     /// Show the view.
-    open func show() {
+    @objc open func show() {
         isVisible = true
     }
     
     /// Hide the view.
-    open func hide() {
+    @objc open func hide() {
         isVisible = false
     }
     
     /// Initialize the view.
-    open func initialize() {}
+    @objc open func initialize() {}
     
     /// Render the views inside right after being allocated the frame.
-    open func render() {}
+    @objc open func render() {}
     
     public required init?(coder aDecoder: NSCoder) {
         isInitialized = false

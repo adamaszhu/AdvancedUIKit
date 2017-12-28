@@ -6,34 +6,34 @@
 extension CustomizedMessageHelper {
     
     /// Error message.
-    static let typeError = "The message type is unknown."
+    @objc static let typeError = "The message type is unknown."
     
     /// The margin of the customized message content.
-    static let padding = CGFloat(10)
+    @objc static let padding = CGFloat(10)
     
     /// The default background color of the message view.
-    static let defaultMessageBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+    @objc static let defaultMessageBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
     
     /// The default background color of the mask view.
-    static let defaultMaskBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+    @objc static let defaultMaskBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
     
     /// The default background color of the input view.
-    static let defaultInputPlaceHolderColor = UIColor(white: 1, alpha: 0.2)
+    @objc static let defaultInputPlaceHolderColor = UIColor(white: 1, alpha: 0.2)
     
     /// The default separator color of the message view.
-    static let defaultSeperatorColor = UIColor.white
+    @objc static let defaultSeperatorColor = UIColor.white
     
     /// The default text color.
-    static let defaultTextColor = UIColor.white
+    @objc static let defaultTextColor = UIColor.white
     
     /// The radius of the message box.
-    static let radius = CGFloat(5)
+    @objc static let radius = CGFloat(5)
     
     /// The width weight of a customized message compared to the window width.
-    static let widthWeight = CGFloat(0.7)
+    @objc static let widthWeight = CGFloat(0.7)
     
     /// The maximal height weight of a customized message  compared to the height of the window.
-    static let maxHeightWeight = CGFloat(0.6)
+    @objc static let maxHeightWeight = CGFloat(0.6)
     
 }
 

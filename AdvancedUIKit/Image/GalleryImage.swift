@@ -9,10 +9,10 @@ final class GalleryImage: UIScrollView {
     private static let zoomInIncrement = CGFloat(2)
     
     /// The actual image view.
-    var imageView: UIImageView
+    @objc var imageView: UIImageView
     
     /// The image.
-    var image: UIImage? {
+    @objc var image: UIImage? {
         set {
             imageView.image = newValue
         }
@@ -22,7 +22,7 @@ final class GalleryImage: UIScrollView {
     }
     
     /// The maximum zoom level.
-    var maxZoomLevel: CGFloat {
+    @objc var maxZoomLevel: CGFloat {
         set {
             maximumZoomScale = newValue
         }
@@ -32,7 +32,7 @@ final class GalleryImage: UIScrollView {
     }
     
     /// The content mode of the image.
-    var imageMode: UIViewContentMode {
+    @objc var imageMode: UIViewContentMode {
         set {
             imageView.contentMode = newValue
         }
@@ -42,7 +42,7 @@ final class GalleryImage: UIScrollView {
     }
     
     /// The size of the GalleryImage.
-    var size: CGSize {
+    @objc var size: CGSize {
         set {
             contentSize = newValue
             frame.size = newValue
@@ -54,15 +54,15 @@ final class GalleryImage: UIScrollView {
     }
     
     /// The double tap gesture used to zoom in the image.
-    private (set) var doubleTapGestureRecognizer: UITapGestureRecognizer!
+    @objc private (set) var doubleTapGestureRecognizer: UITapGestureRecognizer!
     
     /// Reset the zoom level of the image.
-    func resetZoomLevel() {
+    @objc func resetZoomLevel() {
         setZoomScale(1, animated: true)
     }
     
     /// Perform a zoom in.
-    func zoomIn() {
+    @objc func zoomIn() {
         var zoomLevel = zoomScale + GalleryImage.zoomInIncrement
         zoomLevel = min(zoomLevel, maxZoomLevel)
         setZoomScale(zoomLevel, animated: true)

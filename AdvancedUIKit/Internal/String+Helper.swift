@@ -14,7 +14,7 @@ extension String {
         guard hasSuffix(suffix) else {
             return false
         }
-        let suffixBeginIndex = index(endIndex, offsetBy: -suffix.characters.count)
+        let suffixBeginIndex = index(endIndex, offsetBy: -suffix.count)
         let suffixRange = Range<String.Index>(uncheckedBounds: (lower: suffixBeginIndex, upper: endIndex))
         removeSubrange(suffixRange)
         return true
@@ -29,7 +29,7 @@ extension String {
         guard hasPrefix(prefix) else {
             return false
         }
-        let prefixEndIndex = index(startIndex, offsetBy: prefix.characters.count)
+        let prefixEndIndex = index(startIndex, offsetBy: prefix.count)
         let prefixRange = Range<String.Index>(uncheckedBounds: (lower: startIndex, upper: prefixEndIndex))
         removeSubrange(prefixRange)
         return true

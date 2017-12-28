@@ -99,6 +99,7 @@
 		28B36E6A1F70791D005996E6 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B36E691F70791D005996E6 /* Message.storyboard */; };
 		28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B524F81EEA14970051E8D2 /* View+Constraint.swift */; };
 		28B975871F6F285D001239EB /* Label.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B975861F6F285D001239EB /* Label.storyboard */; };
+		28BA02911F78624F00F635DE /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA02901F78624F00F635DE /* Checkbox.swift */; };
 		28CB19341F747512006CFE05 /* TextField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28CB19331F747512006CFE05 /* TextField.storyboard */; };
 		28CB19381F7476BE006CFE05 /* String+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB19371F7476BE006CFE05 /* String+Constant.swift */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
@@ -340,6 +341,7 @@
 		28B36E691F70791D005996E6 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		28B524F81EEA14970051E8D2 /* View+Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Constraint.swift"; sourceTree = "<group>"; };
 		28B975861F6F285D001239EB /* Label.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Label.storyboard; sourceTree = "<group>"; };
+		28BA02901F78624F00F635DE /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		28CB19331F747512006CFE05 /* TextField.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextField.storyboard; sourceTree = "<group>"; };
 		28CB19371F7476BE006CFE05 /* String+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Constant.swift"; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
@@ -505,9 +507,9 @@
 		2822A3341EE0EC3B00FAA8E3 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */,
 				2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */,
 				2822A3381EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift */,
+				2822A3351EE0EC8200FAA8E3 /* ViewController+Navigation.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -546,19 +548,19 @@
 		2846A9971EE7C0FA007D4226 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */,
-				2846A9AA1EE7C660007D4226 /* MapViewDelegate+Optional.swift */,
-				2846A9AE1EE7D17D007D4226 /* MapViewPointPosition.swift */,
-				2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */,
-				2846A9AC1EE7C754007D4226 /* MKAnnotationView+Renderer.swift */,
-				2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */,
-				2846A99A1EE7C0FA007D4226 /* MapView.swift */,
-				283844751F69F65400AAD1E0 /* MapView+Constant.swift */,
-				280E15331EE924D3003BF109 /* MapView+LocationHelperDelegate.swift */,
-				288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */,
-				421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */,
 				2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */,
 				42FE508E1EF7D33C009C0BD7 /* ExpandableMapView+Expandable.swift */,
+				2846A99A1EE7C0FA007D4226 /* MapView.swift */,
+				283844751F69F65400AAD1E0 /* MapView+Constant.swift */,
+				421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */,
+				280E15331EE924D3003BF109 /* MapView+LocationHelperDelegate.swift */,
+				2846A99B1EE7C0FA007D4226 /* MapViewDelegate.swift */,
+				2846A9AA1EE7C660007D4226 /* MapViewDelegate+Optional.swift */,
+				2846A99C1EE7C0FA007D4226 /* MapViewLine.swift */,
+				2846A99D1EE7C0FA007D4226 /* MapViewPoint.swift */,
+				2846A9AE1EE7D17D007D4226 /* MapViewPointPosition.swift */,
+				2846A9AC1EE7C754007D4226 /* MKAnnotationView+Renderer.swift */,
+				288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -580,14 +582,14 @@
 				283844771F69F68600AAD1E0 /* CustomizedMessageHelper+Constant.swift */,
 				42EA08BC1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift */,
 				284E5C471EDD103400C3CC86 /* MessageHelper.strings */,
-				284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */,
-				283844791F69F6AD00AAD1E0 /* SystemMessageHelper+Constant.swift */,
-				42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */,
 				42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */,
 				42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */,
 				284E5C4E1EDD104C00C3CC86 /* MessageHelperDelegate.swift */,
 				284E5C571EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift */,
 				284E5C4F1EDD104C00C3CC86 /* MessageType.swift */,
+				284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */,
+				283844791F69F6AD00AAD1E0 /* SystemMessageHelper+Constant.swift */,
+				42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -946,6 +948,7 @@
 			children = (
 				289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */,
 				42CA09DC1EDEE0D2009AF1BE /* Button+Dynamic.swift */,
+				28BA02901F78624F00F635DE /* Checkbox.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -1159,17 +1162,18 @@
 				TargetAttributes = {
 					422DB3C31EAA30B300377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					422DB4051EAA3CF100377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = Y2XN2Z2HA2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					422DB4181EAA3CF100377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 422DB4051EAA3CF100377AB5;
 					};
@@ -1353,6 +1357,7 @@
 				2822A3391EE0EE2600FAA8E3 /* NavigationBar.swift in Sources */,
 				28CB19381F7476BE006CFE05 /* String+Constant.swift in Sources */,
 				283B01C81F1306E700AF2097 /* InfiniteListStatus+Managable.swift in Sources */,
+				28BA02911F78624F00F635DE /* Checkbox.swift in Sources */,
 				425DCD161EB36EA100A0ED26 /* String+Localizer.swift in Sources */,
 				2846A9A21EE7C0FA007D4226 /* MapViewLine.swift in Sources */,
 				28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */,
@@ -1707,7 +1712,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1732,7 +1737,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1751,7 +1756,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikitHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1771,7 +1776,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikitHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1788,7 +1793,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.AdvancedUIKitHostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = AdvancedUIKitHost;
 			};
 			name = Debug;
@@ -1804,7 +1809,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.AdvancedUIKitHostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = AdvancedUIKitHost;
 			};
 			name = Release;

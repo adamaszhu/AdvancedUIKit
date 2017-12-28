@@ -6,10 +6,10 @@
 final public class CustomizedMessageHelper: PopupView {
     
     /// Get the shared instance of the CustomizedMessageHelper. If the protocol will be implemented, please create a new object.
-    public static let standard = CustomizedMessageHelper()
+    @objc public static let standard = CustomizedMessageHelper()
     
     /// The mask color.
-    public var maskColor: UIColor? {
+    @objc public var maskColor: UIColor? {
         set {
             backgroundColor = newValue
         }
@@ -19,7 +19,7 @@ final public class CustomizedMessageHelper: PopupView {
     }
     
     /// The background color of the message frame.
-    public var frameColor: UIColor? {
+    @objc public var frameColor: UIColor? {
         set {
             frameView.backgroundColor = newValue
         }
@@ -95,7 +95,7 @@ final public class CustomizedMessageHelper: PopupView {
     ///   - content: The content of the message. If it is nil, then it will be an input message
     ///   - confirmButtonName: The name of the confirm button. If this is nil, the confirm button will not be shown.
     ///   - cancelButtonName: The name of the cancel button.
-    func showMessage(withTitle title: String, withContent content: String?, withConfirmButtonName confirmButtonName: String,  withCancelButtonName cancelButtonName: String? = nil) {
+    @objc func showMessage(withTitle title: String, withContent content: String?, withConfirmButtonName confirmButtonName: String,  withCancelButtonName cancelButtonName: String? = nil) {
         self.title = title
         messageLabel.text = content
         confirmButton.title = confirmButtonName
@@ -122,7 +122,7 @@ final public class CustomizedMessageHelper: PopupView {
     }
     
     /// Initialize the object
-    public init() {
+    @objc public init() {
         frameView = .init()
         titleView = .init()
         titleLabel = .init()
@@ -192,7 +192,7 @@ final public class CustomizedMessageHelper: PopupView {
     }
     
     /// A message has been confirmed.
-    func confirm() {
+    @objc func confirm() {
         switch messageType {
         case .info:
             break
@@ -214,7 +214,7 @@ final public class CustomizedMessageHelper: PopupView {
     }
     
     /// A message has been cancelled.
-    func cancel() {
+    @objc func cancel() {
         switch messageType {
         case .info:
             break
@@ -235,7 +235,7 @@ final public class CustomizedMessageHelper: PopupView {
     }
     
     /// Hide previous message.
-    func hidePreviousMessage() {
+    @objc func hidePreviousMessage() {
         guard messageType != .unknown else {
             Logger.standard.log(error: CustomizedMessageHelper.typeError)
             return

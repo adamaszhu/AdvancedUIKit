@@ -6,19 +6,19 @@
 extension DataPicker {
     
     /// System error.
-    static let columnError = "The column doesn't exist."
-    static let itemError = "The item doesn't exist."
+    @objc static let columnError = "The column doesn't exist."
+    @objc static let itemError = "The item doesn't exist."
     
     /// The name of two buttons.
-    static let cancelButtonName = "Cancel"
-    static let doneButtonName = "Done"
+    @objc static let cancelButtonName = "Cancel"
+    @objc static let doneButtonName = "Done"
     
     /// The duration of the show and hide animation.
-    static let animationDuration = 0.25
+    @objc static let animationDuration = 0.25
     
     /// The size of the button.
-    static let buttonHeight = CGFloat(40)
-    static let buttonWidth = CGFloat(80)
+    @objc static let buttonHeight = CGFloat(40)
+    @objc static let buttonWidth = CGFloat(80)
 
 }
 

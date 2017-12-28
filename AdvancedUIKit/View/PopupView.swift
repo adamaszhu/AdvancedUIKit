@@ -6,12 +6,12 @@
 public class PopupView: RootView {
     
     /// The window of the app.
-    public let hostWindow: UIWindow
+    @objc public let hostWindow: UIWindow
     
     /// Initialize the view.
     ///
     /// - Parameter application: The application that contains the window.
-    public init(application: UIApplication = UIApplication.shared) {
+    @objc public init(application: UIApplication = UIApplication.shared) {
         hostWindow = application.windows[0]
         super.init(frame: hostWindow.frame)
         alpha = 0
@@ -25,7 +25,7 @@ public class PopupView: RootView {
             return
         }
         hostWindow.addSubview(self)
-        animate(withChange: { [unowned self] _ in
+        animate(withChange: { [unowned self] in
             self.alpha = 1
         }) {
             super.show()
@@ -37,7 +37,7 @@ public class PopupView: RootView {
             Logger.standard.log(warning: RootView.hidingWarning)
             return
         }
-        animate(withChange: {[unowned self] _ in
+        animate(withChange: {[unowned self] in
             self.alpha = 0
         }) {
             self.removeFromSuperview()

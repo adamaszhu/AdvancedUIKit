@@ -11,7 +11,7 @@ final class NavigationViewController: UIViewController {
         super.viewDidLoad()
         navigationBar.viewController = self
         navigationBar.tintColor = navigationTintColor
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: navigationTintColor]
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationTintColor]
         navigationBar.backgroundColor = navigationColor
         navigationBar.title = navigation.title
         navigationBar.rightButtonTitle = navigation.rightButtonName
@@ -25,7 +25,7 @@ final class NavigationViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-    func done() {
+    @objc func done() {
         SystemMessageHelper.standard?.showInfo(doneMessage)
     }
     
