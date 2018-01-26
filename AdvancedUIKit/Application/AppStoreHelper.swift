@@ -6,16 +6,16 @@
 public final class AppStoreHelper {
     
     /// The app store id
-    fileprivate let id: String
+    private let id: String
     
     /// The flag used to record the review counter.
-    fileprivate let counterFlag: String
+    private let counterFlag: String
     
     /// The message helper
-    fileprivate let messageHelper: SystemMessageHelper?
+    private let messageHelper: SystemMessageHelper?
     
     /// The user default used to save the counter.
-    fileprivate let userDefaults: UserDefaults
+    private let userDefaults: UserDefaults
     
     /// Initialize the helper
     ///
