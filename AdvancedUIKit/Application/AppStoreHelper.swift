@@ -9,7 +9,7 @@ public final class AppStoreHelper {
     private let id: String
     
     /// The flag used to record the review counter.
-    private let counterFlag: String
+    private let reviewCounterFlag: String
     
     /// The message helper
     private let messageHelper: SystemMessageHelper?
@@ -21,10 +21,10 @@ public final class AppStoreHelper {
     ///
     /// - Parameter
     ///   - id: The app store id.
-    ///   - counterFlag: The flag used to record the review counter.
-    public init(id: String, counterFlag: String) {
+    ///   - reviewCounterFlag: The flag used to record the review counter.
+    public init(id: String, reviewCounterFlag: String) {
         self.id = id
-        self.counterFlag = counterFlag
+        self.reviewCounterFlag = reviewCounterFlag
         userDefaults = UserDefaults.standard
         messageHelper = SystemMessageHelper()
         messageHelper?.messageHelperDelegate = self
@@ -48,8 +48,8 @@ public final class AppStoreHelper {
     
     /// The feature counter is used for
     public func increaseReviewCounter() {
-        let count = userDefaults.integer(forKey: counterFlag)
-        userDefaults.set(count + 1, forKey: counterFlag)
+        let count = userDefaults.integer(forKey: reviewCounterFlag)
+        userDefaults.set(count + 1, forKey: reviewCounterFlag)
     }
     
     /// Cheak whether the review counter reaches an amount or not.
@@ -57,7 +57,7 @@ public final class AppStoreHelper {
     /// - Parameter count: The amount
     /// - Returns: Whether the review counter reaches the ammount or not.
     public func checkReviewConter(asCount count: Int) -> Bool {
-        let savedCount = userDefaults.integer(forKey: counterFlag)
+        let savedCount = userDefaults.integer(forKey: reviewCounterFlag)
         return savedCount == count
     }
     
