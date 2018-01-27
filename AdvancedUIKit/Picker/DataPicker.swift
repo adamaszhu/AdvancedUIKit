@@ -158,10 +158,10 @@ final public class DataPicker: RootView {
         titleBackgroundColor = .gray
         let titleTextColor = UIColor.white
         cancelButton.backgroundColor = titleBackgroundColor
-        cancelButton.setTitle(DataPicker.cancelButtonName.localizedInternalString(forType: self), for: .normal)
+        cancelButton.setTitle(DataPicker.cancelButtonName.localizedInternalString(forType: DataPicker.self), for: .normal)
         cancelButton.addTarget(self, action: #selector(hide), for: .touchUpInside)
         doneButton.backgroundColor = titleBackgroundColor
-        doneButton.setTitle(DataPicker.doneButtonName.localizedInternalString(forType: self), for: .normal)
+        doneButton.setTitle(DataPicker.doneButtonName.localizedInternalString(forType: DataPicker.self), for: .normal)
         doneButton.addTarget(self, action: #selector(confirmSelection), for: .touchUpInside)
         titleLabel.backgroundColor = titleBackgroundColor
         titleLabel.textColor = titleTextColor
