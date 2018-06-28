@@ -27,7 +27,7 @@ final class FileInfoAccessor {
             return lastPathComponent
         }
         let fullFileExtension = ".\(fileExtension)"
-        let fileExtensionIndex = lastPathComponent.index(lastPathComponent.endIndex, offsetBy: String.IndexDistance(-fullFileExtension.count))
+        let fileExtensionIndex = lastPathComponent.index(lastPathComponent.endIndex, offsetBy: -fullFileExtension.count)
         return .init(lastPathComponent[..<fileExtensionIndex])
     }
     

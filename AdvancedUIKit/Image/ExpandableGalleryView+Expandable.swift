@@ -72,7 +72,7 @@ extension ExpandableGalleryView: ExpandableView {
     ///
     /// - Parameter color: The color to be settled.
     private func setBackgroundColor(_ color: UIColor) {
-        let subviews = self.subviews.flatMap {
+        let subviews = self.subviews.compactMap {
             $0 as? GalleryImage
         }
         subviews.forEach {
