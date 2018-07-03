@@ -1,9 +1,12 @@
 /// PageView is a customized page view.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 11/06/2017
+/// - version: 1.3.0
+/// - date: 03/07/2018
 public class PageView: UIScrollView {
+    
+    /// The delegate
+    public var pageViewDelegate: PageViewDelegate?
     
     /// The page controller.
     @objc var pageControl: UIPageControl
@@ -126,6 +129,7 @@ public class PageView: UIScrollView {
             return
         }
         pageControl.currentPage = index
+        pageViewDelegate?.pageView(self, didChangeCurrentIndex: index)
         guard shouldAnimate else {
             contentOffset = .init(x: CGFloat(index) * frame.width, y: 0)
             return
