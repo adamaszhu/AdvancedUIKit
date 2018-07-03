@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.3.0
 /// - date: 03/07/2018
-protocol PageViewDelegate {
+public protocol PageViewDelegate {
     
     /// Change the page view index
     ///
