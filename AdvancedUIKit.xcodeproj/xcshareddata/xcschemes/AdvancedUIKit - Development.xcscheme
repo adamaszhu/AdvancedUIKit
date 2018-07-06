@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "422DB4181EAA3CF100377AB5"
+               BuildableName = "AdvancedUIKitTests.xctest"
+               BlueprintName = "AdvancedUIKitTests"
+               ReferencedContainer = "container:AdvancedUIKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "422DB3C31EAA30B300377AB5"
+            BuildableName = "AdvancedUIKit.framework"
+            BlueprintName = "AdvancedUIKit"
+            ReferencedContainer = "container:AdvancedUIKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
