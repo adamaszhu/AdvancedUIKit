@@ -92,6 +92,7 @@
 		289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FEB1EDF92DB00203DE2 /* TextField+Dynamic.swift */; };
 		289D5FF11EDF9A9F00203DE2 /* Button+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */; };
 		28A8D2EB20EF572B0061B420 /* SearchBar+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D2EA20EF572B0061B420 /* SearchBar+Attribute.swift */; };
+		28A8D32820FD4B5D0061B420 /* ImageView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */; };
 		28B1D8081EE50E8A00A5B2C4 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */; };
 		28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */; };
 		28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */; };
@@ -341,6 +342,7 @@
 		289D5FEB1EDF92DB00203DE2 /* TextField+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Dynamic.swift"; sourceTree = "<group>"; };
 		289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Attribute.swift"; sourceTree = "<group>"; };
 		28A8D2EA20EF572B0061B420 /* SearchBar+Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchBar+Attribute.swift"; sourceTree = "<group>"; };
+		28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Animation.swift"; sourceTree = "<group>"; };
 		28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+Underline.swift"; path = "AdvancedUIKit/Textfield/TextField+Underline.swift"; sourceTree = SOURCE_ROOT; };
 		28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnderlineView.swift; path = AdvancedUIKit/Textfield/UnderlineView.swift; sourceTree = SOURCE_ROOT; };
@@ -895,6 +897,7 @@
 				420C78E51EEB942D00A1E3EA /* ImagePickerHelper+ControllerDelegate.swift */,
 				4258DDA81EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift */,
 				4258DDAA1EEAE6A80085FCAA /* ImageView+Measurer.swift */,
+				28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1380,6 +1383,7 @@
 				2846A9A11EE7C0FA007D4226 /* MapViewDelegate.swift in Sources */,
 				42204B9F1EF954A400F1FA04 /* InfiniteList.swift in Sources */,
 				42FE508D1EF7CF9E009C0BD7 /* ExpandableView.swift in Sources */,
+				28A8D32820FD4B5D0061B420 /* ImageView+Animation.swift in Sources */,
 				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
 				284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */,
 				283844821F69F75200AAD1E0 /* GestureFilterView+Constant.swift in Sources */,
