@@ -20,7 +20,7 @@ public class GalleryView: PageView {
             }
         }
         get {
-            return subviews.flatMap {
+            return subviews.compactMap {
                 let galleryImage = $0 as? GalleryImage
                 return galleryImage?.image
             }
