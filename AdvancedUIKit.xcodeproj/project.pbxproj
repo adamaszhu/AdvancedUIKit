@@ -91,6 +91,8 @@
 		289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FEA1EDF92DB00203DE2 /* TextField+Attribute.swift */; };
 		289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FEB1EDF92DB00203DE2 /* TextField+Dynamic.swift */; };
 		289D5FF11EDF9A9F00203DE2 /* Button+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */; };
+		28A8D2EB20EF572B0061B420 /* SearchBar+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D2EA20EF572B0061B420 /* SearchBar+Attribute.swift */; };
+		28A8D32820FD4B5D0061B420 /* ImageView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */; };
 		28B1D8081EE50E8A00A5B2C4 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */; };
 		28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */; };
 		28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */; };
@@ -103,6 +105,7 @@
 		28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B524F81EEA14970051E8D2 /* View+Constraint.swift */; };
 		28B975871F6F285D001239EB /* Label.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B975861F6F285D001239EB /* Label.storyboard */; };
 		28BA02911F78624F00F635DE /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA02901F78624F00F635DE /* Checkbox.swift */; };
+		28BD992920E466BE0072EE28 /* View+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD992820E466BE0072EE28 /* View+Design.swift */; };
 		28CB19341F747512006CFE05 /* TextField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28CB19331F747512006CFE05 /* TextField.storyboard */; };
 		28CB19381F7476BE006CFE05 /* String+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB19371F7476BE006CFE05 /* String+Constant.swift */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
@@ -124,6 +127,7 @@
 		28E66FF61EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF51EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift */; };
 		28E66FF81EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF71EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift */; };
 		28E66FFA1EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF91EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift */; };
+		28EEA75B20EAFE8D0003E72A /* PageViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EEA75A20EAFE8D0003E72A /* PageViewDelegate.swift */; };
 		28F350AB1EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F350A81EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift */; };
 		28F350AC1EE793E5005120B1 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F350A91EE793E5005120B1 /* LocationHelper.swift */; };
 		28F350AD1EE793E5005120B1 /* LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F350AA1EE793E5005120B1 /* LocationHelperDelegate.swift */; };
@@ -337,6 +341,8 @@
 		289D5FEA1EDF92DB00203DE2 /* TextField+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Attribute.swift"; sourceTree = "<group>"; };
 		289D5FEB1EDF92DB00203DE2 /* TextField+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Dynamic.swift"; sourceTree = "<group>"; };
 		289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Attribute.swift"; sourceTree = "<group>"; };
+		28A8D2EA20EF572B0061B420 /* SearchBar+Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchBar+Attribute.swift"; sourceTree = "<group>"; };
+		28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Animation.swift"; sourceTree = "<group>"; };
 		28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+Underline.swift"; path = "AdvancedUIKit/Textfield/TextField+Underline.swift"; sourceTree = SOURCE_ROOT; };
 		28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnderlineView.swift; path = AdvancedUIKit/Textfield/UnderlineView.swift; sourceTree = SOURCE_ROOT; };
@@ -349,6 +355,7 @@
 		28B524F81EEA14970051E8D2 /* View+Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Constraint.swift"; sourceTree = "<group>"; };
 		28B975861F6F285D001239EB /* Label.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Label.storyboard; sourceTree = "<group>"; };
 		28BA02901F78624F00F635DE /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		28BD992820E466BE0072EE28 /* View+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Design.swift"; sourceTree = "<group>"; };
 		28CB19331F747512006CFE05 /* TextField.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextField.storyboard; sourceTree = "<group>"; };
 		28CB19371F7476BE006CFE05 /* String+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Constant.swift"; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
@@ -368,6 +375,7 @@
 		28E66FF51EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		28E66FF71EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		28E66FF91EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
+		28EEA75A20EAFE8D0003E72A /* PageViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewDelegate.swift; sourceTree = "<group>"; };
 		28F350A81EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationHelper+LocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		28F350A91EE793E5005120B1 /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		28F350AA1EE793E5005120B1 /* LocationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelperDelegate.swift; sourceTree = "<group>"; };
@@ -623,6 +631,14 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		28A8D2E920EF568D0061B420 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				28A8D2EA20EF572B0061B420 /* SearchBar+Attribute.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
 		28B1D8061EE50E7B00A5B2C4 /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -789,6 +805,7 @@
 		422DB3C61EAA30B300377AB5 /* AdvancedUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				28A8D2E920EF568D0061B420 /* SearchBar */,
 				420C78E21EEB93D300A1E3EA /* Application */,
 				42CA09E01EE0460F009AF1BE /* Audio */,
 				42CA09DB1EDEE0B7009AF1BE /* Button */,
@@ -841,6 +858,7 @@
 				427373E31ED8FFA200DD8891 /* GestureFilterView.swift */,
 				283844811F69F75200AAD1E0 /* GestureFilterView+Constant.swift */,
 				4234665A1EED21F0002A04F4 /* PageView.swift */,
+				28EEA75A20EAFE8D0003E72A /* PageViewDelegate.swift */,
 				283844831F69F77000AAD1E0 /* PageView+Constant.swift */,
 				28365BC31EF0AF9300E51B5C /* PageView+ScrollViewDelegate.swift */,
 				284E5C5E1EDD426400C3CC86 /* PopupView.swift */,
@@ -850,6 +868,7 @@
 				425DCD111EB357A800A0ED26 /* View+Animation.swift */,
 				28B524F81EEA14970051E8D2 /* View+Constraint.swift */,
 				425DCD131EB3689000A0ED26 /* View+Gesture.swift */,
+				28BD992820E466BE0072EE28 /* View+Design.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -878,6 +897,7 @@
 				420C78E51EEB942D00A1E3EA /* ImagePickerHelper+ControllerDelegate.swift */,
 				4258DDA81EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift */,
 				4258DDAA1EEAE6A80085FCAA /* ImageView+Measurer.swift */,
+				28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1167,7 +1187,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Adamas;
 				TargetAttributes = {
 					422DB3C31EAA30B300377AB5 = {
@@ -1276,13 +1296,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdvancedUIKitTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2E7BACCB82A6B8146203F566 /* [CP] Copy Pods Resources */ = {
@@ -1306,9 +1329,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1326,6 +1354,7 @@
 				289D5FF11EDF9A9F00203DE2 /* Button+Attribute.swift in Sources */,
 				284E5C551EDD104C00C3CC86 /* MessageHelperDelegate.swift in Sources */,
 				42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */,
+				28BD992920E466BE0072EE28 /* View+Design.swift in Sources */,
 				42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
 				28E66FF81EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift in Sources */,
@@ -1354,6 +1383,7 @@
 				2846A9A11EE7C0FA007D4226 /* MapViewDelegate.swift in Sources */,
 				42204B9F1EF954A400F1FA04 /* InfiniteList.swift in Sources */,
 				42FE508D1EF7CF9E009C0BD7 /* ExpandableView.swift in Sources */,
+				28A8D32820FD4B5D0061B420 /* ImageView+Animation.swift in Sources */,
 				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
 				284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */,
 				283844821F69F75200AAD1E0 /* GestureFilterView+Constant.swift in Sources */,
@@ -1423,6 +1453,7 @@
 				4234665B1EED21F0002A04F4 /* PageView.swift in Sources */,
 				283844701F69F5B700AAD1E0 /* KeyboardHelper+Constant.swift in Sources */,
 				289B29461EFB4BFE00152B53 /* InfiniteList+DataSource.swift in Sources */,
+				28EEA75B20EAFE8D0003E72A /* PageViewDelegate.swift in Sources */,
 				4258DDB11EEAE6A80085FCAA /* GalleryView.swift in Sources */,
 				420C78E61EEB942D00A1E3EA /* ImagePickerHelper+ControllerDelegate.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Dynamic.swift in Sources */,
@@ -1444,6 +1475,7 @@
 				420A530F1EFDDFC2007E07CF /* InfiniteCellType.swift in Sources */,
 				42CF00A31EFD167F002613E3 /* Array+Accessor.swift in Sources */,
 				283844681F69F42B00AAD1E0 /* GalleryImage+Constant.swift in Sources */,
+				28A8D2EB20EF572B0061B420 /* SearchBar+Attribute.swift in Sources */,
 				426939871EAB675500761FDE /* DataPicker+PickerViewDataSource.swift in Sources */,
 				42CA09EF1EE19F15009AF1BE /* View+Localizer.swift in Sources */,
 				284474511EFCB06B0077B260 /* InfiniteItem.swift in Sources */,
@@ -1620,15 +1652,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1675,15 +1715,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1828,7 +1876,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AdvancedUIKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.AdvancedUIKitHostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
