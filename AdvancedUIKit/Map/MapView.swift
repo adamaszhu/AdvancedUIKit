@@ -1,8 +1,8 @@
 /// A customized MapView with additional actions.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 07/06/2017
+/// - version: 1.4.0
+/// - date: 23/08/2018
 public class MapView: MKMapView {
     
     /// The delegate of the map.
@@ -42,7 +42,7 @@ public class MapView: MKMapView {
     ///   - leftLongitude: The left longitude.
     ///   - rightLongitude: The right longitude.
     ///   - shouldAnimate: Whether the animation should be performed or not.
-    @objc public func setViewport(withTopLatitude topLatitude: Double, withBottomLatitude bottomLatitude: Double, withLeftLongitude leftLongitude: Double, withRightLongitude rightLongitude: Double, withAnimation shouldAnimate: Bool = true) {
+    public func setViewport(withTopLatitude topLatitude: Double, withBottomLatitude bottomLatitude: Double, withLeftLongitude leftLongitude: Double, withRightLongitude rightLongitude: Double, withAnimation shouldAnimate: Bool = true) {
         let centerLatitude = (topLatitude + bottomLatitude) / 2
         let centerLongitude = (leftLongitude + rightLongitude) / 2
         var latitudeDelta = topLatitude - bottomLatitude
@@ -61,7 +61,7 @@ public class MapView: MKMapView {
     }
     
     /// Adjust the viewport according to the points and lines within it.
-    @objc public func overview() {
+    public func overview() {
         if points.count == 0, lines.count == 0 {
             setViewport(withTopLatitude: 90, withBottomLatitude: -90, withLeftLongitude: -180, withRightLongitude: 180)
             return
@@ -118,7 +118,7 @@ public class MapView: MKMapView {
     }
     
     /// Request user authorization on always use location.
-    @objc public func requestUserLocation() {
+    public func requestUserLocation() {
         guard locationHelper.isAlwaysAuthorizationAuthorized || locationHelper.isWhenInUseAuthorizationAuthorized else {
             locationHelper.requestAlwaysAuthorization()
             return
@@ -129,7 +129,7 @@ public class MapView: MKMapView {
     /// Show current location.
     ///
     /// - Parameter zoomLevel: The zoom level while showing user's location.
-    @objc public func showUserLocation(withZoomLevel zoomLevel: Double = defaultUserLocationMargin) {
+    public func showUserLocation(withZoomLevel zoomLevel: Double = defaultUserLocationMargin) {
         requestUserLocation()
         guard showsUserLocation else {
             // The authorization is declined.
@@ -144,7 +144,7 @@ public class MapView: MKMapView {
     }
     
     /// Clean all the points and lines on the map.
-    @objc public func reset() {
+    public func reset() {
         removeAnnotations(annotations)
         removeOverlays(lines.map {
             $0.line
@@ -153,13 +153,18 @@ public class MapView: MKMapView {
         lines.removeAll()
     }
     
+    /// Initialize the object
+    private func initialize() {
+        self.delegate = self
+        locationHelper.locationHelperDelegate = self
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
         points = []
         lines = []
         locationHelper = LocationHelper()
         super.init(coder: aDecoder)
-        self.delegate = self
-        locationHelper.locationHelperDelegate = self
+        initialize()
     }
     
     public override init(frame: CGRect) {
@@ -167,12 +172,12 @@ public class MapView: MKMapView {
         lines = []
         locationHelper = LocationHelper()
         super.init(frame: frame)
-        self.delegate = self
-        locationHelper.locationHelperDelegate = self
+        initialize()
     }
     
     override public func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
+        initialize()
     }
     
 }

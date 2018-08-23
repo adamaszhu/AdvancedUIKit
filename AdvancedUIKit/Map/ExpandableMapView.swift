@@ -1,21 +1,21 @@
 /// ExpandableMapView is used to add full screen function to the map view.
 ///
 /// - author: Adamas
-/// - version: 1.0.3
-/// - date: 09/06/2017
+/// - version: 1.4.0
+/// - date: 23/08/2018
 final public class ExpandableMapView: MapView {
     
     /// The gesture filter to expand the view.
-    @objc let gestureFilterView: UIView
+    let gestureFilterView: UIView
     
     /// The button used to collapse the view.
-    @objc let collapseButton: UIButton
+    let collapseButton: UIButton
     
     /// The blur effect background of the collapse button.
-    @objc let collapseButtonBackgroundView: UIVisualEffectView
+    let collapseButtonBackgroundView: UIVisualEffectView
     
     /// The icon on the collapse button.
-    @objc public var collapseIcon: UIImage? {
+    public var collapseIcon: UIImage? {
         set {
             guard let newImage = newValue else {
                 return
@@ -31,7 +31,7 @@ final public class ExpandableMapView: MapView {
     }
     
     /// The origin of the collapse button.
-    @objc public var collapseIconFrame: CGRect {
+    public var collapseIconFrame: CGRect {
         set {
             collapseButton.frame = newValue
             collapseButtonBackgroundView.frame = newValue
@@ -42,7 +42,7 @@ final public class ExpandableMapView: MapView {
     }
     
     /// The radius of the background view.
-    @objc public var collapseButtonBackgroundRadius: Int {
+    public var collapseButtonBackgroundRadius: Int {
         set {
             collapseButtonBackgroundView.layer.cornerRadius = CGFloat(newValue)
             collapseButtonBackgroundView.clipsToBounds = true
@@ -53,7 +53,7 @@ final public class ExpandableMapView: MapView {
     }
     
     /// The background margin.
-    @objc public var collapseButtonBackgroundMargin: Int {
+    public var collapseButtonBackgroundMargin: Int {
         set {
             let margin = CGFloat(newValue)
             collapseButtonBackgroundView.frame.origin = .init(x: collapseButton.frame.origin.x - margin, y: collapseButton.frame.origin.y - margin)
@@ -65,11 +65,8 @@ final public class ExpandableMapView: MapView {
         }
     }
     
-    public required init?(coder aDecoder: NSCoder) {
-        gestureFilterView = UIView()
-        collapseButton = UIButton()
-        collapseButtonBackgroundView = UIVisualEffectView()
-        super.init(coder: aDecoder)
+    /// Initialize the object.
+    private func initialize() {
         collapseButton.isHidden = true
         collapseButton.addTarget(self, action: #selector(collapse), for: .touchUpInside)
         collapseButtonBackgroundView.effect = UIBlurEffect()
@@ -80,13 +77,13 @@ final public class ExpandableMapView: MapView {
         gestureFilterView.addGestureRecognizer(expandGestureRecognizer)
     }
     
-    @objc var originalSuperview: UIView!
+    var originalSuperview: UIView!
     var originalZIndex: Int!
     var originalFrame: CGRect!
-    @objc var originalFrameConstraints: [NSLayoutConstraint]!
-    @objc var originalConstraints: [NSLayoutConstraint]!
+    var originalFrameConstraints: [NSLayoutConstraint]!
+    var originalConstraints: [NSLayoutConstraint]!
     
-    @objc public var isExpandable: Bool {
+    public var isExpandable: Bool {
         set {
             if newValue {
                 addSubview(gestureFilterView)
@@ -101,6 +98,27 @@ final public class ExpandableMapView: MapView {
         get {
             return subviews.contains(gestureFilterView)
         }
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        gestureFilterView = UIView()
+        collapseButton = UIButton()
+        collapseButtonBackgroundView = UIVisualEffectView()
+        super.init(coder: aDecoder)
+        initialize()
+    }
+    
+    public override init(frame: CGRect) {
+        gestureFilterView = UIView()
+        collapseButton = UIButton()
+        collapseButtonBackgroundView = UIVisualEffectView()
+        super.init(frame: frame)
+        initialize()
+    }
+    
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        initialize()
     }
     
 }
