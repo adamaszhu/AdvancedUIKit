@@ -171,6 +171,10 @@ public class MapView: MKMapView {
         locationHelper.locationHelperDelegate = self
     }
     
+    override public func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+    }
+    
 }
 
 import MapKit
