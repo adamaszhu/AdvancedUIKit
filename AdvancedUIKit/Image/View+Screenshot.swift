@@ -9,8 +9,8 @@ public extension UIView {
     private static let contextError = "The graphic context is nil."
     
     /// The screenshot created for the view.
-    public var screenshot: UIImage? {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 10)
+    public func screenshot(withScale scale: Double = 1) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, CGFloat(scale))
         guard let context = UIGraphicsGetCurrentContext() else {
             Logger.standard.log(error: UIView.contextError)
             return nil
