@@ -10,7 +10,7 @@ public extension UIView {
     
     /// The screenshot created for the view.
     public var screenshot: UIImage? {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 10)
         guard let context = UIGraphicsGetCurrentContext() else {
             Logger.standard.log(error: UIView.contextError)
             return nil

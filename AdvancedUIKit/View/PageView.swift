@@ -1,8 +1,8 @@
 /// PageView is a customized page view.
 ///
 /// - author: Adamas
-/// - version: 1.3.0
-/// - date: 03/07/2018
+/// - version: 1.4.0
+/// - date: 26/08/2018
 public class PageView: UIScrollView {
     
     /// The delegate
@@ -24,6 +24,11 @@ public class PageView: UIScrollView {
     /// The index of the current page.
     @objc public var currentPageIndex: Int {
         return pageControl.currentPage
+    }
+    
+    /// The number of pages in the controller.
+    public var numberOfPages: Int {
+        return pageControl.numberOfPages
     }
     
     /// The current page presented.
