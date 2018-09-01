@@ -1,11 +1,11 @@
 /// ExpandableMapView+Expandable defines what an expandable MapView should do.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 19/06/2017
+/// - version: 1.4.0
+/// - date: 23/08/2018
 extension ExpandableMapView: ExpandableView {
     
-    @objc var isExpanded: Bool {
+    var isExpanded: Bool {
         guard let _ = superview else {
             Logger.standard.log(error: ExpandableMapView.superviewError)
             return false

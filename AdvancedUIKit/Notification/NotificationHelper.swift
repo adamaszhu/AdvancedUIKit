@@ -1,8 +1,8 @@
 /// NotificationHelper is used to manage the notification.
 ///
 /// - author: Adamas
-/// - version: 1.1.1
-/// - date: 17/01/2018
+/// - version: 1.4.0
+/// - date: 08/08/2018
 final public class NotificationHelper {
     
     /// The singleton helper.
@@ -28,6 +28,14 @@ final public class NotificationHelper {
     
     /// The application object.
     private var application: UIApplication
+    
+    /// Parse a token data into a string
+    ///
+    /// - Parameter data: The token data
+    /// - Returns: The token string
+    public func deviceToken(from data: Data) -> String {
+        return data.map{String(format: NotificationHelper.deviceTokenPattern, $0)}.joined()
+    }
     
     /// Post a local notification.
     ///
