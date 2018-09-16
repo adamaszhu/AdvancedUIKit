@@ -74,6 +74,15 @@ final public class NotificationHelper {
         // notificationHelperDelegate?.notificationHelper(self, didAuthorizeLocalNotification: isLocalNotificationAuthorized)
     }
     
+    /// Register the remote notification function.
+    @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
+    public func authorizeRemoteNotification() {
+        guard !isRemoteNotificationAuthorized else {
+            return
+        }
+        application.registerForRemoteNotifications()
+    }
+    
     /// Initialize the object.
     ///
     /// - Parameter application: The application that the notification belongs to.
