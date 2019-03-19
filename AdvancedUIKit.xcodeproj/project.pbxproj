@@ -97,7 +97,6 @@
 		421C9FCB1EE82C3C00D019C2 /* MapView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9FCA1EE82C3C00D019C2 /* MapView+Delegate.swift */; };
 		42204B991EF9489000F1FA04 /* InfiniteListStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B921EF9489000F1FA04 /* InfiniteListStatus.swift */; };
 		42204B9F1EF954A400F1FA04 /* InfiniteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B9E1EF954A400F1FA04 /* InfiniteList.swift */; };
-		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
 		4234665B1EED21F0002A04F4 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4234665A1EED21F0002A04F4 /* PageView.swift */; };
 		4258DDAF1EEAE6A80085FCAA /* ExpandableGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA31EEAE6A80085FCAA /* ExpandableGalleryView.swift */; };
 		4258DDB01EEAE6A80085FCAA /* GalleryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA41EEAE6A80085FCAA /* GalleryImage.swift */; };
@@ -783,7 +782,6 @@
 				2822A3441EE127F900FAA8E3 /* NotificationHelper.strings in Resources */,
 				2846A9931EE7B8CC007D4226 /* LocationHelper.strings in Resources */,
 				426939941EAB8EE000761FDE /* DataPicker.strings in Resources */,
-				422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */,
 				284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */,
 				2810830D201AE5D800AA30A6 /* AppStoreHelper.strings in Resources */,
 				428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */,
