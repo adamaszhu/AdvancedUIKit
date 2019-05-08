@@ -1,19 +1,19 @@
 /// SearchBar+Attribute add additional support for extracting sub components.
 ///
 /// - author: Adamas
-/// - version: 1.3.0
-/// - date: 06/07/2018
+/// - version: 1.5.0
+/// - date: 08/05/2019
 public extension UISearchBar {
-    
-    /// Keys
-    private static let textFieldKey = "searchField"
     
     /// The text field
     var textField: UITextField? {
         return value(forKey: UISearchBar.textFieldKey) as? UITextField
     }
-    
 }
 
+/// Constants
+private extension UISearchBar {
+    static let textFieldKey = "searchField"
+}
 
 import UIKit

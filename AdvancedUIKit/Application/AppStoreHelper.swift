@@ -1,8 +1,8 @@
 /// AppStoreHelper provides support for rating the app.
 ///
 /// - author: Adamas
-/// - version: 1.2.0
-/// - date: 26/01/2018
+/// - version: 1.5.0
+/// - date: 08/05/2019
 public final class AppStoreHelper {
     
     /// The app store id
@@ -22,11 +22,13 @@ public final class AppStoreHelper {
     /// - Parameter
     ///   - id: The app store id.
     ///   - reviewCounterFlag: The flag used to record the review counter.
-    public init(id: String, reviewCounterFlag: String) {
+    ///   - userDefaults: The user defaults used to store flags.
+    ///   - messageHelper: The message helper used to show a popup.
+    public init(id: String, reviewCounterFlag: String, userDefaults: UserDefaults = UserDefaults.standard, messageHelper: SystemMessageHelper? = SystemMessageHelper()) {
         self.id = id
         self.reviewCounterFlag = reviewCounterFlag
-        userDefaults = UserDefaults.standard
-        messageHelper = SystemMessageHelper()
+        self.userDefaults = userDefaults
+        self.messageHelper = messageHelper
         messageHelper?.messageHelperDelegate = self
     }
     
@@ -60,7 +62,6 @@ public final class AppStoreHelper {
         let savedCount = userDefaults.integer(forKey: reviewCounterFlag)
         return savedCount == count
     }
-    
 }
 
 extension AppStoreHelper: MessageHelperDelegate {
@@ -69,7 +70,21 @@ extension AppStoreHelper: MessageHelperDelegate {
         let reviewAddress = String(format: AppStoreHelper.reviewAddressPattern, id)
         DeviceHelper.standard.openWebsite(withLink: reviewAddress)
     }
+}
+
+/// Constants
+private extension AppStoreHelper {
     
+    /// The review address pattern.
+    static var reviewAddressPattern = "itms-apps://itunes.apple.com/app/id%@"
+    
+    /// The review alert.
+    static var reviewMessage = "ReviewMessage"
+    static var cancelButtonName = "Cancel"
+    static var confirmButtonName = "Confirm"
+    
+    /// Error.
+    static var messageHelperError = "The message cannot be presented."
 }
 
 import Foundation

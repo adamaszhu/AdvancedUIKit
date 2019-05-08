@@ -1,8 +1,8 @@
 /// RingHelper provides support for playing rings and vibrations periodically.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 01/06/2017
+/// - version: 1.5.0
+/// - date: 08/05/2018
 final public class RingHelper {
     
     /// The singleton instance.
@@ -103,7 +103,26 @@ final public class RingHelper {
         period = 0
         self.bundle = bundle
     }
+}
+
+/// Constants
+public extension RingHelper {
     
+    /// The default period between two rings or vibrations.
+    public static let defaultRingPeriod: Double = 1.5
+    
+    /// The system sound.
+    public static let defaultSoundID: SystemSoundID = 1022
+}
+
+/// Constants
+private extension RingHelper {
+    
+    /// System error.
+    static let soundNameError = "The sound file doesn't exist."
+    
+    /// System warning.
+    static let playStatusWarning = "A sound is currently being played."
 }
 
 import AudioToolbox
