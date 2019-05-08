@@ -17,7 +17,7 @@ public extension UINavigationController {
     @objc public func showInitialViewController(ofStoryboard storyboardName: String, withAnimation shouldAnimate: Bool = true, withInitialization initialization: ((UIViewController) -> Void) = { _ in }) {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         guard let viewController = storyboard.instantiateInitialViewController() else {
-            Logger.standard.log(error: UINavigationController.viewControllerError)
+            Logger.standard.logError(UINavigationController.viewControllerError)
             return
         }
         initialization(viewController)
@@ -38,7 +38,7 @@ public extension UINavigationController {
         } else if let currentStoryboard = self.storyboard {
             storyboard = currentStoryboard
         } else {
-            Logger.standard.log(error: UINavigationController.viewControllerError)
+            Logger.standard.logError(UINavigationController.viewControllerError)
             return
         }
         let viewController = storyboard.instantiateViewController(withIdentifier: identifier)

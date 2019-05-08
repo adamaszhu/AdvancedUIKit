@@ -62,7 +62,7 @@ open class CameraHelper {
             return
         }
         guard isDescriptionKeyExisted(CameraHelper.cameraDescriptionKey) == true else {
-            Logger.standard.log(error: CameraHelper.descriptionKeyError, withDetail: CameraHelper.cameraDescriptionKey)
+            Logger.standard.logError(CameraHelper.descriptionKeyError, withDetail: CameraHelper.cameraDescriptionKey)
             return
         }
         AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { [unowned self] (result) in
@@ -77,7 +77,7 @@ open class CameraHelper {
             return
         }
         guard isDescriptionKeyExisted(CameraHelper.libraryDescriptionKey) == true else {
-            Logger.standard.log(error: CameraHelper.descriptionKeyError, withDetail: CameraHelper.libraryDescriptionKey)
+            Logger.standard.logError(CameraHelper.descriptionKeyError, withDetail: CameraHelper.libraryDescriptionKey)
             return
         }
         PHPhotoLibrary.requestAuthorization { [unowned self] (result) in

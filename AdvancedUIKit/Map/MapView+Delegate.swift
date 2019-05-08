@@ -75,7 +75,7 @@ extension MapView: MKMapViewDelegate {
         } else if let linePoint = findLinePoint(with: annotation) {
             point = linePoint
         } else {
-            Logger.standard.log(error: MapView.pointError)
+            Logger.standard.logError(MapView.pointError)
             return nil
         }
         guard let _ = point.icon else {
@@ -88,7 +88,7 @@ extension MapView: MKMapViewDelegate {
     
     public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         guard let line = findLine(with: overlay) else {
-            Logger.standard.log(error: MapView.lineError)
+            Logger.standard.logError(MapView.lineError)
             return MKOverlayRenderer()
         }
         return line.renderer

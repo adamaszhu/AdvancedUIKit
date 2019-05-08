@@ -58,7 +58,7 @@ public class InfiniteList: UITableView {
             return
         }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? InfiniteCell else {
-            Logger.standard.log(error: InfiniteList.cellNibError, withDetail: type)
+            Logger.standard.logError(InfiniteList.cellNibError, withDetail: type)
             return
         }
         let cellType = InfiniteCellType(type: type, basicHeight: view.frame.height, additionalHeight: view.additionalView?.frame.height)
@@ -74,7 +74,7 @@ public class InfiniteList: UITableView {
             return
         }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
-            Logger.standard.log(error: InfiniteList.emptyStateNibError)
+            Logger.standard.logError(InfiniteList.emptyStateNibError)
             return
         }
         view.frame = bounds
@@ -84,11 +84,11 @@ public class InfiniteList: UITableView {
     /// Show the empty state.
     @objc func showEmptyState() {
         guard let emptyState = emptyState else {
-            Logger.standard.log(error: InfiniteList.emptyStateRegistrationError)
+            Logger.standard.logError(InfiniteList.emptyStateRegistrationError)
             return
         }
         guard emptyState.superview == nil else {
-            Logger.standard.log(warning: InfiniteList.emptyStateShowWarning)
+            Logger.standard.logWarning(InfiniteList.emptyStateShowWarning)
             return
         }
         emptyState.animate(withChange: {
@@ -102,11 +102,11 @@ public class InfiniteList: UITableView {
     /// Hide the empty state.
     @objc func hideEmptyState() {
         guard let emptyState = emptyState else {
-            Logger.standard.log(error: InfiniteList.emptyStateRegistrationError)
+            Logger.standard.logError(InfiniteList.emptyStateRegistrationError)
             return
         }
         guard emptyState.superview != nil else {
-            Logger.standard.log(warning: InfiniteList.emptyStateHideWarning)
+            Logger.standard.logWarning(InfiniteList.emptyStateHideWarning)
             return
         }
         emptyState.animate(withChange: {
@@ -128,7 +128,7 @@ public class InfiniteList: UITableView {
                 return cellType
             }
         }
-        Logger.standard.log(error: InfiniteList.cellRegistrationError, withDetail: type)
+        Logger.standard.logError(InfiniteList.cellRegistrationError, withDetail: type)
         return nil
     }
     

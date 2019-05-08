@@ -12,7 +12,7 @@ final class GestureFilterView: UIView {
     ///   - shouldEnable: Whether the gesture recognizer should be enabled or not.
     @objc func changeGestureRecognizerUsibility(ofType type: AnyClass, toUsibility shouldEnable: Bool) {
         guard let gestureRecognizers = gestureRecognizers else {
-            Logger.standard.log(error: GestureFilterView.gestureRecognizersError)
+            Logger.standard.logError(GestureFilterView.gestureRecognizersError)
             return
         }
         gestureRecognizers.forEach {
@@ -39,7 +39,7 @@ final class GestureFilterView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.log(error: GestureFilterView.initError)
+        Logger.standard.logError(GestureFilterView.initError)
         return nil
     }
     

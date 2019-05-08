@@ -58,7 +58,7 @@ extension KeyboardHelper {
     /// - Parameter notification: The notification of the keyboard action.
     private func refreshKeyboardHeight(with notification: NSNotification) {
         guard let value = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
-            Logger.standard.log(error: KeyboardHelper.keyboardInfoError)
+            Logger.standard.logError(KeyboardHelper.keyboardInfoError)
             keyboardHeight = 0
             return
         }
@@ -70,7 +70,7 @@ extension KeyboardHelper {
     /// - Parameter notification: The notification of the keyboard action.
     private func refreshPushDuration(with notification: NSNotification) {
         guard let value = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber else {
-            Logger.standard.log(error: KeyboardHelper.keyboardInfoError)
+            Logger.standard.logError(KeyboardHelper.keyboardInfoError)
             keyboardPushDuration = KeyboardHelper.defaultKeyboardPushDuration
             return
         }

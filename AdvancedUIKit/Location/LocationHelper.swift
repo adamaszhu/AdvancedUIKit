@@ -68,7 +68,7 @@ open class LocationHelper: CLLocationManager {
             return
         }
         guard checkDescriptionKey(LocationHelper.alwaysDescriptionKey) == true else {
-            Logger.standard.log(error: LocationHelper.descriptionKeyError, withDetail: LocationHelper.alwaysDescriptionKey)
+            Logger.standard.logError( LocationHelper.descriptionKeyError, withDetail: LocationHelper.alwaysDescriptionKey)
             return
         }
         authorizingStatus = .authorizedAlways
@@ -81,7 +81,7 @@ open class LocationHelper: CLLocationManager {
             return
         }
         guard checkDescriptionKey(LocationHelper.whenInUseDescriptionKey) == true else {
-            Logger.standard.log(error: LocationHelper.descriptionKeyError, withDetail: LocationHelper.whenInUseDescriptionKey)
+            Logger.standard.logError(LocationHelper.descriptionKeyError, withDetail: LocationHelper.whenInUseDescriptionKey)
             return
         }
         authorizingStatus = .authorizedWhenInUse

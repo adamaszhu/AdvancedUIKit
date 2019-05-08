@@ -78,7 +78,7 @@ final public class DataPicker: RootView {
     ///   - index: The index of the column.
     @objc public func selectValue(_ value: String, atColumn index: Int = 0) {
         guard 0 ..< columns.count ~= index else {
-            Logger.standard.log(error: DataPicker.columnError)
+            Logger.standard.logError(DataPicker.columnError)
             return
         }
         var item: DataPickerItem
@@ -89,7 +89,7 @@ final public class DataPicker: RootView {
                 return
             }
         }
-        Logger.standard.log(error: DataPicker.itemError)
+        Logger.standard.logError(DataPicker.itemError)
     }
     
     /// The selected values are confirmed by clicking the done button.
@@ -116,7 +116,7 @@ final public class DataPicker: RootView {
     
     public override func hide() {
         guard isVisible else {
-            Logger.standard.log(warning: DataPicker.hidingWarning)
+            Logger.standard.logWarning(DataPicker.hidingWarning)
             return
         }
         animate(withChange: { [unowned self] in
@@ -135,7 +135,7 @@ final public class DataPicker: RootView {
     
     public override func show() {
         guard !isVisible else {
-            Logger.standard.log(warning: DataPicker.showingWarning)
+            Logger.standard.logWarning(DataPicker.showingWarning)
             return
         }
         controllerOriginalFrame = controller?.frame

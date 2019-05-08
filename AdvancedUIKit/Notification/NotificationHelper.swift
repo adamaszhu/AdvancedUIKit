@@ -12,7 +12,7 @@ final public class NotificationHelper {
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's UNAuthorizationOptions")
     public var isLocalNotificationAuthorized: Bool {
         guard let setting = application.currentUserNotificationSettings else {
-            Logger.standard.log(error: NotificationHelper.settingError)
+            Logger.standard.logError(NotificationHelper.settingError)
             return false
         }
         return setting.types.contains(.alert)

@@ -22,7 +22,7 @@ extension InfiniteListStatus {
         case .initial, .reloading:
             return true
         default:
-            Logger.standard.log(warning: InfiniteListStatus.reloadingStatusWarning)
+            Logger.standard.logWarning(InfiniteListStatus.reloadingStatusWarning)
             return false
         }
     }
@@ -33,7 +33,7 @@ extension InfiniteListStatus {
         case .loadingMore:
             return true
         default:
-            Logger.standard.log(warning: InfiniteListStatus.loadingMoreStatusWarning)
+            Logger.standard.logWarning(InfiniteListStatus.loadingMoreStatusWarning)
             return false
         }
     }
@@ -44,7 +44,7 @@ extension InfiniteListStatus {
         case .infinite, .finite, .empty:
             return true
         default:
-            Logger.standard.log(warning: InfiniteListStatus.reloadingWarning)
+            Logger.standard.logWarning(InfiniteListStatus.reloadingWarning)
             return false
         }
     }
@@ -55,7 +55,7 @@ extension InfiniteListStatus {
         case .infinite:
             return true
         default:
-            Logger.standard.log(warning: InfiniteListStatus.loadingMoreWarning)
+            Logger.standard.logWarning(InfiniteListStatus.loadingMoreWarning)
             return false
         }
     }
@@ -66,7 +66,7 @@ extension InfiniteListStatus {
         case .finite, .infinite:
             return true
         default:
-            Logger.standard.log(warning: InfiniteListStatus.selectionWarning)
+            Logger.standard.logWarning(InfiniteListStatus.selectionWarning)
             return false
         }
     }
@@ -77,7 +77,7 @@ extension InfiniteListStatus {
         case .finite, .infinite:
             return true
         default:
-            Logger.standard.log(warning: InfiniteListStatus.editionWarning)
+            Logger.standard.logWarning(InfiniteListStatus.editionWarning)
             return false
         }
     }
@@ -88,7 +88,7 @@ extension InfiniteListStatus {
         case .initial:
             return true
         default:
-            Logger.standard.log(error: InfiniteListStatus.registrationError)
+            Logger.standard.logError(InfiniteListStatus.registrationError)
             return false
         }
     }

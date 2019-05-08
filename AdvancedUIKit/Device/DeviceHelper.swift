@@ -16,7 +16,7 @@ final public class DeviceHelper: NSObject {
     /// Open the system setting.
     public func openSystemSetting() {
         guard let systemSettingURL = URL(string: UIApplicationOpenSettingsURLString) else {
-            Logger.standard.log(error: DeviceHelper.systemLinkError)
+            Logger.standard.logError(DeviceHelper.systemLinkError)
             abort()
         }
         open(systemSettingURL, withError: DeviceHelper.systemSettingError)
@@ -27,7 +27,7 @@ final public class DeviceHelper: NSObject {
     /// - Parameter link: The website address.
     public func openWebsite(withLink link: String) {
         guard let websiteURL = URL(string: link) else {
-            Logger.standard.log(info: DeviceHelper.linkError, withDetail: link)
+            Logger.standard.logInfo(DeviceHelper.linkError, withDetail: link)
             abort()
         }
         open(websiteURL, withError: DeviceHelper.browserError)
@@ -38,7 +38,7 @@ final public class DeviceHelper: NSObject {
     /// - Parameter number: The phone number.
     public func dial(withNumber number: String) {
         guard let dialURL = URL(string: "\(DeviceHelper.dailPrefix)\(number)") else {
-            Logger.standard.log(info: DeviceHelper.phoneNumberError, withDetail: number)
+            Logger.standard.logInfo(DeviceHelper.phoneNumberError, withDetail: number)
             return
         }
         open(dialURL, withError: DeviceHelper.dialError)
@@ -50,7 +50,7 @@ final public class DeviceHelper: NSObject {
     public func openMap(withAddress address: String) {
         let formattedAddress = address.replacingOccurrences(of: String.space, with: String.plus)
         guard let mapURL = URL(string: "\(DeviceHelper.mapPrefix)\(formattedAddress)") else {
-            Logger.standard.log(info: DeviceHelper.addressError, withDetail: address)
+            Logger.standard.logInfo(DeviceHelper.addressError, withDetail: address)
             return
         }
         open(mapURL, withError: DeviceHelper.mapError)

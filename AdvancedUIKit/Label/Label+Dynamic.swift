@@ -29,7 +29,7 @@ public extension UILabel {
     /// How many lines are presented.
     @objc public var lineAmount: Int {
         guard let text = text else {
-            Logger.standard.log(warning: UILabel.textWarning)
+            Logger.standard.logWarning(UILabel.textWarning)
             return 0
         }
         return text.measuredLineAmount(withFont: font, inView: self)
@@ -38,7 +38,7 @@ public extension UILabel {
     /// The actual height of the text.
     @objc public var actualHeight: CGFloat {
         guard let text = text else {
-            Logger.standard.log(warning: UILabel.textWarning)
+            Logger.standard.logWarning(UILabel.textWarning)
             return 0
         }
         return text.measuredHeight(withFont: font, inView: self)

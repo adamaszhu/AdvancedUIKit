@@ -55,7 +55,7 @@ extension String {
     /// - Returns: The actual lines displayed on the view.
     func measuredLines(withFont font: UIFont, inView view: UIView) -> [String] {
         guard view.frame.width != 0 else {
-            Logger.standard.log(warning: String.viewWidthWarning)
+            Logger.standard.logWarning(String.viewWidthWarning)
             return []
         }
         var displayedLines = [String]()

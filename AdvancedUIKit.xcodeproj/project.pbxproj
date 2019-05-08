@@ -135,6 +135,9 @@
 		28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */; };
 		28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F21EDBF49D006646A3 /* DeviceType.swift */; };
 		28FD8CEE1F731B050067E378 /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FD8CED1F731B050067E378 /* Picker.storyboard */; };
+		3519F74522824D2E00C7AF17 /* RemoteNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3519F74422824D2D00C7AF17 /* RemoteNotification.swift */; };
+		3519F74822824D5500C7AF17 /* RemoteNotificationSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3519F74722824D5500C7AF17 /* RemoteNotificationSpecs.swift */; };
+		3519F74B228274B000C7AF17 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		420A530F1EFDDFC2007E07CF /* InfiniteCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420A530E1EFDDFC2007E07CF /* InfiniteCellType.swift */; };
 		420C78E11EEB73AE00A1E3EA /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */; };
 		420C78E41EEB93E500A1E3EA /* Application+Viewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E31EEB93E500A1E3EA /* Application+Viewer.swift */; };
@@ -152,7 +155,6 @@
 		4224C47E1F6FEA4C0072F7FC /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4224C47D1F6FEA4C0072F7FC /* Location.storyboard */; };
 		422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB4081EAA3CF100377AB5 /* AppDelegate.swift */; };
 		422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422DB40F1EAA3CF100377AB5 /* Assets.xcassets */; };
-		422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422DB4281EAA3D2A00377AB5 /* Info.plist */; };
 		4234665B1EED21F0002A04F4 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4234665A1EED21F0002A04F4 /* PageView.swift */; };
 		4258DDAC1EEAE6A80085FCAA /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DD9F1EEAE6A80085FCAA /* CameraHelper.swift */; };
 		4258DDAD1EEAE6A80085FCAA /* CameraHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258DDA01EEAE6A80085FCAA /* CameraHelperDelegate.swift */; };
@@ -225,6 +227,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		28D1BFF91EDCEC7300290999 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 422DB3BB1EAA30B300377AB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 422DB3C31EAA30B300377AB5;
+			remoteInfo = AdvancedUIKit;
+		};
+		3519F749228274AB00C7AF17 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 422DB3BB1EAA30B300377AB5 /* Project object */;
 			proxyType = 1;
@@ -384,6 +393,8 @@
 		28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoAccessor.swift; sourceTree = "<group>"; };
 		28F550F21EDBF49D006646A3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		28FD8CED1F731B050067E378 /* Picker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
+		3519F74422824D2D00C7AF17 /* RemoteNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotification.swift; sourceTree = "<group>"; };
+		3519F74722824D5500C7AF17 /* RemoteNotificationSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationSpecs.swift; sourceTree = "<group>"; };
 		420A530E1EFDDFC2007E07CF /* InfiniteCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteCellType.swift; sourceTree = "<group>"; };
 		420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		420C78E31EEB93E500A1E3EA /* Application+Viewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Application+Viewer.swift"; sourceTree = "<group>"; };
@@ -504,6 +515,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3519F74B228274B000C7AF17 /* AdvancedUIKit.framework in Frameworks */,
 				1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +546,7 @@
 		2822A33B1EE1278500FAA8E3 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				3519F74422824D2D00C7AF17 /* RemoteNotification.swift */,
 				2822A3461EE127F900FAA8E3 /* NotificationHelper.strings */,
 				2822A33C1EE127EA00FAA8E3 /* NotificationHelper.swift */,
 				2838447B1F69F6E700AAD1E0 /* NotificationHelper+Constant.swift */,
@@ -721,6 +734,14 @@
 			path = Device;
 			sourceTree = "<group>";
 		};
+		3519F74622824D5500C7AF17 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				3519F74722824D5500C7AF17 /* RemoteNotificationSpecs.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		420C78DF1EEB737E00A1E3EA /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -845,6 +866,7 @@
 		422DB4261EAA3D2A00377AB5 /* AdvancedUIKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				3519F74622824D5500C7AF17 /* Notification */,
 				428EAB461EDC1683006ED22B /* Device */,
 				422DB4281EAA3D2A00377AB5 /* Info.plist */,
 			);
@@ -1171,11 +1193,11 @@
 				422DB4161EAA3CF100377AB5 /* Frameworks */,
 				422DB4171EAA3CF100377AB5 /* Resources */,
 				7C34FC7B5BE743A66DA27DC5 /* [CP] Embed Pods Frameworks */,
-				2E7BACCB82A6B8146203F566 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3519F74A228274AB00C7AF17 /* PBXTargetDependency */,
 				422DB41B1EAA3CF100377AB5 /* PBXTargetDependency */,
 			);
 			name = AdvancedUIKitTests;
@@ -1206,6 +1228,7 @@
 					};
 					422DB4181EAA3CF100377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = X736P3ZPXA;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 422DB4051EAA3CF100377AB5;
@@ -1241,7 +1264,6 @@
 				2822A3441EE127F900FAA8E3 /* NotificationHelper.strings in Resources */,
 				2846A9931EE7B8CC007D4226 /* LocationHelper.strings in Resources */,
 				426939941EAB8EE000761FDE /* DataPicker.strings in Resources */,
-				422DB42A1EAA3D2A00377AB5 /* Info.plist in Resources */,
 				284E5C451EDD103400C3CC86 /* MessageHelper.strings in Resources */,
 				2810830D201AE5D800AA30A6 /* AppStoreHelper.strings in Resources */,
 				420C78EB1EEBB6D900A1E3EA /* CameraHelper.strings in Resources */,
@@ -1309,21 +1331,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2E7BACCB82A6B8146203F566 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7C34FC7B5BE743A66DA27DC5 /* [CP] Embed Pods Frameworks */ = {
@@ -1466,6 +1473,7 @@
 				28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */,
 				2822A3491EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift in Sources */,
 				4258DDB61EEAE6A80085FCAA /* ImageView+Measurer.swift in Sources */,
+				3519F74522824D2E00C7AF17 /* RemoteNotification.swift in Sources */,
 				42621F391EF9206000907066 /* ExpandableView+Action.swift in Sources */,
 				2862143E1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift in Sources */,
 				28E66FF21EE4E4C100073DF1 /* ActionFilterViewDelegate.swift in Sources */,
@@ -1543,6 +1551,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				428EAB481EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift in Sources */,
+				3519F74822824D5500C7AF17 /* RemoteNotificationSpecs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1553,6 +1562,11 @@
 			isa = PBXTargetDependency;
 			target = 422DB3C31EAA30B300377AB5 /* AdvancedUIKit */;
 			targetProxy = 28D1BFF91EDCEC7300290999 /* PBXContainerItemProxy */;
+		};
+		3519F74A228274AB00C7AF17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 422DB3C31EAA30B300377AB5 /* AdvancedUIKit */;
+			targetProxy = 3519F749228274AB00C7AF17 /* PBXContainerItemProxy */;
 		};
 		422DB41B1EAA3CF100377AB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1861,11 +1875,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X736P3ZPXA;
 				INFOPLIST_FILE = AdvancedUIKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.AdvancedUIKitHostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = AdvancedUIKitHost;
@@ -1878,11 +1893,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X736P3ZPXA;
 				INFOPLIST_FILE = AdvancedUIKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.AdvancedUIKitHostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = AdvancedUIKitHost;
 			};

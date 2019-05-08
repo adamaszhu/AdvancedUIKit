@@ -28,7 +28,7 @@ final class UnderlineView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.log(error: UnderlineView.initError)
+        Logger.standard.logError(UnderlineView.initError)
         return nil
     }
     

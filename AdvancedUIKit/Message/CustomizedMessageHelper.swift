@@ -207,7 +207,7 @@ final public class CustomizedMessageHelper: PopupView {
             inputText.text = .empty
             break
         case .unknown:
-            Logger.standard.log(error: CustomizedMessageHelper.typeError)
+            Logger.standard.logError(CustomizedMessageHelper.typeError)
             break
         }
         hide()
@@ -228,7 +228,7 @@ final public class CustomizedMessageHelper: PopupView {
             inputText.text = .empty
             break
         case .unknown:
-            Logger.standard.log(error: CustomizedMessageHelper.typeError)
+            Logger.standard.logError(CustomizedMessageHelper.typeError)
             break
         }
         hide()
@@ -237,7 +237,7 @@ final public class CustomizedMessageHelper: PopupView {
     /// Hide previous message.
     @objc func hidePreviousMessage() {
         guard messageType != .unknown else {
-            Logger.standard.log(error: CustomizedMessageHelper.typeError)
+            Logger.standard.logError(CustomizedMessageHelper.typeError)
             return
         }
         messageType = .unknown
@@ -245,7 +245,7 @@ final public class CustomizedMessageHelper: PopupView {
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        Logger.standard.log(error: CustomizedMessageHelper.initError)
+        Logger.standard.logError(CustomizedMessageHelper.initError)
         return nil
     }
     

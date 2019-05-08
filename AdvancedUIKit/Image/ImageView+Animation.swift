@@ -19,7 +19,7 @@ public extension UIImageView {
     ///   - endIndex: The end index of the image set.
     public func setImages(withPattern pattern: String, fromIndex startIndex: Int = 0, toIndex endIndex: Int) {
         guard pattern.contains(UIImageView.indexPlaceholder) else {
-            Logger.standard.log(error: UIImageView.patternError)
+            Logger.standard.logError(UIImageView.patternError)
             return
         }
         var images = [UIImage?]()

@@ -37,7 +37,7 @@ public final class AppStoreHelper {
             return
         }
         guard let messageHelper = messageHelper else {
-            Logger.standard.log(error: AppStoreHelper.messageHelperError)
+            Logger.standard.logError(AppStoreHelper.messageHelperError)
             return
         }
         let message = AppStoreHelper.reviewMessage.localizedInternalString(forType: AppStoreHelper.self)

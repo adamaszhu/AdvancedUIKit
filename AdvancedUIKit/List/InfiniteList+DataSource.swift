@@ -16,7 +16,7 @@ extension InfiniteList: UITableViewDataSource {
         }
         let cellID = String(describing: item.type)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as? InfiniteCell else {
-            Logger.standard.log(error: InfiniteList.cellError, withDetail: cellID)
+            Logger.standard.logError(InfiniteList.cellError, withDetail: cellID)
             return UITableViewCell()
         }
         if cell.isExpandable {

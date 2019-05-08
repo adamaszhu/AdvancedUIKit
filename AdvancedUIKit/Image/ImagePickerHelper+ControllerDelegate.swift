@@ -10,7 +10,7 @@ extension ImagePickerHelper: UIImagePickerControllerDelegate, UINavigationContro
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-            Logger.standard.log(error: ImagePickerHelper.imageError)
+            Logger.standard.logError(ImagePickerHelper.imageError)
             return
         }
         picker.dismiss(animated: true, completion: nil)

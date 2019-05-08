@@ -35,7 +35,7 @@ public class GalleryView: PageView {
     /// The gallery image presented.
     @objc var currentGalleryImage: GalleryImage? {
         guard let galleryImage = currentPage as? GalleryImage else {
-            Logger.standard.log(error: GalleryView.subviewTypeError)
+            Logger.standard.logError(GalleryView.subviewTypeError)
             return nil
         }
         return galleryImage
@@ -46,7 +46,7 @@ public class GalleryView: PageView {
         set {
             for index in 0 ..< subviews.count {
                 guard let galleryImage = subviews[index] as? GalleryImage else {
-                    Logger.standard.log(error: GalleryView.subviewTypeError)
+                    Logger.standard.logError(GalleryView.subviewTypeError)
                     return
                 }
                 galleryImage.frame.origin = CGPoint(x: CGFloat(index) * newValue.width, y: 0)
