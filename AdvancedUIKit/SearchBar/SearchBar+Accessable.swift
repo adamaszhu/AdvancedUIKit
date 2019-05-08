@@ -1,4 +1,4 @@
-/// SearchBar+Attribute add additional support for extracting sub components.
+/// SearchBar+Accessable add additional support for extracting sub components.
 ///
 /// - author: Adamas
 /// - version: 1.5.0

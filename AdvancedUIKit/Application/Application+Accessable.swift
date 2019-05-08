@@ -1,4 +1,4 @@
-/// Application+Viewer extracts the attributes related to the view in the app.
+/// Application+Accessable extracts the attributes related to the view in the app.
 ///
 /// - author: Adamas
 /// - version: 1.5.0
