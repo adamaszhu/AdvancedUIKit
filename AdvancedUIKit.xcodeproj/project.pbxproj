@@ -33,7 +33,6 @@
 		283844741F69F61300AAD1E0 /* LocationHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844731F69F61300AAD1E0 /* LocationHelper+Constant.swift */; };
 		283844761F69F65400AAD1E0 /* MapView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844751F69F65400AAD1E0 /* MapView+Constant.swift */; };
 		283844781F69F68600AAD1E0 /* CustomizedMessageHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844771F69F68600AAD1E0 /* CustomizedMessageHelper+Constant.swift */; };
-		2838447A1F69F6AD00AAD1E0 /* SystemMessageHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844791F69F6AD00AAD1E0 /* SystemMessageHelper+Constant.swift */; };
 		2838447C1F69F6E700AAD1E0 /* NotificationHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838447B1F69F6E700AAD1E0 /* NotificationHelper+Constant.swift */; };
 		2838447E1F69F70500AAD1E0 /* DataPicker+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838447D1F69F70500AAD1E0 /* DataPicker+Constant.swift */; };
 		283844801F69F73000AAD1E0 /* UnderlineView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838447F1F69F73000AAD1E0 /* UnderlineView+Constant.swift */; };
@@ -216,7 +215,6 @@
 		42CF00AD1EFD58F4002613E3 /* InfiniteListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF00AC1EFD58F4002613E3 /* InfiniteListDelegate.swift */; };
 		42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */; };
 		42EA08B91EDD8E0400B079C0 /* MessageHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */; };
-		42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */; };
 		42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08BC1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift */; };
 		42EE74B61EDCC72100AD982A /* FileInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */; };
 		42FE508D1EF7CF9E009C0BD7 /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE508C1EF7CF9E009C0BD7 /* ExpandableView.swift */; };
@@ -292,7 +290,6 @@
 		283844731F69F61300AAD1E0 /* LocationHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationHelper+Constant.swift"; sourceTree = "<group>"; };
 		283844751F69F65400AAD1E0 /* MapView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapView+Constant.swift"; sourceTree = "<group>"; };
 		283844771F69F68600AAD1E0 /* CustomizedMessageHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomizedMessageHelper+Constant.swift"; sourceTree = "<group>"; };
-		283844791F69F6AD00AAD1E0 /* SystemMessageHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SystemMessageHelper+Constant.swift"; sourceTree = "<group>"; };
 		2838447B1F69F6E700AAD1E0 /* NotificationHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationHelper+Constant.swift"; sourceTree = "<group>"; };
 		2838447D1F69F70500AAD1E0 /* DataPicker+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataPicker+Constant.swift"; sourceTree = "<group>"; };
 		2838447F1F69F73000AAD1E0 /* UnderlineView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UnderlineView+Constant.swift"; path = "AdvancedUIKit/Textfield/UnderlineView+Constant.swift"; sourceTree = SOURCE_ROOT; };
@@ -485,7 +482,6 @@
 		42CF00AC1EFD58F4002613E3 /* InfiniteListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteListDelegate.swift; sourceTree = "<group>"; };
 		42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		42EA08B81EDD8E0400B079C0 /* MessageHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageHelper+Constant.swift"; sourceTree = "<group>"; };
-		42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SystemMessageHelper+Helper.swift"; sourceTree = "<group>"; };
 		42EA08BC1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomizedMessageHelper+Helper.swift"; sourceTree = "<group>"; };
 		42EE74B51EDCC72100AD982A /* FileInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfoAccessor.swift; sourceTree = "<group>"; };
 		42FE508C1EF7CF9E009C0BD7 /* ExpandableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
@@ -619,8 +615,6 @@
 				284E5C571EDD17C200C3CC86 /* MessageHelperDelegate+Optional.swift */,
 				284E5C4F1EDD104C00C3CC86 /* MessageType.swift */,
 				284E5C4C1EDD104C00C3CC86 /* SystemMessageHelper.swift */,
-				283844791F69F6AD00AAD1E0 /* SystemMessageHelper+Constant.swift */,
-				42EA08BA1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -1359,7 +1353,6 @@
 				284E5C551EDD104C00C3CC86 /* MessageHelperDelegate.swift in Sources */,
 				42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */,
 				28BD992920E466BE0072EE28 /* View+Design.swift in Sources */,
-				42EA08BB1EDD8FE800B079C0 /* SystemMessageHelper+Helper.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
 				28E66FF81EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift in Sources */,
 				28E66FF61EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift in Sources */,
@@ -1473,7 +1466,6 @@
 				2823EE471EF224F4009B9AC8 /* Coordinate+Measurer.swift in Sources */,
 				4258DDB41EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
-				2838447A1F69F6AD00AAD1E0 /* SystemMessageHelper+Constant.swift in Sources */,
 				284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */,
 				2822A3361EE0EC8200FAA8E3 /* ViewController+Navigable.swift in Sources */,
 				42CA09E21EE0461A009AF1BE /* RingHelper.swift in Sources */,

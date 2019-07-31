@@ -7,18 +7,18 @@ public extension UIApplication {
     
     /// The current view controller.
     var currentViewController: UIViewController? {
+        var currentViewController = rootViewController
         if let rootPresentedViewController = rootViewController?.presentedViewController {
-            return rootPresentedViewController
+            currentViewController = rootPresentedViewController
         }
-        guard let navigationController = rootViewController as? UINavigationController,
-            let lastViewController = navigationController.viewControllers.last else {
-                return rootViewController
+        if let navigationController = currentViewController as? UINavigationController,
+            let lastViewController = navigationController.viewControllers.last {
+            currentViewController = lastViewController
         }
-        if let lastPresentedViewController = lastViewController.presentedViewController {
-            return lastPresentedViewController
-        } else {
-            return lastViewController
+        if let currentPresentedViewController = currentViewController?.presentedViewController {
+            currentViewController = currentPresentedViewController
         }
+        return currentViewController
     }
     
     /// The root view controller.
