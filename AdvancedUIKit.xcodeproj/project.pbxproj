@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */; };
 		280E15341EE924D3003BF109 /* MapView+LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280E15331EE924D3003BF109 /* MapView+LocationHelperDelegate.swift */; };
 		2810830D201AE5D800AA30A6 /* AppStoreHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2810830B201AE5D800AA30A6 /* AppStoreHelper.strings */; };
 		28108311201AE64C00AA30A6 /* AppStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810830F201AE64B00AA30A6 /* AppStoreHelper.swift */; };
@@ -494,7 +493,6 @@
 		42FE50901EF7D4BD009C0BD7 /* ExpandableView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExpandableView+Constant.swift"; sourceTree = "<group>"; };
 		42FE50921EF7D6C4009C0BD7 /* ExpandableGalleryView+Expandable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExpandableGalleryView+Expandable.swift"; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -519,7 +517,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3519F74B228274B000C7AF17 /* AdvancedUIKit.framework in Frameworks */,
-				1753AF0D171584EB52D532B7 /* Pods_AdvancedUIKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,7 +808,6 @@
 				422DB3C61EAA30B300377AB5 /* AdvancedUIKit */,
 				422DB4071EAA3CF100377AB5 /* AdvancedUIKitHost */,
 				422DB4261EAA3D2A00377AB5 /* AdvancedUIKitTests */,
-				CBAC1959A0FE1FE370BF95C1 /* Frameworks */,
 				C0272E9011EE625BC09036CD /* Pods */,
 				422DB3C51EAA30B300377AB5 /* Products */,
 			);
@@ -1130,14 +1126,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		CBAC1959A0FE1FE370BF95C1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EBB5211EA877ED62CA30076E /* Pods_AdvancedUIKitTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1244,6 +1232,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"zh-Hans",

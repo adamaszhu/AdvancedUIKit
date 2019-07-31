@@ -26,7 +26,7 @@ public extension UITextField {
     /// - Parameters:
     ///   - color: The normal color of the underline.
     ///   - highlightedColor: The highlighted color of the underline.
-    @objc public func activateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
+    @objc func activateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
         guard underlineView == nil else {
             Logger.standard.logError(UITextField.activationError)
             return
@@ -41,7 +41,7 @@ public extension UITextField {
     }
     
     /// Deactivate the underline view.
-    @objc public func deactivateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
+    @objc func deactivateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
         guard let underlineView = underlineView else {
             Logger.standard.logError(UITextField.activationError)
             return

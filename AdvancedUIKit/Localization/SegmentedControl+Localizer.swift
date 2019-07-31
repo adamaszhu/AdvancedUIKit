@@ -5,7 +5,7 @@
 /// - date: 02/06/2017
 public extension UISegmentedControl {
     
-    public override func localize(withLocalizationFile localizationFile: String) {
+    override func localize(withLocalizationFile localizationFile: String) {
         for segmentIndex in 0 ..< numberOfSegments {
             if let segmentTitle = titleForSegment(at: segmentIndex) {
                 setTitle(segmentTitle.localizedString(withLocalizationFile: localizationFile), forSegmentAt: segmentIndex)

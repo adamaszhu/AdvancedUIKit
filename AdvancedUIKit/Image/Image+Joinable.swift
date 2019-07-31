@@ -11,7 +11,7 @@ public extension UIImage {
     ///   - image: The second image.
     ///   - direction: Concat direction.
     /// - Returns: The new image.
-    public func concat(_ image: UIImage, with direction: ImageJoinDirection) -> UIImage? {
+    func concat(_ image: UIImage, with direction: ImageJoinDirection) -> UIImage? {
         let width: CGFloat
         let height: CGFloat
         switch direction {

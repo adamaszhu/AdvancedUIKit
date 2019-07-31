@@ -10,7 +10,7 @@ public extension UITextField {
     private static let placeholderColorWarning = "The placeholder doesn't have a color."
     
     /// Set the font color of the UITextField.
-    @objc public var placeholderColor: UIColor {
+    @objc var placeholderColor: UIColor {
         set {
             guard let placeholder = placeholder else {
                 Logger.standard.logWarning(UITextField.placeholderEmptyWarning)

@@ -6,7 +6,7 @@
 public extension UIView {
     
     /// The default animation period.
-    @objc public static let defaultAnimationDuration = 0.25
+    @objc static let defaultAnimationDuration = 0.25
     
     /// Perform an animation.
     ///
@@ -15,7 +15,7 @@ public extension UIView {
     ///   - duration: The period of the animation.
     ///   - preparation: The action to be done before the animation.
     ///   - completion: The action to be done after the animation.
-    @objc public func animate(withChange change: @escaping () -> Void, withDuration duration: Double = defaultAnimationDuration, withPreparation preparation:(() -> Void)? = nil, withCompletion completion: (() -> Void)? = nil) {
+    @objc func animate(withChange change: @escaping () -> Void, withDuration duration: Double = defaultAnimationDuration, withPreparation preparation:(() -> Void)? = nil, withCompletion completion: (() -> Void)? = nil) {
         layer.removeAllAnimations()
         preparation?()
         UIView.animate(withDuration: duration, animations: {

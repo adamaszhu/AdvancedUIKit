@@ -6,7 +6,7 @@
 public extension UIView {
     
     /// The constraints related to the frame of the view. These constraints is usually added to superview.
-    @objc public var frameConstraints: [NSLayoutConstraint] {
+    @objc var frameConstraints: [NSLayoutConstraint] {
         var frameConstraints = [NSLayoutConstraint]()
         guard let superview = superview else  {
             return frameConstraints

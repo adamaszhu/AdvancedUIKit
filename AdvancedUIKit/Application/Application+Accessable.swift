@@ -6,7 +6,7 @@
 public extension UIApplication {
     
     /// The current view controller.
-    public var currentViewController: UIViewController? {
+    var currentViewController: UIViewController? {
         if let rootPresentedViewController = rootViewController?.presentedViewController {
             return rootPresentedViewController
         }
@@ -22,7 +22,7 @@ public extension UIApplication {
     }
     
     /// The root view controller.
-    public var rootViewController: UIViewController? {
+    var rootViewController: UIViewController? {
         guard let window = keyWindow else {
             Logger.standard.logError(UIApplication.windowError)
             return nil

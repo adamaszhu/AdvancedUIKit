@@ -9,7 +9,7 @@ public extension UIButton {
     private static let titleLabelWarning = "The title label is nil."
     
     /// Get the height of each line.
-    @objc public var lineHeight: CGFloat {
+    @objc var lineHeight: CGFloat {
         guard let titleLabel = titleLabel else {
             Logger.standard.logWarning(UIButton.titleLabelWarning)
             return 0
@@ -18,7 +18,7 @@ public extension UIButton {
     }
     
     /// How many lines are presented.
-    @objc public var lineAmount: Int {
+    @objc var lineAmount: Int {
         guard let titleLabel = titleLabel else {
             Logger.standard.logWarning(UIButton.titleLabelWarning)
             return 0
@@ -27,7 +27,7 @@ public extension UIButton {
     }
     
     /// The actual height of the text.
-    @objc public var actualHeight: CGFloat {
+    @objc var actualHeight: CGFloat {
         guard let titleLabel = titleLabel else {
             Logger.standard.logWarning(UIButton.titleLabelWarning)
             return 0

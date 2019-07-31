@@ -10,7 +10,7 @@ public extension UIImageView {
     private static let contentModeError = "The content mode has not been supported yet."
     
     /// Calculate the real frame if the image within the UIImageView.
-    public var imageFrame: CGRect? {
+    var imageFrame: CGRect? {
         guard let image = image else {
             Logger.standard.logError(UIImageView.imageError)
             return nil

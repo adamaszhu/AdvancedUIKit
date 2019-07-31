@@ -109,10 +109,10 @@ final public class RingHelper {
 public extension RingHelper {
     
     /// The default period between two rings or vibrations.
-    public static let defaultRingPeriod: Double = 1.5
+    static let defaultRingPeriod: Double = 1.5
     
     /// The system sound.
-    public static let defaultSoundID: SystemSoundID = 1022
+    static let defaultSoundID: SystemSoundID = 1022
 }
 
 /// Constants

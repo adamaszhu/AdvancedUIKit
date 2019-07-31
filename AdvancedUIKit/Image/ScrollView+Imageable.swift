@@ -9,7 +9,7 @@ public extension UIScrollView {
     ///
     /// - Parameter scale: The scale of the screenshot
     /// - Returns: The screenshot
-    public func contentScreenshot(withScale scale: Double = 1) -> UIImage? {
+    func contentScreenshot(withScale scale: Double = 1) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(contentSize, isOpaque, CGFloat(scale))
         guard let context = UIGraphicsGetCurrentContext() else {
             Logger.standard.logError(UIScrollView.contextError)

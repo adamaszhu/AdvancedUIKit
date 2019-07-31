@@ -9,7 +9,7 @@ public extension UIView {
     ///
     /// - Parameter scale: The scale of the screenshot
     /// - Returns: The screenshot
-    public func screenshot(withScale scale: Double = 1) -> UIImage? {
+    func screenshot(withScale scale: Double = 1) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, CGFloat(scale))
         guard let context = UIGraphicsGetCurrentContext() else {
             Logger.standard.logError(UIView.contextError)

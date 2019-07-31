@@ -18,7 +18,7 @@ public extension InfiniteList {
     /// Register the load more view for the InfiniteList.
     ///
     /// - Parameter nib: The nib file containing the view.
-    @objc public func registerLoadingMoreBar(with nib: UINib) {
+    @objc func registerLoadingMoreBar(with nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
         }
@@ -33,7 +33,7 @@ public extension InfiniteList {
     /// Register the reload view for the InfiniteList.
     ///
     /// - Parameter nib: The nib file containing the view.
-    @objc public func registerReloadingBar(with nib: UINib) {
+    @objc func registerReloadingBar(with nib: UINib) {
         guard status.isRegistrationAvailable else {
             return
         }
@@ -46,7 +46,7 @@ public extension InfiniteList {
     }
     
     /// Perform drag and reload function programmatically.
-    @objc public func startReloading() {
+    @objc func startReloading() {
         guard let _ = reloadingBar else {
             Logger.standard.logError(InfiniteList.reloadingBarRegistrationError)
             return
@@ -65,7 +65,7 @@ public extension InfiniteList {
     /// Display a list of item depending on the status of the InfiniteList.
     ///
     /// - Parameter items: The item to be displayed.
-    public func display(_ items: [InfiniteItem]) {
+    func display(_ items: [InfiniteItem]) {
         switch status {
         case .initial, .reloading:
             reload(items)

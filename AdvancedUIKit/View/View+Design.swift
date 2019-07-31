@@ -6,7 +6,7 @@
 @IBDesignable public extension UIView {
     
     /// The border color of a view
-    @IBInspectable public var borderColor: UIColor? {
+    @IBInspectable var borderColor: UIColor? {
         set {
             layer.borderColor = newValue?.cgColor
         }
@@ -19,7 +19,7 @@
     }
     
     /// The border width of a view
-    @IBInspectable public var borderWidth: CGFloat {
+    @IBInspectable var borderWidth: CGFloat {
         set {
             layer.borderWidth = newValue
         }
@@ -29,7 +29,7 @@
     }
     
     /// The corner radious of a view
-    @IBInspectable public var cornerRadius: CGFloat {
+    @IBInspectable var cornerRadius: CGFloat {
         set {
             layer.cornerRadius = newValue
             clipsToBounds = newValue > 0
@@ -43,7 +43,7 @@
     ///
     /// - Parameter edgeInsets: The edge insets. If one inset is not necessary to be settled, set it to be .invalidInset
     @available(iOS 9.0, *)
-    public func pinEdgesToSuperview(with edgeInsets: UIEdgeInsets = .zero) {
+    func pinEdgesToSuperview(with edgeInsets: UIEdgeInsets = .zero) {
         guard let superview = superview else {
             return
         }

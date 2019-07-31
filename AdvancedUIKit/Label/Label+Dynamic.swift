@@ -9,7 +9,7 @@ public extension UILabel {
     private static let textWarning = "The text is nil."
     
     /// Get the position of the last character.
-    @objc public var endPosition: CGPoint {
+    @objc var endPosition: CGPoint {
         guard lineAmount != 0 else {
             return frame.origin
         }
@@ -22,12 +22,12 @@ public extension UILabel {
     }
     
     /// Get the height of each line.
-    @objc public var lineHeight: CGFloat {
+    @objc var lineHeight: CGFloat {
         return font.lineHeight
     }
     
     /// How many lines are presented.
-    @objc public var lineAmount: Int {
+    @objc var lineAmount: Int {
         guard let text = text else {
             Logger.standard.logWarning(UILabel.textWarning)
             return 0
@@ -36,7 +36,7 @@ public extension UILabel {
     }
     
     /// The actual height of the text.
-    @objc public var actualHeight: CGFloat {
+    @objc var actualHeight: CGFloat {
         guard let text = text else {
             Logger.standard.logWarning(UILabel.textWarning)
             return 0

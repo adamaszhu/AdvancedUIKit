@@ -11,7 +11,7 @@ public extension UIView {
     /// Localize the view.
     ///
     /// - Parameter localizationFile: The string file where all strings are stored.
-    @objc public func localize(withLocalizationFile localizationFile: String = defaultLocalizationFile) {
+    @objc func localize(withLocalizationFile localizationFile: String = defaultLocalizationFile) {
         subviews.forEach {
             $0.localize(withLocalizationFile: localizationFile)
         }
