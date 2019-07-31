@@ -39,6 +39,36 @@
         }
     }
     
+    /// Pin the edge to its superview
+    ///
+    /// - Parameter edgeInsets: The edge insets. If one inset is not necessary to be settled, set it to be .invalidInset
+    @available(iOS 9.0, *)
+    public func pinEdgesToSuperview(with edgeInsets: UIEdgeInsets = .zero) {
+        guard let superview = superview else {
+            return
+        }
+        translatesAutoresizingMaskIntoConstraints = false
+        if edgeInsets.top != .invalidInset {
+            topAnchor.constraint(equalTo: superview.topAnchor,
+                                 constant: edgeInsets.top).isActive = true
+        }
+        if edgeInsets.bottom != .invalidInset {
+            bottomAnchor.constraint(equalTo: superview.bottomAnchor,
+                                    constant: edgeInsets.bottom).isActive = true
+        }
+        if edgeInsets.left != .invalidInset {
+            leftAnchor.constraint(equalTo: superview.leftAnchor,
+                                  constant: edgeInsets.left).isActive = true
+        }
+        if edgeInsets.right != .invalidInset {
+            rightAnchor.constraint(equalTo: superview.rightAnchor,
+                                   constant: edgeInsets.right).isActive = true
+        }
+    }
+}
+
+public extension CGFloat {
+    static let invalidInset = CGFloat(Int.min)
 }
 
 import UIKit
