@@ -90,5 +90,6 @@ open class LocationHelper: CLLocationManager {
     
 }
 
+import AdvancedFoundation
 import CoreLocation
 import Foundation

@@ -102,6 +102,7 @@ open class CameraHelper {
     
 }
 
+import AdvancedFoundation
 import AVFoundation
 import Foundation
 import Photos

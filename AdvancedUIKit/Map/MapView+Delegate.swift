@@ -96,5 +96,6 @@ extension MapView: MKMapViewDelegate {
     
 }
 
+import AdvancedFoundation
 import MapKit
 import UIKit

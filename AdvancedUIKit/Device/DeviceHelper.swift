@@ -104,6 +104,7 @@ final public class DeviceHelper: NSObject {
     
 }
 
+import AdvancedFoundation
 import Foundation
 import MessageUI
 import UIKit

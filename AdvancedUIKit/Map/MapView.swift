@@ -182,4 +182,5 @@ public class MapView: MKMapView {
     
 }
 
+import AdvancedFoundation
 import MapKit

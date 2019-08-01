@@ -125,5 +125,6 @@ private extension RingHelper {
     static let playStatusWarning = "A sound is currently being played."
 }
 
+import AdvancedFoundation
 import AudioToolbox
 import Foundation

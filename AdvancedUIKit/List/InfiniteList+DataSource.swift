@@ -76,4 +76,5 @@ extension InfiniteList: UITableViewDataSource {
     
 }
 
+import AdvancedFoundation
 import UIKit

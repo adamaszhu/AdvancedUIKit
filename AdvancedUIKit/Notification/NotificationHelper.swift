@@ -53,7 +53,7 @@ final public class NotificationHelper {
         let notification = UILocalNotification()
         notification.timeZone = NSTimeZone.default
         notification.fireDate = Date().addingTimeInterval(delay)
-        if #available(iOS 8.2, *), let title = title {
+        if let title = title {
             notification.alertTitle = title
         }
         notification.alertBody = content
@@ -92,5 +92,6 @@ final public class NotificationHelper {
     
 }
 
+import AdvancedFoundation
 import UIKit
 import UserNotifications

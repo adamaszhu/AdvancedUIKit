@@ -19,4 +19,5 @@ extension ImagePickerHelper: UIImagePickerControllerDelegate, UINavigationContro
     
 }
 
+import AdvancedFoundation
 import UIKit

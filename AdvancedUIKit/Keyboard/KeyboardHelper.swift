@@ -136,4 +136,5 @@ final public class KeyboardHelper: NSObject {
     
 }
 
+import AdvancedFoundation
 import UIKit

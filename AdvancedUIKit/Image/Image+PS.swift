@@ -124,5 +124,5 @@ public extension UIImage {
     
 }
 
+import AdvancedFoundation
 import UIKit
-

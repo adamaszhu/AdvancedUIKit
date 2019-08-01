@@ -49,4 +49,5 @@ public extension UIImageView {
     
 }
 
+import AdvancedFoundation
 import UIKit

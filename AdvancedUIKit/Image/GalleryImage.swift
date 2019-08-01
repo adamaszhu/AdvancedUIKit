@@ -99,4 +99,5 @@ final class GalleryImage: UIScrollView {
     
 }
 
+import AdvancedFoundation
 import UIKit

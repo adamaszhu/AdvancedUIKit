@@ -32,4 +32,5 @@ private extension UIScrollView {
     static let contextError = "Graphics context is nil"
 }
 
+import AdvancedFoundation
 import UIKit

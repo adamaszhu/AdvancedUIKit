@@ -152,4 +152,5 @@ public class InfiniteList: UITableView {
     
 }
 
+import AdvancedFoundation
 import UIKit

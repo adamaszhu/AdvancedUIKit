@@ -106,5 +106,6 @@ extension ExpandableGalleryView: ExpandableView {
     
 }
 
+import AdvancedFoundation
 import Foundation
 import UIKit

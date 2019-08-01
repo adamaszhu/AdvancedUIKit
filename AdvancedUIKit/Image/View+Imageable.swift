@@ -29,4 +29,5 @@ private extension UIView {
     static let contextError = "The graphic context is nil."
 }
 
+import AdvancedFoundation
 import UIKit

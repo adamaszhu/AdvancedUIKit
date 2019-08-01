@@ -50,3 +50,5 @@ private extension RemoteNotification {
     /// System errors.
     static let userInfoError = "The user info received is invalid."
 }
+
+import AdvancedFoundation

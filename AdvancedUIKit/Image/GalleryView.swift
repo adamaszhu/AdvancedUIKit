@@ -98,4 +98,5 @@ public class GalleryView: PageView {
     
 }
 
+import AdvancedFoundation
 import UIKit

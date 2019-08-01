@@ -135,4 +135,5 @@ extension SystemMessageHelper {
     static let typeError = "The message type is unknown."
 }
 
+import AdvancedFoundation
 import UIKit

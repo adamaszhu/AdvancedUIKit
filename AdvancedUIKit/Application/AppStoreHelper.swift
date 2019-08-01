@@ -87,5 +87,6 @@ private extension AppStoreHelper {
     static var messageHelperError = "The message cannot be presented."
 }
 
+import AdvancedFoundation
 import Foundation
 import StoreKit

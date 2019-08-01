@@ -82,4 +82,5 @@ final public class ExpandableGalleryView: GalleryView {
     
 }
 
+import AdvancedFoundation
 import UIKit
