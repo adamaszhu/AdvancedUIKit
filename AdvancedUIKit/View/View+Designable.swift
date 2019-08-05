@@ -1,8 +1,8 @@
-/// View+Gesture is used to add additional function to a uiview relating to the gesture function.
+/// View+Designable adds supports for UI attributes.
 ///
 /// - author: Adamas
-/// - version: 1.2.1
-/// - date: 28/06/2018
+/// - version: 1.5.0
+/// - date: 02/08/2019
 @IBDesignable public extension UIView {
     
     /// The border color of a view
@@ -11,10 +11,7 @@
             layer.borderColor = newValue?.cgColor
         }
         get {
-            guard let color = layer.borderColor else {
-                return nil
-            }
-            return UIColor(cgColor: color)
+            return layer.borderColor.map(UIColor.init(cgColor:))
         }
     }
     
@@ -32,7 +29,9 @@
     @IBInspectable var cornerRadius: CGFloat {
         set {
             layer.cornerRadius = newValue
-            clipsToBounds = newValue > 0
+            if newValue > 0 {
+                clipsToBounds = true
+            }
         }
         get {
             return layer.cornerRadius
@@ -42,7 +41,6 @@
     /// Pin the edge to its superview
     ///
     /// - Parameter edgeInsets: The edge insets. If one inset is not necessary to be settled, set it to be .invalidInset
-    @available(iOS 9.0, *)
     func pinEdgesToSuperview(with edgeInsets: UIEdgeInsets = .zero) {
         guard let superview = superview else {
             return
@@ -67,7 +65,10 @@
     }
 }
 
+/// Constants
 public extension CGFloat {
+    
+    /// Invalid edge inset
     static let invalidInset = CGFloat(Int.min)
 }
 

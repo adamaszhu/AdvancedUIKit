@@ -54,7 +54,7 @@ public extension InfiniteList {
         guard status.isReloadingAvailable else {
             return
         }
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.contentOffset = .init(x: 0, y: self.reloadingOffsetY)
         }, withCompletion: { [unowned self] in
             self.status = .reloading

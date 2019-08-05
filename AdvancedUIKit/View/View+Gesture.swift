@@ -1,16 +1,15 @@
 /// View+Gesture is used to add additional function to a uiview relating to the gesture function.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 28/04/2017
+/// - version: 1.5.0
+/// - date: 05/08/2019
 extension UIView {
     
     /// The view used to filter gestures.
     private var gestureFilterView: GestureFilterView {
-        for view in subviews {
-            if let gestureFilterView = view as? GestureFilterView {
-                return gestureFilterView
-            }
+        let view = subviews.first { $0 is GestureFilterView }
+        if let gestureFilterView = view as? GestureFilterView {
+            return gestureFilterView
         }
         // The view doesn't exist.
         let gestureFilterView = GestureFilterView(frame: bounds)
@@ -19,14 +18,14 @@ extension UIView {
     }
     
     /// Enable the any gesture on the view.
-    @objc public func enableAnyGesture() {
+    public func enableAnyGesture() {
         enableGesture(ofType: UIPanGestureRecognizer.self)
         enableGesture(ofType: UITapGestureRecognizer.self)
         enableGesture(ofType: UISwipeGestureRecognizer.self)
     }
     
     /// Disable the any gesture on the view.
-    @objc public func disableAnyGesture() {
+    public func disableAnyGesture() {
         disableGesture(ofType: UIPanGestureRecognizer.self)
         disableGesture(ofType: UITapGestureRecognizer.self)
         disableGesture(ofType: UISwipeGestureRecognizer.self)
@@ -35,18 +34,16 @@ extension UIView {
     /// Enable a gesture.
     ///
     /// - Parameter type: The type of gesture to be disabled.
-    @objc public func enableGesture(ofType type: AnyClass) {
+    public func enableGesture(ofType type: AnyClass) {
         gestureFilterView.changeGestureRecognizerUsibility(ofType: type, toUsibility: false)
     }
     
     /// Disable a gesture.
     ///
     /// - Parameter type: The gesture to be disabled.
-    @objc public func disableGesture(ofType type: AnyClass) {
+    public func disableGesture(ofType type: AnyClass) {
         gestureFilterView.changeGestureRecognizerUsibility(ofType: type, toUsibility: true)
     }
-    
 }
 
 import UIKit
-

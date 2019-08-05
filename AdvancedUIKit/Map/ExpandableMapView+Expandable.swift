@@ -23,7 +23,7 @@ extension ExpandableMapView: ExpandableView {
             return
         }
         saveOriginalConstraints(of: self)
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.frame = window.bounds
             self.collapseButton.alpha = 1
             self.collapseButtonBackgroundView.alpha = 1
@@ -51,7 +51,7 @@ extension ExpandableMapView: ExpandableView {
             Logger.standard.logError(ExpandableMapView.windowError)
             return
         }
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
             self.collapseButton.alpha = 0
             self.collapseButtonBackgroundView.alpha = 0

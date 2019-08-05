@@ -139,7 +139,7 @@ public class PageView: UIScrollView {
             contentOffset = .init(x: CGFloat(index) * frame.width, y: 0)
             return
         }
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.contentOffset = .init(x: CGFloat(index) * self.frame.width, y: 0)
         })
     }

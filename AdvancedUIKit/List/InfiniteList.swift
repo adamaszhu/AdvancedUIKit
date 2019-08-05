@@ -91,7 +91,7 @@ public class InfiniteList: UITableView {
             Logger.standard.logWarning(InfiniteList.emptyStateShowWarning)
             return
         }
-        emptyState.animate(withChange: {
+        emptyState.animateChange({
             emptyState.alpha = 1
         }, withPreparation: { [unowned self] in
             emptyState.alpha = 0
@@ -109,7 +109,7 @@ public class InfiniteList: UITableView {
             Logger.standard.logWarning(InfiniteList.emptyStateHideWarning)
             return
         }
-        emptyState.animate(withChange: {
+        emptyState.animateChange({
             emptyState.alpha = 0
         }, withPreparation: {
             emptyState.alpha = 1

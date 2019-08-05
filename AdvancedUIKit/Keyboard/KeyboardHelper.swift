@@ -108,7 +108,7 @@ final public class KeyboardHelper: NSObject {
     
     /// adjust the offset of the view.
     @objc func adjustOffset() {
-        rootView.animate(withChange: { [unowned self] in
+        rootView.animateChange({ [unowned self] in
             self.rootView.frame.origin = CGPoint(x: 0, y: self.rootView.frame.origin.y + self.pushOffset)
             }, withDuration: keyboardPushDuration)
     }

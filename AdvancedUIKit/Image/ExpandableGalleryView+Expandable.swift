@@ -13,7 +13,7 @@ extension ExpandableGalleryView: ExpandableView {
         }
         saveOriginalConstraints(of: self)
         let pageControlBottomMargin = self.pageControlButtomMargin
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.frame = window.bounds
             self.imageSize = window.bounds.size
             }, withPreparation: { [unowned self] in
@@ -30,7 +30,7 @@ extension ExpandableGalleryView: ExpandableView {
     
     /// Add background color with animation.
     private func addBackground() {
-        animate(withChange: { [unowned self] in
+        animateChange( { [unowned self] in
             self.currentGalleryImage?.imageView.backgroundColor = .black
         }) { [unowned self] in
             self.setBackgroundColor(.black)
@@ -44,7 +44,7 @@ extension ExpandableGalleryView: ExpandableView {
             return
         }
         let pageControlBottomMargin = self.pageControlButtomMargin
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
             self.imageSize = self.originalFrame.size
             }, withPreparation: { [unowned self] in
@@ -60,7 +60,7 @@ extension ExpandableGalleryView: ExpandableView {
     
     /// Remove the background color with animation.
     private func removeBackgroundColor() {
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.currentGalleryImage?.imageView.backgroundColor = .clear
         }) { [unowned self] in
             self.setBackgroundColor(.clear)

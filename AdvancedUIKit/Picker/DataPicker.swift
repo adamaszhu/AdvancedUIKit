@@ -119,7 +119,7 @@ final public class DataPicker: RootView {
             Logger.standard.logWarning(DataPicker.hidingWarning)
             return
         }
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.frame.origin = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
             // Push down the controller
             if let controllerOriginalFrame = self.controllerOriginalFrame {
@@ -140,7 +140,7 @@ final public class DataPicker: RootView {
         }
         controllerOriginalFrame = controller?.frame
         let pushDistance = self.pushDistance - 1
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             // Push up the controller
             if let controllerOrigin = self.controllerOriginalFrame?.origin {
                 self.controller?.frame.origin = .init(x: controllerOrigin.x, y: controllerOrigin.y + pushDistance)

@@ -25,7 +25,7 @@ public class PopupView: RootView {
             return
         }
         hostWindow.addSubview(self)
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.alpha = 1
         }) {
             super.show()
@@ -37,7 +37,7 @@ public class PopupView: RootView {
             Logger.standard.logWarning(RootView.hidingWarning)
             return
         }
-        animate(withChange: {[unowned self] in
+        animateChange({[unowned self] in
             self.alpha = 0
         }) {
             self.removeFromSuperview()

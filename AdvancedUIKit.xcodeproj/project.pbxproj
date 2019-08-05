@@ -36,7 +36,6 @@
 		2838447C1F69F6E700AAD1E0 /* NotificationHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838447B1F69F6E700AAD1E0 /* NotificationHelper+Constant.swift */; };
 		2838447E1F69F70500AAD1E0 /* DataPicker+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838447D1F69F70500AAD1E0 /* DataPicker+Constant.swift */; };
 		283844801F69F73000AAD1E0 /* UnderlineView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838447F1F69F73000AAD1E0 /* UnderlineView+Constant.swift */; };
-		283844821F69F75200AAD1E0 /* GestureFilterView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844811F69F75200AAD1E0 /* GestureFilterView+Constant.swift */; };
 		283844841F69F77000AAD1E0 /* PageView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844831F69F77000AAD1E0 /* PageView+Constant.swift */; };
 		283844861F69F79200AAD1E0 /* PopupView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844851F69F79200AAD1E0 /* PopupView+Constant.swift */; };
 		283844881F69F7AB00AAD1E0 /* RootView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844871F69F7AB00AAD1E0 /* RootView+Constant.swift */; };
@@ -101,7 +100,7 @@
 		28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B524F81EEA14970051E8D2 /* View+Constraint.swift */; };
 		28B975871F6F285D001239EB /* Label.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B975861F6F285D001239EB /* Label.storyboard */; };
 		28BA02911F78624F00F635DE /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA02901F78624F00F635DE /* Checkbox.swift */; };
-		28BD992920E466BE0072EE28 /* View+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD992820E466BE0072EE28 /* View+Design.swift */; };
+		28BD992920E466BE0072EE28 /* View+Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD992820E466BE0072EE28 /* View+Designable.swift */; };
 		28CB19341F747512006CFE05 /* TextField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28CB19331F747512006CFE05 /* TextField.storyboard */; };
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
 		28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
@@ -291,7 +290,6 @@
 		2838447B1F69F6E700AAD1E0 /* NotificationHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationHelper+Constant.swift"; sourceTree = "<group>"; };
 		2838447D1F69F70500AAD1E0 /* DataPicker+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataPicker+Constant.swift"; sourceTree = "<group>"; };
 		2838447F1F69F73000AAD1E0 /* UnderlineView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UnderlineView+Constant.swift"; path = "AdvancedUIKit/Textfield/UnderlineView+Constant.swift"; sourceTree = SOURCE_ROOT; };
-		283844811F69F75200AAD1E0 /* GestureFilterView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GestureFilterView+Constant.swift"; sourceTree = "<group>"; };
 		283844831F69F77000AAD1E0 /* PageView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageView+Constant.swift"; sourceTree = "<group>"; };
 		283844851F69F79200AAD1E0 /* PopupView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PopupView+Constant.swift"; sourceTree = "<group>"; };
 		283844871F69F7AB00AAD1E0 /* RootView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RootView+Constant.swift"; sourceTree = "<group>"; };
@@ -358,7 +356,7 @@
 		28B524F81EEA14970051E8D2 /* View+Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Constraint.swift"; sourceTree = "<group>"; };
 		28B975861F6F285D001239EB /* Label.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Label.storyboard; sourceTree = "<group>"; };
 		28BA02901F78624F00F635DE /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
-		28BD992820E466BE0072EE28 /* View+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Design.swift"; sourceTree = "<group>"; };
+		28BD992820E466BE0072EE28 /* View+Designable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Designable.swift"; sourceTree = "<group>"; };
 		28CB19331F747512006CFE05 /* TextField.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextField.storyboard; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PickerViewController+DataPickerDelegate.swift"; sourceTree = "<group>"; };
@@ -875,7 +873,6 @@
 				42621F381EF9206000907066 /* ExpandableView+Action.swift */,
 				42FE50901EF7D4BD009C0BD7 /* ExpandableView+Constant.swift */,
 				427373E31ED8FFA200DD8891 /* GestureFilterView.swift */,
-				283844811F69F75200AAD1E0 /* GestureFilterView+Constant.swift */,
 				4234665A1EED21F0002A04F4 /* PageView.swift */,
 				28EEA75A20EAFE8D0003E72A /* PageViewDelegate.swift */,
 				283844831F69F77000AAD1E0 /* PageView+Constant.swift */,
@@ -887,7 +884,7 @@
 				425DCD111EB357A800A0ED26 /* View+Animation.swift */,
 				28B524F81EEA14970051E8D2 /* View+Constraint.swift */,
 				425DCD131EB3689000A0ED26 /* View+Gesture.swift */,
-				28BD992820E466BE0072EE28 /* View+Design.swift */,
+				28BD992820E466BE0072EE28 /* View+Designable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1341,7 +1338,7 @@
 				289D5FF11EDF9A9F00203DE2 /* Button+Attribute.swift in Sources */,
 				284E5C551EDD104C00C3CC86 /* MessageHelperDelegate.swift in Sources */,
 				42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */,
-				28BD992920E466BE0072EE28 /* View+Design.swift in Sources */,
+				28BD992920E466BE0072EE28 /* View+Designable.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
 				28E66FF81EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift in Sources */,
 				28E66FF61EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift in Sources */,
@@ -1374,7 +1371,6 @@
 				28A8D32820FD4B5D0061B420 /* ImageView+Animation.swift in Sources */,
 				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
 				284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */,
-				283844821F69F75200AAD1E0 /* GestureFilterView+Constant.swift in Sources */,
 				289B293F1EFB356200152B53 /* InfiniteCell.swift in Sources */,
 				4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */,
 				283844881F69F7AB00AAD1E0 /* RootView+Constant.swift in Sources */,

@@ -1,12 +1,12 @@
 /// View+Animation is used to perform an animation on a view like change the frame of a view.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 28/04/2017
+/// - version: 1.5.0
+/// - date: 05/08/2019
 public extension UIView {
     
     /// The default animation period.
-    @objc static let defaultAnimationDuration = 0.25
+    static let defaultAnimationDuration = 0.25
     
     /// Perform an animation.
     ///
@@ -15,7 +15,10 @@ public extension UIView {
     ///   - duration: The period of the animation.
     ///   - preparation: The action to be done before the animation.
     ///   - completion: The action to be done after the animation.
-    @objc func animate(withChange change: @escaping () -> Void, withDuration duration: Double = defaultAnimationDuration, withPreparation preparation:(() -> Void)? = nil, withCompletion completion: (() -> Void)? = nil) {
+    func animateChange(_ change: @escaping () -> Void,
+                       withDuration duration: Double = defaultAnimationDuration,
+                       withPreparation preparation: (() -> Void)? = nil,
+                       withCompletion completion: (() -> Void)? = nil) {
         layer.removeAllAnimations()
         preparation?()
         UIView.animate(withDuration: duration, animations: {
@@ -25,8 +28,6 @@ public extension UIView {
             completion?()
         }
     }
-    
 }
 
 import UIKit
-
