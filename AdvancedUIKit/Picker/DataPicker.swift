@@ -114,7 +114,7 @@ final public class DataPicker: RootView {
         super.init(coder: aDecoder)
     }
     
-    public override func hide() {
+    @objc public override func hide() {
         guard isVisible else {
             Logger.standard.logWarning(DataPicker.hidingWarning)
             return

@@ -40,9 +40,10 @@ final class GestureFilterView: UIView {
         Logger.standard.logError(GestureFilterView.initError)
         return nil
     }
-    
 }
-extension GestureFilterView {
+
+/// Constants
+private extension GestureFilterView {
     
     /// System error.
     static let gestureRecognizersError = "Gesture recognizers have not been added to the view yet."

@@ -1,47 +1,47 @@
 /// RootView is the root view of all customized view. It provides show and hide control and initialization control.
 ///
 /// - author: Adamas
-/// - date: 23/04/2017
-/// - version: 1.0.4
+/// - date: 05/08/2019
+/// - version: 1.5.0
 open class RootView: UIView {
     
     /// Whether the view is visible or not.
-    @objc public var isVisible: Bool
+    @objc public var isVisible: Bool = true
     
     /// The original frame of the view.
-    @objc public private (set) var originalFrame: CGRect
+    public private (set) var originalFrame: CGRect = .zero
     
     /// Whether the view has been initialized or not.
-    private var isInitialized: Bool
+    private var isInitialized: Bool = false
     
     /// Show the view.
-    @objc open func show() {
+    open func show() {
+        if isVisible {
+            Logger.standard.logWarning(RootView.showingWarning)
+        }
         isVisible = true
     }
     
     /// Hide the view.
-    @objc open func hide() {
+    open func hide() {
+        if !isVisible {
+            Logger.standard.logWarning(RootView.hidingWarning)
+        }
         isVisible = false
     }
     
     /// Initialize the view.
-    @objc open func initialize() {}
+    open func initialize() {}
     
     /// Render the views inside right after being allocated the frame.
-    @objc open func render() {}
+    open func render() {}
     
     public required init?(coder aDecoder: NSCoder) {
-        isInitialized = false
-        isVisible = true
-        originalFrame = .init(x: 0, y: 0, width: 0, height: 0)
         super.init(coder: aDecoder)
         initialize()
     }
     
     public override init(frame: CGRect) {
-        isInitialized = false
-        isVisible = true
-        originalFrame = frame
         super.init(frame: frame)
         initialize()
     }
@@ -55,7 +55,15 @@ open class RootView: UIView {
         originalFrame = frame
         render()
     }
-    
 }
 
+/// Constants
+extension RootView {
+    
+    /// System warning.
+    static let showingWarning = "The view has already been shown."
+    static let hidingWarning = "The view has already been hidden."
+}
+
+import AdvancedFoundation
 import UIKit

@@ -1,4 +1,4 @@
-/// View+Animation is used to perform an animation on a view like change the frame of a view.
+/// View+Animatable is used to perform an animation on a view like change the frame of a view.
 ///
 /// - author: Adamas
 /// - version: 1.5.0

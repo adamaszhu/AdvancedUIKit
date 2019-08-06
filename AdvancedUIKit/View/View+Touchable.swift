@@ -1,4 +1,4 @@
-/// View+Gesture is used to add additional function to a uiview relating to the gesture function.
+/// View+Touchable is used to add additional function to a uiview relating to the gesture function.
 ///
 /// - author: Adamas
 /// - version: 1.5.0
