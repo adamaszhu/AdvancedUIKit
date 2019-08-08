@@ -64,6 +64,7 @@ public final class AppStoreHelper {
     }
 }
 
+/// MessageHelperDelegate
 extension AppStoreHelper: MessageHelperDelegate {
     
     public func messageHelperDidConfirmWarning(_ messageHelper: MessageHelper) {

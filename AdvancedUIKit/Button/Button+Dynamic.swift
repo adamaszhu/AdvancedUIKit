@@ -1,15 +1,12 @@
 /// UIButton+Dynamic contains dynamic content of a label.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 31/05/2017
+/// - version: 1.5.0
+/// - date: 08/08/2019
 public extension UIButton {
     
-    /// System warning.
-    private static let titleLabelWarning = "The title label is nil."
-    
     /// Get the height of each line.
-    @objc var lineHeight: CGFloat {
+    var lineHeight: CGFloat {
         guard let titleLabel = titleLabel else {
             Logger.standard.logWarning(UIButton.titleLabelWarning)
             return 0
@@ -18,7 +15,7 @@ public extension UIButton {
     }
     
     /// How many lines are presented.
-    @objc var lineAmount: Int {
+    var lineAmount: Int {
         guard let titleLabel = titleLabel else {
             Logger.standard.logWarning(UIButton.titleLabelWarning)
             return 0
@@ -27,14 +24,20 @@ public extension UIButton {
     }
     
     /// The actual height of the text.
-    @objc var actualHeight: CGFloat {
+    var actualHeight: CGFloat {
         guard let titleLabel = titleLabel else {
             Logger.standard.logWarning(UIButton.titleLabelWarning)
             return 0
         }
         return titleLabel.actualHeight
     }
+}
+
+/// Constants
+private extension UIButton {
     
+    /// System warning.
+    static let titleLabelWarning = "The title label is nil."
 }
 
 import AdvancedFoundation
