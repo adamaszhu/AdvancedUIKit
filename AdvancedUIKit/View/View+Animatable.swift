@@ -8,6 +8,11 @@ public extension UIView {
     /// The default animation period.
     static let defaultAnimationDuration = 0.25
     
+    /// Whether or not the view is performing an animation
+    var isAnimating: Bool {
+        return layer.animationKeys()?.isEmpty == false
+    }
+    
     /// Perform an animation.
     ///
     /// - Parameters:
@@ -27,6 +32,11 @@ public extension UIView {
             change()
             completion?()
         }
+    }
+    
+    /// Stop any animation executed on the current view.
+    func stopAllAnimations() {
+        layer.removeAllAnimations()
     }
 }
 

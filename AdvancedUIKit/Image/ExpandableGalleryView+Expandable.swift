@@ -19,11 +19,11 @@ extension ExpandableGalleryView: ExpandableView {
             }, withPreparation: { [unowned self] in
                 self.gestureFilterView.isHidden = true
                 self.moveToWindow(of: self)
-                self.pageControl.isHidden = true
+                self.shouldShowPageControl = false
             }, withCompletion: { [unowned self] in
                 self.collapseGestureRecognizer.isEnabled = true
                 self.pageControlButtomMargin = pageControlBottomMargin
-                self.pageControl.isHidden = false
+                self.shouldShowPageControl = true
                 self.addBackground()
         })
     }
@@ -49,12 +49,12 @@ extension ExpandableGalleryView: ExpandableView {
             self.imageSize = self.originalFrame.size
             }, withPreparation: { [unowned self] in
                 self.collapseGestureRecognizer.isEnabled = false
-                self.pageControl.isHidden = true
+                self.shouldShowPageControl = false
             }, withCompletion: { [unowned self] in
                 self.removeFromWindow(of: self)
                 self.gestureFilterView.isHidden = false
                 self.pageControlButtomMargin = pageControlBottomMargin
-                self.pageControl.isHidden = false
+                self.shouldShowPageControl = true
         })
     }
     

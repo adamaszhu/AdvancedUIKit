@@ -1,15 +1,12 @@
 /// PageViewDelegate is a callback when the current page is changed.
 ///
 /// - author: Adamas
-/// - version: 1.3.0
-/// - date: 03/07/2018
-public protocol PageViewDelegate {
+/// - version: 1.5.0
+/// - date: 07/08/2019
+public protocol PageViewDelegate: class {
     
     /// Change the page view index
     ///
     /// - Parameter index: The new index
-    func pageView(_ pageView: PageView, didChangeCurrentIndex index: Int)
-    
+    func pageView(_ pageView: PageView, didChangePageIndex index: Int)
 }
-
-import Foundation
