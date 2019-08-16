@@ -22,7 +22,6 @@
 		2822A3491EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3481EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift */; };
 		2823EE471EF224F4009B9AC8 /* Coordinate+Measurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823EE461EF224F4009B9AC8 /* Coordinate+Measurer.swift */; };
 		28365BC41EF0AF9300E51B5C /* PageView+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28365BC31EF0AF9300E51B5C /* PageView+ScrollViewDelegate.swift */; };
-		283844641F69F3B300AAD1E0 /* DeviceHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844631F69F3B300AAD1E0 /* DeviceHelper+Constant.swift */; };
 		283844661F69F3F400AAD1E0 /* CameraHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844651F69F3F400AAD1E0 /* CameraHelper+Constant.swift */; };
 		283844681F69F42B00AAD1E0 /* GalleryImage+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844671F69F42B00AAD1E0 /* GalleryImage+Constant.swift */; };
 		2838446A1F69F45B00AAD1E0 /* GalleryView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844691F69F45B00AAD1E0 /* GalleryView+Constant.swift */; };
@@ -182,9 +181,7 @@
 		427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427373E31ED8FFA200DD8891 /* GestureFilterView.swift */; };
 		428EAB481EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */; };
 		428EAB5E1EDC4BD3006ED22B /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5A1EDC4BD3006ED22B /* DeviceHelper.swift */; };
-		428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5B1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift */; };
 		428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */; };
-		428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */; };
 		428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */; };
 		429F884F1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F884E1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift */; };
 		429F88511EF493F900C293B6 /* GalleryView+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F88501EF493F900C293B6 /* GalleryView+ScrollViewDelegate.swift */; };
@@ -273,7 +270,6 @@
 		2822A3481EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		2823EE461EF224F4009B9AC8 /* Coordinate+Measurer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coordinate+Measurer.swift"; sourceTree = "<group>"; };
 		28365BC31EF0AF9300E51B5C /* PageView+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageView+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
-		283844631F69F3B300AAD1E0 /* DeviceHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceHelper+Constant.swift"; sourceTree = "<group>"; };
 		283844651F69F3F400AAD1E0 /* CameraHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraHelper+Constant.swift"; sourceTree = "<group>"; };
 		283844671F69F42B00AAD1E0 /* GalleryImage+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GalleryImage+Constant.swift"; sourceTree = "<group>"; };
 		283844691F69F45B00AAD1E0 /* GalleryView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GalleryView+Constant.swift"; sourceTree = "<group>"; };
@@ -440,9 +436,7 @@
 		427373E31ED8FFA200DD8891 /* GestureFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureFilterView.swift; sourceTree = "<group>"; };
 		428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceInfoAccessor+Specs.swift"; sourceTree = "<group>"; };
 		428EAB5A1EDC4BD3006ED22B /* DeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
-		428EAB5B1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceHelper+MailComposeViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelperDelegate.swift; sourceTree = "<group>"; };
-		428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		428EAB651EDC4BE3006ED22B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeviceHelper.strings; sourceTree = "<group>"; };
 		428EAB671EDC4BE5006ED22B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceHelper.strings"; sourceTree = "<group>"; };
 		429F884E1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GalleryImage+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
@@ -704,10 +698,7 @@
 			children = (
 				428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */,
 				428EAB5A1EDC4BD3006ED22B /* DeviceHelper.swift */,
-				283844631F69F3B300AAD1E0 /* DeviceHelper+Constant.swift */,
-				428EAB5B1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift */,
 				428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */,
-				428EAB5D1EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift */,
 				28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */,
 				28F550F21EDBF49D006646A3 /* DeviceType.swift */,
 			);
@@ -1358,7 +1349,6 @@
 				28F0C370212D218100D0CE05 /* View+Imageable.swift in Sources */,
 				42FE508D1EF7CF9E009C0BD7 /* ExpandableView.swift in Sources */,
 				28A8D32820FD4B5D0061B420 /* ImageView+Animation.swift in Sources */,
-				428EAB5F1EDC4BD3006ED22B /* DeviceHelper+MailComposeViewControllerDelegate.swift in Sources */,
 				284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */,
 				289B293F1EFB356200152B53 /* InfiniteCell.swift in Sources */,
 				4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */,
@@ -1387,7 +1377,6 @@
 				28F350AD1EE793E5005120B1 /* LocationHelperDelegate.swift in Sources */,
 				42EA08B91EDD8E0400B079C0 /* MessageHelper+Constant.swift in Sources */,
 				28E66FF31EE4E4C100073DF1 /* KeyboardHelper.swift in Sources */,
-				428EAB611EDC4BD3006ED22B /* DeviceHelperDelegate+Optional.swift in Sources */,
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
 				28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */,
 				421C9FCB1EE82C3C00D019C2 /* MapView+Delegate.swift in Sources */,
@@ -1398,7 +1387,6 @@
 				28F350AB1EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift in Sources */,
 				28B1D8101EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift in Sources */,
 				2846A99E1EE7C0FA007D4226 /* ExpandableMapView.swift in Sources */,
-				283844641F69F3B300AAD1E0 /* DeviceHelper+Constant.swift in Sources */,
 				4258DDAF1EEAE6A80085FCAA /* ExpandableGalleryView.swift in Sources */,
 				28E66FF11EE4E4C100073DF1 /* ActionFilterView.swift in Sources */,
 				2846A9AD1EE7C754007D4226 /* MKAnnotationView+Renderer.swift in Sources */,

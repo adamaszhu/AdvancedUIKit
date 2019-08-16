@@ -1,9 +1,9 @@
 /// DeviceHelperDelegate is used when a futher action need to be performed following a device related action.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 29/05/2017
-public protocol DeviceHelperDelegate {
+/// - version: 1.5.0
+/// - date: 08/08/2019
+public protocol DeviceHelperDelegate: class {
     
     /// An error has occured during an operation.
     ///
@@ -14,5 +14,4 @@ public protocol DeviceHelperDelegate {
     ///
     /// - Parameter result: The execusion result.
     func deviceHelper(_ deviceHelper: DeviceHelper, didSendEmail result: Bool)
-    
 }

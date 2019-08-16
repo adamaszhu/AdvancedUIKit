@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 10/06/2017
-public protocol CameraHelperDelegate {
+public protocol CameraHelperDelegate: class {
     
     /// The camera has been authorized.
     ///

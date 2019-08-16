@@ -6,7 +6,7 @@
 open class CameraHelper {
     
     /// The delegate.
-    public var cameraHelperDelegate: CameraHelperDelegate?
+    public weak var cameraHelperDelegate: CameraHelperDelegate?
     
     /// The bundle.
     private let bundle: Bundle
