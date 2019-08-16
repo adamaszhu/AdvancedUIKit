@@ -1,9 +1,9 @@
 /// CameraHelper is used to access the information about the camera.
 ///
 /// - author: Adamas
-/// - version: 1.1.0
-/// - date: 08/12/2017
-open class CameraHelper {
+/// - version: 1.5.0
+/// - date: 18/08/2019
+final public class CameraHelper {
     
     /// The delegate.
     public weak var cameraHelperDelegate: CameraHelperDelegate?
@@ -12,52 +12,32 @@ open class CameraHelper {
     private let bundle: Bundle
     
     /// Whether the camera is enabled by the user or not.
-    open var isCameraAuthorized: Bool {
+    public var isCameraAuthorized: Bool {
         let authorizedStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
-        switch authorizedStatus {
-        case .authorized:
-            return true
-        default:
-            return false
-        }
+        return authorizedStatus == .authorized
     }
     
     /// Whether the camera authorization is still not determinated or not.
-    open var isCameraUnauthorized: Bool {
+    public var isCameraUndetermined: Bool {
         let authorizedStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
-        switch authorizedStatus {
-        case .notDetermined:
-            return true
-        default:
-            return false
-        }
+        return authorizedStatus == .notDetermined
     }
     
     /// Whether the library is enabled by the user or not.
-    open var isLibraryAuthorized: Bool {
+    public var isLibraryAuthorized: Bool {
         let authorizedStatus = PHPhotoLibrary.authorizationStatus()
-        switch authorizedStatus {
-        case .authorized:
-            return true
-        default:
-            return false
-        }
+        return authorizedStatus == .authorized
     }
     
     /// Whether the library authorization is still not determinated or not.
-    open var isLibraryUnauthorized: Bool {
+    public var isLibraryUndetermined: Bool {
         let authorizedStatus = PHPhotoLibrary.authorizationStatus()
-        switch authorizedStatus {
-        case .notDetermined:
-            return true
-        default:
-            return false
-        }
+        return authorizedStatus == .notDetermined
     }
     
     /// Authorize the camera.
     public func requestCameraAuthorization() {
-        guard isCameraUnauthorized else {
+        guard isCameraUndetermined else {
             cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.cameraAuthorizationError.localizedInternalString(forType: CameraHelper.self))
             return
         }
@@ -72,7 +52,7 @@ open class CameraHelper {
     
     /// Authorize the library.
     public func requestLibraryAuthorization() {
-        guard isLibraryUnauthorized else {
+        guard isLibraryUndetermined else {
             cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.libraryAuthorizationError.localizedInternalString(forType: CameraHelper.self))
             return
         }
@@ -99,10 +79,23 @@ open class CameraHelper {
     private func isDescriptionKeyExisted(_ key: String) -> Bool {
         return bundle.object(forInfoDictionaryKey: key) != nil
     }
+}
+
+/// Constants
+private extension CameraHelper {
     
+    /// The info key required in the Info.plist file.
+    static let cameraDescriptionKey = "NSCameraUsageDescription"
+    static let libraryDescriptionKey = "NSPhotoLibraryUsageDescription"
+    
+    /// User error.
+    static let cameraAuthorizationError = "CameraAuthorizationError"
+    static let libraryAuthorizationError = "LibraryAuthorizationError"
+    
+    /// System error.
+    static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
 }
 
 import AdvancedFoundation
 import AVFoundation
-import Foundation
 import Photos
