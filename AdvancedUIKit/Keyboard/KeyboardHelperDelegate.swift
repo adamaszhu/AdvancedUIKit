@@ -1,9 +1,9 @@
 /// KeyboardHelperDelegate is used to perform an action notified by KeyboardHelper.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 05/06/2016
-public protocol KeyboardHelperDelegate {
+/// - version: 1.5.0
+/// - date: 18/08/2019
+public protocol KeyboardHelperDelegate: class {
     
     /// The last input view has returned.
     func keyboardHelperDidConfirmInput(_ keyboardHelper: KeyboardHelper)
@@ -30,7 +30,6 @@ public protocol KeyboardHelperDelegate {
     ///
     /// - Parameter view: The view whose content will be changed.
     func keyboardHelper(_ keyboardHelper: KeyboardHelper, didEditOn view: UIView)
-    
 }
 
 import UIKit

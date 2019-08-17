@@ -1,15 +1,15 @@
 /// ExpandableGalleryView is a horizontal sliding image page view, which has full screen mode. If the navigation bar is translucent, GalleryView should be put inside a ScrollView.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 17/06/2017
+/// - version: 1.5.0
+/// - date: 17/08/2019
 final public class ExpandableGalleryView: GalleryView {
     
     /// The gesture filter to expand the view.
-    @objc let gestureFilterView: UIView
+    private let gestureFilterView: UIView
     
     /// The gesture used to collapse the view.
-    @objc let collapseGestureRecognizer: UITapGestureRecognizer
+    private let collapseGestureRecognizer: UITapGestureRecognizer
     
     public required init?(coder aDecoder: NSCoder) {
         gestureFilterView = UIView()
@@ -53,13 +53,13 @@ final public class ExpandableGalleryView: GalleryView {
         }
     }
     
-    @objc var originalSuperview: UIView!
+    var originalSuperview: UIView!
     var originalZIndex: Int!
     var originalFrame: CGRect!
-    @objc var originalFrameConstraints: [NSLayoutConstraint]!
-    @objc var originalConstraints: [NSLayoutConstraint]!
+    var originalFrameConstraints: [NSLayoutConstraint]!
+    var originalConstraints: [NSLayoutConstraint]!
     
-    @objc public var isExpandable: Bool {
+    public var isExpandable: Bool {
         set {
             guard newValue else {
                 gestureFilterView.removeFromSuperview()
@@ -73,16 +73,11 @@ final public class ExpandableGalleryView: GalleryView {
             superview.addSubview(gestureFilterView)
             addGestureRecognizer(collapseGestureRecognizer)
             collapseGestureRecognizer.isEnabled = false
-            
         }
         get {
             return gestureRecognizers?.contains(collapseGestureRecognizer) == true
         }
     }
-    
-}
-
-extension ExpandableGalleryView: Expandable {
     
     /// Expand the frame with animation
     private func expandFrame() {
@@ -92,27 +87,30 @@ extension ExpandableGalleryView: Expandable {
         }
         saveOriginalConstraints(of: self)
         let pageControlBottomMargin = self.pageControlButtomMargin
-        animateChange({ [unowned self] in
-            self.frame = window.bounds
-            self.imageSize = window.bounds.size
-            }, withPreparation: { [unowned self] in
+        animateChange({ [weak self] in
+            self?.frame = window.bounds
+            self?.imageSize = window.bounds.size
+            }, withPreparation: { [weak self] in
+                guard let self = self else {
+                    return
+                }
                 self.gestureFilterView.isHidden = true
                 self.moveToWindow(of: self)
                 self.pageControl.isHidden = true
-            }, withCompletion: { [unowned self] in
-                self.collapseGestureRecognizer.isEnabled = true
-                self.pageControlButtomMargin = pageControlBottomMargin
-                self.pageControl.isHidden = false
-                self.addBackground()
+            }, withCompletion: { [weak self] in
+                self?.collapseGestureRecognizer.isEnabled = true
+                self?.pageControlButtomMargin = pageControlBottomMargin
+                self?.pageControl.isHidden = false
+                self?.addBackground()
         })
     }
     
     /// Add background color with animation.
     private func addBackground() {
-        animateChange( { [unowned self] in
-            self.currentGalleryImage?.imageView.backgroundColor = .black
-        }) { [unowned self] in
-            self.setBackgroundColor(.black)
+        animateChange( { [weak self] in
+            self?.currentGalleryImage?.imageView.backgroundColor = .black
+        }) { [weak self] in
+            self?.setBackgroundColor(.black)
         }
     }
     
@@ -123,13 +121,19 @@ extension ExpandableGalleryView: Expandable {
             return
         }
         let pageControlBottomMargin = self.pageControlButtomMargin
-        animateChange({ [unowned self] in
+        animateChange({ [weak self] in
+            guard let self = self else {
+                return
+            }
             self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
             self.imageSize = self.originalFrame.size
-            }, withPreparation: { [unowned self] in
-                self.collapseGestureRecognizer.isEnabled = false
-                self.pageControl.isHidden = true
-            }, withCompletion: { [unowned self] in
+            }, withPreparation: { [weak self] in
+                self?.collapseGestureRecognizer.isEnabled = false
+                self?.pageControl.isHidden = true
+            }, withCompletion: { [weak self] in
+                guard let self = self else {
+                    return
+                }
                 self.removeFromWindow(of: self)
                 self.gestureFilterView.isHidden = false
                 self.pageControlButtomMargin = pageControlBottomMargin
@@ -139,11 +143,11 @@ extension ExpandableGalleryView: Expandable {
     
     /// Remove the background color with animation.
     private func removeBackgroundColor() {
-        animateChange({ [unowned self] in
-            self.currentGalleryImage?.imageView.backgroundColor = .clear
-        }) { [unowned self] in
-            self.setBackgroundColor(.clear)
-            self.collapseFrame()
+        animateChange({ [weak self] in
+            self?.currentGalleryImage?.imageView.backgroundColor = .clear
+        }) { [weak self] in
+            self?.setBackgroundColor(.clear)
+            self?.collapseFrame()
         }
     }
     
@@ -158,8 +162,12 @@ extension ExpandableGalleryView: Expandable {
             $0.imageView.backgroundColor = color
         }
     }
+}
+
+/// Expandable
+extension ExpandableGalleryView: ExpandableView {
     
-    @objc public var isExpanded: Bool {
+    public var isExpanded: Bool {
         guard let _ = superview else {
             Logger.standard.logError(ExpandableGalleryView.superviewError)
             return false
@@ -182,7 +190,6 @@ extension ExpandableGalleryView: Expandable {
         }
         removeBackgroundColor()
     }
-    
 }
 
 import AdvancedFoundation

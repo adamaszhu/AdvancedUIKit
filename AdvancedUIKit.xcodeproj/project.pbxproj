@@ -22,8 +22,6 @@
 		2822A3491EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3481EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift */; };
 		2823EE471EF224F4009B9AC8 /* Coordinate+Measurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823EE461EF224F4009B9AC8 /* Coordinate+Measurer.swift */; };
 		28365BC41EF0AF9300E51B5C /* PageView+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28365BC31EF0AF9300E51B5C /* PageView+ScrollViewDelegate.swift */; };
-		2838446E1F69F59A00AAD1E0 /* ActionFilterView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838446D1F69F59A00AAD1E0 /* ActionFilterView+Constant.swift */; };
-		283844701F69F5B700AAD1E0 /* KeyboardHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2838446F1F69F5B700AAD1E0 /* KeyboardHelper+Constant.swift */; };
 		283844721F69F5E700AAD1E0 /* InfiniteList+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844711F69F5E700AAD1E0 /* InfiniteList+Constant.swift */; };
 		283844741F69F61300AAD1E0 /* LocationHelper+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844731F69F61300AAD1E0 /* LocationHelper+Constant.swift */; };
 		283844761F69F65400AAD1E0 /* MapView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283844751F69F65400AAD1E0 /* MapView+Constant.swift */; };
@@ -69,7 +67,6 @@
 		2851A0D91F72592200893C39 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2851A0D81F72592200893C39 /* Navigation.storyboard */; };
 		2851F9D61F6E24DC00E961DA /* Keyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2851F9D51F6E24DC00E961DA /* Keyboard.storyboard */; };
 		2853937D1F0B11630019D288 /* InfiniteList+Infinite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2853937C1F0B11630019D288 /* InfiniteList+Infinite.swift */; };
-		2862143E1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */; };
 		288CA5091EE8CC260077784B /* MKCoordinateRegion+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */; };
 		288CA50E1EE8DF3A0077784B /* MapViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CA50D1EE8DF3A0077784B /* MapViewController+Delegate.swift */; };
 		289B293F1EFB356200152B53 /* InfiniteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B293E1EFB356200152B53 /* InfiniteCell.swift */; };
@@ -83,7 +80,6 @@
 		28B1D8081EE50E8A00A5B2C4 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */; };
 		28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */; };
 		28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */; };
-		28B1D8101EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */; };
 		28B36E621F6FAD40005996E6 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B36E611F6FAD40005996E6 /* List.storyboard */; };
 		28B36E641F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B36E631F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift */; };
 		28B36E661F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B36E651F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift */; };
@@ -109,9 +105,6 @@
 		28E66FF21EE4E4C100073DF1 /* ActionFilterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FEE1EE4E4C100073DF1 /* ActionFilterViewDelegate.swift */; };
 		28E66FF31EE4E4C100073DF1 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FEF1EE4E4C100073DF1 /* KeyboardHelper.swift */; };
 		28E66FF41EE4E4C100073DF1 /* KeyboardHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF01EE4E4C100073DF1 /* KeyboardHelperDelegate.swift */; };
-		28E66FF61EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF51EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift */; };
-		28E66FF81EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF71EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift */; };
-		28E66FFA1EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF91EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift */; };
 		28EEA75B20EAFE8D0003E72A /* PageViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EEA75A20EAFE8D0003E72A /* PageViewDelegate.swift */; };
 		28F0C370212D218100D0CE05 /* View+Imageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F0C36F212D218100D0CE05 /* View+Imageable.swift */; };
 		28F350AB1EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F350A81EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift */; };
@@ -260,8 +253,6 @@
 		2822A3481EE135ED00FAA8E3 /* NotificationHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		2823EE461EF224F4009B9AC8 /* Coordinate+Measurer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coordinate+Measurer.swift"; sourceTree = "<group>"; };
 		28365BC31EF0AF9300E51B5C /* PageView+ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageView+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
-		2838446D1F69F59A00AAD1E0 /* ActionFilterView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActionFilterView+Constant.swift"; sourceTree = "<group>"; };
-		2838446F1F69F5B700AAD1E0 /* KeyboardHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Constant.swift"; sourceTree = "<group>"; };
 		283844711F69F5E700AAD1E0 /* InfiniteList+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteList+Constant.swift"; sourceTree = "<group>"; };
 		283844731F69F61300AAD1E0 /* LocationHelper+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationHelper+Constant.swift"; sourceTree = "<group>"; };
 		283844751F69F65400AAD1E0 /* MapView+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapView+Constant.swift"; sourceTree = "<group>"; };
@@ -309,7 +300,6 @@
 		2851A0D81F72592200893C39 /* Navigation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		2851F9D51F6E24DC00E961DA /* Keyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Keyboard.storyboard; sourceTree = "<group>"; };
 		2853937C1F0B11630019D288 /* InfiniteList+Infinite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteList+Infinite.swift"; sourceTree = "<group>"; };
-		2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Pusher.swift"; sourceTree = "<group>"; };
 		288CA5081EE8CC260077784B /* MKCoordinateRegion+Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Initializer.swift"; sourceTree = "<group>"; };
 		288CA50D1EE8DF3A0077784B /* MapViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapViewController+Delegate.swift"; sourceTree = "<group>"; };
 		289B293E1EFB356200152B53 /* InfiniteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteCell.swift; sourceTree = "<group>"; };
@@ -323,7 +313,6 @@
 		28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+Underline.swift"; path = "AdvancedUIKit/Textfield/TextField+Underline.swift"; sourceTree = SOURCE_ROOT; };
 		28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnderlineView.swift; path = AdvancedUIKit/Textfield/UnderlineView.swift; sourceTree = SOURCE_ROOT; };
-		28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+ActionFilterViewDelegate.swift"; sourceTree = "<group>"; };
 		28B36E611F6FAD40005996E6 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		28B36E631F6FC3D1005996E6 /* ListViewController+DataGeneratorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListViewController+DataGeneratorDelegate.swift"; sourceTree = "<group>"; };
 		28B36E651F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListViewController+DynamicListDelegate.swift"; sourceTree = "<group>"; };
@@ -347,9 +336,6 @@
 		28E66FEE1EE4E4C100073DF1 /* ActionFilterViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionFilterViewDelegate.swift; sourceTree = "<group>"; };
 		28E66FEF1EE4E4C100073DF1 /* KeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		28E66FF01EE4E4C100073DF1 /* KeyboardHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHelperDelegate.swift; sourceTree = "<group>"; };
-		28E66FF51EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
-		28E66FF71EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
-		28E66FF91EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		28EEA75A20EAFE8D0003E72A /* PageViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewDelegate.swift; sourceTree = "<group>"; };
 		28F0C36F212D218100D0CE05 /* View+Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Imageable.swift"; sourceTree = "<group>"; };
 		28F350A81EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationHelper+LocationManagerDelegate.swift"; sourceTree = "<group>"; };
@@ -645,16 +631,9 @@
 			isa = PBXGroup;
 			children = (
 				28E66FED1EE4E4C100073DF1 /* ActionFilterView.swift */,
-				2838446D1F69F59A00AAD1E0 /* ActionFilterView+Constant.swift */,
 				28E66FEE1EE4E4C100073DF1 /* ActionFilterViewDelegate.swift */,
 				28E66FEF1EE4E4C100073DF1 /* KeyboardHelper.swift */,
-				2838446F1F69F5B700AAD1E0 /* KeyboardHelper+Constant.swift */,
-				2862143D1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift */,
-				28B1D80F1EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift */,
-				28E66FF91EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift */,
-				28E66FF71EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift */,
 				28E66FF01EE4E4C100073DF1 /* KeyboardHelperDelegate.swift */,
-				28E66FF51EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -1292,8 +1271,6 @@
 				42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */,
 				28BD992920E466BE0072EE28 /* View+Designable.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
-				28E66FF81EE4E9B000073DF1 /* KeyboardHelper+UITextFieldDelegate.swift in Sources */,
-				28E66FF61EE4E57200073DF1 /* KeyboardHelperDelegate+Optional.swift in Sources */,
 				2846A9901EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift in Sources */,
 				42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */,
 				4258DDB51EEAE6A80085FCAA /* Image+PS.swift in Sources */,
@@ -1305,7 +1282,6 @@
 				42204B991EF9489000F1FA04 /* InfiniteListStatus.swift in Sources */,
 				2822A33A1EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift in Sources */,
 				425DCD141EB3689000A0ED26 /* View+Touchable.swift in Sources */,
-				2838446E1F69F59A00AAD1E0 /* ActionFilterView+Constant.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
 				284482851F0A54BB00DF8D82 /* InfiniteList+Expandable.swift in Sources */,
 				426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */,
@@ -1349,7 +1325,6 @@
 				4258DDB31EEAE6A80085FCAA /* ImagePickerHelper.swift in Sources */,
 				42CA09ED1EE19E36009AF1BE /* Button+Localizer.swift in Sources */,
 				28F350AB1EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift in Sources */,
-				28B1D8101EE52D9700A5B2C4 /* KeyboardHelper+ActionFilterViewDelegate.swift in Sources */,
 				2846A99E1EE7C0FA007D4226 /* ExpandableMapView.swift in Sources */,
 				4258DDAF1EEAE6A80085FCAA /* ExpandableGalleryView.swift in Sources */,
 				28E66FF11EE4E4C100073DF1 /* ActionFilterView.swift in Sources */,
@@ -1368,7 +1343,6 @@
 				2846A9A31EE7C0FA007D4226 /* MapViewPoint.swift in Sources */,
 				2822A3411EE127EA00FAA8E3 /* NotificationHelperDelegate.swift in Sources */,
 				4234665B1EED21F0002A04F4 /* PageView.swift in Sources */,
-				283844701F69F5B700AAD1E0 /* KeyboardHelper+Constant.swift in Sources */,
 				289B29461EFB4BFE00152B53 /* InfiniteList+DataSource.swift in Sources */,
 				28EEA75B20EAFE8D0003E72A /* PageViewDelegate.swift in Sources */,
 				4258DDB11EEAE6A80085FCAA /* GalleryView.swift in Sources */,
@@ -1379,7 +1353,6 @@
 				4258DDB61EEAE6A80085FCAA /* ImageView+Measurer.swift in Sources */,
 				3519F74522824D2E00C7AF17 /* RemoteNotification.swift in Sources */,
 				42621F391EF9206000907066 /* ExpandableView+Action.swift in Sources */,
-				2862143E1EE62A0E00ED3290 /* KeyboardHelper+Pusher.swift in Sources */,
 				28E66FF21EE4E4C100073DF1 /* ActionFilterViewDelegate.swift in Sources */,
 				2823EE471EF224F4009B9AC8 /* Coordinate+Measurer.swift in Sources */,
 				4258DDB41EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift in Sources */,
@@ -1398,7 +1371,6 @@
 				284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */,
 				42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */,
 				428EAB5E1EDC4BD3006ED22B /* DeviceHelper.swift in Sources */,
-				28E66FFA1EE4EA5D00073DF1 /* KeyboardHelper+UISearchBarDelegate.swift in Sources */,
 				2822A33F1EE127EA00FAA8E3 /* NotificationHelper.swift in Sources */,
 				283844721F69F5E700AAD1E0 /* InfiniteList+Constant.swift in Sources */,
 				28365BC41EF0AF9300E51B5C /* PageView+ScrollViewDelegate.swift in Sources */,
