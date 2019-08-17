@@ -20,16 +20,16 @@ final public class ExpandableGalleryView: GalleryView {
         gestureFilterView.backgroundColor = UIColor.clear
         let expandGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(expand))
         gestureFilterView.addGestureRecognizer(expandGestureRecognizer)
-        let showPreviousImageGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(showPreviousImage))
+        let showPreviousImageGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(switchToPreviousPage))
         showPreviousImageGestureRecognizer.direction = .right
         gestureFilterView.addGestureRecognizer(showPreviousImageGestureRecognizer)
-        let showNextImageGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(showNextImage))
+        let showNextImageGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(switchToNextPage))
         showNextImageGestureRecognizer.direction = .left
         gestureFilterView.addGestureRecognizer(showNextImageGestureRecognizer)
     }
     
-    public override func add(image: UIImage) {
-        super.add(image: image)
+    public override func add(_ image: UIImage) {
+        super.add(image)
         guard let galleryImage = subviews.last as? GalleryImage else {
             Logger.standard.logError(ExpandableGalleryView.subviewTypeError)
             return
@@ -78,6 +78,109 @@ final public class ExpandableGalleryView: GalleryView {
         get {
             return gestureRecognizers?.contains(collapseGestureRecognizer) == true
         }
+    }
+    
+}
+
+extension ExpandableGalleryView: Expandable {
+    
+    /// Expand the frame with animation
+    private func expandFrame() {
+        guard let window = window else {
+            Logger.standard.logError(ExpandableGalleryView.windowError)
+            return
+        }
+        saveOriginalConstraints(of: self)
+        let pageControlBottomMargin = self.pageControlButtomMargin
+        animateChange({ [unowned self] in
+            self.frame = window.bounds
+            self.imageSize = window.bounds.size
+            }, withPreparation: { [unowned self] in
+                self.gestureFilterView.isHidden = true
+                self.moveToWindow(of: self)
+                self.pageControl.isHidden = true
+            }, withCompletion: { [unowned self] in
+                self.collapseGestureRecognizer.isEnabled = true
+                self.pageControlButtomMargin = pageControlBottomMargin
+                self.pageControl.isHidden = false
+                self.addBackground()
+        })
+    }
+    
+    /// Add background color with animation.
+    private func addBackground() {
+        animateChange( { [unowned self] in
+            self.currentGalleryImage?.imageView.backgroundColor = .black
+        }) { [unowned self] in
+            self.setBackgroundColor(.black)
+        }
+    }
+    
+    /// Collapse the frame with animation
+    private func collapseFrame() {
+        guard let window = window else {
+            Logger.standard.logError(ExpandableGalleryView.windowError)
+            return
+        }
+        let pageControlBottomMargin = self.pageControlButtomMargin
+        animateChange({ [unowned self] in
+            self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
+            self.imageSize = self.originalFrame.size
+            }, withPreparation: { [unowned self] in
+                self.collapseGestureRecognizer.isEnabled = false
+                self.pageControl.isHidden = true
+            }, withCompletion: { [unowned self] in
+                self.removeFromWindow(of: self)
+                self.gestureFilterView.isHidden = false
+                self.pageControlButtomMargin = pageControlBottomMargin
+                self.pageControl.isHidden = false
+        })
+    }
+    
+    /// Remove the background color with animation.
+    private func removeBackgroundColor() {
+        animateChange({ [unowned self] in
+            self.currentGalleryImage?.imageView.backgroundColor = .clear
+        }) { [unowned self] in
+            self.setBackgroundColor(.clear)
+            self.collapseFrame()
+        }
+    }
+    
+    /// Set the background color of all subvies.
+    ///
+    /// - Parameter color: The color to be settled.
+    private func setBackgroundColor(_ color: UIColor) {
+        let subviews = self.subviews.compactMap {
+            $0 as? GalleryImage
+        }
+        subviews.forEach {
+            $0.imageView.backgroundColor = color
+        }
+    }
+    
+    @objc public var isExpanded: Bool {
+        guard let _ = superview else {
+            Logger.standard.logError(ExpandableGalleryView.superviewError)
+            return false
+        }
+        return superview == window
+    }
+    
+    @objc public func expand() {
+        guard !isExpanded, isExpandable else {
+            Logger.standard.logWarning(ExpandableGalleryView.expandingWarning)
+            return
+        }
+        expandFrame()
+    }
+    
+    @objc public func collapse() {
+        guard isExpanded, isExpandable else {
+            Logger.standard.logWarning(ExpandableGalleryView.collapsingWarning)
+            return
+        }
+        removeBackgroundColor()
     }
     
 }
