@@ -1,8 +1,8 @@
 /// DataPickerColumn presents a column in the DataPicker.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 23/04/2017
+/// - version: 1.5.0
+/// - date: 15/08/2019
 public struct DataPickerColumn {
     
     /// Attributes.
@@ -14,9 +14,8 @@ public struct DataPickerColumn {
     /// - Parameters:
     ///   - title: The title of the column. Empty is the default value.
     ///   - items: The column items.
-    init(items: [DataPickerItem], title: String = .empty) {
+    public init(items: [DataPickerItem], title: String = .empty) {
         self.title = title
         self.items = items
     }
-    
 }
