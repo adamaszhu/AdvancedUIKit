@@ -1,12 +1,12 @@
-/// View+Localizer provides localization support for a view.
+/// View+Localizable provides localization support for a view.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 02/06/2017
+/// - version: 1.5.0
+/// - date: 31/08/2019
 public extension UIView {
     
     /// The default localization file.
-    @objc static let defaultLocalizationFile = "Localizable"
+    static let defaultLocalizationFile = "Localizable"
     
     /// Localize the view.
     ///
@@ -16,7 +16,6 @@ public extension UIView {
             $0.localize(withLocalizationFile: localizationFile)
         }
     }
-    
 }
 
 import UIKit

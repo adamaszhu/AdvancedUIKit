@@ -57,7 +57,7 @@ extension InfiniteList: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            guard status.isEditionAvailable, let item = items.element(atIndex: indexPath.row)?.item else {
+            guard status.isEditingAvailable, let item = items.element(atIndex: indexPath.row)?.item else {
                 return
             }
             items.remove(at: indexPath.row)

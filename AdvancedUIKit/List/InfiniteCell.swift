@@ -1,8 +1,8 @@
 /// InfiniteCell is used to display one of the infinite items.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 22/06/2017
+/// - version: 1.5.0
+/// - date: 07/09/2019
 open class InfiniteCell: UITableViewCell {
     
     /// The additional view that should be shown after being expanded. Nil stands for not expandable.
@@ -16,12 +16,12 @@ open class InfiniteCell: UITableViewCell {
     }
     
     /// Whether the cell can be expanded or not.
-    @objc var isExpandable: Bool {
+    var isExpandable: Bool {
         return additionalView != nil
     }
     
     /// The action of clicking the switch button.
-    @objc var switchExpandStatusAction: (() -> Void)!
+    var switchExpandStatusAction: () -> Void = {}
     
     /// Render the cell with an item.
     /// - parameter item: The item to be rendered.

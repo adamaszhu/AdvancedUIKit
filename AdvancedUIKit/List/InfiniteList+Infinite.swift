@@ -115,7 +115,7 @@ public extension InfiniteList {
     ///
     /// - Parameter items: The items to be reloaded.
     func reload(_ items: [InfiniteItem]) {
-        guard status.isReloading else {
+        guard status.isReloadingItemAvailable else {
             return
         }
         self.items = items
@@ -139,7 +139,7 @@ public extension InfiniteList {
     ///
     /// - Parameter items: The items to be append.
     func append(_ items: [InfiniteItem]) {
-        guard status.isLoadingMore else {
+        guard status.isLoadingMoreItemAvailable else {
             return
         }
         self.items = self.items + items
