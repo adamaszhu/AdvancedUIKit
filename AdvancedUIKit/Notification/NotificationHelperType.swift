@@ -135,7 +135,8 @@ final public class NotificationHelper: NotificationHelperType {
                 notificationContent.title = content
             }
             notificationContent.sound = UNNotificationSound(named: soundName)
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
+            let adjustedDelay = max(1, delay)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: adjustedDelay, repeats: false)
             let request = UNNotificationRequest(identifier: content, content: notificationContent, trigger: trigger)
             self.notificationCenter.add(request) { [weak self] error in
                 if let error = error, let self = self {
