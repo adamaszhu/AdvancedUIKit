@@ -32,7 +32,6 @@ public struct RemoteNotification {
         body = alert[RemoteNotification.bodyKey] as? String
         title = alert[RemoteNotification.titleKey] as? String
     }
-    
 }
 
 /// Constants
