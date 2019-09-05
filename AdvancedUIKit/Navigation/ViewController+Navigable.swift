@@ -2,7 +2,7 @@
 ///
 /// - author: Adamas
 /// - version: 1.5.0
-/// - date: 13/05/2019
+/// - date: 07/09/2019
 public extension UIViewController {
     
     /// Whether the view controller is a root view controller or not.

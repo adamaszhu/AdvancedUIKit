@@ -1,15 +1,15 @@
 /// NavigationBar is used as a customized navigation bar.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 02/06/2017
+/// - version: 1.5.0
+/// - date: 06/09/2019
 final public class NavigationBar: UINavigationBar {
     
     /// The view controller that the navigation bar belongs to.
     @IBOutlet public weak var viewController: UIViewController!
     
     /// Set the title of the navigation bar.
-    @objc public var title: String? {
+    public var title: String? {
         set {
             topItem?.title = newValue
         }
@@ -19,7 +19,7 @@ final public class NavigationBar: UINavigationBar {
     }
     
     /// Set the title of the left navigation button.
-    @objc public var leftButtonTitle: String? {
+    public var leftButtonTitle: String? {
         set {
             leftButton?.title = newValue
         }
@@ -29,7 +29,7 @@ final public class NavigationBar: UINavigationBar {
     }
     
     /// Set the title of the right navigation button.
-    @objc public var rightButtonTitle: String? {
+    public var rightButtonTitle: String? {
         set {
             rightButton?.title = newValue
         }
@@ -60,14 +60,9 @@ final public class NavigationBar: UINavigationBar {
     ///
     /// - parameter action: The action to be settled.
     /// - parameter target: The object.
-    @objc public func setLeftButtonAction(action: Selector, withTarget target: AnyObject) {
+    public func setLeftButtonAction(action: Selector, withTarget target: AnyObject) {
         leftButton?.action = action
         leftButton?.target = target
-    }
-    
-    /// Back to previous view controller.
-    @IBAction public func back(_ sender: Any) {
-        viewController.navigationController?.popViewController(animated: true)
     }
     
     /// Set the action for the right button.
@@ -75,11 +70,15 @@ final public class NavigationBar: UINavigationBar {
     /// - Parameters:
     ///   - action: The action to be settled.
     ///   - target: The object.
-    @objc public func setRightButtonAction(action: Selector, withTarget target: AnyObject) {
+    public func setRightButtonAction(action: Selector, withTarget target: AnyObject) {
         rightButton?.action = action
         rightButton?.target = target
     }
     
+    /// Back to previous view controller.
+    @IBAction public func back(_ sender: Any) {
+        viewController.navigationController?.popViewController(animated: true)
+    }
 }
 
 import UIKit

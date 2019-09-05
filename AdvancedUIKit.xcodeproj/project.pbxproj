@@ -15,7 +15,7 @@
 		281F02F71F7619EC000B3AEC /* View.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281F02F61F7619EC000B3AEC /* View.storyboard */; };
 		2822A3361EE0EC8200FAA8E3 /* ViewController+Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3351EE0EC8200FAA8E3 /* ViewController+Navigable.swift */; };
 		2822A3391EE0EE2600FAA8E3 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */; };
-		2822A33A1EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3381EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift */; };
+		2822A33A1EE0EE2600FAA8E3 /* NavigationController+Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3381EE0EE2600FAA8E3 /* NavigationController+Navigable.swift */; };
 		2822A33F1EE127EA00FAA8E3 /* NotificationHelperType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A33C1EE127EA00FAA8E3 /* NotificationHelperType.swift */; };
 		2822A3411EE127EA00FAA8E3 /* NotificationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A33E1EE127EA00FAA8E3 /* NotificationHelperDelegate.swift */; };
 		2822A3441EE127F900FAA8E3 /* NotificationHelperType.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2822A3461EE127F900FAA8E3 /* NotificationHelperType.strings */; };
@@ -256,7 +256,7 @@
 		281F02F61F7619EC000B3AEC /* View.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = View.storyboard; sourceTree = "<group>"; };
 		2822A3351EE0EC8200FAA8E3 /* ViewController+Navigable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigable.swift"; sourceTree = "<group>"; };
 		2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
-		2822A3381EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationController+Storyboard.swift"; sourceTree = "<group>"; };
+		2822A3381EE0EE2600FAA8E3 /* NavigationController+Navigable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationController+Navigable.swift"; sourceTree = "<group>"; };
 		2822A33C1EE127EA00FAA8E3 /* NotificationHelperType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelperType.swift; sourceTree = "<group>"; };
 		2822A33E1EE127EA00FAA8E3 /* NotificationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelperDelegate.swift; sourceTree = "<group>"; };
 		2822A3451EE127F900FAA8E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NotificationHelperType.strings; sourceTree = "<group>"; };
@@ -502,7 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */,
-				2822A3381EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift */,
+				2822A3381EE0EE2600FAA8E3 /* NavigationController+Navigable.swift */,
 				2822A3351EE0EC8200FAA8E3 /* ViewController+Navigable.swift */,
 				35A5622A22892C6F001B983D /* UIViewController.strings */,
 			);
@@ -1317,7 +1317,7 @@
 				289B29411EFB3AA300152B53 /* InfiniteList+Delegate.swift in Sources */,
 				429F884F1EF2BC6500C293B6 /* GalleryImage+ScrollViewDelegate.swift in Sources */,
 				42204B991EF9489000F1FA04 /* InfiniteListStatus.swift in Sources */,
-				2822A33A1EE0EE2600FAA8E3 /* NavigationController+Storyboard.swift in Sources */,
+				2822A33A1EE0EE2600FAA8E3 /* NavigationController+Navigable.swift in Sources */,
 				425DCD141EB3689000A0ED26 /* View+Touchable.swift in Sources */,
 				2838446E1F69F59A00AAD1E0 /* ActionFilterView+Constant.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
