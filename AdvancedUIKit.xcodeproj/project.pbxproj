@@ -41,7 +41,6 @@
 		284482851F0A54BB00DF8D82 /* InfiniteList+Expandable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284482841F0A54BB00DF8D82 /* InfiniteList+Expandable.swift */; };
 		2846A98C1EE7B064007D4226 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98B1EE7B064007D4226 /* LocationViewController.swift */; };
 		2846A98E1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */; };
-		2846A9901EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */; };
 		2846A9931EE7B8CC007D4226 /* LocationHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2846A9951EE7B8CC007D4226 /* LocationHelper.strings */; };
 		2846A99E1EE7C0FA007D4226 /* ExpandableMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */; };
 		2846A9A01EE7C0FA007D4226 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A99A1EE7C0FA007D4226 /* MapView.swift */; };
@@ -104,7 +103,6 @@
 		28E66FF41EE4E4C100073DF1 /* KeyboardHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FF01EE4E4C100073DF1 /* KeyboardHelperDelegate.swift */; };
 		28EEA75B20EAFE8D0003E72A /* PageViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EEA75A20EAFE8D0003E72A /* PageViewDelegate.swift */; };
 		28F0C370212D218100D0CE05 /* View+Imageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F0C36F212D218100D0CE05 /* View+Imageable.swift */; };
-		28F350AB1EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F350A81EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift */; };
 		28F350AC1EE793E5005120B1 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F350A91EE793E5005120B1 /* LocationHelper.swift */; };
 		28F350AD1EE793E5005120B1 /* LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F350AA1EE793E5005120B1 /* LocationHelperDelegate.swift */; };
 		28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */; };
@@ -268,7 +266,6 @@
 		284482841F0A54BB00DF8D82 /* InfiniteList+Expandable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InfiniteList+Expandable.swift"; sourceTree = "<group>"; };
 		2846A98B1EE7B064007D4226 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationViewController+LocationHelperDelegate.swift"; sourceTree = "<group>"; };
-		2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationHelperDelegate+Optional.swift"; sourceTree = "<group>"; };
 		2846A9941EE7B8CC007D4226 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocationHelper.strings; sourceTree = "<group>"; };
 		2846A9961EE7B8CD007D4226 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LocationHelper.strings"; sourceTree = "<group>"; };
 		2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableMapView.swift; sourceTree = "<group>"; };
@@ -331,7 +328,6 @@
 		28E66FF01EE4E4C100073DF1 /* KeyboardHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHelperDelegate.swift; sourceTree = "<group>"; };
 		28EEA75A20EAFE8D0003E72A /* PageViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewDelegate.swift; sourceTree = "<group>"; };
 		28F0C36F212D218100D0CE05 /* View+Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Imageable.swift"; sourceTree = "<group>"; };
-		28F350A81EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationHelper+LocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		28F350A91EE793E5005120B1 /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		28F350AA1EE793E5005120B1 /* LocationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelperDelegate.swift; sourceTree = "<group>"; };
 		28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoAccessor.swift; sourceTree = "<group>"; };
@@ -634,9 +630,7 @@
 			isa = PBXGroup;
 			children = (
 				28F350A91EE793E5005120B1 /* LocationHelper.swift */,
-				28F350A81EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift */,
 				28F350AA1EE793E5005120B1 /* LocationHelperDelegate.swift */,
-				2846A98F1EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift */,
 				2846A9951EE7B8CC007D4226 /* LocationHelper.strings */,
 				2823EE461EF224F4009B9AC8 /* Coordinate+Measurer.swift */,
 			);
@@ -1259,7 +1253,6 @@
 				42EA08BD1EDD961800B079C0 /* CustomizedMessageHelper+Helper.swift in Sources */,
 				28BD992920E466BE0072EE28 /* View+Designable.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
-				2846A9901EE7B22D007D4226 /* LocationHelperDelegate+Optional.swift in Sources */,
 				42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */,
 				4258DDB51EEAE6A80085FCAA /* Image+PS.swift in Sources */,
 				284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */,
@@ -1311,7 +1304,6 @@
 				2844824F1F09EDA400DF8D82 /* InfiniteList+ScrollViewDelegate.swift in Sources */,
 				4258DDB31EEAE6A80085FCAA /* ImagePickerHelper.swift in Sources */,
 				42CA09ED1EE19E36009AF1BE /* Button+Localizable.swift in Sources */,
-				28F350AB1EE793E5005120B1 /* LocationHelper+LocationManagerDelegate.swift in Sources */,
 				2846A99E1EE7C0FA007D4226 /* ExpandableMapView.swift in Sources */,
 				4258DDAF1EEAE6A80085FCAA /* ExpandableGalleryView.swift in Sources */,
 				28E66FF11EE4E4C100073DF1 /* ActionFilterView.swift in Sources */,

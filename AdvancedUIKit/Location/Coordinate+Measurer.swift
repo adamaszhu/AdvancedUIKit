@@ -1,8 +1,8 @@
 /// Coordinate+Measurer provides measure between two geo location.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 15/06/2017
+/// - version: 1.5.0
+/// - date: 07/09/2019
 public extension CLLocationCoordinate2D {
     
     /// Calculate the distance between two geo coordinate.
@@ -14,7 +14,6 @@ public extension CLLocationCoordinate2D {
         let remoteLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         return currentLocation.distance(from: remoteLocation)
     }
-    
 }
 
 import MapKit
