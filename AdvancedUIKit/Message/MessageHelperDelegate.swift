@@ -1,9 +1,9 @@
 /// MessageHelperDelegate is used when a futher action need to be performed after performing an action about the message.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 30/05/2017
-public protocol MessageHelperDelegate {
+/// - version: 1.5.0
+/// - date: 07/09/2019
+public protocol MessageHelperDelegate: class {
     
     /// An operation has been done on an error.
     func messageHelperDidConfirmError(_ messageHelper: MessageHelper)
@@ -21,7 +21,14 @@ public protocol MessageHelperDelegate {
     
     /// An cancel has been done on an input
     func messageHelperDidCancelInput(_ messageHelper: MessageHelper)
-    
+}
+
+/// Optional
+public extension MessageHelperDelegate {
+    func messageHelperDidConfirmError(_ messageHelper: MessageHelper) {}
+    func messageHelperDidConfirmWarning(_ messageHelper: MessageHelper) {}
+    func messageHelperDidCancelWarning(_ messageHelper: MessageHelper) {}
+    func messageHelperDidCancelInput(_ messageHelper: MessageHelper) {}
 }
 
 import Foundation

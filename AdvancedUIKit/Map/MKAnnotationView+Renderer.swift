@@ -1,12 +1,9 @@
 /// MKAnnotationView+Renderer renders a point.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 07/06/2017
+/// - version: 1.5.0
+/// - date: 07/09/2019
 extension MKAnnotationView {
-    
-    /// The size of the detail button.
-    private static let defaultDetailButtonSize = CGFloat(30)
     
     /// Render the annotation.
     ///
@@ -34,7 +31,13 @@ extension MKAnnotationView {
             frame.size = iconSize
         }
     }
+}
+
+/// Constants
+private extension MKAnnotationView {
     
+    /// The size of the detail button.
+    static let defaultDetailButtonSize = CGFloat(30)
 }
 
 import MapKit

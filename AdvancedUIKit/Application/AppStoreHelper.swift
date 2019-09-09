@@ -71,6 +71,8 @@ extension AppStoreHelper: MessageHelperDelegate {
         let reviewAddress = String(format: AppStoreHelper.reviewAddressPattern, id)
         DeviceHelper.standard.openWebsite(withLink: reviewAddress)
     }
+    
+    public func messageHelper(_ messageHelper: MessageHelper, didConfirmInput content: String) {}
 }
 
 /// Constants
