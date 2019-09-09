@@ -1,8 +1,8 @@
-/// Button+Localizer provides localization support for a button.
+/// Button+Localizable provides localization support for a button.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 02/06/2017
+/// - version: 1.5.0
+/// - date: 31/08/2019
 public extension UIButton {
     
     override func localize(withLocalizationFile localizationFile: String = defaultLocalizationFile) {
@@ -11,7 +11,6 @@ public extension UIButton {
         }
         self.title = title.localizedString(withLocalizationFile: localizationFile)
     }
-    
 }
 
 import UIKit

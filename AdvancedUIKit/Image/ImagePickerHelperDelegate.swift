@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 10/06/2017
-public protocol ImagePickerHelperDelegate {
+public protocol ImagePickerHelperDelegate: class {
     
     /// The image has been picked.
     ///
@@ -14,7 +14,6 @@ public protocol ImagePickerHelperDelegate {
     ///
     /// - Parameter error: The detail of the error.
     func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didCatchError error: String)
-    
 }
 
 import UIKit

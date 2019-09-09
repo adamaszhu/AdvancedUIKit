@@ -1,14 +1,11 @@
 /// DeviceHelper is used to perform an user interaction. Such as sending an email or making a phone call.
 ///
-/// - version: 1.1.0
-/// - date: 14/12/2017
+/// - version: 1.5.0
+/// - date: 17/08/2019
 final public class DeviceHelper: NSObject {
     
-    /// The singleton instance in the system.
-    public static let standard = DeviceHelper()
-    
     /// The delegate of the DeviceHelper.
-    public var deviceHelperDelegate: DeviceHelperDelegate?
+    public weak var deviceHelperDelegate: DeviceHelperDelegate?
     
     /// The application used to do the action.
     private let application: UIApplication
@@ -17,7 +14,7 @@ final public class DeviceHelper: NSObject {
     public func openSystemSetting() {
         guard let systemSettingURL = URL(string: UIApplicationOpenSettingsURLString) else {
             Logger.standard.logError(DeviceHelper.systemLinkError)
-            abort()
+            return
         }
         open(systemSettingURL, withError: DeviceHelper.systemSettingError)
     }
@@ -28,7 +25,7 @@ final public class DeviceHelper: NSObject {
     public func openWebsite(withLink link: String) {
         guard let websiteURL = URL(string: link) else {
             Logger.standard.logInfo(DeviceHelper.linkError, withDetail: link)
-            abort()
+            return
         }
         open(websiteURL, withError: DeviceHelper.browserError)
     }
@@ -36,7 +33,7 @@ final public class DeviceHelper: NSObject {
     /// Make a phone call.
     ///
     /// - Parameter number: The phone number.
-    public func dial(withNumber number: String) {
+    public func dialNumber(_ number: String) {
         guard let dialURL = URL(string: "\(DeviceHelper.dailPrefix)\(number)") else {
             Logger.standard.logInfo(DeviceHelper.phoneNumberError, withDetail: number)
             return
@@ -64,7 +61,7 @@ final public class DeviceHelper: NSObject {
     ///   - content: The content of the email.
     ///   - isHTMLContent: Whether the content is a html or not.
     ///   - attachments: A list of attachments of the email. It is a list of name and data pair
-    public func email(toAddress address: String, withSubject subject: String, withContent content: String, withAttachments attachments: [String: Data] = [:], asHTMLContent isHTML: Bool = false) {
+    public func sendEmail(toAddress address: String, withSubject subject: String, withContent content: String, withAttachments attachments: [String: Data] = [:], asHTMLContent isHTML: Bool = false) {
         let mailViewController = MFMailComposeViewController()
         mailViewController.mailComposeDelegate = self
         mailViewController.setToRecipients([address])
@@ -101,10 +98,42 @@ final public class DeviceHelper: NSObject {
         self.application = application
         super.init()
     }
+}
+
+/// MFMailComposeViewControllerDelegate
+extension DeviceHelper: MFMailComposeViewControllerDelegate {
     
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+        switch result {
+        case .sent:
+            deviceHelperDelegate?.deviceHelper(self, didSendEmail: true)
+        default:
+            deviceHelperDelegate?.deviceHelper(self, didSendEmail: false)
+        }
+    }
+}
+
+/// Constants
+private extension DeviceHelper {
+    
+    /// User error.
+    static let dialError = "DialError"
+    static let mapError = "MapError"
+    static let browserError = "BrowserError"
+    static let systemSettingError = "SystemSettingError"
+    
+    /// System error.
+    static let phoneNumberError = "The phone number is invalid."
+    static let addressError = "The address is incorrect."
+    static let linkError = "The link is incorrect."
+    static let systemLinkError = "The system link is incorrect."
+    
+    /// Function url.
+    static let dailPrefix = "telprompt://"
+    static let mapPrefix = "http://maps.apple.com/?q="
 }
 
 import AdvancedFoundation
-import Foundation
 import MessageUI
 import UIKit

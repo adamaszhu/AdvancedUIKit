@@ -9,7 +9,7 @@ public class PageView: UIScrollView {
     public weak var pageViewDelegate: PageViewDelegate?
     
     /// The page controller.
-    private var pageControl: UIPageControl = UIPageControl()
+    private (set) var pageControl: UIPageControl = UIPageControl()
     
     /// Whether the paging point should be shown or not.
     public var shouldShowPageControl: Bool {

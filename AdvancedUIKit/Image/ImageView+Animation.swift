@@ -1,15 +1,9 @@
 /// ImageView+Animation provides a shortcut for creating animations using an image view
 ///
 /// - author: Adamas
-/// - date: 17/07/2018
-/// - version: 1.3.0
+/// - date: 17/08/2019
+/// - version: 1.5.0
 public extension UIImageView {
-    
-    /// The placeholder.
-    private static let indexPlaceholder = "%d"
-    
-    /// System error.
-    private static let patternError = "The pattern is incorrect."
     
     /// Set a set of images.
     ///
@@ -30,7 +24,16 @@ public extension UIImageView {
         }
         animationImages = images.compactMap { $0 }
     }
+}
+
+/// Constants
+private extension UIImageView {
     
+    /// The placeholder.
+    static let indexPlaceholder = "%d"
+    
+    /// System error.
+    static let patternError = "The pattern is incorrect."
 }
 
 import AdvancedFoundation

@@ -1,9 +1,9 @@
 /// CameraHelperDelegate is used when an authorization finished.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 10/06/2017
-public protocol CameraHelperDelegate {
+/// - version: 1.5.0
+/// - date: 16/08/2019
+public protocol CameraHelperDelegate: class {
     
     /// The camera has been authorized.
     ///
@@ -19,5 +19,4 @@ public protocol CameraHelperDelegate {
     ///
     /// - Parameter error: The detail of the error.
     func cameraHelper(_ cameraHelper: CameraHelper, didCatchError error: String)
-    
 }

@@ -17,6 +17,9 @@ public final class AppStoreHelper {
     /// The user default used to save the counter.
     private let userDefaults: UserDefaults
     
+    /// The device helper for opening a website.
+    private let deviceHelper: DeviceHelper
+    
     /// Initialize the helper
     ///
     /// - Parameter
@@ -24,11 +27,13 @@ public final class AppStoreHelper {
     ///   - reviewCounterFlag: The flag used to record the review counter.
     ///   - userDefaults: The user defaults used to store flags.
     ///   - messageHelper: The message helper used to show a popup.
-    public init(id: String, reviewCounterFlag: String, userDefaults: UserDefaults = UserDefaults.standard, messageHelper: SystemMessageHelper? = SystemMessageHelper()) {
+    ///   - deviceHelper: The device helper used to open a website.
+    public init(id: String, reviewCounterFlag: String, userDefaults: UserDefaults = UserDefaults.standard, messageHelper: SystemMessageHelper? = SystemMessageHelper(), deviceHelper: DeviceHelper = DeviceHelper()) {
         self.id = id
         self.reviewCounterFlag = reviewCounterFlag
         self.userDefaults = userDefaults
         self.messageHelper = messageHelper
+        self.deviceHelper = deviceHelper
         messageHelper?.messageHelperDelegate = self
     }
     
@@ -69,7 +74,7 @@ extension AppStoreHelper: MessageHelperDelegate {
     
     public func messageHelperDidConfirmWarning(_ messageHelper: MessageHelper) {
         let reviewAddress = String(format: AppStoreHelper.reviewAddressPattern, id)
-        DeviceHelper.standard.openWebsite(withLink: reviewAddress)
+        deviceHelper.openWebsite(withLink: reviewAddress)
     }
     
     public func messageHelper(_ messageHelper: MessageHelper, didConfirmInput content: String) {}

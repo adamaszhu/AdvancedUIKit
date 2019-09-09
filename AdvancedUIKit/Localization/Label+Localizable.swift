@@ -1,8 +1,8 @@
-/// Label+Localizer provides localization support for a label.
+/// Label+Localizable provides localization support for a label.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 02/06/2017
+/// - version: 1.5.0
+/// - date: 31/08/2019
 public extension UILabel {
     
     override func localize(withLocalizationFile localizationFile: String = defaultLocalizationFile) {
@@ -11,7 +11,6 @@ public extension UILabel {
         }
         self.text = text.localizedString(withLocalizationFile: localizationFile)
     }
-    
 }
 
 import UIKit
