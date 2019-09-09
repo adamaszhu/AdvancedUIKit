@@ -11,7 +11,7 @@ open class InfiniteCell: UITableViewCell {
     /// The button used to switch expand status.
     @IBOutlet public weak var switchButton: UIButton? {
         didSet {
-            switchButton?.addTarget(self, action: #selector(switchExpandStatus), for: .touchUpInside)
+            switchButton?.addTarget(self, action: #selector(getter: switchExpandStatusAction), for: .touchUpInside)
         }
     }
     
@@ -21,23 +21,17 @@ open class InfiniteCell: UITableViewCell {
     }
     
     /// The action of clicking the switch button.
-    var switchExpandStatusAction: () -> Void = {}
+    @objc var switchExpandStatusAction: () -> Void = {}
     
     /// Render the cell with an item.
     /// - parameter item: The item to be rendered.
-    @objc open func render(withItem item: Any) { }
+    open func render(withItem item: Any) {}
     
     /// Expand the cell.
-    @objc open func expand() { }
+    open func expand() {}
     
     /// Collapse the cell.
-    @objc open func collapse() { }
-    
-    /// Switch the expand status of current cell.
-    @objc func switchExpandStatus() {
-        switchExpandStatusAction()
-    }
-    
+    open func collapse() {}
 }
 
 import UIKit

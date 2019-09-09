@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 01/09/2019
-public protocol InfiniteListDelegate {
+public protocol InfiniteListDelegate: class {
     
     /// An item is selected.
     ///
