@@ -1,18 +1,14 @@
 /// ImageView+Measurer is used to scale the image according to the resolution of the image.
 ///
 /// - author: Adamas
-/// - date: 23/10/2016
-/// - version: 1.0.0
+/// - date: 18/08/2019
+/// - version: 1.5.0
 public extension UIImageView {
     
-    /// System messages.
-    private static let imageError = "No image has been allocated to the image view yet."
-    private static let contentModeError = "The content mode has not been supported yet."
-    
     /// Calculate the real frame if the image within the UIImageView.
-    public var imageFrame: CGRect? {
+    var imageFrame: CGRect? {
         guard let image = image else {
-            Logger.standard.log(error: UIImageView.imageError)
+            Logger.standard.logError(UIImageView.imageError)
             return nil
         }
         let imageRatio = image.size.width / image.size.height
@@ -41,12 +37,20 @@ public extension UIImageView {
                 imageWidth = frame.size.width
             }
         default:
-            Logger.standard.log(error: UIImageView.contentModeError)
+            Logger.standard.logError(UIImageView.contentModeError)
             return nil
         }
         return CGRect(x: frame.origin.x + center.x - imageWidth / 2, y: frame.origin.y + center.y - imageHeight / 2, width: imageWidth, height: imageHeight)
     }
-    
 }
 
+/// Constants
+private extension UIImageView {
+    
+    /// System messages.
+    static let imageError = "No image has been allocated to the image view yet."
+    static let contentModeError = "The content mode has not been supported yet."
+}
+
+import AdvancedFoundation
 import UIKit

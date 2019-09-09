@@ -137,7 +137,7 @@ public class MapView: MKMapView {
         }
         let userLocationCoordinate = userLocation.coordinate
         guard userLocationCoordinate.latitude != 0, userLocationCoordinate.longitude != 0 else {
-            Logger.standard.log(warning: MapView.userLocationUnretrievedWarning)
+            Logger.standard.logWarning(MapView.userLocationUnretrievedWarning)
             return
         }
         setViewport(withCenterLatitude: userLocationCoordinate.latitude, withCenterLongitude: userLocationCoordinate.longitude, withZoomLevel: zoomLevel)
@@ -182,4 +182,5 @@ public class MapView: MKMapView {
     
 }
 
+import AdvancedFoundation
 import MapKit

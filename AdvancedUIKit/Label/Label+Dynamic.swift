@@ -1,15 +1,12 @@
 /// Label+Dynamic contains dynamic content of a label.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 22/04/2017
+/// - version: 1.5.0
+/// - date: 16/08/2019
 public extension UILabel {
     
-    /// System warning.
-    private static let textWarning = "The text is nil."
-    
     /// Get the position of the last character.
-    @objc public var endPosition: CGPoint {
+    var endPosition: CGPoint {
         guard lineAmount != 0 else {
             return frame.origin
         }
@@ -22,30 +19,35 @@ public extension UILabel {
     }
     
     /// Get the height of each line.
-    @objc public var lineHeight: CGFloat {
+    var lineHeight: CGFloat {
         return font.lineHeight
     }
     
     /// How many lines are presented.
-    @objc public var lineAmount: Int {
+    var lineAmount: Int {
         guard let text = text else {
-            Logger.standard.log(warning: UILabel.textWarning)
+            Logger.standard.logWarning(UILabel.textWarning)
             return 0
         }
         return text.measuredLineAmount(withFont: font, inView: self)
     }
     
     /// The actual height of the text.
-    @objc public var actualHeight: CGFloat {
+    var actualHeight: CGFloat {
         guard let text = text else {
-            Logger.standard.log(warning: UILabel.textWarning)
+            Logger.standard.logWarning(UILabel.textWarning)
             return 0
         }
         return text.measuredHeight(withFont: font, inView: self)
     }
-    
 }
 
+/// Constants
+private extension UILabel {
+    
+    /// System warning.
+    static let textWarning = "The text is nil."
+}
+
+import AdvancedFoundation
 import UIKit
-
-

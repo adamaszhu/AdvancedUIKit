@@ -10,9 +10,9 @@ public extension UITextField {
     private static let textEmptyWarning = "The text is nil."
     
     /// Get the height of each line.
-    @objc public var lineHeight: CGFloat {
+    @objc var lineHeight: CGFloat {
         guard let font = font else {
-            Logger.standard.log(warning: UITextField.fontEmptyWarning)
+            Logger.standard.logWarning(UITextField.fontEmptyWarning)
             return 0
         }
         return font.lineHeight
@@ -20,4 +20,5 @@ public extension UITextField {
     
 }
 
+import AdvancedFoundation
 import UIKit

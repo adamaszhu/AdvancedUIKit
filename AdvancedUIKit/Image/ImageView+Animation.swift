@@ -1,15 +1,9 @@
 /// ImageView+Animation provides a shortcut for creating animations using an image view
 ///
 /// - author: Adamas
-/// - date: 17/07/2018
-/// - version: 1.3.0
+/// - date: 17/08/2019
+/// - version: 1.5.0
 public extension UIImageView {
-    
-    /// The placeholder.
-    private static let indexPlaceholder = "%d"
-    
-    /// System error.
-    private static let patternError = "The pattern is incorrect."
     
     /// Set a set of images.
     ///
@@ -17,9 +11,9 @@ public extension UIImageView {
     ///   - pattern: The pattern of the image.
     ///   - startIndex: The start index of the image set. Default is 0.
     ///   - endIndex: The end index of the image set.
-    public func setImages(withPattern pattern: String, fromIndex startIndex: Int = 0, toIndex endIndex: Int) {
+    func setImages(withPattern pattern: String, fromIndex startIndex: Int = 0, toIndex endIndex: Int) {
         guard pattern.contains(UIImageView.indexPlaceholder) else {
-            Logger.standard.log(error: UIImageView.patternError)
+            Logger.standard.logError(UIImageView.patternError)
             return
         }
         var images = [UIImage?]()
@@ -30,7 +24,17 @@ public extension UIImageView {
         }
         animationImages = images.compactMap { $0 }
     }
-    
 }
 
+/// Constants
+private extension UIImageView {
+    
+    /// The placeholder.
+    static let indexPlaceholder = "%d"
+    
+    /// System error.
+    static let patternError = "The pattern is incorrect."
+}
+
+import AdvancedFoundation
 import UIKit

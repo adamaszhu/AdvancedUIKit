@@ -9,7 +9,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = windowBackgroundColor
         return true
     }
-
 }
 
 import UIKit

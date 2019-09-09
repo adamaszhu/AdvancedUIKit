@@ -1,23 +1,21 @@
 /// GalleryView is used to display a list of images. If the navigation bar is translucent, GalleryView should be put inside a ScrollView.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 11/06/2017
+/// - version: 1.5.0
+/// - date: 18/08/2019
 public class GalleryView: PageView {
     
     /// The mode of the images displayed.
-    @objc public var imageMode: UIViewContentMode
+    public var imageMode: UIViewContentMode = GalleryView.defaultImageMode
     
     /// The max zoom level.
-    @objc public var maxZoomLevel: CGFloat
+    public var maxZoomLevel: CGFloat = GalleryView.defaultMaxZoomLevel
     
     /// The images presented.
-    @objc public var images: [UIImage] {
+    public var images: [UIImage] {
         set {
             removeAllViews()
-            newValue.forEach {
-                add(image: $0)
-            }
+            newValue.forEach(add)
         }
         get {
             return subviews.compactMap {
@@ -28,25 +26,25 @@ public class GalleryView: PageView {
     }
     
     /// The image presented.
-    @objc public var currentImage: UIImage? {
+    public var currentImage: UIImage? {
         return currentGalleryImage?.image
     }
     
     /// The gallery image presented.
-    @objc var currentGalleryImage: GalleryImage? {
+    var currentGalleryImage: GalleryImage? {
         guard let galleryImage = currentPage as? GalleryImage else {
-            Logger.standard.log(error: GalleryView.subviewTypeError)
+            Logger.standard.logError(GalleryView.subviewTypeError)
             return nil
         }
         return galleryImage
     }
     
     /// The size of the GalleryView
-    @objc var imageSize: CGSize {
+    var imageSize: CGSize {
         set {
             for index in 0 ..< subviews.count {
                 guard let galleryImage = subviews[index] as? GalleryImage else {
-                    Logger.standard.log(error: GalleryView.subviewTypeError)
+                    Logger.standard.logError(GalleryView.subviewTypeError)
                     return
                 }
                 galleryImage.frame.origin = CGPoint(x: CGFloat(index) * newValue.width, y: 0)
@@ -63,7 +61,7 @@ public class GalleryView: PageView {
     /// Add an image to the view.
     ///
     /// - Parameter image: The image to be added.
-    @objc public func add(image: UIImage) {
+    public func add(_ image: UIImage) {
         let galleryImage = GalleryImage()
         galleryImage.image = image
         galleryImage.maxZoomLevel = maxZoomLevel
@@ -76,26 +74,38 @@ public class GalleryView: PageView {
     /// - Parameters:
     ///   - index: The index of the new image.
     ///   - image: The image. Any object other than UIImage object will be replaced by a default image.
-    @objc public func refresh(_ image: UIImage, atIndex index: Int) {
+    public func refresh(_ image: UIImage, atIndex index: Int) {
         currentGalleryImage?.image = image
     }
     
-    /// Show previous image
-    @objc public func showPreviousImage() {
-        switchToPreviousPage()
+    public override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        var adjustedOffset = contentOffset
+        adjustedOffset.x = max(adjustedOffset.x, 0)
+        adjustedOffset.x = min(adjustedOffset.x, contentSize.width - frame.width)
+        if adjustedOffset != contentOffset {
+            setContentOffset(adjustedOffset, animated: false)
+        }
+        let pageIndex = Int(round(contentOffset.x / frame.width))
+        guard pageIndex != currentPageIndex else {
+            return
+        }
+        currentGalleryImage?.resetZoomLevel()
+        pageControl.currentPage = pageIndex
     }
-    
-    /// Show next image
-    @objc public func showNextImage() {
-        switchToNextPage()
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        imageMode = GalleryView.defaultImageMode
-        maxZoomLevel = GalleryView.defaultMaxZoomLevel
-        super.init(coder: aDecoder)
-    }
-    
 }
 
+/// Constants
+extension GalleryView {
+    
+    /// System error.
+    static let subviewTypeError = "A subview is not a GalleryImage."
+    
+    /// The maximal zoom level of an image.
+    static let defaultMaxZoomLevel: CGFloat = 8
+    
+    /// The image content mode.
+    static let defaultImageMode: UIViewContentMode = .scaleAspectFit
+}
+
+import AdvancedFoundation
 import UIKit

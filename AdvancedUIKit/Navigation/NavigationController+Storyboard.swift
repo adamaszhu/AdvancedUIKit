@@ -14,10 +14,10 @@ public extension UINavigationController {
     ///   - name: The name of the storyboard.
     ///   - animate: Whether animation should be performed or not.
     ///   - initialization: Initialize the view controller.
-    @objc public func showInitialViewController(ofStoryboard storyboardName: String, withAnimation shouldAnimate: Bool = true, withInitialization initialization: ((UIViewController) -> Void) = { _ in }) {
+    @objc func showInitialViewController(ofStoryboard storyboardName: String, withAnimation shouldAnimate: Bool = true, withInitialization initialization: ((UIViewController) -> Void) = { _ in }) {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         guard let viewController = storyboard.instantiateInitialViewController() else {
-            Logger.standard.log(error: UINavigationController.viewControllerError)
+            Logger.standard.logError(UINavigationController.viewControllerError)
             return
         }
         initialization(viewController)
@@ -31,14 +31,14 @@ public extension UINavigationController {
     ///   - identifier: The id of the view controller.
     ///   - shouldAnimate: Whether animation should be performed or not.
     ///   - initialization: Initialize the view controller.
-    @objc public func showViewController(ofStoryboard storyboardName: String? = nil, withIdentifier identifier: String, withAnimation shouldAnimate: Bool = true, withInitialization initialization: ((UIViewController) -> Void) = { _ in }) {
+    @objc func showViewController(ofStoryboard storyboardName: String? = nil, withIdentifier identifier: String, withAnimation shouldAnimate: Bool = true, withInitialization initialization: ((UIViewController) -> Void) = { _ in }) {
         let storyboard: UIStoryboard
         if let storyboardName = storyboardName {
           storyboard  = .init(name: storyboardName, bundle: nil)
         } else if let currentStoryboard = self.storyboard {
             storyboard = currentStoryboard
         } else {
-            Logger.standard.log(error: UINavigationController.viewControllerError)
+            Logger.standard.logError(UINavigationController.viewControllerError)
             return
         }
         let viewController = storyboard.instantiateViewController(withIdentifier: identifier)
@@ -48,4 +48,5 @@ public extension UINavigationController {
     
 }
 
+import AdvancedFoundation
 import UIKit

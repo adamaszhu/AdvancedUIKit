@@ -1,18 +1,15 @@
 /// GalleryImage view present an image in a GalleryView.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 15/06/2017
+/// - version: 1.5.0
+/// - date: 16/08/2019
 final class GalleryImage: UIScrollView {
     
-    /// The zoom in increment for double tapping.
-    private static let zoomInIncrement = CGFloat(2)
-    
     /// The actual image view.
-    @objc var imageView: UIImageView
+    var imageView: UIImageView
     
     /// The image.
-    @objc var image: UIImage? {
+    var image: UIImage? {
         set {
             imageView.image = newValue
         }
@@ -22,7 +19,7 @@ final class GalleryImage: UIScrollView {
     }
     
     /// The maximum zoom level.
-    @objc var maxZoomLevel: CGFloat {
+    var maxZoomLevel: CGFloat {
         set {
             maximumZoomScale = newValue
         }
@@ -32,7 +29,7 @@ final class GalleryImage: UIScrollView {
     }
     
     /// The content mode of the image.
-    @objc var imageMode: UIViewContentMode {
+    var imageMode: UIViewContentMode {
         set {
             imageView.contentMode = newValue
         }
@@ -42,7 +39,7 @@ final class GalleryImage: UIScrollView {
     }
     
     /// The size of the GalleryImage.
-    @objc var size: CGSize {
+    var size: CGSize {
         set {
             contentSize = newValue
             frame.size = newValue
@@ -54,10 +51,10 @@ final class GalleryImage: UIScrollView {
     }
     
     /// The double tap gesture used to zoom in the image.
-    @objc private (set) var doubleTapGestureRecognizer: UITapGestureRecognizer!
+    private (set) var doubleTapGestureRecognizer: UITapGestureRecognizer!
     
     /// Reset the zoom level of the image.
-    @objc func resetZoomLevel() {
+    func resetZoomLevel() {
         setZoomScale(1, animated: true)
     }
     
@@ -71,7 +68,7 @@ final class GalleryImage: UIScrollView {
     /// Initialize the image.
     init() {
         imageView = UIImageView()
-        super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        super.init(frame: .zero)
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         backgroundColor = .clear
@@ -83,7 +80,7 @@ final class GalleryImage: UIScrollView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.log(error: GalleryImage.initError)
+        Logger.standard.logError(GalleryImage.initError)
         return nil
     }
     
@@ -96,7 +93,41 @@ final class GalleryImage: UIScrollView {
         }
         addSubview(imageView)
     }
-    
 }
 
+/// UIScrollViewDelegate
+extension GalleryImage: UIScrollViewDelegate {
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard contentSize.width >= frame.width, contentSize.height >= frame.height else {
+            setZoomScale(1, animated: false)
+            return
+        }
+        var adjustOffset = contentOffset
+        adjustOffset.x = max(adjustOffset.x, 0)
+        adjustOffset.y = max(adjustOffset.y, 0)
+        adjustOffset.x = min(adjustOffset.x, contentSize.width - frame.width)
+        adjustOffset.y = min(adjustOffset.y, contentSize.height - frame.height)
+        guard adjustOffset != contentOffset else {
+            return
+        }
+        setContentOffset(adjustOffset, animated: false)
+    }
+}
+
+/// Constants
+private extension GalleryImage {
+    
+    /// Error message.
+    static let initError = "Constructor init(coder) shouldn't be called."
+    
+    /// The zoom in increment for double tapping.
+    static let zoomInIncrement: CGFloat = 2
+}
+
+import AdvancedFoundation
 import UIKit

@@ -78,7 +78,7 @@ final public class DataPicker: RootView {
     ///   - index: The index of the column.
     @objc public func selectValue(_ value: String, atColumn index: Int = 0) {
         guard 0 ..< columns.count ~= index else {
-            Logger.standard.log(error: DataPicker.columnError)
+            Logger.standard.logError(DataPicker.columnError)
             return
         }
         var item: DataPickerItem
@@ -89,7 +89,7 @@ final public class DataPicker: RootView {
                 return
             }
         }
-        Logger.standard.log(error: DataPicker.itemError)
+        Logger.standard.logError(DataPicker.itemError)
     }
     
     /// The selected values are confirmed by clicking the done button.
@@ -114,12 +114,12 @@ final public class DataPicker: RootView {
         super.init(coder: aDecoder)
     }
     
-    public override func hide() {
+    @objc public override func hide() {
         guard isVisible else {
-            Logger.standard.log(warning: DataPicker.hidingWarning)
+            Logger.standard.logWarning(DataPicker.hidingWarning)
             return
         }
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.frame.origin = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
             // Push down the controller
             if let controllerOriginalFrame = self.controllerOriginalFrame {
@@ -135,12 +135,12 @@ final public class DataPicker: RootView {
     
     public override func show() {
         guard !isVisible else {
-            Logger.standard.log(warning: DataPicker.showingWarning)
+            Logger.standard.logWarning(DataPicker.showingWarning)
             return
         }
         controllerOriginalFrame = controller?.frame
         let pushDistance = self.pushDistance - 1
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             // Push up the controller
             if let controllerOrigin = self.controllerOriginalFrame?.origin {
                 self.controller?.frame.origin = .init(x: controllerOrigin.x, y: controllerOrigin.y + pushDistance)
@@ -185,4 +185,5 @@ final public class DataPicker: RootView {
     
 }
 
+import AdvancedFoundation
 import UIKit

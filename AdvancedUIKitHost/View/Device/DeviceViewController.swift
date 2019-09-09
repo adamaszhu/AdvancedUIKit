@@ -1,11 +1,5 @@
 final class DeviceViewController: UIViewController {
     
-    let number = "+611111111111"
-    let address = "Melbourne Australia"
-    let email = (address: "info@mail.com", subject: "Subject", content: "<b>Content</b>", attachments: ["File.png": Data()])
-    let emailSendInfo = "The email has been sent successfully."
-    let emailSendError = "The email cannot be sent."
-    
     lazy var deviceHelper: DeviceHelper = {
         let deviceHelper = DeviceHelper.standard
         deviceHelper.deviceHelperDelegate = self
@@ -13,17 +7,43 @@ final class DeviceViewController: UIViewController {
     }()
     
     @IBAction func dialNumber(_ sender: Any) {
-        deviceHelper.dial(withNumber: number)
+        deviceHelper.dial(withNumber: DeviceViewController.number)
     }
     
     @IBAction func showMap(_ sender: Any) {
-        deviceHelper.openMap(withAddress: address)
+        deviceHelper.openMap(withAddress: DeviceViewController.address)
     }
     
     @IBAction func sendEmail(_ sender: Any) {
-        deviceHelper.email(toAddress: email.address, withSubject: email.subject, withContent: email.content, withAttachments: email.attachments, asHTMLContent: true)
+        deviceHelper.email(toAddress: DeviceViewController.emailAddress, withSubject: DeviceViewController.emailSubject, withContent: DeviceViewController.emailContent, withAttachments: [DeviceViewController.emailAttachment: Data()], asHTMLContent: true)
+    }
+}
+
+extension DeviceViewController: DeviceHelperDelegate {
+    
+    func deviceHelper(_ deviceHelper: DeviceHelper, didCatchError error: String) {
+        SystemMessageHelper.standard?.showError(error)
     }
     
+    func deviceHelper(_ deviceHelper: DeviceHelper, didSendEmail result: Bool) {
+        if result {
+            SystemMessageHelper.standard?.showInfo(DeviceViewController.emailSendInfo)
+        } else {
+            SystemMessageHelper.standard?.showError(DeviceViewController.emailSendError)
+        }
+    }
+}
+
+private extension DeviceViewController {
+    
+    static let number = "+611111111111"
+    static let address = "Melbourne Australia"
+    static let emailAddress = "info@mail.com"
+    static let emailSubject = "Subject"
+    static let emailContent = "<b>Content</b>"
+    static let emailAttachment = "File.png"
+    static let emailSendInfo = "The email has been sent successfully."
+    static let emailSendError = "The email cannot be sent."
 }
 
 import AdvancedUIKit

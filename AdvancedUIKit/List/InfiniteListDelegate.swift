@@ -1,9 +1,9 @@
 /// InfiniteListDelegate defines the action triggered in the list.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 24/06/2017
-public protocol InfiniteListDelegate {
+/// - version: 1.5.0
+/// - date: 01/09/2019
+public protocol InfiniteListDelegate: class {
     
     /// An item is selected.
     ///
@@ -25,5 +25,4 @@ public protocol InfiniteListDelegate {
     ///
     /// - Parameter item: The item to be deleted.
     func infiniteList(_ infiniteList: InfiniteList, didDeleteItem item: Any)
-    
 }

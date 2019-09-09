@@ -20,5 +20,4 @@ public struct InfiniteItem {
         self.item = item
         self.type = type
     }
-    
 }
