@@ -1,8 +1,5 @@
 final class LabelCell: InfiniteCell {
     
-    private let expandedCellIconName = "CollapseCell"
-    private let collapsedCellIconName = "ExpandCell"
-    
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var switchIcon: UIImageView!
     
@@ -11,13 +8,17 @@ final class LabelCell: InfiniteCell {
     }
     
     override func expand() {
-        switchIcon.image = UIImage(named: expandedCellIconName)
+        switchIcon.image = UIImage(named: LabelCell.expandedCellIconName)
     }
     
     override func collapse() {
-        switchIcon.image = UIImage(named: collapsedCellIconName)
+        switchIcon.image = UIImage(named: LabelCell.collapsedCellIconName)
     }
-    
+}
+
+private extension LabelCell {
+    static let expandedCellIconName = "CollapseCell"
+    static let collapsedCellIconName = "ExpandCell"
 }
 
 import AdvancedUIKit

@@ -26,3 +26,8 @@ public protocol InfiniteListDelegate: class {
     /// - Parameter item: The item to be deleted.
     func infiniteList(_ infiniteList: InfiniteList, didDeleteItem item: Any)
 }
+
+/// Optional
+public extension InfiniteListDelegate {
+    func infiniteListDidScroll(_ infiniteList: InfiniteList) {}
+}

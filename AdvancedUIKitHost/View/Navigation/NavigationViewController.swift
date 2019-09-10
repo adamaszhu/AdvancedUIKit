@@ -1,16 +1,18 @@
 final class NavigationViewController: UIViewController {
     
+    private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
+    
     @IBOutlet weak var navigationBar: NavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.viewController = self
-        navigationBar.tintColor = navigationTintColor
-        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationTintColor]
-        navigationBar.backgroundColor = navigationColor
-        navigationBar.title = navigation.title
-        navigationBar.rightButtonTitle = navigation.rightButtonName
-        navigationBar.leftButtonTitle = navigation.leftButtonName
+        navigationBar.tintColor = NavigationViewController.navigationTintColor
+        navigationBar.titleTextAttributes = [.foregroundColor: NavigationViewController.navigationTintColor]
+        navigationBar.backgroundColor = NavigationViewController.navigationColor
+        navigationBar.title = NavigationViewController.navigationTitle
+        navigationBar.rightButtonTitle = NavigationViewController.navigationRightButtonName
+        navigationBar.leftButtonTitle = NavigationViewController.navigationLeftButtonName
         navigationBar.setLeftButtonAction(action: #selector(NavigationBar.back), withTarget: navigationBar)
         navigationBar.setRightButtonAction(action: #selector(done), withTarget: self)
     }
@@ -21,9 +23,8 @@ final class NavigationViewController: UIViewController {
     }
     
     @objc func done() {
-        SystemMessageHelper.standard?.showInfo(doneMessage)
+        messageHelper?.showInfo(NavigationViewController.doneMessage)
     }
-    
 }
 
 private extension NavigationViewController {

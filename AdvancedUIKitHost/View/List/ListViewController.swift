@@ -1,29 +1,23 @@
 final class ListViewController: UIViewController {
     
-    let emptyStateNibName = "EmptyState"
-    let reloadingBarNibName = "ReloadingBar"
-    let loadingMoreBarNibName = "LoadingMoreBar"
-    let selectionTitle = "Select"
-    let deletionTitle = "Delete"
-    let defaultItemAmount = 55
-    let emptyItemAmount = -1
+    private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
     
-    @IBOutlet weak var infiniteList: InfiniteList!
+    @IBOutlet private weak var infiniteList: InfiniteList!
     
-    lazy var dataGenerator: DataGenerator = {
+    private lazy var dataGenerator: DataGenerator = {
         let dataGenerator = DataGenerator()
         dataGenerator.delegate = self
-        dataGenerator.itemAmount = self.defaultItemAmount
+        dataGenerator.itemAmount = ListViewController.defaultItemAmount
         return dataGenerator
     }()
     
     @IBAction func reloadItems(_ sender: Any) {
-        dataGenerator.itemAmount = defaultItemAmount
+        dataGenerator.itemAmount = ListViewController.defaultItemAmount
         infiniteList.startReloading()
     }
     
     @IBAction func clearItems(_ sender: Any) {
-        dataGenerator.itemAmount = emptyItemAmount
+        dataGenerator.itemAmount = ListViewController.emptyItemAmount
         infiniteList.startReloading()
     }
     
@@ -33,11 +27,47 @@ final class ListViewController: UIViewController {
         infiniteList.infiniteListDelegate = self
         infiniteList.register(LabelCell.self, with: UINib(nibName: String(describing: LabelCell.self), bundle: nil))
         infiniteList.register(ImageCell.self, with: UINib(nibName: String(describing: ImageCell.self), bundle: nil))
-        infiniteList.registerEmptyState(with: UINib(nibName: emptyStateNibName, bundle: nil))
-        infiniteList.registerReloadingBar(with: UINib(nibName: reloadingBarNibName, bundle: nil))
-        infiniteList.registerLoadingMoreBar(with: UINib(nibName: loadingMoreBarNibName, bundle: nil))
+        infiniteList.registerEmptyState(with: UINib(nibName: ListViewController.emptyStateNibName, bundle: nil))
+        infiniteList.registerReloadingBar(with: UINib(nibName: ListViewController.reloadingBarNibName, bundle: nil))
+        infiniteList.registerLoadingMoreCell(with: UINib(nibName: ListViewController.loadingMoreBarNibName, bundle: nil))
     }
     
+}
+
+extension ListViewController: InfiniteListDelegate {
+    
+    func infiniteList(_ infiniteList: InfiniteList, didDeleteItem item: Any) {
+        messageHelper?.showInfo("\(item)", withTitle: ListViewController.deletionTitle)
+    }
+    
+    func infiniteList(_ infiniteList: InfiniteList, didSelectItem item: Any) {
+        messageHelper?.showInfo("\(item)", withTitle: ListViewController.selectionTitle)
+    }
+    
+    func infiniteListDidRequireReload(_ infiniteList: InfiniteList) {
+        dataGenerator.generateItems(forPage: 0)
+    }
+    
+    func infiniteList(_ infiniteList: InfiniteList, didRequireLoadPage page: Int) {
+        dataGenerator.generateItems(forPage: page)
+    }
+}
+
+extension ListViewController: DataGeneratorDelegate {
+    
+    func dataGenerator(_ dataGenerator: DataGenerator, didGenerate items: [InfiniteItem]) {
+        infiniteList.display(items)
+    }
+}
+
+private extension ListViewController {
+    static let emptyStateNibName = "EmptyState"
+    static let reloadingBarNibName = "ReloadingBar"
+    static let loadingMoreBarNibName = "LoadingMoreBar"
+    static let selectionTitle = "Select"
+    static let deletionTitle = "Delete"
+    static let defaultItemAmount = 55
+    static let emptyItemAmount = -1
 }
 
 import AdvancedUIKit

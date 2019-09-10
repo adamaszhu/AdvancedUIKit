@@ -38,7 +38,7 @@ public protocol NotificationHelperType {
     func createLocalNotification(withTitle title: String?, content: String, delay: Double, andSoundName soundName: String)
 }
 
-extension NotificationHelperType {
+public extension NotificationHelperType {
     
     /// Post a local notification.
     ///
@@ -47,6 +47,15 @@ extension NotificationHelperType {
     ///   - content: The content of the notification.
     func createLocalNotification(withTitle title: String?, andContent content: String) {
         createLocalNotification(withTitle: title, content: content, delay: 0, andSoundName: UILocalNotificationDefaultSoundName)
+    }
+    
+    /// Post a local notification.
+    ///
+    /// - Parameters:
+    ///   - title: The title of the notification.
+    ///   - content: The content of the notification.
+    func createLocalNotification(withTitle title: String?, content: String, andDelay delay: Double) {
+        createLocalNotification(withTitle: title, content: content, delay: delay, andSoundName: UILocalNotificationDefaultSoundName)
     }
 }
 
