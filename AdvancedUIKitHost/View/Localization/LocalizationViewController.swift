@@ -4,7 +4,6 @@ final class LocalizationViewController: UIViewController {
         super.viewDidLoad()
         view.localize()
     }
-    
 }
 
 import UIKit

@@ -1,13 +1,15 @@
 final class DeviceViewController: UIViewController {
     
-    lazy var deviceHelper: DeviceHelper = {
-        let deviceHelper = DeviceHelper.standard
+    private lazy var deviceHelper: DeviceHelper = {
+        let deviceHelper = DeviceHelper()
         deviceHelper.deviceHelperDelegate = self
         return deviceHelper
     }()
     
+    private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
+    
     @IBAction func dialNumber(_ sender: Any) {
-        deviceHelper.dial(withNumber: DeviceViewController.number)
+        deviceHelper.dialNumber(DeviceViewController.number)
     }
     
     @IBAction func showMap(_ sender: Any) {
@@ -15,27 +17,26 @@ final class DeviceViewController: UIViewController {
     }
     
     @IBAction func sendEmail(_ sender: Any) {
-        deviceHelper.email(toAddress: DeviceViewController.emailAddress, withSubject: DeviceViewController.emailSubject, withContent: DeviceViewController.emailContent, withAttachments: [DeviceViewController.emailAttachment: Data()], asHTMLContent: true)
+        deviceHelper.sendEmail(toAddress: DeviceViewController.emailAddress, withSubject: DeviceViewController.emailSubject, withContent: DeviceViewController.emailContent, withAttachments: [DeviceViewController.emailAttachment: Data()], asHTMLContent: true)
     }
 }
 
 extension DeviceViewController: DeviceHelperDelegate {
     
     func deviceHelper(_ deviceHelper: DeviceHelper, didCatchError error: String) {
-        SystemMessageHelper.standard?.showError(error)
+        messageHelper?.showError(error)
     }
     
     func deviceHelper(_ deviceHelper: DeviceHelper, didSendEmail result: Bool) {
         if result {
-            SystemMessageHelper.standard?.showInfo(DeviceViewController.emailSendInfo)
+            messageHelper?.showInfo(DeviceViewController.emailSendInfo)
         } else {
-            SystemMessageHelper.standard?.showError(DeviceViewController.emailSendError)
+            messageHelper?.showError(DeviceViewController.emailSendError)
         }
     }
 }
 
 private extension DeviceViewController {
-    
     static let number = "+611111111111"
     static let address = "Melbourne Australia"
     static let emailAddress = "info@mail.com"

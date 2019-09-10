@@ -1,16 +1,11 @@
 final class ImageViewController: UIViewController {
     
-    let images = [UIImage(named: "ImageA")!, UIImage(named: "ImageB")!]
-    let gaussianRadius = 10
-    let opacity = 0.4
-    let compressSize = 50 * 1024
-    let size = (width: 800.0, height: 400.0)
+    private let cameraHelper: CameraHelper = CameraHelper()
+    private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
     
-    let cameraHelper = CameraHelper()
+    @IBOutlet private weak var galleryView: ExpandableGalleryView!
     
-    @IBOutlet weak var galleryView: ExpandableGalleryView!
-    
-    lazy var imagePickerHelper: ImagePickerHelper = {
+    private lazy var imagePickerHelper: ImagePickerHelper = {
         let imagePickerHelper = ImagePickerHelper()
         imagePickerHelper.imagePickerHelperDelegate = self
         return imagePickerHelper
@@ -19,8 +14,8 @@ final class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         galleryView.isExpandable = true
-        images.forEach {
-            galleryView.add(image: $0)
+        ImageViewController.images.forEach {
+            galleryView.add($0)
         }
     }
     
@@ -33,14 +28,14 @@ final class ImageViewController: UIViewController {
     }
     
     @IBAction func addBlur(_ sender: Any) {
-        guard let image = galleryView.currentImage?.addingGaussianBlur(withRadius: gaussianRadius) else {
+        guard let image = galleryView.currentImage?.addingGaussianBlur(withRadius: ImageViewController.gaussianRadius) else {
             return
         }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func addOpacity(_ sender: Any) {
-        guard let image = galleryView.currentImage?.addingOpacity(opacity) else {
+        guard let image = galleryView.currentImage?.addingOpacity(ImageViewController.opacity) else {
             return
         }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
@@ -54,14 +49,14 @@ final class ImageViewController: UIViewController {
     }
     
     @IBAction func compress(_ sender: Any) {
-        guard let image = galleryView.currentImage?.compressing(withMaxSize: compressSize) else {
+        guard let image = galleryView.currentImage?.compressing(withMaxSize: ImageViewController.compressSize) else {
             return
         }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func resize(_ sender: Any) {
-        guard let image = galleryView.currentImage?.resizing(toWidth: size.width, toHeight: size.height) else {
+        guard let image = galleryView.currentImage?.resizing(toWidth: ImageViewController.size.width, andHeight: ImageViewController.size.height) else {
             return
         }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
@@ -86,7 +81,25 @@ final class ImageViewController: UIViewController {
     @IBAction func removeAll(_ sender: Any) {
         galleryView.removeAllViews()
     }
+}
+
+extension ImageViewController: ImagePickerHelperDelegate {
     
+    func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didCatchError error: String) {
+        messageHelper?.showInfo(error)
+    }
+    
+    func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didPick image: UIImage) {
+        galleryView.add(image)
+    }
+}
+
+private extension ImageViewController {
+    static let images = [UIImage(named: "ImageA")!, UIImage(named: "ImageB")!]
+    static let gaussianRadius = 10
+    static let opacity = 0.4
+    static let compressSize = 50 * 1024
+    static let size = CGSize(width: 800, height: 400)
 }
 
 import AdvancedUIKit

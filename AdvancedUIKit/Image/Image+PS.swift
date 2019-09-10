@@ -100,10 +100,17 @@ public extension UIImage {
     /// - Parameters:
     ///   - width: The new width.
     ///   - height: The new height.
-    func resizing(toWidth width: Double, andHeight height: Double) -> UIImage {
+    func resizing(toWidth width: CGFloat, andHeight height: CGFloat) -> UIImage {
         let size = CGSize(width: width, height: height)
+        return resizing(to: size)
+    }
+    
+    /// Resize the image
+    ///
+    /// - Parameter size: The new size.
+    func resizing(to size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        let bound = CGRect(x: 0, y: 0, width: width, height: height)
+        let bound = CGRect(origin: .zero, size: size)
         draw(in: bound)
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
             Logger.standard.logError(UIImage.outputImageError)

@@ -3,9 +3,11 @@ final class ButtonViewController: UIViewController {
     @IBOutlet private weak var button: UIButton!
     @IBOutlet private weak var checkbox: Checkbox!
     
+    private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
+    
     @IBAction func checkStatus(_ sender: Any) {
         let message = checkbox.isSelected ? ButtonViewController.checkedStatusMessage : ButtonViewController.uncheckedStatusMessage
-        SystemMessageHelper.standard?.showInfo(message, withTitle: ButtonViewController.checkStatusTitle)
+        messageHelper?.showInfo(message, withTitle: ButtonViewController.checkStatusTitle)
     }
     
     override func viewDidLoad() {
@@ -15,7 +17,6 @@ final class ButtonViewController: UIViewController {
 }
 
 private extension ButtonViewController {
-    
     static let buttonTitle = "Checkbox\nStatus"
     static let checkStatusTitle = "Checkbox Status"
     static let checkedStatusMessage = "Checked"

@@ -30,7 +30,6 @@
 		284482811F0A4C9D00DF8D82 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284482801F0A4C9D00DF8D82 /* DataGenerator.swift */; };
 		284482831F0A507F00DF8D82 /* LoadingMoreBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284482821F0A507F00DF8D82 /* LoadingMoreBar.xib */; };
 		2846A98C1EE7B064007D4226 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98B1EE7B064007D4226 /* LocationViewController.swift */; };
-		2846A98E1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */; };
 		2846A9931EE7B8CC007D4226 /* LocationHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2846A9951EE7B8CC007D4226 /* LocationHelper.strings */; };
 		2846A99E1EE7C0FA007D4226 /* ExpandableMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */; };
 		2846A9A01EE7C0FA007D4226 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A99A1EE7C0FA007D4226 /* MapView.swift */; };
@@ -74,7 +73,6 @@
 		28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */; };
 		28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
 		28D1BFF81EDCEC7300290999 /* AdvancedUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		28D1BFFF1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */; };
 		28D1C0021EDCF3EF00290999 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0011EDCF3EF00290999 /* MainViewController.swift */; };
 		28D1C0041EDCF42A00290999 /* MainViewController+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0031EDCF42A00290999 /* MainViewController+TableViewDataSource.swift */; };
 		28D1C0061EDCF43700290999 /* MainViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0051EDCF43700290999 /* MainViewController+TableViewDelegate.swift */; };
@@ -106,7 +104,6 @@
 		420C78E11EEB73AE00A1E3EA /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */; };
 		420C78E41EEB93E500A1E3EA /* Application+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E31EEB93E500A1E3EA /* Application+Accessable.swift */; };
 		420C78EB1EEBB6D900A1E3EA /* CameraHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 420C78ED1EEBB6D900A1E3EA /* CameraHelper.strings */; };
-		420C78F21EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78F11EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift */; };
 		42204B991EF9489000F1FA04 /* InfiniteListStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B921EF9489000F1FA04 /* InfiniteListStatus.swift */; };
 		42204B9F1EF954A400F1FA04 /* InfiniteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204B9E1EF954A400F1FA04 /* InfiniteList.swift */; };
 		42204BA21EF9CB8F00F1FA04 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */; };
@@ -130,7 +127,6 @@
 		425DCD141EB3689000A0ED26 /* View+Touchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DCD131EB3689000A0ED26 /* View+Touchable.swift */; };
 		425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EAD4C1EAC6EDB001F1F81 /* RootView.swift */; };
 		42621F391EF9206000907066 /* ExpandableView+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42621F381EF9206000907066 /* ExpandableView+Action.swift */; };
-		4266037C1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4266037B1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift */; };
 		426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939751EAB01CD00761FDE /* Label+Dynamic.swift */; };
 		426939791EAB151400761FDE /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939781EAB151400761FDE /* LabelViewController.swift */; };
 		4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269397B1EAB253700761FDE /* String+Measurer.swift */; };
@@ -232,7 +228,6 @@
 		284482801F0A4C9D00DF8D82 /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
 		284482821F0A507F00DF8D82 /* LoadingMoreBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingMoreBar.xib; sourceTree = "<group>"; };
 		2846A98B1EE7B064007D4226 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationViewController+LocationHelperDelegate.swift"; sourceTree = "<group>"; };
 		2846A9941EE7B8CC007D4226 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocationHelper.strings; sourceTree = "<group>"; };
 		2846A9961EE7B8CD007D4226 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LocationHelper.strings"; sourceTree = "<group>"; };
 		2846A9981EE7C0FA007D4226 /* ExpandableMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableMapView.swift; sourceTree = "<group>"; };
@@ -276,7 +271,6 @@
 		28BD992820E466BE0072EE28 /* View+Designable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Designable.swift"; sourceTree = "<group>"; };
 		28CB19331F747512006CFE05 /* TextField.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextField.storyboard; sourceTree = "<group>"; };
 		28D1BFF01EDCE0F100290999 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
-		28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PickerViewController+DataPickerDelegate.swift"; sourceTree = "<group>"; };
 		28D1C0011EDCF3EF00290999 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		28D1C0031EDCF42A00290999 /* MainViewController+TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableViewDataSource.swift"; sourceTree = "<group>"; };
 		28D1C0051EDCF43700290999 /* MainViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
@@ -307,7 +301,6 @@
 		420C78E31EEB93E500A1E3EA /* Application+Accessable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Application+Accessable.swift"; sourceTree = "<group>"; };
 		420C78EC1EEBB6D900A1E3EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CameraHelper.strings; sourceTree = "<group>"; };
 		420C78EE1EEBB6DB00A1E3EA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CameraHelper.strings"; sourceTree = "<group>"; };
-		420C78F11EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageViewController+ImagePickerHelperDelegate.swift"; sourceTree = "<group>"; };
 		42204B921EF9489000F1FA04 /* InfiniteListStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteListStatus.swift; sourceTree = "<group>"; };
 		42204B9E1EF954A400F1FA04 /* InfiniteList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteList.swift; sourceTree = "<group>"; };
 		42204BA11EF9CB8F00F1FA04 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -338,7 +331,6 @@
 		425DCD131EB3689000A0ED26 /* View+Touchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Touchable.swift"; sourceTree = "<group>"; };
 		425EAD4C1EAC6EDB001F1F81 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		42621F381EF9206000907066 /* ExpandableView+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExpandableView+Action.swift"; sourceTree = "<group>"; };
-		4266037B1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+KeyboardHelperDelegate.swift"; sourceTree = "<group>"; };
 		426939751EAB01CD00761FDE /* Label+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+Dynamic.swift"; sourceTree = "<group>"; };
 		426939781EAB151400761FDE /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		4269397B1EAB253700761FDE /* String+Measurer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Measurer.swift"; sourceTree = "<group>"; };
@@ -453,7 +445,6 @@
 			isa = PBXGroup;
 			children = (
 				2846A98B1EE7B064007D4226 /* LocationViewController.swift */,
-				2846A98D1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift */,
 				4224C47D1F6FEA4C0072F7FC /* Location.storyboard */,
 			);
 			path = Location;
@@ -530,7 +521,6 @@
 			isa = PBXGroup;
 			children = (
 				28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */,
-				4266037B1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift */,
 				2851F9D51F6E24DC00E961DA /* Keyboard.storyboard */,
 			);
 			path = Keyboard;
@@ -612,7 +602,6 @@
 			isa = PBXGroup;
 			children = (
 				420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */,
-				420C78F11EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift */,
 				4224C4771F6C8E640072F7FC /* Image.storyboard */,
 			);
 			path = Image;
@@ -810,7 +799,6 @@
 			isa = PBXGroup;
 			children = (
 				426939821EAB65A800761FDE /* PickerViewController.swift */,
-				28D1BFFE1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift */,
 				28FD8CED1F731B050067E378 /* Picker.storyboard */,
 			);
 			path = Picker;
@@ -1274,7 +1262,6 @@
 				28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */,
 				28D1C0061EDCF43700290999 /* MainViewController+TableViewDelegate.swift in Sources */,
 				2814AEDA1EE144B2007745EF /* NotificationViewController.swift in Sources */,
-				2846A98E1EE7B1EE007D4226 /* LocationViewController+LocationHelperDelegate.swift in Sources */,
 				42204BA21EF9CB8F00F1FA04 /* ListViewController.swift in Sources */,
 				2838C2D01EE0DD89004D5BCB /* AudioViewController.swift in Sources */,
 				28D1C0041EDCF42A00290999 /* MainViewController+TableViewDataSource.swift in Sources */,
@@ -1284,7 +1271,6 @@
 				42CA0A0A1EE43752009AF1BE /* NavigationViewController.swift in Sources */,
 				28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */,
 				42CA09E41EE19673009AF1BE /* NotificationViewController+NotificationHelperDelegate.swift in Sources */,
-				4266037C1EE576EF00B74C3E /* KeyboardViewController+KeyboardHelperDelegate.swift in Sources */,
 				42CA0A081EE4338A009AF1BE /* ButtonViewController.swift in Sources */,
 				28B1D8081EE50E8A00A5B2C4 /* KeyboardViewController.swift in Sources */,
 				2846A98C1EE7B064007D4226 /* LocationViewController.swift in Sources */,
@@ -1295,8 +1281,6 @@
 				426939791EAB151400761FDE /* LabelViewController.swift in Sources */,
 				28B36E661F6FC432005996E6 /* ListViewController+DynamicListDelegate.swift in Sources */,
 				28E66FEB1EE4D06600073DF1 /* ViewViewController.swift in Sources */,
-				420C78F21EEBD53D00A1E3EA /* ImageViewController+ImagePickerHelperDelegate.swift in Sources */,
-				28D1BFFF1EDCF21E00290999 /* PickerViewController+DataPickerDelegate.swift in Sources */,
 				284E5C5D1EDD36BF00C3CC86 /* MessageViewController+MessageHelperDelegate.swift in Sources */,
 				284E5C5B1EDD337500C3CC86 /* MessageViewController.swift in Sources */,
 				28D1C00A1EDCF62900290999 /* Feature.swift in Sources */,

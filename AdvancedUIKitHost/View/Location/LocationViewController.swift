@@ -1,9 +1,8 @@
 final class LocationViewController: UIViewController {
     
-    let allTimeLocationAuthorization = "All time location authorization is authorized."
-    let whenInUseLocationAuthorization = "When in use location uthorization is authorized."
+    private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
     
-    lazy var locationHelper: LocationHelper = {
+    private lazy var locationHelper: LocationHelper = {
         let locationHelper = LocationHelper()
         locationHelper.locationHelperDelegate = self
         return locationHelper
@@ -16,7 +15,26 @@ final class LocationViewController: UIViewController {
     @IBAction func registerWhenInUseLocation(_ sender: Any) {
         locationHelper.requestWhenInUseAuthorization()
     }
+}
+
+extension LocationViewController: LocationHelperDelegate {
     
+    func locationHelper(_ locationHelper: LocationHelper, didAuthorizeAlwaysAuthorization isAuthorized: Bool) {
+        messageHelper?.showInfo(LocationViewController.allTimeLocationAuthorization)
+    }
+    
+    func locationHelper(_ locationHelper: LocationHelper, didAuthorizeWhenInUseAuthorization isAuthorized: Bool) {
+        messageHelper?.showInfo(LocationViewController.whenInUseLocationAuthorization)
+    }
+    
+    func locationHelper(_ locationHelper: LocationHelper, didCatchError error: String) {
+        messageHelper?.showInfo(error)
+    }
+}
+
+private extension LocationViewController {
+    static let allTimeLocationAuthorization = "All time location authorization is authorized."
+    static let whenInUseLocationAuthorization = "When in use location uthorization is authorized."
 }
 
 import AdvancedUIKit

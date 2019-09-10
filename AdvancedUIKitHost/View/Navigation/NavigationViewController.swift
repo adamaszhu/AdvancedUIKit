@@ -1,10 +1,5 @@
 final class NavigationViewController: UIViewController {
     
-    let navigation = (title: "Navigation", leftButtonName: "Back", rightButtonName: "Done")
-    let navigationColor = UIColor.red
-    let navigationTintColor = UIColor.white
-    let doneMessage = "Click the done button."
-    
     @IBOutlet weak var navigationBar: NavigationBar!
     
     override func viewDidLoad() {
@@ -29,6 +24,15 @@ final class NavigationViewController: UIViewController {
         SystemMessageHelper.standard?.showInfo(doneMessage)
     }
     
+}
+
+private extension NavigationViewController {
+    static let navigationTitle = "Navigation"
+    static let navigationLeftButtonName = "Back"
+    static let navigationRightButtonName = "Done"
+    static let navigationColor = UIColor.red
+    static let navigationTintColor = UIColor.white
+    static let doneMessage = "Click the done button."
 }
 
 import AdvancedUIKit
