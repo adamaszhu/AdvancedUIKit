@@ -1,8 +1,8 @@
 /// DataPickerItem presents an item in the DataPicker.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 23/04/2017
+/// - version: 1.5.0
+/// - date: 15/08/2019
 public struct DataPickerItem {
     
     /// Attributes.
@@ -18,5 +18,4 @@ public struct DataPickerItem {
         self.value = value
         self.name = name ?? value
     }
-    
 }

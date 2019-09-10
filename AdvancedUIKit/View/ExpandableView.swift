@@ -1,8 +1,8 @@
 /// ExpandableView defines what an expandable view should do.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 19/06/2017
+/// - version: 1.5.0
+/// - date: 15/08/2019
 protocol ExpandableView: class {
     
     /// The original superview.
@@ -31,7 +31,18 @@ protocol ExpandableView: class {
     
     /// Collapse the view.
     func collapse()
+}
+
+/// Constants
+extension ExpandableView {
     
+    /// System error.
+    static var superviewError: String { return "The superview is nil." }
+    static var windowError: String { return"The window is nil." }
+    
+    /// System warning.
+    static var expandingWarning: String { return "The view cannot be expanded." }
+    static var collapsingWarning: String { return "The view cannot be collapsed." }
 }
 
 import UIKit

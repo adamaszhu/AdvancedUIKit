@@ -1,8 +1,8 @@
 /// MessageHelper defines the action that a message helper should do.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 30/05/2017
+/// - version: 1.5.0
+/// - date: 05/09/2019
 public protocol MessageHelper {
     
     var messageHelperDelegate: MessageHelperDelegate? { get set }
@@ -39,5 +39,24 @@ public protocol MessageHelper {
     ///   - confirmButtonName: The name of the confirm button.
     ///   - cancelButtonName: The name of the cancel button.
     func showInput(withTitle title: String, withConfirmButtonName confirmButtonName: String, withCancelButtonName cancelButtonName: String)
+}
+
+/// Constants
+public extension MessageHelper {
     
+    /// Default message title.
+    static var successTitle: String { return "" }
+    static var warningTitle: String { return "Warning" }
+    static var errorTitle: String { return "Error" }
+    
+    /// The name of the button.
+    static var infoConfirmButtonName: String { return "Ok" }
+    static var warningConfirmButtonName: String { return "Yes" }
+    static var warningCancelButtonName: String { return "No" }
+    static var errorConfirmButtonName: String { return "Ok" }
+    static var inputConfirmButtonName: String { return "Done" }
+    static var inputCancelButtonName: String { return "Cancel" }
+    
+    /// Input hint.
+    static var inputHint: String { return "InputHint" }
 }

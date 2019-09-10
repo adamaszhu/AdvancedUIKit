@@ -104,7 +104,7 @@ extension InfiniteListStatus {
     }
     
     /// Whether the loading more bar should be hidden or not.
-    var isLoadingMoreBarHidden: Bool {
+    var isLoadingMoreCellHidden: Bool {
         switch self {
         case .finite, .empty, .reloading, .initial:
             return true

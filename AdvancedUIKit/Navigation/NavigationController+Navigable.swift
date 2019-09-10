@@ -1,12 +1,9 @@
-/// NavigationController+Storyboard is used to add additional support for navigation between storyboards.
+/// NavigationController+Navigable is used to add additional support for navigation between storyboards.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 02/06/2017
+/// - version: 1.5.0
+/// - date: 06/09/2019
 public extension UINavigationController {
-    
-    /// System error.
-    private static let viewControllerError = "The view controller can not be found."
     
     /// Push the initial view controller of a storyboard.
     ///
@@ -14,7 +11,7 @@ public extension UINavigationController {
     ///   - name: The name of the storyboard.
     ///   - animate: Whether animation should be performed or not.
     ///   - initialization: Initialize the view controller.
-    @objc func showInitialViewController(ofStoryboard storyboardName: String, withAnimation shouldAnimate: Bool = true, withInitialization initialization: ((UIViewController) -> Void) = { _ in }) {
+    func showInitialViewController(ofStoryboard storyboardName: String, withAnimation shouldAnimate: Bool = true, withInitialization initialization: ((UIViewController) -> Void) = { _ in }) {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         guard let viewController = storyboard.instantiateInitialViewController() else {
             Logger.standard.logError(UINavigationController.viewControllerError)
@@ -31,10 +28,10 @@ public extension UINavigationController {
     ///   - identifier: The id of the view controller.
     ///   - shouldAnimate: Whether animation should be performed or not.
     ///   - initialization: Initialize the view controller.
-    @objc func showViewController(ofStoryboard storyboardName: String? = nil, withIdentifier identifier: String, withAnimation shouldAnimate: Bool = true, withInitialization initialization: ((UIViewController) -> Void) = { _ in }) {
+    func showViewController(ofStoryboard storyboardName: String? = nil, withIdentifier identifier: String, withAnimation shouldAnimate: Bool = true, withInitialization initialization: ((UIViewController) -> Void) = { _ in }) {
         let storyboard: UIStoryboard
         if let storyboardName = storyboardName {
-          storyboard  = .init(name: storyboardName, bundle: nil)
+            storyboard  = UIStoryboard(name: storyboardName, bundle: nil)
         } else if let currentStoryboard = self.storyboard {
             storyboard = currentStoryboard
         } else {
@@ -46,6 +43,13 @@ public extension UINavigationController {
         pushViewController(viewController, animated: shouldAnimate)
     }
     
+}
+
+/// Constants
+private extension UINavigationController {
+    
+    /// System error.
+    static let viewControllerError = "The view controller can not be found."
 }
 
 import AdvancedFoundation

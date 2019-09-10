@@ -51,7 +51,7 @@ public class GalleryView: PageView {
                 galleryImage.size = newValue
             }
             setContentOffset(CGPoint(x: CGFloat(currentPageIndex) * newValue.width, y: 0), animated: false)
-            contentSize = CGSize(width: CGFloat(pageControl.numberOfPages) * newValue.width, height: newValue.height)
+            contentSize = CGSize(width: CGFloat(numberOfPages) * newValue.width, height: newValue.height)
         }
         get {
             return frame.size

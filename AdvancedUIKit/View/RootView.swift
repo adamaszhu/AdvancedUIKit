@@ -6,7 +6,7 @@
 open class RootView: UIView {
     
     /// Whether the view is visible or not.
-    @objc public var isVisible: Bool = true
+    public var isVisible: Bool = true
     
     /// The original frame of the view.
     public private (set) var originalFrame: CGRect = .zero

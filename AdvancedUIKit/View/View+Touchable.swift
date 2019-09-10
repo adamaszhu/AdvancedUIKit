@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 05/08/2019
-extension UIView {
+public extension UIView {
     
     /// The view used to filter gestures.
     private var gestureFilterView: GestureFilterView {
@@ -18,14 +18,14 @@ extension UIView {
     }
     
     /// Enable the any gesture on the view.
-    public func enableAnyGesture() {
+    func enableAnyGesture() {
         enableGesture(ofType: UIPanGestureRecognizer.self)
         enableGesture(ofType: UITapGestureRecognizer.self)
         enableGesture(ofType: UISwipeGestureRecognizer.self)
     }
     
     /// Disable the any gesture on the view.
-    public func disableAnyGesture() {
+    func disableAnyGesture() {
         disableGesture(ofType: UIPanGestureRecognizer.self)
         disableGesture(ofType: UITapGestureRecognizer.self)
         disableGesture(ofType: UISwipeGestureRecognizer.self)
@@ -34,14 +34,14 @@ extension UIView {
     /// Enable a gesture.
     ///
     /// - Parameter type: The type of gesture to be disabled.
-    public func enableGesture(ofType type: AnyClass) {
+    func enableGesture(ofType type: AnyClass) {
         gestureFilterView.changeGestureRecognizerUsibility(ofType: type, toUsibility: false)
     }
     
     /// Disable a gesture.
     ///
     /// - Parameter type: The gesture to be disabled.
-    public func disableGesture(ofType type: AnyClass) {
+    func disableGesture(ofType type: AnyClass) {
         gestureFilterView.changeGestureRecognizerUsibility(ofType: type, toUsibility: true)
     }
 }

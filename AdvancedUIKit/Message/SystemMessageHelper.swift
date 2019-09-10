@@ -5,27 +5,27 @@
 /// - date: 31/07/2019
 final public class SystemMessageHelper {
     
-    /// Get the shared instance of the SystemMessageHelper. If the protocol will be implemented, please create a new object.
-    public static let standard = SystemMessageHelper()
-    
     /// MessageHelper
-    public var messageHelperDelegate: MessageHelperDelegate?
+    public weak var messageHelperDelegate: MessageHelperDelegate?
     
     /// The type of current message.
-    private var messageType: MessageType
+    private var messageType: MessageType = .unknown
     
     /// Current message controller.
     private var alertController: UIAlertController?
     
     /// The current view controller.
-    private let currentViewController: UIViewController?
+    private let currentViewController: UIViewController
     
     /// Initialize the helper.
     ///
     /// - Parameter application: The application used to make a function call.
     public init?(application: UIApplication = UIApplication.shared) {
-        currentViewController = application.rootViewController
-        messageType = .unknown
+        guard let rootViewController = application.rootViewController else {
+            Logger.standard.logError(SystemMessageHelper.rootViewControllerError)
+            return nil
+        }
+        currentViewController = rootViewController
     }
     
     /// Create an alert controller including a message.
@@ -35,14 +35,19 @@ final public class SystemMessageHelper {
     ///   - content: The content of the message. Nil means that it is an input message.
     ///   - confirmButtonName: The name of the confirm button.
     ///   - cancelButtonName: The name of the cancel button. If this is nil, the confirm button will not be shown.
-    func createMessage(withTitle title: String, withContent content: String?, withConfirmButtonName confirmButtonName: String, withCancelButtonName cancelButtonName: String? = nil) {
+    private func createMessage(withTitle title: String, content: String?, confirmButtonName: String, andCancelButtonName cancelButtonName: String?) {
+        let title = title.localizedInternalString(forType: MessageHelper.self)
+        let confirmButtonName = confirmButtonName.localizedInternalString(forType: MessageHelper.self)
+        let cancelButtonName = cancelButtonName?.localizedInternalString(forType: MessageHelper.self)
+        
         alertController = UIAlertController(title: title, message: content, preferredStyle: .alert)
         if let cancelButtonName = cancelButtonName {
-            let cancelAction = UIAlertAction(title: cancelButtonName, style: .default) { [unowned self] (action) -> Void in
+            let cancelAction = UIAlertAction(title: cancelButtonName, style: .default) { [weak self] action in
+                guard let self = self else {
+                    return
+                }
                 switch self.messageType {
-                case .info:
-                    break
-                case .error:
+                case .info, .error:
                     break
                 case .warning:
                     self.messageHelperDelegate?.messageHelperDidCancelWarning(self)
@@ -57,7 +62,10 @@ final public class SystemMessageHelper {
             }
             alertController?.addAction(cancelAction)
         }
-        let confirmAction = UIAlertAction(title: confirmButtonName, style: .default) { [unowned self] (action: UIAlertAction) -> Void in
+        let confirmAction = UIAlertAction(title: confirmButtonName, style: .default) { [weak self] action in
+            guard let self = self else {
+                return
+            }
             switch self.messageType {
             case .info:
                 break
@@ -78,17 +86,17 @@ final public class SystemMessageHelper {
     }
     
     /// Show the alert controller with the message.
-    func showMessage() {
+    private func showMessage() {
         guard let alertController = alertController else {
             return
         }
-        currentViewController?.present(alertController, animated: true, completion: nil)
+        currentViewController.present(alertController, animated: true, completion: nil)
     }
     
     /// Hide previous message.
-    func hidePreviousMessage() {
+    private func hidePreviousMessage() {
         if let previousAlertController = alertController {
-            previousAlertController.navigationController?.popViewController(animated: false)
+            previousAlertController.dismiss(animated: false)
             messageType = .unknown
             alertController = nil
         }
@@ -101,38 +109,39 @@ extension SystemMessageHelper: MessageHelper {
     public func showInfo(_ content: String, withTitle title: String = successTitle, withConfirmButtonName confirmButtonName: String = infoConfirmButtonName) {
         hidePreviousMessage()
         messageType = .info
-        createMessage(withTitle: title, withContent: content, withConfirmButtonName: confirmButtonName)
+        createMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: nil)
         showMessage()
     }
     
     public func showWarning(_ content: String, withTitle title: String = warningTitle, withConfirmButtonName confirmButtonName: String = warningConfirmButtonName, withCancelButtonName cancelButtonName: String = warningCancelButtonName) {
         hidePreviousMessage()
         messageType = .warning
-        createMessage(withTitle: title, withContent: content, withConfirmButtonName: confirmButtonName, withCancelButtonName: cancelButtonName)
+        createMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: cancelButtonName)
         showMessage()
     }
     
     public func showError(_ content: String, withTitle title: String = errorTitle, withConfirmButtonName confirmButtonName: String = errorConfirmButtonName) {
         hidePreviousMessage()
         messageType = .error
-        createMessage(withTitle: title, withContent: content, withConfirmButtonName: confirmButtonName)
+        createMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: nil)
         showMessage()
     }
     
     public func showInput(withTitle title: String, withConfirmButtonName confirmButtonName: String = inputConfirmButtonName, withCancelButtonName cancelButtonName: String = inputCancelButtonName) {
         hidePreviousMessage()
         messageType = .input
-        createMessage(withTitle: title, withContent: nil, withConfirmButtonName: confirmButtonName, withCancelButtonName: cancelButtonName)
+        createMessage(withTitle: title, content: nil, confirmButtonName: confirmButtonName, andCancelButtonName: cancelButtonName)
         alertController?.addTextField(configurationHandler: nil)
         showMessage()
     }
 }
 
 /// Constants
-extension SystemMessageHelper {
+private extension SystemMessageHelper {
     
     /// Error message.
     static let typeError = "The message type is unknown."
+    static let rootViewControllerError = "There is no root view controller."
 }
 
 import AdvancedFoundation
