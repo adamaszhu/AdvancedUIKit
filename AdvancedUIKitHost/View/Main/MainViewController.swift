@@ -9,11 +9,6 @@ final class MainViewController: UIViewController {
         featureTable.dataSource = self
         featureTable.delegate = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = false
-    }
 }
 
 extension MainViewController: UITableViewDataSource {

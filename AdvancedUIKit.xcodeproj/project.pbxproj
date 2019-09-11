@@ -13,7 +13,7 @@
 		281F02F51F761554000B3AEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281F02F41F761554000B3AEC /* Main.storyboard */; };
 		281F02F71F7619EC000B3AEC /* View.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281F02F61F7619EC000B3AEC /* View.storyboard */; };
 		2822A3361EE0EC8200FAA8E3 /* ViewController+Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3351EE0EC8200FAA8E3 /* ViewController+Navigable.swift */; };
-		2822A3391EE0EE2600FAA8E3 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */; };
+		2822A3391EE0EE2600FAA8E3 /* NavigationBar+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3371EE0EE2600FAA8E3 /* NavigationBar+Accessable.swift */; };
 		2822A33A1EE0EE2600FAA8E3 /* NavigationController+Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A3381EE0EE2600FAA8E3 /* NavigationController+Navigable.swift */; };
 		2822A33F1EE127EA00FAA8E3 /* NotificationHelperType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A33C1EE127EA00FAA8E3 /* NotificationHelperType.swift */; };
 		2822A3411EE127EA00FAA8E3 /* NotificationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822A33E1EE127EA00FAA8E3 /* NotificationHelperDelegate.swift */; };
@@ -95,6 +95,8 @@
 		3519F7512282B53900C7AF17 /* ImageJoinDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3519F7502282B53900C7AF17 /* ImageJoinDirection.swift */; };
 		35758B06232869A30024B723 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35758B05232869A30024B723 /* Application.storyboard */; };
 		35758B08232869B10024B723 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35758B07232869B10024B723 /* ApplicationViewController.swift */; };
+		35758B0C23289B590024B723 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35758B0B23289B590024B723 /* String+Localizable.swift */; };
+		35758B1B2328C4730024B723 /* NavigationItem+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35758B1A2328C4730024B723 /* NavigationItem+Accessable.swift */; };
 		35A5622822892C6F001B983D /* UIViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35A5622A22892C6F001B983D /* UIViewController.strings */; };
 		420C78E11EEB73AE00A1E3EA /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */; };
 		420C78E41EEB93E500A1E3EA /* Application+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E31EEB93E500A1E3EA /* Application+Accessable.swift */; };
@@ -205,7 +207,7 @@
 		281F02F41F761554000B3AEC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		281F02F61F7619EC000B3AEC /* View.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = View.storyboard; sourceTree = "<group>"; };
 		2822A3351EE0EC8200FAA8E3 /* ViewController+Navigable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigable.swift"; sourceTree = "<group>"; };
-		2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		2822A3371EE0EE2600FAA8E3 /* NavigationBar+Accessable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationBar+Accessable.swift"; sourceTree = "<group>"; };
 		2822A3381EE0EE2600FAA8E3 /* NavigationController+Navigable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationController+Navigable.swift"; sourceTree = "<group>"; };
 		2822A33C1EE127EA00FAA8E3 /* NotificationHelperType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelperType.swift; sourceTree = "<group>"; };
 		2822A33E1EE127EA00FAA8E3 /* NotificationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelperDelegate.swift; sourceTree = "<group>"; };
@@ -285,6 +287,8 @@
 		3519F7502282B53900C7AF17 /* ImageJoinDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageJoinDirection.swift; sourceTree = "<group>"; };
 		35758B05232869A30024B723 /* Application.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Application.storyboard; sourceTree = "<group>"; };
 		35758B07232869B10024B723 /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
+		35758B0B23289B590024B723 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
+		35758B1A2328C4730024B723 /* NavigationItem+Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationItem+Accessable.swift"; sourceTree = "<group>"; };
 		35A5622922892C6F001B983D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UIViewController.strings; sourceTree = "<group>"; };
 		35A5622B22892C71001B983D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UIViewController.strings"; sourceTree = "<group>"; };
 		420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
@@ -402,10 +406,11 @@
 		2822A3341EE0EC3B00FAA8E3 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				2822A3371EE0EE2600FAA8E3 /* NavigationBar.swift */,
+				2822A3371EE0EE2600FAA8E3 /* NavigationBar+Accessable.swift */,
 				2822A3381EE0EE2600FAA8E3 /* NavigationController+Navigable.swift */,
 				2822A3351EE0EC8200FAA8E3 /* ViewController+Navigable.swift */,
 				35A5622A22892C6F001B983D /* UIViewController.strings */,
+				35758B1A2328C4730024B723 /* NavigationItem+Accessable.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -592,6 +597,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		35758B0A23289B360024B723 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				35758B0B23289B590024B723 /* String+Localizable.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
 		420C78DF1EEB737E00A1E3EA /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -665,6 +678,7 @@
 		422DB3C61EAA30B300377AB5 /* AdvancedUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				35758B0A23289B360024B723 /* Internal */,
 				420C78E21EEB93D300A1E3EA /* Application */,
 				42CA09E01EE0460F009AF1BE /* Audio */,
 				42CA09DB1EDEE0B7009AF1BE /* Button */,
@@ -1188,12 +1202,13 @@
 				4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */,
 				2846A9AF1EE7D17D007D4226 /* MapViewPointPosition.swift in Sources */,
 				426939761EAB01CD00761FDE /* Label+Dynamic.swift in Sources */,
-				2822A3391EE0EE2600FAA8E3 /* NavigationBar.swift in Sources */,
+				2822A3391EE0EE2600FAA8E3 /* NavigationBar+Accessable.swift in Sources */,
 				28BA02911F78624F00F635DE /* Checkbox.swift in Sources */,
 				2846A9A21EE7C0FA007D4226 /* MapViewLine.swift in Sources */,
 				28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */,
 				4258DDAD1EEAE6A80085FCAA /* CameraHelperDelegate.swift in Sources */,
 				28F350AC1EE793E5005120B1 /* LocationHelper.swift in Sources */,
+				35758B1B2328C4730024B723 /* NavigationItem+Accessable.swift in Sources */,
 				288CA5091EE8CC260077784B /* MKCoordinateRegion+Initializer.swift in Sources */,
 				427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */,
 				4258DDAC1EEAE6A80085FCAA /* CameraHelper.swift in Sources */,
@@ -1219,6 +1234,7 @@
 				4258DDB11EEAE6A80085FCAA /* GalleryView.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Layout.swift in Sources */,
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
+				35758B0C23289B590024B723 /* String+Localizable.swift in Sources */,
 				28B524F91EEA14970051E8D2 /* View+Constraint.swift in Sources */,
 				4258DDB61EEAE6A80085FCAA /* ImageView+Measurer.swift in Sources */,
 				3519F74522824D2E00C7AF17 /* RemoteNotification.swift in Sources */,
