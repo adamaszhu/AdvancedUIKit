@@ -1,4 +1,5 @@
 enum Feature: String {
+    case application = "Application"
     case device = "Device"
     case label = "Label"
     case picker = "Picker"

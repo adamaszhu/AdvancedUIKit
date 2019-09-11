@@ -93,6 +93,8 @@
 		3519F74D2282AE6F00C7AF17 /* ScrollView+Imageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3519F74C2282AE6F00C7AF17 /* ScrollView+Imageable.swift */; };
 		3519F74F2282B51400C7AF17 /* Image+Joinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3519F74E2282B51400C7AF17 /* Image+Joinable.swift */; };
 		3519F7512282B53900C7AF17 /* ImageJoinDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3519F7502282B53900C7AF17 /* ImageJoinDirection.swift */; };
+		35758B06232869A30024B723 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35758B05232869A30024B723 /* Application.storyboard */; };
+		35758B08232869B10024B723 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35758B07232869B10024B723 /* ApplicationViewController.swift */; };
 		35A5622822892C6F001B983D /* UIViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35A5622A22892C6F001B983D /* UIViewController.strings */; };
 		420C78E11EEB73AE00A1E3EA /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */; };
 		420C78E41EEB93E500A1E3EA /* Application+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E31EEB93E500A1E3EA /* Application+Accessable.swift */; };
@@ -281,6 +283,8 @@
 		3519F74C2282AE6F00C7AF17 /* ScrollView+Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+Imageable.swift"; sourceTree = "<group>"; };
 		3519F74E2282B51400C7AF17 /* Image+Joinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Joinable.swift"; sourceTree = "<group>"; };
 		3519F7502282B53900C7AF17 /* ImageJoinDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageJoinDirection.swift; sourceTree = "<group>"; };
+		35758B05232869A30024B723 /* Application.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Application.storyboard; sourceTree = "<group>"; };
+		35758B07232869B10024B723 /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		35A5622922892C6F001B983D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UIViewController.strings; sourceTree = "<group>"; };
 		35A5622B22892C71001B983D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UIViewController.strings"; sourceTree = "<group>"; };
 		420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
@@ -579,6 +583,15 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		35758B042328696A0024B723 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				35758B05232869A30024B723 /* Application.storyboard */,
+				35758B07232869B10024B723 /* ApplicationViewController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		420C78DF1EEB737E00A1E3EA /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -852,6 +865,7 @@
 		42CA09F91EE23BCD009AF1BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				35758B042328696A0024B723 /* Application */,
 				2838C2CE1EE0DD79004D5BCB /* Audio */,
 				42CA0A051EE4333B009AF1BE /* Button */,
 				28D1BFEF1EDCE0E100290999 /* Device */,
@@ -1084,6 +1098,7 @@
 				283844911F6B381E00AAD1E0 /* Button.storyboard in Resources */,
 				2838C2CD1EE0DD06004D5BCB /* Ring.aiff in Resources */,
 				422DB4101EAA3CF100377AB5 /* Assets.xcassets in Resources */,
+				35758B06232869A30024B723 /* Application.storyboard in Resources */,
 				42AD90E01F7296540086D4B9 /* Notification.storyboard in Resources */,
 				283844931F6B383A00AAD1E0 /* Audio.storyboard in Resources */,
 				42CA09FC1EE23C5C009AF1BE /* LaunchScreen.storyboard in Resources */,
@@ -1238,6 +1253,7 @@
 				28D1C0021EDCF3EF00290999 /* MainViewController.swift in Sources */,
 				426939831EAB65A800761FDE /* PickerViewController.swift in Sources */,
 				284482811F0A4C9D00DF8D82 /* DataGenerator.swift in Sources */,
+				35758B08232869B10024B723 /* ApplicationViewController.swift in Sources */,
 				28D1BFF11EDCE0F100290999 /* DeviceViewController.swift in Sources */,
 				2814AEDA1EE144B2007745EF /* NotificationViewController.swift in Sources */,
 				42204BA21EF9CB8F00F1FA04 /* ListViewController.swift in Sources */,

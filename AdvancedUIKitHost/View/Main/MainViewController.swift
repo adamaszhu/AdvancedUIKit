@@ -1,6 +1,6 @@
 final class MainViewController: UIViewController {
     
-    let features: [Feature] = [.audio, .button, .device, .image, .keyboard, .label, .list, .localization, .location, .map, .message, .navigation, .notification, .picker, .textField, .view]
+    let features: [Feature] = [.application, .audio, .button, .device, .image, .keyboard, .label, .list, .localization, .location, .map, .message, .navigation, .notification, .picker, .textField, .view]
     
     @IBOutlet private weak var featureTable: UITableView!
     
