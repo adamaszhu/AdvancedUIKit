@@ -50,7 +50,7 @@ extension KeyboardViewController: KeyboardHelperDelegate {
 private extension KeyboardViewController {
     static let highlightedUnderlineColor = UIColor(red: 125/255, green: 182/255, blue: 216/255, alpha: 1)
     static let underlineColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 0.6)
-    static let submissionPattern = "Firstname: %s\nLastname: %s\nMobile: %s\nAddress: %s"
+    static let submissionPattern = "Firstname: %@\nLastname: %@\nMobile: %@\nAddress: %@"
 }
 
 import AdvancedUIKit

@@ -1,7 +1,10 @@
 final class ImageViewController: UIViewController {
     
+    @IBOutlet private weak var scrollView: UIScrollView!
+    
     private let cameraHelper: CameraHelper = CameraHelper()
     private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
+    private let deviceHelper: DeviceHelper = DeviceHelper()
     
     @IBOutlet private weak var galleryView: ExpandableGalleryView!
     
@@ -14,17 +17,23 @@ final class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         galleryView.isExpandable = true
-        ImageViewController.images.forEach {
-            galleryView.add($0)
-        }
+        galleryView.images = ImageViewController.images
     }
     
     @IBAction func requestCameraAuthorization(_ sender: Any) {
-        cameraHelper.requestCameraAuthorization()
+        if cameraHelper.isCameraUndetermined {
+            cameraHelper.requestCameraAuthorization()
+        } else {
+            deviceHelper.openSystemSetting()
+        }
     }
     
     @IBAction func requestLibraryAuthorization(_ sender: Any) {
-        cameraHelper.requestLibraryAuthorization()
+        if cameraHelper.isLibraryUndetermined {
+            cameraHelper.requestLibraryAuthorization()
+        } else {
+            deviceHelper.openSystemSetting()
+        }
     }
     
     @IBAction func addBlur(_ sender: Any) {
@@ -80,6 +89,24 @@ final class ImageViewController: UIViewController {
     
     @IBAction func removeAll(_ sender: Any) {
         galleryView.removeAllViews()
+    }
+    
+    @IBAction func takeScreenshot(_ sender: Any) {
+        if let screenshot = view.screenshot() {
+            galleryView.add(screenshot)
+        }
+    }
+    
+    @IBAction func takeScrollableScreenshot(_ sender: Any) {
+        if let screenshot = scrollView.contentScreenshot() {
+            galleryView.add(screenshot)
+        }
+    }
+    
+    @IBAction func joinImages(_ sender: Any) {
+        if let screenshot1 = view.screenshot(), let screenshot2 = view.screenshot(), let screenshot = screenshot1.concat(screenshot2, with: .horizontalTop) {
+            galleryView.add(screenshot)
+        }
     }
 }
 
