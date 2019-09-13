@@ -20,11 +20,13 @@ final class LocationViewController: UIViewController {
 extension LocationViewController: LocationHelperDelegate {
     
     func locationHelper(_ locationHelper: LocationHelper, didAuthorizeAlwaysAuthorization isAuthorized: Bool) {
-        messageHelper?.showInfo(LocationViewController.allTimeLocationAuthorization)
+        let message = isAuthorized ? LocationViewController.allTimeLocationAuthorization : LocationViewController.allTimeLocationDenied
+        messageHelper?.showInfo(message)
     }
     
     func locationHelper(_ locationHelper: LocationHelper, didAuthorizeWhenInUseAuthorization isAuthorized: Bool) {
-        messageHelper?.showInfo(LocationViewController.whenInUseLocationAuthorization)
+        let message = isAuthorized ? LocationViewController.whenInUseLocationAuthorization : LocationViewController.whenInUseLocationDenied
+        messageHelper?.showInfo(message)
     }
     
     func locationHelper(_ locationHelper: LocationHelper, didCatchError error: String) {
@@ -34,7 +36,9 @@ extension LocationViewController: LocationHelperDelegate {
 
 private extension LocationViewController {
     static let allTimeLocationAuthorization = "All time location authorization is authorized."
+    static let allTimeLocationDenied = "All time location authorization is denied."
     static let whenInUseLocationAuthorization = "When in use location uthorization is authorized."
+    static let whenInUseLocationDenied = "When in use location uthorization is denied."
 }
 
 import AdvancedUIKit

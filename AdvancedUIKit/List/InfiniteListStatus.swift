@@ -29,7 +29,7 @@ extension InfiniteListStatus {
     /// Whether the reloading status can be settled or not.
     var isReloadingAvailable: Bool {
         switch self {
-        case .infinite, .finite, .empty:
+        case .infinite, .finite, .empty, .initial:
             return true
         default:
             Logger.standard.logWarning(InfiniteListStatus.reloadingWarning)

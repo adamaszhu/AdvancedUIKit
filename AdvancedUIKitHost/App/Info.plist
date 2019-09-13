@@ -24,7 +24,7 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Choose an image.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Allow all time location updating.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow when in use location updating.</string>
