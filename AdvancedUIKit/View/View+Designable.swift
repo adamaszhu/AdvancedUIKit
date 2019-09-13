@@ -52,7 +52,7 @@
         }
         if edgeInsets.bottom != .invalidInset {
             bottomAnchor.constraint(equalTo: superview.bottomAnchor,
-                                    constant: edgeInsets.bottom).isActive = true
+                                    constant: -edgeInsets.bottom).isActive = true
         }
         if edgeInsets.left != .invalidInset {
             leftAnchor.constraint(equalTo: superview.leftAnchor,
@@ -60,7 +60,7 @@
         }
         if edgeInsets.right != .invalidInset {
             rightAnchor.constraint(equalTo: superview.rightAnchor,
-                                   constant: edgeInsets.right).isActive = true
+                                   constant: -edgeInsets.right).isActive = true
         }
     }
 }

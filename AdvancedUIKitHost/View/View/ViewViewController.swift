@@ -4,11 +4,13 @@ final class ViewViewController: UIViewController {
     private var popupView: PopupView = PopupView()
     
     @IBOutlet private weak var animationButton: UIButton!
+    @IBOutlet private weak var staticView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configPopupView()
         configAnimationView()
+        configStaticView()
     }
     
     @IBAction func popup(_ sender: Any) {
@@ -46,11 +48,18 @@ final class ViewViewController: UIViewController {
     private func configAnimationView() {
         animationButtonOriginalFrame = animationButton.frame
     }
+    
+    private func configStaticView() {
+        staticView.heightAnchor.constraint(equalToConstant: ViewViewController.staticViewHeight).isActive = true
+        staticView.pinEdgesToSuperview(with: UIEdgeInsetsMake(ViewViewController.staticViewMargin, ViewViewController.staticViewMargin, .invalidInset, ViewViewController.staticViewMargin))
+    }
 }
 
 private extension ViewViewController {
     static let popupViewBackgroundColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.4)
     static let animationOffset = CGFloat(200)
+    static let staticViewHeight = CGFloat(50)
+    static let staticViewMargin = CGFloat(10)
 }
 
 import AdvancedUIKit
