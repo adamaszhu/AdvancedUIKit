@@ -4,13 +4,13 @@ final class MessageViewController: UIViewController {
     
     private lazy var systemMessageHelper: SystemMessageHelper? = {
         let systemMessageHelper = SystemMessageHelper()
-        systemMessageHelper?.messageHelperDelegate = self
+        systemMessageHelper?.delegate = self
         return systemMessageHelper
     }()
     
     private lazy var customizedMessageHelper: CustomizedMessageHelper = {
         let customizedMessageHelper = CustomizedMessageHelper()
-        customizedMessageHelper.messageHelperDelegate = self
+        customizedMessageHelper.delegate = self
         return customizedMessageHelper
     }()
     

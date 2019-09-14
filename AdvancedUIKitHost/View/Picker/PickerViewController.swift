@@ -5,7 +5,7 @@ final class PickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataPicker.dataPickerDelegate = self
+        dataPicker.delegate = self
         let items = PickerViewController.pickerOptions.map { DataPickerItem(value: $0) }
         dataPicker.title = PickerViewController.pickerTitle
         dataPicker.titleBackgroundColor = PickerViewController.pickerTitleColor

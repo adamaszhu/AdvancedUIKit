@@ -7,7 +7,7 @@ final class DeviceViewController: UIViewController {
     
     private lazy var deviceHelper: DeviceHelper = {
         let deviceHelper = DeviceHelper()
-        deviceHelper.deviceHelperDelegate = self
+        deviceHelper.delegate = self
         return deviceHelper
     }()
     

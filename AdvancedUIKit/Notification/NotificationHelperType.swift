@@ -6,7 +6,7 @@
 public protocol NotificationHelperType {
     
     /// The delegate.
-    var notificationHelperDelegate: NotificationHelperDelegate? { get }
+    var delegate: NotificationHelperDelegate? { get }
     
     /// Whether the remote notification is authorized or not.
     var isRemoteNotificationAuthorized: Bool { get }
@@ -63,7 +63,7 @@ public extension NotificationHelperType {
 @available(iOS, introduced: 10.0)
 final public class NotificationHelper: NotificationHelperType {
 
-    public weak var notificationHelperDelegate: NotificationHelperDelegate?
+    public weak var delegate: NotificationHelperDelegate?
     
     public var isRemoteNotificationAuthorized: Bool {
         return application.isRegisteredForRemoteNotifications
@@ -107,9 +107,9 @@ final public class NotificationHelper: NotificationHelperType {
                 return
             }
             if let error = error {
-                self.notificationHelperDelegate?.notificationHelper(self, didCatchError: error.localizedDescription)
+                self.delegate?.notificationHelper(self, didCatchError: error.localizedDescription)
             } else {
-                self.notificationHelperDelegate?.notificationHelper(self, didAuthorizeLocalNotification: result)
+                self.delegate?.notificationHelper(self, didAuthorizeLocalNotification: result)
             }
         }
     }
@@ -120,7 +120,7 @@ final public class NotificationHelper: NotificationHelperType {
         }
         application.registerForRemoteNotifications()
         // Abandon the deletate callback for old devices.
-        notificationHelperDelegate?.notificationHelper(self, didAuthorizeRemoteNotification: true)
+        delegate?.notificationHelper(self, didAuthorizeRemoteNotification: true)
     }
     
     public func deviceToken(from data: Data) -> String {
@@ -133,7 +133,7 @@ final public class NotificationHelper: NotificationHelperType {
                 return
             }
             guard result == true else {
-                self.notificationHelperDelegate?.notificationHelper(self, didCatchError: StaleNotificationHelper.authorizationError.localizedInternalString(forType: NotificationHelperType.self))
+                self.delegate?.notificationHelper(self, didCatchError: StaleNotificationHelper.authorizationError.localizedInternalString(forType: NotificationHelperType.self))
                 return
             }
             let notificationContent = UNMutableNotificationContent()
@@ -149,7 +149,7 @@ final public class NotificationHelper: NotificationHelperType {
             let request = UNNotificationRequest(identifier: content, content: notificationContent, trigger: trigger)
             self.notificationCenter.add(request) { [weak self] error in
                 if let error = error, let self = self {
-                    self.notificationHelperDelegate?.notificationHelper(self, didCatchError: error.localizedDescription)
+                    self.delegate?.notificationHelper(self, didCatchError: error.localizedDescription)
                 }
             }
         }
@@ -160,7 +160,7 @@ final public class NotificationHelper: NotificationHelperType {
 @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use NotificationHelper instead")
 final public class StaleNotificationHelper: NotificationHelperType {
     
-    public weak var notificationHelperDelegate: NotificationHelperDelegate?
+    public weak var delegate: NotificationHelperDelegate?
     
     public var isRemoteNotificationAuthorized: Bool {
         return application.isRegisteredForRemoteNotifications
@@ -193,7 +193,7 @@ final public class StaleNotificationHelper: NotificationHelperType {
             let setting = UIUserNotificationSettings(types: types, categories: nil)
             self.application.registerUserNotificationSettings(setting)
             // Abandon the deletate callback for old devices.
-            self.notificationHelperDelegate?.notificationHelper(self, didAuthorizeLocalNotification: true)
+            self.delegate?.notificationHelper(self, didAuthorizeLocalNotification: true)
         }
     }
     
@@ -203,7 +203,7 @@ final public class StaleNotificationHelper: NotificationHelperType {
         }
         application.registerForRemoteNotifications()
         // Abandon the deletate callback for old devices.
-        notificationHelperDelegate?.notificationHelper(self, didAuthorizeRemoteNotification: true)
+        delegate?.notificationHelper(self, didAuthorizeRemoteNotification: true)
     }
     
     public func deviceToken(from data: Data) -> String {
@@ -216,7 +216,7 @@ final public class StaleNotificationHelper: NotificationHelperType {
                 return
             }
             guard result == true else {
-                self.notificationHelperDelegate?.notificationHelper(self, didCatchError: StaleNotificationHelper.authorizationError.localizedInternalString(forType: NotificationHelperType.self))
+                self.delegate?.notificationHelper(self, didCatchError: StaleNotificationHelper.authorizationError.localizedInternalString(forType: NotificationHelperType.self))
                 return
             }
             let notification = UILocalNotification()

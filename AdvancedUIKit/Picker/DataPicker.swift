@@ -6,7 +6,7 @@
 final public class DataPicker: RootView {
     
     /// The delegate of the DataPicker.
-    public weak var dataPickerDelegate: DataPickerDelegate?
+    public weak var delegate: DataPickerDelegate?
     
     /// The title of the picker view.
     public var title: String? {
@@ -104,7 +104,7 @@ final public class DataPicker: RootView {
                 return
             }
             // Wait for finishing the hide animation
-            self.dataPickerDelegate?.dataPicker(self, didSelectValue: selections)
+            self.delegate?.dataPicker(self, didSelectValue: selections)
         }
     }
     

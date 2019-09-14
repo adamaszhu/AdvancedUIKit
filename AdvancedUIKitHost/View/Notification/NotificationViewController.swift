@@ -4,7 +4,7 @@ final class NotificationViewController: UIViewController {
     
     private lazy var notificationHelper: NotificationHelper = {
         let notificationHelper = NotificationHelper()
-        notificationHelper.notificationHelperDelegate = self
+        notificationHelper.delegate = self
         return notificationHelper
     }()
     
