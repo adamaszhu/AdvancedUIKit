@@ -5,7 +5,7 @@
 final public class DeviceHelper: NSObject {
     
     /// The delegate of the DeviceHelper.
-    public weak var deviceHelperDelegate: DeviceHelperDelegate?
+    public weak var delegate: DeviceHelperDelegate?
     
     /// The application used to do the action.
     private let application: UIApplication
@@ -81,7 +81,7 @@ final public class DeviceHelper: NSObject {
     ///   - message: The message to be performed if the URL is not available.
     private func open(_ url: URL, withError error: String) {
         guard application.canOpenURL(url) else {
-            deviceHelperDelegate?.deviceHelper(self, didCatchError: error.localizedInternalString(forType: DeviceHelper.self))
+            delegate?.deviceHelper(self, didCatchError: error.localizedInternalString(forType: DeviceHelper.self))
             return
         }
         if #available(iOS 10.0, *) {
@@ -107,9 +107,9 @@ extension DeviceHelper: MFMailComposeViewControllerDelegate {
         controller.dismiss(animated: true, completion: nil)
         switch result {
         case .sent:
-            deviceHelperDelegate?.deviceHelper(self, didSendEmail: true)
+            delegate?.deviceHelper(self, didSendEmail: true)
         default:
-            deviceHelperDelegate?.deviceHelper(self, didSendEmail: false)
+            delegate?.deviceHelper(self, didSendEmail: false)
         }
     }
 }

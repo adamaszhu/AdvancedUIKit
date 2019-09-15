@@ -10,7 +10,7 @@ final class KeyboardViewController: UIViewController {
     
     private lazy var keyboardHelper: KeyboardHelper = {
         let keyboardHelper = KeyboardHelper()
-        keyboardHelper.keyboardHelperDelegate = self
+        keyboardHelper.delegate = self
         return keyboardHelper
     }()
     

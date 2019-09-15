@@ -6,7 +6,7 @@
 final class ActionFilterView: UIView {
     
     /// The delegate.
-    weak var actionFilterViewDelegate: ActionFilterViewDelegate?
+    weak var delegate: ActionFilterViewDelegate?
     
     /// A list of input view which should drag holes on the touch mask view.
     var inputViews: [UIView] = []
@@ -19,7 +19,7 @@ final class ActionFilterView: UIView {
                 return false
             }
         }
-        actionFilterViewDelegate?.actionFilterViewDidInteract(self)
+        delegate?.actionFilterViewDidInteract(self)
         return true
     }
 }

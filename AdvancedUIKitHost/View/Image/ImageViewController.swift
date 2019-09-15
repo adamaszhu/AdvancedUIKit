@@ -10,7 +10,7 @@ final class ImageViewController: UIViewController {
     
     private lazy var imagePickerHelper: ImagePickerHelper = {
         let imagePickerHelper = ImagePickerHelper()
-        imagePickerHelper.imagePickerHelperDelegate = self
+        imagePickerHelper.delegate = self
         return imagePickerHelper
     }()
     

@@ -6,7 +6,7 @@
 final public class KeyboardHelper: NSObject {
     
     /// The delegate
-    public weak var keyboardHelperDelegate: KeyboardHelperDelegate?
+    public weak var delegate: KeyboardHelperDelegate?
     
     /// The root view.
     public weak var rootView: UIView?
@@ -63,7 +63,7 @@ final public class KeyboardHelper: NSObject {
         actionFilterView = ActionFilterView(frame: application.windows[0].bounds)
         self.notificationCenter = notificationCenter
         super.init()
-        actionFilterView.actionFilterViewDelegate = self
+        actionFilterView.delegate = self
     }
     
     /// Hide the keyboard.
@@ -156,7 +156,7 @@ final public class KeyboardHelper: NSObject {
         }
         guard index < inputViews.count - 1 else {
             hideKeyboard()
-            keyboardHelperDelegate?.keyboardHelperDidConfirmInput(self)
+            delegate?.keyboardHelperDidConfirmInput(self)
             return
         }
         inputViews[index + 1].becomeFirstResponder()
@@ -220,11 +220,11 @@ extension KeyboardHelper: UISearchBarDelegate {
     }
     
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        keyboardHelperDelegate?.keyboardHelper(self, didChangeContentOf: searchBar)
+        delegate?.keyboardHelper(self, didChangeContentOf: searchBar)
     }
     
     public func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        guard let keyboardHelperDelegate = keyboardHelperDelegate else {
+        guard let delegate = delegate else {
             return true
         }
         var newContent: String
@@ -233,15 +233,15 @@ extension KeyboardHelper: UISearchBarDelegate {
         } else {
             newContent = text
         }
-        return keyboardHelperDelegate.keyboardHelper(self, shouldChangeContentOf: searchBar, toContent: newContent)
+        return delegate.keyboardHelper(self, shouldChangeContentOf: searchBar, toContent: newContent)
     }
     
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        keyboardHelperDelegate?.keyboardHelper(self, willEditOn: searchBar)
+        delegate?.keyboardHelper(self, willEditOn: searchBar)
     }
     
     public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        keyboardHelperDelegate?.keyboardHelper(self, didEditOn: searchBar)
+        delegate?.keyboardHelper(self, didEditOn: searchBar)
     }
     
 }
@@ -260,11 +260,11 @@ extension KeyboardHelper: UITextFieldDelegate {
     }
     
     @objc public func textFieldDidChangeText(textField: UITextField) {
-        keyboardHelperDelegate?.keyboardHelper(self, didChangeContentOf: textField)
+        delegate?.keyboardHelper(self, didChangeContentOf: textField)
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let keyboardHelperDelegate = keyboardHelperDelegate else {
+        guard let delegate = delegate else {
             return true
         }
         var newContent: String
@@ -273,15 +273,15 @@ extension KeyboardHelper: UITextFieldDelegate {
         } else {
             newContent = string
         }
-        return keyboardHelperDelegate.keyboardHelper(self, shouldChangeContentOf: textField, toContent: newContent)
+        return delegate.keyboardHelper(self, shouldChangeContentOf: textField, toContent: newContent)
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        keyboardHelperDelegate?.keyboardHelper(self, willEditOn: textField)
+        delegate?.keyboardHelper(self, willEditOn: textField)
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        keyboardHelperDelegate?.keyboardHelper(self, didEditOn: textField)
+        delegate?.keyboardHelper(self, didEditOn: textField)
     }
 }
 

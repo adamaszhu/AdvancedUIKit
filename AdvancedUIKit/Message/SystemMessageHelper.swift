@@ -6,7 +6,7 @@
 final public class SystemMessageHelper {
     
     /// MessageHelper
-    public weak var messageHelperDelegate: MessageHelperDelegate?
+    public weak var delegate: MessageHelperDelegate?
     
     /// The type of current message.
     private var messageType: MessageType = .unknown
@@ -50,10 +50,10 @@ final public class SystemMessageHelper {
                 case .info, .error:
                     break
                 case .warning:
-                    self.messageHelperDelegate?.messageHelperDidCancelWarning(self)
+                    self.delegate?.messageHelperDidCancelWarning(self)
                     break
                 case .input:
-                    self.messageHelperDelegate?.messageHelperDidCancelInput(self)
+                    self.delegate?.messageHelperDidCancelInput(self)
                     break
                 case .unknown:
                     Logger.standard.logError(SystemMessageHelper.typeError)
@@ -70,13 +70,13 @@ final public class SystemMessageHelper {
             case .info:
                 break
             case .error:
-                self.messageHelperDelegate?.messageHelperDidConfirmError(self)
+                self.delegate?.messageHelperDidConfirmError(self)
                 break
             case .warning:
-                self.messageHelperDelegate?.messageHelperDidConfirmWarning(self)
+                self.delegate?.messageHelperDidConfirmWarning(self)
                 break
             case .input:
-                self.messageHelperDelegate?.messageHelper(self, didConfirmInput: self.alertController?.textFields?[0].text ?? .empty)
+                self.delegate?.messageHelper(self, didConfirmInput: self.alertController?.textFields?[0].text ?? .empty)
             case .unknown:
                 Logger.standard.logError(SystemMessageHelper.typeError)
                 break

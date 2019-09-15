@@ -34,7 +34,7 @@ public final class AppStoreHelper {
         self.userDefaults = userDefaults
         self.messageHelper = messageHelper
         self.deviceHelper = deviceHelper
-        messageHelper?.messageHelperDelegate = self
+        messageHelper?.delegate = self
     }
     
     /// Leave a review in the app store.
