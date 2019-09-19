@@ -8,10 +8,12 @@ final class LabelCell: InfiniteCell {
     }
     
     override func expand() {
+        super.expand()
         switchIcon.image = UIImage(named: LabelCell.expandedCellIconName)
     }
     
     override func collapse() {
+        super.collapse()
         switchIcon.image = UIImage(named: LabelCell.collapsedCellIconName)
     }
 }

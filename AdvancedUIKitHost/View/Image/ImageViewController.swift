@@ -3,8 +3,14 @@ final class ImageViewController: UIViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     
     private let cameraHelper: CameraHelper = CameraHelper()
-    private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
     private let deviceHelper: DeviceHelper = DeviceHelper()
+    private var codeType: CodeType = .qr
+    
+    private lazy var messageHelper: SystemMessageHelper? = {
+        let messageHelper = SystemMessageHelper()
+        messageHelper?.delegate = self
+        return messageHelper
+    }()
     
     @IBOutlet private weak var galleryView: ExpandableGalleryView!
     
@@ -108,6 +114,26 @@ final class ImageViewController: UIViewController {
             galleryView.add(screenshot)
         }
     }
+    
+    @IBAction func addCode128Barcode(_ sender: Any) {
+        codeType = .code128
+        messageHelper?.showInput(withTitle: ImageViewController.codeInputTitle)
+    }
+    
+    @IBAction func addPDF417BarCode(_ sender: Any) {
+        codeType = .pdf417
+        messageHelper?.showInput(withTitle: ImageViewController.codeInputTitle)
+    }
+    
+    @IBAction func addAZTECCode(_ sender: Any) {
+        codeType = .aztec
+        messageHelper?.showInput(withTitle: ImageViewController.codeInputTitle)
+    }
+    
+    @IBAction func addQRCode(_ sender: Any) {
+        codeType = .qr
+        messageHelper?.showInput(withTitle: ImageViewController.codeInputTitle)
+    }
 }
 
 extension ImageViewController: ImagePickerHelperDelegate {
@@ -121,12 +147,23 @@ extension ImageViewController: ImagePickerHelperDelegate {
     }
 }
 
+extension ImageViewController: MessageHelperDelegate {
+    
+    func messageHelper(_ messageHelper: MessageHelper, didConfirmInput content: String) {
+        let codeHelper = CodeHelper()
+        if let image = codeHelper.createCode(content, as: codeType, with: ImageViewController.size) {
+            galleryView.add(image)
+        }
+    }
+}
+
 private extension ImageViewController {
     static let images = [UIImage(named: "ImageA")!, UIImage(named: "ImageB")!]
     static let gaussianRadius = 10
     static let opacity = 0.4
     static let compressSize = 50 * 1024
     static let size = CGSize(width: 800, height: 400)
+    static let codeInputTitle = "Input the code"
 }
 
 import AdvancedUIKit

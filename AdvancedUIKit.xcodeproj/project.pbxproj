@@ -98,6 +98,8 @@
 		35758B0C23289B590024B723 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35758B0B23289B590024B723 /* String+Localizable.swift */; };
 		35758B1B2328C4730024B723 /* NavigationItem+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35758B1A2328C4730024B723 /* NavigationItem+Accessable.swift */; };
 		35A5622822892C6F001B983D /* UIViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35A5622A22892C6F001B983D /* UIViewController.strings */; };
+		35EA437F233304C00004F41B /* CodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA437E233304C00004F41B /* CodeHelper.swift */; };
+		35EA4381233309030004F41B /* CodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA4380233309030004F41B /* CodeType.swift */; };
 		420C78E11EEB73AE00A1E3EA /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */; };
 		420C78E41EEB93E500A1E3EA /* Application+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E31EEB93E500A1E3EA /* Application+Accessable.swift */; };
 		420C78EB1EEBB6D900A1E3EA /* CameraHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 420C78ED1EEBB6D900A1E3EA /* CameraHelper.strings */; };
@@ -291,6 +293,8 @@
 		35758B1A2328C4730024B723 /* NavigationItem+Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationItem+Accessable.swift"; sourceTree = "<group>"; };
 		35A5622922892C6F001B983D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UIViewController.strings; sourceTree = "<group>"; };
 		35A5622B22892C71001B983D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UIViewController.strings"; sourceTree = "<group>"; };
+		35EA437E233304C00004F41B /* CodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHelper.swift; sourceTree = "<group>"; };
+		35EA4380233309030004F41B /* CodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeType.swift; sourceTree = "<group>"; };
 		420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		420C78E31EEB93E500A1E3EA /* Application+Accessable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Application+Accessable.swift"; sourceTree = "<group>"; };
 		420C78EC1EEBB6D900A1E3EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CameraHelper.strings; sourceTree = "<group>"; };
@@ -760,6 +764,8 @@
 				3519F74C2282AE6F00C7AF17 /* ScrollView+Imageable.swift */,
 				3519F74E2282B51400C7AF17 /* Image+Joinable.swift */,
 				3519F7502282B53900C7AF17 /* ImageJoinDirection.swift */,
+				35EA437E233304C00004F41B /* CodeHelper.swift */,
+				35EA4380233309030004F41B /* CodeType.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1228,6 +1234,7 @@
 				428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */,
 				28E66FF41EE4E4C100073DF1 /* KeyboardHelperDelegate.swift in Sources */,
 				2846A9A31EE7C0FA007D4226 /* MapViewPoint.swift in Sources */,
+				35EA437F233304C00004F41B /* CodeHelper.swift in Sources */,
 				2822A3411EE127EA00FAA8E3 /* NotificationHelperDelegate.swift in Sources */,
 				4234665B1EED21F0002A04F4 /* PageView.swift in Sources */,
 				28EEA75B20EAFE8D0003E72A /* PageViewDelegate.swift in Sources */,
@@ -1255,6 +1262,7 @@
 				284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */,
 				42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */,
 				428EAB5E1EDC4BD3006ED22B /* DeviceHelper.swift in Sources */,
+				35EA4381233309030004F41B /* CodeType.swift in Sources */,
 				2822A33F1EE127EA00FAA8E3 /* NotificationHelperType.swift in Sources */,
 				28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */,
 			);
