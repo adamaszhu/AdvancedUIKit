@@ -100,6 +100,8 @@
 		35A5622822892C6F001B983D /* UIViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35A5622A22892C6F001B983D /* UIViewController.strings */; };
 		35EA437F233304C00004F41B /* CodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA437E233304C00004F41B /* CodeHelper.swift */; };
 		35EA4381233309030004F41B /* CodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA4380233309030004F41B /* CodeType.swift */; };
+		35EA4383233315FA0004F41B /* ApplicationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA4382233315FA0004F41B /* ApplicationHelper.swift */; };
+		35EA4385233316060004F41B /* ApplicationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA4384233316060004F41B /* ApplicationType.swift */; };
 		420C78E11EEB73AE00A1E3EA /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */; };
 		420C78E41EEB93E500A1E3EA /* Application+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C78E31EEB93E500A1E3EA /* Application+Accessable.swift */; };
 		420C78EB1EEBB6D900A1E3EA /* CameraHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 420C78ED1EEBB6D900A1E3EA /* CameraHelper.strings */; };
@@ -295,6 +297,8 @@
 		35A5622B22892C71001B983D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UIViewController.strings"; sourceTree = "<group>"; };
 		35EA437E233304C00004F41B /* CodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHelper.swift; sourceTree = "<group>"; };
 		35EA4380233309030004F41B /* CodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeType.swift; sourceTree = "<group>"; };
+		35EA4382233315FA0004F41B /* ApplicationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationHelper.swift; sourceTree = "<group>"; };
+		35EA4384233316060004F41B /* ApplicationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationType.swift; sourceTree = "<group>"; };
 		420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		420C78E31EEB93E500A1E3EA /* Application+Accessable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Application+Accessable.swift"; sourceTree = "<group>"; };
 		420C78EC1EEBB6D900A1E3EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CameraHelper.strings; sourceTree = "<group>"; };
@@ -624,6 +628,8 @@
 				420C78E31EEB93E500A1E3EA /* Application+Accessable.swift */,
 				2810830F201AE64B00AA30A6 /* AppStoreHelper.swift */,
 				2810830B201AE5D800AA30A6 /* AppStoreHelper.strings */,
+				35EA4382233315FA0004F41B /* ApplicationHelper.swift */,
+				35EA4384233316060004F41B /* ApplicationType.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -1220,6 +1226,7 @@
 				4258DDAC1EEAE6A80085FCAA /* CameraHelper.swift in Sources */,
 				42CA09E91EE19998009AF1BE /* Label+Localizable.swift in Sources */,
 				28F350AD1EE793E5005120B1 /* LocationHelperDelegate.swift in Sources */,
+				35EA4383233315FA0004F41B /* ApplicationHelper.swift in Sources */,
 				28E66FF31EE4E4C100073DF1 /* KeyboardHelper.swift in Sources */,
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
 				28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */,
@@ -1252,6 +1259,7 @@
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
 				284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */,
 				2822A3361EE0EC8200FAA8E3 /* ViewController+Navigable.swift in Sources */,
+				35EA4385233316060004F41B /* ApplicationType.swift in Sources */,
 				42CA09E21EE0461A009AF1BE /* RingHelper.swift in Sources */,
 				3519F74F2282B51400C7AF17 /* Image+Joinable.swift in Sources */,
 				28A8D2EB20EF572B0061B420 /* SearchBar+Accessable.swift in Sources */,

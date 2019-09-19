@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Rh-Tr-c9s">
-                                <rect key="frame" x="0.0" y="677" width="375" height="101"/>
+                                <rect key="frame" x="0.0" y="626" width="375" height="152"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVW-bo-GG7">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -47,6 +47,20 @@
                                         </state>
                                         <connections>
                                             <action selector="reset:" destination="ged-IF-reB" eventType="touchUpInside" id="qmB-hx-vCM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ho8-VS-bbA">
+                                        <rect key="frame" x="0.0" y="102" width="375" height="50"/>
+                                        <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="qtC-N0-UrX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Detect Google Map">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="detectGoogleMap:" destination="ged-IF-reB" eventType="touchUpInside" id="yZa-GV-CR1"/>
                                         </connections>
                                     </button>
                                 </subviews>
