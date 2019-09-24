@@ -97,6 +97,10 @@
 		35758B08232869B10024B723 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35758B07232869B10024B723 /* ApplicationViewController.swift */; };
 		35758B0C23289B590024B723 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35758B0B23289B590024B723 /* String+Localizable.swift */; };
 		35758B1B2328C4730024B723 /* NavigationItem+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35758B1A2328C4730024B723 /* NavigationItem+Accessable.swift */; };
+		358DEDBA2338A30400D2EB68 /* ActionSheetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358DEDB92338A30400D2EB68 /* ActionSheetItem.swift */; };
+		358DEDBE23398C3100D2EB68 /* ViewController+ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358DEDBD23398C3100D2EB68 /* ViewController+ActionSheet.swift */; };
+		358DEDC12339957F00D2EB68 /* ActionSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 358DEDC02339957F00D2EB68 /* ActionSheet.storyboard */; };
+		358DEDC3233995D400D2EB68 /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358DEDC2233995D400D2EB68 /* ActionSheetViewController.swift */; };
 		35A5622822892C6F001B983D /* UIViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35A5622A22892C6F001B983D /* UIViewController.strings */; };
 		35EA437F233304C00004F41B /* CodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA437E233304C00004F41B /* CodeHelper.swift */; };
 		35EA4381233309030004F41B /* CodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA4380233309030004F41B /* CodeType.swift */; };
@@ -293,6 +297,10 @@
 		35758B07232869B10024B723 /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		35758B0B23289B590024B723 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		35758B1A2328C4730024B723 /* NavigationItem+Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationItem+Accessable.swift"; sourceTree = "<group>"; };
+		358DEDB92338A30400D2EB68 /* ActionSheetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetItem.swift; sourceTree = "<group>"; };
+		358DEDBD23398C3100D2EB68 /* ViewController+ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ActionSheet.swift"; sourceTree = "<group>"; };
+		358DEDC02339957F00D2EB68 /* ActionSheet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActionSheet.storyboard; sourceTree = "<group>"; };
+		358DEDC2233995D400D2EB68 /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		35A5622922892C6F001B983D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UIViewController.strings; sourceTree = "<group>"; };
 		35A5622B22892C71001B983D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UIViewController.strings"; sourceTree = "<group>"; };
 		35EA437E233304C00004F41B /* CodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHelper.swift; sourceTree = "<group>"; };
@@ -613,6 +621,24 @@
 			path = Internal;
 			sourceTree = "<group>";
 		};
+		358DEDB82338A2EB00D2EB68 /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				358DEDB92338A30400D2EB68 /* ActionSheetItem.swift */,
+				358DEDBD23398C3100D2EB68 /* ViewController+ActionSheet.swift */,
+			);
+			path = ActionSheet;
+			sourceTree = "<group>";
+		};
+		358DEDBF2339957000D2EB68 /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				358DEDC02339957F00D2EB68 /* ActionSheet.storyboard */,
+				358DEDC2233995D400D2EB68 /* ActionSheetViewController.swift */,
+			);
+			path = ActionSheet;
+			sourceTree = "<group>";
+		};
 		420C78DF1EEB737E00A1E3EA /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,6 +714,7 @@
 		422DB3C61EAA30B300377AB5 /* AdvancedUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				358DEDB82338A2EB00D2EB68 /* ActionSheet */,
 				35758B0A23289B360024B723 /* Internal */,
 				420C78E21EEB93D300A1E3EA /* Application */,
 				42CA09E01EE0460F009AF1BE /* Audio */,
@@ -891,6 +918,7 @@
 		42CA09F91EE23BCD009AF1BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				358DEDBF2339957000D2EB68 /* ActionSheet */,
 				35758B042328696A0024B723 /* Application */,
 				2838C2CE1EE0DD79004D5BCB /* Audio */,
 				42CA0A051EE4333B009AF1BE /* Button */,
@@ -1117,6 +1145,7 @@
 				28B975871F6F285D001239EB /* Label.storyboard in Resources */,
 				42D15E092327BCC3006EAEF5 /* ImageCell.xib in Resources */,
 				2851F9D61F6E24DC00E961DA /* Keyboard.storyboard in Resources */,
+				358DEDC12339957F00D2EB68 /* ActionSheet.storyboard in Resources */,
 				28B36E6A1F70791D005996E6 /* Message.storyboard in Resources */,
 				28FD8CEE1F731B050067E378 /* Picker.storyboard in Resources */,
 				2851A0D91F72592200893C39 /* Navigation.storyboard in Resources */,
@@ -1192,6 +1221,7 @@
 				28BD992920E466BE0072EE28 /* View+Designable.swift in Sources */,
 				425EAD4D1EAC6EDB001F1F81 /* RootView.swift in Sources */,
 				42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */,
+				358DEDBA2338A30400D2EB68 /* ActionSheetItem.swift in Sources */,
 				4258DDB51EEAE6A80085FCAA /* Image+PS.swift in Sources */,
 				284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */,
 				28108311201AE64C00AA30A6 /* AppStoreHelper.swift in Sources */,
@@ -1261,6 +1291,7 @@
 				2822A3361EE0EC8200FAA8E3 /* ViewController+Navigable.swift in Sources */,
 				35EA4385233316060004F41B /* ApplicationType.swift in Sources */,
 				42CA09E21EE0461A009AF1BE /* RingHelper.swift in Sources */,
+				358DEDBE23398C3100D2EB68 /* ViewController+ActionSheet.swift in Sources */,
 				3519F74F2282B51400C7AF17 /* Image+Joinable.swift in Sources */,
 				28A8D2EB20EF572B0061B420 /* SearchBar+Accessable.swift in Sources */,
 				42CA09EF1EE19F15009AF1BE /* View+Localizable.swift in Sources */,
@@ -1295,6 +1326,7 @@
 				42CA0A0A1EE43752009AF1BE /* NavigationViewController.swift in Sources */,
 				28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */,
 				42CA0A081EE4338A009AF1BE /* ButtonViewController.swift in Sources */,
+				358DEDC3233995D400D2EB68 /* ActionSheetViewController.swift in Sources */,
 				28B1D8081EE50E8A00A5B2C4 /* KeyboardViewController.swift in Sources */,
 				2846A98C1EE7B064007D4226 /* LocationViewController.swift in Sources */,
 				422DB4091EAA3CF100377AB5 /* AppDelegate.swift in Sources */,
