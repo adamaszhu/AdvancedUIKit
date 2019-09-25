@@ -26,89 +26,36 @@ enum InfiniteListStatus {
 
 extension InfiniteListStatus {
     
-    /// Whether the reloading status can be settled or not.
-    var isReloadingAvailable: Bool {
+    /// Whether the edition and selection can be performed or not.
+    var isStable: Bool {
         switch self {
-        case .infinite, .finite, .empty, .initial:
+        case .finite, .infinite, .empty:
             return true
         default:
-            Logger.standard.logWarning(InfiniteListStatus.reloadingWarning)
             return false
         }
     }
     
-    /// Whether the loading more status can be settled or not.
-    var isLoadingMoreAvailable: Bool {
-        switch self {
-        case .infinite:
+    /// Check if a status transaction can happen or not.
+    ///
+    /// - Parameter status: The new status.
+    /// - Returns: Checking result.
+    func checkNextStatus(_ status: InfiniteListStatus) -> Bool {
+        switch (self, status) {
+        case (.initial, .infinite),
+             (.initial, .empty),
+             (.infinite, .reloading),
+             (.infinite, .loadingMore),
+             (.finite, .reloading),
+             (.empty, .reloading),
+             (.loadingMore, .finite),
+             (.loadingMore, .infinite),
+             (.reloading, .infinite),
+             (.reloading, .empty):
             return true
         default:
-            Logger.standard.logWarning(InfiniteListStatus.loadingMoreWarning)
-            return false
-        }
-    }
-    
-    /// Whether reloading items are available or not
-    var isReloadingItemAvailable: Bool {
-        switch self {
-        case .reloading, .initial:
-            return true
-        default:
-            Logger.standard.logWarning(InfiniteListStatus.reloadingStatusWarning)
-            return false
-        }
-    }
-    
-    /// Whether appending items are available or not
-    var isLoadingMoreItemAvailable: Bool {
-        switch self {
-        case .loadingMore:
-            return true
-        default:
-            Logger.standard.logWarning(InfiniteListStatus.loadingMoreStatusWarning)
-            return false
-        }
-    }
-    
-    /// Whether the selection can be performed or not.
-    var isSelectingAvailable: Bool {
-        switch self {
-        case .finite, .infinite:
-            return true
-        default:
-            Logger.standard.logWarning(InfiniteListStatus.selectionWarning)
-            return false
-        }
-    }
-    
-    /// Whether the edition can be performed or not.
-    var isEditingAvailable: Bool {
-        switch self {
-        case .finite, .infinite:
-            return true
-        default:
-            Logger.standard.logWarning(InfiniteListStatus.editionWarning)
-            return false
-        }
-    }
-    
-    /// Whether the registration can be performed or not.
-    var isRegistrationAvailable: Bool {
-        switch self {
-        case .initial:
-            return true
-        default:
-            Logger.standard.logError(InfiniteListStatus.registrationError)
-            return false
-        }
-    }
-    
-    /// Whether the loading more bar should be hidden or not.
-    var isLoadingMoreCellHidden: Bool {
-        switch self {
-        case .finite, .empty, .reloading, .initial:
-            return true
-        default:
+            let error = String(format: InfiniteListStatus.statusErrorPattern, "\(self)", "\(status)")
+            Logger.standard.logError(error)
             return false
         }
     }
@@ -118,15 +65,7 @@ extension InfiniteListStatus {
 private extension InfiniteListStatus {
     
     /// System errors.
-    static let registrationError = "Register components without initial status."
-    
-    /// System warnings.
-    static let selectionWarning = "The status doesn't allow selecting an item."
-    static let reloadingWarning = "The status doesn't allow reloading items."
-    static let loadingMoreWarning = "The status doesn't allow loading more items."
-    static let editionWarning = "The status doesn't allow editing an item."
-    static let reloadingStatusWarning = "Reload items without reloading status."
-    static let loadingMoreStatusWarning = "Load more items without loading more status."
+    static let statusErrorPattern = "Cannot switch status from $@ to %@."
 }
 
 import AdvancedFoundation

@@ -5,11 +5,6 @@
 /// - date: 01/09/2019
 public protocol InfiniteListDelegate: class {
     
-    /// An item is selected.
-    ///
-    /// - Parameter item: The item of the cell that is selected.
-    func infiniteList(_ infiniteList: InfiniteList, didSelectItem item: Any)
-    
     /// When load more action is activated.
     ///
     /// - Parameter pageIndex: The page index.
@@ -25,6 +20,11 @@ public protocol InfiniteListDelegate: class {
     ///
     /// - Parameter item: The item to be deleted.
     func infiniteList(_ infiniteList: InfiniteList, didDeleteItem item: Any)
+    
+    /// An item is selected.
+    ///
+    /// - Parameter item: The item of the cell that is selected.
+    func infiniteList(_ infiniteList: InfiniteList, didSelectItem item: Any)
 }
 
 /// Optional
