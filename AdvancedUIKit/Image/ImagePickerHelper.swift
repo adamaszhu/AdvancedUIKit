@@ -6,7 +6,7 @@
 final public class ImagePickerHelper: NSObject {
     
     /// The delegate.
-    public weak var imagePickerHelperDelegate: ImagePickerHelperDelegate?
+    public weak var delegate: ImagePickerHelperDelegate?
     
     /// The camera authorization helper.
     private let cameraHelper: CameraHelper
@@ -21,7 +21,7 @@ final public class ImagePickerHelper: NSObject {
         self.cameraHelper = cameraHelper
         currentViewController = application.rootViewController
         super.init()
-        cameraHelper.cameraHelperDelegate = self
+        cameraHelper.delegate = self
     }
     
     /// Show the image picker selector.
@@ -84,7 +84,7 @@ extension ImagePickerHelper: CameraHelperDelegate {
     }
     
     public func cameraHelper(_ cameraHelper: CameraHelper, didCatchError error: String) {
-        imagePickerHelperDelegate?.imagePickerHelper(self, didCatchError: error)
+        delegate?.imagePickerHelper(self, didCatchError: error)
     }
 }
 
@@ -97,7 +97,7 @@ extension ImagePickerHelper: UIImagePickerControllerDelegate, UINavigationContro
             return
         }
         picker.dismiss(animated: true, completion: nil)
-        imagePickerHelperDelegate?.imagePickerHelper(self, didPick: image)
+        delegate?.imagePickerHelper(self, didPick: image)
     }
 }
 

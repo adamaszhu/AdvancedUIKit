@@ -6,7 +6,7 @@
 final class GalleryImage: UIScrollView {
     
     /// The actual image view.
-    var imageView: UIImageView
+    var imageView: UIImageView = UIImageView()
     
     /// The image.
     var image: UIImage? {
@@ -67,7 +67,6 @@ final class GalleryImage: UIScrollView {
     
     /// Initialize the image.
     init() {
-        imageView = UIImageView()
         super.init(frame: .zero)
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false

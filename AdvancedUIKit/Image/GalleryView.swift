@@ -101,10 +101,10 @@ extension GalleryView {
     static let subviewTypeError = "A subview is not a GalleryImage."
     
     /// The maximal zoom level of an image.
-    static let defaultMaxZoomLevel: CGFloat = 8
+    static let defaultMaxZoomLevel = CGFloat(8)
     
     /// The image content mode.
-    static let defaultImageMode: UIViewContentMode = .scaleAspectFit
+    static let defaultImageMode = UIViewContentMode.scaleAspectFit
 }
 
 import AdvancedFoundation

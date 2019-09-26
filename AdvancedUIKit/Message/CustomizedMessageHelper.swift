@@ -6,7 +6,7 @@
 final public class CustomizedMessageHelper: PopupView {
     
     /// MessageHelper
-    public weak var messageHelperDelegate: MessageHelperDelegate?
+    public weak var delegate: MessageHelperDelegate?
     
     /// The mask color.
     public var maskColor: UIColor? {
@@ -187,13 +187,13 @@ final public class CustomizedMessageHelper: PopupView {
         case .info:
             break
         case .warning:
-            messageHelperDelegate?.messageHelperDidConfirmWarning(self)
+            delegate?.messageHelperDidConfirmWarning(self)
             break
         case .error:
-            messageHelperDelegate?.messageHelperDidConfirmError(self)
+            delegate?.messageHelperDidConfirmError(self)
             break
         case .input:
-            messageHelperDelegate?.messageHelper(self, didConfirmInput: inputText.text ?? .empty)
+            delegate?.messageHelper(self, didConfirmInput: inputText.text ?? .empty)
             inputText.text = .empty
             break
         case .unknown:
@@ -209,10 +209,10 @@ final public class CustomizedMessageHelper: PopupView {
         case .info, .error:
             break
         case .warning:
-            messageHelperDelegate?.messageHelperDidCancelWarning(self)
+            delegate?.messageHelperDidCancelWarning(self)
             break
         case .input:
-            messageHelperDelegate?.messageHelperDidCancelInput(self)
+            delegate?.messageHelperDidCancelInput(self)
             inputText.text = .empty
             break
         case .unknown:

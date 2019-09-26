@@ -38,7 +38,7 @@ open class InfiniteList: UITableView {
     }
     
     /// The status of the list.
-    private var status: InfiniteListStatus
+    private var status: InfiniteListStatus = .initial
     
     /// Define the nib file used to render an item cell.
     ///
@@ -46,7 +46,8 @@ open class InfiniteList: UITableView {
     ///   - nib: The nib file.
     ///   - type: The item cell type.
     public func register(_ type: InfiniteCell.Type, with nib: UINib) {
-        guard status.isRegistrationAvailable else {
+        guard status == .initial else {
+            Logger.standard.logError(InfiniteList.registrationError)
             return
         }
         register(nib, forCellReuseIdentifier: String(describing: type))
@@ -56,7 +57,8 @@ open class InfiniteList: UITableView {
     ///
     /// - Parameter nib: The nib file containing the view.
     public func registerEmptyState(with nib: UINib) {
-        guard status.isRegistrationAvailable else {
+        guard status == .initial else {
+            Logger.standard.logError(InfiniteList.registrationError)
             return
         }
         guard let superview = superview else {
@@ -70,7 +72,6 @@ open class InfiniteList: UITableView {
         superview.addSubview(view)
         view.pinEdgesToSuperview()
         view.isHidden = true
-        view.alpha = 0
         emptyState = view
     }
     
@@ -78,7 +79,8 @@ open class InfiniteList: UITableView {
     ///
     /// - Parameter nib: The nib file containing the view.
     public func registerReloadingBar(with nib: UINib) {
-        guard status.isRegistrationAvailable else {
+        guard status == .initial else {
+            Logger.standard.logError(InfiniteList.registrationError)
             return
         }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
@@ -86,17 +88,20 @@ open class InfiniteList: UITableView {
             return
         }
         addSubview(view)
+        // TODO: Figure out why contraints work in this way.
         view.pinEdgesToSuperview(with: UIEdgeInsets(top: .invalidInset, left: 0, bottom: .invalidInset, right: 0))
         view.bottomAnchor.constraint(equalTo: topAnchor).isActive = true
-        view.isHidden = true
+        view.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         reloadingBar = view
+        contentOffset = CGPoint(x: 0, y: reloadingOffsetY)
     }
     
     /// Register the load more cell for the InfiniteList.
     ///
     /// - Parameter nib: The nib file containing the cell.
     public func registerLoadingMoreCell(with nib: UINib) {
-        guard status.isRegistrationAvailable else {
+        guard status == .initial else {
+            Logger.standard.logError(InfiniteList.registrationError)
             return
         }
         guard let cell = nib.instantiate(withOwner: nil, options: nil).first as? UITableViewCell else {
@@ -112,7 +117,7 @@ open class InfiniteList: UITableView {
             Logger.standard.logError(InfiniteList.reloadingBarRegistrationError)
             return
         }
-        guard status.isReloadingAvailable else {
+        guard status.checkNextStatus(.reloading) else {
             return
         }
         animateChange({ [weak self] in
@@ -143,7 +148,7 @@ open class InfiniteList: UITableView {
         }
         // Adjust the content offset.
         if contentOffset.y < 0 {
-            setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+            setContentOffset(.zero, animated: true)
         }
     }
     
@@ -213,13 +218,8 @@ open class InfiniteList: UITableView {
     ///
     /// - Parameter items: The items to be reloaded.
     private func reload(_ items: [InfiniteItem]) {
-        guard status.isReloadingItemAvailable else {
-            return
-        }
         self.items = items
         pageAmount = 1
-        reloadData()
-        expandedCellIndexPath = nil
         switch items.count {
         case 0:
             status = .empty
@@ -231,31 +231,31 @@ open class InfiniteList: UITableView {
             status = .infinite
             hideEmptyState()
         }
+        reloadData()
+        expandedCellIndexPath = nil
     }
     
     /// Append a list of items.
     ///
     /// - Parameter items: The items to be append.
     private func append(_ items: [InfiniteItem]) {
-        guard status.isLoadingMoreItemAvailable else {
-            return
-        }
         self.items = self.items + items
         pageAmount = pageAmount + 1
-        reloadData()
         switch items.count {
         case 0 ..< pageSize:
             status = .finite
         default:
             status = .infinite
         }
+        reloadData()
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        status = .initial
         super.init(coder: aDecoder)
         delegate = self
         dataSource = self
+        rowHeight = UITableViewAutomaticDimension
+        estimatedRowHeight = UITableViewAutomaticDimension
     }
 }
 
@@ -263,7 +263,7 @@ open class InfiniteList: UITableView {
 extension InfiniteList: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = items.element(atIndex: indexPath.row), status.isSelectingAvailable else {
+        guard let item = items.element(atIndex: indexPath.row), status.isStable else {
             return
         }
         infiniteListDelegate?.infiniteList(self, didSelectItem: item.item)
@@ -274,16 +274,17 @@ extension InfiniteList: UITableViewDelegate {
 extension InfiniteList: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let hasLoadingMoreCell = !status.isLoadingMoreCellHidden && (loadingMoreCell != nil)
+        let hasLoadingMoreCell = (status == .infinite) && (loadingMoreCell != nil)
         return items.count + (hasLoadingMoreCell ? 1 : 0)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
-        if index == items.count, !status.isLoadingMoreCellHidden, let loadingMoreCell = loadingMoreCell {
+        if index == items.count, status == .infinite, let loadingMoreCell = loadingMoreCell {
             return loadingMoreCell
         }
         guard let item = items.element(atIndex: index) else {
+            Logger.standard.logError(InfiniteList.cellError, withDetail: index)
             return UITableViewCell()
         }
         let cellID = String(describing: item.type)
@@ -318,7 +319,7 @@ extension InfiniteList: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        guard status.isEditingAvailable else {
+        guard status.isStable else {
             return false
         }
         guard let cell = cellForRow(at: indexPath) as? InfiniteCell else {
@@ -331,7 +332,7 @@ extension InfiniteList: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            guard status.isEditingAvailable, let item = items.element(atIndex: indexPath.row)?.item else {
+            guard status.isStable, let item = items.element(atIndex: indexPath.row)?.item else {
                 return
             }
             items.remove(at: indexPath.row)
@@ -348,7 +349,7 @@ extension InfiniteList: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if cell == loadingMoreCell {
+        if cell == loadingMoreCell, status.checkNextStatus(.loadingMore) {
             status = .loadingMore
             infiniteListDelegate?.infiniteList(self, didRequireLoadPage: pageAmount)
         }
@@ -376,23 +377,23 @@ extension InfiniteList: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         switch status {
         case .reloading, .initial:
-            contentOffset = .init(x: 0, y: reloadingOffsetY)
+            contentOffset = CGPoint(x: 0, y: reloadingOffsetY)
             return
         case .loadingMore:
-            contentOffset = .init(x: 0, y: bottomOffsetY)
+            contentOffset = CGPoint(x: 0, y: bottomOffsetY)
             return
         case .finite, .empty, .infinite:
             if contentOffset.y >= bottomOffsetY {
-                contentOffset = .init(x: 0, y: bottomOffsetY)
+                contentOffset = CGPoint(x: 0, y: bottomOffsetY)
             }
         }
         if contentOffset.y <= reloadingOffsetY {
-            contentOffset = .init(x: 0, y: reloadingOffsetY)
+            contentOffset = CGPoint(x: 0, y: reloadingOffsetY)
         }
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if contentOffset.y == reloadingOffsetY, let _ = reloadingBar, status.isReloadingAvailable {
+        if contentOffset.y == reloadingOffsetY, let _ = reloadingBar, status.checkNextStatus(.reloading) {
             status = .reloading
             infiniteListDelegate?.infiniteListDidRequireReload(self)
         }
@@ -405,7 +406,6 @@ private extension InfiniteList {
     /// System errors.
     static let cellNibError = "The nib file doesn't contain the customized InfiniteCell."
     static let cellError = "The cell is not an InfiniteCell."
-    static let cellRegistrationError = "The cell has not been registered yet."
     static let emptyStateNibError = "The nib file doesn't contain a UIView for the empty state."
     static let emptyStateRegistrationError = "The empty state has not been registered yet."
     static let superviewError = "The list hasn't been moved to a superview."
@@ -413,6 +413,7 @@ private extension InfiniteList {
     static let reloadingBarRegistrationError = "The reloading bar hasn't been registered yet."
     static let loadingMoreCellNibError = "The nib file doesn't contain a UIView for the loading more bar."
     static let displayStatusError = "The items cannot be displayed under current status."
+    static let registrationError = "The status other than initial doesn't allow registration."
     
     /// System warnings.
     static let emptyStateShowWarning = "The empty state has already been shown."

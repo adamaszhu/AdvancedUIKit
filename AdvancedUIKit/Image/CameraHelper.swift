@@ -6,7 +6,7 @@
 final public class CameraHelper {
     
     /// The delegate.
-    public weak var cameraHelperDelegate: CameraHelperDelegate?
+    public weak var delegate: CameraHelperDelegate?
     
     /// The bundle.
     private let bundle: Bundle
@@ -38,30 +38,36 @@ final public class CameraHelper {
     /// Authorize the camera.
     public func requestCameraAuthorization() {
         guard isCameraUndetermined else {
-            cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.cameraAuthorizationError.localizedInternalString(forType: CameraHelper.self))
+            delegate?.cameraHelper(self, didCatchError: CameraHelper.cameraAuthorizationError.localizedInternalString(forType: CameraHelper.self))
             return
         }
         guard isDescriptionKeyExisted(CameraHelper.cameraDescriptionKey) == true else {
             Logger.standard.logError(CameraHelper.descriptionKeyError, withDetail: CameraHelper.cameraDescriptionKey)
             return
         }
-        AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { [unowned self] (result) in
-            self.cameraHelperDelegate?.cameraHelper(self, didAuthorizeCamera: result)
+        AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            self.delegate?.cameraHelper(self, didAuthorizeCamera: result)
         })
     }
     
     /// Authorize the library.
     public func requestLibraryAuthorization() {
         guard isLibraryUndetermined else {
-            cameraHelperDelegate?.cameraHelper(self, didCatchError: CameraHelper.libraryAuthorizationError.localizedInternalString(forType: CameraHelper.self))
+            delegate?.cameraHelper(self, didCatchError: CameraHelper.libraryAuthorizationError.localizedInternalString(forType: CameraHelper.self))
             return
         }
         guard isDescriptionKeyExisted(CameraHelper.libraryDescriptionKey) == true else {
             Logger.standard.logError(CameraHelper.descriptionKeyError, withDetail: CameraHelper.libraryDescriptionKey)
             return
         }
-        PHPhotoLibrary.requestAuthorization { [unowned self] (result) in
-            self.cameraHelperDelegate?.cameraHelper(self, didAuthorizeLibrary: result == .authorized)
+        PHPhotoLibrary.requestAuthorization { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            self.delegate?.cameraHelper(self, didAuthorizeLibrary: result == .authorized)
         }
     }
     

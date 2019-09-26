@@ -8,7 +8,7 @@ open class InfiniteCell: UITableViewCell {
     /// The button used to switch expand status.
     @IBOutlet public weak var switchButton: UIButton? {
         didSet {
-            switchButton?.addTarget(self, action: #selector(getter: switchExpandStatusAction), for: .touchUpInside)
+            switchButton?.addTarget(self, action: #selector(switchExpandStatus), for: .touchUpInside)
         }
     }
     
@@ -29,10 +29,15 @@ open class InfiniteCell: UITableViewCell {
     /// The height of the additional view
     
     /// The action of clicking the switch button.
-    @objc var switchExpandStatusAction: () -> Void = {}
+    var switchExpandStatusAction: () -> Void = {}
     
     /// The height constraints of the additional view before collapsing.
     private var additionalViewHeightConstraint: NSLayoutConstraint?
+    
+    /// The actual expand trigger
+    @IBAction func switchExpandStatus() {
+        switchExpandStatusAction()
+    }
     
     /// Render the cell with an item.
     /// - parameter item: The item to be rendered.
@@ -40,12 +45,18 @@ open class InfiniteCell: UITableViewCell {
     
     /// Expand the cell.
     open func expand() {
-        additionalViewHeightConstraint?.isActive = false
+        animateChange({ [weak self] in
+            self?.additionalViewHeightConstraint?.isActive = false
+            self?.layoutIfNeeded()
+        })
     }
     
     /// Collapse the cell.
     open func collapse() {
-        additionalViewHeightConstraint?.isActive = true
+        animateChange({ [weak self] in
+            self?.additionalViewHeightConstraint?.isActive = true
+            self?.layoutIfNeeded()
+        })
     }
 }
 

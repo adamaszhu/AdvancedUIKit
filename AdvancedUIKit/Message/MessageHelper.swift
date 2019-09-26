@@ -5,7 +5,7 @@
 /// - date: 05/09/2019
 public protocol MessageHelper {
     
-    var messageHelperDelegate: MessageHelperDelegate? { get set }
+    var delegate: MessageHelperDelegate? { get set }
     
     /// Popup an information message.
     ///

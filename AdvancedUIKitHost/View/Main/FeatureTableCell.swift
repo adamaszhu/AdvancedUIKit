@@ -5,7 +5,6 @@ final class FeatureTableCell: UITableViewCell {
     func render(for feature: Feature) {
         nameLabel.text = feature.rawValue
     }
-    
 }
 
 import UIKit

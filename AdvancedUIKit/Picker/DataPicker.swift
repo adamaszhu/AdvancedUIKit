@@ -6,7 +6,7 @@
 final public class DataPicker: RootView {
     
     /// The delegate of the DataPicker.
-    public weak var dataPickerDelegate: DataPickerDelegate?
+    public weak var delegate: DataPickerDelegate?
     
     /// The title of the picker view.
     public var title: String? {
@@ -39,15 +39,23 @@ final public class DataPicker: RootView {
     
     /// The distance that the controller should be pushed up.
     private var pushDistance: CGFloat {
-        guard let trigger = trigger, let superview = superview else {
+        guard let trigger = trigger, let superview = superview, let triggerOriginalFrame = triggerOriginalFrame else {
             return 0
         }
-        let triggerFrame = superview.convert(trigger.frame, from: trigger.superview)
-        return triggerFrame.origin.y + triggerFrame.height - self.frame.origin.y - self.frame.height
+        let triggerFrame = superview.convert(triggerOriginalFrame, from: trigger.superview)
+        if triggerFrame.origin.y + triggerFrame.height + frame.size.height > superview.frame.size.height {
+            return superview.frame.size.height - triggerFrame.origin.y - triggerFrame.height - frame.size.height
+        } else {
+            return 0
+        }
     }
     
     /// The view that is used to control the picker.
-    public var trigger: UIView?
+    public var trigger: UIView? {
+        didSet {
+            triggerOriginalFrame = nil
+        }
+    }
     
     /// The original frame of the controller.
     private var triggerOriginalFrame: CGRect?
@@ -67,8 +75,15 @@ final public class DataPicker: RootView {
     /// Set the DataPicker with a single column.
     ///
     /// - Parameter items: The item list.
-    public func setSingleColumn(_ items: [DataPickerItem]) {
+    public func set(_ items: [DataPickerItem]) {
         columns = [DataPickerColumn(items: items)]
+    }
+    
+    /// Set the DataPicker with columns.
+    ///
+    /// - Parameter columns: The column list.
+    public func set(_ columns: [DataPickerColumn]) {
+        self.columns = columns
     }
     
     /// Select an item.
@@ -104,7 +119,7 @@ final public class DataPicker: RootView {
                 return
             }
             // Wait for finishing the hide animation
-            self.dataPickerDelegate?.dataPicker(self, didSelectValue: selections)
+            self.delegate?.dataPicker(self, didSelectValue: selections)
         }
     }
     
@@ -138,7 +153,9 @@ final public class DataPicker: RootView {
             Logger.standard.logWarning(DataPicker.showingWarning)
             return
         }
-        triggerOriginalFrame = trigger?.frame
+        if triggerOriginalFrame == nil {
+            triggerOriginalFrame = trigger?.frame
+        }
         let pushDistance = self.pushDistance - 1
         animateChange({ [weak self] in
             guard let self = self else {
@@ -146,7 +163,7 @@ final public class DataPicker: RootView {
             }
             // Push up the controller
             if let triggerOrigin = self.triggerOriginalFrame?.origin {
-                self.trigger?.frame.origin = .init(x: triggerOrigin.x, y: triggerOrigin.y + pushDistance)
+                self.trigger?.frame.origin = CGPoint(x: triggerOrigin.x, y: triggerOrigin.y + pushDistance)
             }
             self.frame = self.originalFrame
             }, withDuration: DataPicker.animationDuration, withPreparation: { [weak self] in

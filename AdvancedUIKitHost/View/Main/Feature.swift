@@ -1,5 +1,5 @@
 enum Feature: String {
-    
+    case application = "Application"
     case device = "Device"
     case label = "Label"
     case picker = "Picker"
@@ -16,7 +16,7 @@ enum Feature: String {
     case map = "Map"
     case image = "Image"
     case list = "List"
-    
+    case actionSheet = "Action Sheet"
 }
 
 import Foundation

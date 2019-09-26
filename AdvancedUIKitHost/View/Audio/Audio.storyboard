@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tkp-6b-vJt">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tkp-6b-vJt">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,16 +14,12 @@
         <scene sceneID="ob4-GU-OUj">
             <objects>
                 <viewController storyboardIdentifier="AudioViewController" id="Tkp-6b-vJt" customClass="AudioViewController" customModule="AdvancedUIKitHost" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7qL-AC-vyp"/>
-                        <viewControllerLayoutGuide type="bottom" id="PEl-M1-mGo"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="w2a-Rj-mWL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="BxH-Y8-S5r">
-                                <rect key="frame" x="0.0" y="515" width="375" height="152"/>
+                                <rect key="frame" x="0.0" y="626" width="375" height="152"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRI-2P-z1G">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -70,10 +68,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PEl-M1-mGo" firstAttribute="top" secondItem="BxH-Y8-S5r" secondAttribute="bottom" id="3Lb-kz-XWR"/>
-                            <constraint firstItem="BxH-Y8-S5r" firstAttribute="leading" secondItem="w2a-Rj-mWL" secondAttribute="leading" id="lMi-0W-qqf"/>
-                            <constraint firstAttribute="trailing" secondItem="BxH-Y8-S5r" secondAttribute="trailing" id="thg-it-JDG"/>
+                            <constraint firstItem="2l7-hu-bLZ" firstAttribute="bottom" secondItem="BxH-Y8-S5r" secondAttribute="bottom" id="3Lb-kz-XWR"/>
+                            <constraint firstItem="BxH-Y8-S5r" firstAttribute="leading" secondItem="2l7-hu-bLZ" secondAttribute="leading" id="lMi-0W-qqf"/>
+                            <constraint firstItem="2l7-hu-bLZ" firstAttribute="trailing" secondItem="BxH-Y8-S5r" secondAttribute="trailing" id="thg-it-JDG"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="2l7-hu-bLZ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0M3-t0-2uT" userLabel="First Responder" sceneMemberID="firstResponder"/>

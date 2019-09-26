@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="795-Rz-CqR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="795-Rz-CqR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -333,6 +333,104 @@
                                                             <action selector="addBlur:" destination="795-Rz-CqR" eventType="touchUpInside" id="tbb-Mz-pby"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dH7-Q4-aGM">
+                                                        <rect key="frame" x="0.0" y="152.5" width="375" height="50"/>
+                                                        <color key="backgroundColor" red="0.49019607840000001" green="0.71372549019999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="oJa-JD-1rc"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <state key="normal" title="Take Screenshot">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="takeScreenshot:" destination="795-Rz-CqR" eventType="touchUpInside" id="u3Z-hz-LRh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VE1-ab-vfi">
+                                                        <rect key="frame" x="0.0" y="152.5" width="375" height="50"/>
+                                                        <color key="backgroundColor" red="0.49019607840000001" green="0.71372549019999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="uOc-VW-plb"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <state key="normal" title="Take Scrollable Screenshot">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="takeScrollableScreenshot:" destination="795-Rz-CqR" eventType="touchUpInside" id="VEz-GD-qAl"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWH-Sx-UKb">
+                                                        <rect key="frame" x="0.0" y="152.5" width="375" height="50"/>
+                                                        <color key="backgroundColor" red="0.49019607840000001" green="0.71372549019999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="WQ2-G4-aZb"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <state key="normal" title="Join Image">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="joinImages:" destination="795-Rz-CqR" eventType="touchUpInside" id="waS-0c-LL7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aah-eq-CiQ">
+                                                        <rect key="frame" x="0.0" y="152.5" width="375" height="50"/>
+                                                        <color key="backgroundColor" red="0.49019607840000001" green="0.71372549019999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="0bt-yj-wQ8"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <state key="normal" title="Add Code 128 Barcode">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="addCode128Barcode:" destination="795-Rz-CqR" eventType="touchUpInside" id="hd2-sv-TFx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f0-VS-Ujx">
+                                                        <rect key="frame" x="0.0" y="152.5" width="375" height="50"/>
+                                                        <color key="backgroundColor" red="0.49019607840000001" green="0.71372549019999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="7mx-2L-ukh"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <state key="normal" title="Add PDF 417 Barcode">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="addPDF417BarCode:" destination="795-Rz-CqR" eventType="touchUpInside" id="pVk-M6-qGt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6g-6l-ifA">
+                                                        <rect key="frame" x="0.0" y="152.5" width="375" height="50"/>
+                                                        <color key="backgroundColor" red="0.49019607840000001" green="0.71372549019999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="4Pv-eH-LGQ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <state key="normal" title="Add AZTEC Code">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="addAZTECCode:" destination="795-Rz-CqR" eventType="touchUpInside" id="Muc-yE-Qar"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV0-28-HMG">
+                                                        <rect key="frame" x="0.0" y="152.5" width="375" height="50"/>
+                                                        <color key="backgroundColor" red="0.49019607840000001" green="0.71372549019999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="NkJ-dz-m5D"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <state key="normal" title="Add QR Code">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="addQRCode:" destination="795-Rz-CqR" eventType="touchUpInside" id="bus-yR-KTP"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -349,14 +447,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ErC-tU-MW4" firstAttribute="top" secondItem="BIf-aX-kd5" secondAttribute="bottom" id="MXn-EX-Weu"/>
                             <constraint firstAttribute="trailing" secondItem="BIf-aX-kd5" secondAttribute="trailing" id="jEQ-Bo-Jvp"/>
                             <constraint firstItem="BIf-aX-kd5" firstAttribute="top" secondItem="SgP-hu-ZIS" secondAttribute="bottom" id="jTo-Tk-G2a"/>
+                            <constraint firstAttribute="bottom" secondItem="BIf-aX-kd5" secondAttribute="bottom" id="mHk-y0-RKZ"/>
                             <constraint firstItem="BIf-aX-kd5" firstAttribute="leading" secondItem="i4G-JZ-pDz" secondAttribute="leading" id="uYS-1z-FaX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="galleryView" destination="5zc-8x-hkJ" id="WyA-VH-qyg"/>
+                        <outlet property="scrollView" destination="bbf-jH-qzm" id="ThW-P4-mtu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzT-6E-LQA" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -34,7 +34,7 @@ public final class AppStoreHelper {
         self.userDefaults = userDefaults
         self.messageHelper = messageHelper
         self.deviceHelper = deviceHelper
-        messageHelper?.messageHelperDelegate = self
+        messageHelper?.delegate = self
     }
     
     /// Leave a review in the app store.
@@ -63,9 +63,14 @@ public final class AppStoreHelper {
     ///
     /// - Parameter count: The amount
     /// - Returns: Whether the review counter reaches the ammount or not.
-    public func checkReviewConter(asCount count: Int) -> Bool {
+    public func checkReviewCounter(asCount count: Int) -> Bool {
         let savedCount = userDefaults.integer(forKey: reviewCounterFlag)
         return savedCount == count
+    }
+    
+    /// Reset the counter
+    public func resetReviewCounter() {
+        userDefaults.removeObject(forKey: reviewCounterFlag)
     }
 }
 

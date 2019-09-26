@@ -96,7 +96,7 @@ extension LocationHelper: CLLocationManagerDelegate {
 private extension LocationHelper {
     
     /// The info key required in the Info.plist file.
-    static let alwaysDescriptionKey = "NSLocationAlwaysUsageDescription"
+    static let alwaysDescriptionKey = "NSLocationAlwaysAndWhenInUseUsageDescription"
     static let whenInUseDescriptionKey = "NSLocationWhenInUseUsageDescription"
     
     /// User error.

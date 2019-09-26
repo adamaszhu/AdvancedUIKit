@@ -1,17 +1,16 @@
 final class ViewViewController: UIViewController {
     
-    let popupViewBackgroundColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.4)
-    let animationOffset = CGFloat(200)
+    private var animationButtonOriginalFrame: CGRect!
+    private var popupView: PopupView = PopupView()
     
-    var animationButtonOriginalFrame: CGRect!
-    var popupView = PopupView()
-    
-    @IBOutlet weak var animationButton: UIButton!
+    @IBOutlet private weak var animationButton: UIButton!
+    @IBOutlet private weak var staticView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configPopupView()
         configAnimationView()
+        configStaticView()
     }
     
     @IBAction func popup(_ sender: Any) {
@@ -19,12 +18,21 @@ final class ViewViewController: UIViewController {
     }
     
     @IBAction func animate(_ sender: Any) {
-        animationButton.animateChange({ [unowned self] in
-            self.animationButton.frame.origin = .init(x: self.animationButtonOriginalFrame.origin.x, y: self.animationButtonOriginalFrame.origin.y - self.animationOffset)
-        }, withPreparation: { [unowned self] in
+        animationButton.animateChange({ [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.animationButton.frame.origin = CGPoint(x: self.animationButtonOriginalFrame.origin.x, y: self.animationButtonOriginalFrame.origin.y - ViewViewController.animationOffset)
+        }, withPreparation: { [weak self] in
+            guard let self = self else {
+                return
+            }
             self.animationButton.frame = self.animationButtonOriginalFrame
-        }) { [unowned self] in
-            self.animationButton.animateChange({ [unowned self] in
+        }) { [weak self] in
+            self?.animationButton.animateChange({ [weak self] in
+                guard let self = self else {
+                    return
+                }
                 self.animationButton.frame = self.animationButtonOriginalFrame
             })
         }
@@ -32,7 +40,7 @@ final class ViewViewController: UIViewController {
     
     private func configPopupView() {
         popupView.frame = view.bounds
-        popupView.backgroundColor = popupViewBackgroundColor
+        popupView.backgroundColor = ViewViewController.popupViewBackgroundColor
         let tapGesture = UITapGestureRecognizer(target: popupView, action: #selector(PopupView.hide))
         popupView.addGestureRecognizer(tapGesture)
     }
@@ -41,6 +49,17 @@ final class ViewViewController: UIViewController {
         animationButtonOriginalFrame = animationButton.frame
     }
     
+    private func configStaticView() {
+        staticView.heightAnchor.constraint(equalToConstant: ViewViewController.staticViewHeight).isActive = true
+        staticView.pinEdgesToSuperview(with: UIEdgeInsetsMake(ViewViewController.staticViewMargin, ViewViewController.staticViewMargin, .invalidInset, ViewViewController.staticViewMargin))
+    }
+}
+
+private extension ViewViewController {
+    static let popupViewBackgroundColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.4)
+    static let animationOffset = CGFloat(200)
+    static let staticViewHeight = CGFloat(50)
+    static let staticViewMargin = CGFloat(10)
 }
 
 import AdvancedUIKit
