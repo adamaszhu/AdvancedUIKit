@@ -1,15 +1,9 @@
 /// MapViewLine record the information of a line on the map.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 07/06/2017
+/// - version: 1.5.0
+/// - date: 05/09/2019
 public struct MapViewLine {
-    
-    /// The width of the line.
-    public static let defaultLineColor = UIColor.black
-    
-    /// The width of the line.
-    public static let defaultLineWidth = 2
     
     /// The line object.
     let line: MKPolyline
@@ -42,9 +36,7 @@ public struct MapViewLine {
     ///   - width: The width of the line.
     ///   - pointIcon: The icon for the points on the line. Nil if the point should be shown.
     public init(points: [MapViewPoint], color: UIColor = defaultLineColor, width: Int = defaultLineWidth, pointIcon: UIImage? = nil) {
-        let coordinates = points.map {
-            $0.annotation.coordinate
-        }
+        let coordinates = points.map { $0.annotation.coordinate }
         line = MKPolyline(coordinates: coordinates, count: coordinates.count)
         self.width = width
         self.color = color
@@ -56,7 +48,16 @@ public struct MapViewLine {
         }
         self.points = points
     }
+}
+
+/// Constants
+public extension MapViewLine {
     
+    /// The width of the line.
+    static let defaultLineColor = UIColor.black
+    
+    /// The width of the line.
+    static let defaultLineWidth = 2
 }
 
 import MapKit

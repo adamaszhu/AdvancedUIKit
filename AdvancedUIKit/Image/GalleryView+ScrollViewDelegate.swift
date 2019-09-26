@@ -17,7 +17,7 @@ extension GalleryView {
             return
         }
         currentGalleryImage?.resetZoomLevel()
-        pageControl.currentPage = pageIndex
+        currentPageIndex = pageIndex
     }
     
 }

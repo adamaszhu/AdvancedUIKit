@@ -1,18 +1,18 @@
 /// ExpandableMapView is used to add full screen function to the map view.
 ///
 /// - author: Adamas
-/// - version: 1.4.0
-/// - date: 23/08/2018
+/// - version: 1.5.0
+/// - date: 09/09/2019
 final public class ExpandableMapView: MapView {
     
     /// The gesture filter to expand the view.
-    let gestureFilterView: UIView
+    private let gestureFilterView: UIView = UIView()
     
     /// The button used to collapse the view.
-    let collapseButton: UIButton
+    private let collapseButton: UIButton = UIButton()
     
     /// The blur effect background of the collapse button.
-    let collapseButtonBackgroundView: UIVisualEffectView
+    private let collapseButtonBackgroundView: UIVisualEffectView = UIVisualEffectView()
     
     /// The icon on the collapse button.
     public var collapseIcon: UIImage? {
@@ -21,7 +21,6 @@ final public class ExpandableMapView: MapView {
                 return
             }
             collapseButton.setImage(newImage, for: .normal)
-            collapseButton.setImage(newImage, for: .highlighted)
             collapseButton.frame.size = newImage.size
             collapseButtonBackgroundView.frame.size = newImage.size
         }
@@ -56,8 +55,8 @@ final public class ExpandableMapView: MapView {
     public var collapseButtonBackgroundMargin: Int {
         set {
             let margin = CGFloat(newValue)
-            collapseButtonBackgroundView.frame.origin = .init(x: collapseButton.frame.origin.x - margin, y: collapseButton.frame.origin.y - margin)
-            collapseButtonBackgroundView.frame.size = .init(width: collapseButton.frame.width + 2 * margin, height: collapseButton.frame.height + 2 * margin)
+            collapseButtonBackgroundView.frame.origin = CGPoint(x: collapseButton.frame.origin.x - margin, y: collapseButton.frame.origin.y - margin)
+            collapseButtonBackgroundView.frame.size = CGSize(width: collapseButton.frame.width + 2 * margin, height: collapseButton.frame.height + 2 * margin)
         }
         get {
             let margin = collapseButtonBackgroundView.frame.origin.x - collapseButton.frame.origin.x
@@ -83,6 +82,25 @@ final public class ExpandableMapView: MapView {
     var originalFrameConstraints: [NSLayoutConstraint]!
     var originalConstraints: [NSLayoutConstraint]!
     
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initialize()
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
+    }
+    
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        initialize()
+    }
+}
+
+/// ExpandableView
+extension ExpandableMapView: ExpandableView {
+    
     public var isExpandable: Bool {
         set {
             if newValue {
@@ -100,27 +118,80 @@ final public class ExpandableMapView: MapView {
         }
     }
     
-    public required init?(coder aDecoder: NSCoder) {
-        gestureFilterView = UIView()
-        collapseButton = UIButton()
-        collapseButtonBackgroundView = UIVisualEffectView()
-        super.init(coder: aDecoder)
-        initialize()
+    var isExpanded: Bool {
+        guard let _ = superview else {
+            Logger.standard.logError(ExpandableMapView.superviewError)
+            return false
+        }
+        return superview == window
     }
     
-    public override init(frame: CGRect) {
-        gestureFilterView = UIView()
-        collapseButton = UIButton()
-        collapseButtonBackgroundView = UIVisualEffectView()
-        super.init(frame: frame)
-        initialize()
+    @objc public func expand() {
+        guard !isExpanded, isExpandable else {
+            Logger.standard.logWarning(ExpandableMapView.expandingWarning)
+            return
+        }
+        guard let window = window else {
+            Logger.standard.logError(ExpandableMapView.windowError)
+            return
+        }
+        saveOriginalConstraints(of: self)
+        animateChange({ [weak self] in
+            self?.frame = window.bounds
+            self?.collapseButton.alpha = 1
+            self?.collapseButtonBackgroundView.alpha = 1
+            }, withPreparation: { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                self.gestureFilterView.isHidden = true
+                self.moveToWindow(of: self)
+                self.collapseButton.isHidden = false
+                self.collapseButton.alpha = 0
+                self.collapseButton.isUserInteractionEnabled = false
+                self.collapseButtonBackgroundView.isHidden = false
+                self.collapseButtonBackgroundView.alpha = 0
+            }, withCompletion: { [weak self] in
+                self?.collapseButton.alpha = 1
+                self?.collapseButton.isUserInteractionEnabled = true
+                self?.collapseButtonBackgroundView.alpha = 1
+        })
     }
     
-    public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        initialize()
+    @objc public func collapse() {
+        guard isExpanded, isExpandable else {
+            Logger.standard.logWarning(ExpandableMapView.collapsingWarning)
+            return
+        }
+        guard let window = window else {
+            Logger.standard.logError(ExpandableMapView.windowError)
+            return
+        }
+        animateChange({ [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
+            self.collapseButton.alpha = 0
+            self.collapseButtonBackgroundView.alpha = 0
+            }, withPreparation: { [weak self] in
+                self?.collapseButton.alpha = 1
+                self?.collapseButton.isUserInteractionEnabled = false
+                self?.collapseButtonBackgroundView.alpha = 1
+            }, withCompletion: { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                self.collapseButton.alpha = 1
+                self.collapseButton.isUserInteractionEnabled = true
+                self.collapseButton.isHidden = true
+                self.collapseButtonBackgroundView.isHidden = true
+                self.collapseButtonBackgroundView.alpha = 1
+                self.removeFromWindow(of: self)
+                self.gestureFilterView.isHidden = false
+        })
     }
-    
 }
 
+import AdvancedFoundation
 import MapKit

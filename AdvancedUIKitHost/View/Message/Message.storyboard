@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bVX-TM-bZ1">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bVX-TM-bZ1">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,17 +18,17 @@
                         <viewControllerLayoutGuide type="bottom" id="U6m-O8-E07"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h7h-Pk-4FK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="rVy-Hr-aKz">
-                                <rect key="frame" x="0.0" y="424" width="375" height="243"/>
+                                <rect key="frame" x="0.0" y="535" width="375" height="243"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOp-oJ-8nd">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default system style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaV-u7-suR">
-                                                <rect key="frame" x="137.5" y="5" width="101" height="15"/>
+                                                <rect key="frame" x="137.33333333333334" y="5" width="100.66666666666666" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -36,16 +37,16 @@
                                                 <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjB-Uf-SNf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uU6-jE-nbf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showDefaultInfo:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="1sn-3t-JFf"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Info" translatesAutoresizingMaskIntoConstraints="NO" id="tMD-1Q-vDt">
-                                                                <rect key="frame" x="34.5" y="7.5" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333336" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="Apf-5F-hY9"/>
                                                                     <constraint firstAttribute="height" constant="25" id="SjR-Ep-nEv"/>
@@ -63,16 +64,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJw-tf-aWP">
-                                                        <rect key="frame" x="94" y="0.0" width="93.5" height="40"/>
+                                                        <rect key="frame" x="93.666666666666686" y="0.0" width="94" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gd-Zi-DoH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
                                                                 <connections>
                                                                     <action selector="showDefaultError:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="796-SU-UEg"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Error" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-uh-fdZ">
-                                                                <rect key="frame" x="34" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333329" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="p7Q-nI-RTL"/>
                                                                     <constraint firstAttribute="height" constant="25" id="sWF-70-DQg"/>
@@ -90,16 +91,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMk-U4-vn0">
-                                                        <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
+                                                        <rect key="frame" x="187.66666666666666" y="0.0" width="93.666666666666657" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wD-qF-Ld0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showDefaultWarning:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="PRI-LQ-maL"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Warning" translatesAutoresizingMaskIntoConstraints="NO" id="nKe-dn-kVf">
-                                                                <rect key="frame" x="34.5" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333343" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="kb3-3g-I2X"/>
                                                                     <constraint firstAttribute="width" constant="25" id="mcL-pC-fyZ"/>
@@ -117,16 +118,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dX1-4O-6Z8">
-                                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
+                                                        <rect key="frame" x="281.33333333333331" y="0.0" width="93.666666666666686" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLD-SG-EeF">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showDefaultInput:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="rZd-bb-jhW"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Input" translatesAutoresizingMaskIntoConstraints="NO" id="xhe-hO-42W">
-                                                                <rect key="frame" x="33.5" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333371" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="5uJ-Z6-Cay"/>
                                                                     <constraint firstAttribute="width" constant="25" id="FFh-A6-jeW"/>
@@ -167,7 +168,7 @@
                                         <rect key="frame" x="0.0" y="61" width="375" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="System style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRd-sS-VA4">
-                                                <rect key="frame" x="156" y="5" width="63.5" height="15"/>
+                                                <rect key="frame" x="156" y="5" width="63.333333333333343" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -176,16 +177,16 @@
                                                 <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKV-mI-T3g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0p-Hx-Sna">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showInfo:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="2aZ-cU-gyk"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Info" translatesAutoresizingMaskIntoConstraints="NO" id="JsT-1G-7pn">
-                                                                <rect key="frame" x="34.5" y="7.5" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333336" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="2BA-Kk-0ko"/>
                                                                     <constraint firstAttribute="width" constant="25" id="Spf-VR-pi4"/>
@@ -203,16 +204,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Z2-8g-Cff">
-                                                        <rect key="frame" x="94" y="0.0" width="93.5" height="40"/>
+                                                        <rect key="frame" x="93.666666666666686" y="0.0" width="94" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25Z-cL-ztf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
                                                                 <connections>
                                                                     <action selector="showError:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="8qW-BU-k8c"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Error" translatesAutoresizingMaskIntoConstraints="NO" id="lpy-gQ-D1X">
-                                                                <rect key="frame" x="34" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333329" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="iNO-lE-TgB"/>
                                                                     <constraint firstAttribute="width" constant="25" id="qw6-zO-UTh"/>
@@ -230,16 +231,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8S-rz-QtG">
-                                                        <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
+                                                        <rect key="frame" x="187.66666666666666" y="0.0" width="93.666666666666657" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpO-Ls-Wat">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showWarning:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="ge3-Wi-ZML"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Warning" translatesAutoresizingMaskIntoConstraints="NO" id="DDT-mZ-5i4">
-                                                                <rect key="frame" x="34.5" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333343" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="mxT-eh-FW2"/>
                                                                     <constraint firstAttribute="width" constant="25" id="zFC-XN-wim"/>
@@ -257,16 +258,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCm-mc-ZCy">
-                                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
+                                                        <rect key="frame" x="281.33333333333331" y="0.0" width="93.666666666666686" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhs-e6-i9O">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showInput:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="nSw-E5-mGj"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Input" translatesAutoresizingMaskIntoConstraints="NO" id="vtq-6c-2La">
-                                                                <rect key="frame" x="33.5" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333371" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="Bi6-Nq-Giy"/>
                                                                     <constraint firstAttribute="width" constant="25" id="dKJ-ZI-UFe"/>
@@ -307,7 +308,7 @@
                                         <rect key="frame" x="0.0" y="122" width="375" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default customized style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bce-cX-m2R">
-                                                <rect key="frame" x="126.5" y="5" width="122.5" height="15"/>
+                                                <rect key="frame" x="126.33333333333334" y="5" width="122.33333333333334" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -316,16 +317,16 @@
                                                 <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7q-F7-TSW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nl6-rV-Ncj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showCustomizedDefaultInfo:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="S1q-wJ-8VN"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Info" translatesAutoresizingMaskIntoConstraints="NO" id="J6K-zd-uot">
-                                                                <rect key="frame" x="34" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333336" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="Tmr-wS-fjL"/>
                                                                     <constraint firstAttribute="width" constant="25" id="xqv-a8-SC8"/>
@@ -343,16 +344,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8U8-ZJ-jba">
-                                                        <rect key="frame" x="94" y="0.0" width="93.5" height="40"/>
+                                                        <rect key="frame" x="93.666666666666686" y="0.0" width="94" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8J-Yn-YyH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
                                                                 <connections>
                                                                     <action selector="showCustomizedDefaultError:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="oiY-UP-Mm1"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Error" translatesAutoresizingMaskIntoConstraints="NO" id="hov-26-Km6">
-                                                                <rect key="frame" x="34" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333329" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="WZd-T9-Uwa"/>
                                                                     <constraint firstAttribute="height" constant="25" id="pyW-ev-lRA"/>
@@ -370,16 +371,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxH-p1-1pP">
-                                                        <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
+                                                        <rect key="frame" x="187.66666666666666" y="0.0" width="93.666666666666657" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cd-ee-EeH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showCustomizedDefaultWarning:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="AAg-7c-IlO"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Warning" translatesAutoresizingMaskIntoConstraints="NO" id="pgC-an-8tb">
-                                                                <rect key="frame" x="34.5" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333343" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="U0q-mQ-WNC"/>
                                                                     <constraint firstAttribute="width" constant="25" id="vCU-xt-ESt"/>
@@ -397,16 +398,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elQ-Bk-AXE">
-                                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
+                                                        <rect key="frame" x="281.33333333333331" y="0.0" width="93.666666666666686" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lA4-Zi-SGX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showCustomizedDefaultInput:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="4d2-fD-TLa"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Input" translatesAutoresizingMaskIntoConstraints="NO" id="1vz-w7-gAR">
-                                                                <rect key="frame" x="33.5" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333371" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="5FF-jC-vQ3"/>
                                                                     <constraint firstAttribute="height" constant="25" id="ZWt-RK-oZI"/>
@@ -447,7 +448,7 @@
                                         <rect key="frame" x="0.0" y="183" width="375" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customized style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyO-Aw-bGW">
-                                                <rect key="frame" x="145" y="5" width="85.5" height="15"/>
+                                                <rect key="frame" x="145" y="5" width="85.333333333333314" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -456,16 +457,16 @@
                                                 <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwI-fq-dwH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAS-Gw-zAJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showCustomizedInfo:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="umD-O2-YdS"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Info" translatesAutoresizingMaskIntoConstraints="NO" id="6OS-X1-q0p">
-                                                                <rect key="frame" x="34.5" y="7.5" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333336" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="U0L-Co-cAG"/>
                                                                     <constraint firstAttribute="height" constant="25" id="jzW-AH-LHD"/>
@@ -483,16 +484,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctQ-l8-CU8">
-                                                        <rect key="frame" x="94" y="0.0" width="93.5" height="40"/>
+                                                        <rect key="frame" x="93.666666666666686" y="0.0" width="94" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqQ-0a-scD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
                                                                 <connections>
                                                                     <action selector="showCustomizedError:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="Zu0-hu-cdp"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Error" translatesAutoresizingMaskIntoConstraints="NO" id="HUA-P6-5pX">
-                                                                <rect key="frame" x="34.5" y="7.5" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333329" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="1ZI-1H-xqV"/>
                                                                     <constraint firstAttribute="width" constant="25" id="FFu-AP-Sla"/>
@@ -510,16 +511,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Md4-Qh-0wM">
-                                                        <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
+                                                        <rect key="frame" x="187.66666666666666" y="0.0" width="93.666666666666657" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQU-Vs-C7R">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showCustomizedWarning:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="5dn-tN-yHu"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Warning" translatesAutoresizingMaskIntoConstraints="NO" id="PKQ-8i-x3t">
-                                                                <rect key="frame" x="34.5" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333343" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="3p5-qr-U3O"/>
                                                                     <constraint firstAttribute="width" constant="25" id="Vdr-cv-hQO"/>
@@ -537,16 +538,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZ5-de-ER8">
-                                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
+                                                        <rect key="frame" x="281.33333333333331" y="0.0" width="93.666666666666686" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43O-63-nif">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
                                                                 <connections>
                                                                     <action selector="showCustomizedInput:" destination="bVX-TM-bZ1" eventType="touchUpInside" id="e3z-S4-26A"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Input" translatesAutoresizingMaskIntoConstraints="NO" id="05B-Mc-4xC">
-                                                                <rect key="frame" x="33.5" y="7" width="25" height="25"/>
+                                                                <rect key="frame" x="34.333333333333371" y="7.6666666666666288" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="5dc-Xe-n0S"/>
                                                                     <constraint firstAttribute="width" constant="25" id="fYK-77-a4D"/>

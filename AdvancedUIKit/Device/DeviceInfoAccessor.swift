@@ -1,25 +1,25 @@
 /// DeviceInfoAccessor is used to access info related to the device.
 ///
 /// - author: Adamas
-/// - version: 1.1.0
-/// - date: 29/05/2017
-open class DeviceInfoAccessor {
+/// - version: 1.5.0
+/// - date: 16/08/2019
+final public class DeviceInfoAccessor {
     
     /// The singleton instance in the system.
-    public static let shared: DeviceInfoAccessor = .init()
+    public static let shared: DeviceInfoAccessor = DeviceInfoAccessor()
     
     /// The system version of the device.
-    open var systemVersion: String {
+    public var systemVersion: String {
         return device.systemVersion
     }
     
     /// The major system version.
-    open var majorSystemVersion: Int {
+    public var majorSystemVersion: Int {
         return processInfo.operatingSystemVersion.majorVersion
     }
     
     /// The type of the device.
-    open var deviceType: DeviceType {
+    public var deviceType: DeviceType {
         let deviceModel = device.model
         if deviceModel.contains(DeviceType.phone.rawValue) {
             return .phone
@@ -58,12 +58,11 @@ open class DeviceInfoAccessor {
     ///   - device: The device object.
     ///   - screen: The device screen.
     ///   - processInfo: The information of the process.
-    init(device: UIDevice = UIDevice.current, processInfo: ProcessInfo = ProcessInfo(), screen: UIScreen = UIScreen.main) {
+    private init(device: UIDevice = UIDevice.current, processInfo: ProcessInfo = ProcessInfo(), screen: UIScreen = UIScreen.main) {
         self.device = device
         self.processInfo = processInfo
         self.screen = screen
     }
-    
 }
 
 import UIKit

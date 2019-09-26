@@ -1,8 +1,8 @@
 /// MKCoordinateRegion+Initializer provides initialization based on different criteria.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 08/07/2017
+/// - version: 1.5.0
+/// - date: 08/09/2019
 extension MKCoordinateRegion {
     
     /// Initialize the region with center coordinate and zoom level.
@@ -33,7 +33,6 @@ extension MKCoordinateRegion {
         span.latitudeDelta = latitudeDelta
         span.longitudeDelta = longitudeDelta
     }
-    
 }
 
 import MapKit

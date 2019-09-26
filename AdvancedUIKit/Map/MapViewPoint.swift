@@ -1,8 +1,8 @@
 /// MapViewPoint records the information of a point on the map.
 ///
 /// - author: Adamas
-/// - version: 1.0.3
-/// - date: 07/06/2017
+/// - version: 1.5.0
+/// - date: 07/09/2019
 final public class MapViewPoint {
     
     /// The annotation.
@@ -49,7 +49,6 @@ final public class MapViewPoint {
     @objc func didClickDetailButton() {
         detailButtonAction?()
     }
-    
 }
 
 import MapKit

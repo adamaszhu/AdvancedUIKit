@@ -1,23 +1,26 @@
 final class ButtonViewController: UIViewController {
     
-    let buttonTitle = "Checkbox\nStatus"
-    let checkStatusTitle = "Checkbox Status"
-    let checkedStatusMessage = "Checked"
-    let uncheckedStatusMessage = "Unchecked"
+    @IBOutlet private weak var button: UIButton!
+    @IBOutlet private weak var checkbox: Checkbox!
     
-    @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var checkbox: Checkbox!
+    private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
     
     @IBAction func checkStatus(_ sender: Any) {
-        let message = checkbox.isSelected ? checkedStatusMessage : uncheckedStatusMessage
-        SystemMessageHelper.standard?.showInfo(message, withTitle: checkStatusTitle)
+        let message = checkbox.isSelected ? ButtonViewController.checkedStatusMessage : ButtonViewController.uncheckedStatusMessage
+        messageHelper?.showInfo(message, withTitle: ButtonViewController.checkStatusTitle)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        button.title = buttonTitle
+        button.title = ButtonViewController.buttonTitle
     }
-    
+}
+
+private extension ButtonViewController {
+    static let buttonTitle = "Checkbox\nStatus"
+    static let checkStatusTitle = "Checkbox Status"
+    static let checkedStatusMessage = "Checked"
+    static let uncheckedStatusMessage = "Unchecked"
 }
 
 import AdvancedUIKit

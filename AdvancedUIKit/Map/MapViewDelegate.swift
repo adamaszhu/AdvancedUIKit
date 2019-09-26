@@ -1,9 +1,9 @@
 /// MapViewDelegate records the action performed on the map.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 07/06/2017
-public protocol MapViewDelegate {
+/// - version: 1.5.0
+/// - date: 05/09/2019
+public protocol MapViewDelegate: class {
     
     /// An error has been caused.
     ///
@@ -26,7 +26,14 @@ public protocol MapViewDelegate {
     
     /// The view has been moved.
     func mapViewWillMoveView(_ mapView: MapView)
-    
+}
+
+/// Optional
+public extension MapViewDelegate {
+    func mapView(_ mapView: MapView, didSelectItem item: Any) {}
+    func mapView(_ mapView: MapView, didUpdate location: CLLocation) {}
+    func mapViewDidMoveView(_ mapView: MapView) {}
+    func mapViewWillMoveView(_ mapView: MapView) {}
 }
 
 import CoreLocation

@@ -1,15 +1,15 @@
 /// DataPicker selects a single value from a set of values.
 ///
-/// - version: 1.0.0
-/// - date: 22/04/2017
+/// - version: 1.5.0
+/// - date: 22/05/2019
 /// - author: Adamas
 final public class DataPicker: RootView {
     
     /// The delegate of the DataPicker.
-    public var dataPickerDelegate: DataPickerDelegate?
+    public weak var delegate: DataPickerDelegate?
     
     /// The title of the picker view.
-    @objc public var title: String? {
+    public var title: String? {
         set {
             titleLabel.text = newValue
         }
@@ -19,7 +19,7 @@ final public class DataPicker: RootView {
     }
     
     /// The background color of the title.
-    @objc public var titleBackgroundColor: UIColor? {
+    public var titleBackgroundColor: UIColor? {
         set {
             titleLabel.backgroundColor = newValue
             doneButton.backgroundColor = newValue
@@ -31,7 +31,7 @@ final public class DataPicker: RootView {
     }
     
     /// The column list, which is a list of column name and item tuple. Value is the value for each selection. Name is the name of the value which will be displayed on the screen.
-    public private(set) var columns: [DataPickerColumn] {
+    public private (set) var columns: [DataPickerColumn] = [] {
         didSet {
             pickerView.reloadAllComponents()
         }
@@ -39,36 +39,51 @@ final public class DataPicker: RootView {
     
     /// The distance that the controller should be pushed up.
     private var pushDistance: CGFloat {
-        guard let controller = controller, let superview = superview else {
+        guard let trigger = trigger, let superview = superview, let triggerOriginalFrame = triggerOriginalFrame else {
             return 0
         }
-        let controllerFrame = superview.convert(controller.frame, from: controller.superview)
-        return controllerFrame.origin.y + controllerFrame.height - self.frame.origin.y - self.frame.height
+        let triggerFrame = superview.convert(triggerOriginalFrame, from: trigger.superview)
+        if triggerFrame.origin.y + triggerFrame.height + frame.size.height > superview.frame.size.height {
+            return superview.frame.size.height - triggerFrame.origin.y - triggerFrame.height - frame.size.height
+        } else {
+            return 0
+        }
     }
     
     /// The view that is used to control the picker.
-    @objc public var controller: UIView?
+    public var trigger: UIView? {
+        didSet {
+            triggerOriginalFrame = nil
+        }
+    }
     
     /// The original frame of the controller.
-    private var controllerOriginalFrame: CGRect?
+    private var triggerOriginalFrame: CGRect?
     
     /// The picker view.
-    private var pickerView: UIPickerView
+    private var pickerView: UIPickerView = UIPickerView()
     
     /// The cancel button.
-    private var cancelButton: UIButton
+    private var cancelButton: UIButton = UIButton()
     
     /// The done button.
-    private var doneButton: UIButton
+    private var doneButton: UIButton = UIButton()
     
     /// The title label.
-    private var titleLabel: UILabel
+    private var titleLabel: UILabel = UILabel()
     
     /// Set the DataPicker with a single column.
     ///
     /// - Parameter items: The item list.
-    public func setSingleColumn(_ items: [DataPickerItem]) {
+    public func set(_ items: [DataPickerItem]) {
         columns = [DataPickerColumn(items: items)]
+    }
+    
+    /// Set the DataPicker with columns.
+    ///
+    /// - Parameter columns: The column list.
+    public func set(_ columns: [DataPickerColumn]) {
+        self.columns = columns
     }
     
     /// Select an item.
@@ -76,9 +91,9 @@ final public class DataPicker: RootView {
     /// - Parameters:
     ///   - value: The value to be selected.
     ///   - index: The index of the column.
-    @objc public func selectValue(_ value: String, atColumn index: Int = 0) {
+    public func selectValue(_ value: String, atColumn index: Int = 0) {
         guard 0 ..< columns.count ~= index else {
-            Logger.standard.log(error: DataPicker.columnError)
+            Logger.standard.logError(DataPicker.columnError)
             return
         }
         var item: DataPickerItem
@@ -89,7 +104,7 @@ final public class DataPicker: RootView {
                 return
             }
         }
-        Logger.standard.log(error: DataPicker.itemError)
+        Logger.standard.logError(DataPicker.itemError)
     }
     
     /// The selected values are confirmed by clicking the done button.
@@ -99,33 +114,33 @@ final public class DataPicker: RootView {
             selections.append(columns[index].items[pickerView.selectedRow(inComponent: index)].value)
         }
         hide()
-        DispatchQueue.main.asyncAfter(deadline: .now() + DataPicker.animationDuration) { [unowned self]  in
+        DispatchQueue.main.asyncAfter(deadline: .now() + DataPicker.animationDuration) { [weak self]  in
+            guard let self = self else {
+                return
+            }
             // Wait for finishing the hide animation
-            self.dataPickerDelegate?.dataPicker(dataPicker: self, didSelectValue: selections)
+            self.delegate?.dataPicker(self, didSelectValue: selections)
         }
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        cancelButton = .init()
-        doneButton = .init()
-        titleLabel = .init()
-        pickerView = .init()
-        columns = []
-        super.init(coder: aDecoder)
-    }
-    
-    public override func hide() {
+    @objc public override func hide() {
         guard isVisible else {
-            Logger.standard.log(warning: DataPicker.hidingWarning)
+            Logger.standard.logWarning(DataPicker.hidingWarning)
             return
         }
-        animate(withChange: { [unowned self] in
-            self.frame.origin = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
-            // Push down the controller
-            if let controllerOriginalFrame = self.controllerOriginalFrame {
-                self.controller?.frame = controllerOriginalFrame
+        animateChange({ [weak self] in
+            guard let self = self else {
+                return
             }
-            }, withDuration: DataPicker.animationDuration, withPreparation: { [unowned self] in
+            self.frame.origin = CGPoint(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
+            // Push down the controller
+            if let controllerOriginalFrame = self.triggerOriginalFrame {
+                self.trigger?.frame = controllerOriginalFrame
+            }
+            }, withDuration: DataPicker.animationDuration, withPreparation: { [weak self] in
+                guard let self = self else {
+                    return
+                }
                 self.frame = self.originalFrame
         }) {
             super.hide()
@@ -135,19 +150,27 @@ final public class DataPicker: RootView {
     
     public override func show() {
         guard !isVisible else {
-            Logger.standard.log(warning: DataPicker.showingWarning)
+            Logger.standard.logWarning(DataPicker.showingWarning)
             return
         }
-        controllerOriginalFrame = controller?.frame
+        if triggerOriginalFrame == nil {
+            triggerOriginalFrame = trigger?.frame
+        }
         let pushDistance = self.pushDistance - 1
-        animate(withChange: { [unowned self] in
+        animateChange({ [weak self] in
+            guard let self = self else {
+                return
+            }
             // Push up the controller
-            if let controllerOrigin = self.controllerOriginalFrame?.origin {
-                self.controller?.frame.origin = .init(x: controllerOrigin.x, y: controllerOrigin.y + pushDistance)
+            if let triggerOrigin = self.triggerOriginalFrame?.origin {
+                self.trigger?.frame.origin = CGPoint(x: triggerOrigin.x, y: triggerOrigin.y + pushDistance)
             }
             self.frame = self.originalFrame
-            }, withDuration: DataPicker.animationDuration, withPreparation: { [unowned self] in
-                self.frame.origin = .init(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
+            }, withDuration: DataPicker.animationDuration, withPreparation: { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                self.frame.origin = CGPoint(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
                 self.isHidden = false
         }) {
             super.show()
@@ -175,14 +198,62 @@ final public class DataPicker: RootView {
     }
     
     public override func render() {
-        cancelButton.frame = .init(x: 0, y: 0, width: DataPicker.buttonWidth, height: DataPicker.buttonHeight)
-        titleLabel.frame = .init(x: DataPicker.buttonWidth, y: 0, width: frame.width - 2 * DataPicker.buttonWidth, height: DataPicker.buttonHeight)
-        doneButton.frame = .init(x: frame.width - DataPicker.buttonWidth, y: 0, width: DataPicker.buttonWidth, height: DataPicker.buttonHeight)
-        pickerView.frame = .init(x: 0, y: DataPicker.buttonHeight, width: frame.width, height: frame.height - DataPicker.buttonHeight)
-        frame = .init(x: originalFrame.origin.x, y: originalFrame.origin.y + originalFrame.height, width: originalFrame.width, height: originalFrame.height)
+        cancelButton.frame = CGRect(x: 0, y: 0, width: DataPicker.buttonWidth, height: DataPicker.buttonHeight)
+        titleLabel.frame = CGRect(x: DataPicker.buttonWidth, y: 0, width: frame.width - 2 * DataPicker.buttonWidth, height: DataPicker.buttonHeight)
+        doneButton.frame = CGRect(x: frame.width - DataPicker.buttonWidth, y: 0, width: DataPicker.buttonWidth, height: DataPicker.buttonHeight)
+        pickerView.frame = CGRect(x: 0, y: DataPicker.buttonHeight, width: frame.width, height: frame.height - DataPicker.buttonHeight)
+        frame = CGRect(x: originalFrame.origin.x, y: originalFrame.origin.y + originalFrame.height, width: originalFrame.width, height: originalFrame.height)
         super.hide()
     }
-    
 }
 
+/// UIPickerViewDelegate
+extension DataPicker: UIPickerViewDelegate {
+    
+    public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label: UILabel
+        if let reusableLabel = view as? UILabel {
+            label = reusableLabel
+        } else {
+            label = UILabel()
+            label.textAlignment = .center
+            label.textColor = .black
+        }
+        label.text = columns[component].items[row].name
+        return label
+    }
+}
+
+/// UIPickerViewDataSource
+extension DataPicker: UIPickerViewDataSource {
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return columns.count
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return columns[component].items.count
+    }
+}
+
+/// Constants
+private extension DataPicker {
+    
+    /// System error.
+    static let columnError = "The column doesn't exist."
+    static let itemError = "The item doesn't exist."
+    
+    /// The name of two buttons.
+    static let cancelButtonName = "Cancel"
+    static let doneButtonName = "Done"
+    
+    /// The duration of the show and hide animation.
+    static let animationDuration = 0.25
+    
+    /// The size of the button.
+    static let buttonHeight = CGFloat(40)
+    static let buttonWidth = CGFloat(80)
+}
+
+import AdvancedFoundation
 import UIKit

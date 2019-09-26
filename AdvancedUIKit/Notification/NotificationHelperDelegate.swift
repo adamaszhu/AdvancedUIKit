@@ -1,25 +1,24 @@
 /// NotificationHelperDelegate is used to get the result of an authorization.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 02/06/2017
-public protocol NotificationHelperDelegate {
+/// - version: 1.5.0
+/// - date: 03/09/2019
+public protocol NotificationHelperDelegate: class {
     
     /// Local notification authorization has been decided.
     ///
     /// - Parameter result: The result of the authorization.
-    func notificationHelper(_ notificationHelper: NotificationHelper, didAuthorizeRemoteNotification result: Bool)
+    func notificationHelper(_ notificationHelper: NotificationHelperType, didAuthorizeRemoteNotification result: Bool)
     
     /// Local notification authorization has been decided.
     ///
     /// - Parameter result: The result of the authorization.
-    func notificationHelper(_ notificationHelper: NotificationHelper, didAuthorizeLocalNotification result: Bool)
+    func notificationHelper(_ notificationHelper: NotificationHelperType, didAuthorizeLocalNotification result: Bool)
 
     /// The notification is not authorized.
     ///
     /// - Parameter error: The error message.
-    func notificationHelper(_ notificationHelper: NotificationHelper, didCatchError error: String)
-    
+    func notificationHelper(_ notificationHelper: NotificationHelperType, didCatchError error: String)
 }
 
 import UIKit

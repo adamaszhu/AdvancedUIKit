@@ -8,29 +8,29 @@ extension ExpandableGalleryView: ExpandableView {
     /// Expand the frame with animation
     private func expandFrame() {
         guard let window = window else {
-            Logger.standard.log(error: ExpandableGalleryView.windowError)
+            Logger.standard.logError(ExpandableGalleryView.windowError)
             return
         }
         saveOriginalConstraints(of: self)
         let pageControlBottomMargin = self.pageControlButtomMargin
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.frame = window.bounds
             self.imageSize = window.bounds.size
             }, withPreparation: { [unowned self] in
                 self.gestureFilterView.isHidden = true
                 self.moveToWindow(of: self)
-                self.pageControl.isHidden = true
+                self.shouldShowPageControl = false
             }, withCompletion: { [unowned self] in
                 self.collapseGestureRecognizer.isEnabled = true
                 self.pageControlButtomMargin = pageControlBottomMargin
-                self.pageControl.isHidden = false
+                self.shouldShowPageControl = true
                 self.addBackground()
         })
     }
     
     /// Add background color with animation.
     private func addBackground() {
-        animate(withChange: { [unowned self] in
+        animateChange( { [unowned self] in
             self.currentGalleryImage?.imageView.backgroundColor = .black
         }) { [unowned self] in
             self.setBackgroundColor(.black)
@@ -40,27 +40,27 @@ extension ExpandableGalleryView: ExpandableView {
     /// Collapse the frame with animation
     private func collapseFrame() {
         guard let window = window else {
-            Logger.standard.log(error: ExpandableGalleryView.windowError)
+            Logger.standard.logError(ExpandableGalleryView.windowError)
             return
         }
         let pageControlBottomMargin = self.pageControlButtomMargin
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
             self.imageSize = self.originalFrame.size
             }, withPreparation: { [unowned self] in
                 self.collapseGestureRecognizer.isEnabled = false
-                self.pageControl.isHidden = true
+                self.shouldShowPageControl = false
             }, withCompletion: { [unowned self] in
                 self.removeFromWindow(of: self)
                 self.gestureFilterView.isHidden = false
                 self.pageControlButtomMargin = pageControlBottomMargin
-                self.pageControl.isHidden = false
+                self.shouldShowPageControl = true
         })
     }
     
     /// Remove the background color with animation.
     private func removeBackgroundColor() {
-        animate(withChange: { [unowned self] in
+        animateChange({ [unowned self] in
             self.currentGalleryImage?.imageView.backgroundColor = .clear
         }) { [unowned self] in
             self.setBackgroundColor(.clear)
@@ -82,7 +82,7 @@ extension ExpandableGalleryView: ExpandableView {
     
     @objc public var isExpanded: Bool {
         guard let _ = superview else {
-            Logger.standard.log(error: ExpandableGalleryView.superviewError)
+            Logger.standard.logError(ExpandableGalleryView.superviewError)
             return false
         }
         return superview == window
@@ -90,7 +90,7 @@ extension ExpandableGalleryView: ExpandableView {
     
     @objc public func expand() {
         guard !isExpanded, isExpandable else {
-            Logger.standard.log(warning: ExpandableGalleryView.expandingWarning)
+            Logger.standard.logWarning(ExpandableGalleryView.expandingWarning)
             return
         }
         expandFrame()
@@ -98,7 +98,7 @@ extension ExpandableGalleryView: ExpandableView {
     
     @objc public func collapse() {
         guard isExpanded, isExpandable else {
-            Logger.standard.log(warning: ExpandableGalleryView.collapsingWarning)
+            Logger.standard.logWarning(ExpandableGalleryView.collapsingWarning)
             return
         }
         removeBackgroundColor()
@@ -106,5 +106,6 @@ extension ExpandableGalleryView: ExpandableView {
     
 }
 
+import AdvancedFoundation
 import Foundation
 import UIKit

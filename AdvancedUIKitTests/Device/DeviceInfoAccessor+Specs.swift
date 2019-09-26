@@ -9,12 +9,12 @@ class DeviceInfoAccessorSpecs: QuickSpec {
         }
         describe("has systemVersion") {
             it("is correct version") {
-                expect(deviceInfoAccessor.systemVersion) == "10.3"
+                expect(deviceInfoAccessor.systemVersion) == "12.2"
             }
         }
         describe("has majorSystemVersion") {
             it("is correct version") {
-                expect(deviceInfoAccessor.majorSystemVersion) == 10
+                expect(deviceInfoAccessor.majorSystemVersion) == 12
             }
         }
         describe("has deviceType") {

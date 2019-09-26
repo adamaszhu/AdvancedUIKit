@@ -1,16 +1,16 @@
 /// ExpandableView+Action implements the default action that an extandable view should have.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 19/06/2017
+/// - version: 1.5.0
+/// - date: 15/09/2019
 extension ExpandableView {
     
     /// Wait until the view has been added back to the original superview and add constraints.
     ///
     /// - Parameter view: The view.
-    func addOriginalConstraints(of view: UIView) {
+    func resetOriginalConstraints(of view: UIView) {
         guard let superview = view.superview else {
-            Logger.standard.log(error: Self.superviewError)
+            Logger.standard.logError(Self.superviewError)
             return
         }
         superview.addConstraints(originalFrameConstraints)
@@ -22,7 +22,7 @@ extension ExpandableView {
     /// - Parameter view: The view.
     func saveOriginalConstraints(of view: UIView) {
         guard let superview = view.superview else {
-            Logger.standard.log(error: Self.superviewError)
+            Logger.standard.logError(Self.superviewError)
             return
         }
         originalSuperview = superview
@@ -37,11 +37,11 @@ extension ExpandableView {
     /// - Parameter view: The view.
     func moveToWindow(of view: UIView) {
         guard let window = view.window else {
-            Logger.standard.log(error: ExpandableMapView.windowError)
+            Logger.standard.logError(ExpandableMapView.windowError)
             return
         }
         guard let superview = view.superview else {
-            Logger.standard.log(error: ExpandableMapView.superviewError)
+            Logger.standard.logError(ExpandableMapView.superviewError)
             return
         }
         superview.removeConstraints(originalFrameConstraints)
@@ -59,13 +59,13 @@ extension ExpandableView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.removeFromSuperview()
         originalSuperview.insertSubview(view, at: originalZIndex)
-        addOriginalConstraints(of: view)
+        resetOriginalConstraints(of: view)
         // Wait the view to be refreshed and add the constraint back
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) { [unowned self] in
-            self.addOriginalConstraints(of: view)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) { [weak self] in
+            self?.resetOriginalConstraints(of: view)
         }
     }
-    
 }
 
+import AdvancedFoundation
 import UIKit

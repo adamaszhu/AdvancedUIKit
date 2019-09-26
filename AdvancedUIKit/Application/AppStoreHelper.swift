@@ -1,8 +1,8 @@
 /// AppStoreHelper provides support for rating the app.
 ///
 /// - author: Adamas
-/// - version: 1.2.0
-/// - date: 26/01/2018
+/// - version: 1.5.0
+/// - date: 08/05/2019
 public final class AppStoreHelper {
     
     /// The app store id
@@ -17,17 +17,24 @@ public final class AppStoreHelper {
     /// The user default used to save the counter.
     private let userDefaults: UserDefaults
     
+    /// The device helper for opening a website.
+    private let deviceHelper: DeviceHelper
+    
     /// Initialize the helper
     ///
     /// - Parameter
     ///   - id: The app store id.
     ///   - reviewCounterFlag: The flag used to record the review counter.
-    public init(id: String, reviewCounterFlag: String) {
+    ///   - userDefaults: The user defaults used to store flags.
+    ///   - messageHelper: The message helper used to show a popup.
+    ///   - deviceHelper: The device helper used to open a website.
+    public init(id: String, reviewCounterFlag: String, userDefaults: UserDefaults = UserDefaults.standard, messageHelper: SystemMessageHelper? = SystemMessageHelper(), deviceHelper: DeviceHelper = DeviceHelper()) {
         self.id = id
         self.reviewCounterFlag = reviewCounterFlag
-        userDefaults = UserDefaults.standard
-        messageHelper = SystemMessageHelper()
-        messageHelper?.messageHelperDelegate = self
+        self.userDefaults = userDefaults
+        self.messageHelper = messageHelper
+        self.deviceHelper = deviceHelper
+        messageHelper?.delegate = self
     }
     
     /// Leave a review in the app store.
@@ -37,7 +44,7 @@ public final class AppStoreHelper {
             return
         }
         guard let messageHelper = messageHelper else {
-            Logger.standard.log(error: AppStoreHelper.messageHelperError)
+            Logger.standard.logError(AppStoreHelper.messageHelperError)
             return
         }
         let message = AppStoreHelper.reviewMessage.localizedInternalString(forType: AppStoreHelper.self)
@@ -56,21 +63,43 @@ public final class AppStoreHelper {
     ///
     /// - Parameter count: The amount
     /// - Returns: Whether the review counter reaches the ammount or not.
-    public func checkReviewConter(asCount count: Int) -> Bool {
+    public func checkReviewCounter(asCount count: Int) -> Bool {
         let savedCount = userDefaults.integer(forKey: reviewCounterFlag)
         return savedCount == count
     }
     
+    /// Reset the counter
+    public func resetReviewCounter() {
+        userDefaults.removeObject(forKey: reviewCounterFlag)
+    }
 }
 
+/// MessageHelperDelegate
 extension AppStoreHelper: MessageHelperDelegate {
     
     public func messageHelperDidConfirmWarning(_ messageHelper: MessageHelper) {
         let reviewAddress = String(format: AppStoreHelper.reviewAddressPattern, id)
-        DeviceHelper.standard.openWebsite(withLink: reviewAddress)
+        deviceHelper.openWebsite(withLink: reviewAddress)
     }
     
+    public func messageHelper(_ messageHelper: MessageHelper, didConfirmInput content: String) {}
 }
 
+/// Constants
+private extension AppStoreHelper {
+    
+    /// The review address pattern.
+    static var reviewAddressPattern = "itms-apps://itunes.apple.com/app/id%@"
+    
+    /// The review alert.
+    static var reviewMessage = "ReviewMessage"
+    static var cancelButtonName = "Cancel"
+    static var confirmButtonName = "Confirm"
+    
+    /// Error.
+    static var messageHelperError = "The message cannot be presented."
+}
+
+import AdvancedFoundation
 import Foundation
 import StoreKit

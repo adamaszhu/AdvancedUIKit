@@ -1,24 +1,32 @@
 /// Button+Attribute contains additional support for a button
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 31/05/2017
+/// - version: 1.5.0
+/// - date: 08/08/2019
 public extension UIButton {
     
     /// Set and get the title of the button.
-    @objc public var title: String? {
+    var title: String? {
         set {
             titleLabel?.numberOfLines = 0
-            titleLabel?.textAlignment = .center
             setTitle(newValue, for: .normal)
         }
         get {
-            return titleLabel?.text
+            return title(for: .normal)
         }
     }
     
+    /// The title text alignment
+    var textAlignment: NSTextAlignment? {
+        set {
+            if let textAlignment = newValue {
+                titleLabel?.textAlignment = textAlignment
+            }
+        }
+        get {
+            return titleLabel?.textAlignment
+        }
+    }
 }
 
 import UIKit
-
-

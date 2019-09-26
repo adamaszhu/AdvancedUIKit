@@ -1,18 +1,18 @@
 /// UnderlineView records the underline for a text field.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 05/06/2017
+/// - version: 1.5.0
+/// - date: 15/08/2019
 final class UnderlineView: UIView {
     
     /// The normal color of the underline.
-    @objc var color: UIColor
+    var color: UIColor = .clear
     
     /// The highlighted color of the underline.
-    @objc var highlightedColor: UIColor
+    var highlightedColor: UIColor = .clear
     
     /// Whether the underline is under highlighted status or not.
-    @objc var isHighlighted: Bool {
+    var isHighlighted: Bool {
         set {
             backgroundColor = newValue ? highlightedColor : color
         }
@@ -20,18 +20,7 @@ final class UnderlineView: UIView {
             return backgroundColor == highlightedColor
         }
     }
-    
-    override init(frame: CGRect) {
-        color = .clear
-        highlightedColor = .clear
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        Logger.standard.log(error: UnderlineView.initError)
-        return nil
-    }
-    
 }
 
+import AdvancedFoundation
 import UIKit

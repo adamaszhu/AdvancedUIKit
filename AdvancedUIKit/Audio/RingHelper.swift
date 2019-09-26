@@ -1,24 +1,21 @@
 /// RingHelper provides support for playing rings and vibrations periodically.
 ///
 /// - author: Adamas
-/// - version: 1.0.0
-/// - date: 01/06/2017
+/// - version: 1.5.0
+/// - date: 08/05/2018
 final public class RingHelper {
     
-    /// The singleton instance.
-    public static let shared = RingHelper()
-    
     /// The period between two rings or vibrates.
-    private var period: Double
+    private var period: Double = 0
     
     /// The amount of time that the device still need to vibrate or ring.
-    private var remainerCounter: Int
+    private var remainerCounter: Int = 0
     
     /// Whether the vibration should be played or not.
-    private var shouldVibrate: Bool
+    private var shouldVibrate: Bool = true
     
     /// The sound of the ring.
-    private var soundID: SystemSoundID
+    private var soundID: SystemSoundID = 0
     
     /// The bundle that the ring file existing in.
     private let bundle: Bundle
@@ -32,9 +29,9 @@ final public class RingHelper {
     ///   - period: The period between two vibrations or rings.
     /// - Returns: Whether the ring will be performed or not. False if a ring is being played or the sound file doesn't exist.
     @discardableResult
-    public func ring(withSound soundFileName: String, forTimes times: Int = 1, withVibration shouldVibrate: Bool = true, withPeriod period: Double = defaultRingPeriod) -> Bool {
+    public func ring(withSound soundFileName: String, forTimes times: Int = defaultRingTime, withVibration shouldVibrate: Bool = true, withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
-            Logger.standard.log(warning: RingHelper.playStatusWarning)
+            Logger.standard.logWarning(RingHelper.playStatusWarning)
             return false
         }
         remainerCounter = times
@@ -42,7 +39,7 @@ final public class RingHelper {
         self.period = period
         let fileInfoAccessor = FileInfoAccessor(path: soundFileName)
         guard let path = bundle.path(forResource: fileInfoAccessor.filename, ofType: fileInfoAccessor.fileExtension) else {
-            Logger.standard.log(error: RingHelper.soundNameError, withDetail: soundFileName)
+            Logger.standard.logError(RingHelper.soundNameError, withDetail: soundFileName)
             return false
         }
         let url = URL(fileURLWithPath: path)
@@ -50,7 +47,7 @@ final public class RingHelper {
         var newSoundID = SystemSoundID(0)
         AudioServicesCreateSystemSoundID(url as CFURL, &newSoundID)
         guard newSoundID != 0 else {
-            Logger.standard.log(error: RingHelper.soundNameError, withDetail: soundFileName)
+            Logger.standard.logError(RingHelper.soundNameError, withDetail: soundFileName)
             return false
         }
         soundID = newSoundID
@@ -66,7 +63,7 @@ final public class RingHelper {
     ///   - period: The period between two vibrations or rings.
     /// - Returns: Whether the ring will be performed or not. False if a ring is being played.
     @discardableResult
-    public func ring(withSoundID soundID: SystemSoundID = defaultSoundID, forTimes times: Int = 1, withPeriod period: Double = defaultRingPeriod) -> Bool {
+    public func ring(withSoundID soundID: SystemSoundID = defaultSoundID, forTimes times: Int = defaultRingTime, withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
             return false
         }
@@ -79,16 +76,15 @@ final public class RingHelper {
     }
     
     /// Perform the actual ring and vibration.
-    func performRing() {
+    private func performRing() {
         AudioServicesPlaySystemSound(soundID)
         if shouldVibrate {
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         }
         remainerCounter = remainerCounter - 1
         if remainerCounter > 0 {
-            let dispatchTime = DispatchTime.now() + period
-            DispatchQueue.main.asyncAfter(deadline: dispatchTime) { [unowned self] in
-                self.performRing()
+            DispatchQueue.main.asyncAfter(deadline: .now() + period) { [weak self] in
+                self?.performRing()
             }
         }
     }
@@ -96,15 +92,34 @@ final public class RingHelper {
     /// Initialize the object
     ///
     /// - Parameter bundle: The bundle where the ring file existing in.
-    private init(bundle: Bundle = Bundle.main) {
-        remainerCounter = 0
-        soundID = 0
-        shouldVibrate = true
-        period = 0
+    public init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
     }
-    
 }
 
+/// Constants
+public extension RingHelper {
+    
+    /// The default ring time.
+    static let defaultRingTime: Int = 1
+    
+    /// The default period between two rings or vibrations.
+    static let defaultRingPeriod: Double = 1.5
+    
+    /// The system sound.
+    static let defaultSoundID: SystemSoundID = 1022
+}
+
+/// Constants
+private extension RingHelper {
+    
+    /// System error.
+    static let soundNameError = "The sound file doesn't exist."
+    
+    /// System warning.
+    static let playStatusWarning = "A sound is currently being played."
+}
+
+import AdvancedFoundation
 import AudioToolbox
 import Foundation

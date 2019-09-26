@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="78u-nH-8pO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="78u-nH-8pO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,16 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fah-l5-L5m">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zp3-Q1-cVX" customClass="InfiniteList" customModule="AdvancedUIKit">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="fah-l5-L5m">
+                                <rect key="frame" x="0.0" y="566" width="375" height="101"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zp3-Q1-cVX" customClass="InfiniteList" customModule="AdvancedUIKit">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="546"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLq-xa-h56">
-                                        <rect key="frame" x="0.0" y="546" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0rA-il-EER"/>
@@ -42,15 +43,8 @@
                                             <action selector="reloadItems:" destination="78u-nH-8pO" eventType="touchUpInside" id="DOa-o9-cgV"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSs-LD-e1T">
-                                        <rect key="frame" x="0.0" y="596" width="375" height="1"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="rv6-qV-y3J"/>
-                                        </constraints>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BB-Js-oJF">
-                                        <rect key="frame" x="0.0" y="597" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="51" width="375" height="50"/>
                                         <color key="backgroundColor" red="0.48982244730000002" green="0.71186602119999998" blue="0.84542196989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1eD-Mm-lyk"/>
@@ -68,10 +62,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fah-l5-L5m" firstAttribute="top" secondItem="chJ-h8-0QF" secondAttribute="bottom" id="Dzx-i2-2iK"/>
+                            <constraint firstAttribute="trailing" secondItem="zp3-Q1-cVX" secondAttribute="trailing" id="CEB-pF-WVX"/>
+                            <constraint firstItem="zp3-Q1-cVX" firstAttribute="top" secondItem="chJ-h8-0QF" secondAttribute="bottom" id="CQb-ra-TI3"/>
                             <constraint firstAttribute="trailing" secondItem="fah-l5-L5m" secondAttribute="trailing" id="Y6B-fB-Fdm"/>
                             <constraint firstItem="fah-l5-L5m" firstAttribute="leading" secondItem="2fR-XR-XHZ" secondAttribute="leading" id="h36-vf-Rmq"/>
                             <constraint firstItem="B5W-sp-45y" firstAttribute="top" secondItem="fah-l5-L5m" secondAttribute="bottom" id="mG8-vT-Mmd"/>
+                            <constraint firstAttribute="bottom" secondItem="zp3-Q1-cVX" secondAttribute="bottom" id="nci-fm-jsH"/>
+                            <constraint firstItem="zp3-Q1-cVX" firstAttribute="leading" secondItem="2fR-XR-XHZ" secondAttribute="leading" id="t9e-du-8NO"/>
                         </constraints>
                     </view>
                     <connections>

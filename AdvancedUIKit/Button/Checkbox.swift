@@ -1,9 +1,9 @@
 /// Checkbox provides a customized checkbox
 ///
 /// - author: Adamas
-/// - version: 1.1.0
-/// - date: 25/09/2017
-final public class Checkbox: UIButton {
+/// - version: 1.5.0
+/// - date: 08/08/2019
+open class Checkbox: UIButton {
     
     /// Switch the status of the checkbox
     @objc func switchStatus() {
@@ -24,7 +24,6 @@ final public class Checkbox: UIButton {
         super.init(coder: aDecoder)
         addClickEvent()
     }
-    
 }
 
 import UIKit
