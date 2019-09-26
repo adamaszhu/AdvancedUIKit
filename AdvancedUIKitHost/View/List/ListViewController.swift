@@ -31,6 +31,11 @@ final class ListViewController: UIViewController {
         infiniteList.registerReloadingBar(with: UINib(nibName: ListViewController.reloadingBarNibName, bundle: nil))
         infiniteList.registerLoadingMoreCell(with: UINib(nibName: ListViewController.loadingMoreBarNibName, bundle: nil))
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        dataGenerator.generateItems(forPage: 0)
+    }
 }
 
 extension ListViewController: InfiniteListDelegate {

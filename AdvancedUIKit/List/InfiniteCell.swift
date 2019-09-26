@@ -45,12 +45,18 @@ open class InfiniteCell: UITableViewCell {
     
     /// Expand the cell.
     open func expand() {
-        additionalViewHeightConstraint?.isActive = false
+        animateChange({ [weak self] in
+            self?.additionalViewHeightConstraint?.isActive = false
+            self?.layoutIfNeeded()
+        })
     }
     
     /// Collapse the cell.
     open func collapse() {
-        additionalViewHeightConstraint?.isActive = true
+        animateChange({ [weak self] in
+            self?.additionalViewHeightConstraint?.isActive = true
+            self?.layoutIfNeeded()
+        })
     }
 }
 

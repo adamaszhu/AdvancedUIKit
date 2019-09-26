@@ -11,27 +11,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="McN-UU-sPn" customClass="LabelCell" customModule="AdvancedUIKitHost" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="McN-UU-sPn" customClass="LabelCell" customModule="AdvancedUIKitHost" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="McN-UU-sPn" id="R2k-a1-DFu">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="McN-UU-sPn" id="R2k-a1-DFu">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nl6-uc-Wzd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="40.5"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsR-Co-8hU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40.5"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Text Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGv-pV-jvA">
-                                <rect key="frame" x="10" y="11" width="65" height="18"/>
+                                <rect key="frame" x="10" y="11" width="65" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-jU-8FH">
-                                <rect key="frame" x="80" y="0.0" width="265" height="40"/>
+                                <rect key="frame" x="80" y="0.0" width="265" height="40.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9tW-hi-o8d"/>
                                 </constraints>
@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExpandCell" translatesAutoresizingMaskIntoConstraints="NO" id="e46-He-ubI">
-                                <rect key="frame" x="355" y="15" width="10" height="10"/>
+                                <rect key="frame" x="355" y="15" width="10" height="10.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="BMO-S7-Mzo"/>
                                     <constraint firstAttribute="width" constant="10" id="YFD-QY-KI0"/>
@@ -63,8 +63,8 @@
                             <constraint firstItem="e46-He-ubI" firstAttribute="leading" secondItem="xQ0-jU-8FH" secondAttribute="trailing" constant="10" id="x55-YD-ltb"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDa-8g-fPC">
-                        <rect key="frame" x="0.0" y="40" width="375" height="39.5"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDa-8g-fPC">
+                        <rect key="frame" x="0.0" y="40.5" width="375" height="80"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a hidden message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhf-wC-8kz">
                                 <rect key="frame" x="10" y="14" width="355" height="12"/>

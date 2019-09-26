@@ -43,6 +43,7 @@ extension InfiniteListStatus {
     func checkNextStatus(_ status: InfiniteListStatus) -> Bool {
         switch (self, status) {
         case (.initial, .infinite),
+             (.initial, .finite),
              (.initial, .empty),
              (.infinite, .reloading),
              (.infinite, .loadingMore),
@@ -51,6 +52,7 @@ extension InfiniteListStatus {
              (.loadingMore, .finite),
              (.loadingMore, .infinite),
              (.reloading, .infinite),
+             (.reloading, .finite),
              (.reloading, .empty):
             return true
         default:
@@ -65,7 +67,7 @@ extension InfiniteListStatus {
 private extension InfiniteListStatus {
     
     /// System errors.
-    static let statusErrorPattern = "Cannot switch status from $@ to %@."
+    static let statusErrorPattern = "Cannot switch status from %@ to %@."
 }
 
 import AdvancedFoundation
