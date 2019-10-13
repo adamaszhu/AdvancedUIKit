@@ -125,13 +125,13 @@ open class InfiniteList: UITableView {
                 return
             }
             self.contentOffset = CGPoint(x: 0, y: self.reloadingOffsetY)
-            }, withCompletion: { [weak self] in
-                guard let self = self else {
-                    return
-                }
-                self.status = .reloading
-                self.infiniteListDelegate?.infiniteListDidRequireReload(self)
-        })
+        }) { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.status = .reloading
+            self.infiniteListDelegate?.infiniteListDidRequireReload(self)
+        }
     }
     
     /// Display a list of item depending on the status of the InfiniteList.
@@ -188,7 +188,7 @@ open class InfiniteList: UITableView {
         }
         emptyState.animateChange({
             emptyState.alpha = 1
-        }, withPreparation: {
+        }, preparation: {
             emptyState.alpha = 0
             emptyState.isHidden = false
         })
@@ -206,12 +206,12 @@ open class InfiniteList: UITableView {
         }
         emptyState.animateChange({
             emptyState.alpha = 0
-        }, withPreparation: {
+        }, preparation: {
             emptyState.alpha = 1
             emptyState.isHidden = false
-        }, withCompletion: {
+        }) {
             emptyState.isHidden = true
-        })
+        }
     }
     
     /// Reload a list of items.

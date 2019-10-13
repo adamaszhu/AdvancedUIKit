@@ -38,6 +38,28 @@
         }
     }
     
+    /// The width attribute
+    @available(iOS, introduced: 10.0)
+    var width: CGFloat? {
+        get {
+            return getValue(of: widthAnchor)
+        }
+        set {
+            setValue(newValue, of: widthAnchor)
+        }
+    }
+    
+    /// The height attribute
+    @available(iOS, introduced: 10.0)
+    var height: CGFloat? {
+        get {
+            return getValue(of: heightAnchor)
+        }
+        set {
+            setValue(newValue, of: heightAnchor)
+        }
+    }
+    
     /// Pin the edge to its superview
     ///
     /// - Parameter edgeInsets: The edge insets. If one inset is not necessary to be settled, set it to be .invalidInset
@@ -61,6 +83,38 @@
         if edgeInsets.right != .invalidInset {
             rightAnchor.constraint(equalTo: superview.rightAnchor,
                                    constant: -edgeInsets.right).isActive = true
+        }
+    }
+    
+    /// Set a constraint value
+    ///
+    /// - Parameters:
+    ///   - value: The value
+    ///   - archor: The archor
+    @available(iOS, introduced: 10.0)
+    private func setValue(_ value: CGFloat?, of archor: NSLayoutDimension) {
+        if let value = value,
+            let constraint = constraints.first(where: {$0.firstAnchor == archor }) {
+            constraint.isActive = true
+            constraint.constant = value
+        } else if let constraint = constraints.first(where: {$0.firstAnchor == archor }) {
+            constraint.isActive = false
+        } else if let value = value {
+            translatesAutoresizingMaskIntoConstraints = false
+            archor.constraint(equalToConstant: value).isActive = true
+        }
+    }
+    
+    /// Get the value
+    ///
+    /// - Parameter archor: The archor
+    /// - Returns: The value
+    @available(iOS, introduced: 10.0)
+    private func getValue(of archor: NSLayoutDimension) -> CGFloat? {
+        if let constraint = constraints.first(where: {$0.firstAnchor == archor}) {
+            return constraint.isActive ? constraint.constant : nil
+        } else {
+            return nil
         }
     }
 }

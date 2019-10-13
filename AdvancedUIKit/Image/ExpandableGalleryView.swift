@@ -90,19 +90,19 @@ final public class ExpandableGalleryView: GalleryView {
         animateChange({ [weak self] in
             self?.frame = window.bounds
             self?.imageSize = window.bounds.size
-            }, withPreparation: { [weak self] in
+            }, preparation: { [weak self] in
                 guard let self = self else {
                     return
                 }
                 self.gestureFilterView.isHidden = true
                 self.moveToWindow(of: self)
                 self.pageControl.isHidden = true
-            }, withCompletion: { [weak self] in
-                self?.collapseGestureRecognizer.isEnabled = true
-                self?.pageControlButtomMargin = pageControlBottomMargin
-                self?.pageControl.isHidden = false
-                self?.addBackground()
-        })
+        }) { [weak self] in
+            self?.collapseGestureRecognizer.isEnabled = true
+            self?.pageControlButtomMargin = pageControlBottomMargin
+            self?.pageControl.isHidden = false
+            self?.addBackground()
+        }
     }
     
     /// Add background color with animation.
@@ -127,18 +127,18 @@ final public class ExpandableGalleryView: GalleryView {
             }
             self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
             self.imageSize = self.originalFrame.size
-            }, withPreparation: { [weak self] in
+            }, preparation: { [weak self] in
                 self?.collapseGestureRecognizer.isEnabled = false
                 self?.pageControl.isHidden = true
-            }, withCompletion: { [weak self] in
-                guard let self = self else {
-                    return
-                }
-                self.removeFromWindow(of: self)
-                self.gestureFilterView.isHidden = false
-                self.pageControlButtomMargin = pageControlBottomMargin
-                self.pageControl.isHidden = false
-        })
+        }) { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.removeFromWindow(of: self)
+            self.gestureFilterView.isHidden = false
+            self.pageControlButtomMargin = pageControlBottomMargin
+            self.pageControl.isHidden = false
+        }
     }
     
     /// Remove the background color with animation.

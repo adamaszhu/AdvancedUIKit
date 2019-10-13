@@ -15,17 +15,17 @@ open class LocationHelper: CLLocationManager {
     private let bundle: Bundle
     
     /// Which authorization is
-    public var isAlwaysAuthorizationAuthorized: Bool {
+    open var isAlwaysAuthorizationAuthorized: Bool {
         return CLLocationManager.authorizationStatus() == .authorizedAlways
     }
     
     /// Whether the when in use authorization is authorized or not.
-    public var isWhenInUseAuthorizationAuthorized: Bool {
+    open var isWhenInUseAuthorizationAuthorized: Bool {
         return CLLocationManager.authorizationStatus() == .authorizedWhenInUse
     }
     
     /// Whether the authorization is still not determinated or not.
-    public var isUnauthorized: Bool {
+    open var isUnauthorized: Bool {
         return CLLocationManager.authorizationStatus() == .notDetermined
     }
     

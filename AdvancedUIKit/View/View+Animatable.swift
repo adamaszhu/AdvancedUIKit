@@ -22,15 +22,15 @@ public extension UIView {
     ///   - completion: The action to be done after the animation.
     func animateChange(_ change: @escaping () -> Void,
                        withDuration duration: Double = defaultAnimationDuration,
-                       withPreparation preparation: (() -> Void)? = nil,
-                       withCompletion completion: (() -> Void)? = nil) {
+                       preparation: (() -> Void) = {},
+                       completion: @escaping (() -> Void) = {}) {
         layer.removeAllAnimations()
-        preparation?()
+        preparation()
         UIView.animate(withDuration: duration, animations: {
             change()
         }) { result in
             change()
-            completion?()
+            completion()
         }
     }
     
