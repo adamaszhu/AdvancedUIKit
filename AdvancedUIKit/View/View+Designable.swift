@@ -38,6 +38,40 @@
         }
     }
     
+    /// The shadow inset
+    @IBInspectable var shadowInset: CGSize {
+        set {
+            layer.shadowOffset = newValue
+        }
+        get {
+            return layer.shadowOffset
+        }
+    }
+    
+    /// The shadow opacity
+    @IBInspectable var shadowOpacity: Float {
+        set {
+            layer.shadowOpacity = newValue
+        }
+        get {
+            return layer.shadowOpacity
+        }
+    }
+    
+    /// The shadow color
+    @IBInspectable var shadowColor: UIColor? {
+        set {
+            layer.shadowColor = newValue?.cgColor
+        }
+        get {
+            if let shadowColor = layer.shadowColor {
+                return UIColor(cgColor: shadowColor)
+            } else {
+                return nil
+            }
+        }
+    }
+    
     /// The width attribute
     @available(iOS, introduced: 10.0)
     var width: CGFloat? {
