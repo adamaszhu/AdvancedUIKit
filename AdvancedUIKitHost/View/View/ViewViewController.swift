@@ -23,17 +23,22 @@ final class ViewViewController: UIViewController {
                 return
             }
             self.animationButton.frame.origin = CGPoint(x: self.animationButtonOriginalFrame.origin.x, y: self.animationButtonOriginalFrame.origin.y - ViewViewController.animationOffset)
+            self.staticView.height = 0
+            self.view.layoutIfNeeded()
         }, withPreparation: { [weak self] in
             guard let self = self else {
                 return
             }
             self.animationButton.frame = self.animationButtonOriginalFrame
+            self.staticView.height = ViewViewController.staticViewHeight
         }) { [weak self] in
             self?.animationButton.animateChange({ [weak self] in
                 guard let self = self else {
                     return
                 }
                 self.animationButton.frame = self.animationButtonOriginalFrame
+                self.staticView.height = ViewViewController.staticViewHeight
+                self.view.layoutIfNeeded()
             })
         }
     }
@@ -50,7 +55,7 @@ final class ViewViewController: UIViewController {
     }
     
     private func configStaticView() {
-        staticView.heightAnchor.constraint(equalToConstant: ViewViewController.staticViewHeight).isActive = true
+        staticView.height = ViewViewController.staticViewHeight
         staticView.pinEdgesToSuperview(with: UIEdgeInsetsMake(ViewViewController.staticViewMargin, ViewViewController.staticViewMargin, .invalidInset, ViewViewController.staticViewMargin))
     }
 }

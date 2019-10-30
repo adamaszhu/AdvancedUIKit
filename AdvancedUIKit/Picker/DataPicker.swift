@@ -137,7 +137,8 @@ final public class DataPicker: RootView {
             if let controllerOriginalFrame = self.triggerOriginalFrame {
                 self.trigger?.frame = controllerOriginalFrame
             }
-            }, withDuration: DataPicker.animationDuration, withPreparation: { [weak self] in
+            }, withDuration: DataPicker.animationDuration,
+               preparation: { [weak self] in
                 guard let self = self else {
                     return
                 }
@@ -166,7 +167,8 @@ final public class DataPicker: RootView {
                 self.trigger?.frame.origin = CGPoint(x: triggerOrigin.x, y: triggerOrigin.y + pushDistance)
             }
             self.frame = self.originalFrame
-            }, withDuration: DataPicker.animationDuration, withPreparation: { [weak self] in
+            }, withDuration: DataPicker.animationDuration,
+               preparation: { [weak self] in
                 guard let self = self else {
                     return
                 }
