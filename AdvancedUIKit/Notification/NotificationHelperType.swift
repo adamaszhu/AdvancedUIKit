@@ -6,7 +6,7 @@
 public protocol NotificationHelperType {
     
     /// The delegate.
-    var delegate: NotificationHelperDelegate? { get }
+    var delegate: NotificationHelperDelegate? { get set }
     
     /// Whether the remote notification is authorized or not.
     var isRemoteNotificationAuthorized: Bool { get }
@@ -35,7 +35,10 @@ public protocol NotificationHelperType {
     ///   - content: The content of the notification.
     ///   - delay: Delay in second for showing the notification
     ///   - soundName: The name of the sound.
-    func createLocalNotification(withTitle title: String?, content: String, delay: Double, andSoundName soundName: String)
+    func createLocalNotification(withTitle title: String?,
+                                 content: String,
+                                 delay: Double,
+                                 andSoundName soundName: String)
 }
 
 public extension NotificationHelperType {
@@ -46,7 +49,10 @@ public extension NotificationHelperType {
     ///   - title: The title of the notification.
     ///   - content: The content of the notification.
     func createLocalNotification(withTitle title: String?, andContent content: String) {
-        createLocalNotification(withTitle: title, content: content, delay: 0, andSoundName: UILocalNotificationDefaultSoundName)
+        createLocalNotification(withTitle: title,
+                                content: content,
+                                delay: 0,
+                                andSoundName: UILocalNotificationDefaultSoundName)
     }
     
     /// Post a local notification.
@@ -55,7 +61,10 @@ public extension NotificationHelperType {
     ///   - title: The title of the notification.
     ///   - content: The content of the notification.
     func createLocalNotification(withTitle title: String?, content: String, andDelay delay: Double) {
-        createLocalNotification(withTitle: title, content: content, delay: delay, andSoundName: UILocalNotificationDefaultSoundName)
+        createLocalNotification(withTitle: title,
+                                content: content,
+                                delay: delay,
+                                andSoundName: UILocalNotificationDefaultSoundName)
     }
 }
 

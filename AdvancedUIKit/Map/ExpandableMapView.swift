@@ -140,7 +140,7 @@ extension ExpandableMapView: ExpandableView {
             self?.frame = window.bounds
             self?.collapseButton.alpha = 1
             self?.collapseButtonBackgroundView.alpha = 1
-            }, withPreparation: { [weak self] in
+            }, preparation: { [weak self] in
                 guard let self = self else {
                     return
                 }
@@ -151,11 +151,11 @@ extension ExpandableMapView: ExpandableView {
                 self.collapseButton.isUserInteractionEnabled = false
                 self.collapseButtonBackgroundView.isHidden = false
                 self.collapseButtonBackgroundView.alpha = 0
-            }, withCompletion: { [weak self] in
+            }) { [weak self] in
                 self?.collapseButton.alpha = 1
                 self?.collapseButton.isUserInteractionEnabled = true
                 self?.collapseButtonBackgroundView.alpha = 1
-        })
+        }
     }
     
     @objc public func collapse() {
@@ -174,11 +174,11 @@ extension ExpandableMapView: ExpandableView {
             self.frame = window.convert(self.originalFrame, from: self.originalSuperview)
             self.collapseButton.alpha = 0
             self.collapseButtonBackgroundView.alpha = 0
-            }, withPreparation: { [weak self] in
+            }, preparation: { [weak self] in
                 self?.collapseButton.alpha = 1
                 self?.collapseButton.isUserInteractionEnabled = false
                 self?.collapseButtonBackgroundView.alpha = 1
-            }, withCompletion: { [weak self] in
+            }) { [weak self] in
                 guard let self = self else {
                     return
                 }
@@ -189,7 +189,7 @@ extension ExpandableMapView: ExpandableView {
                 self.collapseButtonBackgroundView.alpha = 1
                 self.removeFromWindow(of: self)
                 self.gestureFilterView.isHidden = false
-        })
+        }
     }
 }
 

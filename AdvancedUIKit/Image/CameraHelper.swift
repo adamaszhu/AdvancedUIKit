@@ -35,6 +35,7 @@ final public class CameraHelper {
         return authorizedStatus == .notDetermined
     }
     
+    #if PHOTO
     /// Authorize the camera.
     public func requestCameraAuthorization() {
         guard isCameraUndetermined else {
@@ -52,7 +53,9 @@ final public class CameraHelper {
             self.delegate?.cameraHelper(self, didAuthorizeCamera: result)
         })
     }
+    #endif
     
+    #if PHOTO
     /// Authorize the library.
     public func requestLibraryAuthorization() {
         guard isLibraryUndetermined else {
@@ -70,6 +73,7 @@ final public class CameraHelper {
             self.delegate?.cameraHelper(self, didAuthorizeLibrary: result == .authorized)
         }
     }
+    #endif
     
     /// CLLocationManager
     ///
