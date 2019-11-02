@@ -3,6 +3,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 18/08/2019
+#if PHOTO
 final public class CameraHelper {
     
     /// The delegate.
@@ -35,7 +36,6 @@ final public class CameraHelper {
         return authorizedStatus == .notDetermined
     }
     
-    #if PHOTO
     /// Authorize the camera.
     public func requestCameraAuthorization() {
         guard isCameraUndetermined else {
@@ -53,9 +53,7 @@ final public class CameraHelper {
             self.delegate?.cameraHelper(self, didAuthorizeCamera: result)
         })
     }
-    #endif
     
-    #if PHOTO
     /// Authorize the library.
     public func requestLibraryAuthorization() {
         guard isLibraryUndetermined else {
@@ -73,7 +71,6 @@ final public class CameraHelper {
             self.delegate?.cameraHelper(self, didAuthorizeLibrary: result == .authorized)
         }
     }
-    #endif
     
     /// CLLocationManager
     ///
@@ -90,6 +87,7 @@ final public class CameraHelper {
         return bundle.object(forInfoDictionaryKey: key) != nil
     }
 }
+#endif
 
 /// Constants
 private extension CameraHelper {

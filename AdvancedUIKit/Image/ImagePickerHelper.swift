@@ -3,6 +3,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 18/08/2019
+#if PHOTO
 final public class ImagePickerHelper: NSObject {
     
     /// The delegate.
@@ -63,8 +64,10 @@ final public class ImagePickerHelper: NSObject {
         currentViewController?.present(imagePickerController, animated: true, completion: nil)
     }
 }
+#endif
 
 /// CameraHelperDelegate
+#if PHOTO
 extension ImagePickerHelper: CameraHelperDelegate {
     
     public func cameraHelper(_ cameraHelper: CameraHelper, didAuthorizeCamera result: Bool) {
@@ -87,8 +90,10 @@ extension ImagePickerHelper: CameraHelperDelegate {
         delegate?.imagePickerHelper(self, didCatchError: error)
     }
 }
+#endif
 
 /// UIImagePickerControllerDelegate
+#if PHOTO
 extension ImagePickerHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -100,6 +105,7 @@ extension ImagePickerHelper: UIImagePickerControllerDelegate, UINavigationContro
         delegate?.imagePickerHelper(self, didPick: image)
     }
 }
+#endif
 
 /// Constants
 private extension ImagePickerHelper {
