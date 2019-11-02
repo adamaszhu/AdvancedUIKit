@@ -1,3 +1,4 @@
+#if PHOTO
 /// ImagePickerHelper is used to select an image in the image library or using the camera.
 ///
 /// - author: Adamas
@@ -112,6 +113,7 @@ private extension ImagePickerHelper {
     /// System error.
     static let imageError = "There has been error while picking the image."
 }
+#endif
 
 import AdvancedFoundation
 import UIKit

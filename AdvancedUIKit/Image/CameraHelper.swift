@@ -1,3 +1,4 @@
+#if PHOTO
 /// CameraHelper is used to access the information about the camera.
 ///
 /// - author: Adamas
@@ -35,7 +36,6 @@ final public class CameraHelper {
         return authorizedStatus == .notDetermined
     }
     
-    #if PHOTO
     /// Authorize the camera.
     public func requestCameraAuthorization() {
         guard isCameraUndetermined else {
@@ -53,9 +53,7 @@ final public class CameraHelper {
             self.delegate?.cameraHelper(self, didAuthorizeCamera: result)
         })
     }
-    #endif
     
-    #if PHOTO
     /// Authorize the library.
     public func requestLibraryAuthorization() {
         guard isLibraryUndetermined else {
@@ -73,7 +71,6 @@ final public class CameraHelper {
             self.delegate?.cameraHelper(self, didAuthorizeLibrary: result == .authorized)
         }
     }
-    #endif
     
     /// CLLocationManager
     ///
@@ -105,6 +102,7 @@ private extension CameraHelper {
     /// System error.
     static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
 }
+#endif
 
 import AdvancedFoundation
 import AVFoundation
