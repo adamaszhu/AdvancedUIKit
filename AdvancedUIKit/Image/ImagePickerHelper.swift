@@ -64,9 +64,7 @@ final public class ImagePickerHelper: NSObject {
         currentViewController?.present(imagePickerController, animated: true, completion: nil)
     }
 }
-#endif
 
-#if PHOTO
 /// CameraHelperDelegate
 extension ImagePickerHelper: CameraHelperDelegate {
     
@@ -90,9 +88,7 @@ extension ImagePickerHelper: CameraHelperDelegate {
         delegate?.imagePickerHelper(self, didCatchError: error)
     }
 }
-#endif
 
-#if PHOTO
 /// UIImagePickerControllerDelegate
 extension ImagePickerHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
