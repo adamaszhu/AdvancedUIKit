@@ -1,3 +1,4 @@
+#if PHOTO
 /// The picker action has been finished.
 ///
 /// - author: Adamas
@@ -15,5 +16,6 @@ public protocol ImagePickerHelperDelegate: class {
     /// - Parameter error: The detail of the error.
     func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper, didCatchError error: String)
 }
+#endif
 
 import UIKit
