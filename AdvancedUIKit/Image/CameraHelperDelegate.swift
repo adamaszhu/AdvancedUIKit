@@ -1,3 +1,4 @@
+#if PHOTO
 /// CameraHelperDelegate is used when an authorization finished.
 ///
 /// - author: Adamas
@@ -20,3 +21,4 @@ public protocol CameraHelperDelegate: class {
     /// - Parameter error: The detail of the error.
     func cameraHelper(_ cameraHelper: CameraHelper, didCatchError error: String)
 }
+#endif
