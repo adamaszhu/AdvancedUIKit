@@ -1,9 +1,9 @@
+#if PHOTO
 /// CameraHelper is used to access the information about the camera.
 ///
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 18/08/2019
-#if PHOTO
 final public class CameraHelper {
     
     /// The delegate.
@@ -87,7 +87,6 @@ final public class CameraHelper {
         return bundle.object(forInfoDictionaryKey: key) != nil
     }
 }
-#endif
 
 /// Constants
 private extension CameraHelper {
@@ -103,6 +102,7 @@ private extension CameraHelper {
     /// System error.
     static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
 }
+#endif
 
 import AdvancedFoundation
 import AVFoundation
