@@ -51,4 +51,15 @@ final public class MapViewPoint {
     }
 }
 
+/// Equatable
+extension MapViewPoint: Equatable {
+    
+    public static func == (lhs: MapViewPoint, rhs: MapViewPoint) -> Bool {
+        return (lhs.annotation.coordinate.latitude == rhs.annotation.coordinate.latitude)
+            && (lhs.annotation.coordinate.longitude == rhs.annotation.coordinate.longitude)
+            && (lhs.annotation.title == rhs.annotation.title)
+            && (lhs.annotation.subtitle == rhs.annotation.subtitle)
+    }
+}
+
 import MapKit
