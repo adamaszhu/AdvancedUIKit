@@ -111,7 +111,7 @@ public class MapView: MKMapView {
     /// - Parameter line: The line to be presented.
     public func add(_ line: MapViewLine) {
         lines.append(line)
-        add(line.line)
+        addOverlay(line.line)
         if let _ = line.pointIcon {
             line.points.forEach { addAnnotation($0.annotation) }
         }

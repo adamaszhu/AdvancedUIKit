@@ -80,9 +80,9 @@ final public class KeyboardHelper: NSObject {
     public func startObservingKeyboard() {
         rootView?.addSubview(actionFilterView)
         actionFilterView.isHidden = true
-        notificationCenter.addObserver(self, selector: #selector(willShowKeyboard), name: .UIKeyboardWillShow, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(willHideKeyboard), name: .UIKeyboardWillHide, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(willChangeKeyboardFrame), name: .UIKeyboardWillChangeFrame, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(willShowKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(willHideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(willChangeKeyboardFrame), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     /// Stop observing the keyboard and perform the push action.
@@ -150,7 +150,7 @@ final public class KeyboardHelper: NSObject {
     ///
     /// - Parameter view: The view that has finished inputing action.
     private func finishInput(on view: UIView) {
-        guard let index = inputViews.index(of: view) else {
+        guard let index = inputViews.firstIndex(of: view) else {
             Logger.standard.logError(KeyboardHelper.inputViewError)
             return
         }
@@ -187,7 +187,7 @@ final public class KeyboardHelper: NSObject {
     ///
     /// - Parameter notification: The notification of the keyboard action.
     private func refreshKeyboardHeight(with notification: NSNotification) {
-        guard let value = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
+        guard let value = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
             Logger.standard.logError(KeyboardHelper.keyboardInfoError)
             keyboardHeight = 0
             return
@@ -199,7 +199,7 @@ final public class KeyboardHelper: NSObject {
     ///
     /// - Parameter notification: The notification of the keyboard action.
     private func refreshPushDuration(with notification: NSNotification) {
-        guard let value = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber else {
+        guard let value = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber else {
             Logger.standard.logError(KeyboardHelper.keyboardInfoError)
             keyboardPushDuration = KeyboardHelper.defaultKeyboardPushDuration
             return

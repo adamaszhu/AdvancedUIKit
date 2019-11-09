@@ -12,7 +12,7 @@ final public class DeviceHelper: NSObject {
     
     /// Open the system setting.
     public func openSystemSetting() {
-        guard let systemSettingURL = URL(string: UIApplicationOpenSettingsURLString) else {
+        guard let systemSettingURL = URL(string: UIApplication.openSettingsURLString) else {
             Logger.standard.logError(DeviceHelper.systemLinkError)
             return
         }
