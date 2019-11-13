@@ -254,8 +254,8 @@ open class InfiniteList: UITableView {
         super.init(coder: aDecoder)
         delegate = self
         dataSource = self
-        rowHeight = UITableViewAutomaticDimension
-        estimatedRowHeight = UITableViewAutomaticDimension
+        rowHeight = UITableView.automaticDimension
+        estimatedRowHeight = UITableView.automaticDimension
     }
 }
 
@@ -329,7 +329,7 @@ extension InfiniteList: UITableViewDataSource {
         return isEditable && !cell.isExpandable
     }
     
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
             guard status.isStable, let item = items.element(atIndex: indexPath.row)?.item else {

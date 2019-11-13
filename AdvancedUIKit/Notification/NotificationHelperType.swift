@@ -152,7 +152,8 @@ final public class NotificationHelper: NotificationHelperType {
             } else {
                 notificationContent.title = content
             }
-            notificationContent.sound = UNNotificationSound(named: soundName)
+            let notificationSoundName = UNNotificationSoundName(rawValue: soundName)
+            notificationContent.sound = UNNotificationSound(named: notificationSoundName)
             let adjustedDelay = max(1, delay)
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: adjustedDelay, repeats: false)
             let request = UNNotificationRequest(identifier: content, content: notificationContent, trigger: trigger)

@@ -50,6 +50,14 @@ public struct MapViewLine {
     }
 }
 
+/// Equatable
+extension MapViewLine: Equatable {
+    
+    public static func == (lhs: MapViewLine, rhs: MapViewLine) -> Bool {
+        return lhs.points == rhs.points
+    }
+}
+
 /// Constants
 public extension MapViewLine {
     

@@ -26,7 +26,7 @@ extension ExpandableView {
             return
         }
         originalSuperview = superview
-        originalZIndex = superview.subviews.index(of: view)
+        originalZIndex = superview.subviews.firstIndex(of: view)
         originalFrame = view.frame
         originalFrameConstraints = view.frameConstraints
         originalConstraints = view.constraints

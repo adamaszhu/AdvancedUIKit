@@ -6,7 +6,7 @@
 public class GalleryView: PageView {
     
     /// The mode of the images displayed.
-    public var imageMode: UIViewContentMode = GalleryView.defaultImageMode
+    public var imageMode: UIView.ContentMode = GalleryView.defaultImageMode
     
     /// The max zoom level.
     public var maxZoomLevel: CGFloat = GalleryView.defaultMaxZoomLevel
@@ -104,7 +104,7 @@ extension GalleryView {
     static let defaultMaxZoomLevel = CGFloat(8)
     
     /// The image content mode.
-    static let defaultImageMode = UIViewContentMode.scaleAspectFit
+    static let defaultImageMode = UIView.ContentMode.scaleAspectFit
 }
 
 import AdvancedFoundation

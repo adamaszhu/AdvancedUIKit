@@ -29,7 +29,7 @@ final class GalleryImage: UIScrollView {
     }
     
     /// The content mode of the image.
-    var imageMode: UIViewContentMode {
+    var imageMode: UIView.ContentMode {
         set {
             imageView.contentMode = newValue
         }

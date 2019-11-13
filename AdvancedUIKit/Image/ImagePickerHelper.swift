@@ -57,7 +57,7 @@ final public class ImagePickerHelper: NSObject {
     /// Show the image view controller with a specific type.
     ///
     /// - Parameter type: The type of the image view controller.
-    private func showImageViewController(of type: UIImagePickerControllerSourceType) {
+    private func showImageViewController(of type: UIImagePickerController.SourceType) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = type
         imagePickerController.delegate = self
@@ -92,8 +92,11 @@ extension ImagePickerHelper: CameraHelperDelegate {
 /// UIImagePickerControllerDelegate
 extension ImagePickerHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let values = info.map {($0.key.rawValue, $0.value)}
+        let info = Dictionary(uniqueKeysWithValues: values)
+
+        guard let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage else {
             Logger.standard.logError(ImagePickerHelper.imageError)
             return
         }
