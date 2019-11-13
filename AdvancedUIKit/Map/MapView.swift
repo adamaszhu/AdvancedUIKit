@@ -94,6 +94,9 @@ public class MapView: MKMapView {
     ///
     /// - Parameter point: The point.
     public func add(_ point: MapViewPoint) {
+        guard !points.contains(point) else {
+            return
+        }
         if let item = point.item {
             point.detailButtonAction = { [weak self] in
                 guard let self = self else {
@@ -110,8 +113,11 @@ public class MapView: MKMapView {
     ///
     /// - Parameter line: The line to be presented.
     public func add(_ line: MapViewLine) {
+        guard !lines.contains(line) else {
+            return
+        }
         lines.append(line)
-        add(line.line)
+        addOverlay(line.line)
         if let _ = line.pointIcon {
             line.points.forEach { addAnnotation($0.annotation) }
         }

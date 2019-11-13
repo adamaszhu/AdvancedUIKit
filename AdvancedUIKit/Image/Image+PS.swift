@@ -77,14 +77,14 @@ public extension UIImage {
     /// - Parameter maxSize: The max size of the new image.
     /// - Returns: The compressed image.
     func compressing(withMaxSize maxSize: Int) -> UIImage {
-        guard let imageData = UIImageJPEGRepresentation(self, 1) else {
+        guard let imageData = jpegData(compressionQuality: 1) else {
             Logger.standard.logError(UIImage.inputImageError)
             return self
         }
         guard imageData.count > maxSize else {
             return self
         }
-        guard let comressedData = UIImageJPEGRepresentation(self, CGFloat(maxSize) / CGFloat(imageData.count)) else {
+        guard let comressedData = jpegData(compressionQuality: CGFloat(maxSize) / CGFloat(imageData.count)) else {
             Logger.standard.logError(UIImage.outputImageError)
             return self
         }
