@@ -25,7 +25,7 @@ final class ViewViewController: UIViewController {
             self.animationButton.frame.origin = CGPoint(x: self.animationButtonOriginalFrame.origin.x, y: self.animationButtonOriginalFrame.origin.y - ViewViewController.animationOffset)
             self.staticView.height = 0
             self.view.layoutIfNeeded()
-        }, withPreparation: { [weak self] in
+        }, preparation: { [weak self] in
             guard let self = self else {
                 return
             }

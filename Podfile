@@ -7,6 +7,10 @@ target 'AdvancedUIKit' do
 
   pod 'AdvancedFoundation', '1.6.2'
 
+  target 'AdvancedUIKitHost' do
+    pod 'AdvancedFoundation', '1.6.2'
+  end
+
   target 'AdvancedUIKitTests' do
     pod 'Nimble', '8.1.2'
     pod 'Quick', '3.1.2'

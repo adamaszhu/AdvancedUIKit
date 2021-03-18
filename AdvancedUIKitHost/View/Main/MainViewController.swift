@@ -31,7 +31,7 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let feature = features[indexPath.row]
         let featureName = feature.rawValue.replacingOccurrences(of: String.space, with: String.empty)
-        navigationController?.showInitialViewController(ofStoryboard: featureName, withInitialization: { viewController in
+        navigationController?.showInitialViewController(ofStoryboard: featureName, initialization: { viewController in
             viewController.title = feature.rawValue
         })
     }
