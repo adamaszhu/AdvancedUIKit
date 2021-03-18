@@ -601,7 +601,7 @@
 				31928C098A9D3BEAAD96BF73 /* Pods_AdvancedUIKit.framework */,
 				31A871BD10580876398F78B0 /* Pods_AdvancedUIKit_AdvancedUIKitTests.framework */,
 			);
-			path = Frameworks;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3519F74622824D5500C7AF17 /* Notification */ = {
