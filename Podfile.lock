@@ -1,20 +1,25 @@
 PODS:
+  - AdvancedFoundation (1.6.2)
   - Nimble (8.1.2)
   - Quick (3.1.2)
 
 DEPENDENCIES:
+  - AdvancedFoundation (= 1.6.2)
   - Nimble (= 8.1.2)
   - Quick (= 3.1.2)
 
 SPEC REPOS:
+  https://github.com/adamaszhu/AdvancedFoundationSpecs.git:
+    - AdvancedFoundation
   trunk:
     - Nimble
     - Quick
 
 SPEC CHECKSUMS:
+  AdvancedFoundation: 4bb6deec36698c09a1b82eeea1b78b65e6358c08
   Nimble: 3864815b4703c7ebffba875973c70e854489fbae
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
 
-PODFILE CHECKSUM: 13b5ce9ea6c6646f8f796fd431e36bd6e7123af7
+PODFILE CHECKSUM: fc32d279895f569a150977cbe0e29d5c3cf33815
 
 COCOAPODS: 1.10.0
