@@ -27,9 +27,9 @@ open class PopupView: RootView {
         hostWindow.addSubview(self)
         animateChange({ [weak self] in
             self?.alpha = 1
-        }) {
+        }, completion:  {
             super.show()
-        }
+        })
     }
     
     @objc open override func hide() {
@@ -39,10 +39,10 @@ open class PopupView: RootView {
         }
         animateChange({ [weak self] in
             self?.alpha = 0
-        }) {
+        }, completion:  {
             self.removeFromSuperview()
             super.hide()
-        }
+        })
     }
     
     public required init?(coder aDecoder: NSCoder) {

@@ -125,13 +125,13 @@ open class InfiniteList: UITableView {
                 return
             }
             self.contentOffset = CGPoint(x: 0, y: self.reloadingOffsetY)
-        }) { [weak self] in
+        }, completion:  { [weak self] in
             guard let self = self else {
                 return
             }
             self.status = .reloading
             self.infiniteListDelegate?.infiniteListDidRequireReload(self)
-        }
+        })
     }
     
     /// Display a list of item depending on the status of the InfiniteList.
