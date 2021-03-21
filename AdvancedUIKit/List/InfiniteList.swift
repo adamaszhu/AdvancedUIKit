@@ -47,7 +47,7 @@ open class InfiniteList: UITableView {
     ///   - type: The item cell type.
     public func register(_ type: InfiniteCell.Type, with nib: UINib) {
         guard status == .initial else {
-            Logger.standard.logError(InfiniteList.registrationError)
+            Logger.standard.logError(Self.registrationError)
             return
         }
         register(nib, forCellReuseIdentifier: String(describing: type))
@@ -58,15 +58,15 @@ open class InfiniteList: UITableView {
     /// - Parameter nib: The nib file containing the view.
     public func registerEmptyState(with nib: UINib) {
         guard status == .initial else {
-            Logger.standard.logError(InfiniteList.registrationError)
+            Logger.standard.logError(Self.registrationError)
             return
         }
         guard let superview = superview else {
-            Logger.standard.logError(InfiniteList.superviewError)
+            Logger.standard.logError(Self.superviewError)
             return
         }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
-            Logger.standard.logError(InfiniteList.emptyStateNibError)
+            Logger.standard.logError(Self.emptyStateNibError)
             return
         }
         superview.addSubview(view)
@@ -80,11 +80,11 @@ open class InfiniteList: UITableView {
     /// - Parameter nib: The nib file containing the view.
     public func registerReloadingBar(with nib: UINib) {
         guard status == .initial else {
-            Logger.standard.logError(InfiniteList.registrationError)
+            Logger.standard.logError(Self.registrationError)
             return
         }
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
-            Logger.standard.logError(InfiniteList.reloadingBarNibError)
+            Logger.standard.logError(Self.reloadingBarNibError)
             return
         }
         addSubview(view)
@@ -101,11 +101,11 @@ open class InfiniteList: UITableView {
     /// - Parameter nib: The nib file containing the cell.
     public func registerLoadingMoreCell(with nib: UINib) {
         guard status == .initial else {
-            Logger.standard.logError(InfiniteList.registrationError)
+            Logger.standard.logError(Self.registrationError)
             return
         }
         guard let cell = nib.instantiate(withOwner: nil, options: nil).first as? UITableViewCell else {
-            Logger.standard.logError(InfiniteList.loadingMoreCellNibError)
+            Logger.standard.logError(Self.loadingMoreCellNibError)
             return
         }
         loadingMoreCell = cell
@@ -114,7 +114,7 @@ open class InfiniteList: UITableView {
     /// Perform drag and reload function programmatically.
     public func startReloading() {
         guard let _ = reloadingBar else {
-            Logger.standard.logError(InfiniteList.reloadingBarRegistrationError)
+            Logger.standard.logError(Self.reloadingBarRegistrationError)
             return
         }
         guard status.checkNextStatus(.reloading) else {
@@ -144,7 +144,7 @@ open class InfiniteList: UITableView {
         case .loadingMore:
             append(items)
         default:
-            Logger.standard.logError(InfiniteList.displayStatusError)
+            Logger.standard.logError(Self.displayStatusError)
         }
         // Adjust the content offset.
         if contentOffset.y < 0 {
@@ -157,7 +157,7 @@ open class InfiniteList: UITableView {
     /// - Parameter indexPath: The index path of the cell.
     private func expandCell(at indexPath: IndexPath) {
         guard let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
-            Logger.standard.logWarning(InfiniteList.cellExpansionWarning, withDetail: index)
+            Logger.standard.logWarning(Self.cellExpansionWarning, withDetail: index)
             return
         }
         cell.expand()
@@ -169,7 +169,7 @@ open class InfiniteList: UITableView {
     /// - Parameter indexPath: The index path of the cell.
     private func collapseCell(at indexPath: IndexPath) {
         guard let cell = cellForRow(at: indexPath) as? InfiniteCell, cell.isExpandable else {
-            Logger.standard.logWarning(InfiniteList.cellCollapsionWarning, withDetail: index)
+            Logger.standard.logWarning(Self.cellCollapsionWarning, withDetail: index)
             return
         }
         cell.collapse()
@@ -179,11 +179,11 @@ open class InfiniteList: UITableView {
     /// Show the empty state.
     private func showEmptyState() {
         guard let emptyState = emptyState else {
-            Logger.standard.logError(InfiniteList.emptyStateRegistrationError)
+            Logger.standard.logError(Self.emptyStateRegistrationError)
             return
         }
         guard emptyState.isHidden else {
-            Logger.standard.logWarning(InfiniteList.emptyStateShowWarning)
+            Logger.standard.logWarning(Self.emptyStateShowWarning)
             return
         }
         emptyState.animateChange({
@@ -197,11 +197,11 @@ open class InfiniteList: UITableView {
     /// Hide the empty state.
     private func hideEmptyState() {
         guard let emptyState = emptyState else {
-            Logger.standard.logError(InfiniteList.emptyStateRegistrationError)
+            Logger.standard.logError(Self.emptyStateRegistrationError)
             return
         }
         guard !emptyState.isHidden else {
-            Logger.standard.logWarning(InfiniteList.emptyStateHideWarning)
+            Logger.standard.logWarning(Self.emptyStateHideWarning)
             return
         }
         emptyState.animateChange({
@@ -284,12 +284,12 @@ extension InfiniteList: UITableViewDataSource {
             return loadingMoreCell
         }
         guard let item = items.element(atIndex: index) else {
-            Logger.standard.logError(InfiniteList.cellError, withDetail: index)
+            Logger.standard.logError(Self.cellError, withDetail: index)
             return UITableViewCell()
         }
         let cellID = String(describing: item.type)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as? InfiniteCell else {
-            Logger.standard.logError(InfiniteList.cellError, withDetail: cellID)
+            Logger.standard.logError(Self.cellError, withDetail: cellID)
             return UITableViewCell()
         }
         cell.render(withItem: item.item)
@@ -329,7 +329,9 @@ extension InfiniteList: UITableViewDataSource {
         return isEditable && !cell.isExpandable
     }
     
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView,
+                          commit editingStyle: UITableViewCell.EditingStyle,
+                          forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
             guard status.isStable, let item = items.element(atIndex: indexPath.row)?.item else {
@@ -348,7 +350,9 @@ extension InfiniteList: UITableViewDataSource {
         }
     }
     
-    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView,
+                          willDisplay cell: UITableViewCell,
+                          forRowAt indexPath: IndexPath) {
         if cell == loadingMoreCell, status.checkNextStatus(.loadingMore) {
             status = .loadingMore
             infiniteListDelegate?.infiniteList(self, didRequireLoadPage: pageAmount)
@@ -367,7 +371,7 @@ extension InfiniteList: UIScrollViewDelegate {
     
     /// The y offset for displaying the last item.
     private var bottomOffsetY: CGFloat {
-        return max(contentSize.height - frame.height, 0)
+        max(contentSize.height - frame.height, 0)
     }
 
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

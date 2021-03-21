@@ -39,11 +39,11 @@ final public class CameraHelper {
     /// Authorize the camera.
     public func requestCameraAuthorization() {
         guard isCameraUndetermined else {
-            delegate?.cameraHelper(self, didCatchError: CameraHelper.cameraAuthorizationError.localizedInternalString(forType: CameraHelper.self))
+            delegate?.cameraHelper(self, didCatchError: CameraHelper.cameraAuthorizationError.localizedInternalString(forType: Self.self))
             return
         }
-        guard isDescriptionKeyExisted(CameraHelper.cameraDescriptionKey) == true else {
-            Logger.standard.logError(CameraHelper.descriptionKeyError, withDetail: CameraHelper.cameraDescriptionKey)
+        guard isDescriptionKeyExisted(Self.cameraDescriptionKey) == true else {
+            Logger.standard.logError(Self.descriptionKeyError, withDetail: Self.cameraDescriptionKey)
             return
         }
         AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { [weak self] result in
@@ -57,11 +57,11 @@ final public class CameraHelper {
     /// Authorize the library.
     public func requestLibraryAuthorization() {
         guard isLibraryUndetermined else {
-            delegate?.cameraHelper(self, didCatchError: CameraHelper.libraryAuthorizationError.localizedInternalString(forType: CameraHelper.self))
+            delegate?.cameraHelper(self, didCatchError: CameraHelper.libraryAuthorizationError.localizedInternalString(forType: Self.self))
             return
         }
         guard isDescriptionKeyExisted(CameraHelper.libraryDescriptionKey) == true else {
-            Logger.standard.logError(CameraHelper.descriptionKeyError, withDetail: CameraHelper.libraryDescriptionKey)
+            Logger.standard.logError(Self.descriptionKeyError, withDetail: Self.libraryDescriptionKey)
             return
         }
         PHPhotoLibrary.requestAuthorization { [weak self] result in
@@ -84,7 +84,7 @@ final public class CameraHelper {
     /// - Parameter key: The key to be checked.
     /// - Returns: Whether the key exists or not.
     private func isDescriptionKeyExisted(_ key: String) -> Bool {
-        return bundle.object(forInfoDictionaryKey: key) != nil
+        bundle.object(forInfoDictionaryKey: key) != nil
     }
 }
 

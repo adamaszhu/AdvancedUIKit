@@ -12,7 +12,7 @@ public extension UIScrollView {
     func contentScreenshot(withScale scale: Double = 1) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(contentSize, isOpaque, CGFloat(scale))
         guard let context = UIGraphicsGetCurrentContext() else {
-            Logger.standard.logError(UIScrollView.contextError)
+            Logger.standard.logError(Self.contextError)
             return nil
         }
         let previousFrame = frame

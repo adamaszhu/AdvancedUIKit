@@ -19,14 +19,12 @@ public extension UILabel {
     }
     
     /// Get the height of each line.
-    var lineHeight: CGFloat {
-        return font.lineHeight
-    }
+    var lineHeight: CGFloat { font.lineHeight }
     
     /// How many lines are presented.
     var lineAmount: Int {
         guard let text = text else {
-            Logger.standard.logWarning(UILabel.textWarning)
+            Logger.standard.logWarning(Self.textWarning)
             return 0
         }
         return text.measuredLineAmount(with: font, in: self)
@@ -35,7 +33,7 @@ public extension UILabel {
     /// The actual height of the text.
     var actualHeight: CGFloat {
         guard let text = text else {
-            Logger.standard.logWarning(UILabel.textWarning)
+            Logger.standard.logWarning(Self.textWarning)
             return 0
         }
         return text.measuredHeight(with: font, in: self)

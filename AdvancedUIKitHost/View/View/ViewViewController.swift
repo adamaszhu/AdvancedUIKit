@@ -56,7 +56,7 @@ final class ViewViewController: UIViewController {
     
     private func configStaticView() {
         staticView.height = ViewViewController.staticViewHeight
-        staticView.pinEdgesToSuperview(with: UIEdgeInsetsMake(ViewViewController.staticViewMargin, ViewViewController.staticViewMargin, .invalidInset, ViewViewController.staticViewMargin))
+        staticView.pinEdgesToSuperview(with: UIEdgeInsets.init(top: ViewViewController.staticViewMargin, left: ViewViewController.staticViewMargin, bottom: .invalidInset, right: ViewViewController.staticViewMargin))
     }
 }
 

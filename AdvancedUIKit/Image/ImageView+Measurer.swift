@@ -8,7 +8,7 @@ public extension UIImageView {
     /// Calculate the real frame if the image within the UIImageView.
     var imageFrame: CGRect? {
         guard let image = image else {
-            Logger.standard.logError(UIImageView.imageError)
+            Logger.standard.logError(Self.imageError)
             return nil
         }
         let imageRatio = image.size.width / image.size.height
@@ -37,7 +37,7 @@ public extension UIImageView {
                 imageWidth = frame.size.width
             }
         default:
-            Logger.standard.logError(UIImageView.contentModeError)
+            Logger.standard.logError(Self.contentModeError)
             return nil
         }
         return CGRect(x: frame.origin.x + center.x - imageWidth / 2, y: frame.origin.y + center.y - imageHeight / 2, width: imageWidth, height: imageHeight)
