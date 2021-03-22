@@ -66,6 +66,12 @@ final public class DeviceHelper: NSObject {
                           withContent content: String,
                           withAttachments attachments: [String: Data] = [:],
                           asHTMLContent isHTML: Bool = false) {
+
+        guard MFMailComposeViewController.canSendMail() else {
+            Logger.standard.logInfo(Self.emailError, withDetail: address)
+            delegate?.deviceHelper(self, didCatchError: Self.emailError.localizedInternalString(forType: Self.self))
+            return
+        }
         let mailViewController = MFMailComposeViewController()
         mailViewController.mailComposeDelegate = self
         mailViewController.setToRecipients([address])
@@ -126,6 +132,7 @@ private extension DeviceHelper {
     static let mapError = "MapError"
     static let browserError = "BrowserError"
     static let systemSettingError = "SystemSettingError"
+    static let emailError = "EmailError"
     
     /// System error.
     static let phoneNumberError = "The phone number is invalid."

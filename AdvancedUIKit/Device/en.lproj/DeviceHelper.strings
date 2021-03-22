@@ -2,3 +2,4 @@
 "MapError" = "The map application is not installed.";
 "BrowserError" = "The browser is not installed.";
 "SystemSettingError" = "The system setting cannot be opened.";
+"EmailError" = "Emails cannot be sent.";
