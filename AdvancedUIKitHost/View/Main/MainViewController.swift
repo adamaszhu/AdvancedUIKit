@@ -1,6 +1,6 @@
 final class MainViewController: UIViewController {
     
-    let features: [Feature] = [.actionSheet, .application, .audio, .button, .device, .image, .keyboard, .label, .list, .localization, .location, .map, .message, .navigation, .notification, .picker, .textField, .view]
+    let features: [Feature] = Feature.allCases
     
     @IBOutlet private weak var featureTable: UITableView!
     
@@ -14,7 +14,7 @@ final class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return features.count
+        features.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

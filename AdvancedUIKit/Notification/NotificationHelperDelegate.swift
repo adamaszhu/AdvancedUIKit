@@ -13,12 +13,14 @@ public protocol NotificationHelperDelegate: class {
     /// Local notification authorization has been decided.
     ///
     /// - Parameter result: The result of the authorization.
-    func notificationHelper(_ notificationHelper: NotificationHelperType, didAuthorizeLocalNotification result: Bool)
+    func notificationHelper(_ notificationHelper: NotificationHelperType,
+                            didAuthorizeLocalNotification result: Bool)
 
     /// The notification is not authorized.
     ///
     /// - Parameter error: The error message.
-    func notificationHelper(_ notificationHelper: NotificationHelperType, didCatchError error: String)
+    func notificationHelper(_ notificationHelper: NotificationHelperType,
+                            didCatchError error: String)
 }
 
 import UIKit

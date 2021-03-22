@@ -24,9 +24,7 @@ final public class ExpandableMapView: MapView {
             collapseButton.frame.size = newImage.size
             collapseButtonBackgroundView.frame.size = newImage.size
         }
-        get {
-            return collapseButton.imageView?.image
-        }
+        get { collapseButton.imageView?.image }
     }
     
     /// The origin of the collapse button.
@@ -35,9 +33,7 @@ final public class ExpandableMapView: MapView {
             collapseButton.frame = newValue
             collapseButtonBackgroundView.frame = newValue
         }
-        get {
-            return collapseButton.frame
-        }
+        get { collapseButton.frame }
     }
     
     /// The radius of the background view.
@@ -46,9 +42,7 @@ final public class ExpandableMapView: MapView {
             collapseButtonBackgroundView.layer.cornerRadius = CGFloat(newValue)
             collapseButtonBackgroundView.clipsToBounds = true
         }
-        get {
-            return Int(collapseButtonBackgroundView.layer.cornerRadius)
-        }
+        get { Int(collapseButtonBackgroundView.layer.cornerRadius) }
     }
     
     /// The background margin.
@@ -113,14 +107,12 @@ extension ExpandableMapView: ExpandableView {
                 collapseButtonBackgroundView.removeFromSuperview()
             }
         }
-        get {
-            return subviews.contains(gestureFilterView)
-        }
+        get { subviews.contains(gestureFilterView) }
     }
     
     var isExpanded: Bool {
         guard let _ = superview else {
-            Logger.standard.logError(ExpandableMapView.superviewError)
+            Logger.standard.logError(Self.superviewError)
             return false
         }
         return superview == window
@@ -128,11 +120,11 @@ extension ExpandableMapView: ExpandableView {
     
     @objc public func expand() {
         guard !isExpanded, isExpandable else {
-            Logger.standard.logWarning(ExpandableMapView.expandingWarning)
+            Logger.standard.logWarning(Self.expandingWarning)
             return
         }
         guard let window = window else {
-            Logger.standard.logError(ExpandableMapView.windowError)
+            Logger.standard.logError(Self.windowError)
             return
         }
         saveOriginalConstraints(of: self)
@@ -160,11 +152,11 @@ extension ExpandableMapView: ExpandableView {
     
     @objc public func collapse() {
         guard isExpanded, isExpandable else {
-            Logger.standard.logWarning(ExpandableMapView.collapsingWarning)
+            Logger.standard.logWarning(Self.collapsingWarning)
             return
         }
         guard let window = window else {
-            Logger.standard.logError(ExpandableMapView.windowError)
+            Logger.standard.logError(Self.windowError)
             return
         }
         animateChange({ [weak self] in

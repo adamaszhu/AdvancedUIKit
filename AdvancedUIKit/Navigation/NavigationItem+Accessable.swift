@@ -7,22 +7,14 @@ public extension UINavigationItem {
     
     /// Set the title of the left navigation button.
     var leftButtonTitle: String? {
-        set {
-            leftButton?.title = newValue
-        }
-        get {
-            return leftButton?.title
-        }
+        set { leftButton?.title = newValue }
+        get { leftButton?.title }
     }
     
     /// Set the title of the right navigation button.
     var rightButtonTitle: String? {
-        set {
-            rightButton?.title = newValue
-        }
-        get {
-            return rightButton?.title
-        }
+        set { rightButton?.title = newValue }
+        get { rightButton?.title }
     }
     
     /// The left navigation button.

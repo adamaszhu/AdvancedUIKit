@@ -16,9 +16,7 @@ final class UnderlineView: UIView {
         set {
             backgroundColor = newValue ? highlightedColor : color
         }
-        get {
-            return backgroundColor == highlightedColor
-        }
+        get { backgroundColor == highlightedColor }
     }
 }
 

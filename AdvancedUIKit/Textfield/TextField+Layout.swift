@@ -8,7 +8,7 @@ public extension UITextField {
     /// Get the height of each line.
     var lineHeight: CGFloat {
         guard let font = font else {
-            Logger.standard.logWarning(UITextField.fontEmptyWarning)
+            Logger.standard.logWarning(Self.fontEmptyWarning)
             return 0
         }
         return font.lineHeight

@@ -15,13 +15,13 @@ open class PopupView: RootView {
         hostWindow = window ?? UIWindow(frame: .zero)
         super.init(frame: hostWindow.frame)
         alpha = 0
-        self.backgroundColor = PopupView.defaultBackgroundColor
+        self.backgroundColor = Self.defaultBackgroundColor
         super.hide()
     }
     
     @objc open override func show() {
         guard !isVisible else {
-            Logger.standard.logWarning(PopupView.showingWarning)
+            Logger.standard.logWarning(Self.showingWarning)
             return
         }
         hostWindow.addSubview(self)
@@ -34,7 +34,7 @@ open class PopupView: RootView {
     
     @objc open override func hide() {
         guard isVisible else {
-            Logger.standard.logWarning(PopupView.hidingWarning)
+            Logger.standard.logWarning(Self.hidingWarning)
             return
         }
         animateChange({ [weak self] in
@@ -46,7 +46,7 @@ open class PopupView: RootView {
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(PopupView.initError)
+        Logger.standard.logError(Self.initError)
         return nil
     }
     

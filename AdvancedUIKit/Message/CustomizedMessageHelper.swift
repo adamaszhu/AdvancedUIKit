@@ -10,22 +10,14 @@ final public class CustomizedMessageHelper: PopupView {
     
     /// The mask color.
     public var maskColor: UIColor? {
-        set {
-            backgroundColor = newValue
-        }
-        get {
-            return backgroundColor
-        }
+        set { backgroundColor = newValue }
+        get { backgroundColor }
     }
     
     /// The background color of the message frame.
     public var frameColor: UIColor? {
-        set {
-            frameView.backgroundColor = newValue
-        }
-        get {
-            return frameView.backgroundColor
-        }
+        set { frameView.backgroundColor = newValue }
+        get { frameView.backgroundColor }
     }
     
     /// The visibility of the second button.
@@ -36,9 +28,7 @@ final public class CustomizedMessageHelper: PopupView {
             cancelButton.isHidden = !newValue
             buttonSeperatorView.isHidden = !newValue
         }
-        get {
-            return !cancelButton.isHidden
-        }
+        get { !cancelButton.isHidden }
     }
     
     /// The title of the message.
@@ -47,27 +37,23 @@ final public class CustomizedMessageHelper: PopupView {
             let title = newValue?.isEmpty == true ? nil : newValue
             titleLabel.text = title
             titleLabel.frame.size = CGSize(width: titleLabel.frame.width, height: titleLabel.actualHeight)
-            let titleViewY = title == nil ? CustomizedMessageHelper.padding : CustomizedMessageHelper.padding * 2
+            let titleViewY = title == nil ? Self.padding : Self.padding * 2
             titleView.frame = CGRect(x: titleView.frame.origin.x, y: titleViewY, width: titleView.frame.width, height: titleLabel.frame.height)
         }
-        get {
-            return titleLabel.text
-        }
+        get { titleLabel.text }
     }
     
     /// The content height.
     private var contentHeight: CGFloat {
         set {
-            let contentViewY = titleView.frame.height + titleView.frame.origin.y + CustomizedMessageHelper.padding
+            let contentViewY = titleView.frame.height + titleView.frame.origin.y + Self.padding
             contentView.frame = CGRect(x: contentView.frame.origin.x ,y: contentViewY, width: contentView.frame.width, height: newValue)
-            let buttonViewY = contentViewY + contentView.frame.height + CustomizedMessageHelper.padding * 1.5
+            let buttonViewY = contentViewY + contentView.frame.height + Self.padding * 1.5
             buttonView.frame.origin = CGPoint(x: buttonView.frame.origin.x, y: buttonViewY)
             let frameHeight = buttonViewY + buttonView.frame.height
             frameView.frame = CGRect(x: frameView.frame.origin.x, y: (frame.height - frameHeight) / 2, width: frameView.frame.width, height: frameHeight)
         }
-        get {
-            return contentView.frame.height - CustomizedMessageHelper.padding * 2
-        }
+        get { contentView.frame.height - Self.padding * 2 }
     }
     
     /// The type of current message.
@@ -92,7 +78,10 @@ final public class CustomizedMessageHelper: PopupView {
     ///   - content: The content of the message. If it is nil, then it will be an input message
     ///   - confirmButtonName: The name of the confirm button. If this is nil, the confirm button will not be shown.
     ///   - cancelButtonName: The name of the cancel button.
-    private func showMessage(withTitle title: String, content: String?, confirmButtonName: String, andCancelButtonName cancelButtonName: String?) {
+    private func showMessage(withTitle title: String,
+                             content: String?,
+                             confirmButtonName: String,
+                             andCancelButtonName cancelButtonName: String?) {
         let title = title.localizedInternalString(forType: MessageHelper.self)
         let confirmButtonName = confirmButtonName.localizedInternalString(forType: MessageHelper.self)
         let cancelButtonName = cancelButtonName?.localizedInternalString(forType: MessageHelper.self)
@@ -104,12 +93,12 @@ final public class CustomizedMessageHelper: PopupView {
         messageLabel.isHidden = isInput
         inputText.isHidden = !isInput
         if isInput {
-            inputText.placeholder = CustomizedMessageHelper.inputHint + title.lowercased()
-            inputText.placeholderColor = CustomizedMessageHelper.defaultInputPlaceHolderColor
+            inputText.placeholder = Self.inputHint + title.lowercased()
+            inputText.placeholderColor = Self.defaultInputPlaceHolderColor
             contentHeight = inputText.frame.height
         } else {
             messageLabel.text = content
-            let messageHeight = messageLabel.actualHeight > frame.height * CustomizedMessageHelper.maxHeightWeight ? frame.height * CustomizedMessageHelper.maxHeightWeight : messageLabel.actualHeight
+            let messageHeight = messageLabel.actualHeight > frame.height * Self.maxHeightWeight ? frame.height * Self.maxHeightWeight : messageLabel.actualHeight
             messageLabel.frame.size = CGSize(width: messageLabel.frame.width, height: messageHeight)
             contentHeight = messageLabel.frame.height
         }
@@ -125,47 +114,47 @@ final public class CustomizedMessageHelper: PopupView {
     /// Initialize the object
     public init() {
         super.init()
-        backgroundColor = CustomizedMessageHelper.defaultMaskBackgroundColor
-        let contentWidth = frame.width * CustomizedMessageHelper.widthWeight - CustomizedMessageHelper.padding * 2
+        backgroundColor = Self.defaultMaskBackgroundColor
+        let contentWidth = frame.width * Self.widthWeight - Self.padding * 2
         // The height of messageLabel, contentView
         // The y location of messageView and buttonView will be settled dynamically later.
         // Frame view. The height and Y will be changed later.
-        frameView.frame = CGRect(x: frame.width * (1 - CustomizedMessageHelper.widthWeight) / 2, y: 0, width: frame.width * CustomizedMessageHelper.widthWeight, height: 0)
-        frameView.backgroundColor = CustomizedMessageHelper.defaultMessageBackgroundColor
-        frameView.layer.cornerRadius = CustomizedMessageHelper.radius
+        frameView.frame = CGRect(x: frame.width * (1 - Self.widthWeight) / 2, y: 0, width: frame.width * Self.widthWeight, height: 0)
+        frameView.backgroundColor = Self.defaultMessageBackgroundColor
+        frameView.layer.cornerRadius = Self.radius
         addSubview(frameView)
         // Title label. The height will be changed later.
         titleLabel.frame = CGRect(x: 0, y: 0, width: contentWidth, height: 0)
-        titleLabel.textColor = CustomizedMessageHelper.defaultTextColor
+        titleLabel.textColor = Self.defaultTextColor
         titleLabel.font = UIFont.boldSystemFont(ofSize: titleLabel.font.pointSize)
         titleLabel.textAlignment = .center
         titleView.addSubview(titleLabel)
         // Title view. The height and Y will be changed later.
-        titleView.frame = CGRect(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 0)
+        titleView.frame = CGRect(x: Self.padding, y: 0, width: contentWidth, height: 0)
         frameView.addSubview(titleView)
         // Message label. The height will be changed later.
         messageLabel.frame = CGRect(x: 0, y: 0, width: contentWidth, height: 0)
-        messageLabel.textColor = CustomizedMessageHelper.defaultTextColor
+        messageLabel.textColor = Self.defaultTextColor
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
         contentView.addSubview(messageLabel)
         // Input text.
         inputText.frame = CGRect(x: 0, y: 0, width: contentWidth, height: inputText.lineHeight)
-        inputText.textColor = CustomizedMessageHelper.defaultTextColor
-        inputText.tintColor = CustomizedMessageHelper.defaultTextColor
+        inputText.textColor = Self.defaultTextColor
+        inputText.tintColor = Self.defaultTextColor
         inputText.textAlignment = .center
         contentView.addSubview(inputText)
         // Content view. The height and Y will be changed later.
-        contentView.frame = CGRect(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 0)
+        contentView.frame = CGRect(x: Self.padding, y: 0, width: contentWidth, height: 0)
         frameView.addSubview(contentView)
         // Line view.
         let lineView = UIView()
-        lineView.backgroundColor = CustomizedMessageHelper.defaultSeperatorColor
-        lineView.frame = CGRect(x: CustomizedMessageHelper.padding, y: 0, width: contentWidth, height: 1)
+        lineView.backgroundColor = Self.defaultSeperatorColor
+        lineView.frame = CGRect(x: Self.padding, y: 0, width: contentWidth, height: 1)
         buttonView.addSubview(lineView)
         // First button and second button.
         cancelButton.title = .empty
-        cancelButton.frame = CGRect(x: 0, y: lineView.frame.size.height, width: frameView.frame.width / 2, height: cancelButton.lineHeight + CustomizedMessageHelper.padding * 2)
+        cancelButton.frame = CGRect(x: 0, y: lineView.frame.size.height, width: frameView.frame.width / 2, height: cancelButton.lineHeight + Self.padding * 2)
         cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         buttonView.addSubview(cancelButton)
         confirmButton.title = .empty
@@ -173,8 +162,8 @@ final public class CustomizedMessageHelper: PopupView {
         confirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
         buttonView.addSubview(confirmButton)
         // Button seperate view.
-        buttonSeperatorView.frame = CGRect(x: confirmButton.frame.origin.x, y: lineView.frame.size.height + CustomizedMessageHelper.padding / 2, width: 1, height: confirmButton.frame.height - CustomizedMessageHelper.padding)
-        buttonSeperatorView.backgroundColor = CustomizedMessageHelper.defaultSeperatorColor
+        buttonSeperatorView.frame = CGRect(x: confirmButton.frame.origin.x, y: lineView.frame.size.height + Self.padding / 2, width: 1, height: confirmButton.frame.height - Self.padding)
+        buttonSeperatorView.backgroundColor = Self.defaultSeperatorColor
         buttonView.addSubview(buttonSeperatorView)
         // Button view. The Y will be changed later.
         buttonView.frame = CGRect(x: 0, y: 0, width: frameView.frame.width, height: lineView.frame.size.height + confirmButton.frame.size.height)
@@ -197,7 +186,7 @@ final public class CustomizedMessageHelper: PopupView {
             inputText.text = .empty
             break
         case .unknown:
-            Logger.standard.logError(CustomizedMessageHelper.typeError)
+            Logger.standard.logError(Self.typeError)
             break
         }
         hide()
@@ -216,7 +205,7 @@ final public class CustomizedMessageHelper: PopupView {
             inputText.text = .empty
             break
         case .unknown:
-            Logger.standard.logError(CustomizedMessageHelper.typeError)
+            Logger.standard.logError(Self.typeError)
             break
         }
         hide()
@@ -225,7 +214,7 @@ final public class CustomizedMessageHelper: PopupView {
     /// Hide previous message.
     private func hidePreviousMessage() {
         guard messageType != .unknown else {
-            Logger.standard.logError(CustomizedMessageHelper.typeError)
+            Logger.standard.logError(Self.typeError)
             return
         }
         messageType = .unknown
@@ -233,7 +222,7 @@ final public class CustomizedMessageHelper: PopupView {
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(CustomizedMessageHelper.initError)
+        Logger.standard.logError(Self.initError)
         return nil
     }
 }
@@ -241,25 +230,34 @@ final public class CustomizedMessageHelper: PopupView {
 /// MessageHelper
 extension CustomizedMessageHelper: MessageHelper {
     
-    public func showInfo(_ content: String, withTitle title: String = successTitle, withConfirmButtonName confirmButtonName: String = infoConfirmButtonName) {
+    public func showInfo(_ content: String,
+                         withTitle title: String = successTitle,
+                         withConfirmButtonName confirmButtonName: String = infoConfirmButtonName) {
         hidePreviousMessage()
         messageType = .info
         showMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: nil)
     }
     
-    public func showWarning(_ content: String, withTitle title: String = warningTitle, withConfirmButtonName confirmButtonName: String = warningConfirmButtonName, withCancelButtonName cancelButtonName: String = warningCancelButtonName) {
+    public func showWarning(_ content: String,
+                            withTitle title: String = warningTitle,
+                            withConfirmButtonName confirmButtonName: String = warningConfirmButtonName,
+                            withCancelButtonName cancelButtonName: String = warningCancelButtonName) {
         hidePreviousMessage()
         messageType = .warning
         showMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: cancelButtonName)
     }
     
-    public func showError(_ content: String, withTitle title: String = errorTitle, withConfirmButtonName confirmButtonName: String = errorConfirmButtonName) {
+    public func showError(_ content: String,
+                          withTitle title: String = errorTitle,
+                          withConfirmButtonName confirmButtonName: String = errorConfirmButtonName) {
         hidePreviousMessage()
         messageType = .error
         showMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: nil)
     }
     
-    public func showInput(withTitle title: String, withConfirmButtonName confirmButtonName: String = inputConfirmButtonName, withCancelButtonName cancelButtonName: String = inputCancelButtonName) {
+    public func showInput(withTitle title: String,
+                          withConfirmButtonName confirmButtonName: String = inputConfirmButtonName,
+                          withCancelButtonName cancelButtonName: String = inputCancelButtonName) {
         hidePreviousMessage()
         messageType = .input
         showMessage(withTitle: title, content: nil, confirmButtonName: confirmButtonName, andCancelButtonName: cancelButtonName)

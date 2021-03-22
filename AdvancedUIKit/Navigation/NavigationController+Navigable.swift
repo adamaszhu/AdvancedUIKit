@@ -11,10 +11,12 @@ public extension UINavigationController {
     ///   - name: The name of the storyboard.
     ///   - animate: Whether animation should be performed or not.
     ///   - initialization: Initialize the view controller.
-    func showInitialViewController(ofStoryboard storyboardName: String, withAnimation shouldAnimate: Bool = true, initialization: ((UIViewController) -> Void) = { _ in }) {
+    func showInitialViewController(ofStoryboard storyboardName: String,
+                                   withAnimation shouldAnimate: Bool = true,
+                                   initialization: ((UIViewController) -> Void) = { _ in }) {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         guard let viewController = storyboard.instantiateInitialViewController() else {
-            Logger.standard.logError(UINavigationController.viewControllerError)
+            Logger.standard.logError(Self.viewControllerError)
             return
         }
         initialization(viewController)
@@ -28,14 +30,17 @@ public extension UINavigationController {
     ///   - identifier: The id of the view controller.
     ///   - shouldAnimate: Whether animation should be performed or not.
     ///   - initialization: Initialize the view controller.
-    func showViewController(ofStoryboard storyboardName: String? = nil, withIdentifier identifier: String, withAnimation shouldAnimate: Bool = true, initialization: ((UIViewController) -> Void) = { _ in }) {
+    func showViewController(ofStoryboard storyboardName: String? = nil,
+                            withIdentifier identifier: String,
+                            withAnimation shouldAnimate: Bool = true,
+                            initialization: ((UIViewController) -> Void) = { _ in }) {
         let storyboard: UIStoryboard
         if let storyboardName = storyboardName {
             storyboard  = UIStoryboard(name: storyboardName, bundle: nil)
         } else if let currentStoryboard = self.storyboard {
             storyboard = currentStoryboard
         } else {
-            Logger.standard.logError(UINavigationController.viewControllerError)
+            Logger.standard.logError(Self.viewControllerError)
             return
         }
         let viewController = storyboard.instantiateViewController(withIdentifier: identifier)

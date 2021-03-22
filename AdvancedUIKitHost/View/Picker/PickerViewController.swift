@@ -9,8 +9,8 @@ final class PickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataPicker.delegate = self
-        dataPicker.title = PickerViewController.pickerTitle
-        dataPicker.titleBackgroundColor = PickerViewController.pickerTitleColor
+        dataPicker.title = Self.pickerTitle
+        dataPicker.titleBackgroundColor = Self.pickerTitleColor
     }
     
     @IBAction func showDataPicker(_ sender: Any) {
