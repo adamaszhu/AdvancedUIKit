@@ -31,7 +31,7 @@ final public class ExpandableGalleryView: GalleryView {
     public override func add(_ image: UIImage) {
         super.add(image)
         guard let galleryImage = subviews.last as? GalleryImage else {
-            Logger.standard.logError(ExpandableGalleryView.subviewTypeError)
+            Logger.standard.logError(Self.subviewTypeError)
             return
         }
         collapseGestureRecognizer.require(toFail: galleryImage.doubleTapGestureRecognizer)
