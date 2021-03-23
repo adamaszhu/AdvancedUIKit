@@ -115,13 +115,15 @@ final public class NotificationHelper: NotificationHelperType {
     
     public func requestLocalNotificationPermission() {
         notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] result, error in
-            guard let self = self else {
-                return
-            }
-            if let error = error {
-                self.delegate?.notificationHelper(self, didCatchError: error.localizedDescription)
-            } else {
-                self.delegate?.notificationHelper(self, didAuthorizeLocalNotification: result)
+            DispatchQueue.main.async {
+                guard let self = self else {
+                    return
+                }
+                if let error = error {
+                    self.delegate?.notificationHelper(self, didCatchError: error.localizedDescription)
+                } else {
+                    self.delegate?.notificationHelper(self, didAuthorizeLocalNotification: result)
+                }
             }
         }
     }
