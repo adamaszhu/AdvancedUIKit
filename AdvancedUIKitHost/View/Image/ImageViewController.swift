@@ -152,7 +152,13 @@ extension ImageViewController: MessageHelperDelegate {
     func messageHelper(_ messageHelper: MessageHelper, didConfirmInput content: String) {
         let codeHelper = CodeHelper()
         if let image = codeHelper.createCode(content, as: codeType, with: ImageViewController.size) {
-            galleryView.add(image)
+            if #available(iOS 14, *) {
+                galleryView.imageMode = .scaleToFill
+                galleryView.add(image)
+                galleryView.imageMode = .scaleAspectFit
+            } else {
+                galleryView.add(image)
+            }
         }
     }
 }

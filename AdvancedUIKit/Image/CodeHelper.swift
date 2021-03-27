@@ -7,6 +7,9 @@ public final class CodeHelper {
     
     /// Create a code image.
     ///
+    /// - Important:
+    /// On iOS 14, the generated image cannot be applied to an `UIImageView` within a `UIScrollView`, whose `contentMode` is `.scaleAspectFit` or `.scaleAspectFill`.
+    ///
     /// - Parameters:
     ///   - code: The code.
     ///   - type: The code type.
