@@ -65,10 +65,12 @@ final public class CameraHelper {
             return
         }
         PHPhotoLibrary.requestAuthorization { [weak self] result in
-            guard let self = self else {
-                return
+            DispatchQueue.main.async {
+                guard let self = self else {
+                    return
+                }
+                self.delegate?.cameraHelper(self, didAuthorizeLibrary: result == .authorized)
             }
-            self.delegate?.cameraHelper(self, didAuthorizeLibrary: result == .authorized)
         }
     }
     
