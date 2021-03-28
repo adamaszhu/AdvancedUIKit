@@ -16,21 +16,21 @@ public struct RemoteNotification {
     /// - Parameter userInfo: The payload received along with a notification
     public init?(userInfo: [AnyHashable : Any]) {
         guard let userInfo = userInfo as? NotificationDictionary,
-            let aps = userInfo[RemoteNotification.apsKey] as? NotificationDictionary else {
-                Logger.standard.logError(RemoteNotification.userInfoError)
+            let aps = userInfo[Self.apsKey] as? NotificationDictionary else {
+                Logger.standard.logError(Self.userInfoError)
                 return nil
         }
-        if let alert = aps[RemoteNotification.alertKey] as? String {
+        if let alert = aps[Self.alertKey] as? String {
             title = alert
             body = nil
             return
         }
-        guard let alert = aps[RemoteNotification.alertKey] as? NotificationDictionary else {
-            Logger.standard.logError(RemoteNotification.userInfoError)
+        guard let alert = aps[Self.alertKey] as? NotificationDictionary else {
+            Logger.standard.logError(Self.userInfoError)
             return nil
         }
-        body = alert[RemoteNotification.bodyKey] as? String
-        title = alert[RemoteNotification.titleKey] as? String
+        body = alert[Self.bodyKey] as? String
+        title = alert[Self.titleKey] as? String
     }
 }
 

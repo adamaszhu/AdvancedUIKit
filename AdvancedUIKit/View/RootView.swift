@@ -17,7 +17,7 @@ open class RootView: UIView {
     /// Show the view.
     open func show() {
         if isVisible {
-            Logger.standard.logWarning(RootView.showingWarning)
+            Logger.standard.logWarning(Self.showingWarning)
         }
         isVisible = true
     }
@@ -25,7 +25,7 @@ open class RootView: UIView {
     /// Hide the view.
     open func hide() {
         if !isVisible {
-            Logger.standard.logWarning(RootView.hidingWarning)
+            Logger.standard.logWarning(Self.hidingWarning)
         }
         isVisible = false
     }

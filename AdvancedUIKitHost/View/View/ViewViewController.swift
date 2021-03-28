@@ -22,22 +22,22 @@ final class ViewViewController: UIViewController {
             guard let self = self else {
                 return
             }
-            self.animationButton.frame.origin = CGPoint(x: self.animationButtonOriginalFrame.origin.x, y: self.animationButtonOriginalFrame.origin.y - ViewViewController.animationOffset)
+            self.animationButton.frame.origin = CGPoint(x: self.animationButtonOriginalFrame.origin.x, y: self.animationButtonOriginalFrame.origin.y - Self.animationOffset)
             self.staticView.height = 0
             self.view.layoutIfNeeded()
-        }, withPreparation: { [weak self] in
+        }, preparation: { [weak self] in
             guard let self = self else {
                 return
             }
             self.animationButton.frame = self.animationButtonOriginalFrame
-            self.staticView.height = ViewViewController.staticViewHeight
+            self.staticView.height = Self.staticViewHeight
         }) { [weak self] in
             self?.animationButton.animateChange({ [weak self] in
                 guard let self = self else {
                     return
                 }
                 self.animationButton.frame = self.animationButtonOriginalFrame
-                self.staticView.height = ViewViewController.staticViewHeight
+                self.staticView.height = Self.staticViewHeight
                 self.view.layoutIfNeeded()
             })
         }
@@ -45,7 +45,7 @@ final class ViewViewController: UIViewController {
     
     private func configPopupView() {
         popupView.frame = view.bounds
-        popupView.backgroundColor = ViewViewController.popupViewBackgroundColor
+        popupView.backgroundColor = Self.popupViewBackgroundColor
         let tapGesture = UITapGestureRecognizer(target: popupView, action: #selector(PopupView.hide))
         popupView.addGestureRecognizer(tapGesture)
     }
@@ -55,8 +55,8 @@ final class ViewViewController: UIViewController {
     }
     
     private func configStaticView() {
-        staticView.height = ViewViewController.staticViewHeight
-        staticView.pinEdgesToSuperview(with: UIEdgeInsetsMake(ViewViewController.staticViewMargin, ViewViewController.staticViewMargin, .invalidInset, ViewViewController.staticViewMargin))
+        staticView.height = Self.staticViewHeight
+        staticView.pinEdgesToSuperview(with: UIEdgeInsets.init(top: Self.staticViewMargin, left: Self.staticViewMargin, bottom: .invalidInset, right: Self.staticViewMargin))
     }
 }
 

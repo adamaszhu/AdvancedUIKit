@@ -13,7 +13,9 @@ public protocol MessageHelper {
     ///   - title: The title of the message.
     ///   - content: The content.
     ///   - confirmButtonName: The name of the confirm button.
-    func showInfo(_ content: String, withTitle title: String, withConfirmButtonName confirmButtonName: String)
+    func showInfo(_ content: String,
+                  withTitle title: String,
+                  withConfirmButtonName confirmButtonName: String)
     
     /// Popup a warning message.
     ///
@@ -22,7 +24,10 @@ public protocol MessageHelper {
     ///   - content: The content of the message.
     ///   - confirmButtonName: The name of the confirm button.
     ///   - cancelButtonName: The name of the cancel button.
-    func showWarning(_ content: String, withTitle title: String, withConfirmButtonName confirmButtonName: String, withCancelButtonName cancelButtonName: String)
+    func showWarning(_ content: String,
+                     withTitle title: String,
+                     withConfirmButtonName confirmButtonName: String,
+                     withCancelButtonName cancelButtonName: String)
     
     /// Popup an error message.
     ///
@@ -30,7 +35,9 @@ public protocol MessageHelper {
     ///   - title: The title of the message.
     ///   - content: The content of the message.
     ///   - confirmButtonName: The name of the confirm button.
-    func showError(_ content: String, withTitle title: String, withConfirmButtonName confirmButtonName: String)
+    func showError(_ content: String,
+                   withTitle title: String,
+                   withConfirmButtonName confirmButtonName: String)
     
     /// Show an input box.
     ///
@@ -38,7 +45,9 @@ public protocol MessageHelper {
     ///   - title: The title of the message.
     ///   - confirmButtonName: The name of the confirm button.
     ///   - cancelButtonName: The name of the cancel button.
-    func showInput(withTitle title: String, withConfirmButtonName confirmButtonName: String, withCancelButtonName cancelButtonName: String)
+    func showInput(withTitle title: String,
+                   withConfirmButtonName confirmButtonName: String,
+                   withCancelButtonName cancelButtonName: String)
 }
 
 /// Constants

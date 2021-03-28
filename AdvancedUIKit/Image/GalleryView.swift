@@ -1,7 +1,7 @@
 /// GalleryView is used to display a list of images. If the navigation bar is translucent, GalleryView should be put inside a ScrollView.
 ///
 /// - author: Adamas
-/// - version: 1.5.0
+/// - version: 1.6.0
 /// - date: 18/08/2019
 public class GalleryView: PageView {
     
@@ -18,7 +18,7 @@ public class GalleryView: PageView {
             newValue.forEach(add)
         }
         get {
-            return subviews.compactMap {
+            subviews.compactMap {
                 let galleryImage = $0 as? GalleryImage
                 return galleryImage?.image
             }
@@ -27,13 +27,13 @@ public class GalleryView: PageView {
     
     /// The image presented.
     public var currentImage: UIImage? {
-        return currentGalleryImage?.image
+        currentGalleryImage?.image
     }
     
     /// The gallery image presented.
     var currentGalleryImage: GalleryImage? {
         guard let galleryImage = currentPage as? GalleryImage else {
-            Logger.standard.logError(GalleryView.subviewTypeError)
+            Logger.standard.logError(Self.subviewTypeError)
             return nil
         }
         return galleryImage
@@ -44,7 +44,7 @@ public class GalleryView: PageView {
         set {
             for index in 0 ..< subviews.count {
                 guard let galleryImage = subviews[index] as? GalleryImage else {
-                    Logger.standard.logError(GalleryView.subviewTypeError)
+                    Logger.standard.logError(Self.subviewTypeError)
                     return
                 }
                 galleryImage.frame.origin = CGPoint(x: CGFloat(index) * newValue.width, y: 0)
@@ -53,9 +53,7 @@ public class GalleryView: PageView {
             setContentOffset(CGPoint(x: CGFloat(currentPageIndex) * newValue.width, y: 0), animated: false)
             contentSize = CGSize(width: CGFloat(numberOfPages) * newValue.width, height: newValue.height)
         }
-        get {
-            return frame.size
-        }
+        get { frame.size }
     }
     
     /// Add an image to the view.

@@ -12,8 +12,8 @@ public extension UIImageView {
     ///   - startIndex: The start index of the image set. Default is 0.
     ///   - endIndex: The end index of the image set.
     func setImages(withPattern pattern: String, fromIndex startIndex: Int = 0, toIndex endIndex: Int) {
-        guard pattern.contains(UIImageView.indexPlaceholder) else {
-            Logger.standard.logError(UIImageView.patternError)
+        guard pattern.contains(Self.indexPlaceholder) else {
+            Logger.standard.logError(Self.patternError)
             return
         }
         var images = [UIImage?]()

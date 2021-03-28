@@ -2,3 +2,4 @@
 "MapError" = "本设备未安装地图软件";
 "BrowserError" = "本设备未安装游览器软件";
 "SystemSettingError" = "无法打开系统设置";
+"EmailError" = "无法发送邮件";

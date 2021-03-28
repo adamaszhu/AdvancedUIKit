@@ -1,4 +1,0 @@
-framework module AdvancedFoundation {
-  header "AdvancedFoundation-Swift.h"
-  requires objc
-}

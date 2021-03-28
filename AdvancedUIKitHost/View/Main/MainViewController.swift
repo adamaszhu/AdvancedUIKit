@@ -1,6 +1,6 @@
 final class MainViewController: UIViewController {
     
-    let features: [Feature] = [.actionSheet, .application, .audio, .button, .device, .image, .keyboard, .label, .list, .localization, .location, .map, .message, .navigation, .notification, .picker, .textField, .view]
+    let features: [Feature] = Feature.allCases
     
     @IBOutlet private weak var featureTable: UITableView!
     
@@ -14,7 +14,7 @@ final class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return features.count
+        features.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -31,7 +31,7 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let feature = features[indexPath.row]
         let featureName = feature.rawValue.replacingOccurrences(of: String.space, with: String.empty)
-        navigationController?.showInitialViewController(ofStoryboard: featureName, withInitialization: { viewController in
+        navigationController?.showInitialViewController(ofStoryboard: featureName, initialization: { viewController in
             viewController.title = feature.rawValue
         })
     }

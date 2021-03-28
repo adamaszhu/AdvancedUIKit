@@ -19,15 +19,15 @@ final class KeyboardViewController: UIViewController {
         let lastname = lastnameText.text ?? .empty
         let mobileNumber = mobileNumberText.text ?? .empty
         let address = addressLabel.text ?? .empty
-        let info = String(format: KeyboardViewController.submissionPattern, firstname, lastname, mobileNumber, address)
+        let info = String(format: Self.submissionPattern, firstname, lastname, mobileNumber, address)
         messageHelper?.showInfo(info)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstnameText.activateUnderline(withNormal: KeyboardViewController.underlineColor, withHignlighted: KeyboardViewController.highlightedUnderlineColor)
-        lastnameText.activateUnderline(withNormal: KeyboardViewController.underlineColor, withHignlighted: KeyboardViewController.highlightedUnderlineColor)
-        mobileNumberText.activateUnderline(withNormal: KeyboardViewController.underlineColor, withHignlighted: KeyboardViewController.highlightedUnderlineColor)
+        firstnameText.activateUnderline(withNormal: Self.underlineColor, withHignlighted: Self.highlightedUnderlineColor)
+        lastnameText.activateUnderline(withNormal: Self.underlineColor, withHignlighted: Self.highlightedUnderlineColor)
+        mobileNumberText.activateUnderline(withNormal: Self.underlineColor, withHignlighted: Self.highlightedUnderlineColor)
         keyboardHelper.rootView = view
         keyboardHelper.inputViews = [searchBar, firstnameText, lastnameText, mobileNumberText]
         keyboardHelper.startObservingKeyboard()

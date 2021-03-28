@@ -29,17 +29,21 @@ final public class RingHelper {
     ///   - period: The period between two vibrations or rings.
     /// - Returns: Whether the ring will be performed or not. False if a ring is being played or the sound file doesn't exist.
     @discardableResult
-    public func ring(withSound soundFileName: String, forTimes times: Int = defaultRingTime, withVibration shouldVibrate: Bool = true, withPeriod period: Double = defaultRingPeriod) -> Bool {
+    public func ring(withSound soundFileName: String,
+                     forTimes times: Int = defaultRingTime,
+                     withVibration shouldVibrate: Bool = true,
+                     withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
-            Logger.standard.logWarning(RingHelper.playStatusWarning)
+            Logger.standard.logWarning(Self.playStatusWarning)
             return false
         }
         remainerCounter = times
         self.shouldVibrate = shouldVibrate
         self.period = period
         let fileInfoAccessor = FileInfoAccessor(path: soundFileName)
-        guard let path = bundle.path(forResource: fileInfoAccessor.filename, ofType: fileInfoAccessor.fileExtension) else {
-            Logger.standard.logError(RingHelper.soundNameError, withDetail: soundFileName)
+        guard let path = bundle.path(forResource: fileInfoAccessor.filename,
+                                     ofType: fileInfoAccessor.fileExtension) else {
+            Logger.standard.logError(Self.soundNameError, withDetail: soundFileName)
             return false
         }
         let url = URL(fileURLWithPath: path)
@@ -47,7 +51,7 @@ final public class RingHelper {
         var newSoundID = SystemSoundID(0)
         AudioServicesCreateSystemSoundID(url as CFURL, &newSoundID)
         guard newSoundID != 0 else {
-            Logger.standard.logError(RingHelper.soundNameError, withDetail: soundFileName)
+            Logger.standard.logError(Self.soundNameError, withDetail: soundFileName)
             return false
         }
         soundID = newSoundID
@@ -63,8 +67,11 @@ final public class RingHelper {
     ///   - period: The period between two vibrations or rings.
     /// - Returns: Whether the ring will be performed or not. False if a ring is being played.
     @discardableResult
-    public func ring(withSoundID soundID: SystemSoundID = defaultSoundID, forTimes times: Int = defaultRingTime, withPeriod period: Double = defaultRingPeriod) -> Bool {
+    public func ring(withSoundID soundID: SystemSoundID = defaultSoundID,
+                     forTimes times: Int = defaultRingTime,
+                     withPeriod period: Double = defaultRingPeriod) -> Bool {
         guard remainerCounter == 0 else {
+            Logger.standard.logWarning(Self.playStatusWarning)
             return false
         }
         self.soundID = soundID

@@ -1,7 +1,7 @@
 /// DeviceInfoAccessor is used to access info related to the device.
 ///
 /// - author: Adamas
-/// - version: 1.5.0
+/// - version: 1.6.0
 /// - date: 16/08/2019
 final public class DeviceInfoAccessor {
     
@@ -9,14 +9,10 @@ final public class DeviceInfoAccessor {
     public static let shared: DeviceInfoAccessor = DeviceInfoAccessor()
     
     /// The system version of the device.
-    public var systemVersion: String {
-        return device.systemVersion
-    }
+    public var systemVersion: String { device.systemVersion }
     
     /// The major system version.
-    public var majorSystemVersion: Int {
-        return processInfo.operatingSystemVersion.majorVersion
-    }
+    public var majorSystemVersion: Int { processInfo.operatingSystemVersion.majorVersion }
     
     /// The type of the device.
     public var deviceType: DeviceType {
@@ -34,14 +30,10 @@ final public class DeviceInfoAccessor {
     }
     
     /// The width of the device screen.
-    public var screenWidth: CGFloat {
-        return screen.bounds.width
-    }
+    public var screenWidth: CGFloat { screen.bounds.width }
     
     /// The height of the device screen.
-    public var screenHeight: CGFloat {
-        return screen.bounds.height
-    }
+    public var screenHeight: CGFloat { screen.bounds.height }
     
     /// The device.
     private let device: UIDevice
@@ -58,7 +50,9 @@ final public class DeviceInfoAccessor {
     ///   - device: The device object.
     ///   - screen: The device screen.
     ///   - processInfo: The information of the process.
-    private init(device: UIDevice = UIDevice.current, processInfo: ProcessInfo = ProcessInfo(), screen: UIScreen = UIScreen.main) {
+    private init(device: UIDevice = UIDevice.current,
+                 processInfo: ProcessInfo = ProcessInfo(),
+                 screen: UIScreen = UIScreen.main) {
         self.device = device
         self.processInfo = processInfo
         self.screen = screen

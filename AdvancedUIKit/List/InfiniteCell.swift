@@ -22,9 +22,7 @@ open class InfiniteCell: UITableViewCell {
     }
     
     /// Whether the cell can be expanded or not.
-    var isExpandable: Bool {
-        return additionalView != nil
-    }
+    var isExpandable: Bool { additionalView != nil }
     
     /// The height of the additional view
     

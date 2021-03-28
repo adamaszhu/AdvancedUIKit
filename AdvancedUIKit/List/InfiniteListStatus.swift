@@ -56,7 +56,7 @@ extension InfiniteListStatus {
              (.reloading, .empty):
             return true
         default:
-            let error = String(format: InfiniteListStatus.statusErrorPattern, "\(self)", "\(status)")
+            let error = String(format: Self.statusErrorPattern, "\(self)", "\(status)")
             Logger.standard.logError(error)
             return false
         }

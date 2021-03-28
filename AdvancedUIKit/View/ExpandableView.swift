@@ -37,12 +37,12 @@ protocol ExpandableView: class {
 extension ExpandableView {
     
     /// System error.
-    static var superviewError: String { return "The superview is nil." }
-    static var windowError: String { return"The window is nil." }
+    static var superviewError: String { "The superview is nil." }
+    static var windowError: String { "The window is nil." }
     
     /// System warning.
-    static var expandingWarning: String { return "The view cannot be expanded." }
-    static var collapsingWarning: String { return "The view cannot be collapsed." }
+    static var expandingWarning: String { "The view cannot be expanded." }
+    static var collapsingWarning: String { "The view cannot be collapsed." }
 }
 
 import UIKit

@@ -2,7 +2,7 @@
 /// ImagePickerHelper is used to select an image in the image library or using the camera.
 ///
 /// - author: Adamas
-/// - version: 1.5.0
+/// - version: 1.6.0
 /// - date: 18/08/2019
 final public class ImagePickerHelper: NSObject {
     
@@ -18,7 +18,8 @@ final public class ImagePickerHelper: NSObject {
     /// Initialize the object.
     ///
     /// - Parameter application: The application used to make a function call.
-    public init(application: UIApplication = UIApplication.shared, cameraHelper: CameraHelper = .init()) {
+    public init(application: UIApplication = UIApplication.shared,
+                cameraHelper: CameraHelper = .init()) {
         self.cameraHelper = cameraHelper
         currentViewController = application.rootViewController
         super.init()
@@ -28,7 +29,7 @@ final public class ImagePickerHelper: NSObject {
     /// Show the image picker selector.
     public func showImagePicker() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let selectFromLibraryActionTitle = ImagePickerHelper.selectFromLibraryActionName.localizedInternalString(forType: ImagePickerHelper.self)
+        let selectFromLibraryActionTitle = Self.selectFromLibraryActionName.localizedInternalString(forType: Self.self)
         let selectFromLibraryAction = UIAlertAction(title: selectFromLibraryActionTitle, style: .default) { [weak self] _ in
             guard self?.cameraHelper.isLibraryAuthorized == true else {
                 self?.cameraHelper.requestLibraryAuthorization()
@@ -36,7 +37,7 @@ final public class ImagePickerHelper: NSObject {
             }
             self?.showImageViewController(of: .photoLibrary)
         }
-        let takePhotoActionTitle = ImagePickerHelper.takePhotoActionName.localizedInternalString(forType: ImagePickerHelper.self)
+        let takePhotoActionTitle = Self.takePhotoActionName.localizedInternalString(forType: Self.self)
         let takePhotoAction = UIAlertAction(title: takePhotoActionTitle, style: .default) { [weak self] _ in
             guard self?.cameraHelper.isCameraAuthorized == true else {
                 self?.cameraHelper.requestCameraAuthorization()
@@ -44,7 +45,7 @@ final public class ImagePickerHelper: NSObject {
             }
             self?.showImageViewController(of: .camera)
         }
-        let cancelActionTitle = ImagePickerHelper.cancelActionName.localizedInternalString(forType: ImagePickerHelper.self)
+        let cancelActionTitle = Self.cancelActionName.localizedInternalString(forType: Self.self)
         let cancelAction = UIAlertAction(title: cancelActionTitle, style: .default) { [weak self] _ in
             self?.currentViewController?.dismiss(animated: true, completion: nil)
         }
@@ -69,19 +70,15 @@ final public class ImagePickerHelper: NSObject {
 extension ImagePickerHelper: CameraHelperDelegate {
     
     public func cameraHelper(_ cameraHelper: CameraHelper, didAuthorizeCamera result: Bool) {
-        if result {
-            showImageViewController(of: .camera)
-        } else {
-            cameraHelper.requestCameraAuthorization()
-        }
+        result
+            ? showImageViewController(of: .camera)
+            : cameraHelper.requestCameraAuthorization()
     }
     
     public func cameraHelper(_ cameraHelper: CameraHelper, didAuthorizeLibrary result: Bool) {
-        if result {
-            showImageViewController(of: .photoLibrary)
-        } else {
-            cameraHelper.requestLibraryAuthorization()
-        }
+        result
+            ? showImageViewController(of: .photoLibrary)
+            : cameraHelper.requestLibraryAuthorization()
     }
     
     public func cameraHelper(_ cameraHelper: CameraHelper, didCatchError error: String) {
@@ -97,7 +94,7 @@ extension ImagePickerHelper: UIImagePickerControllerDelegate, UINavigationContro
         let info = Dictionary(uniqueKeysWithValues: values)
 
         guard let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage else {
-            Logger.standard.logError(ImagePickerHelper.imageError)
+            Logger.standard.logError(Self.imageError)
             return
         }
         picker.dismiss(animated: true, completion: nil)

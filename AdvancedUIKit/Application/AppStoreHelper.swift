@@ -28,7 +28,10 @@ public final class AppStoreHelper {
     ///   - userDefaults: The user defaults used to store flags.
     ///   - messageHelper: The message helper used to show a popup.
     ///   - deviceHelper: The device helper used to open a website.
-    public init(id: String, reviewCounterFlag: String, userDefaults: UserDefaults = UserDefaults.standard, messageHelper: SystemMessageHelper? = SystemMessageHelper(), deviceHelper: DeviceHelper = DeviceHelper()) {
+    public init(id: String, reviewCounterFlag: String,
+                userDefaults: UserDefaults = UserDefaults.standard,
+                messageHelper: SystemMessageHelper? = SystemMessageHelper(),
+                deviceHelper: DeviceHelper = DeviceHelper()) {
         self.id = id
         self.reviewCounterFlag = reviewCounterFlag
         self.userDefaults = userDefaults
@@ -44,12 +47,12 @@ public final class AppStoreHelper {
             return
         }
         guard let messageHelper = messageHelper else {
-            Logger.standard.logError(AppStoreHelper.messageHelperError)
+            Logger.standard.logError(Self.messageHelperError)
             return
         }
-        let message = AppStoreHelper.reviewMessage.localizedInternalString(forType: AppStoreHelper.self)
-        let confirmButtonTitle = AppStoreHelper.confirmButtonName.localizedInternalString(forType: AppStoreHelper.self)
-        let cancelButtonTitle = AppStoreHelper.cancelButtonName.localizedInternalString(forType: AppStoreHelper.self)
+        let message = Self.reviewMessage.localizedInternalString(forType: Self.self)
+        let confirmButtonTitle = Self.confirmButtonName.localizedInternalString(forType: Self.self)
+        let cancelButtonTitle = Self.cancelButtonName.localizedInternalString(forType: Self.self)
         messageHelper.showWarning(message, withTitle: .empty, withConfirmButtonName: confirmButtonTitle, withCancelButtonName: cancelButtonTitle)
     }
     
@@ -78,7 +81,7 @@ public final class AppStoreHelper {
 extension AppStoreHelper: MessageHelperDelegate {
     
     public func messageHelperDidConfirmWarning(_ messageHelper: MessageHelper) {
-        let reviewAddress = String(format: AppStoreHelper.reviewAddressPattern, id)
+        let reviewAddress = String(format: Self.reviewAddressPattern, id)
         deviceHelper.openWebsite(withLink: reviewAddress)
     }
     

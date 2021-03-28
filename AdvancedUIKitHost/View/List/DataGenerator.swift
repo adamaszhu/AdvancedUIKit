@@ -9,18 +9,18 @@ final class DataGenerator {
     
     func generateItems(forPage page: Int) {
         var items = [InfiniteItem]()
-        for index in page * DataGenerator.pageSize ..< (page + 1) * DataGenerator.pageSize {
+        for index in page * Self.pageSize ..< (page + 1) * Self.pageSize {
             guard index <= itemAmount else {
                 break
             }
-            let cellType = index % DataGenerator.imageFilter != 1 ? LabelCell.self : ImageCell.self
+            let cellType = index % Self.imageFilter != 1 ? LabelCell.self : ImageCell.self
             items.append(InfiniteItem(item: index, type: cellType))
         }
         dispatch(items)
     }
     
     private func dispatch(_ items: [InfiniteItem]) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + DataGenerator.generationDelay) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Self.generationDelay) {
             self.delegate?.dataGenerator(self, didGenerate: items)
         }
     }

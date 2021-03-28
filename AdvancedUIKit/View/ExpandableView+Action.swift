@@ -37,11 +37,11 @@ extension ExpandableView {
     /// - Parameter view: The view.
     func moveToWindow(of view: UIView) {
         guard let window = view.window else {
-            Logger.standard.logError(ExpandableMapView.windowError)
+            Logger.standard.logError(Self.windowError)
             return
         }
         guard let superview = view.superview else {
-            Logger.standard.logError(ExpandableMapView.superviewError)
+            Logger.standard.logError(Self.superviewError)
             return
         }
         superview.removeConstraints(originalFrameConstraints)

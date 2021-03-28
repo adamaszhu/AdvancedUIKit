@@ -34,7 +34,14 @@ final public class MapViewPoint {
     ///   - position: Where the coordinate point should be in the view.
     ///   - item: The item that the point represents.
     ///   - iconSize: The size of the icon.
-    public init(latitude: Double, longitude: Double, title: String? = nil, subtitle: String? = nil, icon: UIImage? = nil, iconSize: CGSize? = nil, position: MapViewPointPosition = .center, item: Any? = nil) {
+    public init(latitude: Double,
+                longitude: Double,
+                title: String? = nil,
+                subtitle: String? = nil,
+                icon: UIImage? = nil,
+                iconSize: CGSize? = nil,
+                position: MapViewPointPosition = .center,
+                item: Any? = nil) {
         annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         annotation.title = title
@@ -55,7 +62,7 @@ final public class MapViewPoint {
 extension MapViewPoint: Equatable {
     
     public static func == (lhs: MapViewPoint, rhs: MapViewPoint) -> Bool {
-        return (lhs.annotation.coordinate.latitude == rhs.annotation.coordinate.latitude)
+        (lhs.annotation.coordinate.latitude == rhs.annotation.coordinate.latitude)
             && (lhs.annotation.coordinate.longitude == rhs.annotation.coordinate.longitude)
             && (lhs.annotation.title == rhs.annotation.title)
             && (lhs.annotation.subtitle == rhs.annotation.subtitle)

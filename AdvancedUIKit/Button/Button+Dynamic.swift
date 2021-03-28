@@ -8,7 +8,7 @@ public extension UIButton {
     /// Get the height of each line.
     var lineHeight: CGFloat {
         guard let titleLabel = titleLabel else {
-            Logger.standard.logWarning(UIButton.titleLabelWarning)
+            Logger.standard.logWarning(Self.titleLabelWarning)
             return 0
         }
         return titleLabel.lineHeight
@@ -17,7 +17,7 @@ public extension UIButton {
     /// How many lines are presented.
     var lineAmount: Int {
         guard let titleLabel = titleLabel else {
-            Logger.standard.logWarning(UIButton.titleLabelWarning)
+            Logger.standard.logWarning(Self.titleLabelWarning)
             return 0
         }
         return titleLabel.lineAmount
@@ -26,7 +26,7 @@ public extension UIButton {
     /// The actual height of the text.
     var actualHeight: CGFloat {
         guard let titleLabel = titleLabel else {
-            Logger.standard.logWarning(UIButton.titleLabelWarning)
+            Logger.standard.logWarning(Self.titleLabelWarning)
             return 0
         }
         return titleLabel.actualHeight

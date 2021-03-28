@@ -1,7 +1,7 @@
 /// GalleryImage view present an image in a GalleryView.
 ///
 /// - author: Adamas
-/// - version: 1.5.0
+/// - version: 1.6.0
 /// - date: 16/08/2019
 final class GalleryImage: UIScrollView {
     
@@ -10,32 +10,20 @@ final class GalleryImage: UIScrollView {
     
     /// The image.
     var image: UIImage? {
-        set {
-            imageView.image = newValue
-        }
-        get {
-            return imageView.image
-        }
+        set { imageView.image = newValue }
+        get { imageView.image }
     }
     
     /// The maximum zoom level.
     var maxZoomLevel: CGFloat {
-        set {
-            maximumZoomScale = newValue
-        }
-        get {
-            return maximumZoomScale
-        }
+        set { maximumZoomScale = newValue }
+        get { maximumZoomScale }
     }
     
     /// The content mode of the image.
     var imageMode: UIView.ContentMode {
-        set {
-            imageView.contentMode = newValue
-        }
-        get {
-            return imageView.contentMode
-        }
+        set { imageView.contentMode = newValue }
+        get { imageView.contentMode }
     }
     
     /// The size of the GalleryImage.
@@ -45,9 +33,7 @@ final class GalleryImage: UIScrollView {
             frame.size = newValue
             imageView.frame.size = newValue
         }
-        get {
-            return frame.size
-        }
+        get { frame.size }
     }
     
     /// The double tap gesture used to zoom in the image.
@@ -60,7 +46,7 @@ final class GalleryImage: UIScrollView {
     
     /// Perform a zoom in.
     @objc func zoomIn() {
-        var zoomLevel = zoomScale + GalleryImage.zoomInIncrement
+        var zoomLevel = zoomScale + Self.zoomInIncrement
         zoomLevel = min(zoomLevel, maxZoomLevel)
         setZoomScale(zoomLevel, animated: true)
     }
@@ -79,7 +65,7 @@ final class GalleryImage: UIScrollView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(GalleryImage.initError)
+        Logger.standard.logError(Self.initError)
         return nil
     }
     
@@ -98,7 +84,7 @@ final class GalleryImage: UIScrollView {
 extension GalleryImage: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
+        imageView
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

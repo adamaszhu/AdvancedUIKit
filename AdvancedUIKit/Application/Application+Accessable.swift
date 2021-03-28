@@ -24,11 +24,11 @@ public extension UIApplication {
     /// The root view controller.
     var rootViewController: UIViewController? {
         guard let window = keyWindow else {
-            Logger.standard.logError(UIApplication.windowError)
+            Logger.standard.logError(Self.windowError)
             return nil
         }
         if !(window.rootViewController is UINavigationController) {
-            Logger.standard.logWarning(UIApplication.navigationWarning)
+            Logger.standard.logWarning(Self.navigationWarning)
         }
         return window.rootViewController
     }

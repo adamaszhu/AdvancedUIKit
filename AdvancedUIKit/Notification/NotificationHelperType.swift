@@ -48,7 +48,8 @@ public extension NotificationHelperType {
     /// - Parameters:
     ///   - title: The title of the notification.
     ///   - content: The content of the notification.
-    func createLocalNotification(withTitle title: String?, andContent content: String) {
+    func createLocalNotification(withTitle title: String?,
+                                 andContent content: String) {
         createLocalNotification(withTitle: title,
                                 content: content,
                                 delay: 0,
@@ -60,7 +61,9 @@ public extension NotificationHelperType {
     /// - Parameters:
     ///   - title: The title of the notification.
     ///   - content: The content of the notification.
-    func createLocalNotification(withTitle title: String?, content: String, andDelay delay: Double) {
+    func createLocalNotification(withTitle title: String?,
+                                 content: String,
+                                 andDelay delay: Double) {
         createLocalNotification(withTitle: title,
                                 content: content,
                                 delay: delay,
@@ -75,7 +78,7 @@ final public class NotificationHelper: NotificationHelperType {
     public weak var delegate: NotificationHelperDelegate?
     
     public var isRemoteNotificationAuthorized: Bool {
-        return application.isRegisteredForRemoteNotifications
+        application.isRegisteredForRemoteNotifications
     }
     
     /// The application object.
@@ -112,13 +115,15 @@ final public class NotificationHelper: NotificationHelperType {
     
     public func requestLocalNotificationPermission() {
         notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] result, error in
-            guard let self = self else {
-                return
-            }
-            if let error = error {
-                self.delegate?.notificationHelper(self, didCatchError: error.localizedDescription)
-            } else {
-                self.delegate?.notificationHelper(self, didAuthorizeLocalNotification: result)
+            DispatchQueue.main.async {
+                guard let self = self else {
+                    return
+                }
+                if let error = error {
+                    self.delegate?.notificationHelper(self, didCatchError: error.localizedDescription)
+                } else {
+                    self.delegate?.notificationHelper(self, didAuthorizeLocalNotification: result)
+                }
             }
         }
     }
@@ -133,16 +138,18 @@ final public class NotificationHelper: NotificationHelperType {
     }
     
     public func deviceToken(from data: Data) -> String {
-        return data.map{String(format: StaleNotificationHelper.deviceTokenPattern, $0)}.joined()
+        data.map{String(format: Self.deviceTokenPattern, $0)}.joined()
     }
     
-    public func createLocalNotification(withTitle title: String?, content: String, delay: Double, andSoundName soundName: String) {
+    public func createLocalNotification(withTitle title: String?,
+                                        content: String, delay: Double,
+                                        andSoundName soundName: String) {
         checkLocalNotificationPermission { [weak self] result in
             guard let self = self else {
                 return
             }
             guard result == true else {
-                self.delegate?.notificationHelper(self, didCatchError: StaleNotificationHelper.authorizationError.localizedInternalString(forType: NotificationHelperType.self))
+                self.delegate?.notificationHelper(self, didCatchError: Self.authorizationError.localizedInternalString(forType: Self.self))
                 return
             }
             let notificationContent = UNMutableNotificationContent()
@@ -173,7 +180,7 @@ final public class StaleNotificationHelper: NotificationHelperType {
     public weak var delegate: NotificationHelperDelegate?
     
     public var isRemoteNotificationAuthorized: Bool {
-        return application.isRegisteredForRemoteNotifications
+        application.isRegisteredForRemoteNotifications
     }
     
     /// The application object.
@@ -188,7 +195,7 @@ final public class StaleNotificationHelper: NotificationHelperType {
     
     public func checkLocalNotificationPermission(completion: @escaping (Bool?) -> Void) {
         guard let setting = application.currentUserNotificationSettings else {
-            Logger.standard.logError(StaleNotificationHelper.settingError)
+            Logger.standard.logError(Self.settingError)
             return completion(false)
         }
         return completion(setting.types.contains(.alert))
@@ -217,7 +224,7 @@ final public class StaleNotificationHelper: NotificationHelperType {
     }
     
     public func deviceToken(from data: Data) -> String {
-        return data.map{String(format: StaleNotificationHelper.deviceTokenPattern, $0)}.joined()
+        return data.map{String(format: Self.deviceTokenPattern, $0)}.joined()
     }
     
     public func createLocalNotification(withTitle title: String?, content: String, delay: Double, andSoundName soundName: String) {
@@ -226,7 +233,7 @@ final public class StaleNotificationHelper: NotificationHelperType {
                 return
             }
             guard result == true else {
-                self.delegate?.notificationHelper(self, didCatchError: StaleNotificationHelper.authorizationError.localizedInternalString(forType: NotificationHelperType.self))
+                self.delegate?.notificationHelper(self, didCatchError: Self.authorizationError.localizedInternalString(forType: Self.self))
                 return
             }
             let notification = UILocalNotification()

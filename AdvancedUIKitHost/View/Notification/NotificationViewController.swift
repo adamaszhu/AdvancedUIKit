@@ -17,7 +17,7 @@ final class NotificationViewController: UIViewController {
     }
     
     private func showLocalNotification() {
-        notificationHelper.createLocalNotification(withTitle: NotificationViewController.notificationTitle, content: NotificationViewController.notificationContent, andDelay: NotificationViewController.notificationDelay)
+        notificationHelper.createLocalNotification(withTitle: Self.notificationTitle, content: Self.notificationContent, andDelay: Self.notificationDelay)
     }
 }
 

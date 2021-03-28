@@ -11,9 +11,11 @@ public extension UIView {
             return []
         }
         return superview.constraints.filter {
-            if let firstItem = $0.firstItem as? UIView, firstItem == self {
+            if let firstItem = $0.firstItem as? UIView,
+               firstItem == self {
                 return true
-            } else if let secondItem = $0.secondItem as? UIView, secondItem == self {
+            } else if let secondItem = $0.secondItem as? UIView,
+                      secondItem == self {
                 return true
             } else {
                 return false

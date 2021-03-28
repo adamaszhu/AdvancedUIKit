@@ -6,7 +6,7 @@ final class ImageCell: InfiniteCell {
         guard let number = item as? Int else {
             return
         }
-        let imageName = number % 2 == 0 ? ImageCell.firstImageName : ImageCell.secondImageName
+        let imageName = number % 2 == 0 ? Self.firstImageName : Self.secondImageName
         icon.image = UIImage(named: imageName)
     }
 }

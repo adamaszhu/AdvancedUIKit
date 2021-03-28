@@ -7,11 +7,11 @@ final class MapViewController: UIViewController {
     lazy var distanceLabel: UILabel = {
         let distanceLabel = UILabel()
         distanceLabel.center = self.mapView.center
-        distanceLabel.bounds.size = MapViewController.distanceLabelSize
+        distanceLabel.bounds.size = Self.distanceLabelSize
         distanceLabel.textAlignment = .center
-        distanceLabel.textColor = MapViewController.distanceColor
-        distanceLabel.backgroundColor = MapViewController.distanceBackgroundColor
-        distanceLabel.layer.cornerRadius = MapViewController.distanceBackgroundRadius
+        distanceLabel.textColor = Self.distanceColor
+        distanceLabel.backgroundColor = Self.distanceBackgroundColor
+        distanceLabel.layer.cornerRadius = Self.distanceBackgroundRadius
         distanceLabel.clipsToBounds = true
         self.mapView.addSubview(distanceLabel)
         return distanceLabel
@@ -21,54 +21,54 @@ final class MapViewController: UIViewController {
         super.viewDidLoad()
         mapView.mapViewDelegate = self
         mapView.isExpandable = true
-        mapView.collapseIcon = MapViewController.collapseIcon
-        mapView.collapseIconFrame = MapViewController.collapseIconFrame
+        mapView.collapseIcon = Self.collapseIcon
+        mapView.collapseIconFrame = Self.collapseIconFrame
     }
     
     @IBAction func showMelbourne(_ sender: Any) {
-        mapView.setViewport(withCenterLatitude: MapViewController.melbourneRegion.latitude, andCenterLongitude: MapViewController.melbourneRegion.longitude, withZoomLevel: MapViewController.melbourneRegion.zoomLevel)
+        mapView.setViewport(withCenterLatitude: Self.melbourneRegion.latitude, andCenterLongitude: Self.melbourneRegion.longitude, withZoomLevel: Self.melbourneRegion.zoomLevel)
     }
     
     @IBAction func pointMelbourne(_ sender: Any) {
-        mapView.add(MapViewPoint(latitude: MapViewController.melbournePoint.latitude, longitude: MapViewController.melbournePoint.longitude, title: MapViewController.melbournePoint.title))
+        mapView.add(MapViewPoint(latitude: Self.melbournePoint.latitude, longitude: Self.melbournePoint.longitude, title: Self.melbournePoint.title))
     }
     
     @IBAction func showHawthorn(_ sender: Any) {
-        mapView.setViewport(withTopLatitude: MapViewController.hawthornRegion.topLatitude, bottomLatitude: MapViewController.hawthornRegion.bottmLatitude, leftLongitude: MapViewController.hawthornRegion.leftLongitude, andRightLongitude: MapViewController.hawthornRegion.rightLongitude)
+        mapView.setViewport(withTopLatitude: Self.hawthornRegion.topLatitude, bottomLatitude: Self.hawthornRegion.bottmLatitude, leftLongitude: Self.hawthornRegion.leftLongitude, andRightLongitude: Self.hawthornRegion.rightLongitude)
     }
     
     @IBAction func circleHawthorn(_ sender: Any) {
         let points = [
-            MapViewPoint(latitude: MapViewController.hawthornRegion.topLatitude, longitude: MapViewController.hawthornRegion.leftLongitude, title: MapViewController.hawthornRegionTitle.leftTop),
-            MapViewPoint(latitude: MapViewController.hawthornRegion.topLatitude, longitude: MapViewController.hawthornRegion.rightLongitude, title: MapViewController.hawthornRegionTitle.rightTop),
-            MapViewPoint(latitude: MapViewController.hawthornRegion.bottmLatitude, longitude: MapViewController.hawthornRegion.rightLongitude, title: MapViewController.hawthornRegionTitle.rightBottom),
-            MapViewPoint(latitude: MapViewController.hawthornRegion.bottmLatitude, longitude: MapViewController.hawthornRegion.leftLongitude, title: MapViewController.hawthornRegionTitle.leftBottom),
-            MapViewPoint(latitude: MapViewController.hawthornRegion.topLatitude, longitude: MapViewController.hawthornRegion.leftLongitude, title: MapViewController.hawthornRegionTitle.leftTop)]
-        let line = MapViewLine(points: points, color: MapViewController.hawthornRegionColor, width: MapViewController.lineWidth, pointIcon: MapViewController.lineIcon)
+            MapViewPoint(latitude: Self.hawthornRegion.topLatitude, longitude: Self.hawthornRegion.leftLongitude, title: Self.hawthornRegionTitle.leftTop),
+            MapViewPoint(latitude: Self.hawthornRegion.topLatitude, longitude: Self.hawthornRegion.rightLongitude, title: Self.hawthornRegionTitle.rightTop),
+            MapViewPoint(latitude: Self.hawthornRegion.bottmLatitude, longitude: Self.hawthornRegion.rightLongitude, title: Self.hawthornRegionTitle.rightBottom),
+            MapViewPoint(latitude: Self.hawthornRegion.bottmLatitude, longitude: Self.hawthornRegion.leftLongitude, title: Self.hawthornRegionTitle.leftBottom),
+            MapViewPoint(latitude: Self.hawthornRegion.topLatitude, longitude: Self.hawthornRegion.leftLongitude, title: Self.hawthornRegionTitle.leftTop)]
+        let line = MapViewLine(points: points, color: Self.hawthornRegionColor, width: Self.lineWidth, pointIcon: Self.lineIcon)
         mapView.add(line)
     }
     
     @IBAction func pointHawthorn(_ sender: Any) {
-        mapView.add(MapViewPoint(latitude: MapViewController.hawthornPoint.latitude, longitude: MapViewController.hawthornPoint.longitude, title: MapViewController.hawthornPoint.title, subtitle: MapViewController.hawthornPoint.subtitle, icon: MapViewController.pointIcon, position: .bottomCenter, item: MapViewController.hawthornPoint.item))
+        mapView.add(MapViewPoint(latitude: Self.hawthornPoint.latitude, longitude: Self.hawthornPoint.longitude, title: Self.hawthornPoint.title, subtitle: Self.hawthornPoint.subtitle, icon: Self.pointIcon, position: .bottomCenter, item: Self.hawthornPoint.item))
     }
     
     @IBAction func showBulleen(_ sender: Any) {
-        mapView.setViewport(withTopLatitude: MapViewController.bulleenRegion.topLatitude, bottomLatitude: MapViewController.bulleenRegion.bottmLatitude, leftLongitude: MapViewController.bulleenRegion.leftLongitude, andRightLongitude: MapViewController.bulleenRegion.rightLongitude)
+        mapView.setViewport(withTopLatitude: Self.bulleenRegion.topLatitude, bottomLatitude: Self.bulleenRegion.bottmLatitude, leftLongitude: Self.bulleenRegion.leftLongitude, andRightLongitude: Self.bulleenRegion.rightLongitude)
     }
     
     @IBAction func circleBulleen(_ sender: Any) {
         let points = [
-            MapViewPoint(latitude: MapViewController.bulleenRegion.topLatitude, longitude: MapViewController.bulleenRegion.leftLongitude),
-            MapViewPoint(latitude: MapViewController.bulleenRegion.topLatitude, longitude: MapViewController.bulleenRegion.rightLongitude),
-            MapViewPoint(latitude: MapViewController.bulleenRegion.bottmLatitude, longitude: MapViewController.bulleenRegion.rightLongitude),
-            MapViewPoint(latitude: MapViewController.bulleenRegion.bottmLatitude, longitude: MapViewController.bulleenRegion.leftLongitude),
-            MapViewPoint(latitude: MapViewController.bulleenRegion.topLatitude, longitude: MapViewController.bulleenRegion.leftLongitude)]
-        let line = MapViewLine(points: points, color: MapViewController.bulleenRegionColor)
+            MapViewPoint(latitude: Self.bulleenRegion.topLatitude, longitude: Self.bulleenRegion.leftLongitude),
+            MapViewPoint(latitude: Self.bulleenRegion.topLatitude, longitude: Self.bulleenRegion.rightLongitude),
+            MapViewPoint(latitude: Self.bulleenRegion.bottmLatitude, longitude: Self.bulleenRegion.rightLongitude),
+            MapViewPoint(latitude: Self.bulleenRegion.bottmLatitude, longitude: Self.bulleenRegion.leftLongitude),
+            MapViewPoint(latitude: Self.bulleenRegion.topLatitude, longitude: Self.bulleenRegion.leftLongitude)]
+        let line = MapViewLine(points: points, color: Self.bulleenRegionColor)
         mapView.add(line)
     }
     
     @IBAction func pointBulleen(_ sender: Any) {
-        mapView.add(MapViewPoint(latitude: MapViewController.bulleenPoint.latitude, longitude: MapViewController.bulleenPoint.longitude, title: MapViewController.bulleenPoint.title, subtitle: MapViewController.bulleenPoint.subtitle, icon: MapViewController.pointIcon, position: .bottomCenter))
+        mapView.add(MapViewPoint(latitude: Self.bulleenPoint.latitude, longitude: Self.bulleenPoint.longitude, title: Self.bulleenPoint.title, subtitle: Self.bulleenPoint.subtitle, icon: Self.pointIcon, position: .bottomCenter))
     }
     
     @IBAction func clean(_ sender: Any) {
@@ -85,7 +85,7 @@ final class MapViewController: UIViewController {
     
     private func updateDistance(to coordinate: CLLocationCoordinate2D) {
         let distance = coordinate.distance(to: mapView.centerCoordinate) / 1000
-        distanceLabel.text = String(format: MapViewController.distancePattern, distance)
+        distanceLabel.text = String(format: Self.distancePattern, distance)
     }
 }
 

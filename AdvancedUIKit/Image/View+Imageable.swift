@@ -12,7 +12,7 @@ public extension UIView {
     func screenshot(withScale scale: Double = 1) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, CGFloat(scale))
         guard let context = UIGraphicsGetCurrentContext() else {
-            Logger.standard.logError(UIView.contextError)
+            Logger.standard.logError(Self.contextError)
             return nil
         }
         layer.render(in: context)

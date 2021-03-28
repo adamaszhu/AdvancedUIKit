@@ -1,7 +1,7 @@
 /// Button+Attribute contains additional support for a button
 ///
 /// - author: Adamas
-/// - version: 1.5.0
+/// - version: 1.6.0
 /// - date: 08/08/2019
 public extension UIButton {
     
@@ -12,7 +12,7 @@ public extension UIButton {
             setTitle(newValue, for: .normal)
         }
         get {
-            return title(for: .normal)
+            title(for: .normal)
         }
     }
     
@@ -24,7 +24,7 @@ public extension UIButton {
             }
         }
         get {
-            return titleLabel?.textAlignment
+            titleLabel?.textAlignment
         }
     }
 }

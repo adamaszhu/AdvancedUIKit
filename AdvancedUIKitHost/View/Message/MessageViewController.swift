@@ -15,91 +15,91 @@ final class MessageViewController: UIViewController {
     }()
     
     @IBAction func showDefaultInfo(_ sender: Any) {
-        systemMessageHelper?.showInfo(MessageViewController.info.content)
+        systemMessageHelper?.showInfo(Self.info.content)
     }
     
     @IBAction func showInfo(_ sender: Any) {
-        systemMessageHelper?.showInfo(MessageViewController.info.content, withTitle: MessageViewController.info.title, withConfirmButtonName: MessageViewController.info.confirmButtonName)
+        systemMessageHelper?.showInfo(Self.info.content, withTitle: Self.info.title, withConfirmButtonName: Self.info.confirmButtonName)
     }
     
     @IBAction func showDefaultError(_ sender: Any) {
-        systemMessageHelper?.showError(MessageViewController.error.content)
+        systemMessageHelper?.showError(Self.error.content)
     }
     
     @IBAction func showError(_ sender: Any) {
-        systemMessageHelper?.showError(MessageViewController.error.content, withTitle: MessageViewController.error.title, withConfirmButtonName: MessageViewController.error.confirmButtonName)
+        systemMessageHelper?.showError(Self.error.content, withTitle: Self.error.title, withConfirmButtonName: Self.error.confirmButtonName)
     }
     
     @IBAction func showDefaultWarning(_ sender: Any) {
-        systemMessageHelper?.showWarning(MessageViewController.warning.content)
+        systemMessageHelper?.showWarning(Self.warning.content)
     }
     
     @IBAction func showWarning(_ sender: Any) {
-        systemMessageHelper?.showWarning(MessageViewController.warning.content, withTitle: MessageViewController.warning.title, withConfirmButtonName: MessageViewController.warning.confirmButtonName, withCancelButtonName: MessageViewController.warning.cancelButtonName)
+        systemMessageHelper?.showWarning(Self.warning.content, withTitle: Self.warning.title, withConfirmButtonName: Self.warning.confirmButtonName, withCancelButtonName: Self.warning.cancelButtonName)
     }
     
     @IBAction func showDefaultInput(_ sender: Any) {
-        systemMessageHelper?.showInput(withTitle: MessageViewController.input.title)
+        systemMessageHelper?.showInput(withTitle: Self.input.title)
     }
     
     @IBAction func showInput(_ sender: Any) {
-        systemMessageHelper?.showInput(withTitle: MessageViewController.input.title, withConfirmButtonName: MessageViewController.input.confirmButtonName, withCancelButtonName: MessageViewController.input.cancelButtonName)
+        systemMessageHelper?.showInput(withTitle: Self.input.title, withConfirmButtonName: Self.input.confirmButtonName, withCancelButtonName: Self.input.cancelButtonName)
     }
     
     @IBAction func showCustomizedDefaultInfo(_ sender: Any) {
-        customizedMessageHelper.showInfo(MessageViewController.info.content)
+        customizedMessageHelper.showInfo(Self.info.content)
     }
     
     @IBAction func showCustomizedInfo(_ sender: Any) {
-        customizedMessageHelper.showInfo(MessageViewController.longInfo.content, withTitle: MessageViewController.longInfo.title, withConfirmButtonName: MessageViewController.longInfo.confirmButtonName)
+        customizedMessageHelper.showInfo(Self.longInfo.content, withTitle: Self.longInfo.title, withConfirmButtonName: Self.longInfo.confirmButtonName)
     }
     
     @IBAction func showCustomizedDefaultError(_ sender: Any) {
-        customizedMessageHelper.showError(MessageViewController.error.content)
+        customizedMessageHelper.showError(Self.error.content)
     }
     
     @IBAction func showCustomizedError(_ sender: Any) {
-        customizedMessageHelper.showError(MessageViewController.error.content, withTitle: MessageViewController.error.title, withConfirmButtonName: MessageViewController.error.confirmButtonName)
+        customizedMessageHelper.showError(Self.error.content, withTitle: Self.error.title, withConfirmButtonName: Self.error.confirmButtonName)
     }
     
     @IBAction func showCustomizedDefaultWarning(_ sender: Any) {
-        customizedMessageHelper.showWarning(MessageViewController.warning.content)
+        customizedMessageHelper.showWarning(Self.warning.content)
     }
     
     @IBAction func showCustomizedWarning(_ sender: Any) {
-        customizedMessageHelper.showWarning(MessageViewController.warning.content, withTitle: MessageViewController.warning.title, withConfirmButtonName: MessageViewController.warning.confirmButtonName, withCancelButtonName: MessageViewController.warning.cancelButtonName)
+        customizedMessageHelper.showWarning(Self.warning.content, withTitle: Self.warning.title, withConfirmButtonName: Self.warning.confirmButtonName, withCancelButtonName: Self.warning.cancelButtonName)
     }
     
     @IBAction func showCustomizedDefaultInput(_ sender: Any) {
-        customizedMessageHelper.showInput(withTitle: MessageViewController.input.title)
+        customizedMessageHelper.showInput(withTitle: Self.input.title)
     }
     
     @IBAction func showCustomizedInput(_ sender: Any) {
-        customizedMessageHelper.showInput(withTitle: MessageViewController.input.title, withConfirmButtonName: MessageViewController.input.confirmButtonName, withCancelButtonName: MessageViewController.input.cancelButtonName)
+        customizedMessageHelper.showInput(withTitle: Self.input.title, withConfirmButtonName: Self.input.confirmButtonName, withCancelButtonName: Self.input.cancelButtonName)
     }
 }
 
 extension MessageViewController: MessageHelperDelegate {
     
     func messageHelperDidConfirmError(_ messageHelper: MessageHelper) {
-        defaultMessageHelper?.showInfo(MessageViewController.errorConfirmation)
+        defaultMessageHelper?.showInfo(Self.errorConfirmation)
     }
     
     func messageHelperDidConfirmWarning(_ messageHelper: MessageHelper) {
-        defaultMessageHelper?.showInfo(MessageViewController.warningConfirmation)
+        defaultMessageHelper?.showInfo(Self.warningConfirmation)
     }
     
     func messageHelperDidCancelWarning(_ messageHelper: MessageHelper) {
-        defaultMessageHelper?.showInfo(MessageViewController.warningCancellation)
+        defaultMessageHelper?.showInfo(Self.warningCancellation)
     }
     
     func messageHelper(_ messageHelper: MessageHelper, didConfirmInput content: String) {
-        let message = String(format: MessageViewController.inputConfirmationPattern, content)
+        let message = String(format: Self.inputConfirmationPattern, content)
         defaultMessageHelper?.showInfo(message)
     }
     
     func messageHelperDidCancelInput(_ messageHelper: MessageHelper) {
-        defaultMessageHelper?.showInfo(MessageViewController.inputCancellation)
+        defaultMessageHelper?.showInfo(Self.inputCancellation)
     }
 }
 

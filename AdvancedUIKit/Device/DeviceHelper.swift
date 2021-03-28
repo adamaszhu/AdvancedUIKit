@@ -13,10 +13,10 @@ final public class DeviceHelper: NSObject {
     /// Open the system setting.
     public func openSystemSetting() {
         guard let systemSettingURL = URL(string: UIApplication.openSettingsURLString) else {
-            Logger.standard.logError(DeviceHelper.systemLinkError)
+            Logger.standard.logError(Self.systemLinkError)
             return
         }
-        open(systemSettingURL, withError: DeviceHelper.systemSettingError)
+        open(systemSettingURL, withError: Self.systemSettingError)
     }
     
     /// Open a website.
@@ -24,21 +24,21 @@ final public class DeviceHelper: NSObject {
     /// - Parameter link: The website address.
     public func openWebsite(withLink link: String) {
         guard let websiteURL = URL(string: link) else {
-            Logger.standard.logInfo(DeviceHelper.linkError, withDetail: link)
+            Logger.standard.logInfo(Self.linkError, withDetail: link)
             return
         }
-        open(websiteURL, withError: DeviceHelper.browserError)
+        open(websiteURL, withError: Self.browserError)
     }
     
     /// Make a phone call.
     ///
     /// - Parameter number: The phone number.
     public func dialNumber(_ number: String) {
-        guard let dialURL = URL(string: "\(DeviceHelper.dailPrefix)\(number)") else {
-            Logger.standard.logInfo(DeviceHelper.phoneNumberError, withDetail: number)
+        guard let dialURL = URL(string: "\(Self.dailPrefix)\(number)") else {
+            Logger.standard.logInfo(Self.phoneNumberError, withDetail: number)
             return
         }
-        open(dialURL, withError: DeviceHelper.dialError)
+        open(dialURL, withError: Self.dialError)
     }
     
     /// Show a location in the map application. Please let the user confirm the action beforehand.
@@ -46,11 +46,11 @@ final public class DeviceHelper: NSObject {
     /// - Parameter address: The address to be shown.
     public func openMap(withAddress address: String) {
         let formattedAddress = address.replacingOccurrences(of: String.space, with: String.plus)
-        guard let mapURL = URL(string: "\(DeviceHelper.mapPrefix)\(formattedAddress)") else {
-            Logger.standard.logInfo(DeviceHelper.addressError, withDetail: address)
+        guard let mapURL = URL(string: "\(Self.mapPrefix)\(formattedAddress)") else {
+            Logger.standard.logInfo(Self.addressError, withDetail: address)
             return
         }
-        open(mapURL, withError: DeviceHelper.mapError)
+        open(mapURL, withError: Self.mapError)
     }
     
     /// Send an email. Please let the user confirm the action beforehand. The navigation controller should be apply if there is a view hierarchy.
@@ -61,7 +61,17 @@ final public class DeviceHelper: NSObject {
     ///   - content: The content of the email.
     ///   - isHTMLContent: Whether the content is a html or not.
     ///   - attachments: A list of attachments of the email. It is a list of name and data pair
-    public func sendEmail(toAddress address: String, withSubject subject: String, withContent content: String, withAttachments attachments: [String: Data] = [:], asHTMLContent isHTML: Bool = false) {
+    public func sendEmail(toAddress address: String,
+                          withSubject subject: String,
+                          withContent content: String,
+                          withAttachments attachments: [String: Data] = [:],
+                          asHTMLContent isHTML: Bool = false) {
+
+        guard MFMailComposeViewController.canSendMail() else {
+            Logger.standard.logInfo(Self.emailError, withDetail: address)
+            delegate?.deviceHelper(self, didCatchError: Self.emailError.localizedInternalString(forType: Self.self))
+            return
+        }
         let mailViewController = MFMailComposeViewController()
         mailViewController.mailComposeDelegate = self
         mailViewController.setToRecipients([address])
@@ -81,7 +91,7 @@ final public class DeviceHelper: NSObject {
     ///   - message: The message to be performed if the URL is not available.
     private func open(_ url: URL, withError error: String) {
         guard application.canOpenURL(url) else {
-            delegate?.deviceHelper(self, didCatchError: error.localizedInternalString(forType: DeviceHelper.self))
+            delegate?.deviceHelper(self, didCatchError: error.localizedInternalString(forType: Self.self))
             return
         }
         if #available(iOS 10.0, *) {
@@ -122,6 +132,7 @@ private extension DeviceHelper {
     static let mapError = "MapError"
     static let browserError = "BrowserError"
     static let systemSettingError = "SystemSettingError"
+    static let emailError = "EmailError"
     
     /// System error.
     static let phoneNumberError = "The phone number is invalid."

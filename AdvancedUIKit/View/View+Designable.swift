@@ -7,22 +7,14 @@
     
     /// The border color of a view
     @IBInspectable var borderColor: UIColor? {
-        set {
-            layer.borderColor = newValue?.cgColor
-        }
-        get {
-            return layer.borderColor.map(UIColor.init(cgColor:))
-        }
+        set { layer.borderColor = newValue?.cgColor }
+        get { layer.borderColor.map(UIColor.init(cgColor:)) }
     }
     
     /// The border width of a view
     @IBInspectable var borderWidth: CGFloat {
-        set {
-            layer.borderWidth = newValue
-        }
-        get {
-            return layer.borderWidth
-        }
+        set { layer.borderWidth = newValue }
+        get { layer.borderWidth }
     }
     
     /// The corner radious of a view
@@ -33,36 +25,24 @@
                 clipsToBounds = true
             }
         }
-        get {
-            return layer.cornerRadius
-        }
+        get { layer.cornerRadius }
     }
     
     /// The shadow inset
     @IBInspectable var shadowInset: CGSize {
-        set {
-            layer.shadowOffset = newValue
-        }
-        get {
-            return layer.shadowOffset
-        }
+        set { layer.shadowOffset = newValue }
+        get { layer.shadowOffset }
     }
     
     /// The shadow opacity
     @IBInspectable var shadowOpacity: Float {
-        set {
-            layer.shadowOpacity = newValue
-        }
-        get {
-            return layer.shadowOpacity
-        }
+        set { layer.shadowOpacity = newValue }
+        get { layer.shadowOpacity }
     }
     
     /// The shadow color
     @IBInspectable var shadowColor: UIColor? {
-        set {
-            layer.shadowColor = newValue?.cgColor
-        }
+        set { layer.shadowColor = newValue?.cgColor }
         get {
             if let shadowColor = layer.shadowColor {
                 return UIColor(cgColor: shadowColor)
@@ -75,23 +55,15 @@
     /// The width attribute
     @available(iOS, introduced: 10.0)
     var width: CGFloat? {
-        get {
-            return getValue(of: widthAnchor)
-        }
-        set {
-            setValue(newValue, of: widthAnchor)
-        }
+        get { getValue(of: widthAnchor) }
+        set { setValue(newValue, of: widthAnchor) }
     }
     
     /// The height attribute
     @available(iOS, introduced: 10.0)
     var height: CGFloat? {
-        get {
-            return getValue(of: heightAnchor)
-        }
-        set {
-            setValue(newValue, of: heightAnchor)
-        }
+        get { getValue(of: heightAnchor) }
+        set { setValue(newValue, of: heightAnchor) }
     }
     
     /// Pin the edge to its superview

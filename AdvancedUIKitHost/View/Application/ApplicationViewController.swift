@@ -4,7 +4,7 @@ final class ApplicationViewController: UIViewController {
     private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
     
     @IBAction func rate(_ sender: Any) {
-        if appStoreHelper.checkReviewCounter(asCount: ApplicationViewController.ratingCounter) {
+        if appStoreHelper.checkReviewCounter(asCount: Self.ratingCounter) {
             appStoreHelper.review()
         } else {
             appStoreHelper.increaseReviewCounter()

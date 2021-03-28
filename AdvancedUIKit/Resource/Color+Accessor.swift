@@ -1,7 +1,7 @@
 /// UIColor creates colors for convenience.
 ///
 /// - author: Adamas
-/// - version: 1.5.0
+/// - version: 1.6.0
 /// - date: 19/10/2019
 public extension UIColor {
     
@@ -13,9 +13,9 @@ public extension UIColor {
     ///   - b: Blue value
     ///   - alpha: Alpha value
     convenience init(r: CGFloat, g: CGFloat, b: CGFloat, alpha: CGFloat = 1) {
-        self.init(red: r / UIColor.maxValue,
-                  green: g / UIColor.maxValue,
-                  blue: b / UIColor.maxValue,
+        self.init(red: r / Self.maxValue,
+                  green: g / Self.maxValue,
+                  blue: b / Self.maxValue,
                   alpha: alpha)
     }
     
