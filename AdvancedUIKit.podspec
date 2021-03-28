@@ -13,7 +13,7 @@ s.source = { :git => "https://github.com/adamaszhu/AdvancedUIKit.git",
              :tag => "v#{s.version}" }
 s.framework = "Foundation"
 s.framework = "UIKit"
-s.dependency 'AdvancedFoundation', '1.6.2'
+s.dependency 'AdvancedFoundation', '1.6.3'
 s.source_files = "AdvancedUIKit/**/*.{swift}"
 s.source_files = "AdvancedUIKit/**/**/*.{strings}"
 s.swift_version = "4.2"

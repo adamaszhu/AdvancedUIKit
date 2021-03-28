@@ -1,10 +1,10 @@
 PODS:
-  - AdvancedFoundation (1.6.2)
+  - AdvancedFoundation (1.6.3)
   - Nimble (8.1.2)
   - Quick (3.1.2)
 
 DEPENDENCIES:
-  - AdvancedFoundation (= 1.6.2)
+  - AdvancedFoundation (= 1.6.3)
   - Nimble (= 8.1.2)
   - Quick (= 3.1.2)
 
@@ -16,10 +16,10 @@ SPEC REPOS:
     - Quick
 
 SPEC CHECKSUMS:
-  AdvancedFoundation: 4bb6deec36698c09a1b82eeea1b78b65e6358c08
+  AdvancedFoundation: 1ae619f2e5c9239131b381744cf3884f3d30407e
   Nimble: 3864815b4703c7ebffba875973c70e854489fbae
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
 
-PODFILE CHECKSUM: c51ca5fb138851840a7f769c538ae1427ec3b5b5
+PODFILE CHECKSUM: 893c8cc66264d75b00bb555f12a0f81bcf5167eb
 
 COCOAPODS: 1.10.0
