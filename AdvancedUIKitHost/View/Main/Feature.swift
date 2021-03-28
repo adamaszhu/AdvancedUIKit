@@ -1,4 +1,4 @@
-enum Feature: String {
+enum Feature: String, CaseIterable {
     case application = "Application"
     case device = "Device"
     case label = "Label"

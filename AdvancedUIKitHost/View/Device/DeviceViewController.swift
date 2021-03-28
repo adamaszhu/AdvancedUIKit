@@ -19,27 +19,27 @@ final class DeviceViewController: UIViewController {
     }
     
     @IBAction func openWebsite(_ sender: Any) {
-        deviceHelper.openWebsite(withLink: DeviceViewController.website)
+        deviceHelper.openWebsite(withLink: Self.website)
     }
     
     @IBAction func dialNumber(_ sender: Any) {
-        deviceHelper.dialNumber(DeviceViewController.number)
+        deviceHelper.dialNumber(Self.number)
     }
     
     @IBAction func showMap(_ sender: Any) {
-        deviceHelper.openMap(withAddress: DeviceViewController.address)
+        deviceHelper.openMap(withAddress: Self.address)
     }
     
     @IBAction func sendEmail(_ sender: Any) {
-        deviceHelper.sendEmail(toAddress: DeviceViewController.emailAddress, withSubject: DeviceViewController.emailSubject, withContent: DeviceViewController.emailContent, withAttachments: [DeviceViewController.emailAttachment: Data()], asHTMLContent: true)
+        deviceHelper.sendEmail(toAddress: Self.emailAddress, withSubject: Self.emailSubject, withContent: Self.emailContent, withAttachments: [Self.emailAttachment: Data()], asHTMLContent: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        systemVersionLabel.text = String(format: DeviceViewController.systemVersionPattern, deviceInfoAccessor.systemVersion)
-        majorSystemVersionLabel.text = String(format: DeviceViewController.majorSystemVersionPattern, deviceInfoAccessor.majorSystemVersion)
-        deviceLabel.text = String(format: DeviceViewController.devicePattern, deviceInfoAccessor.deviceType.rawValue)
-        resolutionLabel.text = String(format: DeviceViewController.resolutionPattern, deviceInfoAccessor.screenHeight, deviceInfoAccessor.screenWidth)
+        systemVersionLabel.text = String(format: Self.systemVersionPattern, deviceInfoAccessor.systemVersion)
+        majorSystemVersionLabel.text = String(format: Self.majorSystemVersionPattern, deviceInfoAccessor.majorSystemVersion)
+        deviceLabel.text = String(format: Self.devicePattern, deviceInfoAccessor.deviceType.rawValue)
+        resolutionLabel.text = String(format: Self.resolutionPattern, deviceInfoAccessor.screenHeight, deviceInfoAccessor.screenWidth)
     }
 }
 
@@ -51,9 +51,9 @@ extension DeviceViewController: DeviceHelperDelegate {
     
     func deviceHelper(_ deviceHelper: DeviceHelper, didSendEmail result: Bool) {
         if result {
-            messageHelper?.showInfo(DeviceViewController.emailSendInfo)
+            messageHelper?.showInfo(Self.emailSendInfo)
         } else {
-            messageHelper?.showError(DeviceViewController.emailSendError)
+            messageHelper?.showError(Self.emailSendError)
         }
     }
 }

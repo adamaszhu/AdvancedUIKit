@@ -13,7 +13,7 @@ final class GestureFilterView: UIView {
     func changeGestureRecognizerUsibility(ofType type: AnyClass,
                                           toUsibility shouldEnable: Bool) {
         guard let gestureRecognizers = gestureRecognizers else {
-            Logger.standard.logError(GestureFilterView.gestureRecognizersError)
+            Logger.standard.logError(Self.gestureRecognizersError)
             return
         }
         gestureRecognizers.filter { $0.isKind(of: type) }
@@ -37,7 +37,7 @@ final class GestureFilterView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Logger.standard.logError(GestureFilterView.initError)
+        Logger.standard.logError(Self.initError)
         return nil
     }
 }

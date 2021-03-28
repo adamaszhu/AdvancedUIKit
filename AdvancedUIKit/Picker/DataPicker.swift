@@ -10,12 +10,8 @@ final public class DataPicker: RootView {
     
     /// The title of the picker view.
     public var title: String? {
-        set {
-            titleLabel.text = newValue
-        }
-        get {
-            return titleLabel.text
-        }
+        set { titleLabel.text = newValue }
+        get { titleLabel.text }
     }
     
     /// The background color of the title.
@@ -26,7 +22,7 @@ final public class DataPicker: RootView {
             cancelButton.backgroundColor = newValue
         }
         get {
-            return titleLabel.backgroundColor
+            titleLabel.backgroundColor
         }
     }
     
@@ -52,9 +48,7 @@ final public class DataPicker: RootView {
     
     /// The view that is used to control the picker.
     public var trigger: UIView? {
-        didSet {
-            triggerOriginalFrame = nil
-        }
+        didSet { triggerOriginalFrame = nil }
     }
     
     /// The original frame of the controller.
@@ -93,7 +87,7 @@ final public class DataPicker: RootView {
     ///   - index: The index of the column.
     public func selectValue(_ value: String, atColumn index: Int = 0) {
         guard 0 ..< columns.count ~= index else {
-            Logger.standard.logError(DataPicker.columnError)
+            Logger.standard.logError(Self.columnError)
             return
         }
         var item: DataPickerItem
@@ -104,7 +98,7 @@ final public class DataPicker: RootView {
                 return
             }
         }
-        Logger.standard.logError(DataPicker.itemError)
+        Logger.standard.logError(Self.itemError)
     }
     
     /// The selected values are confirmed by clicking the done button.
@@ -114,7 +108,7 @@ final public class DataPicker: RootView {
             selections.append(columns[index].items[pickerView.selectedRow(inComponent: index)].value)
         }
         hide()
-        DispatchQueue.main.asyncAfter(deadline: .now() + DataPicker.animationDuration) { [weak self]  in
+        DispatchQueue.main.asyncAfter(deadline: .now() + Self.animationDuration) { [weak self]  in
             guard let self = self else {
                 return
             }
@@ -125,7 +119,7 @@ final public class DataPicker: RootView {
     
     @objc public override func hide() {
         guard isVisible else {
-            Logger.standard.logWarning(DataPicker.hidingWarning)
+            Logger.standard.logWarning(Self.hidingWarning)
             return
         }
         animateChange({ [weak self] in
@@ -137,7 +131,7 @@ final public class DataPicker: RootView {
             if let controllerOriginalFrame = self.triggerOriginalFrame {
                 self.trigger?.frame = controllerOriginalFrame
             }
-            }, withDuration: DataPicker.animationDuration,
+            }, withDuration: Self.animationDuration,
                preparation: { [weak self] in
                 guard let self = self else {
                     return
@@ -151,7 +145,7 @@ final public class DataPicker: RootView {
     
     public override func show() {
         guard !isVisible else {
-            Logger.standard.logWarning(DataPicker.showingWarning)
+            Logger.standard.logWarning(Self.showingWarning)
             return
         }
         if triggerOriginalFrame == nil {
@@ -167,7 +161,7 @@ final public class DataPicker: RootView {
                 self.trigger?.frame.origin = CGPoint(x: triggerOrigin.x, y: triggerOrigin.y + pushDistance)
             }
             self.frame = self.originalFrame
-            }, withDuration: DataPicker.animationDuration,
+            }, withDuration: Self.animationDuration,
                preparation: { [weak self] in
                 guard let self = self else {
                     return
@@ -183,10 +177,10 @@ final public class DataPicker: RootView {
         titleBackgroundColor = .gray
         let titleTextColor = UIColor.white
         cancelButton.backgroundColor = titleBackgroundColor
-        cancelButton.setTitle(DataPicker.cancelButtonName.localizedInternalString(forType: DataPicker.self), for: .normal)
+        cancelButton.setTitle(Self.cancelButtonName.localizedInternalString(forType: Self.self), for: .normal)
         cancelButton.addTarget(self, action: #selector(hide), for: .touchUpInside)
         doneButton.backgroundColor = titleBackgroundColor
-        doneButton.setTitle(DataPicker.doneButtonName.localizedInternalString(forType: DataPicker.self), for: .normal)
+        doneButton.setTitle(Self.doneButtonName.localizedInternalString(forType: Self.self), for: .normal)
         doneButton.addTarget(self, action: #selector(confirmSelection), for: .touchUpInside)
         titleLabel.backgroundColor = titleBackgroundColor
         titleLabel.textColor = titleTextColor
@@ -200,10 +194,10 @@ final public class DataPicker: RootView {
     }
     
     public override func render() {
-        cancelButton.frame = CGRect(x: 0, y: 0, width: DataPicker.buttonWidth, height: DataPicker.buttonHeight)
-        titleLabel.frame = CGRect(x: DataPicker.buttonWidth, y: 0, width: frame.width - 2 * DataPicker.buttonWidth, height: DataPicker.buttonHeight)
-        doneButton.frame = CGRect(x: frame.width - DataPicker.buttonWidth, y: 0, width: DataPicker.buttonWidth, height: DataPicker.buttonHeight)
-        pickerView.frame = CGRect(x: 0, y: DataPicker.buttonHeight, width: frame.width, height: frame.height - DataPicker.buttonHeight)
+        cancelButton.frame = CGRect(x: 0, y: 0, width: Self.buttonWidth, height: Self.buttonHeight)
+        titleLabel.frame = CGRect(x: Self.buttonWidth, y: 0, width: frame.width - 2 * Self.buttonWidth, height: Self.buttonHeight)
+        doneButton.frame = CGRect(x: frame.width - Self.buttonWidth, y: 0, width: Self.buttonWidth, height: Self.buttonHeight)
+        pickerView.frame = CGRect(x: 0, y: Self.buttonHeight, width: frame.width, height: frame.height - Self.buttonHeight)
         frame = CGRect(x: originalFrame.origin.x, y: originalFrame.origin.y + originalFrame.height, width: originalFrame.width, height: originalFrame.height)
         super.hide()
     }
@@ -230,11 +224,11 @@ extension DataPicker: UIPickerViewDelegate {
 extension DataPicker: UIPickerViewDataSource {
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return columns.count
+        columns.count
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return columns[component].items.count
+        columns[component].items.count
     }
 }
 

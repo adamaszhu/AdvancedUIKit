@@ -9,20 +9,20 @@ public extension UITextField {
     var placeholderColor: UIColor {
         set {
             guard let placeholder = placeholder else {
-                Logger.standard.logWarning(UITextField.placeholderEmptyWarning)
+                Logger.standard.logWarning(Self.placeholderEmptyWarning)
                 return
             }
             attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: newValue])
         }
         get {
             guard let placeholder = attributedPlaceholder else {
-                Logger.standard.logWarning(UITextField.placeholderEmptyWarning)
-                return UITextField.defaultPlaceholderColor
+                Logger.standard.logWarning(Self.placeholderEmptyWarning)
+                return Self.defaultPlaceholderColor
             }
             var range = NSMakeRange(0, placeholder.length)
             guard let color = placeholder.attribute(.foregroundColor, at: 0, effectiveRange: &range) as? UIColor else {
-                Logger.standard.logWarning(UITextField.placeholderColorWarning)
-                return UITextField.defaultPlaceholderColor
+                Logger.standard.logWarning(Self.placeholderColorWarning)
+                return Self.defaultPlaceholderColor
             }
             return color
         }

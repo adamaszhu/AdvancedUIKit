@@ -6,13 +6,13 @@ final class ButtonViewController: UIViewController {
     private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
     
     @IBAction func checkStatus(_ sender: Any) {
-        let message = checkbox.isSelected ? ButtonViewController.checkedStatusMessage : ButtonViewController.uncheckedStatusMessage
-        messageHelper?.showInfo(message, withTitle: ButtonViewController.checkStatusTitle)
+        let message = checkbox.isSelected ? Self.checkedStatusMessage : Self.uncheckedStatusMessage
+        messageHelper?.showInfo(message, withTitle: Self.checkStatusTitle)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        button.title = ButtonViewController.buttonTitle
+        button.title = Self.buttonTitle
     }
 }
 

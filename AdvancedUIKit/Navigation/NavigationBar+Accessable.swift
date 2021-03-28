@@ -7,32 +7,20 @@ public extension UINavigationBar {
     
     /// Set the title of the navigation bar.
     var title: String? {
-        set {
-            topItem?.title = newValue
-        }
-        get {
-            return topItem?.title
-        }
+        set { topItem?.title = newValue }
+        get { topItem?.title }
     }
     
     /// Set the title of the left navigation button.
     var leftButtonTitle: String? {
-        set {
-            topItem?.leftButtonTitle = newValue
-        }
-        get {
-            return topItem?.leftButtonTitle
-        }
+        set { topItem?.leftButtonTitle = newValue }
+        get { topItem?.leftButtonTitle }
     }
     
     /// Set the title of the right navigation button.
     var rightButtonTitle: String? {
-        set {
-            topItem?.rightButtonTitle = newValue
-        }
-        get {
-            return topItem?.rightButtonTitle
-        }
+        set { topItem?.rightButtonTitle = newValue }
+        get { topItem?.rightButtonTitle }
     }
     
     /// Set the action for the left button.

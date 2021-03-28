@@ -22,7 +22,7 @@ final public class SystemMessageHelper {
     /// - Parameter application: The application used to make a function call.
     public init?(application: UIApplication = UIApplication.shared) {
         guard let rootViewController = application.rootViewController else {
-            Logger.standard.logError(SystemMessageHelper.rootViewControllerError)
+            Logger.standard.logError(Self.rootViewControllerError)
             return nil
         }
         currentViewController = rootViewController
@@ -35,7 +35,9 @@ final public class SystemMessageHelper {
     ///   - content: The content of the message. Nil means that it is an input message.
     ///   - confirmButtonName: The name of the confirm button.
     ///   - cancelButtonName: The name of the cancel button. If this is nil, the confirm button will not be shown.
-    private func createMessage(withTitle title: String, content: String?, confirmButtonName: String, andCancelButtonName cancelButtonName: String?) {
+    private func createMessage(withTitle title: String,
+                               content: String?, confirmButtonName: String,
+                               andCancelButtonName cancelButtonName: String?) {
         let title = title.localizedInternalString(forType: MessageHelper.self)
         let confirmButtonName = confirmButtonName.localizedInternalString(forType: MessageHelper.self)
         let cancelButtonName = cancelButtonName?.localizedInternalString(forType: MessageHelper.self)
@@ -56,7 +58,7 @@ final public class SystemMessageHelper {
                     self.delegate?.messageHelperDidCancelInput(self)
                     break
                 case .unknown:
-                    Logger.standard.logError(SystemMessageHelper.typeError)
+                    Logger.standard.logError(Self.typeError)
                     break
                 }
             }
@@ -78,7 +80,7 @@ final public class SystemMessageHelper {
             case .input:
                 self.delegate?.messageHelper(self, didConfirmInput: self.alertController?.textFields?[0].text ?? .empty)
             case .unknown:
-                Logger.standard.logError(SystemMessageHelper.typeError)
+                Logger.standard.logError(Self.typeError)
                 break
             }
         }
@@ -106,28 +108,37 @@ final public class SystemMessageHelper {
 /// MessageHelper
 extension SystemMessageHelper: MessageHelper {
     
-    public func showInfo(_ content: String, withTitle title: String = successTitle, withConfirmButtonName confirmButtonName: String = infoConfirmButtonName) {
+    public func showInfo(_ content: String,
+                         withTitle title: String = successTitle,
+                         withConfirmButtonName confirmButtonName: String = infoConfirmButtonName) {
         hidePreviousMessage()
         messageType = .info
         createMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: nil)
         showMessage()
     }
     
-    public func showWarning(_ content: String, withTitle title: String = warningTitle, withConfirmButtonName confirmButtonName: String = warningConfirmButtonName, withCancelButtonName cancelButtonName: String = warningCancelButtonName) {
+    public func showWarning(_ content: String,
+                            withTitle title: String = warningTitle,
+                            withConfirmButtonName confirmButtonName: String = warningConfirmButtonName,
+                            withCancelButtonName cancelButtonName: String = warningCancelButtonName) {
         hidePreviousMessage()
         messageType = .warning
         createMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: cancelButtonName)
         showMessage()
     }
     
-    public func showError(_ content: String, withTitle title: String = errorTitle, withConfirmButtonName confirmButtonName: String = errorConfirmButtonName) {
+    public func showError(_ content: String,
+                          withTitle title: String = errorTitle,
+                          withConfirmButtonName confirmButtonName: String = errorConfirmButtonName) {
         hidePreviousMessage()
         messageType = .error
         createMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: nil)
         showMessage()
     }
     
-    public func showInput(withTitle title: String, withConfirmButtonName confirmButtonName: String = inputConfirmButtonName, withCancelButtonName cancelButtonName: String = inputCancelButtonName) {
+    public func showInput(withTitle title: String,
+                          withConfirmButtonName confirmButtonName: String = inputConfirmButtonName,
+                          withCancelButtonName cancelButtonName: String = inputCancelButtonName) {
         hidePreviousMessage()
         messageType = .input
         createMessage(withTitle: title, content: nil, confirmButtonName: confirmButtonName, andCancelButtonName: cancelButtonName)

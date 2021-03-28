@@ -5,12 +5,12 @@ final class NavigationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackButton()
-        navigationItem.rightButtonTitle = NavigationViewController.navigationRightButtonName
+        navigationItem.rightButtonTitle = Self.navigationRightButtonName
         navigationItem.setRightButtonAction(action: #selector(showNextViewController), withTarget: self)
     }
     
     @objc func showNextViewController() {
-        navigationController?.showInitialViewController(ofStoryboard: NavigationViewController.navigationTitle)
+        navigationController?.showInitialViewController(ofStoryboard: Self.navigationTitle)
     }
 }
 

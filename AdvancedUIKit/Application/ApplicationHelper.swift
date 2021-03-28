@@ -17,8 +17,8 @@ public final class ApplicationHelper {
     /// - Parameter type: The application type
     /// - Returns: Whether or not the app is installed
     public func isApplicationInstalled(with type: ApplicationType) -> Bool {
-        guard let url = URL(string: type.rawValue + ApplicationHelper.urlSchemeSeparator) else {
-            Logger.standard.logError(ApplicationHelper.schemeError)
+        guard let url = URL(string: type.rawValue + Self.urlSchemeSeparator) else {
+            Logger.standard.logError(Self.schemeError)
             return false
         }
         return application.canOpenURL(url)

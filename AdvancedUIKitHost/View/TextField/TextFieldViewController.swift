@@ -5,7 +5,7 @@ final class TextFieldViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.placeholderColor = .lightGray
-        textField.activateUnderline(withNormal: .lightGray, withHignlighted: TextFieldViewController.highlightedUnderlineColor)
+        textField.activateUnderline(withNormal: .lightGray, withHignlighted: Self.highlightedUnderlineColor)
     }
 }
 

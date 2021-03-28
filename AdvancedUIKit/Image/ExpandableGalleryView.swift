@@ -31,7 +31,7 @@ final public class ExpandableGalleryView: GalleryView {
     public override func add(_ image: UIImage) {
         super.add(image)
         guard let galleryImage = subviews.last as? GalleryImage else {
-            Logger.standard.logError(ExpandableGalleryView.subviewTypeError)
+            Logger.standard.logError(Self.subviewTypeError)
             return
         }
         collapseGestureRecognizer.require(toFail: galleryImage.doubleTapGestureRecognizer)
@@ -109,9 +109,9 @@ final public class ExpandableGalleryView: GalleryView {
     private func addBackground() {
         animateChange( { [weak self] in
             self?.currentGalleryImage?.imageView.backgroundColor = .black
-        }) { [weak self] in
+        }, completion:  { [weak self] in
             self?.setBackgroundColor(.black)
-        }
+        })
     }
     
     /// Collapse the frame with animation
@@ -145,10 +145,10 @@ final public class ExpandableGalleryView: GalleryView {
     private func removeBackgroundColor() {
         animateChange({ [weak self] in
             self?.currentGalleryImage?.imageView.backgroundColor = .clear
-        }) { [weak self] in
+        }, completion:  { [weak self] in
             self?.setBackgroundColor(.clear)
             self?.collapseFrame()
-        }
+        })
     }
     
     /// Set the background color of all subvies.

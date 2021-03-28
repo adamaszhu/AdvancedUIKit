@@ -1,7 +1,7 @@
 /// ActionSheetItem is used to present an action.
 ///
 /// - author: Adamas
-/// - version: 1.5.0
+/// - version: 1.6.0
 /// - date: 24/09/2019
 public struct ActionSheetItem {
     
@@ -26,7 +26,9 @@ public struct ActionSheetItem {
     ///   - title: The title.
     ///   - icon: The icon. Nil by default.
     ///   - action: The action.
-    public init(title: String, icon: UIImage? = nil, action: @escaping () -> Void) {
+    public init(title: String,
+                icon: UIImage? = nil,
+                action: @escaping () -> Void) {
         self.title = title
         self.icon = icon
         self.action = action
@@ -64,13 +66,13 @@ extension UIAlertAction {
     
     /// Convert an ActionSheetItem into an UIAlertAction
     ///
-    /// - Parameter item: <#item description#>
+    /// - Parameter item: The data model of an alert action
     convenience init(item: ActionSheetItem) {
         self.init(title: item.title, style: item.style) { _ in
             item.action?()
         }
-        setValue(item.icon?.withRenderingMode(.alwaysOriginal), forKey: UIAlertAction.imageKey)
-        setValue(item.viewController, forKey: UIAlertAction.viewControllerKey)
+        setValue(item.icon?.withRenderingMode(.alwaysOriginal), forKey: Self.imageKey)
+        setValue(item.viewController, forKey: Self.viewControllerKey)
     }
 }
 

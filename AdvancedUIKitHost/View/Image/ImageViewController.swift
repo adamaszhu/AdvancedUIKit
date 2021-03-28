@@ -43,14 +43,14 @@ final class ImageViewController: UIViewController {
     }
     
     @IBAction func addBlur(_ sender: Any) {
-        guard let image = galleryView.currentImage?.addingGaussianBlur(withRadius: ImageViewController.gaussianRadius) else {
+        guard let image = galleryView.currentImage?.addingGaussianBlur(withRadius: Self.gaussianRadius) else {
             return
         }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
     }
     
     @IBAction func addOpacity(_ sender: Any) {
-        guard let image = galleryView.currentImage?.addingOpacity(ImageViewController.opacity) else {
+        guard let image = galleryView.currentImage?.addingOpacity(Self.opacity) else {
             return
         }
         galleryView.refresh(image, atIndex: galleryView.currentPageIndex)
@@ -152,7 +152,13 @@ extension ImageViewController: MessageHelperDelegate {
     func messageHelper(_ messageHelper: MessageHelper, didConfirmInput content: String) {
         let codeHelper = CodeHelper()
         if let image = codeHelper.createCode(content, as: codeType, with: ImageViewController.size) {
-            galleryView.add(image)
+            if #available(iOS 14, *) {
+                galleryView.imageMode = .scaleToFill
+                galleryView.add(image)
+                galleryView.imageMode = .scaleAspectFit
+            } else {
+                galleryView.add(image)
+            }
         }
     }
 }

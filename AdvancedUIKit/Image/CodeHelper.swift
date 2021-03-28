@@ -7,22 +7,25 @@ public final class CodeHelper {
     
     /// Create a code image.
     ///
+    /// - Important:
+    /// On iOS 14, the generated image cannot be applied to an `UIImageView` within a `UIScrollView`, whose `contentMode` is `.scaleAspectFit` or `.scaleAspectFill`.
+    ///
     /// - Parameters:
     ///   - code: The code.
     ///   - type: The code type.
     ///   - size: The code size.
     public func createCode(_ code: String, as type: CodeType, with size: CGSize) -> UIImage? {
         guard let data = code.data(using: .ascii) else {
-            Logger.standard.logError(CodeHelper.codingError)
+            Logger.standard.logError(Self.codingError)
             return nil
         }
         guard let filter = CIFilter(name: type.rawValue) else {
-            Logger.standard.logError(CodeHelper.filterError)
+            Logger.standard.logError(Self.filterError)
             return nil
         }
-        filter.setValue(data, forKey: CodeHelper.messageKey)
+        filter.setValue(data, forKey: Self.messageKey)
         guard let ciImage = filter.outputImage else {
-            Logger.standard.logError(CodeHelper.outputError)
+            Logger.standard.logError(Self.outputError)
             return nil
         }
         let ciImageSize = ciImage.extent.size

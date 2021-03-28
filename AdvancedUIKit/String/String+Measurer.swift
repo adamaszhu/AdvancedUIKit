@@ -10,7 +10,7 @@ public extension String {
     /// - Parameter font: The font.
     /// - Returns: The width.
     func measuredWidth(with font: UIFont) -> CGFloat {
-        return self.size(withAttributes: [.font: font]).width
+        self.size(withAttributes: [.font: font]).width
     }
     
     /// Get the width of a string with a specific font.
@@ -18,7 +18,7 @@ public extension String {
     /// - Parameter font: The font.
     /// - Returns: The height.
     func measuredHeight(with font: UIFont) -> CGFloat {
-        return self.size(withAttributes: [.font: font]).height
+        self.size(withAttributes: [.font: font]).height
     }
     
     /// Get the actual line amount displayed on the screen.
@@ -39,8 +39,12 @@ public extension String {
     ///   - view: The view that text is in.
     /// - Returns: The actual height displayed on the view.
     func measuredHeight(with font: UIFont, in view: UIView) -> CGFloat {
-        let maxBounds = CGSize(width: view.frame.width, height: .greatestFiniteMagnitude)
-        let bounds = self.boundingRect(with: maxBounds, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
+        let maxBounds = CGSize(width: view.frame.width,
+                               height: .greatestFiniteMagnitude)
+        let bounds = self.boundingRect(with: maxBounds,
+                                       options: .usesLineFragmentOrigin,
+                                       attributes: [.font: font],
+                                       context: nil)
         return bounds.height
     }
     
@@ -52,7 +56,7 @@ public extension String {
     /// - Returns: The actual lines displayed on the view.
     func measuredLines(with font: UIFont, in view: UIView) -> [String] {
         guard view.frame.width != 0 else {
-            Logger.standard.logWarning(String.viewWidthWarning)
+            Logger.standard.logWarning(Self.viewWidthWarning)
             return []
         }
         return components(separatedBy: CharacterSet.newlines)

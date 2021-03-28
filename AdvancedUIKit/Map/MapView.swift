@@ -83,10 +83,10 @@ public class MapView: MKMapView {
             maxLongitude = max(maxLongitude, $0.longitude)
             minLongitude = min(minLongitude, $0.longitude)
         }
-        maxLatitude = min(90, maxLatitude + MapView.defaultOverviewMargin)
-        minLatitude = max(-90, minLatitude - MapView.defaultOverviewMargin)
-        maxLongitude = min(180, maxLongitude + MapView.defaultOverviewMargin)
-        minLongitude = max(-180, minLongitude - MapView.defaultOverviewMargin)
+        maxLatitude = min(90, maxLatitude + Self.defaultOverviewMargin)
+        minLatitude = max(-90, minLatitude - Self.defaultOverviewMargin)
+        maxLongitude = min(180, maxLongitude + Self.defaultOverviewMargin)
+        minLongitude = max(-180, minLongitude - Self.defaultOverviewMargin)
         setViewport(withTopLatitude: maxLatitude, bottomLatitude: minLatitude, leftLongitude: minLongitude, andRightLongitude: maxLongitude)
     }
     
@@ -142,7 +142,7 @@ public class MapView: MKMapView {
         }
         let userLocationCoordinate = userLocation.coordinate
         guard userLocationCoordinate.latitude != 0, userLocationCoordinate.longitude != 0 else {
-            Logger.standard.logWarning(MapView.userLocationUnretrievedWarning)
+            Logger.standard.logWarning(Self.userLocationUnretrievedWarning)
             return
         }
         setViewport(withCenterLatitude: userLocationCoordinate.latitude, andCenterLongitude: userLocationCoordinate.longitude, withZoomLevel: zoomLevel)
@@ -204,7 +204,7 @@ extension MapView: MKMapViewDelegate {
     ///   - list: The point list.
     /// - Returns: The point. Nil if it is not found.
     private func findPoint(with annotation: MKAnnotation, in list: [MapViewPoint]) -> MapViewPoint? {
-        return list.first(where: { $0.annotation === annotation })
+        list.first(where: { $0.annotation === annotation })
     }
     
     /// Find the point containing the annotation in a line.
@@ -212,7 +212,7 @@ extension MapView: MKMapViewDelegate {
     /// - Parameter annotation: The annotation.
     /// - Returns: The point. Nil if it is not found.
     private func findLinePoint(with annotation: MKAnnotation) -> MapViewPoint? {
-        return lines.compactMap { findPoint(with: annotation, in: $0.points) }.first
+        lines.compactMap { findPoint(with: annotation, in: $0.points) }.first
     }
     
     public func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
@@ -239,7 +239,7 @@ extension MapView: MKMapViewDelegate {
         } else if let linePoint = findLinePoint(with: annotation) {
             point = linePoint
         } else {
-            Logger.standard.logError(MapView.pointError)
+            Logger.standard.logError(Self.pointError)
             return nil
         }
         guard let _ = point.icon else {
@@ -252,7 +252,7 @@ extension MapView: MKMapViewDelegate {
     
     public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         guard let line = lines.first(where: { $0.line === overlay }) else {
-            Logger.standard.logError(MapView.lineError)
+            Logger.standard.logError(Self.lineError)
             return MKOverlayRenderer()
         }
         return line.renderer

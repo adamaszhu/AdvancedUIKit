@@ -3,17 +3,17 @@ final class ActionSheetViewController: UIViewController {
     private let messageHelper: SystemMessageHelper? = SystemMessageHelper()
     
     @IBAction func showActionSheet(_ sender: Any) {
-        let action1 = ActionSheetItem(title: ActionSheetViewController.action1) {
-            self.messageHelper?.showInfo(ActionSheetViewController.action1)
+        let action1 = ActionSheetItem(title: Self.action1) {
+            self.messageHelper?.showInfo(Self.action1)
         }
-        let action2 = ActionSheetItem(title: ActionSheetViewController.action2, icon: UIImage(named: ActionSheetViewController.actionIcon)) {
-            self.messageHelper?.showInfo(ActionSheetViewController.action2)
+        let action2 = ActionSheetItem(title: Self.action2, icon: UIImage(named: Self.actionIcon)) {
+            self.messageHelper?.showInfo(Self.action2)
         }
         let viewController = UIViewController()
-        viewController.view.backgroundColor = ActionSheetViewController.actionColor
+        viewController.view.backgroundColor = Self.actionColor
         let action3 = ActionSheetItem(viewController: viewController)
-        let action4 = ActionSheetItem(title: ActionSheetViewController.cancelAction, style: .cancel)
-        showActionSheet(from: view, withTitle: ActionSheetViewController.actionTitle, message: ActionSheetViewController.actionMessage, and: [action1, action2, action3, action4])
+        let action4 = ActionSheetItem(title: Self.cancelAction, style: .cancel)
+        showActionSheet(from: view, withTitle: Self.actionTitle, message: Self.actionMessage, and: [action1, action2, action3, action4])
     }
 }
 

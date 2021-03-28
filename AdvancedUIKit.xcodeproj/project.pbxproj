@@ -84,9 +84,6 @@
 		28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */; };
 		28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F21EDBF49D006646A3 /* DeviceType.swift */; };
 		28FD8CEE1F731B050067E378 /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FD8CED1F731B050067E378 /* Picker.storyboard */; };
-		3509D56A22F175AE009170F6 /* AdvancedFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3509D56822F17499009170F6 /* AdvancedFoundation.framework */; };
-		3509D56E22F258DF009170F6 /* AdvancedFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3509D56822F17499009170F6 /* AdvancedFoundation.framework */; };
-		3509D56F22F258DF009170F6 /* AdvancedFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3509D56822F17499009170F6 /* AdvancedFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3519F74522824D2E00C7AF17 /* RemoteNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3519F74422824D2D00C7AF17 /* RemoteNotification.swift */; };
 		3519F74822824D5500C7AF17 /* RemoteNotificationSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3519F74722824D5500C7AF17 /* RemoteNotificationSpecs.swift */; };
 		3519F74B228274B000C7AF17 /* AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422DB3C41EAA30B300377AB5 /* AdvancedUIKit.framework */; };
@@ -168,6 +165,9 @@
 		42D15E0B2327BCF1006EAEF5 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D15E0A2327BCF1006EAEF5 /* EmptyState.xib */; };
 		42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */; };
 		42FE508D1EF7CF9E009C0BD7 /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE508C1EF7CF9E009C0BD7 /* ExpandableView.swift */; };
+		5A6E4FA183376B48A2FA3D01 /* Pods_AdvancedUIKit_AdvancedUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A871BD10580876398F78B0 /* Pods_AdvancedUIKit_AdvancedUIKitTests.framework */; };
+		97565356EB6DECB2243CB8C9 /* Pods_AdvancedUIKit_AdvancedUIKitHost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFBAF19C417336EED2A9E49 /* Pods_AdvancedUIKit_AdvancedUIKitHost.framework */; };
+		DBAA9318C0980A080E1EFBD0 /* Pods_AdvancedUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31928C098A9D3BEAAD96BF73 /* Pods_AdvancedUIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,7 +202,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				28D1BFF81EDCEC7300290999 /* AdvancedUIKit.framework in Embed Frameworks */,
-				3509D56F22F258DF009170F6 /* AdvancedFoundation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +209,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07859BA0E2864ECB7C07C9EE /* Pods-AdvancedUIKit-AdvancedUIKitHost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKit-AdvancedUIKitHost.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKit-AdvancedUIKitHost/Pods-AdvancedUIKit-AdvancedUIKitHost.release.xcconfig"; sourceTree = "<group>"; };
 		2810830C201AE5D800AA30A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppStoreHelper.strings; sourceTree = "<group>"; };
 		2810830E201AE5E600AA30A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppStoreHelper.strings"; sourceTree = "<group>"; };
 		2810830F201AE64B00AA30A6 /* AppStoreHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoreHelper.swift; sourceTree = "<group>"; };
@@ -289,7 +289,8 @@
 		28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoAccessor.swift; sourceTree = "<group>"; };
 		28F550F21EDBF49D006646A3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		28FD8CED1F731B050067E378 /* Picker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
-		3509D56822F17499009170F6 /* AdvancedFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdvancedFoundation.framework; sourceTree = "<group>"; };
+		31928C098A9D3BEAAD96BF73 /* Pods_AdvancedUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31A871BD10580876398F78B0 /* Pods_AdvancedUIKit_AdvancedUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKit_AdvancedUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3519F74422824D2D00C7AF17 /* RemoteNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotification.swift; sourceTree = "<group>"; };
 		3519F74722824D5500C7AF17 /* RemoteNotificationSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationSpecs.swift; sourceTree = "<group>"; };
 		3519F74C2282AE6F00C7AF17 /* ScrollView+Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+Imageable.swift"; sourceTree = "<group>"; };
@@ -309,6 +310,7 @@
 		35EA4380233309030004F41B /* CodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeType.swift; sourceTree = "<group>"; };
 		35EA4382233315FA0004F41B /* ApplicationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationHelper.swift; sourceTree = "<group>"; };
 		35EA4384233316060004F41B /* ApplicationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationType.swift; sourceTree = "<group>"; };
+		367759B9466C779A68E75E7A /* Pods-AdvancedUIKit-AdvancedUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKit-AdvancedUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKit-AdvancedUIKitTests/Pods-AdvancedUIKit-AdvancedUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		420C78E01EEB73AE00A1E3EA /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		420C78E31EEB93E500A1E3EA /* Application+Accessable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Application+Accessable.swift"; sourceTree = "<group>"; };
 		420C78EC1EEBB6D900A1E3EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CameraHelper.strings; sourceTree = "<group>"; };
@@ -381,7 +383,12 @@
 		42D15E0A2327BCF1006EAEF5 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 		42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		42FE508C1EF7CF9E009C0BD7 /* ExpandableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
+		4CFE9C6CD7293496C71EFB69 /* Pods-AdvancedUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKit/Pods-AdvancedUIKit.release.xcconfig"; sourceTree = "<group>"; };
 		4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A386B8174AF365E6F755C51 /* Pods-AdvancedUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKit/Pods-AdvancedUIKit.debug.xcconfig"; sourceTree = "<group>"; };
+		9FFBAF19C417336EED2A9E49 /* Pods_AdvancedUIKit_AdvancedUIKitHost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvancedUIKit_AdvancedUIKitHost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1DCC88739E8183289E114E9 /* Pods-AdvancedUIKit-AdvancedUIKitHost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKit-AdvancedUIKitHost.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKit-AdvancedUIKitHost/Pods-AdvancedUIKit-AdvancedUIKitHost.debug.xcconfig"; sourceTree = "<group>"; };
+		D44CB5CB41EAF5A087241B98 /* Pods-AdvancedUIKit-AdvancedUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKit-AdvancedUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKit-AdvancedUIKitTests/Pods-AdvancedUIKit-AdvancedUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancedUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -390,7 +397,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3509D56A22F175AE009170F6 /* AdvancedFoundation.framework in Frameworks */,
+				DBAA9318C0980A080E1EFBD0 /* Pods_AdvancedUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28D1BFF71EDCEC7300290999 /* AdvancedUIKit.framework in Frameworks */,
-				3509D56E22F258DF009170F6 /* AdvancedFoundation.framework in Frameworks */,
+				97565356EB6DECB2243CB8C9 /* Pods_AdvancedUIKit_AdvancedUIKitHost.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3519F74B228274B000C7AF17 /* AdvancedUIKit.framework in Frameworks */,
+				5A6E4FA183376B48A2FA3D01 /* Pods_AdvancedUIKit_AdvancedUIKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,9 +603,11 @@
 		3509D56722F17499009170F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3509D56822F17499009170F6 /* AdvancedFoundation.framework */,
+				31928C098A9D3BEAAD96BF73 /* Pods_AdvancedUIKit.framework */,
+				31A871BD10580876398F78B0 /* Pods_AdvancedUIKit_AdvancedUIKitTests.framework */,
+				9FFBAF19C417336EED2A9E49 /* Pods_AdvancedUIKit_AdvancedUIKitHost.framework */,
 			);
-			path = Frameworks;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3519F74622824D5500C7AF17 /* Notification */ = {
@@ -996,6 +1006,12 @@
 			children = (
 				4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */,
 				F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */,
+				7A386B8174AF365E6F755C51 /* Pods-AdvancedUIKit.debug.xcconfig */,
+				4CFE9C6CD7293496C71EFB69 /* Pods-AdvancedUIKit.release.xcconfig */,
+				D44CB5CB41EAF5A087241B98 /* Pods-AdvancedUIKit-AdvancedUIKitTests.debug.xcconfig */,
+				367759B9466C779A68E75E7A /* Pods-AdvancedUIKit-AdvancedUIKitTests.release.xcconfig */,
+				D1DCC88739E8183289E114E9 /* Pods-AdvancedUIKit-AdvancedUIKitHost.debug.xcconfig */,
+				07859BA0E2864ECB7C07C9EE /* Pods-AdvancedUIKit-AdvancedUIKitHost.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1017,6 +1033,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 422DB3D81EAA30B300377AB5 /* Build configuration list for PBXNativeTarget "AdvancedUIKit" */;
 			buildPhases = (
+				CBE379BB00717464CD0BD1CC /* [CP] Check Pods Manifest.lock */,
 				422DB3BF1EAA30B300377AB5 /* Sources */,
 				422DB3C01EAA30B300377AB5 /* Frameworks */,
 				422DB3C11EAA30B300377AB5 /* Headers */,
@@ -1035,10 +1052,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 422DB4201EAA3CF100377AB5 /* Build configuration list for PBXNativeTarget "AdvancedUIKitHost" */;
 			buildPhases = (
+				D4105F84AE83D63626D4BF1A /* [CP] Check Pods Manifest.lock */,
 				422DB4021EAA3CF100377AB5 /* Sources */,
 				422DB4031EAA3CF100377AB5 /* Frameworks */,
 				422DB4041EAA3CF100377AB5 /* Resources */,
 				28D1BFFB1EDCEC7300290999 /* Embed Frameworks */,
+				D36CCFFA1E7CB083A52B2B4B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1089,13 +1108,13 @@
 					422DB4051EAA3CF100377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = V276VB2699;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1230;
 						ProvisioningStyle = Automatic;
 					};
 					422DB4181EAA3CF100377AB5 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = X736P3ZPXA;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1230;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 422DB4051EAA3CF100377AB5;
 					};
@@ -1195,7 +1214,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AdvancedUIKitTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AdvancedUIKit-AdvancedUIKitTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1208,18 +1227,82 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AdvancedUIKit-AdvancedUIKitTests/Pods-AdvancedUIKit-AdvancedUIKitTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AdvancedFoundation/AdvancedFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdvancedFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdvancedUIKitTests/Pods-AdvancedUIKitTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdvancedUIKit-AdvancedUIKitTests/Pods-AdvancedUIKit-AdvancedUIKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBE379BB00717464CD0BD1CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdvancedUIKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D36CCFFA1E7CB083A52B2B4B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdvancedUIKit-AdvancedUIKitHost/Pods-AdvancedUIKit-AdvancedUIKitHost-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AdvancedFoundation/AdvancedFoundation.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdvancedFoundation.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdvancedUIKit-AdvancedUIKitHost/Pods-AdvancedUIKit-AdvancedUIKitHost-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4105F84AE83D63626D4BF1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdvancedUIKit-AdvancedUIKitHost-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1598,6 +1681,7 @@
 		};
 		422DB3D91EAA30B300377AB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A386B8174AF365E6F755C51 /* Pods-AdvancedUIKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1606,10 +1690,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AdvancedUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1626,6 +1707,7 @@
 		};
 		422DB3DA1EAA30B300377AB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CFE9C6CD7293496C71EFB69 /* Pods-AdvancedUIKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1634,10 +1716,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AdvancedUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1653,47 +1732,43 @@
 		};
 		422DB4211EAA3CF100377AB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1DCC88739E8183289E114E9 /* Pods-AdvancedUIKit-AdvancedUIKitHost.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V276VB2699;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikitHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		422DB4221EAA3CF100377AB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07859BA0E2864ECB7C07C9EE /* Pods-AdvancedUIKit-AdvancedUIKitHost.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V276VB2699;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.uikitHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		422DB4241EAA3CF100377AB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FD9269D2C60EB827C9515A3 /* Pods-AdvancedUIKitTests.debug.xcconfig */;
+			baseConfigurationReference = D44CB5CB41EAF5A087241B98 /* Pods-AdvancedUIKit-AdvancedUIKitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1704,14 +1779,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = AdvancedUIKitHost;
 			};
 			name = Debug;
 		};
 		422DB4251EAA3CF100377AB5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0CF1A07C94DBA7B81364EAC /* Pods-AdvancedUIKitTests.release.xcconfig */;
+			baseConfigurationReference = 367759B9466C779A68E75E7A /* Pods-AdvancedUIKit-AdvancedUIKitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1721,7 +1796,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamas.AdvancedUIKitHostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = AdvancedUIKitHost;
 			};
 			name = Release;

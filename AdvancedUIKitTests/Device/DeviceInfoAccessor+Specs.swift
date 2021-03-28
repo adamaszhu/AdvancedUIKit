@@ -1,7 +1,7 @@
 class DeviceInfoAccessorSpecs: QuickSpec {
     
     override func spec() {
-        let deviceInfoAccessor = DeviceInfoAccessor()
+        let deviceInfoAccessor = DeviceInfoAccessor.shared
         describe("has shared") {
             it("is not nil") {
                 expect(DeviceInfoAccessor.shared).toNot(beNil())
@@ -9,12 +9,12 @@ class DeviceInfoAccessorSpecs: QuickSpec {
         }
         describe("has systemVersion") {
             it("is correct version") {
-                expect(deviceInfoAccessor.systemVersion) == "12.2"
+                expect(deviceInfoAccessor.systemVersion) == "14.3"
             }
         }
         describe("has majorSystemVersion") {
             it("is correct version") {
-                expect(deviceInfoAccessor.majorSystemVersion) == 12
+                expect(deviceInfoAccessor.majorSystemVersion) == 14
             }
         }
         describe("has deviceType") {
@@ -22,22 +22,7 @@ class DeviceInfoAccessorSpecs: QuickSpec {
                 expect(deviceInfoAccessor.deviceType) == DeviceType.phone
             }
         }
-        describe("calls init(device:processInfo)") {
-            let deviceInfoAccessor = DeviceInfoAccessor(device: UIDevice.current)
-            context("with device") {
-                it("returns object") {
-                    expect(deviceInfoAccessor).toNot(beNil())
-                }
-            }
-            context("with processInfo") {
-                let deviceInfoAccessor = DeviceInfoAccessor(processInfo: ProcessInfo())
-                it("returns object") {
-                    expect(deviceInfoAccessor).toNot(beNil())
-                }
-            }
-        }
     }
-    
 }
 
 import Quick
