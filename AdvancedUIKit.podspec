@@ -11,11 +11,9 @@ s.author = { "Adamas Zhu" => "developer@adamaszhu.com" }
 s.homepage = "https://github.com/adamaszhu/AdvancedUIKit"
 s.source = { :git => "https://github.com/adamaszhu/AdvancedUIKit.git",
              :tag => "v#{s.version}" }
-s.framework = "Foundation"
-s.framework = "UIKit"
+s.frameworks = "Foundation", "UIKit"
 s.dependency 'AdvancedFoundation', '1.6.3'
 s.source_files = "AdvancedUIKit/**/*.{swift}"
-s.resources = "AdvancedUIKit/**/*.{strings}"
 s.swift_version = "4.2"
 
 end
