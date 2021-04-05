@@ -5,10 +5,10 @@ source 'https://github.com/adamaszhu/AdvancedFoundationSpecs.git'
 
 target 'AdvancedUIKit' do
 
-  pod 'AdvancedFoundation', '1.6.2'
+  pod 'AdvancedFoundation', '1.6.3'
 
   target 'AdvancedUIKitHost' do
-    pod 'AdvancedFoundation', '1.6.2'
+    pod 'AdvancedFoundation', '1.6.3'
   end
 
   target 'AdvancedUIKitTests' do
