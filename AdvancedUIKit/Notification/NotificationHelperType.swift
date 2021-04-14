@@ -13,6 +13,9 @@ public protocol NotificationHelperType {
     
     /// Check the local notification permission
     ///
+    /// - Important:
+    /// Since iOS 13, the callback won't be triggered in `applicationWillTerminate(_)`
+    ///
     /// - Parameter completion: The callback
     func checkLocalNotificationPermission(completion: @escaping (Bool?) -> Void)
     
@@ -144,30 +147,21 @@ final public class NotificationHelper: NotificationHelperType {
     public func createLocalNotification(withTitle title: String?,
                                         content: String, delay: Double,
                                         andSoundName soundName: String) {
-        checkLocalNotificationPermission { [weak self] result in
-            guard let self = self else {
-                return
-            }
-            guard result == true else {
-                self.delegate?.notificationHelper(self, didCatchError: Self.authorizationError.localizedInternalString(forType: Self.self))
-                return
-            }
-            let notificationContent = UNMutableNotificationContent()
-            if let title = title {
-                notificationContent.title = title
-                notificationContent.body = content
-            } else {
-                notificationContent.title = content
-            }
-            let notificationSoundName = UNNotificationSoundName(rawValue: soundName)
-            notificationContent.sound = UNNotificationSound(named: notificationSoundName)
-            let adjustedDelay = max(1, delay)
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: adjustedDelay, repeats: false)
-            let request = UNNotificationRequest(identifier: content, content: notificationContent, trigger: trigger)
-            self.notificationCenter.add(request) { [weak self] error in
-                if let error = error, let self = self {
-                    self.delegate?.notificationHelper(self, didCatchError: error.localizedDescription)
-                }
+        let notificationContent = UNMutableNotificationContent()
+        if let title = title {
+            notificationContent.title = title
+            notificationContent.body = content
+        } else {
+            notificationContent.title = content
+        }
+        let notificationSoundName = UNNotificationSoundName(rawValue: soundName)
+        notificationContent.sound = UNNotificationSound(named: notificationSoundName)
+        let adjustedDelay = max(1, delay)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: adjustedDelay, repeats: false)
+        let request = UNNotificationRequest(identifier: content, content: notificationContent, trigger: trigger)
+        notificationCenter.add(request) { [weak self] error in
+            if let error = error, let self = self {
+                self.delegate?.notificationHelper(self, didCatchError: error.localizedDescription)
             }
         }
     }
@@ -228,24 +222,15 @@ final public class StaleNotificationHelper: NotificationHelperType {
     }
     
     public func createLocalNotification(withTitle title: String?, content: String, delay: Double, andSoundName soundName: String) {
-        checkLocalNotificationPermission { [weak self] result in
-            guard let self = self else {
-                return
-            }
-            guard result == true else {
-                self.delegate?.notificationHelper(self, didCatchError: Self.authorizationError.localizedInternalString(forType: Self.self))
-                return
-            }
-            let notification = UILocalNotification()
-            notification.timeZone = NSTimeZone.default
-            notification.fireDate = Date().addingTimeInterval(delay)
-            if let title = title {
-                notification.alertTitle = title
-            }
-            notification.alertBody = content
-            notification.soundName = soundName
-            self.application.scheduleLocalNotification(notification)
+        let notification = UILocalNotification()
+        notification.timeZone = NSTimeZone.default
+        notification.fireDate = Date().addingTimeInterval(delay)
+        if let title = title {
+            notification.alertTitle = title
         }
+        notification.alertBody = content
+        notification.soundName = soundName
+        application.scheduleLocalNotification(notification)
     }
 }
 
