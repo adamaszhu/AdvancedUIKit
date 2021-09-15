@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
 s.platform = :ios
 s.ios.deployment_target = '9.0'
-s.name = "AdvancedUIKit"
+s.name = "AdvancedUI"
 s.summary = "AdvancedUIKit contains utility UI functions built on top of UIKit framework."
 s.requires_arc = true
 s.version = "1.7.0"

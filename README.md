@@ -10,7 +10,7 @@
 ### Cocoapods
 Include the following line in the `Podfile`
 
-`pod AdvancedUIKit`
+`pod AdvancedUI`
 
 ### Swift package manager
 Add a `Package Dependency` using the current Github URL
