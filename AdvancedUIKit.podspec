@@ -5,7 +5,7 @@ s.ios.deployment_target = '9.0'
 s.name = "AdvancedUIKit"
 s.summary = "AdvancedUIKit contains utility UI functions built on top of UIKit framework."
 s.requires_arc = true
-s.version = "0.0.1"
+s.version = "1.7.0"
 s.license = { :type => "MIT", :file => "LICENSE" }
 s.author = { "Adamas Zhu" => "developer@adamaszhu.com" }
 s.homepage = "https://github.com/adamaszhu/AdvancedUIKit"
