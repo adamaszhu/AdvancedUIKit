@@ -5,6 +5,15 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "perl &quot;${PROJECT_DIR}/Scripts/sort-xcode-project-file&quot; &quot;${PROJECT_FILE_PATH}/project.pbxproj&quot;&#10;">
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,24 +23,33 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "422DB3C31EAA30B300377AB5"
-               BuildableName = "AdvancedUIKit.framework"
-               BlueprintName = "AdvancedUIKit"
+               BlueprintIdentifier = "422DB4051EAA3CF100377AB5"
+               BuildableName = "AdvancedUIKitHost.app"
+               BlueprintName = "AdvancedUIKitHost"
                ReferencedContainer = "container:AdvancedUIKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "422DB4051EAA3CF100377AB5"
+            BuildableName = "AdvancedUIKitHost.app"
+            BlueprintName = "AdvancedUIKitHost"
+            ReferencedContainer = "container:AdvancedUIKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -40,37 +58,39 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "422DB3C31EAA30B300377AB5"
-            BuildableName = "AdvancedUIKit.framework"
-            BlueprintName = "AdvancedUIKit"
+            BlueprintIdentifier = "422DB4051EAA3CF100377AB5"
+            BuildableName = "AdvancedUIKitHost.app"
+            BlueprintName = "AdvancedUIKitHost"
             ReferencedContainer = "container:AdvancedUIKit.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "422DB3C31EAA30B300377AB5"
-            BuildableName = "AdvancedUIKit.framework"
-            BlueprintName = "AdvancedUIKit"
+            BlueprintIdentifier = "422DB4051EAA3CF100377AB5"
+            BuildableName = "AdvancedUIKitHost.app"
+            BlueprintName = "AdvancedUIKitHost"
             ReferencedContainer = "container:AdvancedUIKit.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Release">
+      buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

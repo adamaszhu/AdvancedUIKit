@@ -5,6 +5,15 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "perl &quot;${PROJECT_DIR}/Scripts/sort-xcode-project-file&quot; &quot;${PROJECT_FILE_PATH}/project.pbxproj&quot;&#10;">
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,28 +23,39 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "422DB4051EAA3CF100377AB5"
-               BuildableName = "AdvancedUIKitHost.app"
-               BlueprintName = "AdvancedUIKitHost"
+               BlueprintIdentifier = "422DB3C31EAA30B300377AB5"
+               BuildableName = "AdvancedUIKit.framework"
+               BlueprintName = "AdvancedUIKit"
                ReferencedContainer = "container:AdvancedUIKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "422DB4051EAA3CF100377AB5"
-            BuildableName = "AdvancedUIKitHost.app"
-            BlueprintName = "AdvancedUIKitHost"
+            BlueprintIdentifier = "422DB3C31EAA30B300377AB5"
+            BuildableName = "AdvancedUIKit.framework"
+            BlueprintName = "AdvancedUIKit"
             ReferencedContainer = "container:AdvancedUIKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "422DB3C31EAA30B300377AB5"
+            BuildableName = "AdvancedUIKit.framework"
+            BlueprintName = "AdvancedUIKit"
+            ReferencedContainer = "container:AdvancedUIKit.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -50,7 +70,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -59,39 +79,37 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "422DB4051EAA3CF100377AB5"
-            BuildableName = "AdvancedUIKitHost.app"
-            BlueprintName = "AdvancedUIKitHost"
+            BlueprintIdentifier = "422DB3C31EAA30B300377AB5"
+            BuildableName = "AdvancedUIKit.framework"
+            BlueprintName = "AdvancedUIKit"
             ReferencedContainer = "container:AdvancedUIKit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "422DB4051EAA3CF100377AB5"
-            BuildableName = "AdvancedUIKitHost.app"
-            BlueprintName = "AdvancedUIKitHost"
+            BlueprintIdentifier = "422DB3C31EAA30B300377AB5"
+            BuildableName = "AdvancedUIKit.framework"
+            BlueprintName = "AdvancedUIKit"
             ReferencedContainer = "container:AdvancedUIKit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Release">
+      buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
