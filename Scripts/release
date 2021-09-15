@@ -1,0 +1,54 @@
+#!/bin/bash
+
+NEW_RELEASE=$1
+RELEASE_MESSAGE=$2
+JAZZY_SCRIPT_PATH="Scripts/generate-doc"
+PRODUCT="AdvancedUIKit"
+
+if [[ -z $NEW_RELEASE ]]; then
+  echo "The new version number should be passed in as the first parameter"
+  exit 0
+fi
+
+if [[ -z $RELEASE_MESSAGE ]]; then
+  echo "A release message should be passed in as the second parameter"
+  exit 0
+fi
+
+echo "Create the release branch"
+NEW_BRANCH="release/$NEW_RELEASE"
+git branch $NEW_BRANCH
+git checkout $NEW_BRANCH
+echo ""
+
+echo "Raise the version"
+bundle exec fastlane set_version version:$NEW_RELEASE
+git add --all
+git commit -m "Raise the version"
+echo ""
+
+echo "Update Jazzy documentation"
+sh $JAZZY_SCRIPT_PATH $PRODUCT > /dev/null 2>&1
+git add --all
+git commit -m "Update documentations"
+echo ""
+
+echo "Tag the release on master"
+git checkout master
+git merge --no-ff $NEW_BRANCH -m "$RELEASE_MESSAGE" > /dev/null 2>&1
+git push
+git tag $NEW_RELEASE
+git push --tags
+echo ""
+
+echo "Release to Cocoapods"
+POD_SPEC_PATH="$PRODUCT.podspec"
+pod trunk push $POD_SPEC_PATH
+echo ""
+
+echo "Clean up"
+git checkout develop
+git merge --no-ff --no-edit $NEW_BRANCH > /dev/null 2>&1
+git push
+git branch -d $NEW_BRANCH
+echo ""

@@ -1,0 +1,28 @@
+// swift-tools-version:5.3
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+    name: "AdvancedUIKit",
+    defaultLocalization: "en",
+    products: [
+        .library(name: "AdvancedUIKit", targets: ["AdvancedUIKit"])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/Quick/Quick", .upToNextMajor(from: "3.0.0")),
+        .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "9.0.0")),
+        .package(url: "https://github.com/adamaszhu/AdvancedFoundation", .upToNextMajor(from: "1.7.1"))
+    ],
+    targets: [
+        .target(name: "AdvancedUIKit", 
+                dependencies: ["AdvancedFoundation"],
+                path: "AdvancedUIKit"),
+        .testTarget(
+            name: "AdvancedUIKitTests",
+            dependencies: ["AdvancedUIKit",
+                           "Nimble",
+                           "Quick"],
+            path: "AdvancedUIKitTests"),
+    ]
+)
