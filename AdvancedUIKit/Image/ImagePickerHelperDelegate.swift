@@ -5,7 +5,7 @@
 /// - author: Adamas
 /// - version: 1.0.0
 /// - date: 10/06/2017
-public protocol ImagePickerHelperDelegate: class {
+public protocol ImagePickerHelperDelegate: AnyObject {
     
     /// The image has been picked.
     ///

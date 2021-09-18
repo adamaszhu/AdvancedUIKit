@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 07/09/2019
-public protocol MessageHelperDelegate: class {
+public protocol MessageHelperDelegate: AnyObject {
     
     /// An operation has been done on an error.
     func messageHelperDidConfirmError(_ messageHelper: MessageHelper)

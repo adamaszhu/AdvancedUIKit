@@ -4,7 +4,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 15/08/2019
-public protocol DataPickerDelegate: class {
+public protocol DataPickerDelegate: AnyObject {
     
     /// DataPicker has a selected value.
     ///

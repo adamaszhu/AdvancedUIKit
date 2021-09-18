@@ -4,7 +4,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 03/09/2019
-public protocol NotificationHelperDelegate: class {
+public protocol NotificationHelperDelegate: AnyObject {
     
     /// Local notification authorization has been decided.
     ///

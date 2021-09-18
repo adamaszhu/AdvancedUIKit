@@ -1,4 +1,4 @@
-protocol DataGeneratorDelegate: class {
+protocol DataGeneratorDelegate: AnyObject {
     func dataGenerator(_ dataGenerator: DataGenerator, didGenerate items: [InfiniteItem])
 }
 

@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 07/09/2019
-public protocol LocationHelperDelegate: class {
+public protocol LocationHelperDelegate: AnyObject {
     
     /// An error occurs.
     ///

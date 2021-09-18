@@ -4,7 +4,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 08/08/2019
-public protocol DeviceHelperDelegate: class {
+public protocol DeviceHelperDelegate: AnyObject {
     
     /// An error has occured during an operation.
     ///
