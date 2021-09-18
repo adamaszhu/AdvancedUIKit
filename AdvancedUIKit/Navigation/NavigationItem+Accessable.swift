@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// NavigationItem+Accessable is used as a customized navigation bar.
 ///
 /// - author: Adamas
@@ -56,3 +57,4 @@ public extension UINavigationItem {
 }
 
 import UIKit
+#endif

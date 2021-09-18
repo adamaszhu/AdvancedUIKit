@@ -1,3 +1,4 @@
+#if !os(macOS)
 #if PHOTO
 /// The picker action has been finished.
 ///
@@ -19,3 +20,4 @@ public protocol ImagePickerHelperDelegate: class {
 #endif
 
 import UIKit
+#endif

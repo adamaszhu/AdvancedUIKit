@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// ExpandableView defines what an expandable view should do.
 ///
 /// - author: Adamas
@@ -46,3 +47,4 @@ extension ExpandableView {
 }
 
 import UIKit
+#endif

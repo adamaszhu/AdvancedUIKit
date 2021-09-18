@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// NavigationBar+Accessable is used as a customized navigation bar.
 ///
 /// - author: Adamas
@@ -42,3 +43,4 @@ public extension UINavigationBar {
 }
 
 import UIKit
+#endif

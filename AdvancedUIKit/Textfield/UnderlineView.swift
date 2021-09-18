@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// UnderlineView records the underline for a text field.
 ///
 /// - author: Adamas
@@ -22,3 +23,4 @@ final class UnderlineView: UIView {
 
 import AdvancedFoundation
 import UIKit
+#endif

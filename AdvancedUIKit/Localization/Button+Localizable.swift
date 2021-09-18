@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Button+Localizable provides localization support for a button.
 ///
 /// - author: Adamas
@@ -14,3 +15,4 @@ public extension UIButton {
 }
 
 import UIKit
+#endif

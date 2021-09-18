@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// View+Animatable is used to perform an animation on a view like change the frame of a view.
 ///
 /// - author: Adamas
@@ -41,3 +42,4 @@ public extension UIView {
 }
 
 import UIKit
+#endif

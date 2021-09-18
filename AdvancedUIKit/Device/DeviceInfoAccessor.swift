@@ -1,9 +1,10 @@
+#if !os(macOS)
 /// DeviceInfoAccessor is used to access info related to the device.
 ///
 /// - author: Adamas
 /// - version: 1.6.0
 /// - date: 16/08/2019
-final public class DeviceInfoAccessor {
+public final class DeviceInfoAccessor {
     
     /// The singleton instance in the system.
     public static let shared: DeviceInfoAccessor = DeviceInfoAccessor()
@@ -60,3 +61,4 @@ final public class DeviceInfoAccessor {
 }
 
 import UIKit
+#endif

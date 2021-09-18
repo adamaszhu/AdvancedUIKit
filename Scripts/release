@@ -42,7 +42,7 @@ git push --tags
 echo ""
 
 echo "Release to Cocoapods"
-POD_SPEC_PATH="$PRODUCT.podspec"
+POD_SPEC_PATH="AdvancedUI.podspec"
 pod trunk push $POD_SPEC_PATH
 echo ""
 

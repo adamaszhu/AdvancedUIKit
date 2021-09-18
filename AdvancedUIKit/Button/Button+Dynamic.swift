@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// UIButton+Dynamic contains dynamic content of a label.
 ///
 /// - author: Adamas
@@ -42,3 +43,4 @@ private extension UIButton {
 
 import AdvancedFoundation
 import UIKit
+#endif

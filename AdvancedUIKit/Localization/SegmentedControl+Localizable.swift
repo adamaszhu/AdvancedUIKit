@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// SegmentedControl+Localizable provides localization support for a segmented control.
 ///
 /// - author: Adamas
@@ -15,3 +16,4 @@ public extension UISegmentedControl {
 }
 
 import UIKit
+#endif

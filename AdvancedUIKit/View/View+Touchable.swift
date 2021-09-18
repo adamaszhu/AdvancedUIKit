@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// View+Touchable is used to add additional function to a uiview relating to the gesture function.
 ///
 /// - author: Adamas
@@ -47,3 +48,4 @@ public extension UIView {
 }
 
 import UIKit
+#endif

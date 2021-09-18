@@ -1,9 +1,10 @@
+#if !os(macOS)
 /// SystemMessageHelper is used to display a system defined styled message on the screen.
 ///
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 31/07/2019
-final public class SystemMessageHelper {
+public final class SystemMessageHelper {
     
     /// MessageHelper
     public weak var delegate: MessageHelperDelegate?
@@ -157,3 +158,4 @@ private extension SystemMessageHelper {
 
 import AdvancedFoundation
 import UIKit
+#endif

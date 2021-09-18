@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Generate code images
 ///
 /// - author: Adamas
@@ -52,3 +53,4 @@ private extension CodeHelper {
 
 import AdvancedFoundation
 import UIKit
+#endif

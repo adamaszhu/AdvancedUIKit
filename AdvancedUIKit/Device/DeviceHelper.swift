@@ -1,8 +1,9 @@
+#if !os(macOS)
 /// DeviceHelper is used to perform an user interaction. Such as sending an email or making a phone call.
 ///
 /// - version: 1.5.0
 /// - date: 17/08/2019
-final public class DeviceHelper: NSObject {
+public final class DeviceHelper: NSObject {
     
     /// The delegate of the DeviceHelper.
     public weak var delegate: DeviceHelperDelegate?
@@ -148,3 +149,4 @@ private extension DeviceHelper {
 import AdvancedFoundation
 import MessageUI
 import UIKit
+#endif

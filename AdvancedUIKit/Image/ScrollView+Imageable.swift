@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Provide a screenshot function for a scroll view
 ///
 /// - author: Adamas
@@ -49,3 +50,4 @@ private extension UIScrollView {
 
 import AdvancedFoundation
 import UIKit
+#endif

@@ -1,9 +1,10 @@
+#if !os(macOS)
 /// KeyboarHelper is used to optimize the soft keyboard performance.
 ///
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 16/08/2019
-final public class KeyboardHelper: NSObject {
+public final class KeyboardHelper: NSObject {
     
     /// The delegate
     public weak var delegate: KeyboardHelperDelegate?
@@ -309,3 +310,4 @@ private extension KeyboardHelper {
 
 import AdvancedFoundation
 import UIKit
+#endif

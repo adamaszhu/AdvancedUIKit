@@ -1,9 +1,10 @@
+#if !os(macOS)
 /// ExpandableMapView is used to add full screen function to the map view.
 ///
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 09/09/2019
-final public class ExpandableMapView: MapView {
+public final class ExpandableMapView: MapView {
     
     /// The gesture filter to expand the view.
     private let gestureFilterView: UIView = UIView()
@@ -187,3 +188,4 @@ extension ExpandableMapView: ExpandableView {
 
 import AdvancedFoundation
 import MapKit
+#endif

@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// View+Designable adds supports for UI attributes.
 ///
 /// - author: Adamas
@@ -133,3 +134,4 @@ public extension CGFloat {
 }
 
 import UIKit
+#endif

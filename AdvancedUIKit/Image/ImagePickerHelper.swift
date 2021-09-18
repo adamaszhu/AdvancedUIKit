@@ -1,10 +1,11 @@
+#if !os(macOS)
 #if PHOTO
 /// ImagePickerHelper is used to select an image in the image library or using the camera.
 ///
 /// - author: Adamas
 /// - version: 1.6.0
 /// - date: 18/08/2019
-final public class ImagePickerHelper: NSObject {
+public final class ImagePickerHelper: NSObject {
     
     /// The delegate.
     public weak var delegate: ImagePickerHelperDelegate?
@@ -117,3 +118,4 @@ private extension ImagePickerHelper {
 
 import AdvancedFoundation
 import UIKit
+#endif

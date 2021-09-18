@@ -1,9 +1,10 @@
+#if !os(macOS)
 /// ExpandableGalleryView is a horizontal sliding image page view, which has full screen mode. If the navigation bar is translucent, GalleryView should be put inside a ScrollView.
 ///
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 17/08/2019
-final public class ExpandableGalleryView: GalleryView {
+public final class ExpandableGalleryView: GalleryView {
     
     /// The gesture filter to expand the view.
     private let gestureFilterView: UIView
@@ -194,3 +195,4 @@ extension ExpandableGalleryView: ExpandableView {
 
 import AdvancedFoundation
 import UIKit
+#endif

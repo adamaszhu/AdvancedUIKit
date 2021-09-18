@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// ExpandableView+Action implements the default action that an extandable view should have.
 ///
 /// - author: Adamas
@@ -69,3 +70,4 @@ extension ExpandableView {
 
 import AdvancedFoundation
 import UIKit
+#endif

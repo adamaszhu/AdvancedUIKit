@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// MapViewLine record the information of a line on the map.
 ///
 /// - author: Adamas
@@ -70,3 +71,4 @@ public extension MapViewLine {
 
 import MapKit
 import UIKit
+#endif

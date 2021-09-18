@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// ActionSheetItem is used to present an action.
 ///
 /// - author: Adamas
@@ -83,3 +84,4 @@ private extension UIAlertAction {
 }
 
 import UIKit
+#endif

@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// PageView is a customized page view.
 ///
 /// - author: Adamas
@@ -214,3 +215,4 @@ private extension PageView {
 
 import AdvancedFoundation
 import UIKit
+#endif

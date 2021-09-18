@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// SearchBar+Accessable add additional support for extracting sub components.
 ///
 /// - author: Adamas
@@ -17,3 +18,4 @@ private extension UISearchBar {
 }
 
 import UIKit
+#endif

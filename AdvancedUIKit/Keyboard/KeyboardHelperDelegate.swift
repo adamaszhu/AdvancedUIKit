@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// KeyboardHelperDelegate is used to perform an action notified by KeyboardHelper.
 ///
 /// - author: Adamas
@@ -41,3 +42,4 @@ public extension KeyboardHelperDelegate {
 }
 
 import UIKit
+#endif

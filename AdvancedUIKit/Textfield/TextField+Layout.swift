@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// TextField+Layout is used to contain dynamic content of a text field.
 ///
 /// - author: Adamas
@@ -24,3 +25,4 @@ private extension UITextField {
 
 import AdvancedFoundation
 import UIKit
+#endif

@@ -3,7 +3,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 08/05/2018
-final public class RingHelper {
+public final class RingHelper {
     
     /// The period between two rings or vibrates.
     private var period: Double = 0

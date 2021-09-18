@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// The alpha value of different states
 ///
 /// - author: Adamas
@@ -10,3 +11,4 @@ public enum Alpha: CGFloat {
 }
 
 import UIKit
+#endif

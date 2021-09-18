@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// View+Localizable provides localization support for a view.
 ///
 /// - author: Adamas
@@ -19,3 +20,4 @@ public extension UIView {
 }
 
 import UIKit
+#endif

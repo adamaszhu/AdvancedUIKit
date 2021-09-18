@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// UIColor creates colors for convenience.
 ///
 /// - author: Adamas
@@ -35,3 +36,4 @@ private extension UIColor {
 }
 
 import UIKit
+#endif
