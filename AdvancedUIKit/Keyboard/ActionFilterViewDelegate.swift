@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// ActionFilterViewDelegate is used to notify that an action has been performed on the view.
 ///
 /// - author: Adamas
@@ -8,3 +9,4 @@ protocol ActionFilterViewDelegate: class {
     /// An action has been caught.
     func actionFilterViewDidInteract(_ actionFilterView: ActionFilterView)
 }
+#endif

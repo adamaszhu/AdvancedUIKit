@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Button+Attribute contains additional support for a button
 ///
 /// - author: Adamas
@@ -30,3 +31,4 @@ public extension UIButton {
 }
 
 import UIKit
+#endif

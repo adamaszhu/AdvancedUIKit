@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Application+Accessable extracts the attributes related to the view in the app.
 ///
 /// - author: Adamas
@@ -46,3 +47,4 @@ private extension UIApplication {
 
 import UIKit
 import AdvancedFoundation
+#endif

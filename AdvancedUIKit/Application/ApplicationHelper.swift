@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Helper functions for accessing external applications
 ///
 /// - author: Adamas
@@ -44,3 +45,4 @@ private extension ApplicationHelper {
 
 import AdvancedFoundation
 import UIKit
+#endif

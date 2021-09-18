@@ -1,9 +1,10 @@
+#if !os(macOS)
 /// MapViewPoint records the information of a point on the map.
 ///
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 07/09/2019
-final public class MapViewPoint {
+public final class MapViewPoint {
     
     /// The annotation.
     let annotation: MKPointAnnotation
@@ -70,3 +71,4 @@ extension MapViewPoint: Equatable {
 }
 
 import MapKit
+#endif

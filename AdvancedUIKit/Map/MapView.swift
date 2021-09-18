@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// A customized MapView with additional actions.
 ///
 /// - author: Adamas
@@ -275,3 +276,4 @@ private extension MapView {
 
 import AdvancedFoundation
 import MapKit
+#endif

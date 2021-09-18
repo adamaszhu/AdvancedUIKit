@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Provide a screenshot function for any view
 ///
 /// - author: Adamas
@@ -31,3 +32,4 @@ private extension UIView {
 
 import AdvancedFoundation
 import UIKit
+#endif

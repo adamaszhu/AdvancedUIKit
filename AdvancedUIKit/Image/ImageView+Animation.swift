@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// ImageView+Animation provides a shortcut for creating animations using an image view
 ///
 /// - author: Adamas
@@ -38,3 +39,4 @@ private extension UIImageView {
 
 import AdvancedFoundation
 import UIKit
+#endif

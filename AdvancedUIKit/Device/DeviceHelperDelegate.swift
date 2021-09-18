@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// DeviceHelperDelegate is used when a futher action need to be performed following a device related action.
 ///
 /// - author: Adamas
@@ -15,3 +16,4 @@ public protocol DeviceHelperDelegate: class {
     /// - Parameter result: The execusion result.
     func deviceHelper(_ deviceHelper: DeviceHelper, didSendEmail result: Bool)
 }
+#endif

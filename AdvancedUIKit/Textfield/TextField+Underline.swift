@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// TextField+Underline add underline support for a text field.
 ///
 /// - author: Adamas
@@ -61,3 +62,4 @@ private extension UITextField {
 
 import AdvancedFoundation
 import UIKit
+#endif

@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// NotificationHelperType is used to manage the notification.
 ///
 /// - author: Adamas
@@ -76,7 +77,7 @@ public extension NotificationHelperType {
 
 /// The helper used by ios 10 and later.
 @available(iOS, introduced: 10.0)
-final public class NotificationHelper: NotificationHelperType {
+public final class NotificationHelper: NotificationHelperType {
 
     public weak var delegate: NotificationHelperDelegate?
     
@@ -169,7 +170,7 @@ final public class NotificationHelper: NotificationHelperType {
 
 /// The helper used by ios 9 and before.
 @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use NotificationHelper instead")
-final public class StaleNotificationHelper: NotificationHelperType {
+public final class StaleNotificationHelper: NotificationHelperType {
     
     public weak var delegate: NotificationHelperDelegate?
     
@@ -248,3 +249,4 @@ fileprivate extension NotificationHelperType {
 import AdvancedFoundation
 import UIKit
 import UserNotifications
+#endif

@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// TextField+Attribute provides additional support to access the attribute of the UITextField.
 /// 
 /// - author: Adamas
@@ -42,3 +43,4 @@ private extension UITextField {
 
 import AdvancedFoundation
 import UIKit
+#endif

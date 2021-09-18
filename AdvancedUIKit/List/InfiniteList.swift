@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// InfiniteList is a list that can load infinite items.
 ///
 /// - author: Adamas
@@ -431,3 +432,4 @@ private extension InfiniteList {
 
 import AdvancedFoundation
 import UIKit
+#endif

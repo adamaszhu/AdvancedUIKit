@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// GalleryView is used to display a list of images. If the navigation bar is translucent, GalleryView should be put inside a ScrollView.
 ///
 /// - author: Adamas
@@ -107,3 +108,4 @@ extension GalleryView {
 
 import AdvancedFoundation
 import UIKit
+#endif

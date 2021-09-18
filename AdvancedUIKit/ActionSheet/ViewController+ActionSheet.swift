@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// ViewController+ActionSheet is used to present an action sheet.
 ///
 /// - author: Adamas
@@ -43,3 +44,4 @@ public extension UIViewController {
 }
 
 import UIKit
+#endif

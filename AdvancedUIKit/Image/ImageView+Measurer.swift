@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// ImageView+Measurer is used to scale the image according to the resolution of the image.
 ///
 /// - author: Adamas
@@ -54,3 +55,4 @@ private extension UIImageView {
 
 import AdvancedFoundation
 import UIKit
+#endif

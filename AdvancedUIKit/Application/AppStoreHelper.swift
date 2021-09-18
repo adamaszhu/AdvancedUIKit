@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// AppStoreHelper provides support for rating the app.
 ///
 /// - author: Adamas
@@ -106,3 +107,4 @@ private extension AppStoreHelper {
 import AdvancedFoundation
 import Foundation
 import StoreKit
+#endif

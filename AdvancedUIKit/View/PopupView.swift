@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// PopupView is used to popup a view on the screen.
 ///
 /// - author: Adamas
@@ -68,3 +69,4 @@ extension PopupView {
 
 import AdvancedFoundation
 import UIKit
+#endif

@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// ViewController+Navigable profide additional support related to the navigation.
 ///
 /// - author: Adamas
@@ -65,3 +66,4 @@ private extension UIViewController {
 }
 
 import UIKit
+#endif

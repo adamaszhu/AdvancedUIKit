@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// InfiniteCell is used to display one of the infinite items.
 ///
 /// - author: Adamas
@@ -59,3 +60,4 @@ open class InfiniteCell: UITableViewCell {
 }
 
 import UIKit
+#endif

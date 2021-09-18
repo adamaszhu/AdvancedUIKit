@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// String+Measurer add additional support for displaying a string on the screen.
 ///
 /// - author: Adamas
@@ -116,3 +117,4 @@ private extension String {
 
 import AdvancedFoundation
 import UIKit
+#endif
