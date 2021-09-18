@@ -4,7 +4,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 05/09/2019
-public protocol MapViewDelegate: class {
+public protocol MapViewDelegate: AnyObject {
     
     /// An error has been caused.
     ///
