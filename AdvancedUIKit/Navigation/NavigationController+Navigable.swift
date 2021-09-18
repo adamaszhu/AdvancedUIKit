@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// NavigationController+Navigable is used to add additional support for navigation between storyboards.
 ///
 /// - author: Adamas
@@ -59,3 +60,4 @@ private extension UINavigationController {
 
 import AdvancedFoundation
 import UIKit
+#endif

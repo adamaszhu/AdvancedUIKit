@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// NotificationHelperDelegate is used to get the result of an authorization.
 ///
 /// - author: Adamas
@@ -24,3 +25,4 @@ public protocol NotificationHelperDelegate: class {
 }
 
 import UIKit
+#endif

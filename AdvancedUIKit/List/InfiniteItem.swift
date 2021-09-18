@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// InfiniteItem defines an item rendered by the cell.
 ///
 /// - author: Adamas
@@ -21,3 +22,4 @@ public struct InfiniteItem {
         self.type = type
     }
 }
+#endif

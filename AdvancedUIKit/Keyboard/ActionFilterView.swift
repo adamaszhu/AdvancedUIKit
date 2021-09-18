@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// ActionFilterView is used to intercept action outside the keyboard.
 ///
 /// - author: Adamas
@@ -26,3 +27,4 @@ final class ActionFilterView: UIView {
 
 import AdvancedFoundation
 import UIKit
+#endif

@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// View+Constraint provides additional support to manipulate the constraint.
 ///
 /// - author: Adamas
@@ -25,3 +26,4 @@ public extension UIView {
 }
 
 import UIKit
+#endif

@@ -4,7 +4,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 18/08/2019
-final public class CameraHelper {
+public final class CameraHelper {
     
     /// The delegate.
     public weak var delegate: CameraHelperDelegate?

@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Image+PS adds PS function to an UIImage.
 ///
 /// - author: Adamas
@@ -136,3 +137,4 @@ private extension UIImage {
 
 import AdvancedFoundation
 import UIKit
+#endif

@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Label+Localizable provides localization support for a label.
 ///
 /// - author: Adamas
@@ -14,3 +15,4 @@ public extension UILabel {
 }
 
 import UIKit
+#endif

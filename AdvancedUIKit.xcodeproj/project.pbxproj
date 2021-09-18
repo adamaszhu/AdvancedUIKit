@@ -1764,7 +1764,7 @@
 			repositoryURL = "https://github.com/adamaszhu/AdvancedFoundation";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.1;
+				minimumVersion = 1.7.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

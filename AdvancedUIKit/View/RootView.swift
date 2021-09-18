@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// RootView is the root view of all customized view. It provides show and hide control and initialization control.
 ///
 /// - author: Adamas
@@ -67,3 +68,4 @@ extension RootView {
 
 import AdvancedFoundation
 import UIKit
+#endif

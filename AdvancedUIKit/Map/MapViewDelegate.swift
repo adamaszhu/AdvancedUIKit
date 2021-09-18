@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// MapViewDelegate records the action performed on the map.
 ///
 /// - author: Adamas
@@ -37,3 +38,4 @@ public extension MapViewDelegate {
 }
 
 import CoreLocation
+#endif

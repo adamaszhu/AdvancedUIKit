@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Join images into one
 ///
 /// - author: Adamas
@@ -42,3 +43,4 @@ public extension UIImage {
 }
 
 import UIKit
+#endif

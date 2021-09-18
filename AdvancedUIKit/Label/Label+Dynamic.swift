@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Label+Dynamic contains dynamic content of a label.
 ///
 /// - author: Adamas
@@ -49,3 +50,4 @@ private extension UILabel {
 
 import AdvancedFoundation
 import UIKit
+#endif

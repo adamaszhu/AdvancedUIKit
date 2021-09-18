@@ -15,14 +15,17 @@ open class LocationHelper: CLLocationManager {
     private let bundle: Bundle
     
     /// Which authorization is
+    @available(macOS 10.15, iOS 9, *)
     open var isAlwaysAuthorizationAuthorized: Bool {
         CLLocationManager.authorizationStatus() == .authorizedAlways
     }
-    
+
+    #if !os(macOS)
     /// Whether the when in use authorization is authorized or not.
     open var isWhenInUseAuthorizationAuthorized: Bool {
         CLLocationManager.authorizationStatus() == .authorizedWhenInUse
     }
+    #endif
     
     /// Whether the authorization is still not determinated or not.
     open var isUnauthorized: Bool {
@@ -45,8 +48,12 @@ open class LocationHelper: CLLocationManager {
     private func checkDescriptionKey(_ key: String) -> Bool {
         bundle.object(forInfoDictionaryKey: key) != nil
     }
-    
+
     open override func requestAlwaysAuthorization() {
+        guard #available(macOS 10.15, iOS 9, *) else {
+            Logger.standard.logError(Self.osVersionError, withDetail: #selector(requestAlwaysAuthorization))
+            return
+        }
         guard isUnauthorized else {
             locationHelperDelegate?.locationHelper(self, didCatchError: Self.authorizationError.localizedInternalString(forType: Self.self))
             return
@@ -58,7 +65,8 @@ open class LocationHelper: CLLocationManager {
         authorizingStatus = .authorizedAlways
         super.requestAlwaysAuthorization()
     }
-    
+
+    #if !os(macOS)
     open override func requestWhenInUseAuthorization() {
         guard isUnauthorized else {
             locationHelperDelegate?.locationHelper(self, didCatchError: Self.authorizationError.localizedInternalString(forType: Self.self))
@@ -71,6 +79,7 @@ open class LocationHelper: CLLocationManager {
         authorizingStatus = .authorizedWhenInUse
         super.requestWhenInUseAuthorization()
     }
+    #endif
 }
 
 /// CLLocationManagerDelegate
@@ -82,9 +91,13 @@ extension LocationHelper: CLLocationManagerDelegate {
         }
         switch authorizingStatus {
         case .authorizedAlways:
-            locationHelperDelegate?.locationHelper(self, didAuthorizeAlwaysAuthorization: isAlwaysAuthorizationAuthorized)
+            if #available(macOS 10.15, iOS 9, *) {
+                locationHelperDelegate?.locationHelper(self, didAuthorizeAlwaysAuthorization: isAlwaysAuthorizationAuthorized)
+            }
         case .authorizedWhenInUse:
+            #if !os(macOS)
             locationHelperDelegate?.locationHelper(self, didAuthorizeWhenInUseAuthorization: isWhenInUseAuthorizationAuthorized)
+            #endif
         default:
             break
         }
@@ -104,6 +117,7 @@ private extension LocationHelper {
     
     /// System error.
     static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
+    static let osVersionError = "Current OS version doesn't support the function."
 }
 
 import AdvancedFoundation

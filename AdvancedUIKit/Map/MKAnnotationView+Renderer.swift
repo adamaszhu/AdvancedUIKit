@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// MKAnnotationView+Renderer renders a point.
 ///
 /// - author: Adamas
@@ -41,3 +42,4 @@ private extension MKAnnotationView {
 }
 
 import MapKit
+#endif

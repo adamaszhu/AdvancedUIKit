@@ -1,9 +1,10 @@
+#if !os(macOS)
 /// CustomizedMessageHelper is used to display a customized message on the screen.
 ///
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 05/09/2019
-final public class CustomizedMessageHelper: PopupView {
+public final class CustomizedMessageHelper: PopupView {
     
     /// MessageHelper
     public weak var delegate: MessageHelperDelegate?
@@ -300,3 +301,4 @@ private extension CustomizedMessageHelper {
 
 import AdvancedFoundation
 import UIKit
+#endif

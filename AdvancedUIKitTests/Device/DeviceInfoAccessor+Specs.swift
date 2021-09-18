@@ -1,3 +1,4 @@
+#if !os(macOS)
 class DeviceInfoAccessorSpecs: QuickSpec {
     
     override func spec() {
@@ -9,7 +10,7 @@ class DeviceInfoAccessorSpecs: QuickSpec {
         }
         describe("has systemVersion") {
             it("is correct version") {
-                expect(deviceInfoAccessor.systemVersion) == "14.3"
+                expect(deviceInfoAccessor.systemVersion) == "14.5"
             }
         }
         describe("has majorSystemVersion") {
@@ -27,5 +28,5 @@ class DeviceInfoAccessorSpecs: QuickSpec {
 
 import Quick
 import Nimble
-import UIKit
 @testable import AdvancedUIKit
+#endif

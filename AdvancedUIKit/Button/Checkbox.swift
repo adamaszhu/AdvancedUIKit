@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// Checkbox provides a customized checkbox
 ///
 /// - author: Adamas
@@ -27,3 +28,4 @@ open class Checkbox: UIButton {
 }
 
 import UIKit
+#endif

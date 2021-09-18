@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// InfiniteListDelegate defines the action triggered in the list.
 ///
 /// - author: Adamas
@@ -31,3 +32,4 @@ public protocol InfiniteListDelegate: class {
 public extension InfiniteListDelegate {
     func infiniteListDidScroll(_ infiniteList: InfiniteList) {}
 }
+#endif

@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// GestureFilterView filters the gesture within the view.
 ///
 /// - author: Adamas
@@ -52,3 +53,4 @@ private extension GestureFilterView {
 
 import AdvancedFoundation
 import UIKit
+#endif

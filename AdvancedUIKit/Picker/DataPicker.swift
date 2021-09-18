@@ -1,9 +1,10 @@
+#if !os(macOS)
 /// DataPicker selects a single value from a set of values.
 ///
 /// - version: 1.5.0
 /// - date: 22/05/2019
 /// - author: Adamas
-final public class DataPicker: RootView {
+public final class DataPicker: RootView {
     
     /// The delegate of the DataPicker.
     public weak var delegate: DataPickerDelegate?
@@ -253,3 +254,4 @@ private extension DataPicker {
 
 import AdvancedFoundation
 import UIKit
+#endif

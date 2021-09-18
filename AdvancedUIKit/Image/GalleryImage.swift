@@ -1,3 +1,4 @@
+#if !os(macOS)
 /// GalleryImage view present an image in a GalleryView.
 ///
 /// - author: Adamas
@@ -116,3 +117,4 @@ private extension GalleryImage {
 
 import AdvancedFoundation
 import UIKit
+#endif
