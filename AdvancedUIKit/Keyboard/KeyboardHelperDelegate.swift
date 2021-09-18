@@ -4,7 +4,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 18/08/2019
-public protocol KeyboardHelperDelegate: class {
+public protocol KeyboardHelperDelegate: AnyObject {
     
     /// The last input view has returned.
     func keyboardHelperDidConfirmInput(_ keyboardHelper: KeyboardHelper)

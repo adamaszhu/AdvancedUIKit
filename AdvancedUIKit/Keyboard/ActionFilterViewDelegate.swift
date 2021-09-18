@@ -4,7 +4,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 16/08/2019
-protocol ActionFilterViewDelegate: class {
+protocol ActionFilterViewDelegate: AnyObject {
     
     /// An action has been caught.
     func actionFilterViewDidInteract(_ actionFilterView: ActionFilterView)

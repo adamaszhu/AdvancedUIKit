@@ -4,7 +4,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 16/08/2019
-public protocol CameraHelperDelegate: class {
+public protocol CameraHelperDelegate: AnyObject {
     
     /// The camera has been authorized.
     ///

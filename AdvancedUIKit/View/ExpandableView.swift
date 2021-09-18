@@ -4,7 +4,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 15/08/2019
-protocol ExpandableView: class {
+protocol ExpandableView: AnyObject {
     
     /// The original superview.
     var originalSuperview: UIView! { get set }

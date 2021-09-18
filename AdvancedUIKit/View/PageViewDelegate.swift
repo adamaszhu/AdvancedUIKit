@@ -4,7 +4,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 07/08/2019
-public protocol PageViewDelegate: class {
+public protocol PageViewDelegate: AnyObject {
     
     /// Change the page view index
     ///
