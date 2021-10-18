@@ -20,7 +20,8 @@ open class View<Row: RowType>: UIView {
         self.row = row
         titleLabel?.text = row.title
         iconImageView?.image = row.icon
-        iconImageView?.isHidden = row.isHidden
+        iconImageView?.isHidden = row.icon == nil
+        isHidden = row.isHidden
     }
 }
 

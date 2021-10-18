@@ -17,6 +17,7 @@ enum Feature: String, CaseIterable {
     case image = "Image"
     case list = "List"
     case actionSheet = "Action Sheet"
+    case collection = "Collection"
 }
 
 import Foundation

@@ -12,7 +12,7 @@ open class LabelRow: Row, LabelRowType {
     ///   - icon: The icon of the row. Default to nil.
     ///   - title: The title of the row. Default to nil.
     ///   - subtitle: The subtitle of the row. Default to nil.
-    init(icon: UIImage? = nil,
+    public init(icon: UIImage? = nil,
          title: String? = nil,
          subtitle: String? = nil) {
         self.subtitle = subtitle

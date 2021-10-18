@@ -8,6 +8,13 @@ open class Section: SectionType {
     public let header: String?
     public let footer: String?
     public let rows: [RowType]
+    public var reloadAction: (() -> Void)?
+
+    public var isHidden: Bool = false {
+        didSet {
+            reloadAction?()
+        }
+    }
 
     /// Initialize a section
     /// - Parameters:
@@ -34,4 +41,11 @@ public protocol SectionType {
 
     /// Rows contained in the section
     var rows: [RowType] { get }
+
+    /// The visibility of the row
+    var isHidden: Bool { get set }
+
+
+    /// Callback when the view should be updated
+    var reloadAction: (() -> Void)? { get set }
 }
