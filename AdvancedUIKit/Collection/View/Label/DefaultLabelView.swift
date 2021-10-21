@@ -28,16 +28,6 @@ public final class DefaultLabelView: LabelView<DefaultLabelRow> {
     }
 }
 
-/// Presentation of the default label view
-extension DefaultLabelRow: RowPresentable {
-    
-    public var view: UIView {
-        let view = DefaultLabelView()
-        view.configure(with: self)
-        return view
-    }
-}
-
 /// Constants
 private extension DefaultLabelView {
 

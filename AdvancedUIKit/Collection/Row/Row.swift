@@ -19,8 +19,8 @@ open class Row: RowType {
     /// - Parameters:
     ///   - icon: The icon of the row. Default to nil.
     ///   - title: The title of the row. Default to nil.
-    init(icon: UIImage? = nil,
-         title: String? = nil) {
+    public init(icon: UIImage? = nil,
+                title: String? = nil) {
         self.title = title
         self.icon = icon
     }

@@ -63,7 +63,8 @@
 		289D5FF11EDF9A9F00203DE2 /* Button+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */; };
 		28A05B9F271D0E4200D8287D /* DefaultLabelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A05B9E271D0E4200D8287D /* DefaultLabelRow.swift */; };
 		28A05BA1271D0EF800D8287D /* DefaultTapRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A05BA0271D0EF800D8287D /* DefaultTapRow.swift */; };
-		28A05BA3271D165900D8287D /* CarouselRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A05BA2271D165900D8287D /* CarouselRow.swift */; };
+		28A05BA3271D165900D8287D /* ItemsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A05BA2271D165900D8287D /* ItemsRow.swift */; };
+		28A05BA6271D37E700D8287D /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A05BA5271D37E700D8287D /* ItemsView.swift */; };
 		28A8D2EB20EF572B0061B420 /* SearchBar+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D2EA20EF572B0061B420 /* SearchBar+Accessable.swift */; };
 		28A8D32820FD4B5D0061B420 /* ImageView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */; };
 		28B1D8081EE50E8A00A5B2C4 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */; };
@@ -301,7 +302,8 @@
 		289D5FF01EDF9A9F00203DE2 /* Button+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Attribute.swift"; sourceTree = "<group>"; };
 		28A05B9E271D0E4200D8287D /* DefaultLabelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabelRow.swift; sourceTree = "<group>"; };
 		28A05BA0271D0EF800D8287D /* DefaultTapRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTapRow.swift; sourceTree = "<group>"; };
-		28A05BA2271D165900D8287D /* CarouselRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselRow.swift; sourceTree = "<group>"; };
+		28A05BA2271D165900D8287D /* ItemsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRow.swift; sourceTree = "<group>"; };
+		28A05BA5271D37E700D8287D /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
 		28A8D2EA20EF572B0061B420 /* SearchBar+Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchBar+Accessable.swift"; sourceTree = "<group>"; };
 		28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Animation.swift"; sourceTree = "<group>"; };
 		28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
@@ -547,7 +549,7 @@
 				28B5DF26270FEE5B00ED1898 /* TextRow.swift */,
 				28B5DF392713A3F400ED1898 /* LabelRow.swift */,
 				28B5DF7B271790A800ED1898 /* RowPresentable.swift */,
-				28A05BA2271D165900D8287D /* CarouselRow.swift */,
+				28A05BA2271D165900D8287D /* ItemsRow.swift */,
 			);
 			path = Row;
 			sourceTree = "<group>";
@@ -627,6 +629,14 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		28A05BA4271D37D600D8287D /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				28A05BA5271D37E700D8287D /* ItemsView.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		28A8D2E920EF568D0061B420 /* SearchBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -658,6 +668,7 @@
 		28B5DF342710131400ED1898 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				28A05BA4271D37D600D8287D /* Items */,
 				28B5DF4F2713DAC900ED1898 /* Tap */,
 				28B5DF4C2713C33B00ED1898 /* Label */,
 				28B5DF452713C24B00ED1898 /* View */,
@@ -678,12 +689,12 @@
 		28B5DF4C2713C33B00ED1898 /* Label */ = {
 			isa = PBXGroup;
 			children = (
-				28B5DF3F2713BCC300ED1898 /* LabelView.swift */,
-				28B5DF412713BCE200ED1898 /* LabelTableCell.swift */,
-				28B5DF432713BCEF00ED1898 /* LabelCollectionCell.swift */,
 				28B5DF722716F43300ED1898 /* DefaultLabelView.xib */,
 				28B5DF742716F43D00ED1898 /* DefaultLabelView.swift */,
 				28A05B9E271D0E4200D8287D /* DefaultLabelRow.swift */,
+				28B5DF3F2713BCC300ED1898 /* LabelView.swift */,
+				28B5DF412713BCE200ED1898 /* LabelTableCell.swift */,
+				28B5DF432713BCEF00ED1898 /* LabelCollectionCell.swift */,
 			);
 			path = Label;
 			sourceTree = "<group>";
@@ -692,11 +703,11 @@
 			isa = PBXGroup;
 			children = (
 				28B5DF6E2716F3B700ED1898 /* DefaultTapView.xib */,
+				28B5DF702716F42500ED1898 /* DefaultTapView.swift */,
+				28A05BA0271D0EF800D8287D /* DefaultTapRow.swift */,
 				28B5DF4D2713D6A200ED1898 /* TapView.swift */,
 				28B5DF502713DD4100ED1898 /* TapTableCell.swift */,
 				28B5DF522713DD6D00ED1898 /* TapCollectionCell.swift */,
-				28B5DF702716F42500ED1898 /* DefaultTapView.swift */,
-				28A05BA0271D0EF800D8287D /* DefaultTapRow.swift */,
 			);
 			path = Tap;
 			sourceTree = "<group>";
@@ -1368,7 +1379,8 @@
 				42CA09DD1EDEE0D2009AF1BE /* Button+Dynamic.swift in Sources */,
 				2823714E2707FC4300A72865 /* BottomSheetViewController.swift in Sources */,
 				358DEDBA2338A30400D2EB68 /* ActionSheetItem.swift in Sources */,
-				28A05BA3271D165900D8287D /* CarouselRow.swift in Sources */,
+				28A05BA3271D165900D8287D /* ItemsRow.swift in Sources */,
+				28A05BA6271D37E700D8287D /* ItemsView.swift in Sources */,
 				4258DDB51EEAE6A80085FCAA /* Image+PS.swift in Sources */,
 				284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */,
 				28B5DF2C270FFFD700ED1898 /* RegexRule.swift in Sources */,

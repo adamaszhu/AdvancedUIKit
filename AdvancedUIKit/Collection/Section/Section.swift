@@ -45,7 +45,8 @@ public protocol SectionType {
     /// The visibility of the row
     var isHidden: Bool { get set }
 
-
     /// Callback when the view should be updated
     var reloadAction: (() -> Void)? { get set }
 }
+
+import UIKit

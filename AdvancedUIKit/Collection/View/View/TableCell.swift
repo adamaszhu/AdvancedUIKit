@@ -13,6 +13,24 @@ open class TableCell<V: View<R>, R: RowType>: UITableViewCell {
     open func configure(with row: R) {
         view?.configure(with: row)
     }
+
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        initialize()
+    }
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initialize()
+    }
+
+    /// Initialize the cell
+    private func initialize() {
+        let view = V()
+        addSubview(view)
+        view.pinEdgesToSuperview()
+        self.view = view
+    }
 }
 
 import UIKit

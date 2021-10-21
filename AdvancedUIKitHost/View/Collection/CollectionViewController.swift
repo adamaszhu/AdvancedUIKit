@@ -4,7 +4,12 @@ final class CollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let rows: [RowPresentable] = [DefaultLabelRow(title: "Default Label")]
+        let tapRow = DefaultTapRow(title: "Default Tap Row")
+        tapRow.didTapAction = {
+            SystemMessageHelper()?.showInfo("Tap")
+        }
+        let rows: [RowPresentable] = [DefaultLabelRow(title: "Default Label Row"),
+                                      tapRow]
         rows.map { $0.view }
             .forEach(stackView.addArrangedSubview)
     }
