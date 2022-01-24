@@ -21,7 +21,7 @@ open class CollectionCell<V: View<R>, R: RowType>: UICollectionViewCell {
     /// Initialize the cell
     private func initialize() {
         let view = V()
-        addSubview(view)
+        contentView.addSubview(view)
         view.pinEdgesToSuperview()
         self.view = view
     }

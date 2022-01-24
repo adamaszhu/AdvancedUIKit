@@ -27,7 +27,7 @@ open class TableCell<V: View<R>, R: RowType>: UITableViewCell {
     /// Initialize the cell
     private func initialize() {
         let view = V()
-        addSubview(view)
+        contentView.addSubview(view)
         view.pinEdgesToSuperview()
         self.view = view
     }
