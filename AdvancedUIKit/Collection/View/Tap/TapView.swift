@@ -12,6 +12,9 @@ open class TapView<Row: TapRowType>: LabelView<Row> {
     /// Action to trigger when the view is tapped.
     /// - Parameter :  The view that triggers the event
     @IBAction func tap(_: Any) {
+        guard row?.isEnabled == true else {
+            return
+        }
         row?.didTapAction?()
     }
 }
