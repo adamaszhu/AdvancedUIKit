@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28089BD92803DAE400DCE885 /* ViewController+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28089BD82803DAE400DCE885 /* ViewController+Accessable.swift */; };
 		2810830D201AE5D800AA30A6 /* AppStoreHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2810830B201AE5D800AA30A6 /* AppStoreHelper.strings */; };
 		28108311201AE64C00AA30A6 /* AppStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810830F201AE64B00AA30A6 /* AppStoreHelper.swift */; };
 		2814AEDA1EE144B2007745EF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814AED91EE144B2007745EF /* NotificationViewController.swift */; };
@@ -122,6 +123,7 @@
 		28F350AD1EE793E5005120B1 /* LocationHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F350AA1EE793E5005120B1 /* LocationHelperDelegate.swift */; };
 		28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */; };
 		28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F550F21EDBF49D006646A3 /* DeviceType.swift */; };
+		28F6F8BB2803CAF20034A877 /* Color+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F6F8BA2803CAF20034A877 /* Color+Image.swift */; };
 		28FD8CEE1F731B050067E378 /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FD8CED1F731B050067E378 /* Picker.storyboard */; };
 		3519F74522824D2E00C7AF17 /* RemoteNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3519F74422824D2D00C7AF17 /* RemoteNotification.swift */; };
 		3519F74822824D5500C7AF17 /* RemoteNotificationSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3519F74722824D5500C7AF17 /* RemoteNotificationSpecs.swift */; };
@@ -245,6 +247,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28089BD82803DAE400DCE885 /* ViewController+Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Accessable.swift"; sourceTree = "<group>"; };
 		2810830C201AE5D800AA30A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppStoreHelper.strings; sourceTree = "<group>"; };
 		2810830E201AE5E600AA30A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppStoreHelper.strings"; sourceTree = "<group>"; };
 		2810830F201AE64B00AA30A6 /* AppStoreHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoreHelper.swift; sourceTree = "<group>"; };
@@ -359,6 +362,7 @@
 		28F350AA1EE793E5005120B1 /* LocationHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelperDelegate.swift; sourceTree = "<group>"; };
 		28F550F11EDBF49D006646A3 /* DeviceInfoAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoAccessor.swift; sourceTree = "<group>"; };
 		28F550F21EDBF49D006646A3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		28F6F8BA2803CAF20034A877 /* Color+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Image.swift"; sourceTree = "<group>"; };
 		28FD8CED1F731B050067E378 /* Picker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
 		3519F74422824D2D00C7AF17 /* RemoteNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotification.swift; sourceTree = "<group>"; };
 		3519F74722824D5500C7AF17 /* RemoteNotificationSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationSpecs.swift; sourceTree = "<group>"; };
@@ -483,6 +487,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28089BD72803DACA00DCE885 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28089BD82803DAE400DCE885 /* ViewController+Accessable.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		2814AED81EE1449F007745EF /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -891,6 +903,7 @@
 		422DB3C61EAA30B300377AB5 /* AdvancedUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				28089BD72803DACA00DCE885 /* ViewController */,
 				2823715B270C2EC300A72865 /* Collection */,
 				4233632C235A786200C1F78A /* Resource */,
 				358DEDB82338A2EB00D2EB68 /* ActionSheet */,
@@ -987,6 +1000,7 @@
 				3519F7502282B53900C7AF17 /* ImageJoinDirection.swift */,
 				35EA437E233304C00004F41B /* CodeHelper.swift */,
 				35EA4380233309030004F41B /* CodeType.swift */,
+				28F6F8BA2803CAF20034A877 /* Color+Image.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1404,6 +1418,7 @@
 				28B5DF422713BCE200ED1898 /* LabelTableCell.swift in Sources */,
 				28B5DF4E2713D6A200ED1898 /* TapView.swift in Sources */,
 				28A8D32820FD4B5D0061B420 /* ImageView+Animation.swift in Sources */,
+				28089BD92803DAE400DCE885 /* ViewController+Accessable.swift in Sources */,
 				28B5DF752716F43D00ED1898 /* DefaultLabelView.swift in Sources */,
 				283B4FE626F5B95D00FCE3B6 /* ModalViewController.swift in Sources */,
 				28A05B9F271D0E4200D8287D /* DefaultLabelRow.swift in Sources */,
@@ -1432,6 +1447,7 @@
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
 				28F550F31EDBF49D006646A3 /* DeviceInfoAccessor.swift in Sources */,
 				28B5DF3A2713A3F400ED1898 /* LabelRow.swift in Sources */,
+				28F6F8BB2803CAF20034A877 /* Color+Image.swift in Sources */,
 				4258DDB31EEAE6A80085FCAA /* ImagePickerHelper.swift in Sources */,
 				42CA09ED1EE19E36009AF1BE /* Button+Localizable.swift in Sources */,
 				2846A99E1EE7C0FA007D4226 /* ExpandableMapView.swift in Sources */,

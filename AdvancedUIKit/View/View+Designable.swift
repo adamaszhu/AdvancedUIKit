@@ -4,22 +4,26 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 02/08/2019
-@IBDesignable public extension UIView {
+@IBDesignable
+public extension UIView {
     
     /// The border color of a view
-    @IBInspectable var borderColor: UIColor? {
+    @IBInspectable
+    var borderColor: UIColor? {
         set { layer.borderColor = newValue?.cgColor }
         get { layer.borderColor.map(UIColor.init(cgColor:)) }
     }
     
     /// The border width of a view
-    @IBInspectable var borderWidth: CGFloat {
+    @IBInspectable
+    var borderWidth: CGFloat {
         set { layer.borderWidth = newValue }
         get { layer.borderWidth }
     }
     
     /// The corner radious of a view
-    @IBInspectable var cornerRadius: CGFloat {
+    @IBInspectable
+    var cornerRadius: CGFloat {
         set {
             layer.cornerRadius = newValue
             if newValue > 0 {
@@ -30,19 +34,22 @@
     }
     
     /// The shadow inset
-    @IBInspectable var shadowInset: CGSize {
+    @IBInspectable
+    var shadowInset: CGSize {
         set { layer.shadowOffset = newValue }
         get { layer.shadowOffset }
     }
     
     /// The shadow opacity
-    @IBInspectable var shadowOpacity: Float {
+    @IBInspectable
+    var shadowOpacity: Float {
         set { layer.shadowOpacity = newValue }
         get { layer.shadowOpacity }
     }
     
     /// The shadow color
-    @IBInspectable var shadowColor: UIColor? {
+    @IBInspectable
+    var shadowColor: UIColor? {
         set { layer.shadowColor = newValue?.cgColor }
         get {
             if let shadowColor = layer.shadowColor {
@@ -91,6 +98,22 @@
             rightAnchor.constraint(equalTo: superview.rightAnchor,
                                    constant: -edgeInsets.right).isActive = true
         }
+    }
+    
+    /// Pin the horizontal edges to its superview
+    func pinHorizontalEdgesToSuperview() {
+        pinEdgesToSuperview(with: .init(top: .invalidInset,
+                                        left: 0,
+                                        bottom: .invalidInset,
+                                        right: 0))
+    }
+    
+    /// Pin the horizontal edges to its superview
+    func pinVerticalEdgesToSuperview() {
+        pinEdgesToSuperview(with: .init(top: 0,
+                                        left: .invalidInset,
+                                        bottom: 0,
+                                        right: .invalidInset))
     }
     
     /// Set a constraint value
