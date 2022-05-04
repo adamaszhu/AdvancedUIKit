@@ -3,7 +3,7 @@
 /// - version: 1.8.0
 /// - date: 11/10/21
 /// - author: Adamas
-open class View<Row: RowType>: UIView {
+open class View<Row: RowType>: UIView, RowConfigurable {
 
     /// The title label on the view
     @IBOutlet public private(set) var titleLabel: UILabel?
@@ -16,7 +16,10 @@ open class View<Row: RowType>: UIView {
 
     /// Configure the view with a row
     /// - Parameter row: The row of the view
-    open func configure(with row: Row) {
+    open func configure(with row: RowType) {
+        guard let row = row as? Row else {
+            return
+        }
         self.row = row
         titleLabel?.text = row.title
         iconImageView?.image = row.icon

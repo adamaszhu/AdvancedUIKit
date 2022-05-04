@@ -1,16 +1,19 @@
 /// TableCell defines a cell that contains a basic view.
 ///
 /// - version: 1.8.0
-/// - date: 11/10/21
+/// - date: 04/05/22
 /// - author: Adamas
-open class TableCell<V: View<R>, R: RowType>: UITableViewCell {
+open class TableCell<V: View<R>, R: RowType>: UITableViewCell, RowConfigurable {
 
     /// The main part of the cell
     public private(set) var view: V?
 
     /// Configure the view with a row
     /// - Parameter row: The row of the view
-    open func configure(with row: R) {
+    open func configure(with row: RowType) {
+        guard let row = row as? R else {
+            return
+        }
         view?.configure(with: row)
     }
 

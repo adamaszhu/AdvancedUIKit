@@ -1,9 +1,9 @@
-/// CollectionCell defines a cell that contains a basic view.
+/// CollectionCell defines the basic of a collection cell
 ///
 /// - version: 1.8.0
-/// - date: 11/10/21
+/// - date: 04/05/22
 /// - author: Adamas
-open class CollectionCell<V: View<R>, R: RowType>: UICollectionViewCell {
+open class CollectionCell<V: View<R>, R: RowType>: UICollectionViewCell, RowConfigurable {
 
     /// The main part of the cell
     public private(set) var view: V?
@@ -28,7 +28,10 @@ open class CollectionCell<V: View<R>, R: RowType>: UICollectionViewCell {
 
     /// Configure the view with a row
     /// - Parameter row: The row of the view
-    open func configure(with row: R) {
+    open func configure(with row: RowType) {
+        guard let row = row as? R else {
+            return
+        }
         view?.configure(with: row)
     }
 }

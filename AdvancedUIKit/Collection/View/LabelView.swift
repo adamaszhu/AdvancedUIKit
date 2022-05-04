@@ -4,11 +4,13 @@
 /// - date: 11/10/21
 /// - author: Adamas
 open class LabelView<Row: LabelRowType>: View<Row> {
-
     /// The subtitle label.
     @IBOutlet private(set) var subtitleLabel: UILabel?
 
-    open override func configure(with row: Row) {
+    open override func configure(with row: RowType) {
+        guard let row = row as? Row else {
+            return
+        }
         super.configure(with: row)
         subtitleLabel?.text = row.subtitle
     }

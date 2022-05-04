@@ -1,5 +1,5 @@
 #if !os(macOS)
-/// Label+Dynamic contains dynamic content of a label.
+/// Label+Measurable contains dynamic content of a label.
 ///
 /// - author: Adamas
 /// - version: 1.5.0
