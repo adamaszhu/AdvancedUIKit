@@ -17,7 +17,7 @@ public final class DefaultTextAreaView: TextAreaView<DefaultTextAreaRow> {
     private func initialize() {
         // TODO: Change the bundle to Bundle.module
         guard let view = UINib(nibName: String(describing: DefaultTextAreaView.self),
-                               bundle: Bundle(for: DefaultTextAreaView.self))
+                               bundle: .current)
                 .instantiate(withOwner: self).first as? UIView else {
             return
         }
