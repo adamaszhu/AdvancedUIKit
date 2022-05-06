@@ -17,7 +17,7 @@ public final class DefaultToggleView: ToggleView<DefaultToggleRow> {
     private func initialize() {
         // TODO: Change the bundle to Bundle.module
         guard let view = UINib(nibName: String(describing: DefaultToggleView.self),
-                               bundle: Bundle(for: DefaultToggleView.self))
+                               bundle: .current)
                 .instantiate(withOwner: self).first as? UIView else {
             return
         }
