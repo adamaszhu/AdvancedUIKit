@@ -12,20 +12,24 @@ open class BottomSheetViewController: ModalViewController {
     /// Whether the view controller has been initialized or not
     private var isInitialized: Bool = false
 
-    /// Define the ratio of the bottom sheet
-    private var ratio: Double? = nil
+    /// Define the present mode of the bottom sheet
+    private var mode: BottomSheetMode
+
+    /// The bottom constraints of the modal
+    private var modalBottomConstraint: NSLayoutConstraint?
 
     /// Create the bottom sheet view controller for a specified controller
     /// - Parameters:
     ///   - viewController: The actual view controller to present
-    ///   - ratio: The ratio of the pop up view, default to 0.85
-    public init(viewController: UIViewController, ratio: Double? = nil) {
-        self.ratio = ratio
+    ///   - mode: The presenting mode
+    public init(viewController: UIViewController, mode: BottomSheetMode) {
+        self.mode = mode
         super.init(nibName: nil, bundle: nil)
         addChild(viewController)
     }
 
     public required init?(coder aDecoder: NSCoder) {
+        mode = .auto
         super.init(coder: aDecoder)
     }
 
@@ -45,11 +49,10 @@ open class BottomSheetViewController: ModalViewController {
 
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard !isInitialized else {
-            return
+        if !isInitialized {
+            isInitialized = true
+            showModal()
         }
-        isInitialized = true
-        showModal()
     }
 
     /// Show the bottom sheet.
@@ -57,29 +60,20 @@ open class BottomSheetViewController: ModalViewController {
     /// - Parameter completion: Comletion handler for showing the bottom sheet.
     public func showModal(completion: (() -> Void)? = nil) {
         modalView.animateChange({ [weak self] in
-            guard let self = self else {
-                return
-            }
-            self.modalView.frame.origin.y = self.view.bounds.height - self.modalView.bounds.height
-        }, preparation: {
-            modalView.frame.origin.y = view.bounds.height
+            self?.modalBottomConstraint?.isActive = true
+            self?.view.layoutIfNeeded()
         }, completion: {
             completion?()
         })
     }
-
 
     /// Hide the bottom sheet.
     ///
     /// - Parameter completion: Comletion handler for hiding the bottom sheet.
     public func hideModal(completion: (() -> Void)? = nil) {
         modalView.animateChange({ [weak self] in
-            guard let self = self else {
-                return
-            }
-            self.modalView.frame.origin.y = self.view.bounds.height
-        }, preparation: {
-            modalView.frame.origin.y = view.bounds.height - modalView.bounds.height
+            self?.modalBottomConstraint?.isActive = false
+            self?.view.layoutIfNeeded()
         }, completion: {
             completion?()
         })
@@ -90,18 +84,24 @@ open class BottomSheetViewController: ModalViewController {
         guard let childViewController = children.first else {
             return
         }
-        modalView.translatesAutoresizingMaskIntoConstraints = false
-        modalView.frame.origin = CGPoint(x: 0, y: view.bounds.height)
-        let height: CGFloat
-        if let ratio = ratio {
-            height = view.bounds.width * CGFloat(ratio)
-        } else {
-            height = view.bounds.height * Self.modalHeightPercentage
+        switch mode {
+        case let .ratio(ratio):
+            let height = view.bounds.width * CGFloat(ratio)
+            modalView.heightAnchor.constraint(equalToConstant: height).isActive = true
+        case let .percentage(percentage):
+            let height = view.bounds.height * CGFloat(percentage)
+            modalView.heightAnchor.constraint(equalToConstant: height).isActive = true
+        default:
+            break
         }
-        modalView.frame.size = CGSize(width: view.bounds.width,
-                                      height: height)
         modalView.addSubview(childViewController.view)
-        childViewController.view.frame.size = modalView.frame.size
+        childViewController.view.pinEdgesToSuperview()
+
+        modalView.pinHorizontalEdgesToSuperview()
+        let modalTopConstraint = modalView.topAnchor.constraint(equalTo: view.bottomAnchor)
+        modalTopConstraint.priority = .defaultLow
+        modalTopConstraint.isActive = true
+        modalBottomConstraint = modalView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     }
 
     open override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {

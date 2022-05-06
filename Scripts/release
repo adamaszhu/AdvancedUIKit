@@ -22,7 +22,8 @@ git checkout $NEW_BRANCH
 echo ""
 
 echo "Raise the version"
-bundle exec fastlane set_version version:$NEW_RELEASE
+# bundle exec fastlane set_version version:$NEW_RELEASE
+fastlane ios set_version version:$NEW_RELEASE
 git add --all
 git commit -m "Raise the version"
 echo ""
