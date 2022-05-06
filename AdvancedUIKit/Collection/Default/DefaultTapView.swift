@@ -1,9 +1,9 @@
-/// DefaultLabelView defines a label view that can be used directly
+/// DefaultTapView defines a label view that can be used directly
 ///
 /// - version: 1.8.0
 /// - date: 11/10/21
 /// - author: Adamas
-public final class DefaultLabelView: LabelView<DefaultLabelRow> {
+public final class DefaultTapView: TapView<DefaultTapRow> {
 
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -14,10 +14,10 @@ public final class DefaultLabelView: LabelView<DefaultLabelRow> {
         super.init(frame: frame)
         initialize()
     }
-
+    
     /// Initialize the UI
     private func initialize() {
-        guard let view = UINib(nibName: String(describing: DefaultLabelView.self),
+        guard let view = UINib(nibName: String(describing: DefaultTapView.self),
                                bundle: .module)
                 .instantiate(withOwner: self).first as? UIView else {
             Logger.standard.logError(Self.nibError)
@@ -29,7 +29,7 @@ public final class DefaultLabelView: LabelView<DefaultLabelRow> {
 }
 
 /// Constants
-private extension DefaultLabelView {
+private extension DefaultTapView {
 
     /// System error.
     static let nibError = "The nib file is invalid."

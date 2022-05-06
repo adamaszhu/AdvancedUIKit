@@ -1,24 +1,23 @@
-/// DefaultTapView defines a label view that can be used directly
+/// DefaultTextView defines a text field view that can be used directly
 ///
 /// - version: 1.8.0
-/// - date: 11/10/21
+/// - date: 04/05/22
 /// - author: Adamas
-public final class DefaultTapView: TapView<DefaultTapRow> {
-
-    public required init?(coder: NSCoder) {
+public final class DefaultTextView: TextView<DefaultTextRow> {
+    required init?(coder: NSCoder) {
         super.init(coder: coder)
         initialize()
     }
 
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
     }
-    
+
     /// Initialize the UI
     private func initialize() {
-        guard let view = UINib(nibName: String(describing: DefaultTapView.self),
-                               bundle: Bundle(for: DefaultTapView.self))
+        guard let view = UINib(nibName: String(describing: DefaultTextView.self),
+                               bundle: .module)
                 .instantiate(withOwner: self).first as? UIView else {
             Logger.standard.logError(Self.nibError)
             return
@@ -29,11 +28,11 @@ public final class DefaultTapView: TapView<DefaultTapRow> {
 }
 
 /// Constants
-private extension DefaultTapView {
+private extension DefaultTextView {
 
     /// System error.
     static let nibError = "The nib file is invalid."
 }
 
-import AdvancedFoundation
 import UIKit
+import AdvancedFoundation

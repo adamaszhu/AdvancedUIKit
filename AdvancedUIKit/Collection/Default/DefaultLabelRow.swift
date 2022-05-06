@@ -3,7 +3,7 @@
 /// - version: 1.8.0
 /// - date: 11/10/21
 /// - author: Adamas
-public final class DefaultLabelRow: LabelRow, RowPresentable {
+public final class DefaultLabelRow: LabelRow, DefaultLabelRowType, RowPresentable {
 
     public var view: UIView {
         let view = DefaultLabelView()
@@ -11,5 +11,8 @@ public final class DefaultLabelRow: LabelRow, RowPresentable {
         return view
     }
 }
+
+/// The row type that holds a default label row
+public protocol DefaultLabelRowType: LabelRowType {}
 
 import UIKit

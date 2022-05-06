@@ -70,6 +70,7 @@ open class TextRow: LabelRow, TextRowType {
         self.returnType = returnType
         self.placeholder = placeholder
         self.keyboardType = keyboardType
+        self.formatter = formatter
         super.init(icon: icon, title: title, subtitle: subtitle)
     }
 

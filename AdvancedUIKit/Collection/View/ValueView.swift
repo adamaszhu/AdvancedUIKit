@@ -1,11 +1,12 @@
-/// View defines the basic of a custom view that has a sub title
+/// ValueView defines a view that has both the title fields and a value
 ///
 /// - version: 1.8.0
-/// - date: 11/10/21
+/// - date: 04/05/22
 /// - author: Adamas
-open class LabelView<Row: LabelRowType>: View<Row> {
-    /// The subtitle label.
-    @IBOutlet public private(set) var subtitleLabel: UILabel?
+open class ValueView<Row: ValueRowType>: LabelView<Row> {
+
+    /// The label to display the valie
+    @IBOutlet private(set) var valueLabel: UILabel!
 
     open override func configure(with row: RowType) {
         guard let row = row as? Row else {
@@ -15,7 +16,7 @@ open class LabelView<Row: LabelRowType>: View<Row> {
             fatalError(rowError)
         }
         super.configure(with: row)
-        subtitleLabel?.text = row.subtitle
+        valueLabel.text = row.value
     }
 }
 

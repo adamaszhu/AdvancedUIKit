@@ -1,10 +1,9 @@
-/// DefaultLabelView defines a label view that can be used directly
+/// DefaultTextAreaView defines a text area view that can be used directly
 ///
 /// - version: 1.8.0
-/// - date: 11/10/21
+/// - date: 04/05/22
 /// - author: Adamas
-public final class DefaultLabelView: LabelView<DefaultLabelRow> {
-
+public final class DefaultTextAreaView: TextAreaView<DefaultTextAreaRow> {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         initialize()
@@ -15,12 +14,10 @@ public final class DefaultLabelView: LabelView<DefaultLabelRow> {
         initialize()
     }
 
-    /// Initialize the UI
     private func initialize() {
-        guard let view = UINib(nibName: String(describing: DefaultLabelView.self),
+        guard let view = UINib(nibName: String(describing: DefaultTextAreaView.self),
                                bundle: .module)
                 .instantiate(withOwner: self).first as? UIView else {
-            Logger.standard.logError(Self.nibError)
             return
         }
         addSubview(view)
@@ -28,12 +25,4 @@ public final class DefaultLabelView: LabelView<DefaultLabelRow> {
     }
 }
 
-/// Constants
-private extension DefaultLabelView {
-
-    /// System error.
-    static let nibError = "The nib file is invalid."
-}
-
-import AdvancedFoundation
 import UIKit

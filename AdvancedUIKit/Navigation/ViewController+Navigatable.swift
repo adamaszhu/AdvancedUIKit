@@ -74,7 +74,7 @@ public extension UIViewController {
     }
     
     /// Perform the back action
-    @objc open func backAction() {
+    @objc func backAction() {
         back()
     }
 }

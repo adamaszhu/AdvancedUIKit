@@ -3,7 +3,7 @@
 /// - version: 1.8.0
 /// - date: 11/10/21
 /// - author: Adamas
-public final class DefaultTapRow: TapRow, RowPresentable {
+public final class DefaultTapRow: TapRow, DefaultTapRowType, RowPresentable {
 
     public var view: UIView {
         let view = DefaultTapView()
@@ -11,5 +11,8 @@ public final class DefaultTapRow: TapRow, RowPresentable {
         return view
     }
 }
+
+/// The type of a default tap row
+public protocol DefaultTapRowType: TapRowType {}
 
 import UIKit

@@ -8,24 +8,53 @@ open class ItemsView<ItemCell: CollectionCell<ItemView, ItemRow>,
                      ItemView: TapView<ItemRow>,
                      ItemRow: TapRowType>: View<Row>, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    /// The layout of the collection view
+    public private(set) var layout: UICollectionViewLayout = UICollectionViewFlowLayout()
+
     /// The collection view represeting the carousel.
-    @IBOutlet public private (set) var collectionView: UICollectionView? {
-        didSet {
-            setupCollectionView()
-        }
-    }
+    public private(set) var collectionView: UICollectionView?
 
     /// The reusable id of the cell.
     private let cellID = String(describing: ItemView.self)
-    
-    /// Initialize the view
-    private func setupCollectionView() {
-        collectionView?.register(ItemCell.self, forCellWithReuseIdentifier: cellID)
-        collectionView?.delegate = self
-        collectionView?.dataSource = self
+
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
     }
 
-    open override func configure(with row: Row) {
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initialize()
+    }
+
+    /// Initialize the view
+    private func initialize() {
+        let layout = UICollectionViewFlowLayout()
+        if #available(iOS 10.0, *) {
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+        layout.scrollDirection = .horizontal
+        self.layout = layout
+
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        addSubview(collectionView)
+        collectionView.pinEdgesToSuperview()
+        self.collectionView = collectionView
+
+        collectionView.register(ItemCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+    }
+
+    open override func configure(with row: RowType) {
+        guard let row = row as? Row else {
+            let rowError = String(format: Self.rowErrorPattern,
+                                  String(describing: Row.self),
+                                  String(describing: row))
+            fatalError(rowError)
+        }
         super.configure(with: row)
         collectionView?.reloadData()
     }

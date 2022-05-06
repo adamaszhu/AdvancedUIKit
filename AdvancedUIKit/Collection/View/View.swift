@@ -18,14 +18,21 @@ open class View<Row: RowType>: UIView, RowConfigurable {
     /// - Parameter row: The row of the view
     open func configure(with row: RowType) {
         guard let row = row as? Row else {
-            return
+            let rowError = String(format: Self.rowErrorPattern,
+                                  String(describing: Row.self),
+                                  String(describing: row))
+            fatalError(rowError)
         }
         self.row = row
         titleLabel?.text = row.title
         iconImageView?.image = row.icon
         iconImageView?.isHidden = row.icon == nil
+        iconImageView?.tintColor = titleLabel?.textColor
         isHidden = row.isHidden
     }
+
+    /// Error
+    static var rowErrorPattern: String { "Expect row type as %@ got %@" }
 }
 
 import UIKit
