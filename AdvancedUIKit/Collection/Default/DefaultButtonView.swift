@@ -15,8 +15,9 @@ public final class DefaultButtonView: ButtonView<DefaultButtonRow> {
     }
 
     private func initialize() {
+        // TODO: Change the bundle to Bundle.module
         guard let view = UINib(nibName: String(describing: DefaultButtonView.self),
-                               bundle: .module)
+                               bundle: Bundle(for: DefaultButtonView.self))
                 .instantiate(withOwner: self).first as? UIView else {
             return
         }

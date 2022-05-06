@@ -16,8 +16,9 @@ public final class DefaultTextView: TextView<DefaultTextRow> {
 
     /// Initialize the UI
     private func initialize() {
+        // TODO: Change the bundle to Bundle.module
         guard let view = UINib(nibName: String(describing: DefaultTextView.self),
-                               bundle: .module)
+                               bundle: Bundle(for: DefaultTextView.self))
                 .instantiate(withOwner: self).first as? UIView else {
             Logger.standard.logError(Self.nibError)
             return

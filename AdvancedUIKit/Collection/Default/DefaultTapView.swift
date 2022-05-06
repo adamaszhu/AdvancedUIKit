@@ -17,8 +17,9 @@ public final class DefaultTapView: TapView<DefaultTapRow> {
     
     /// Initialize the UI
     private func initialize() {
+        // TODO: Change the bundle to Bundle.module
         guard let view = UINib(nibName: String(describing: DefaultTapView.self),
-                               bundle: .module)
+                               bundle: Bundle(for: DefaultTapView.self))
                 .instantiate(withOwner: self).first as? UIView else {
             Logger.standard.logError(Self.nibError)
             return

@@ -17,8 +17,9 @@ public final class DefaultLabelView: LabelView<DefaultLabelRow> {
 
     /// Initialize the UI
     private func initialize() {
+        // TODO: Change the bundle to Bundle.module
         guard let view = UINib(nibName: String(describing: DefaultLabelView.self),
-                               bundle: .module)
+                               bundle: Bundle(for: DefaultLabelView.self))
                 .instantiate(withOwner: self).first as? UIView else {
             Logger.standard.logError(Self.nibError)
             return
