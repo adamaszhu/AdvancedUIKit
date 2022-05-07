@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TextViewThemeType Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/TextViewThemeType" class="dashAnchor"></a>
+    <a title="TextViewThemeType Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">AdvancedUIKit 1.9.2 Docs</a> (80% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">AdvancedUIKit Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        TextViewThemeType Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Animator.html">Animator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppStoreHelper.html">AppStoreHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ApplicationHelper.html">ApplicationHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BottomSheetViewController.html">BottomSheetViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ButtonRow.html">ButtonRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit15ButtonTableCellC">ButtonTableCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ButtonView.html">ButtonView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CameraHelper.html">CameraHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Checkbox.html">Checkbox</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CodeHelper.html">CodeHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CollectionCell.html">CollectionCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CustomizedMessageHelper.html">CustomizedMessageHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DataPicker.html">DataPicker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultButtonRow.html">DefaultButtonRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit22DefaultButtonTableCellC">DefaultButtonTableCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultButtonView.html">DefaultButtonView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultLabelRow.html">DefaultLabelRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultLabelView.html">DefaultLabelView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultTapRow.html">DefaultTapRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit19DefaultTapTableCellC">DefaultTapTableCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultTapView.html">DefaultTapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit18DefaultTextAreaRowC">DefaultTextAreaRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultTextAreaView.html">DefaultTextAreaView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit14DefaultTextRowC">DefaultTextRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit15DefaultTextViewC">DefaultTextView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit16DefaultToggleRowC">DefaultToggleRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit22DefaultToggleTableCellC">DefaultToggleTableCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultToggleView.html">DefaultToggleView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DeviceHelper.html">DeviceHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DeviceInfoAccessor.html">DeviceInfoAccessor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ExpandableGalleryView.html">ExpandableGalleryView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ExpandableMapView.html">ExpandableMapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FadeInAnimator.html">FadeInAnimator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FadeOutAnimator.html">FadeOutAnimator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GalleryView.html">GalleryView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ImagePickerHelper.html">ImagePickerHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InfiniteCell.html">InfiniteCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InfiniteList.html">InfiniteList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ItemsRow.html">ItemsRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ItemsView.html">ItemsView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/KeyboardHelper.html">KeyboardHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit19LabelCollectionCellC">LabelCollectionCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LabelRow.html">LabelRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit14LabelTableCellC">LabelTableCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LabelView.html">LabelView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LocationHelper.html">LocationHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapView.html">MapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapViewPoint.html">MapViewPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MinLengthRule.html">MinLengthRule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ModalViewController.html">ModalViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PageView.html">PageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PopupView.html">PopupView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RegexRule.html">RegexRule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RequiredRule.html">RequiredRule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RingHelper.html">RingHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RootView.html">RootView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Row.html">Row</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Section.html">Section</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SystemMessageHelper.html">SystemMessageHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TableCell.html">TableCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TableViewFactory.html">TableViewFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit17TapCollectionCellC">TapCollectionCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TapRow.html">TapRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit12TapTableCellC">TapTableCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TapView.html">TapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextAreaView.html">TextAreaView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextRow.html">TextRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextView.html">TextView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ToggleRow.html">ToggleRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:13AdvancedUIKit15ToggleTableCellC">ToggleTableCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ToggleView.html">ToggleView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ValueRow.html">ValueRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ValueView.html">ValueView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/View.html">View</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Alpha.html">Alpha</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ApplicationType.html">ApplicationType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BottomSheetMode.html">BottomSheetMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CodeType.html">CodeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DeviceType.html">DeviceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ImageJoinDirection.html">ImageJoinDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MapViewPointPosition.html">MapViewPointPosition</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CLLocationCoordinate2D.html">CLLocationCoordinate2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSAttributedString.html">NSAttributedString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIApplication.html">UIApplication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIButton.html">UIButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView.html">UIImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UILabel.html">UILabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UINavigationBar.html">UINavigationBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UINavigationController.html">UINavigationController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UINavigationItem.html">UINavigationItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIScrollView.html">UIScrollView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UISearchBar.html">UISearchBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UISegmentedControl.html">UISegmentedControl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITableViewCell.html">UITableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITextField.html">UITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIWindow.html">UIWindow</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ButtonRowType.html">ButtonRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CameraHelperDelegate.html">CameraHelperDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DataPickerDelegate.html">DataPickerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:13AdvancedUIKit20DefaultButtonRowTypeP">DefaultButtonRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:13AdvancedUIKit19DefaultLabelRowTypeP">DefaultLabelRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:13AdvancedUIKit17DefaultTapRowTypeP">DefaultTapRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:13AdvancedUIKit22DefaultTextAreaRowTypeP">DefaultTextAreaRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:13AdvancedUIKit18DefaultTextRowTypeP">DefaultTextRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:13AdvancedUIKit20DefaultToggleRowTypeP">DefaultToggleRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DeviceHelperDelegate.html">DeviceHelperDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ImagePickerHelperDelegate.html">ImagePickerHelperDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/InfiniteListDelegate.html">InfiniteListDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ItemsRowType.html">ItemsRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KeyboardHelperDelegate.html">KeyboardHelperDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LabelRowType.html">LabelRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LocationHelperDelegate.html">LocationHelperDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MapViewDelegate.html">MapViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MessageHelper.html">MessageHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MessageHelperDelegate.html">MessageHelperDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NotificationHelperDelegate.html">NotificationHelperDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NotificationHelperType.html">NotificationHelperType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PageViewDelegate.html">PageViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RowConfigurable.html">RowConfigurable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RowPresentable.html">RowPresentable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RowReusable.html">RowReusable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RowType.html">RowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RuleType.html">RuleType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SectionType.html">SectionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TapRowType.html">TapRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TextRowType.html">TextRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TextViewThemeType.html">TextViewThemeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ToggleRowType.html">ToggleRowType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ValueRowType.html">ValueRowType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ActionSheetItem.html">ActionSheetItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DataPickerColumn.html">DataPickerColumn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DataPickerItem.html">DataPickerItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InfiniteItem.html">InfiniteItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MapViewLine.html">MapViewLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RemoteNotification.html">RemoteNotification</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13AdvancedUIKit9Formattera">Formatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13AdvancedUIKit15ReusableRowTypea">ReusableRowType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TextViewThemeType</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TextViewThemeType</span></code></pre>
+
+                </div>
+              </div>
+            <p>TextViewThemeType defines the theme of a text view</p>
+<div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    1.8.0
+
+</div><div class="aside aside-date">
+    <p class="aside-title">Date</p>
+    04/05/22
+
+</div><div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    Adamas
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13AdvancedUIKit17TextViewThemeTypeP11normalColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/normalColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13AdvancedUIKit17TextViewThemeTypeP11normalColorSo7UIColorCvp">normalColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">normalColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13AdvancedUIKit17TextViewThemeTypeP16highlightedColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/highlightedColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13AdvancedUIKit17TextViewThemeTypeP16highlightedColorSo7UIColorCvp">highlightedColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">highlightedColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13AdvancedUIKit17TextViewThemeTypeP10errorColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/errorColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13AdvancedUIKit17TextViewThemeTypeP10errorColorSo7UIColorCvp">errorColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">errorColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13AdvancedUIKit17TextViewThemeTypeP9textColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/textColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13AdvancedUIKit17TextViewThemeTypeP9textColorSo7UIColorCvp">textColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">textColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13AdvancedUIKit17TextViewThemeTypeP16placeholderColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/placeholderColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13AdvancedUIKit17TextViewThemeTypeP16placeholderColorSo7UIColorCvp">placeholderColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">placeholderColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2022 <a class="link" href="https://github.com/adamaszhu/AdvancedUIKit" target="_blank" rel="external noopener">Adamas Zhu</a>. All rights reserved. (Last updated: 2022-05-07)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

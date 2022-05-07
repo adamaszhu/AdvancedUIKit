@@ -1,4 +1,4 @@
-#if !os(macOS)
+#if !os(macOS) && !targetEnvironment(macCatalyst)
 /// NotificationHelperDelegate is used to get the result of an authorization.
 ///
 /// - author: Adamas

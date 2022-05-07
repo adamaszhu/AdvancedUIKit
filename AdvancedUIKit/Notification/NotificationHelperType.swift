@@ -1,4 +1,4 @@
-#if !os(macOS)
+#if !os(macOS) && !targetEnvironment(macCatalyst)
 /// NotificationHelperType is used to manage the notification.
 ///
 /// - author: Adamas

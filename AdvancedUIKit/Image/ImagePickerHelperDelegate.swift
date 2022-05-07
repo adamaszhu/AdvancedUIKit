@@ -1,4 +1,4 @@
-#if !os(macOS)
+#if !os(macOS) && !targetEnvironment(macCatalyst)
 #if PHOTO
 /// The picker action has been finished.
 ///

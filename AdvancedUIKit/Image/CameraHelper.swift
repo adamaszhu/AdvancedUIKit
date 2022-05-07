@@ -4,6 +4,7 @@
 /// - author: Adamas
 /// - version: 1.5.0
 /// - date: 18/08/2019
+@available(macCatalyst 14.0, *)
 public final class CameraHelper {
     
     /// The delegate.
@@ -91,6 +92,7 @@ public final class CameraHelper {
 }
 
 /// Constants
+@available(macCatalyst 14.0, *)
 private extension CameraHelper {
     
     /// The info key required in the Info.plist file.
