@@ -1,4 +1,4 @@
-#if !os(macOS)
+#if !os(macOS) && !targetEnvironment(macCatalyst)
 #if PHOTO
 /// ImagePickerHelper is used to select an image in the image library or using the camera.
 ///
