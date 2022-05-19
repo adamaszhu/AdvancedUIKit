@@ -30,7 +30,6 @@ public extension UIView {
         UIView.animate(withDuration: duration, animations: {
             change()
         }) { result in
-            change()
             completion()
         }
     }
@@ -38,6 +37,44 @@ public extension UIView {
     /// Stop any animation executed on the current view.
     func stopAllAnimations() {
         layer.removeAllAnimations()
+    }
+
+    /// Show the view.
+    /// - Parameters:
+    ///   - duration: Duration of the animation.
+    ///   - completion: Callback when the view is shown.
+    func show(withDuration duration: Double = defaultAnimationDuration,
+              completion: @escaping (() -> Void) = {}) {
+        guard isHidden else {
+            return
+        }
+        animateChange({ [weak self] in
+            self?.alpha = Alpha.visible.rawValue
+        }, withDuration: duration,
+                      preparation: {
+            alpha = Alpha.hidden.rawValue
+        }, completion: { [weak self] in
+            self?.isHidden = false
+        })
+    }
+
+    /// Hide the view.
+    /// - Parameters:
+    ///   - duration: Duration of the animation.
+    ///   - completion: Callback when the view is shown.
+    func hide(withDuration duration: Double = defaultAnimationDuration,
+              completion: @escaping (() -> Void) = {}) {
+        guard !isHidden else {
+            return
+        }
+        animateChange({ [weak self] in
+            self?.alpha = Alpha.hidden.rawValue
+        }, withDuration: duration,
+                      preparation: {
+            alpha = Alpha.visible.rawValue
+        }, completion: { [weak self] in
+            self?.isHidden = true
+        })
     }
 }
 
