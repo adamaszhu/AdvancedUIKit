@@ -29,9 +29,9 @@ public extension UIView {
         preparation()
         UIView.animate(withDuration: duration, animations: {
             change()
-        }) { result in
+        }, completion: { result in
             completion()
-        }
+        })
     }
     
     /// Stop any animation executed on the current view.
@@ -53,8 +53,7 @@ public extension UIView {
         }, withDuration: duration,
                       preparation: {
             alpha = Alpha.hidden.rawValue
-        }, completion: { [weak self] in
-            self?.isHidden = false
+            isHidden = false
         })
     }
 
