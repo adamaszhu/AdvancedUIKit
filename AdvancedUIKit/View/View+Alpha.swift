@@ -2,13 +2,14 @@
 /// The alpha value of different states
 ///
 /// - author: Adamas
-/// - version: 1.5.0
-/// - date: 19/10/2019
-public enum Alpha: CGFloat {
-    case visible = 1
-    case disabled = 0.5
-    case hidden = 0
+/// - version: 1.8.0
+/// - date: 24/05/2022
+public extension CGFloat {
+    static let visible: CGFloat = 1
+    static let disabled: CGFloat = 0.5
+    static let hidden: CGFloat = 0
 }
 
 import UIKit
+import CoreGraphics
 #endif

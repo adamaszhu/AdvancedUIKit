@@ -73,6 +73,34 @@ public extension UIView {
         get { getValue(of: heightAnchor) }
         set { setValue(newValue, of: heightAnchor) }
     }
+
+    /// The top space to its superview
+    @available(iOS, introduced: 10.0)
+    var top: CGFloat? {
+        get { getValue(between: topAnchor, and: superview?.topAnchor) }
+        set { setValue(newValue, between: topAnchor, and: superview?.topAnchor ) }
+    }
+
+    /// The left space to its superview
+    @available(iOS, introduced: 10.0)
+    var left: CGFloat? {
+        get { getValue(between: leftAnchor, and: superview?.leftAnchor) }
+        set { setValue(newValue, between: leftAnchor, and: superview?.leftAnchor) }
+    }
+
+    /// The right space to its superview
+    @available(iOS, introduced: 10.0)
+    var right: CGFloat? {
+        get { getValue(between: rightAnchor, and: superview?.rightAnchor) }
+        set { setValue(newValue, between: rightAnchor, and: superview?.rightAnchor) }
+    }
+
+    /// The bottom space to its superview
+    @available(iOS, introduced: 10.0)
+    var bottom: CGFloat? {
+        get { getValue(between: bottomAnchor, and: superview?.bottomAnchor) }
+        set { setValue(newValue, between: bottomAnchor, and: superview?.bottomAnchor) }
+    }
     
     /// Pin the edge to its superview
     ///
@@ -83,20 +111,36 @@ public extension UIView {
         }
         translatesAutoresizingMaskIntoConstraints = false
         if edgeInsets.top != .invalidInset {
-            topAnchor.constraint(equalTo: superview.topAnchor,
-                                 constant: edgeInsets.top).isActive = true
+            if #available(iOS 10.0, *) {
+                top = edgeInsets.top
+            } else {
+                topAnchor.constraint(equalTo: superview.topAnchor,
+                                     constant: edgeInsets.top).isActive = true
+            }
         }
         if edgeInsets.bottom != .invalidInset {
-            bottomAnchor.constraint(equalTo: superview.bottomAnchor,
-                                    constant: -edgeInsets.bottom).isActive = true
+            if #available(iOS 10.0, *) {
+                bottom = edgeInsets.bottom
+            } else {
+                bottomAnchor.constraint(equalTo: superview.bottomAnchor,
+                                        constant: -edgeInsets.bottom).isActive = true
+            }
         }
         if edgeInsets.left != .invalidInset {
-            leftAnchor.constraint(equalTo: superview.leftAnchor,
-                                  constant: edgeInsets.left).isActive = true
+            if #available(iOS 10.0, *) {
+                left = edgeInsets.left
+            } else {
+                leftAnchor.constraint(equalTo: superview.leftAnchor,
+                                      constant: edgeInsets.left).isActive = true
+            }
         }
         if edgeInsets.right != .invalidInset {
-            rightAnchor.constraint(equalTo: superview.rightAnchor,
-                                   constant: -edgeInsets.right).isActive = true
+            if #available(iOS 10.0, *) {
+                right = edgeInsets.right
+            } else {
+                rightAnchor.constraint(equalTo: superview.rightAnchor,
+                                       constant: -edgeInsets.right).isActive = true
+            }
         }
     }
     
@@ -116,18 +160,19 @@ public extension UIView {
                                         right: .invalidInset))
     }
     
-    /// Set a constraint value
+    /// Set a self owned constraint value, like height and width.
     ///
     /// - Parameters:
     ///   - value: The value
     ///   - archor: The archor
     @available(iOS, introduced: 10.0)
     private func setValue(_ value: CGFloat?, of archor: NSLayoutDimension) {
+        let constraint = constraints.first { $0.firstAnchor == archor }
         if let value = value,
-            let constraint = constraints.first(where: {$0.firstAnchor == archor }) {
+           let constraint = constraint {
             constraint.isActive = true
             constraint.constant = value
-        } else if let constraint = constraints.first(where: {$0.firstAnchor == archor }) {
+        } else if let constraint = constraint {
             constraint.isActive = false
         } else if let value = value {
             translatesAutoresizingMaskIntoConstraints = false
@@ -135,13 +180,59 @@ public extension UIView {
         }
     }
     
-    /// Get the value
+    /// Get a self owned constraint value, like height and width.
     ///
     /// - Parameter archor: The archor
     /// - Returns: The value
     @available(iOS, introduced: 10.0)
     private func getValue(of archor: NSLayoutDimension) -> CGFloat? {
-        if let constraint = constraints.first(where: {$0.firstAnchor == archor}) {
+        let constraint = constraints.first { $0.firstAnchor == archor }
+        if let constraint = constraint {
+            return constraint.isActive ? constraint.constant : nil
+        } else {
+            return nil
+        }
+    }
+
+    /// Set the constraint value between two archors.
+    ///
+    /// - Parameters:
+    ///   - value: The value
+    ///   - firstArchor: The first archor
+    ///   - secondArchor: The second archor
+    @available(iOS, introduced: 10.0)
+    private func setValue<Archor>(_ value: CGFloat?, between firstArchor: NSLayoutAnchor<Archor>, and secondArchor: NSLayoutAnchor<Archor>?) {
+        let constraint = superview?
+            .constraints
+            .first { ($0.firstAnchor == firstArchor && $0.secondAnchor == secondArchor)
+                || ($0.secondAnchor == firstArchor && $0.firstAnchor == secondArchor) }
+        if let value = value,
+            let constraint = constraint {
+            constraint.isActive = true
+            constraint.constant = value
+        } else if let constraint = constraint {
+            constraint.isActive = false
+        } else if let value = value,
+                  let secondArchor = secondArchor {
+            translatesAutoresizingMaskIntoConstraints = false
+            firstArchor.constraint(equalTo: secondArchor,
+                                   constant: value).isActive = true
+        }
+    }
+
+    /// Get the constraint value between two archors.
+    ///
+    /// - Parameters
+    ///   - firstArchor: The first archor
+    ///   - secondArchor: The second archor
+    /// - Returns: The value
+    @available(iOS, introduced: 10.0)
+    private func getValue<Archor>(between firstArchor: NSLayoutAnchor<Archor>, and secondArchor: NSLayoutAnchor<Archor>?) -> CGFloat? {
+        let constraint = superview?
+            .constraints
+            .first { ($0.firstAnchor == firstArchor && $0.secondAnchor == secondArchor)
+                || ($0.secondAnchor == firstArchor && $0.firstAnchor == secondArchor) }
+        if let constraint = constraint {
             return constraint.isActive ? constraint.constant : nil
         } else {
             return nil
