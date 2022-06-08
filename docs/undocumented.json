@@ -65,16 +65,23 @@
     },
     {
       "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Collection/CollectionCell.swift",
-      "line": 16,
+      "line": 21,
       "symbol": "CollectionCell.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Collection/CollectionCell.swift",
-      "line": 21,
+      "line": 26,
       "symbol": "CollectionCell.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Collection/CollectionViewFactory.swift",
+      "line": 7,
+      "symbol": "CollectionViewFactory.cell(for:in:at:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
@@ -941,22 +948,22 @@
     {
       "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/View+Alpha.swift",
       "line": 8,
-      "symbol": "Alpha.visible",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "symbol": "CGFloat.visible",
+      "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/View+Alpha.swift",
       "line": 9,
-      "symbol": "Alpha.disabled",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "symbol": "CGFloat.disabled",
+      "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/View+Alpha.swift",
       "line": 10,
-      "symbol": "Alpha.hidden",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "symbol": "CGFloat.hidden",
+      "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     }
   ],
