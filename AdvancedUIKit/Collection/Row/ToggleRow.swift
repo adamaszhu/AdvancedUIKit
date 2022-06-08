@@ -15,6 +15,12 @@ open class ToggleRow: LabelRow, ToggleRowType {
             }
         }
     }
+
+    public var isEnabled: Bool = true {
+        didSet {
+            reloadAction?()
+        }
+    }
 }
 
 /// The protocol of the toggle row
@@ -22,6 +28,9 @@ public protocol ToggleRowType: LabelRowType {
 
     /// The current value of the toggle.
     var value: Bool { get set }
+
+    /// If the toggle value can be changed
+    var isEnabled: Bool { get set }
 
     /// The action to be triggered when the value is changed.
     var didChangeValueAction: ((Bool) -> Void)? { get set }

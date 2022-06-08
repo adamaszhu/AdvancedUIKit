@@ -4,6 +4,11 @@
 /// - date: 04/05/22
 /// - author: Adamas
 open class CollectionCell<V: View<R>, R: RowType>: UICollectionViewCell, RowConfigurable {
+    
+    /// Reusable id of the cell type
+    public static var reusableIdentifier: String {
+        String(describing: Self.self)
+    }
 
     /// The main part of the cell
     public private(set) var view: V?

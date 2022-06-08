@@ -49,11 +49,13 @@ public extension UIView {
             return
         }
         animateChange({ [weak self] in
-            self?.alpha = Alpha.visible.rawValue
+            self?.alpha = .visible
         }, withDuration: duration,
                       preparation: {
-            alpha = Alpha.hidden.rawValue
+            alpha = .hidden
             isHidden = false
+        }, completion: {
+            completion()
         })
     }
 
@@ -67,12 +69,13 @@ public extension UIView {
             return
         }
         animateChange({ [weak self] in
-            self?.alpha = Alpha.hidden.rawValue
+            self?.alpha = .hidden
         }, withDuration: duration,
                       preparation: {
-            alpha = Alpha.visible.rawValue
+            alpha = .visible
         }, completion: { [weak self] in
             self?.isHidden = true
+            completion()
         })
     }
 }

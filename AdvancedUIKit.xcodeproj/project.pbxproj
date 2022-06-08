@@ -81,6 +81,7 @@
 		28A05BA6271D37E700D8287D /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A05BA5271D37E700D8287D /* ItemsView.swift */; };
 		28A8D2EB20EF572B0061B420 /* SearchBar+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D2EA20EF572B0061B420 /* SearchBar+Accessable.swift */; };
 		28A8D32820FD4B5D0061B420 /* ImageView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */; };
+		28ADA6FA284F2D7800982DD3 /* CollectionViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ADA6F9284F2D7800982DD3 /* CollectionViewFactory.swift */; };
 		28B1D8081EE50E8A00A5B2C4 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */; };
 		28B1D80A1EE5135500A5B2C4 /* TextField+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */; };
 		28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */; };
@@ -355,6 +356,7 @@
 		28A05BA5271D37E700D8287D /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
 		28A8D2EA20EF572B0061B420 /* SearchBar+Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchBar+Accessable.swift"; sourceTree = "<group>"; };
 		28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Animation.swift"; sourceTree = "<group>"; };
+		28ADA6F9284F2D7800982DD3 /* CollectionViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFactory.swift; sourceTree = "<group>"; };
 		28B1D8071EE50E8A00A5B2C4 /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		28B1D8091EE5135500A5B2C4 /* TextField+Underline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+Underline.swift"; path = "AdvancedUIKit/Textfield/TextField+Underline.swift"; sourceTree = SOURCE_ROOT; };
 		28B1D80D1EE519DF00A5B2C4 /* UnderlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnderlineView.swift; path = AdvancedUIKit/Textfield/UnderlineView.swift; sourceTree = SOURCE_ROOT; };
@@ -722,6 +724,7 @@
 				28B5DF432713BCEF00ED1898 /* LabelCollectionCell.swift */,
 				28B5DF522713DD6D00ED1898 /* TapCollectionCell.swift */,
 				2895DE302821EB0C00C3BF97 /* CollectionCell.swift */,
+				28ADA6F9284F2D7800982DD3 /* CollectionViewFactory.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -1528,6 +1531,7 @@
 				4258DDB51EEAE6A80085FCAA /* Image+PS.swift in Sources */,
 				284E5C5F1EDD426400C3CC86 /* PopupView.swift in Sources */,
 				28B5DF2C270FFFD700ED1898 /* RegexRule.swift in Sources */,
+				28ADA6FA284F2D7800982DD3 /* CollectionViewFactory.swift in Sources */,
 				28B5DF532713DD6D00ED1898 /* TapCollectionCell.swift in Sources */,
 				28108311201AE64C00AA30A6 /* AppStoreHelper.swift in Sources */,
 				42CF00AD1EFD58F4002613E3 /* InfiniteListDelegate.swift in Sources */,
