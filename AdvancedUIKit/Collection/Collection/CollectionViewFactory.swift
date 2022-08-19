@@ -4,10 +4,10 @@
 /// - date: 07/06/22
 /// - author: Adamasp
 open class CollectionViewFactory {
-    public static func cell(for row: ReusableRowType,
+    public static func cell(for row: CollectionReusableRowType,
                             in collectionView: UICollectionView,
                             at indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: row.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: row.collectionIdentifier, for: indexPath)
         if let cell = cell as? RowConfigurable {
             cell.configure(with: row)
         }

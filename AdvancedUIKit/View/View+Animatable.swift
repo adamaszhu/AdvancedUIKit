@@ -54,9 +54,7 @@ public extension UIView {
                       preparation: {
             alpha = .hidden
             isHidden = false
-        }, completion: {
-            completion()
-        })
+        }, completion: completion)
     }
 
     /// Hide the view.
