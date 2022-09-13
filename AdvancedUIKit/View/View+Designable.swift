@@ -59,6 +59,30 @@ public extension UIView {
             }
         }
     }
+
+    /// Colors for the gradient effect
+    var gradientColors: [UIColor]? {
+        get {
+            let gradientLayer = layer.sublayers?
+                .compactMap { $0 as? CAGradientLayer }
+                .first
+            return gradientLayer?.colors?
+                .map { $0 as! CGColor }
+                .map(UIColor.init)
+        }
+        set {
+            if let gradientLayer = layer.sublayers?
+                .compactMap({ $0 as? CAGradientLayer })
+                .first {
+                    gradientLayer.colors = newValue?.map { $0.cgColor }
+                    return
+                }
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = bounds
+            gradientLayer.colors = newValue?.map { $0.cgColor }
+            layer.insertSublayer(gradientLayer, at: 0)
+        }
+    }
     
     /// The width attribute
     @available(iOS, introduced: 10.0)
