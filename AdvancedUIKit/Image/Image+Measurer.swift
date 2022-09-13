@@ -6,11 +6,11 @@ public extension UIImage {
     /// - Parameter url: The url representing where the image is .
     /// - Returns: The size of the image. Nil if there is no image at the given URL.
     static func sizeOfImage(at url: URL) -> CGSize? {
-        guard let source = CGImageSourceCreateWithURL(url as CFURL, nil) else {
+        let options = [kCGImageSourceShouldCache: false] as CFDictionary
+        guard let source = CGImageSourceCreateWithURL(url as CFURL, options) else {
             return nil
         }
-        let propertyOptions = [kCGImageSourceShouldCache: false] as CFDictionary
-        guard let properties = CGImageSourceCopyPropertiesAtIndex(source, 0, propertyOptions) as? [CFString: Any] else {
+        guard let properties = CGImageSourceCopyPropertiesAtIndex(source, 0, nil) as? [CFString: Any] else {
             return nil
         }
         if let width = properties[kCGImagePropertyPixelWidth] as? CGFloat,
