@@ -50,6 +50,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Binding/CollectionRowReusable.swift",
+      "line": 7,
+      "symbol": "CollectionRowReusable.collectionIdentifier",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Binding/RowConfigurable.swift",
       "line": 7,
       "symbol": "RowConfigurable.configure(with:)",
@@ -57,9 +64,9 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Binding/RowReusable.swift",
+      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Binding/TableRowReusable.swift",
       "line": 7,
-      "symbol": "RowReusable.identifier",
+      "symbol": "TableRowReusable.tableIdentifier",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
