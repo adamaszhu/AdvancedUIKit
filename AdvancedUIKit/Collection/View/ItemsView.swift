@@ -69,7 +69,7 @@ open class ItemsView<ItemCell: CollectionCell<ItemView, ItemRow>,
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? ItemCell,
-              let itemRow = row?.rows.element(atIndex: indexPath.item) else {
+              let itemRow = row?.rows[safe: indexPath.item] else {
             Logger.standard.logError(Self.itemViewError)
             return UICollectionViewCell()
         }
@@ -78,7 +78,7 @@ open class ItemsView<ItemCell: CollectionCell<ItemView, ItemRow>,
     }
 
     public func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let itemRow = row?.rows.element(atIndex: indexPath.item) else {
+        guard let itemRow = row?.rows[safe: indexPath.item] else {
             Logger.standard.logError(Self.itemRowError)
             return
         }
