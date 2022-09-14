@@ -81,6 +81,8 @@
 		28A05BA1271D0EF800D8287D /* DefaultTapRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A05BA0271D0EF800D8287D /* DefaultTapRow.swift */; };
 		28A05BA3271D165900D8287D /* ItemsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A05BA2271D165900D8287D /* ItemsRow.swift */; };
 		28A05BA6271D37E700D8287D /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A05BA5271D37E700D8287D /* ItemsView.swift */; };
+		28A5BB1928D0C1C60065218B /* MaxLengthRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A5BB1828D0C1C60065218B /* MaxLengthRule.swift */; };
+		28A5BB1D28D17F2A0065218B /* DefaultRuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A5BB1C28D17F2A0065218B /* DefaultRuleFactory.swift */; };
 		28A8D2EB20EF572B0061B420 /* SearchBar+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D2EA20EF572B0061B420 /* SearchBar+Accessable.swift */; };
 		28A8D32820FD4B5D0061B420 /* ImageView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */; };
 		28ADA6FA284F2D7800982DD3 /* CollectionViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ADA6F9284F2D7800982DD3 /* CollectionViewFactory.swift */; };
@@ -359,6 +361,8 @@
 		28A05BA0271D0EF800D8287D /* DefaultTapRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTapRow.swift; sourceTree = "<group>"; };
 		28A05BA2271D165900D8287D /* ItemsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRow.swift; sourceTree = "<group>"; };
 		28A05BA5271D37E700D8287D /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
+		28A5BB1828D0C1C60065218B /* MaxLengthRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxLengthRule.swift; sourceTree = "<group>"; };
+		28A5BB1C28D17F2A0065218B /* DefaultRuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRuleFactory.swift; sourceTree = "<group>"; };
 		28A8D2EA20EF572B0061B420 /* SearchBar+Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchBar+Accessable.swift"; sourceTree = "<group>"; };
 		28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Animation.swift"; sourceTree = "<group>"; };
 		28ADA6F9284F2D7800982DD3 /* CollectionViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFactory.swift; sourceTree = "<group>"; };
@@ -809,6 +813,8 @@
 				28B5DF2B270FFFD700ED1898 /* RegexRule.swift */,
 				28B5DF2D271001C600ED1898 /* RequiredRule.swift */,
 				28B5DF2F271003AA00ED1898 /* MinLengthRule.swift */,
+				28A5BB1828D0C1C60065218B /* MaxLengthRule.swift */,
+				28A5BB1C28D17F2A0065218B /* DefaultRuleFactory.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -1560,6 +1566,7 @@
 				28CC65F22823932D00689A1A /* DefaultButtonView.swift in Sources */,
 				28CC661A2823ABD200689A1A /* LabelTableCell.swift in Sources */,
 				42204B9F1EF954A400F1FA04 /* InfiniteList.swift in Sources */,
+				28A5BB1D28D17F2A0065218B /* DefaultRuleFactory.swift in Sources */,
 				28F0C370212D218100D0CE05 /* View+Imageable.swift in Sources */,
 				42FE508D1EF7CF9E009C0BD7 /* ExpandableView.swift in Sources */,
 				28B5DF4E2713D6A200ED1898 /* TapView.swift in Sources */,
@@ -1648,6 +1655,7 @@
 				28E66FF21EE4E4C100073DF1 /* ActionFilterViewDelegate.swift in Sources */,
 				2823EE471EF224F4009B9AC8 /* Coordinate+Measurer.swift in Sources */,
 				4258DDB41EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift in Sources */,
+				28A5BB1928D0C1C60065218B /* MaxLengthRule.swift in Sources */,
 				28B5DF712716F42500ED1898 /* DefaultTapView.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
 				284E5C561EDD104C00C3CC86 /* MessageType.swift in Sources */,
