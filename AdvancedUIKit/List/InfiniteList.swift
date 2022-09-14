@@ -264,7 +264,7 @@ open class InfiniteList: UITableView {
 extension InfiniteList: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = items.element(atIndex: indexPath.row), status.isStable else {
+        guard let item = items[safe: indexPath.row], status.isStable else {
             return
         }
         infiniteListDelegate?.infiniteList(self, didSelectItem: item.item)
@@ -284,7 +284,7 @@ extension InfiniteList: UITableViewDataSource {
         if index == items.count, status == .infinite, let loadingMoreCell = loadingMoreCell {
             return loadingMoreCell
         }
-        guard let item = items.element(atIndex: index) else {
+        guard let item = items[safe: index] else {
             Logger.standard.logError(Self.cellError, withDetail: index)
             return UITableViewCell()
         }
@@ -335,7 +335,7 @@ extension InfiniteList: UITableViewDataSource {
                           forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            guard status.isStable, let item = items.element(atIndex: indexPath.row)?.item else {
+            guard status.isStable, let item = items[safe: indexPath.row]?.item else {
                 return
             }
             items.remove(at: indexPath.row)
