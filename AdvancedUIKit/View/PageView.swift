@@ -29,7 +29,7 @@ public class PageView: UIScrollView {
     
     /// The current page presented.
     public var currentPage: UIView? {
-        guard let subview = subviews.element(atIndex: currentPageIndex) else {
+        guard let subview = subviews[safe: currentPageIndex] else {
             Logger.standard.logError(Self.pageIndexError)
             return nil
         }
@@ -65,7 +65,7 @@ public class PageView: UIScrollView {
     ///   - view: The view to be replaced.
     ///   - index: The index of the replaced view.
     public func replace(_ view: UIView, atIndex index: Int) {
-        guard let subview = subviews.element(atIndex: index) else {
+        guard let subview = subviews[safe: index] else {
             Logger.standard.logError(Self.pageIndexError)
             return
         }
@@ -78,7 +78,7 @@ public class PageView: UIScrollView {
     ///
     /// - Parameter index: The index of the view to be removed.
     public func removeView(atIndex index: Int) {
-        guard let subview = subviews.element(atIndex: index) else {
+        guard let subview = subviews[safe: index] else {
             Logger.standard.logError(Self.pageIndexError)
             return
         }
@@ -88,7 +88,7 @@ public class PageView: UIScrollView {
         }
         // Adjust all views after the removed view.
         for laterIndex in index + 1 ..< pageControl.numberOfPages {
-            guard let subview = subviews.element(atIndex: laterIndex) else {
+            guard let subview = subviews[safe: laterIndex] else {
                 continue
             }
             subview.frame.origin = CGPoint(x: subview.frame.origin.x - frame.width, y: 0)
