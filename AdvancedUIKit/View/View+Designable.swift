@@ -59,6 +59,30 @@ public extension UIView {
             }
         }
     }
+
+    /// Colors for the gradient effect
+    var gradientColors: [UIColor]? {
+        get {
+            let gradientLayer = layer.sublayers?
+                .compactMap { $0 as? CAGradientLayer }
+                .first
+            return gradientLayer?.colors?
+                .map { $0 as! CGColor }
+                .map(UIColor.init)
+        }
+        set {
+            if let gradientLayer = layer.sublayers?
+                .compactMap({ $0 as? CAGradientLayer })
+                .first {
+                    gradientLayer.colors = newValue?.map { $0.cgColor }
+                    return
+                }
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = bounds
+            gradientLayer.colors = newValue?.map { $0.cgColor }
+            layer.insertSublayer(gradientLayer, at: 0)
+        }
+    }
     
     /// The width attribute
     @available(iOS, introduced: 10.0)
@@ -77,29 +101,69 @@ public extension UIView {
     /// The top space to its superview
     @available(iOS, introduced: 10.0)
     var top: CGFloat? {
-        get { getValue(between: topAnchor, and: superview?.topAnchor) }
-        set { setValue(newValue, between: topAnchor, and: superview?.topAnchor ) }
+        get {
+            guard let superview = superview else {
+                return nil
+            }
+            return getValue(between: topAnchor, and: superview.topAnchor)
+        }
+        set {
+            guard let superview = superview else {
+                return
+            }
+            setValue(newValue, between: topAnchor, and: superview.topAnchor )
+        }
     }
 
     /// The left space to its superview
     @available(iOS, introduced: 10.0)
     var left: CGFloat? {
-        get { getValue(between: leftAnchor, and: superview?.leftAnchor) }
-        set { setValue(newValue, between: leftAnchor, and: superview?.leftAnchor) }
+        get {
+            guard let superview = superview else {
+                return nil
+            }
+            return getValue(between: leftAnchor, and: superview.leftAnchor)
+        }
+        set {
+            guard let superview = superview else {
+                return
+            }
+            setValue(newValue, between: leftAnchor, and: superview.leftAnchor)
+        }
     }
 
     /// The right space to its superview
     @available(iOS, introduced: 10.0)
     var right: CGFloat? {
-        get { getValue(between: rightAnchor, and: superview?.rightAnchor) }
-        set { setValue(newValue, between: rightAnchor, and: superview?.rightAnchor) }
+        get {
+            guard let superview = superview else {
+                return nil
+            }
+            return getValue(between: rightAnchor, and: superview.rightAnchor)
+        }
+        set {
+            guard let superview = superview else {
+                return
+            }
+            setValue(newValue, between: rightAnchor, and: superview.rightAnchor)
+        }
     }
 
     /// The bottom space to its superview
     @available(iOS, introduced: 10.0)
     var bottom: CGFloat? {
-        get { getValue(between: bottomAnchor, and: superview?.bottomAnchor) }
-        set { setValue(newValue, between: bottomAnchor, and: superview?.bottomAnchor) }
+        get {
+            guard let superview = superview else {
+                return nil
+            }
+            return getValue(between: bottomAnchor, and: superview.bottomAnchor)
+        }
+        set {
+            guard let superview = superview else {
+                return
+            }
+            setValue(newValue, between: bottomAnchor, and: superview.bottomAnchor)
+        }
     }
     
     /// Pin the edge to its superview
@@ -187,11 +251,7 @@ public extension UIView {
     @available(iOS, introduced: 10.0)
     private func getValue(of archor: NSLayoutDimension) -> CGFloat? {
         let constraint = constraints.first { $0.firstAnchor == archor }
-        if let constraint = constraint {
-            return constraint.isActive ? constraint.constant : nil
-        } else {
-            return nil
-        }
+        return constraint?.isActive == true ? constraint?.constant : nil
     }
 
     /// Set the constraint value between two archors.
@@ -201,7 +261,7 @@ public extension UIView {
     ///   - firstArchor: The first archor
     ///   - secondArchor: The second archor
     @available(iOS, introduced: 10.0)
-    private func setValue<Archor>(_ value: CGFloat?, between firstArchor: NSLayoutAnchor<Archor>, and secondArchor: NSLayoutAnchor<Archor>?) {
+    private func setValue<Archor>(_ value: CGFloat?, between firstArchor: NSLayoutAnchor<Archor>, and secondArchor: NSLayoutAnchor<Archor>) {
         let constraint = superview?
             .constraints
             .first { ($0.firstAnchor == firstArchor && $0.secondAnchor == secondArchor)
@@ -212,8 +272,7 @@ public extension UIView {
             constraint.constant = value
         } else if let constraint = constraint {
             constraint.isActive = false
-        } else if let value = value,
-                  let secondArchor = secondArchor {
+        } else if let value = value {
             translatesAutoresizingMaskIntoConstraints = false
             firstArchor.constraint(equalTo: secondArchor,
                                    constant: value).isActive = true
@@ -227,16 +286,12 @@ public extension UIView {
     ///   - secondArchor: The second archor
     /// - Returns: The value
     @available(iOS, introduced: 10.0)
-    private func getValue<Archor>(between firstArchor: NSLayoutAnchor<Archor>, and secondArchor: NSLayoutAnchor<Archor>?) -> CGFloat? {
+    private func getValue<Archor>(between firstArchor: NSLayoutAnchor<Archor>, and secondArchor: NSLayoutAnchor<Archor>) -> CGFloat? {
         let constraint = superview?
             .constraints
             .first { ($0.firstAnchor == firstArchor && $0.secondAnchor == secondArchor)
                 || ($0.secondAnchor == firstArchor && $0.firstAnchor == secondArchor) }
-        if let constraint = constraint {
-            return constraint.isActive ? constraint.constant : nil
-        } else {
-            return nil
-        }
+        return constraint?.isActive == true ? constraint?.constant : nil
     }
 }
 

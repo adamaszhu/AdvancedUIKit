@@ -76,12 +76,19 @@ open class TextRow: LabelRow, TextRowType {
 
     public func isValid(value: String?, shouldUpdateView: Bool) -> String? {
         self.shouldUpdateView = shouldUpdateView
+        let rawValue: String?
+        if let value = value,
+           let formatter = formatter {
+            rawValue = formatter.removeFormatting(value)
+        } else {
+            rawValue = value
+        }
         defer {
-            self.value = value
+            self.value = rawValue
             self.shouldUpdateView = true
         }
         for rule in rules {
-            if let error = rule.isValid(value: value) {
+            if let error = rule.isValid(value: rawValue) {
                 isValid = false
                 return error
             }
@@ -92,7 +99,7 @@ open class TextRow: LabelRow, TextRowType {
 
     public func format(value: String) -> String {
         if let formatter = formatter {
-            return formatter(value)
+            return formatter.format(value)
         } else {
             return value
         }

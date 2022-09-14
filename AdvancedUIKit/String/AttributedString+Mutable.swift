@@ -69,6 +69,18 @@ public extension NSAttributedString {
                          toFirstSubstring: substring)
     }
 
+    /// Change the letter spacing of a sub string.
+    ///
+    /// - Parameters:
+    ///   - letterSpacing: The space between letters.
+    ///   - substring: The substring that should apply the new letter spacing. Nil will apply the letter spacing to the whole string.
+    /// - Returns: A new string with part of it using the new color.
+    func changingLetterSpacing(_ letterSpacing: CGFloat, ofFirstSubstring substring: String? = nil) -> NSAttributedString {
+        addingAttributes(.kern,
+                         value: letterSpacing,
+                         toFirstSubstring: substring)
+    }
+
     /// Add an new attribute to part of the string
     ///
     /// - Parameters:
