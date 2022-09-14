@@ -8,14 +8,14 @@ public class DefaultRuleFactory {
     /// Number only rule
     /// - Parameter message: Error message
     /// - Returns: The rule
-    static func numberRule(withMessage message: String) -> RuleType {
+    public static func numberRule(withMessage message: String) -> RuleType {
         RegexRule(regex: Self.numberRegex, message: message)
     }
 
     /// Alphabet only rule
     /// - Parameter message: Error message
     /// - Returns: The rule
-    static func alphabetRule(withMessage message: String) -> RuleType {
+    public static func alphabetRule(withMessage message: String) -> RuleType {
         RegexRule(regex: Self.alphabetRegex, message: message)
     }
 }

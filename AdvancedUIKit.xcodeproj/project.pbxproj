@@ -83,6 +83,7 @@
 		28A05BA6271D37E700D8287D /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A05BA5271D37E700D8287D /* ItemsView.swift */; };
 		28A5BB1928D0C1C60065218B /* MaxLengthRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A5BB1828D0C1C60065218B /* MaxLengthRule.swift */; };
 		28A5BB1D28D17F2A0065218B /* DefaultRuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A5BB1C28D17F2A0065218B /* DefaultRuleFactory.swift */; };
+		28A5BB2228D1B2900065218B /* LuhnRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A5BB2128D1B2900065218B /* LuhnRule.swift */; };
 		28A8D2EB20EF572B0061B420 /* SearchBar+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D2EA20EF572B0061B420 /* SearchBar+Accessable.swift */; };
 		28A8D32820FD4B5D0061B420 /* ImageView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */; };
 		28ADA6FA284F2D7800982DD3 /* CollectionViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ADA6F9284F2D7800982DD3 /* CollectionViewFactory.swift */; };
@@ -142,6 +143,7 @@
 		28D1C0021EDCF3EF00290999 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0011EDCF3EF00290999 /* MainViewController.swift */; };
 		28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0071EDCF5E100290999 /* FeatureTableCell.swift */; };
 		28D1C00A1EDCF62900290999 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0091EDCF62900290999 /* Feature.swift */; };
+		28D9844628D2018800FA28BB /* DateRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9844528D2018800FA28BB /* DateRule.swift */; };
 		28E66FE91EE4CF0F00073DF1 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FE81EE4CF0F00073DF1 /* TextFieldViewController.swift */; };
 		28E66FEB1EE4D06600073DF1 /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FEA1EE4D06600073DF1 /* ViewViewController.swift */; };
 		28E66FF11EE4E4C100073DF1 /* ActionFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FED1EE4E4C100073DF1 /* ActionFilterView.swift */; };
@@ -363,6 +365,7 @@
 		28A05BA5271D37E700D8287D /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
 		28A5BB1828D0C1C60065218B /* MaxLengthRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxLengthRule.swift; sourceTree = "<group>"; };
 		28A5BB1C28D17F2A0065218B /* DefaultRuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRuleFactory.swift; sourceTree = "<group>"; };
+		28A5BB2128D1B2900065218B /* LuhnRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuhnRule.swift; sourceTree = "<group>"; };
 		28A8D2EA20EF572B0061B420 /* SearchBar+Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchBar+Accessable.swift"; sourceTree = "<group>"; };
 		28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Animation.swift"; sourceTree = "<group>"; };
 		28ADA6F9284F2D7800982DD3 /* CollectionViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFactory.swift; sourceTree = "<group>"; };
@@ -420,6 +423,7 @@
 		28D1C0011EDCF3EF00290999 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		28D1C0071EDCF5E100290999 /* FeatureTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureTableCell.swift; sourceTree = "<group>"; };
 		28D1C0091EDCF62900290999 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		28D9844528D2018800FA28BB /* DateRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRule.swift; sourceTree = "<group>"; };
 		28E66FE81EE4CF0F00073DF1 /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		28E66FEA1EE4D06600073DF1 /* ViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
 		28E66FED1EE4E4C100073DF1 /* ActionFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionFilterView.swift; sourceTree = "<group>"; };
@@ -815,6 +819,8 @@
 				28B5DF2F271003AA00ED1898 /* MinLengthRule.swift */,
 				28A5BB1828D0C1C60065218B /* MaxLengthRule.swift */,
 				28A5BB1C28D17F2A0065218B /* DefaultRuleFactory.swift */,
+				28A5BB2128D1B2900065218B /* LuhnRule.swift */,
+				28D9844528D2018800FA28BB /* DateRule.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -1641,6 +1647,7 @@
 				28CC660E28239F9600689A1A /* ToggleView.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Layout.swift in Sources */,
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
+				28A5BB2228D1B2900065218B /* LuhnRule.swift in Sources */,
 				2810DCFF282215FC005247F4 /* ValueView.swift in Sources */,
 				35758B0C23289B590024B723 /* String+Localizable.swift in Sources */,
 				281987B2286D4EAE00423F2C /* Anchor+Shortcut.swift in Sources */,
@@ -1662,6 +1669,7 @@
 				2822A3361EE0EC8200FAA8E3 /* ViewController+Navigatable.swift in Sources */,
 				35EA4385233316060004F41B /* ApplicationType.swift in Sources */,
 				2823715F270C340E00A72865 /* Row.swift in Sources */,
+				28D9844628D2018800FA28BB /* DateRule.swift in Sources */,
 				42CA09E21EE0461A009AF1BE /* RingHelper.swift in Sources */,
 				358DEDBE23398C3100D2EB68 /* ViewController+ActionSheet.swift in Sources */,
 				28B5DF30271003AA00ED1898 /* MinLengthRule.swift in Sources */,
