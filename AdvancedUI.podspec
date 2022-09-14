@@ -12,7 +12,7 @@ s.homepage = "https://github.com/adamaszhu/AdvancedUIKit"
 s.source = { :git => "https://github.com/adamaszhu/AdvancedUIKit.git",
              :tag => "#{s.version}" }
 s.frameworks = "Foundation", "UIKit"
-s.dependency 'AdvancedFoundation', '~> 1.8.3'
+s.dependency 'AdvancedFoundation', '~> 1.8.4'
 s.source_files = "AdvancedUIKit/**/*.{swift}"
 s.resources = "AdvancedUIKit/**/*.{strings}"
 s.swift_version = "5"
