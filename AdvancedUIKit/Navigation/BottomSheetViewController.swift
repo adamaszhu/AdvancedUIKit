@@ -2,8 +2,8 @@
 /// BottomSheetViewController is used to present a view controller from the bottom.
 ///
 /// - author: Adamas
-/// - version: 1.7.3
-/// - date: 02/10/2021
+/// - version: 1.9.7
+/// - date: 15/09/2022
 open class BottomSheetViewController: ModalViewController {
 
     /// The view that hold the sub view controller
@@ -86,7 +86,7 @@ open class BottomSheetViewController: ModalViewController {
         }
         switch mode {
         case let .ratio(ratio):
-            let height = view.bounds.width * CGFloat(ratio)
+            let height = view.bounds.width / CGFloat(ratio)
             modalView.heightAnchor.constraint(equalToConstant: height).isActive = true
         case let .percentage(percentage):
             let height = view.bounds.height * CGFloat(percentage)
