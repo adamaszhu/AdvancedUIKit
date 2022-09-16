@@ -144,6 +144,7 @@
 		28D1C0081EDCF5E100290999 /* FeatureTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0071EDCF5E100290999 /* FeatureTableCell.swift */; };
 		28D1C00A1EDCF62900290999 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1C0091EDCF62900290999 /* Feature.swift */; };
 		28D9844628D2018800FA28BB /* DateRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9844528D2018800FA28BB /* DateRule.swift */; };
+		28D9844A28D4014900FA28BB /* Image+Convertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D9844928D4014900FA28BB /* Image+Convertable.swift */; };
 		28E66FE91EE4CF0F00073DF1 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FE81EE4CF0F00073DF1 /* TextFieldViewController.swift */; };
 		28E66FEB1EE4D06600073DF1 /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FEA1EE4D06600073DF1 /* ViewViewController.swift */; };
 		28E66FF11EE4E4C100073DF1 /* ActionFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66FED1EE4E4C100073DF1 /* ActionFilterView.swift */; };
@@ -424,6 +425,7 @@
 		28D1C0071EDCF5E100290999 /* FeatureTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureTableCell.swift; sourceTree = "<group>"; };
 		28D1C0091EDCF62900290999 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		28D9844528D2018800FA28BB /* DateRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRule.swift; sourceTree = "<group>"; };
+		28D9844928D4014900FA28BB /* Image+Convertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Convertable.swift"; sourceTree = "<group>"; };
 		28E66FE81EE4CF0F00073DF1 /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		28E66FEA1EE4D06600073DF1 /* ViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
 		28E66FED1EE4E4C100073DF1 /* ActionFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionFilterView.swift; sourceTree = "<group>"; };
@@ -1147,6 +1149,7 @@
 				35EA437E233304C00004F41B /* CodeHelper.swift */,
 				35EA4380233309030004F41B /* CodeType.swift */,
 				28F6F8BA2803CAF20034A877 /* Color+Image.swift */,
+				28D9844928D4014900FA28BB /* Image+Convertable.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1647,6 +1650,7 @@
 				28CC660E28239F9600689A1A /* ToggleView.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Layout.swift in Sources */,
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
+				28D9844A28D4014900FA28BB /* Image+Convertable.swift in Sources */,
 				28A5BB2228D1B2900065218B /* LuhnRule.swift in Sources */,
 				2810DCFF282215FC005247F4 /* ValueView.swift in Sources */,
 				35758B0C23289B590024B723 /* String+Localizable.swift in Sources */,

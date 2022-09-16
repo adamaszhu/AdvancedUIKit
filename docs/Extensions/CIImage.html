@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RemoteNotification Structure Reference</title>
+    <title>CIImage Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/RemoteNotification" class="dashAnchor"></a>
-    <a title="RemoteNotification Structure Reference"></a>
+    <a name="//apple_ref/swift/Extension/CIImage" class="dashAnchor"></a>
+    <a title="CIImage Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">AdvancedUIKit 1.9.8 Docs</a> (81% documented)</p>
@@ -29,7 +29,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">AdvancedUIKit Reference</a>
         <img id="carat" src="../img/carat.png" alt=""/>
-        RemoteNotification Structure Reference
+        CIImage Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -526,26 +526,26 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>RemoteNotification</h1>
+            <h1>CIImage</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RemoteNotification</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">CIImage</span></code></pre>
 
                 </div>
               </div>
-            <p>RemoteNotification records the information about a notification.</p>
+            <p>Convertion between different image concepts</p>
 <div class="aside aside-author">
     <p class="aside-title">Author</p>
     Adamas
 
-</div><div class="aside aside-version">
-    <p class="aside-title">Version</p>
-    1.5.0
-
 </div><div class="aside aside-date">
     <p class="aside-title">Date</p>
-    07/05/2019
+    16/09/2022
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    1.9.8
 
 </div>
 
@@ -556,9 +556,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13AdvancedUIKit18RemoteNotificationV5titleSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/title" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13AdvancedUIKit18RemoteNotificationV5titleSSSgvp">title</a>
+                    <a name="/s:So7CIImageC13AdvancedUIKitE6ciRect3for2inSo6CGRectVAH_AHtFZ"></a>
+                    <a name="//apple_ref/swift/Method/ciRect(for:in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So7CIImageC13AdvancedUIKitE6ciRect3for2inSo6CGRectVAH_AHtFZ">ciRect(for:<wbr>in:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -566,68 +566,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The title of the notification.</p>
+                        <p>CoreImage has a different coordinator system from what UIKit has. This is used to convert a rect from the UIKit coordinator system into the CoreImage one.
+CoreImage coordinator starts at the bottom-left corner.
+UIKit coordinator starts at the top-left corner.
+REF: <a href="https://nacho4d-nacho4d.blogspot.com/2012/03/coreimage-and-uikit-coordinates.html">https://nacho4d-nacho4d.blogspot.com/2012/03/coreimage-and-uikit-coordinates.html</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:13AdvancedUIKit18RemoteNotificationV4bodySSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/body" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13AdvancedUIKit18RemoteNotificationV4bodySSSgvp">body</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The content attached to the notification.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:13AdvancedUIKit18RemoteNotificationV8userInfoACSgSDys11AnyHashableVypG_tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(userInfo:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13AdvancedUIKit18RemoteNotificationV8userInfoACSgSDys11AnyHashableVypG_tcfc">init(userInfo:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Initialize the notification</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">userInfo</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">ciRect</span><span class="p">(</span><span class="k">for</span> <span class="nv">rect</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">,</span> <span class="k">in</span> <span class="nv">superRect</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGRect</span></code></pre>
 
                         </div>
                       </div>
@@ -638,17 +587,33 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>userInfo</em>
+                                <em>rect</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The payload received along with a notification</p>
+                                  <p>The rect in the UIKit system</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>superRect</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The rect of the superview in the UIKit system, origin will be ignored</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A coverted rect in the CoreImage coordinator system</p>
                       </div>
                     </section>
                   </div>
