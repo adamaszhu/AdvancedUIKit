@@ -44,8 +44,9 @@ public class DefaultRuleFactory {
     /// - Parameter message: Error message
     /// - Returns: A list of fules that a expiry string should follow
     public static func expiryRules(withMessage message: String) -> [RuleType] {
-        [DateRule(dateFormats: [.expiryDate, .fullExpiryDate],
-                  message: message)]
+        [MinDateRule(minDate: Date(),
+                     dateFormats: [.expiryDate, .fullExpiryDate],
+                     message: message)]
     }
 
     public static func creditCardNumberRules(withInvalidMessage invalidMessage: String,
@@ -69,3 +70,5 @@ private extension DefaultRuleFactory {
     static let numberRegex = "^[0-9]*$"
     static let alphabetRegex = "^[a-zA-Z]*$"
 }
+
+import Foundation
