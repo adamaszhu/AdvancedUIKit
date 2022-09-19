@@ -205,7 +205,7 @@
     },
     {
       "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Validation/DefaultRuleFactory.swift",
-      "line": 51,
+      "line": 52,
       "symbol": "DefaultRuleFactory.creditCardNumberRules(withInvalidMessage:minLengthMessage:andMaxLengthMessage:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
