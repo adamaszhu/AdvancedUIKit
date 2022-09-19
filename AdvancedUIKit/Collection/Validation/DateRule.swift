@@ -6,10 +6,10 @@
 public class DateRule: RuleType {
 
     /// The error message to return if the validation fails.
-    private let message: String
+    let message: String
 
     /// Supported date formats
-    private let dateFormats: [DateFormat]
+    let dateFormats: [DateFormat]
 
     /// Initialize the rule
     /// - Parameters:
