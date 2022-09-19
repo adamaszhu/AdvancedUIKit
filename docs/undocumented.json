@@ -211,6 +211,20 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Validation/MaxDateRule.swift",
+      "line": 21,
+      "symbol": "MaxDateRule.isValid(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Validation/MinDateRule.swift",
+      "line": 21,
+      "symbol": "MinDateRule.isValid(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/ItemsView.swift",
       "line": 20,
       "symbol": "ItemsView.init(frame:)",
