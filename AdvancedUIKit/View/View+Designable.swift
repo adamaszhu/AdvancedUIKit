@@ -184,7 +184,7 @@ public extension UIView {
         }
         if edgeInsets.bottom != .invalidInset {
             if #available(iOS 10.0, *) {
-                bottom = edgeInsets.bottom
+                bottom = -edgeInsets.bottom
             } else {
                 bottomAnchor.constraint(equalTo: superview.bottomAnchor,
                                         constant: -edgeInsets.bottom).isActive = true
@@ -200,7 +200,7 @@ public extension UIView {
         }
         if edgeInsets.right != .invalidInset {
             if #available(iOS 10.0, *) {
-                right = edgeInsets.right
+                right = -edgeInsets.right
             } else {
                 rightAnchor.constraint(equalTo: superview.rightAnchor,
                                        constant: -edgeInsets.right).isActive = true
