@@ -5,18 +5,8 @@
 /// - author: Adamas
 public final class DefaultTapView: TapView<DefaultTapRow> {
 
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        initialize()
-    }
-
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize()
-    }
-    
-    /// Initialize the UI
-    private func initialize() {
+    override public func initialize() {
+        super.initialize()
         // TODO: Change the bundle to Bundle.module
         guard let view = UINib(nibName: String(describing: DefaultTapView.self),
                                bundle: .current)

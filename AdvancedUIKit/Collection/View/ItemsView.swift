@@ -17,18 +17,8 @@ open class ItemsView<ItemCell: CollectionCell<ItemView, ItemRow>,
     /// The reusable id of the cell.
     private let cellID = String(describing: ItemView.self)
 
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize()
-    }
-
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        initialize()
-    }
-
-    /// Initialize the view
-    private func initialize() {
+    open override func initialize() {
+        super.initialize()
         let layout = UICollectionViewFlowLayout()
         if #available(iOS 10.0, *) {
             layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize

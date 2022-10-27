@@ -14,6 +14,21 @@ open class View<Row: RowType>: UIView, RowConfigurable {
     /// The row of the view
     public private(set) var row: Row?
 
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initialize()
+    }
+
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
+    }
+
+    /// Initialize the UI
+    open func initialize() {
+        // Any actual view can override this method to initialize the UI
+    }
+
     /// Configure the view with a row
     /// - Parameter row: The row of the view
     open func configure(with row: RowType) {

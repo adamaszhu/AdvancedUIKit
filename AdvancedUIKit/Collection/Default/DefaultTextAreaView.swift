@@ -4,17 +4,9 @@
 /// - date: 04/05/22
 /// - author: Adamas
 public final class DefaultTextAreaView: TextAreaView<DefaultTextAreaRow> {
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        initialize()
-    }
 
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize()
-    }
-
-    private func initialize() {
+    override public func initialize() {
+        super.initialize()
         // TODO: Change the bundle to Bundle.module
         guard let view = UINib(nibName: String(describing: DefaultTextAreaView.self),
                                bundle: .current)
