@@ -38,11 +38,11 @@ public protocol NotificationHelperType {
     ///   - title: The title of the notification.
     ///   - content: The content of the notification.
     ///   - delay: Delay in second for showing the notification
-    ///   - soundName: The name of the sound.
+    ///   - soundName: The name of the sound. Nil stands for the default sound.
     func createLocalNotification(withTitle title: String?,
                                  content: String,
                                  delay: Double,
-                                 andSoundName soundName: String)
+                                 andSoundName soundName: String?)
 }
 
 public extension NotificationHelperType {
@@ -57,7 +57,7 @@ public extension NotificationHelperType {
         createLocalNotification(withTitle: title,
                                 content: content,
                                 delay: 0,
-                                andSoundName: UILocalNotificationDefaultSoundName)
+                                andSoundName: nil)
     }
     
     /// Post a local notification.
@@ -71,7 +71,7 @@ public extension NotificationHelperType {
         createLocalNotification(withTitle: title,
                                 content: content,
                                 delay: delay,
-                                andSoundName: UILocalNotificationDefaultSoundName)
+                                andSoundName: nil)
     }
 }
 
@@ -147,7 +147,7 @@ public final class NotificationHelper: NotificationHelperType {
     
     public func createLocalNotification(withTitle title: String?,
                                         content: String, delay: Double,
-                                        andSoundName soundName: String) {
+                                        andSoundName soundName: String?) {
         let notificationContent = UNMutableNotificationContent()
         if let title = title {
             notificationContent.title = title
@@ -155,8 +155,12 @@ public final class NotificationHelper: NotificationHelperType {
         } else {
             notificationContent.title = content
         }
-        let notificationSoundName = UNNotificationSoundName(rawValue: soundName)
-        notificationContent.sound = UNNotificationSound(named: notificationSoundName)
+        if let soundName = soundName {
+            let notificationSoundName = UNNotificationSoundName(rawValue: soundName)
+            notificationContent.sound = UNNotificationSound(named: notificationSoundName)
+        } else {
+            notificationContent.sound = UNNotificationSound.default
+        }
         let adjustedDelay = max(1, delay)
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: adjustedDelay, repeats: false)
         let request = UNNotificationRequest(identifier: content, content: notificationContent, trigger: trigger)
@@ -168,78 +172,10 @@ public final class NotificationHelper: NotificationHelperType {
     }
 }
 
-/// The helper used by ios 9 and before.
-@available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use NotificationHelper instead")
-public final class StaleNotificationHelper: NotificationHelperType {
-    
-    public weak var delegate: NotificationHelperDelegate?
-    
-    public var isRemoteNotificationAuthorized: Bool {
-        application.isRegisteredForRemoteNotifications
-    }
-    
-    /// The application object.
-    private var application: UIApplication
-    
-    /// Initialize the object.
-    ///
-    /// - Parameter application: The application that the notification belongs to.
-    public init(application: UIApplication = UIApplication.shared) {
-        self.application = application
-    }
-    
-    public func checkLocalNotificationPermission(completion: @escaping (Bool?) -> Void) {
-        guard let setting = application.currentUserNotificationSettings else {
-            Logger.standard.logError(Self.settingError)
-            return completion(false)
-        }
-        return completion(setting.types.contains(.alert))
-    }
-    
-    public func requestLocalNotificationPermission() {
-        checkLocalNotificationPermission { [weak self] result in
-            guard let self = self, result != true else {
-                return
-            }
-            let types = [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound] as UIUserNotificationType
-            let setting = UIUserNotificationSettings(types: types, categories: nil)
-            self.application.registerUserNotificationSettings(setting)
-            // Abandon the deletate callback for old devices.
-            self.delegate?.notificationHelper(self, didAuthorizeLocalNotification: true)
-        }
-    }
-    
-    public func requestRemoteNotificationPermission() {
-        guard !isRemoteNotificationAuthorized else {
-            return
-        }
-        application.registerForRemoteNotifications()
-        // Abandon the deletate callback for old devices.
-        delegate?.notificationHelper(self, didAuthorizeRemoteNotification: true)
-    }
-    
-    public func deviceToken(from data: Data) -> String {
-        return data.map{String(format: Self.deviceTokenPattern, $0)}.joined()
-    }
-    
-    public func createLocalNotification(withTitle title: String?, content: String, delay: Double, andSoundName soundName: String) {
-        let notification = UILocalNotification()
-        notification.timeZone = NSTimeZone.default
-        notification.fireDate = Date().addingTimeInterval(delay)
-        if let title = title {
-            notification.alertTitle = title
-        }
-        notification.alertBody = content
-        notification.soundName = soundName
-        application.scheduleLocalNotification(notification)
-    }
-}
-
 /// Constants
 fileprivate extension NotificationHelperType {
     
     /// The system error.
-    static var settingError: String { return "The notification setting cannot be retrieved." }
     static var authorizationError: String { return "AuthorizationError" }
     
     /// Constants
