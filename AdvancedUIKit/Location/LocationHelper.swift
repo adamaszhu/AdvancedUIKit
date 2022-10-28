@@ -50,7 +50,7 @@ open class LocationHelper: CLLocationManager {
     }
 
     open override func requestAlwaysAuthorization() {
-        guard #available(macOS 10.15, iOS 9, *) else {
+        guard #available(macOS 10.15, *) else {
             Logger.standard.logError(Self.osVersionError, withDetail: #selector(requestAlwaysAuthorization))
             return
         }

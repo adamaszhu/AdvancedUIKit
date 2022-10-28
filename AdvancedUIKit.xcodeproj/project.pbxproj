@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		28089BD92803DAE400DCE885 /* ViewController+Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28089BD82803DAE400DCE885 /* ViewController+Accessable.swift */; };
-		2810830D201AE5D800AA30A6 /* AppStoreHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2810830B201AE5D800AA30A6 /* AppStoreHelper.strings */; };
 		28108311201AE64C00AA30A6 /* AppStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810830F201AE64B00AA30A6 /* AppStoreHelper.swift */; };
 		28108C7528DD22A6006C3514 /* RegexRuleSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28108C7428DD22A6006C3514 /* RegexRuleSpecs.swift */; };
 		2810DCFF282215FC005247F4 /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810DCFE282215FC005247F4 /* ValueView.swift */; };
@@ -293,8 +292,6 @@
 
 /* Begin PBXFileReference section */
 		28089BD82803DAE400DCE885 /* ViewController+Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Accessable.swift"; sourceTree = "<group>"; };
-		2810830C201AE5D800AA30A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppStoreHelper.strings; sourceTree = "<group>"; };
-		2810830E201AE5E600AA30A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppStoreHelper.strings"; sourceTree = "<group>"; };
 		2810830F201AE64B00AA30A6 /* AppStoreHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoreHelper.swift; sourceTree = "<group>"; };
 		28108C7428DD22A6006C3514 /* RegexRuleSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexRuleSpecs.swift; sourceTree = "<group>"; };
 		2810DCFE282215FC005247F4 /* ValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
@@ -1012,7 +1009,6 @@
 			children = (
 				420C78E31EEB93E500A1E3EA /* Application+Accessable.swift */,
 				2810830F201AE64B00AA30A6 /* AppStoreHelper.swift */,
-				2810830B201AE5D800AA30A6 /* AppStoreHelper.strings */,
 				35EA4382233315FA0004F41B /* ApplicationHelper.swift */,
 				35EA4384233316060004F41B /* ApplicationType.swift */,
 			);
@@ -1502,7 +1498,6 @@
 				28B5DF6F2716F3B700ED1898 /* DefaultTapView.xib in Resources */,
 				28B5DF732716F43300ED1898 /* DefaultLabelView.xib in Resources */,
 				35A5622822892C6F001B983D /* UIViewController.strings in Resources */,
-				2810830D201AE5D800AA30A6 /* AppStoreHelper.strings in Resources */,
 				420C78EB1EEBB6D900A1E3EA /* CameraHelper.strings in Resources */,
 				428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */,
 				4258DDAE1EEAE6A80085FCAA /* ImagePickerHelper.strings in Resources */,
@@ -1792,15 +1787,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2810830B201AE5D800AA30A6 /* AppStoreHelper.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2810830C201AE5D800AA30A6 /* en */,
-				2810830E201AE5E600AA30A6 /* zh-Hans */,
-			);
-			name = AppStoreHelper.strings;
-			sourceTree = "<group>";
-		};
 		2822A3461EE127F900FAA8E3 /* NotificationHelperType.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1935,7 +1921,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1992,7 +1978,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2018,7 +2004,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AdvancedUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2050,7 +2036,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AdvancedUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2076,7 +2062,7 @@
 				DEVELOPMENT_TEAM = V276VB2699;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2099,7 +2085,7 @@
 				DEVELOPMENT_TEAM = V276VB2699;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AdvancedUIKitHost/App/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2208,7 +2194,7 @@
 			repositoryURL = "https://github.com/Quick/Quick";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 5.0.0;
 			};
 		};
 		2870551326F1AB3600D2DA33 /* XCRemoteSwiftPackageReference "Nimble" */ = {
@@ -2216,7 +2202,7 @@
 			repositoryURL = "https://github.com/Quick/Nimble";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 10.0.0;
 			};
 		};
 		2870551626F1AB6A00D2DA33 /* XCRemoteSwiftPackageReference "AdvancedFoundation" */ = {
@@ -2224,7 +2210,7 @@
 			repositoryURL = "https://github.com/adamaszhu/AdvancedFoundation";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.2;
+				minimumVersion = 1.9.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -20,9 +20,7 @@ open class ItemsView<ItemCell: CollectionCell<ItemView, ItemRow>,
     open override func initialize() {
         super.initialize()
         let layout = UICollectionViewFlowLayout()
-        if #available(iOS 10.0, *) {
-            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.scrollDirection = .horizontal
         self.layout = layout
 
