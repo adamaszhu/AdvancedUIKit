@@ -10,9 +10,9 @@ let package = Package(
         .library(name: "AdvancedUIKit", targets: ["AdvancedUIKit"])
     ],
     dependencies: [
-        .package(url: "https://github.com/Quick/Quick", .upToNextMajor(from: "3.0.0")),
-        .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "9.0.0")),
-        .package(url: "https://github.com/adamaszhu/AdvancedFoundation", .upToNextMajor(from: "1.8.6"))
+        .package(url: "https://github.com/Quick/Quick", .upToNextMajor(from: "5.0.0")),
+        .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "10.0.0")),
+        .package(url: "https://github.com/adamaszhu/AdvancedFoundation", .upToNextMajor(from: "1.9.0"))
     ],
     targets: [
         .target(name: "AdvancedUIKit",

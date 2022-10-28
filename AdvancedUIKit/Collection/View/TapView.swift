@@ -5,18 +5,8 @@
 /// - author: Adamas
 open class TapView<Row: TapRowType>: LabelView<Row> {
 
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize()
-    }
-
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        initialize()
-    }
-
-    /// Initialize the view
-    private func initialize() {
+    override open func initialize() {
+        super.initialize()
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap))
         addGestureRecognizer(tapGestureRecognizer)
     }

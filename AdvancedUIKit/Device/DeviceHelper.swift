@@ -95,11 +95,7 @@ public final class DeviceHelper: NSObject {
             delegate?.deviceHelper(self, didCatchError: error.localizedInternalString(forType: Self.self))
             return
         }
-        if #available(iOS 10.0, *) {
-            application.open(url, options: [:], completionHandler: nil)
-        } else {
-            application.openURL(url)
-        }
+        application.open(url, options: [:], completionHandler: nil)
     }
     
     /// Initialize the object.

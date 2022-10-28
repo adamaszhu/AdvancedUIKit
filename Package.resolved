@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/adamaszhu/AdvancedFoundation",
         "state": {
           "branch": null,
-          "revision": "e5a2d02b6478a0242f50645061860d8e98b12849",
-          "version": "1.8.6"
+          "revision": "4c4f138e53845f05369817a650ed5b10613c287b",
+          "version": "1.9.1"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/mattgallagher/CwlPreconditionTesting.git",
         "state": {
           "branch": null,
-          "revision": "0630439888c94657a235ffcd5977d6047ef3c87b",
-          "version": "2.0.1"
+          "revision": "c21f7bab5ca8eee0a9998bbd17ca1d0eb45d4688",
+          "version": "2.1.0"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/Quick/Nimble",
         "state": {
           "branch": null,
-          "revision": "c93f16c25af5770f0d3e6af27c9634640946b068",
-          "version": "9.2.1"
+          "revision": "1f3bde57bde12f5e7b07909848c071e9b73d6edc",
+          "version": "10.0.0"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/Quick/Quick",
         "state": {
           "branch": null,
-          "revision": "8cce6acd38f965f5baa3167b939f86500314022b",
-          "version": "3.1.2"
+          "revision": "f9d519828bb03dfc8125467d8f7b93131951124c",
+          "version": "5.0.1"
         }
       }
     ]
