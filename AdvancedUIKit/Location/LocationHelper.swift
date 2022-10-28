@@ -50,10 +50,6 @@ open class LocationHelper: CLLocationManager {
     }
 
     open override func requestAlwaysAuthorization() {
-        guard #available(macOS 10.15, iOS 9, *) else {
-            Logger.standard.logError(Self.osVersionError, withDetail: #selector(requestAlwaysAuthorization))
-            return
-        }
         guard isUnauthorized else {
             locationHelperDelegate?.locationHelper(self, didCatchError: Self.authorizationError.localizedInternalString(forType: Self.self))
             return
@@ -91,9 +87,7 @@ extension LocationHelper: CLLocationManagerDelegate {
         }
         switch authorizingStatus {
         case .authorizedAlways:
-            if #available(macOS 10.15, iOS 9, *) {
-                locationHelperDelegate?.locationHelper(self, didAuthorizeAlwaysAuthorization: isAlwaysAuthorizationAuthorized)
-            }
+            locationHelperDelegate?.locationHelper(self, didAuthorizeAlwaysAuthorization: isAlwaysAuthorizationAuthorized)
         case .authorizedWhenInUse:
             #if !os(macOS)
             locationHelperDelegate?.locationHelper(self, didAuthorizeWhenInUseAuthorization: isWhenInUseAuthorizationAuthorized)
@@ -117,7 +111,6 @@ private extension LocationHelper {
     
     /// System error.
     static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
-    static let osVersionError = "Current OS version doesn't support the function."
 }
 
 import AdvancedFoundation

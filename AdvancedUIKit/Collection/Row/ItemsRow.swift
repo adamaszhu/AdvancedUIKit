@@ -5,7 +5,11 @@
 /// - author: Adamas
 open class ItemsRow<ItemRow: TapRowType>: Row, ItemsRowType {
 
-    public var rows: [ItemRow] = []
+    public var rows: [ItemRow] = [] {
+        didSet {
+            isHidden = rows.isEmpty
+        }
+    }
 
     /// Create a row
     public init() {

@@ -4,18 +4,9 @@
 /// - date: 04/05/22
 /// - author: Adamas
 public final class DefaultTextView: TextView<DefaultTextRow> {
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        initialize()
-    }
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize()
-    }
-
-    /// Initialize the UI
-    private func initialize() {
+    override public func initialize() {
+        super.initialize()
         // TODO: Change the bundle to Bundle.module
         guard let view = UINib(nibName: String(describing: DefaultTextView.self),
                                bundle: .current)

@@ -43,18 +43,7 @@ public final class AppStoreHelper {
     
     /// Leave a review in the app store.
     public func review() {
-        if #available(iOS 10.3, *) {
-            SKStoreReviewController.requestReview()
-            return
-        }
-        guard let messageHelper = messageHelper else {
-            Logger.standard.logError(Self.messageHelperError)
-            return
-        }
-        let message = Self.reviewMessage.localizedInternalString(forType: Self.self)
-        let confirmButtonTitle = Self.confirmButtonName.localizedInternalString(forType: Self.self)
-        let cancelButtonTitle = Self.cancelButtonName.localizedInternalString(forType: Self.self)
-        messageHelper.showWarning(message, withTitle: .empty, withConfirmButtonName: confirmButtonTitle, withCancelButtonName: cancelButtonTitle)
+        SKStoreReviewController.requestReview()
     }
     
     /// The feature counter is used for
@@ -94,14 +83,6 @@ private extension AppStoreHelper {
     
     /// The review address pattern.
     static var reviewAddressPattern = "itms-apps://itunes.apple.com/app/id%@"
-    
-    /// The review alert.
-    static var reviewMessage = "ReviewMessage"
-    static var cancelButtonName = "Cancel"
-    static var confirmButtonName = "Confirm"
-    
-    /// Error.
-    static var messageHelperError = "The message cannot be presented."
 }
 
 import AdvancedFoundation

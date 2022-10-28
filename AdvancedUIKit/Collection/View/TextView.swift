@@ -5,21 +5,21 @@
 /// - author: Adamas
 open class TextView<Row: TextRowType>: View<Row>, UITextFieldDelegate {
     /// Outlets
-    @IBOutlet private var textField: UITextField!
-    @IBOutlet private var hintLabel: UILabel!
-    @IBOutlet private var lineView: UIView!
-    @IBOutlet private var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet private var textField: UITextField?
+    @IBOutlet private var hintLabel: UILabel?
+    @IBOutlet private var lineView: UIView?
+    @IBOutlet private var leadingConstraint: NSLayoutConstraint?
 
     /// Set the accessory view of the text field
     public var inputTextFieldAccessoryView: UIView? {
         didSet {
-            textField.inputAccessoryView = inputTextFieldAccessoryView
+            textField?.inputAccessoryView = inputTextFieldAccessoryView
         }
     }
 
     /// Get the current text on the screen
     public var text: String? {
-        textField.text
+        textField?.text
     }
 
     /// Set the theme of the text view
@@ -29,30 +29,30 @@ open class TextView<Row: TextRowType>: View<Row>, UITextFieldDelegate {
     ///
     /// - Parameter hint: The hint message
     public func setExternalHint(_ hint: String) {
-        hintLabel.text = hint
+        hintLabel?.text = hint
         let errorColor = theme?.errorColor ?? Self.defaultErrorColor
         titleLabel?.textColor = errorColor
-        lineView.backgroundColor = errorColor
-        hintLabel.textColor = errorColor
+        lineView?.backgroundColor = errorColor
+        hintLabel?.textColor = errorColor
     }
 
     /// Reset the view to the normal state
     public func reset() {
-        textField.text = nil
+        textField?.text = nil
         let normalColor = theme?.normalColor ?? Self.defaultNormalColor
         titleLabel?.textColor = normalColor
-        lineView.backgroundColor = normalColor
-        hintLabel.textColor = normalColor
-        hintLabel.text = .empty
+        lineView?.backgroundColor = normalColor
+        hintLabel?.textColor = normalColor
+        hintLabel?.text = .empty
     }
 
     @discardableResult
     open override func becomeFirstResponder() -> Bool {
-        textField.becomeFirstResponder()
+        textField?.becomeFirstResponder()
         return super.becomeFirstResponder()
     }
 
-    public override func configure(with row: RowType) {
+    open override func configure(with row: RowType) {
         guard let row = row as? Row else {
             let rowError = String(format: Self.rowErrorPattern,
                                   String(describing: Row.self),
@@ -60,12 +60,12 @@ open class TextView<Row: TextRowType>: View<Row>, UITextFieldDelegate {
             fatalError(rowError)
         }
         super.configure(with: row)
-        leadingConstraint.isActive = row.icon != nil
+        leadingConstraint?.isActive = row.icon != nil
         titleLabel?.isHidden = row.title == nil
-        textField.placeholder = row.placeholder
-        textField.returnKeyType = row.returnType
-        textField.isSecureTextEntry = row.isSecret
-        textField.keyboardType = row.keyboardType
+        textField?.placeholder = row.placeholder
+        textField?.returnKeyType = row.returnType
+        textField?.isSecureTextEntry = row.isSecret
+        textField?.keyboardType = row.keyboardType
         reset()
 
         self.row?.reloadAction = { [weak self] in
@@ -74,25 +74,26 @@ open class TextView<Row: TextRowType>: View<Row>, UITextFieldDelegate {
                 return
             }
             self.isHidden = row.isHidden
-            self.textField.text = row.value
+            self.textField?.text = row.value
+            self.textField?.isEnabled = row.isEnabled
         }
         self.row?.reloadAction?()
-        _ = row.isValid(value: textField.text, shouldUpdateView: false)
+        _ = row.isValid(value: textField?.text, shouldUpdateView: false)
     }
 
     public func textFieldDidEndEditing(_: UITextField) {
-        hintLabel.text = row?.isValid(value: textField.text, shouldUpdateView: false)
+        hintLabel?.text = row?.isValid(value: textField?.text, shouldUpdateView: false)
         let color = row?.isValid == true
         ? theme?.normalColor ?? Self.defaultNormalColor
         : theme?.errorColor ?? Self.defaultErrorColor
         titleLabel?.textColor = color
-        lineView.backgroundColor = color
-        hintLabel.textColor = color
+        lineView?.backgroundColor = color
+        hintLabel?.textColor = color
         row?.didEndEditingAction?()
     }
 
     public func textFieldShouldReturn(_: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        textField?.resignFirstResponder()
         row?.didReturnAction?()
         return true
     }
@@ -117,9 +118,9 @@ open class TextView<Row: TextRowType>: View<Row>, UITextFieldDelegate {
     public func textFieldDidBeginEditing(_: UITextField) {
         let highlightedColor = theme?.highlightedColor ?? Self.defaultHighlightedColor
         titleLabel?.textColor = highlightedColor
-        lineView.backgroundColor = highlightedColor
-        hintLabel.textColor = theme?.normalColor ?? Self.defaultNormalColor
-        hintLabel.text = .space
+        lineView?.backgroundColor = highlightedColor
+        hintLabel?.textColor = theme?.normalColor ?? Self.defaultNormalColor
+        hintLabel?.text = .space
         row?.didStartEditingAction?()
     }
 

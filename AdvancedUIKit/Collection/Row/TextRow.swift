@@ -28,10 +28,18 @@ open class TextRow: LabelRow, TextRowType {
         }
     }
 
-    public private(set) var isValid: Bool = false {
+    public var isValid: Bool = false {
         didSet {
             if oldValue != isValid {
                 didChangeValidationAction?(isValid)
+            }
+        }
+    }
+
+    public var isEnabled = true {
+        didSet {
+            if oldValue != isEnabled {
+                reloadAction?()
             }
         }
     }
@@ -113,7 +121,10 @@ public protocol TextRowType: LabelRowType {
     var placeholder: String? { get }
 
     /// Whether or not the input value is valid according to roles.
-    var isValid: Bool { get }
+    var isValid: Bool { get set }
+
+    /// Whether or not the text field is enabled
+    var isEnabled: Bool { get set }
 
     /// The return type of the keyboard.
     var returnType: UIReturnKeyType { get }

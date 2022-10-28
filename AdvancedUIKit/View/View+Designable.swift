@@ -59,7 +59,7 @@ public extension UIView {
             }
         }
     }
-
+    
     /// Colors for the gradient effect
     var gradientColors: [UIColor]? {
         get {
@@ -74,9 +74,9 @@ public extension UIView {
             if let gradientLayer = layer.sublayers?
                 .compactMap({ $0 as? CAGradientLayer })
                 .first {
-                    gradientLayer.colors = newValue?.map { $0.cgColor }
-                    return
-                }
+                gradientLayer.colors = newValue?.map { $0.cgColor }
+                return
+            }
             let gradientLayer = CAGradientLayer()
             gradientLayer.frame = bounds
             gradientLayer.colors = newValue?.map { $0.cgColor }
@@ -97,7 +97,7 @@ public extension UIView {
         get { getValue(of: heightAnchor) }
         set { setValue(newValue, of: heightAnchor) }
     }
-
+    
     /// The top space to its superview
     @available(iOS, introduced: 10.0)
     var top: CGFloat? {
@@ -114,7 +114,7 @@ public extension UIView {
             setValue(newValue, between: topAnchor, and: superview.topAnchor )
         }
     }
-
+    
     /// The left space to its superview
     @available(iOS, introduced: 10.0)
     var left: CGFloat? {
@@ -131,7 +131,7 @@ public extension UIView {
             setValue(newValue, between: leftAnchor, and: superview.leftAnchor)
         }
     }
-
+    
     /// The right space to its superview
     @available(iOS, introduced: 10.0)
     var right: CGFloat? {
@@ -148,7 +148,7 @@ public extension UIView {
             setValue(newValue, between: rightAnchor, and: superview.rightAnchor)
         }
     }
-
+    
     /// The bottom space to its superview
     @available(iOS, introduced: 10.0)
     var bottom: CGFloat? {
@@ -170,41 +170,18 @@ public extension UIView {
     ///
     /// - Parameter edgeInsets: The edge insets. If one inset is not necessary to be settled, set it to be .invalidInset
     func pinEdgesToSuperview(with edgeInsets: UIEdgeInsets = .zero) {
-        guard let superview = superview else {
-            return
-        }
         translatesAutoresizingMaskIntoConstraints = false
         if edgeInsets.top != .invalidInset {
-            if #available(iOS 10.0, *) {
-                top = edgeInsets.top
-            } else {
-                topAnchor.constraint(equalTo: superview.topAnchor,
-                                     constant: edgeInsets.top).isActive = true
-            }
+            top = edgeInsets.top
         }
         if edgeInsets.bottom != .invalidInset {
-            if #available(iOS 10.0, *) {
-                bottom = -edgeInsets.bottom
-            } else {
-                bottomAnchor.constraint(equalTo: superview.bottomAnchor,
-                                        constant: -edgeInsets.bottom).isActive = true
-            }
+            bottom = -edgeInsets.bottom
         }
         if edgeInsets.left != .invalidInset {
-            if #available(iOS 10.0, *) {
-                left = edgeInsets.left
-            } else {
-                leftAnchor.constraint(equalTo: superview.leftAnchor,
-                                      constant: edgeInsets.left).isActive = true
-            }
+            left = edgeInsets.left
         }
         if edgeInsets.right != .invalidInset {
-            if #available(iOS 10.0, *) {
-                right = -edgeInsets.right
-            } else {
-                rightAnchor.constraint(equalTo: superview.rightAnchor,
-                                       constant: -edgeInsets.right).isActive = true
-            }
+            right = -edgeInsets.right
         }
     }
     
@@ -253,7 +230,7 @@ public extension UIView {
         let constraint = constraints.first { $0.firstAnchor == archor }
         return constraint?.isActive == true ? constraint?.constant : nil
     }
-
+    
     /// Set the constraint value between two archors.
     ///
     /// - Parameters:
@@ -267,7 +244,7 @@ public extension UIView {
             .first { ($0.firstAnchor == firstArchor && $0.secondAnchor == secondArchor)
                 || ($0.secondAnchor == firstArchor && $0.firstAnchor == secondArchor) }
         if let value = value,
-            let constraint = constraint {
+           let constraint = constraint {
             constraint.isActive = true
             constraint.constant = value
         } else if let constraint = constraint {
@@ -278,7 +255,7 @@ public extension UIView {
                                    constant: value).isActive = true
         }
     }
-
+    
     /// Get the constraint value between two archors.
     ///
     /// - Parameters
