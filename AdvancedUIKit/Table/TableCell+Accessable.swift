@@ -14,6 +14,7 @@ public extension UITableViewCell {
     }
 }
 
+/// Constants
 private extension UITableViewCell {
     static let reorderControlName = "UITableViewCellReorderControl"
 }

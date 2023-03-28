@@ -10,7 +10,10 @@ internal extension String {
     /// - Parameter type: Any structure or class used to find the localization file.
     /// - Returns: The localized string.
     func localizedInternalString(forType type: Any) -> String {
-        return NSLocalizedString(self, tableName: String(describing: type), bundle: .current, comment: .empty)
+        NSLocalizedString(self,
+                          tableName: String(describing: type),
+                          bundle: .current,
+                          comment: .empty)
     }
 }
 

@@ -7,7 +7,7 @@
 public final class FadeOutAnimator: Animator {
 
     public override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) else {
+        guard let fromViewController = transitionContext.viewController(forKey: .from) else {
             return
         }
 

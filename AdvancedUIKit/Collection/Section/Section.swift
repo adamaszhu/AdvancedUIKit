@@ -22,8 +22,8 @@ open class Section: SectionType {
     ///   - footer: The footer of the section.
     ///   - rows: Rows within the section.
     public init(header: String? = nil,
-         footer: String? = nil,
-         rows: [RowType]) {
+                footer: String? = nil,
+                rows: [RowType]) {
         self.header = header
         self.footer = footer
         self.rows = rows
