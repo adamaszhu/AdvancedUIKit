@@ -15,7 +15,9 @@ public final class CodeHelper {
     ///   - code: The code.
     ///   - type: The code type.
     ///   - size: The code size.
-    public func createCode(_ code: String, as type: CodeType, with size: CGSize) -> UIImage? {
+    public func createCode(_ code: String,
+                           as type: CodeType,
+                           with size: CGSize) -> UIImage? {
         guard let data = code.data(using: .ascii) else {
             Logger.standard.logError(Self.codingError)
             return nil
@@ -30,7 +32,8 @@ public final class CodeHelper {
             return nil
         }
         let ciImageSize = ciImage.extent.size
-        let transform = CGAffineTransform(scaleX: size.width / ciImageSize.width, y: size.height / ciImageSize.height)
+        let transform = CGAffineTransform(scaleX: size.width / ciImageSize.width,
+                                          y: size.height / ciImageSize.height)
         let transformedCIImage = ciImage.transformed(by: transform)
         return UIImage(ciImage: transformedCIImage)
     }

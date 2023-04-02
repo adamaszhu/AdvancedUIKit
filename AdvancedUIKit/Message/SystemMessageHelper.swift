@@ -21,7 +21,7 @@ public final class SystemMessageHelper {
     /// Initialize the helper.
     ///
     /// - Parameter application: The application used to make a function call.
-    public init?(application: UIApplication = UIApplication.shared) {
+    public init?(application: UIApplication = .shared) {
         guard let rootViewController = application.rootViewController else {
             Logger.standard.logError(Self.rootViewControllerError)
             return nil
@@ -37,15 +37,19 @@ public final class SystemMessageHelper {
     ///   - confirmButtonName: The name of the confirm button.
     ///   - cancelButtonName: The name of the cancel button. If this is nil, the confirm button will not be shown.
     private func createMessage(withTitle title: String,
-                               content: String?, confirmButtonName: String,
+                               content: String?,
+                               confirmButtonName: String,
                                andCancelButtonName cancelButtonName: String?) {
         let title = title.localizedInternalString(forType: MessageHelper.self)
         let confirmButtonName = confirmButtonName.localizedInternalString(forType: MessageHelper.self)
         let cancelButtonName = cancelButtonName?.localizedInternalString(forType: MessageHelper.self)
         
-        alertController = UIAlertController(title: title, message: content, preferredStyle: .alert)
+        alertController = UIAlertController(title: title,
+                                            message: content,
+                                            preferredStyle: .alert)
         if let cancelButtonName = cancelButtonName {
-            let cancelAction = UIAlertAction(title: cancelButtonName, style: .default) { [weak self] action in
+            let cancelAction = UIAlertAction(title: cancelButtonName,
+                                             style: .default) { [weak self] action in
                 guard let self = self else {
                     return
                 }
@@ -65,7 +69,8 @@ public final class SystemMessageHelper {
             }
             alertController?.addAction(cancelAction)
         }
-        let confirmAction = UIAlertAction(title: confirmButtonName, style: .default) { [weak self] action in
+        let confirmAction = UIAlertAction(title: confirmButtonName,
+                                          style: .default) { [weak self] action in
             guard let self = self else {
                 return
             }
@@ -79,7 +84,8 @@ public final class SystemMessageHelper {
                 self.delegate?.messageHelperDidConfirmWarning(self)
                 break
             case .input:
-                self.delegate?.messageHelper(self, didConfirmInput: self.alertController?.textFields?[0].text ?? .empty)
+                self.delegate?.messageHelper(self,
+                                             didConfirmInput: self.alertController?.textFields?[0].text ?? .empty)
             case .unknown:
                 Logger.standard.logError(Self.typeError)
                 break
@@ -93,7 +99,9 @@ public final class SystemMessageHelper {
         guard let alertController = alertController else {
             return
         }
-        currentViewController.present(alertController, animated: true, completion: nil)
+        currentViewController.present(alertController,
+                                      animated: true,
+                                      completion: nil)
     }
     
     /// Hide previous message.
@@ -114,7 +122,10 @@ extension SystemMessageHelper: MessageHelper {
                          withConfirmButtonName confirmButtonName: String = infoConfirmButtonName) {
         hidePreviousMessage()
         messageType = .info
-        createMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: nil)
+        createMessage(withTitle: title,
+                      content: content,
+                      confirmButtonName: confirmButtonName,
+                      andCancelButtonName: nil)
         showMessage()
     }
     
@@ -124,7 +135,10 @@ extension SystemMessageHelper: MessageHelper {
                             withCancelButtonName cancelButtonName: String = warningCancelButtonName) {
         hidePreviousMessage()
         messageType = .warning
-        createMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: cancelButtonName)
+        createMessage(withTitle: title,
+                      content: content,
+                      confirmButtonName: confirmButtonName,
+                      andCancelButtonName: cancelButtonName)
         showMessage()
     }
     
@@ -133,7 +147,10 @@ extension SystemMessageHelper: MessageHelper {
                           withConfirmButtonName confirmButtonName: String = errorConfirmButtonName) {
         hidePreviousMessage()
         messageType = .error
-        createMessage(withTitle: title, content: content, confirmButtonName: confirmButtonName, andCancelButtonName: nil)
+        createMessage(withTitle: title,
+                      content: content,
+                      confirmButtonName: confirmButtonName,
+                      andCancelButtonName: nil)
         showMessage()
     }
     
@@ -142,7 +159,10 @@ extension SystemMessageHelper: MessageHelper {
                           withCancelButtonName cancelButtonName: String = inputCancelButtonName) {
         hidePreviousMessage()
         messageType = .input
-        createMessage(withTitle: title, content: nil, confirmButtonName: confirmButtonName, andCancelButtonName: cancelButtonName)
+        createMessage(withTitle: title,
+                      content: nil,
+                      confirmButtonName: confirmButtonName,
+                      andCancelButtonName: cancelButtonName)
         alertController?.addTextField(configurationHandler: nil)
         showMessage()
     }

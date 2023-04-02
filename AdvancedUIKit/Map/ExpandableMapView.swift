@@ -50,8 +50,10 @@ public final class ExpandableMapView: MapView {
     public var collapseButtonBackgroundMargin: Int {
         set {
             let margin = CGFloat(newValue)
-            collapseButtonBackgroundView.frame.origin = CGPoint(x: collapseButton.frame.origin.x - margin, y: collapseButton.frame.origin.y - margin)
-            collapseButtonBackgroundView.frame.size = CGSize(width: collapseButton.frame.width + 2 * margin, height: collapseButton.frame.height + 2 * margin)
+            collapseButtonBackgroundView.frame.origin = CGPoint(x: collapseButton.frame.origin.x - margin,
+                                                                y: collapseButton.frame.origin.y - margin)
+            collapseButtonBackgroundView.frame.size = CGSize(width: collapseButton.frame.width + 2 * margin,
+                                                             height: collapseButton.frame.height + 2 * margin)
         }
         get {
             let margin = collapseButtonBackgroundView.frame.origin.x - collapseButton.frame.origin.x
@@ -62,12 +64,14 @@ public final class ExpandableMapView: MapView {
     /// Initialize the object.
     private func initialize() {
         collapseButton.isHidden = true
-        collapseButton.addTarget(self, action: #selector(collapse), for: .touchUpInside)
+        collapseButton.addTarget(self, action: #selector(collapse),
+                                 for: .touchUpInside)
         collapseButtonBackgroundView.effect = UIBlurEffect()
         collapseButtonBackgroundView.isHidden = true
         gestureFilterView.frame = bounds
         gestureFilterView.backgroundColor = UIColor.clear
-        let expandGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(expand))
+        let expandGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                             action: #selector(expand))
         gestureFilterView.addGestureRecognizer(expandGestureRecognizer)
     }
     

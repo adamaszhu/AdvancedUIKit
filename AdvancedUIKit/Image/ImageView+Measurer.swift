@@ -41,7 +41,10 @@ public extension UIImageView {
             Logger.standard.logError(Self.contentModeError)
             return nil
         }
-        return CGRect(x: frame.origin.x + center.x - imageWidth / 2, y: frame.origin.y + center.y - imageHeight / 2, width: imageWidth, height: imageHeight)
+        return CGRect(x: frame.origin.x + center.x - imageWidth / 2,
+                      y: frame.origin.y + center.y - imageHeight / 2,
+                      width: imageWidth,
+                      height: imageHeight)
     }
 }
 

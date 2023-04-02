@@ -51,9 +51,9 @@ public final class DeviceInfoAccessor {
     ///   - device: The device object.
     ///   - screen: The device screen.
     ///   - processInfo: The information of the process.
-    private init(device: UIDevice = UIDevice.current,
+    private init(device: UIDevice = .current,
                  processInfo: ProcessInfo = ProcessInfo(),
-                 screen: UIScreen = UIScreen.main) {
+                 screen: UIScreen = .main) {
         self.device = device
         self.processInfo = processInfo
         self.screen = screen

@@ -16,7 +16,8 @@ public extension UILabel {
         let lastLineLength = lastLine.measuredWidth(with: font)
         let offsetX = lastLineLength
         let offsetY = frame.height - lineHeight
-        return CGPoint(x: frame.origin.x + offsetX, y: frame.origin.y + offsetY)
+        return CGPoint(x: frame.origin.x + offsetX,
+                       y: frame.origin.y + offsetY)
     }
     
     /// Get the height of each line.

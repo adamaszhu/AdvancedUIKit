@@ -18,7 +18,7 @@ public final class ExpandableGalleryView: GalleryView {
         super.init(coder: aDecoder)
         collapseGestureRecognizer.addTarget(self, action: #selector(collapse))
         gestureFilterView.frame = frame
-        gestureFilterView.backgroundColor = UIColor.clear
+        gestureFilterView.backgroundColor = .clear
         let expandGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(expand))
         gestureFilterView.addGestureRecognizer(expandGestureRecognizer)
         let showPreviousImageGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(switchToPreviousPage))

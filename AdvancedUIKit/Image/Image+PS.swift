@@ -27,7 +27,8 @@ public extension UIImage {
             return self
         }
         let context = CIContext(options: nil)
-        guard let cgImage = context.createCGImage(outputImage, from: inputImage.extent) else {
+        guard let cgImage = context.createCGImage(outputImage,
+                                                  from: inputImage.extent) else {
             Logger.standard.logError(Self.outputImageError)
             return self
         }
@@ -58,9 +59,15 @@ public extension UIImage {
         let height = size.height
         var rect: CGRect
         if width > height {
-            rect = CGRect(x: (width - height) / 2, y: 0, width: height, height: height)
+            rect = CGRect(x: (width - height) / 2,
+                          y: 0,
+                          width: height,
+                          height: height)
         } else {
-            rect = CGRect(x: 0, y: (height - width) / 2, width: width, height: width)
+            rect = CGRect(x: 0,
+                          y: (height - width) / 2,
+                          width: width,
+                          height: width)
         }
         guard let inputImage = cgImage else {
             Logger.standard.logError(Self.inputImageError)
@@ -85,7 +92,8 @@ public extension UIImage {
         guard imageData.count > maxSize else {
             return self
         }
-        guard let comressedData = jpegData(compressionQuality: CGFloat(maxSize) / CGFloat(imageData.count)) else {
+        let compressionQuality =  CGFloat(maxSize) / CGFloat(imageData.count)
+        guard let comressedData = jpegData(compressionQuality: compressionQuality) else {
             Logger.standard.logError(Self.outputImageError)
             return self
         }

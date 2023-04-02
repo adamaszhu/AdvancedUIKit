@@ -11,8 +11,8 @@ final class GestureFilterView: UIView {
     /// - Parameters:
     ///   - type: The type of the gesture.
     ///   - shouldEnable: Whether the gesture recognizer should be enabled or not.
-    func changeGestureRecognizerUsibility(ofType type: AnyClass,
-                                          toUsibility shouldEnable: Bool) {
+    func changeGestureRecognizerAvaibility(ofType type: UIGestureRecognizer.Type,
+                                          toAvaibility shouldEnable: Bool) {
         guard let gestureRecognizers = gestureRecognizers else {
             Logger.standard.logError(Self.gestureRecognizersError)
             return

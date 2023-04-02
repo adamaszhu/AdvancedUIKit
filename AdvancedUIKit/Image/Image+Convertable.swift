@@ -14,7 +14,8 @@ public extension CIImage {
     ///   - rect: The rect in the UIKit system
     ///   - superRect: The rect of the superview in the UIKit system, origin will be ignored
     /// - Returns: A coverted rect in the CoreImage coordinator system
-    static func ciRect(for rect: CGRect, in superRect: CGRect) -> CGRect {
+    static func ciRect(for rect: CGRect,
+                       in superRect: CGRect) -> CGRect {
         CGRect(x: rect.minX,
                y: superRect.height - rect.minY - rect.height,
                width: rect.width,
