@@ -28,13 +28,20 @@ public class MapView: MKMapView {
     ///   - longitude: The center longitude of the view.
     ///   - zoomLevel: The zoom level. If it is nil, zoom level will not be changed.
     ///   - shouldAnimate: Whether the animation should be allowed or not.
-    public func setViewport(withCenterLatitude latitude: Double, andCenterLongitude longitude: Double, withZoomLevel zoomLevel: Double? = nil, withAnimation shouldAnimate: Bool = true) {
+    public func setViewport(withCenterLatitude latitude: Double,
+                            andCenterLongitude longitude: Double,
+                            withZoomLevel zoomLevel: Double? = nil,
+                            withAnimation shouldAnimate: Bool = true) {
         let region: MKCoordinateRegion
         if let zoomLevel = zoomLevel {
-            region = MKCoordinateRegion(centerLatitude: latitude, centerLongitude: longitude, zoomLevel: zoomLevel)
+            region = MKCoordinateRegion(centerLatitude: latitude,
+                                        centerLongitude: longitude,
+                                        zoomLevel: zoomLevel)
         } else {
-            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            region = MKCoordinateRegion(center: coordinate, span: self.region.span)
+            let coordinate = CLLocationCoordinate2D(latitude: latitude,
+                                                    longitude: longitude)
+            region = MKCoordinateRegion(center: coordinate,
+                                        span: self.region.span)
         }
         setRegion(region, animated: shouldAnimate)
     }
@@ -46,7 +53,11 @@ public class MapView: MKMapView {
     ///   - leftLongitude: The left longitude.
     ///   - rightLongitude: The right longitude.
     ///   - shouldAnimate: Whether the animation should be performed or not.
-    public func setViewport(withTopLatitude topLatitude: Double, bottomLatitude: Double, leftLongitude: Double, andRightLongitude rightLongitude: Double, withAnimation shouldAnimate: Bool = true) {
+    public func setViewport(withTopLatitude topLatitude: Double,
+                            bottomLatitude: Double,
+                            leftLongitude: Double,
+                            andRightLongitude rightLongitude: Double,
+                            withAnimation shouldAnimate: Bool = true) {
         let centerLatitude = (topLatitude + bottomLatitude) / 2
         let centerLongitude = (leftLongitude + rightLongitude) / 2
         var latitudeDelta = topLatitude - bottomLatitude
@@ -60,14 +71,20 @@ public class MapView: MKMapView {
         }
         latitudeDelta = min(90, latitudeDelta)
         longitudeDelta = min(360, longitudeDelta)
-        let region = MKCoordinateRegion(centerLatitude: centerLatitude, centerLongitude: centerLongitude, latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta)
+        let region = MKCoordinateRegion(centerLatitude: centerLatitude,
+                                        centerLongitude: centerLongitude,
+                                        latitudeDelta: latitudeDelta,
+                                        longitudeDelta: longitudeDelta)
         setRegion(region, animated: shouldAnimate)
     }
     
     /// Adjust the viewport according to the points and lines within it.
     public func overview() {
         if points.count == 0, lines.count == 0 {
-            setViewport(withTopLatitude: 90, bottomLatitude: -90, leftLongitude: -180, andRightLongitude: 180)
+            setViewport(withTopLatitude: 90,
+                        bottomLatitude: -90,
+                        leftLongitude: -180,
+                        andRightLongitude: 180)
             return
         }
         var coordinates = points.map { $0.annotation.coordinate }
@@ -88,7 +105,10 @@ public class MapView: MKMapView {
         minLatitude = max(-90, minLatitude - Self.defaultOverviewMargin)
         maxLongitude = min(180, maxLongitude + Self.defaultOverviewMargin)
         minLongitude = max(-180, minLongitude - Self.defaultOverviewMargin)
-        setViewport(withTopLatitude: maxLatitude, bottomLatitude: minLatitude, leftLongitude: minLongitude, andRightLongitude: maxLongitude)
+        setViewport(withTopLatitude: maxLatitude,
+                    bottomLatitude: minLatitude,
+                    leftLongitude: minLongitude,
+                    andRightLongitude: maxLongitude)
     }
     
     /// Add a point on the map.
@@ -126,7 +146,8 @@ public class MapView: MKMapView {
     
     /// Request user authorization on always use location.
     public func requestUserLocation() {
-        showsUserLocation = locationHelper.isAlwaysAuthorizationAuthorized || locationHelper.isWhenInUseAuthorizationAuthorized
+        showsUserLocation = locationHelper.isAlwaysAuthorizationAuthorized
+        || locationHelper.isWhenInUseAuthorizationAuthorized
         if locationHelper.isUnauthorized {
             locationHelper.requestAlwaysAuthorization()
         }
@@ -146,7 +167,9 @@ public class MapView: MKMapView {
             Logger.standard.logWarning(Self.userLocationUnretrievedWarning)
             return
         }
-        setViewport(withCenterLatitude: userLocationCoordinate.latitude, andCenterLongitude: userLocationCoordinate.longitude, withZoomLevel: zoomLevel)
+        setViewport(withCenterLatitude: userLocationCoordinate.latitude,
+                    andCenterLongitude: userLocationCoordinate.longitude,
+                    withZoomLevel: zoomLevel)
     }
     
     /// Clean all the points and lines on the map.
@@ -182,15 +205,18 @@ public class MapView: MKMapView {
 /// LocationHelperDelegate
 extension MapView: LocationHelperDelegate {
     
-    public func locationHelper(_ locationHelper: LocationHelper, didCatchError error: String) {
+    public func locationHelper(_ locationHelper: LocationHelper,
+                               didCatchError error: String) {
         mapViewDelegate?.mapView(self, didCatchError: error)
     }
     
-    public func locationHelper(_ locationHelper: LocationHelper, didAuthorizeAlwaysAuthorization isAuthorized: Bool) {
+    public func locationHelper(_ locationHelper: LocationHelper,
+                               didAuthorizeAlwaysAuthorization isAuthorized: Bool) {
         showsUserLocation = true
     }
     
-    public func locationHelper(_ locationHelper: LocationHelper, didAuthorizeWhenInUseAuthorization isAuthorized: Bool) {
+    public func locationHelper(_ locationHelper: LocationHelper,
+                               didAuthorizeWhenInUseAuthorization isAuthorized: Bool) {
         showsUserLocation = true
     }
 }
@@ -204,7 +230,8 @@ extension MapView: MKMapViewDelegate {
     ///   - annotation: The annotation.
     ///   - list: The point list.
     /// - Returns: The point. Nil if it is not found.
-    private func findPoint(with annotation: MKAnnotation, in list: [MapViewPoint]) -> MapViewPoint? {
+    private func findPoint(with annotation: MKAnnotation,
+                           in list: [MapViewPoint]) -> MapViewPoint? {
         list.first(where: { $0.annotation === annotation })
     }
     
@@ -216,26 +243,33 @@ extension MapView: MKMapViewDelegate {
         lines.compactMap { findPoint(with: annotation, in: $0.points) }.first
     }
     
-    public func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+    public func mapView(_ mapView: MKMapView,
+                        didUpdate userLocation: MKUserLocation) {
         guard let location = userLocation.location else {
             return
         }
         mapViewDelegate?.mapView(self, didUpdate: location)
     }
     
-    public func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    public func mapView(_ mapView: MKMapView,
+                        regionDidChangeAnimated animated: Bool) {
         mapViewDelegate?.mapViewDidMoveView(self)
     }
     
-    public func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+    public func mapView(_ mapView: MKMapView,
+                        regionWillChangeAnimated animated: Bool) {
         mapViewDelegate?.mapViewWillMoveView(self)
     }
     
-    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    public func mapView(_ mapView: MKMapView,
+                        viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reusableID = String(describing: MapViewPoint.self)
-        let view = mapView.dequeueReusableAnnotationView(withIdentifier: reusableID) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: reusableID)
+        let view = mapView.dequeueReusableAnnotationView(withIdentifier: reusableID)
+        ?? MKAnnotationView(annotation: annotation,
+                            reuseIdentifier: reusableID)
         let point: MapViewPoint
-        if let singlePoint = findPoint(with: annotation, in: points) {
+        if let singlePoint = findPoint(with: annotation,
+                                       in: points) {
             point = singlePoint
         } else if let linePoint = findLinePoint(with: annotation) {
             point = linePoint
@@ -251,7 +285,8 @@ extension MapView: MKMapViewDelegate {
         return view
     }
     
-    public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+    public func mapView(_ mapView: MKMapView,
+                        rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         guard let line = lines.first(where: { $0.line === overlay }) else {
             Logger.standard.logError(Self.lineError)
             return MKOverlayRenderer()

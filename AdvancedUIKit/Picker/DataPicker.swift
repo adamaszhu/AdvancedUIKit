@@ -36,10 +36,13 @@ public final class DataPicker: RootView {
     
     /// The distance that the controller should be pushed up.
     private var pushDistance: CGFloat {
-        guard let trigger = trigger, let superview = superview, let triggerOriginalFrame = triggerOriginalFrame else {
+        guard let trigger = trigger,
+                let superview = superview,
+                let triggerOriginalFrame = triggerOriginalFrame else {
             return 0
         }
-        let triggerFrame = superview.convert(triggerOriginalFrame, from: trigger.superview)
+        let triggerFrame = superview.convert(triggerOriginalFrame,
+                                             from: trigger.superview)
         if triggerFrame.origin.y + triggerFrame.height + frame.size.height > superview.frame.size.height {
             return superview.frame.size.height - triggerFrame.origin.y - triggerFrame.height - frame.size.height
         } else {
@@ -95,7 +98,9 @@ public final class DataPicker: RootView {
         for itemIndex in 0 ..< columns[index].items.count {
             item = columns[index].items[itemIndex]
             if item.value == value {
-                pickerView.selectRow(itemIndex, inComponent: index, animated: false)
+                pickerView.selectRow(itemIndex,
+                                     inComponent: index,
+                                     animated: false)
                 return
             }
         }
@@ -127,7 +132,8 @@ public final class DataPicker: RootView {
             guard let self = self else {
                 return
             }
-            self.frame.origin = CGPoint(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
+            self.frame.origin = CGPoint(x: self.originalFrame.origin.x,
+                                        y: self.originalFrame.origin.y + self.originalFrame.height)
             // Push down the controller
             if let controllerOriginalFrame = self.triggerOriginalFrame {
                 self.trigger?.frame = controllerOriginalFrame
@@ -159,7 +165,8 @@ public final class DataPicker: RootView {
             }
             // Push up the controller
             if let triggerOrigin = self.triggerOriginalFrame?.origin {
-                self.trigger?.frame.origin = CGPoint(x: triggerOrigin.x, y: triggerOrigin.y + pushDistance)
+                self.trigger?.frame.origin = CGPoint(x: triggerOrigin.x,
+                                                     y: triggerOrigin.y + pushDistance)
             }
             self.frame = self.originalFrame
             }, withDuration: Self.animationDuration,
@@ -167,7 +174,8 @@ public final class DataPicker: RootView {
                 guard let self = self else {
                     return
                 }
-                self.frame.origin = CGPoint(x: self.originalFrame.origin.x, y: self.originalFrame.origin.y + self.originalFrame.height)
+                self.frame.origin = CGPoint(x: self.originalFrame.origin.x,
+                                            y: self.originalFrame.origin.y + self.originalFrame.height)
                 self.isHidden = false
         }) {
             super.show()
@@ -178,11 +186,15 @@ public final class DataPicker: RootView {
         titleBackgroundColor = .gray
         let titleTextColor = UIColor.white
         cancelButton.backgroundColor = titleBackgroundColor
-        cancelButton.setTitle(Self.cancelButtonName.localizedInternalString(forType: Self.self), for: .normal)
-        cancelButton.addTarget(self, action: #selector(hide), for: .touchUpInside)
+        cancelButton.setTitle(Self.cancelButtonName.localizedInternalString(forType: Self.self),
+                              for: .normal)
+        cancelButton.addTarget(self, action: #selector(hide),
+                               for: .touchUpInside)
         doneButton.backgroundColor = titleBackgroundColor
-        doneButton.setTitle(Self.doneButtonName.localizedInternalString(forType: Self.self), for: .normal)
-        doneButton.addTarget(self, action: #selector(confirmSelection), for: .touchUpInside)
+        doneButton.setTitle(Self.doneButtonName.localizedInternalString(forType: Self.self),
+                            for: .normal)
+        doneButton.addTarget(self, action: #selector(confirmSelection),
+                             for: .touchUpInside)
         titleLabel.backgroundColor = titleBackgroundColor
         titleLabel.textColor = titleTextColor
         titleLabel.textAlignment = .center
@@ -195,11 +207,25 @@ public final class DataPicker: RootView {
     }
     
     public override func render() {
-        cancelButton.frame = CGRect(x: 0, y: 0, width: Self.buttonWidth, height: Self.buttonHeight)
-        titleLabel.frame = CGRect(x: Self.buttonWidth, y: 0, width: frame.width - 2 * Self.buttonWidth, height: Self.buttonHeight)
-        doneButton.frame = CGRect(x: frame.width - Self.buttonWidth, y: 0, width: Self.buttonWidth, height: Self.buttonHeight)
-        pickerView.frame = CGRect(x: 0, y: Self.buttonHeight, width: frame.width, height: frame.height - Self.buttonHeight)
-        frame = CGRect(x: originalFrame.origin.x, y: originalFrame.origin.y + originalFrame.height, width: originalFrame.width, height: originalFrame.height)
+        cancelButton.frame = CGRect(x: 0,
+                                    y: 0,
+                                    width: Self.buttonWidth,
+                                    height: Self.buttonHeight)
+        titleLabel.frame = CGRect(x: Self.buttonWidth,
+                                  y: 0, width: frame.width - 2 * Self.buttonWidth,
+                                  height: Self.buttonHeight)
+        doneButton.frame = CGRect(x: frame.width - Self.buttonWidth,
+                                  y: 0,
+                                  width: Self.buttonWidth,
+                                  height: Self.buttonHeight)
+        pickerView.frame = CGRect(x: 0,
+                                  y: Self.buttonHeight,
+                                  width: frame.width,
+                                  height: frame.height - Self.buttonHeight)
+        frame = CGRect(x: originalFrame.origin.x,
+                       y: originalFrame.origin.y + originalFrame.height,
+                       width: originalFrame.width,
+                       height: originalFrame.height)
         super.hide()
     }
 }
@@ -207,7 +233,10 @@ public final class DataPicker: RootView {
 /// UIPickerViewDelegate
 extension DataPicker: UIPickerViewDelegate {
     
-    public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+    public func pickerView(_ pickerView: UIPickerView,
+                           viewForRow row: Int,
+                           forComponent component: Int,
+                           reusing view: UIView?) -> UIView {
         let label: UILabel
         if let reusableLabel = view as? UILabel {
             label = reusableLabel
@@ -228,7 +257,8 @@ extension DataPicker: UIPickerViewDataSource {
         columns.count
     }
     
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView,
+                           numberOfRowsInComponent component: Int) -> Int {
         columns[component].items.count
     }
 }

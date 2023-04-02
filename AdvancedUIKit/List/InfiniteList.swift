@@ -66,7 +66,8 @@ open class InfiniteList: UITableView {
             Logger.standard.logError(Self.superviewError)
             return
         }
-        guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
+        guard let view = nib.instantiate(withOwner: nil,
+                                         options: nil).first as? UIView else {
             Logger.standard.logError(Self.emptyStateNibError)
             return
         }
@@ -76,7 +77,7 @@ open class InfiniteList: UITableView {
         emptyState = view
     }
     
-    /// Register the reload view for the InfiniteList.
+    /// Register the reload view for the InfiniteList. Or use UIRefreshControl if there is no UI requirement.
     ///
     /// - Parameter nib: The nib file containing the view.
     public func registerReloadingBar(with nib: UINib) {
@@ -90,7 +91,10 @@ open class InfiniteList: UITableView {
         }
         addSubview(view)
         // TODO: Figure out why contraints work in this way.
-        view.pinEdgesToSuperview(with: UIEdgeInsets(top: .invalidInset, left: 0, bottom: .invalidInset, right: 0))
+        view.pinEdgesToSuperview(with: UIEdgeInsets(top: .invalidInset,
+                                                    left: 0,
+                                                    bottom: .invalidInset,
+                                                    right: 0))
         view.bottomAnchor.constraint(equalTo: topAnchor).isActive = true
         view.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         reloadingBar = view
@@ -105,7 +109,8 @@ open class InfiniteList: UITableView {
             Logger.standard.logError(Self.registrationError)
             return
         }
-        guard let cell = nib.instantiate(withOwner: nil, options: nil).first as? UITableViewCell else {
+        guard let cell = nib.instantiate(withOwner: nil,
+                                         options: nil).first as? UITableViewCell else {
             Logger.standard.logError(Self.loadingMoreCellNibError)
             return
         }
@@ -263,8 +268,10 @@ open class InfiniteList: UITableView {
 /// UITableViewDelegate
 extension InfiniteList: UITableViewDelegate {
     
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = items[safe: indexPath.row], status.isStable else {
+    public func tableView(_ tableView: UITableView,
+                          didSelectRowAt indexPath: IndexPath) {
+        guard let item = items[safe: indexPath.row],
+                status.isStable else {
             return
         }
         infiniteListDelegate?.infiniteList(self, didSelectItem: item.item)
@@ -274,23 +281,29 @@ extension InfiniteList: UITableViewDelegate {
 /// UITableViewDataSource
 extension InfiniteList: UITableViewDataSource {
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let hasLoadingMoreCell = (status == .infinite) && (loadingMoreCell != nil)
+    public func tableView(_ tableView: UITableView,
+                          numberOfRowsInSection section: Int) -> Int {
+        let hasLoadingMoreCell = (status == .infinite)
+        && (loadingMoreCell != nil)
         return items.count + (hasLoadingMoreCell ? 1 : 0)
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView,
+                          cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
-        if index == items.count, status == .infinite, let loadingMoreCell = loadingMoreCell {
+        if index == items.count, status == .infinite,
+            let loadingMoreCell = loadingMoreCell {
             return loadingMoreCell
         }
         guard let item = items[safe: index] else {
-            Logger.standard.logError(Self.cellError, withDetail: index)
+            Logger.standard.logError(Self.cellError,
+                                     withDetail: index)
             return UITableViewCell()
         }
         let cellID = String(describing: item.type)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as? InfiniteCell else {
-            Logger.standard.logError(Self.cellError, withDetail: cellID)
+            Logger.standard.logError(Self.cellError,
+                                     withDetail: cellID)
             return UITableViewCell()
         }
         cell.render(withItem: item.item)

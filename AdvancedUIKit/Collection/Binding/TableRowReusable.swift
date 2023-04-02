@@ -4,6 +4,8 @@
 /// - date: 02/05/22
 /// - author: Adamas
 public protocol TableRowReusable: AnyObject {
+    
+    /// The cell reusable identifier
     var tableIdentifier: String { get }
 }
 

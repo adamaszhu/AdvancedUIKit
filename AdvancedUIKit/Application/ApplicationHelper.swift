@@ -28,7 +28,7 @@ public final class ApplicationHelper {
     /// Create the helper.
     ///
     /// - Parameter application: The actual application
-    private init(application: UIApplication = UIApplication.shared) {
+    private init(application: UIApplication = .shared) {
         self.application = application
     }
 }

@@ -19,10 +19,10 @@ public extension UIViewController {
             return presentedViewController.topViewController
         }
         switch self {
-        case is UINavigationController:
-            return (self as? UINavigationController)?.visibleViewController?.topViewController
-        case is UITabBarController:
-            return (self as? UITabBarController)?.selectedViewController?.topViewController
+        case let navigationController as UINavigationController:
+            return navigationController.visibleViewController?.topViewController
+        case let tabBarController as UITabBarController:
+            return tabBarController.selectedViewController?.topViewController
         default:
             return self
         }

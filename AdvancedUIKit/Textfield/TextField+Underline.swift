@@ -16,12 +16,17 @@ public extension UITextField {
     /// - Parameters:
     ///   - color: The normal color of the underline.
     ///   - highlightedColor: The highlighted color of the underline.
-    func activateUnderline(withNormal color: UIColor, withHignlighted highlightedColor: UIColor) {
+    func activateUnderline(withNormal color: UIColor,
+                           withHignlighted highlightedColor: UIColor) {
         guard underlineView == nil else {
             Logger.standard.logError(Self.activationError)
             return
         }
-        let newUnderlineView = UnderlineView(frame: CGRect(x: 0, y: frame.height - UITextField.defaultUnderlineHeight, width: frame.width, height: UITextField.defaultUnderlineHeight))
+        let underlineViewFrame = CGRect(x: 0,
+                                        y: frame.height - UITextField.defaultUnderlineHeight,
+                                        width: frame.width,
+                                        height: UITextField.defaultUnderlineHeight)
+        let newUnderlineView = UnderlineView(frame: underlineViewFrame)
         addSubview(newUnderlineView)
         newUnderlineView.color = color
         newUnderlineView.highlightedColor = highlightedColor

@@ -40,7 +40,8 @@ public extension UINavigationItem {
     ///
     /// - parameter action: The action to be settled.
     /// - parameter target: The object.
-    func setLeftButtonAction(action: Selector, withTarget target: AnyObject) {
+    func setLeftButtonAction(action: Selector,
+                             withTarget target: AnyObject) {
         leftButton?.action = action
         leftButton?.target = target
     }
@@ -50,7 +51,8 @@ public extension UINavigationItem {
     /// - Parameters:
     ///   - action: The action to be settled.
     ///   - target: The object.
-    func setRightButtonAction(action: Selector, withTarget target: AnyObject) {
+    func setRightButtonAction(action: Selector,
+                              withTarget target: AnyObject) {
         rightButton?.action = action
         rightButton?.target = target
     }

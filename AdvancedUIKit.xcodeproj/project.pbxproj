@@ -68,6 +68,7 @@
 		2870551226F1AB1700D2DA33 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 2870551126F1AB1700D2DA33 /* Quick */; };
 		2870551526F1AB3600D2DA33 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 2870551426F1AB3600D2DA33 /* Nimble */; };
 		2870551826F1AB6A00D2DA33 /* AdvancedFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 2870551726F1AB6A00D2DA33 /* AdvancedFoundation */; };
+		28768039290FA14200AA4A62 /* TextTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768038290FA14200AA4A62 /* TextTableCell.swift */; };
 		2880EFFB28228273000948A7 /* DefaultTextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2880EFFA28228273000948A7 /* DefaultTextRow.swift */; };
 		2880EFFD28228315000948A7 /* DefaultTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2880EFFC28228314000948A7 /* DefaultTextView.xib */; };
 		2880EFFF28228347000948A7 /* DefaultTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2880EFFE28228347000948A7 /* DefaultTextView.swift */; };
@@ -122,6 +123,8 @@
 		28B975871F6F285D001239EB /* Label.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B975861F6F285D001239EB /* Label.storyboard */; };
 		28BA02911F78624F00F635DE /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA02901F78624F00F635DE /* Checkbox.swift */; };
 		28BD992920E466BE0072EE28 /* View+Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD992820E466BE0072EE28 /* View+Designable.swift */; };
+		28C11D3C2921C73A001FD0E5 /* CreditCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C11D3B2921C73A001FD0E5 /* CreditCardType.swift */; };
+		28C11D3E2921C7DF001FD0E5 /* CreditCardNumberRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C11D3D2921C7DF001FD0E5 /* CreditCardNumberRule.swift */; };
 		28CB19341F747512006CFE05 /* TextField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28CB19331F747512006CFE05 /* TextField.storyboard */; };
 		28CC65D528228EB300689A1A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC65D428228EB300689A1A /* TextView.swift */; };
 		28CC65D72822B03900689A1A /* TapTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC65D62822B03900689A1A /* TapTableCell.swift */; };
@@ -352,6 +355,7 @@
 		2869C8AA28D80D4600326933 /* MinDateRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinDateRule.swift; sourceTree = "<group>"; };
 		2869C8AC28D80D4F00326933 /* MaxDateRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxDateRule.swift; sourceTree = "<group>"; };
 		286F42142835F63C005337A2 /* DefaultLabelTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabelTableCell.swift; sourceTree = "<group>"; };
+		28768038290FA14200AA4A62 /* TextTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableCell.swift; sourceTree = "<group>"; };
 		2880EFFA28228273000948A7 /* DefaultTextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextRow.swift; sourceTree = "<group>"; };
 		2880EFFC28228314000948A7 /* DefaultTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultTextView.xib; sourceTree = "<group>"; };
 		2880EFFE28228347000948A7 /* DefaultTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextView.swift; sourceTree = "<group>"; };
@@ -406,6 +410,8 @@
 		28B975861F6F285D001239EB /* Label.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Label.storyboard; sourceTree = "<group>"; };
 		28BA02901F78624F00F635DE /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		28BD992820E466BE0072EE28 /* View+Designable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Designable.swift"; sourceTree = "<group>"; };
+		28C11D3B2921C73A001FD0E5 /* CreditCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardType.swift; sourceTree = "<group>"; };
+		28C11D3D2921C7DF001FD0E5 /* CreditCardNumberRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardNumberRule.swift; sourceTree = "<group>"; };
 		28CB19331F747512006CFE05 /* TextField.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextField.storyboard; sourceTree = "<group>"; };
 		28CC65D428228EB300689A1A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		28CC65D62822B03900689A1A /* TapTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTableCell.swift; sourceTree = "<group>"; };
@@ -844,6 +850,8 @@
 				28D9844528D2018800FA28BB /* DateRule.swift */,
 				2869C8AA28D80D4600326933 /* MinDateRule.swift */,
 				2869C8AC28D80D4F00326933 /* MaxDateRule.swift */,
+				28C11D3B2921C73A001FD0E5 /* CreditCardType.swift */,
+				28C11D3D2921C7DF001FD0E5 /* CreditCardNumberRule.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -916,6 +924,7 @@
 				28CC65FA282396E500689A1A /* ButtonTableCell.swift */,
 				28CC660F28239FFB00689A1A /* ToggleTableCell.swift */,
 				28CC66192823ABD200689A1A /* LabelTableCell.swift */,
+				28768038290FA14200AA4A62 /* TextTableCell.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -1606,6 +1615,7 @@
 				28A05B9F271D0E4200D8287D /* DefaultLabelRow.swift in Sources */,
 				284E5C531EDD104C00C3CC86 /* SystemMessageHelper.swift in Sources */,
 				28CC66162823A0F700689A1A /* DefaultToggleTableCell.swift in Sources */,
+				28768039290FA14200AA4A62 /* TextTableCell.swift in Sources */,
 				289B293F1EFB356200152B53 /* InfiniteCell.swift in Sources */,
 				4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */,
 				2846A9AF1EE7D17D007D4226 /* MapViewPointPosition.swift in Sources */,
@@ -1669,6 +1679,7 @@
 				281DCE8E2823D5E800F71439 /* DefaultTextAreaRow.swift in Sources */,
 				4258DDB11EEAE6A80085FCAA /* GalleryView.swift in Sources */,
 				28CC660E28239F9600689A1A /* ToggleView.swift in Sources */,
+				28C11D3E2921C7DF001FD0E5 /* CreditCardNumberRule.swift in Sources */,
 				289D5FED1EDF92DB00203DE2 /* TextField+Layout.swift in Sources */,
 				289D5FEC1EDF92DB00203DE2 /* TextField+Attribute.swift in Sources */,
 				28D9844A28D4014900FA28BB /* Image+Convertable.swift in Sources */,
@@ -1720,6 +1731,7 @@
 				28CC65D528228EB300689A1A /* TextView.swift in Sources */,
 				2822A33F1EE127EA00FAA8E3 /* NotificationHelperType.swift in Sources */,
 				28F550F41EDBF49D006646A3 /* DeviceType.swift in Sources */,
+				28C11D3C2921C73A001FD0E5 /* CreditCardType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

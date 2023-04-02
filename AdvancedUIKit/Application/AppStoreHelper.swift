@@ -12,14 +12,8 @@ public final class AppStoreHelper {
     /// The flag used to record the review counter.
     private let reviewCounterFlag: String
     
-    /// The message helper
-    private let messageHelper: SystemMessageHelper?
-    
     /// The user default used to save the counter.
     private let userDefaults: UserDefaults
-    
-    /// The device helper for opening a website.
-    private let deviceHelper: DeviceHelper
     
     /// Initialize the helper
     ///
@@ -29,16 +23,12 @@ public final class AppStoreHelper {
     ///   - userDefaults: The user defaults used to store flags.
     ///   - messageHelper: The message helper used to show a popup.
     ///   - deviceHelper: The device helper used to open a website.
-    public init(id: String, reviewCounterFlag: String,
-                userDefaults: UserDefaults = UserDefaults.standard,
-                messageHelper: SystemMessageHelper? = SystemMessageHelper(),
-                deviceHelper: DeviceHelper = DeviceHelper()) {
+    public init(id: String,
+                reviewCounterFlag: String,
+                userDefaults: UserDefaults = .standard) {
         self.id = id
         self.reviewCounterFlag = reviewCounterFlag
         self.userDefaults = userDefaults
-        self.messageHelper = messageHelper
-        self.deviceHelper = deviceHelper
-        messageHelper?.delegate = self
     }
     
     /// Leave a review in the app store.
@@ -65,24 +55,6 @@ public final class AppStoreHelper {
     public func resetReviewCounter() {
         userDefaults.removeObject(forKey: reviewCounterFlag)
     }
-}
-
-/// MessageHelperDelegate
-extension AppStoreHelper: MessageHelperDelegate {
-    
-    public func messageHelperDidConfirmWarning(_ messageHelper: MessageHelper) {
-        let reviewAddress = String(format: Self.reviewAddressPattern, id)
-        deviceHelper.openWebsite(withLink: reviewAddress)
-    }
-    
-    public func messageHelper(_ messageHelper: MessageHelper, didConfirmInput content: String) {}
-}
-
-/// Constants
-private extension AppStoreHelper {
-    
-    /// The review address pattern.
-    static var reviewAddressPattern = "itms-apps://itunes.apple.com/app/id%@"
 }
 
 import AdvancedFoundation

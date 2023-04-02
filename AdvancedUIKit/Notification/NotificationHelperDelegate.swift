@@ -9,7 +9,8 @@ public protocol NotificationHelperDelegate: AnyObject {
     /// Local notification authorization has been decided.
     ///
     /// - Parameter result: The result of the authorization.
-    func notificationHelper(_ notificationHelper: NotificationHelperType, didAuthorizeRemoteNotification result: Bool)
+    func notificationHelper(_ notificationHelper: NotificationHelperType,
+                            didAuthorizeRemoteNotification result: Bool)
     
     /// Local notification authorization has been decided.
     ///

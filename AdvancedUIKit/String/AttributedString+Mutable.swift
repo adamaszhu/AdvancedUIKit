@@ -43,7 +43,8 @@ public extension NSAttributedString {
     ///   - font: The new font to be applied.
     ///   - substring: The substring that should be changed. Nil will apply the new font to the whole string.
     /// - Returns: A string with part of the string applying the new font.
-    func changingFont(_ font: UIFont, ofFirstSubstring substring: String? = nil) -> NSAttributedString {
+    func changingFont(_ font: UIFont,
+                      ofFirstSubstring substring: String? = nil) -> NSAttributedString {
         addingAttributes(.font,
                          value: font,
                          toFirstSubstring: substring)
@@ -63,7 +64,8 @@ public extension NSAttributedString {
     ///   - color: The new color to apply.
     ///   - substring: The substring that should apply the new color. Nil will apply the color to the whole string.
     /// - Returns: A new string with part of it using the new color.
-    func changingColor(_ color: UIColor, ofFirstSubstring substring: String? = nil) -> NSAttributedString {
+    func changingColor(_ color: UIColor,
+                       ofFirstSubstring substring: String? = nil) -> NSAttributedString {
         addingAttributes(.foregroundColor,
                          value: color,
                          toFirstSubstring: substring)
@@ -75,7 +77,8 @@ public extension NSAttributedString {
     ///   - letterSpacing: The space between letters.
     ///   - substring: The substring that should apply the new letter spacing. Nil will apply the letter spacing to the whole string.
     /// - Returns: A new string with part of it using the new color.
-    func changingLetterSpacing(_ letterSpacing: CGFloat, ofFirstSubstring substring: String? = nil) -> NSAttributedString {
+    func changingLetterSpacing(_ letterSpacing: CGFloat,
+                               ofFirstSubstring substring: String? = nil) -> NSAttributedString {
         addingAttributes(.kern,
                          value: letterSpacing,
                          toFirstSubstring: substring)

@@ -9,6 +9,7 @@ public protocol DataPickerDelegate: AnyObject {
     /// DataPicker has a selected value.
     ///
     /// - Parameter values: The value for each column.
-    func dataPicker(_ dataPicker: DataPicker, didSelectValue values: [String])
+    func dataPicker(_ dataPicker: DataPicker,
+                    didSelectValue values: [String])
 }
 #endif

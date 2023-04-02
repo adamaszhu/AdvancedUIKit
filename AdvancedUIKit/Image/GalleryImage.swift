@@ -89,7 +89,8 @@ extension GalleryImage: UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard contentSize.width >= frame.width, contentSize.height >= frame.height else {
+        guard contentSize.width >= frame.width,
+                contentSize.height >= frame.height else {
             setZoomScale(1, animated: false)
             return
         }

@@ -11,8 +11,10 @@ open class ModalViewController: UIViewController {
         initialize()
     }
 
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    public override init(nibName nibNameOrNil: String?,
+                         bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil,
+                   bundle: nibBundleOrNil)
         initialize()
     }
 

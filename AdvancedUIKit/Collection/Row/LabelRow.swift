@@ -13,8 +13,8 @@ open class LabelRow: Row, LabelRowType {
     ///   - title: The title of the row. Default to nil.
     ///   - subtitle: The subtitle of the row. Default to nil.
     public init(icon: UIImage? = nil,
-         title: String? = nil,
-         subtitle: String? = nil) {
+                title: String? = nil,
+                subtitle: String? = nil) {
         self.subtitle = subtitle
         super.init(icon: icon, title: title)
     }
