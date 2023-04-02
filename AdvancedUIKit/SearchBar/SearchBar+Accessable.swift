@@ -8,7 +8,7 @@ public extension UISearchBar {
     
     /// The text field
     var textField: UITextField? {
-        return value(forKey: Self.textFieldKey) as? UITextField
+        value(forKey: Self.textFieldKey) as? UITextField
     }
 }
 

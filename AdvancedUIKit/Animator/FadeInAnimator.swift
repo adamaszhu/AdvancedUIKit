@@ -7,7 +7,7 @@
 public final class FadeInAnimator: Animator {
 
     public override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
+        guard let toViewController = transitionContext.viewController(forKey: .to) else {
             return
         }
 

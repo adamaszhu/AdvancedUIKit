@@ -105,13 +105,15 @@ public extension UIView {
             guard let superview = superview else {
                 return nil
             }
-            return getValue(between: topAnchor, and: superview.topAnchor)
+            return getValue(between: topAnchor,
+                            and: superview.topAnchor)
         }
         set {
             guard let superview = superview else {
                 return
             }
-            setValue(newValue, between: topAnchor, and: superview.topAnchor )
+            setValue(newValue, between: topAnchor,
+                     and: superview.topAnchor )
         }
     }
     
@@ -122,13 +124,15 @@ public extension UIView {
             guard let superview = superview else {
                 return nil
             }
-            return getValue(between: leftAnchor, and: superview.leftAnchor)
+            return getValue(between: leftAnchor,
+                            and: superview.leftAnchor)
         }
         set {
             guard let superview = superview else {
                 return
             }
-            setValue(newValue, between: leftAnchor, and: superview.leftAnchor)
+            setValue(newValue, between: leftAnchor,
+                     and: superview.leftAnchor)
         }
     }
     
@@ -139,13 +143,15 @@ public extension UIView {
             guard let superview = superview else {
                 return nil
             }
-            return getValue(between: rightAnchor, and: superview.rightAnchor)
+            return getValue(between: rightAnchor,
+                            and: superview.rightAnchor)
         }
         set {
             guard let superview = superview else {
                 return
             }
-            setValue(newValue, between: rightAnchor, and: superview.rightAnchor)
+            setValue(newValue, between: rightAnchor,
+                     and: superview.rightAnchor)
         }
     }
     
@@ -156,13 +162,15 @@ public extension UIView {
             guard let superview = superview else {
                 return nil
             }
-            return getValue(between: bottomAnchor, and: superview.bottomAnchor)
+            return getValue(between: bottomAnchor,
+                            and: superview.bottomAnchor)
         }
         set {
             guard let superview = superview else {
                 return
             }
-            setValue(newValue, between: bottomAnchor, and: superview.bottomAnchor)
+            setValue(newValue, between: bottomAnchor,
+                     and: superview.bottomAnchor)
         }
     }
     
@@ -238,7 +246,9 @@ public extension UIView {
     ///   - firstArchor: The first archor
     ///   - secondArchor: The second archor
     @available(iOS, introduced: 10.0)
-    private func setValue<Archor>(_ value: CGFloat?, between firstArchor: NSLayoutAnchor<Archor>, and secondArchor: NSLayoutAnchor<Archor>) {
+    private func setValue<Archor>(_ value: CGFloat?,
+                                  between firstArchor: NSLayoutAnchor<Archor>,
+                                  and secondArchor: NSLayoutAnchor<Archor>) {
         let constraint = superview?
             .constraints
             .first { ($0.firstAnchor == firstArchor && $0.secondAnchor == secondArchor)
@@ -263,7 +273,8 @@ public extension UIView {
     ///   - secondArchor: The second archor
     /// - Returns: The value
     @available(iOS, introduced: 10.0)
-    private func getValue<Archor>(between firstArchor: NSLayoutAnchor<Archor>, and secondArchor: NSLayoutAnchor<Archor>) -> CGFloat? {
+    private func getValue<Archor>(between firstArchor: NSLayoutAnchor<Archor>,
+                                  and secondArchor: NSLayoutAnchor<Archor>) -> CGFloat? {
         let constraint = superview?
             .constraints
             .first { ($0.firstAnchor == firstArchor && $0.secondAnchor == secondArchor)

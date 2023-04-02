@@ -6,6 +6,9 @@ import PackageDescription
 let package = Package(
     name: "AdvancedUIKit",
     defaultLocalization: "en",
+    platforms: [
+        .iOS(.v11)
+    ],
     products: [
         .library(name: "AdvancedUIKit", targets: ["AdvancedUIKit"])
     ],

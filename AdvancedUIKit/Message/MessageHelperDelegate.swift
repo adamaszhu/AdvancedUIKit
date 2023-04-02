@@ -17,7 +17,8 @@ public protocol MessageHelperDelegate: AnyObject {
     /// An operation has been done on an input.
     ///
     /// - Parameter content: The content of the input.
-    func messageHelper(_ messageHelper: MessageHelper, didConfirmInput content: String)
+    func messageHelper(_ messageHelper: MessageHelper,
+                       didConfirmInput content: String)
     
     /// An cancel has been done on an input
     func messageHelperDidCancelInput(_ messageHelper: MessageHelper)

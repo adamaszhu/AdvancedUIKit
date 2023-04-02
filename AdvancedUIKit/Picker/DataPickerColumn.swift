@@ -14,7 +14,8 @@ public struct DataPickerColumn {
     /// - Parameters:
     ///   - title: The title of the column. Empty is the default value.
     ///   - items: The column items.
-    public init(items: [DataPickerItem], title: String = .empty) {
+    public init(items: [DataPickerItem],
+                title: String = .empty) {
         self.title = title
         self.items = items
     }

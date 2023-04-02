@@ -9,25 +9,25 @@ open class CollectionCell<V: View<R>, R: RowType>: UICollectionViewCell, RowConf
     public static var reusableIdentifier: String {
         String(describing: Self.self)
     }
-
+    
     /// The main part of the cell
     public private(set) var view: V?
-
+    
     /// Quick access to the row
     public var row: R? {
         view?.row
     }
-
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
     }
-
+    
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         initialize()
     }
-
+    
     /// Initialize the cell
     private func initialize() {
         let view = V()
@@ -35,7 +35,7 @@ open class CollectionCell<V: View<R>, R: RowType>: UICollectionViewCell, RowConf
         view.pinEdgesToSuperview()
         self.view = view
     }
-
+    
     /// Configure the view with a row
     /// - Parameter row: The row of the view
     open func configure(with row: RowType) {
@@ -47,6 +47,10 @@ open class CollectionCell<V: View<R>, R: RowType>: UICollectionViewCell, RowConf
         }
         view?.configure(with: row)
     }
+}
+
+/// Constants
+extension CollectionCell {
 
     /// Error
     static var rowErrorPattern: String { "Expect row type as %@ got %@" }

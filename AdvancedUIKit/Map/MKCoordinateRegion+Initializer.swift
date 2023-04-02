@@ -11,9 +11,12 @@ extension MKCoordinateRegion {
     ///   - latitude: The center latitude of the view.
     ///   - longitude: The center longitude of the view.
     ///   - zoomLevel: The zoom level.
-    init(centerLatitude: Double, centerLongitude: Double, zoomLevel: Double) {
+    init(centerLatitude: Double,
+         centerLongitude: Double,
+         zoomLevel: Double) {
         self.init()
-        center = CLLocationCoordinate2D(latitude: centerLatitude, longitude: centerLongitude)
+        center = CLLocationCoordinate2D(latitude: centerLatitude,
+                                        longitude: centerLongitude)
         span = MKCoordinateSpan()
         span.latitudeDelta = 1.0 / zoomLevel
         span.longitudeDelta = 1.0 / zoomLevel
@@ -26,9 +29,13 @@ extension MKCoordinateRegion {
     ///   - longitude: The center longitude of the view.
     ///   - latitudeDelta: The latitude span.
     ///   - longitudeDelta: The longitude span.
-    init(centerLatitude: Double, centerLongitude: Double, latitudeDelta: Double, longitudeDelta: Double) {
+    init(centerLatitude: Double,
+         centerLongitude: Double,
+         latitudeDelta: Double,
+         longitudeDelta: Double) {
         self.init()
-        center = CLLocationCoordinate2D(latitude: centerLatitude, longitude: centerLongitude)
+        center = CLLocationCoordinate2D(latitude: centerLatitude,
+                                        longitude: centerLongitude)
         span = MKCoordinateSpan()
         span.latitudeDelta = latitudeDelta
         span.longitudeDelta = longitudeDelta

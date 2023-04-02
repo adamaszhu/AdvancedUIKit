@@ -49,7 +49,8 @@ public final class KeyboardHelper: NSObject {
             Logger.standard.logWarning(Self.rootViewWarning)
             return 0
         }
-        let currentViewFrame = rootView.convert(currentInputView.frame, from: currentInputView.superview)
+        let currentViewFrame = rootView.convert(currentInputView.frame,
+                                                from: currentInputView.superview)
         let currentViewBottomSpace = rootView.frame.height - currentViewFrame.origin.y - currentViewFrame.size.height
         guard currentViewBottomSpace < keyboardHeight else {
             return 0
@@ -60,7 +61,8 @@ public final class KeyboardHelper: NSObject {
     /// Initialize the object. It should be initalized after the view is rendered.
     ///
     /// - Parameter application: The application that contains the window.
-    public init(application: UIApplication = UIApplication.shared, notificationCenter: NotificationCenter = NotificationCenter.default) {
+    public init(application: UIApplication = .shared,
+                notificationCenter: NotificationCenter = .default) {
         actionFilterView = ActionFilterView(frame: application.windows[0].bounds)
         self.notificationCenter = notificationCenter
         super.init()
@@ -81,9 +83,18 @@ public final class KeyboardHelper: NSObject {
     public func startObservingKeyboard() {
         rootView?.addSubview(actionFilterView)
         actionFilterView.isHidden = true
-        notificationCenter.addObserver(self, selector: #selector(willShowKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(willHideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(willChangeKeyboardFrame), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(willShowKeyboard),
+                                       name: UIResponder.keyboardWillShowNotification,
+                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(willHideKeyboard),
+                                       name: UIResponder.keyboardWillHideNotification,
+                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(willChangeKeyboardFrame),
+                                       name: UIResponder.keyboardWillChangeFrameNotification,
+                                       object: nil)
     }
     
     /// Stop observing the keyboard and perform the push action.
@@ -103,7 +114,8 @@ public final class KeyboardHelper: NSObject {
             guard let self = self else {
                 return
             }
-            rootView.frame.origin = CGPoint(x: 0, y: rootView.frame.origin.y + self.pushOffset)
+            rootView.frame.origin = CGPoint(x: 0,
+                                            y: rootView.frame.origin.y + self.pushOffset)
             }, withDuration: keyboardPushDuration)
     }
     
@@ -167,7 +179,8 @@ public final class KeyboardHelper: NSObject {
     private func activateInputChain() {
         inputViews.forEach {
             if let textField = $0 as? UITextField {
-                textField.addTarget(self, action: #selector(textFieldDidChangeText), for: .editingChanged)
+                textField.addTarget(self, action: #selector(textFieldDidChangeText),
+                                    for: .editingChanged)
                 textField.delegate = self
             } else if let searchBar = $0 as? UISearchBar {
                 searchBar.delegate = self
@@ -179,7 +192,8 @@ public final class KeyboardHelper: NSObject {
     private func deactiveInputChain() {
         inputViews.forEach {
             if let textField = $0 as? UITextField {
-                textField.removeTarget(self, action: #selector(textFieldDidChangeText), for: .editingChanged)
+                textField.removeTarget(self, action: #selector(textFieldDidChangeText),
+                                       for: .editingChanged)
             }
         }
     }
@@ -205,7 +219,9 @@ public final class KeyboardHelper: NSObject {
             keyboardPushDuration = Self.defaultKeyboardPushDuration
             return
         }
-        keyboardPushDuration = value.doubleValue < Self.defaultKeyboardPushDuration ? Self.defaultKeyboardPushDuration : value.doubleValue
+        keyboardPushDuration = value.doubleValue < Self.defaultKeyboardPushDuration
+        ? Self.defaultKeyboardPushDuration
+        : value.doubleValue
     }
 }
 
@@ -220,11 +236,14 @@ extension KeyboardHelper: UISearchBarDelegate {
         finishInput(on: searchBar)
     }
     
-    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    public func searchBar(_ searchBar: UISearchBar,
+                          textDidChange searchText: String) {
         delegate?.keyboardHelper(self, didChangeContentOf: searchBar)
     }
     
-    public func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    public func searchBar(_ searchBar: UISearchBar,
+                          shouldChangeTextIn range: NSRange,
+                          replacementText text: String) -> Bool {
         guard let delegate = delegate else {
             return true
         }
@@ -234,7 +253,9 @@ extension KeyboardHelper: UISearchBarDelegate {
         } else {
             newContent = text
         }
-        return delegate.keyboardHelper(self, shouldChangeContentOf: searchBar, toContent: newContent)
+        return delegate.keyboardHelper(self,
+                                       shouldChangeContentOf: searchBar,
+                                       toContent: newContent)
     }
     
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -264,7 +285,9 @@ extension KeyboardHelper: UITextFieldDelegate {
         delegate?.keyboardHelper(self, didChangeContentOf: textField)
     }
     
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    public func textField(_ textField: UITextField,
+                          shouldChangeCharactersIn range: NSRange,
+                          replacementString string: String) -> Bool {
         guard let delegate = delegate else {
             return true
         }

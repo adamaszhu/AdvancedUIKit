@@ -13,7 +13,8 @@ public extension UITextField {
                 Logger.standard.logWarning(Self.placeholderEmptyWarning)
                 return
             }
-            attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: newValue])
+            attributedPlaceholder = NSAttributedString(string: placeholder,
+                                                       attributes: [.foregroundColor: newValue])
         }
         get {
             guard let placeholder = attributedPlaceholder else {
@@ -21,7 +22,8 @@ public extension UITextField {
                 return Self.defaultPlaceholderColor
             }
             var range = NSMakeRange(0, placeholder.length)
-            guard let color = placeholder.attribute(.foregroundColor, at: 0, effectiveRange: &range) as? UIColor else {
+            guard let color = placeholder.attribute(.foregroundColor, at: 0,
+                                                    effectiveRange: &range) as? UIColor else {
                 Logger.standard.logWarning(Self.placeholderColorWarning)
                 return Self.defaultPlaceholderColor
             }

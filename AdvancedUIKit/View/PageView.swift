@@ -56,7 +56,8 @@ public class PageView: UIScrollView {
         let x = CGFloat(pageControl.numberOfPages - 1) * frame.width
         view.frame = CGRect(x: x, y: 0, width: frame.width, height: frame.height)
         addSubview(view)
-        contentSize = CGSize(width: view.frame.origin.x + view.frame.width, height: view.frame.height)
+        contentSize = CGSize(width: view.frame.origin.x + view.frame.width,
+                             height: view.frame.height)
     }
     
     /// Replace a view.
@@ -84,18 +85,21 @@ public class PageView: UIScrollView {
         }
         if index <= currentPageIndex, currentPageIndex != 0  {
             // While removing the page before current page.
-            switchToPage(withIndex: currentPageIndex - 1, withAnimation: false)
+            switchToPage(withIndex: currentPageIndex - 1,
+                         withAnimation: false)
         }
         // Adjust all views after the removed view.
         for laterIndex in index + 1 ..< pageControl.numberOfPages {
             guard let subview = subviews[safe: laterIndex] else {
                 continue
             }
-            subview.frame.origin = CGPoint(x: subview.frame.origin.x - frame.width, y: 0)
+            subview.frame.origin = CGPoint(x: subview.frame.origin.x - frame.width,
+                                           y: 0)
         }
         pageControl.numberOfPages = pageControl.numberOfPages - 1
         subview.removeFromSuperview()
-        contentSize = CGSize(width: CGFloat(pageControl.numberOfPages) * frame.width, height: frame.height)
+        contentSize = CGSize(width: CGFloat(pageControl.numberOfPages) * frame.width,
+                             height: frame.height)
     }
     
     /// Remove all sub views.
@@ -130,7 +134,8 @@ public class PageView: UIScrollView {
     /// - Parameters:
     ///   - index: The page index of the news.
     ///   - shouldAnimate: Whether the animation should be allowed or not.
-    public func switchToPage(withIndex index: Int, withAnimation shouldAnimate: Bool = true) {
+    public func switchToPage(withIndex index: Int,
+                             withAnimation shouldAnimate: Bool = true) {
         guard 0 ..< pageControl.numberOfPages ~= index else {
             Logger.standard.logError(Self.pageIndexError)
             return
@@ -145,7 +150,8 @@ public class PageView: UIScrollView {
             guard let self = self else {
                 return
             }
-            self.contentOffset = CGPoint(x: CGFloat(index) * self.frame.width, y: 0)
+            self.contentOffset = CGPoint(x: CGFloat(index) * self.frame.width,
+                                         y: 0)
         })
     }
     
@@ -166,16 +172,23 @@ public class PageView: UIScrollView {
             // The default margin will be used if the margin hasn't been settled.
             pageControlButtomMargin = Self.defaultPageControlButtomMargin
         }
-        pageControl.frame = CGRect(x: (frame.width - pageControl.frame.width) / 2, y: frame.height - pageControl.frame.height - pageControlButtomMargin, width: pageControl.frame.width, height: pageControl.frame.height)
+        pageControl.frame = CGRect(x: (frame.width - pageControl.frame.width) / 2,
+                                   y: frame.height - pageControl.frame.height - pageControlButtomMargin,
+                                   width: pageControl.frame.width,
+                                   height: pageControl.frame.height)
         // Refresh all subviews
         for index in 0 ..< subviews.count {
-            subviews[index].frame = CGRect(x: CGFloat(index) * frame.width, y: 0, width: frame.width, height: frame.height)
+            subviews[index].frame = CGRect(x: CGFloat(index) * frame.width,
+                                           y: 0,
+                                           width: frame.width,
+                                           height: frame.height)
         }
     }
     
     public override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        guard let superview = superview, pageControl.superview == nil else {
+        guard let superview = superview,
+                pageControl.superview == nil else {
             return
         }
         superview.addSubview(pageControl)

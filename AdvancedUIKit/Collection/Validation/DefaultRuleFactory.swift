@@ -32,7 +32,7 @@ public class DefaultRuleFactory {
     ///   - lengthMessage: Message for a string with invalid length
     /// - Returns: A list of rules that a credit card verification number should follow
     public static func creditCardVerificationNumberRules(withInvalidMessage invalidMessage: String,
-                                                  andLengthMessage lengthMessage: String) -> [RuleType] {
+                                                         andLengthMessage lengthMessage: String) -> [RuleType] {
         [numberRule(withMessage: invalidMessage),
          MinLengthRule(minLength: Self.creditCardVerificationNumberLength,
                        message: lengthMessage),
@@ -50,8 +50,8 @@ public class DefaultRuleFactory {
     }
 
     public static func creditCardNumberRules(withInvalidMessage invalidMessage: String,
-                                     minLengthMessage: String,
-                                     andMaxLengthMessage maxLengthMessage: String) -> [RuleType] {
+                                             minLengthMessage: String,
+                                             andMaxLengthMessage maxLengthMessage: String) -> [RuleType] {
         [numberRule(withMessage: invalidMessage),
          MinLengthRule(minLength: Self.creditCardNumberMinLength,
                        message: minLengthMessage),

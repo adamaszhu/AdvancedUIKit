@@ -35,7 +35,7 @@ open class LocationHelper: CLLocationManager {
     /// CLLocationManager
     ///
     /// - Parameter bundle: The bundle where the Info.plist file exists.
-    public init(bundle: Bundle = Bundle.main) {
+    public init(bundle: Bundle = .main) {
         self.bundle = bundle
         super.init()
         delegate = self
@@ -51,11 +51,13 @@ open class LocationHelper: CLLocationManager {
 
     open override func requestAlwaysAuthorization() {
         guard isUnauthorized else {
-            locationHelperDelegate?.locationHelper(self, didCatchError: Self.authorizationError.localizedInternalString(forType: Self.self))
+            locationHelperDelegate?.locationHelper(self,
+                                                   didCatchError: Self.authorizationError.localizedInternalString(forType: Self.self))
             return
         }
         guard checkDescriptionKey(Self.alwaysDescriptionKey) else {
-            Logger.standard.logError(Self.descriptionKeyError, withDetail: Self.alwaysDescriptionKey)
+            Logger.standard.logError(Self.descriptionKeyError,
+                                     withDetail: Self.alwaysDescriptionKey)
             return
         }
         authorizingStatus = .authorizedAlways
@@ -65,11 +67,13 @@ open class LocationHelper: CLLocationManager {
     #if !os(macOS)
     open override func requestWhenInUseAuthorization() {
         guard isUnauthorized else {
-            locationHelperDelegate?.locationHelper(self, didCatchError: Self.authorizationError.localizedInternalString(forType: Self.self))
+            locationHelperDelegate?.locationHelper(self,
+                                                   didCatchError: Self.authorizationError.localizedInternalString(forType: Self.self))
             return
         }
         guard checkDescriptionKey(Self.whenInUseDescriptionKey) else {
-            Logger.standard.logError(Self.descriptionKeyError, withDetail: Self.whenInUseDescriptionKey)
+            Logger.standard.logError(Self.descriptionKeyError,
+                                     withDetail: Self.whenInUseDescriptionKey)
             return
         }
         authorizingStatus = .authorizedWhenInUse
@@ -81,16 +85,19 @@ open class LocationHelper: CLLocationManager {
 /// CLLocationManagerDelegate
 extension LocationHelper: CLLocationManagerDelegate {
     
-    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    public func locationManager(_ manager: CLLocationManager,
+                                didChangeAuthorization status: CLAuthorizationStatus) {
         guard status != .notDetermined else {
             return
         }
         switch authorizingStatus {
         case .authorizedAlways:
-            locationHelperDelegate?.locationHelper(self, didAuthorizeAlwaysAuthorization: isAlwaysAuthorizationAuthorized)
+            locationHelperDelegate?.locationHelper(self,
+                                                   didAuthorizeAlwaysAuthorization: isAlwaysAuthorizationAuthorized)
         case .authorizedWhenInUse:
             #if !os(macOS)
-            locationHelperDelegate?.locationHelper(self, didAuthorizeWhenInUseAuthorization: isWhenInUseAuthorizationAuthorized)
+            locationHelperDelegate?.locationHelper(self,
+                                                   didAuthorizeWhenInUseAuthorization: isWhenInUseAuthorizationAuthorized)
             #endif
         default:
             break

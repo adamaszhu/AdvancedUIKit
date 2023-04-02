@@ -2,8 +2,8 @@
 /// NotificationHelperType is used to manage the notification.
 ///
 /// - author: Adamas
-/// - version: 1.5.0
-/// - date: 03/09/2019
+/// - version: 1.9.15
+/// - date: 29/03/2023
 public protocol NotificationHelperType {
     
     /// The delegate.
@@ -96,8 +96,8 @@ public final class NotificationHelper: NotificationHelperType {
     /// - Parameters:
     ///   - application: The application that the notification belongs to.
     ///   - notificationCenter: The notification center
-    public init(application: UIApplication = UIApplication.shared,
-                notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()) {
+    public init(application: UIApplication = .shared,
+                notificationCenter: UNUserNotificationCenter = .current()) {
         self.application = application
         self.notificationCenter = notificationCenter
     }
@@ -124,9 +124,11 @@ public final class NotificationHelper: NotificationHelperType {
                     return
                 }
                 if let error = error {
-                    self.delegate?.notificationHelper(self, didCatchError: error.localizedDescription)
+                    self.delegate?.notificationHelper(self,
+                                                      didCatchError: error.localizedDescription)
                 } else {
-                    self.delegate?.notificationHelper(self, didAuthorizeLocalNotification: result)
+                    self.delegate?.notificationHelper(self,
+                                                      didAuthorizeLocalNotification: result)
                 }
             }
         }
@@ -162,8 +164,11 @@ public final class NotificationHelper: NotificationHelperType {
             notificationContent.sound = UNNotificationSound.default
         }
         let adjustedDelay = max(1, delay)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: adjustedDelay, repeats: false)
-        let request = UNNotificationRequest(identifier: content, content: notificationContent, trigger: trigger)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: adjustedDelay,
+                                                        repeats: false)
+        let request = UNNotificationRequest(identifier: content,
+                                            content: notificationContent,
+                                            trigger: trigger)
         notificationCenter.add(request) { [weak self] error in
             if let error = error, let self = self {
                 self.delegate?.notificationHelper(self, didCatchError: error.localizedDescription)
@@ -176,10 +181,10 @@ public final class NotificationHelper: NotificationHelperType {
 fileprivate extension NotificationHelperType {
     
     /// The system error.
-    static var authorizationError: String { return "AuthorizationError" }
+    static var authorizationError: String { "AuthorizationError" }
     
     /// Constants
-    static var deviceTokenPattern: String { return "%02.2hhx" }
+    static var deviceTokenPattern: String { "%02.2hhx" }
 }
 
 import AdvancedFoundation

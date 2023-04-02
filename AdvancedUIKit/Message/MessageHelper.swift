@@ -1,8 +1,8 @@
 /// MessageHelper defines the action that a message helper should do.
 ///
 /// - author: Adamas
-/// - version: 1.5.0
-/// - date: 05/09/2019
+/// - version: 1.9.15
+/// - date: 29/03/2023
 public protocol MessageHelper {
     
     var delegate: MessageHelperDelegate? { get set }
@@ -54,18 +54,18 @@ public protocol MessageHelper {
 public extension MessageHelper {
     
     /// Default message title.
-    static var successTitle: String { return "" }
-    static var warningTitle: String { return "Warning" }
-    static var errorTitle: String { return "Error" }
+    static var successTitle: String { "" }
+    static var warningTitle: String { "Warning" }
+    static var errorTitle: String { "Error" }
     
     /// The name of the button.
-    static var infoConfirmButtonName: String { return "Ok" }
-    static var warningConfirmButtonName: String { return "Yes" }
-    static var warningCancelButtonName: String { return "No" }
-    static var errorConfirmButtonName: String { return "Ok" }
-    static var inputConfirmButtonName: String { return "Done" }
-    static var inputCancelButtonName: String { return "Cancel" }
+    static var infoConfirmButtonName: String { "Ok" }
+    static var warningConfirmButtonName: String { "Yes" }
+    static var warningCancelButtonName: String { "No" }
+    static var errorConfirmButtonName: String { "Ok" }
+    static var inputConfirmButtonName: String { "Done" }
+    static var inputCancelButtonName: String { "Cancel" }
     
     /// Input hint.
-    static var inputHint: String { return "InputHint" }
+    static var inputHint: String { "InputHint" }
 }

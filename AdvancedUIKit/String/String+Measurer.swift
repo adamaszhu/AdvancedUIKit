@@ -28,7 +28,8 @@ public extension String {
     ///   - font: The font that is applied.
     ///   - view: The view that text is in.
     /// - Returns: The actual line amount displayed on the view.
-    func measuredLineAmount(with font: UIFont, in view: UIView) -> Int {
+    func measuredLineAmount(with font: UIFont,
+                            in view: UIView) -> Int {
         let height = measuredHeight(with: font, in: view)
         return Int(height / font.lineHeight)
     }

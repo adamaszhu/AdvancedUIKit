@@ -12,22 +12,22 @@ open class TextAreaView<Row: TextRowType>: View<Row>, UITextViewDelegate {
             textView?.contentInset = Self.textInset
         }
     }
-
+    
     /// Set the accessory view of the text field
     public var inputTextFieldAccessoryView: UIView? {
         didSet {
             textView?.inputAccessoryView = inputTextFieldAccessoryView
         }
     }
-
+    
     /// Get the current text on the screen
     public var text: String? {
         textView?.text
     }
-
+    
     /// Set the theme of the text view
     public var theme: TextViewThemeType?
-
+    
     /// Reset the view to the normal state
     public func reset() {
         textView?.text = nil
@@ -37,13 +37,13 @@ open class TextAreaView<Row: TextRowType>: View<Row>, UITextViewDelegate {
         hintLabel.textColor = normalColor
         hintLabel.text = .space
     }
-
+    
     @discardableResult
     open override func becomeFirstResponder() -> Bool {
         textView?.becomeFirstResponder()
         return super.becomeFirstResponder()
     }
-
+    
     public override func configure(with row: RowType) {
         guard let row = row as? Row else {
             let rowError = String(format: Self.rowErrorPattern,
@@ -55,10 +55,10 @@ open class TextAreaView<Row: TextRowType>: View<Row>, UITextViewDelegate {
         textView.returnKeyType = row.returnType
         textView.keyboardType = row.keyboardType
         reset()
-
+        
         self.row?.reloadAction = { [weak self] in
             guard let self = self,
-                let row = self.row else {
+                  let row = self.row else {
                 return
             }
             self.isHidden = row.isHidden
@@ -68,15 +68,17 @@ open class TextAreaView<Row: TextRowType>: View<Row>, UITextViewDelegate {
         _ = row.isValid(value: textView.text, shouldUpdateView: false)
         applyPlaceholderIfNecessary()
     }
-
+    
     private func applyPlaceholderIfNecessary() {
         if textView.text.isEmpty != false {
             textView.text = row?.placeholder
             textView.textColor = theme?.placeholderColor ?? Self.defaultPlaceholderColor
         }
     }
-
-    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText: String) -> Bool {
+    
+    public func textView(_ textView: UITextView,
+                         shouldChangeTextIn range: NSRange,
+                         replacementText: String) -> Bool {
         guard replacementText != .linebreak else {
             textView.resignFirstResponder()
             row?.didReturnAction?()
@@ -90,7 +92,7 @@ open class TextAreaView<Row: TextRowType>: View<Row>, UITextViewDelegate {
         _ = row?.isValid(value: newValue, shouldUpdateView: false)
         return true
     }
-
+    
     public func textViewDidBeginEditing(_ textView: UITextView) {
         let highlightedColor = theme?.highlightedColor ?? Self.defaultHighlightedColor
         titleLabel?.textColor = highlightedColor
@@ -103,7 +105,7 @@ open class TextAreaView<Row: TextRowType>: View<Row>, UITextViewDelegate {
         }
         row?.didStartEditingAction?()
     }
-
+    
     public func textViewDidEndEditing(_ textView: UITextView) {
         hintLabel.text = row?.isValid(value: textView.text, shouldUpdateView: false)
         let color = row?.isValid == true
@@ -115,8 +117,11 @@ open class TextAreaView<Row: TextRowType>: View<Row>, UITextViewDelegate {
         applyPlaceholderIfNecessary()
         row?.didEndEditingAction?()
     }
+}
 
-    /// Constants
+/// Constants
+private extension TextAreaView {
+    
     private static var defaultHighlightedColor: UIColor { .black }
     private static var defaultNormalColor: UIColor { .gray }
     private static var defaultErrorColor: UIColor { .red }

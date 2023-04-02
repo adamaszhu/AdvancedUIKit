@@ -38,6 +38,19 @@ public extension UIView {
     func stopAllAnimations() {
         layer.removeAllAnimations()
     }
+    
+    /// Update the visibility with animation
+    /// - Parameters:
+    ///   - isVisible: The new visibility
+    ///   - duration: The duration of the animation
+    ///   - completion: The action to perform after the animation
+    func animateVisibility(_ isVisible: Bool,
+                           withDuration duration: Double = defaultAnimationDuration,
+                           completion: @escaping (() -> Void) = {}) {
+        isVisible
+        ? show(withDuration: duration, completion: completion)
+        : hide(withDuration: duration, completion: completion)
+    }
 
     /// Show the view.
     /// - Parameters:

@@ -35,15 +35,17 @@ public extension UIView {
     /// Enable a gesture.
     ///
     /// - Parameter type: The type of gesture to be disabled.
-    func enableGesture(ofType type: AnyClass) {
-        gestureFilterView.changeGestureRecognizerUsibility(ofType: type, toUsibility: false)
+    func enableGesture(ofType type: UIGestureRecognizer.Type) {
+        gestureFilterView.changeGestureRecognizerAvaibility(ofType: type,
+                                                            toAvaibility: false)
     }
     
     /// Disable a gesture.
     ///
     /// - Parameter type: The gesture to be disabled.
-    func disableGesture(ofType type: AnyClass) {
-        gestureFilterView.changeGestureRecognizerUsibility(ofType: type, toUsibility: true)
+    func disableGesture(ofType type: UIGestureRecognizer.Type) {
+        gestureFilterView.changeGestureRecognizerAvaibility(ofType: type,
+                                                            toAvaibility: true)
     }
 }
 

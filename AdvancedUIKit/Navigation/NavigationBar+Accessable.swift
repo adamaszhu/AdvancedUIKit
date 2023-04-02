@@ -28,8 +28,10 @@ public extension UINavigationBar {
     ///
     /// - parameter action: The action to be settled.
     /// - parameter target: The object.
-    func setLeftButtonAction(action: Selector, withTarget target: AnyObject) {
-        topItem?.setLeftButtonAction(action: action, withTarget: target)
+    func setLeftButtonAction(action: Selector,
+                             withTarget target: AnyObject) {
+        topItem?.setLeftButtonAction(action: action,
+                                     withTarget: target)
     }
     
     /// Set the action for the right button.
@@ -37,8 +39,10 @@ public extension UINavigationBar {
     /// - Parameters:
     ///   - action: The action to be settled.
     ///   - target: The object.
-    func setRightButtonAction(action: Selector, withTarget target: AnyObject) {
-        topItem?.setRightButtonAction(action: action, withTarget: target)
+    func setRightButtonAction(action: Selector,
+                              withTarget target: AnyObject) {
+        topItem?.setRightButtonAction(action: action,
+                                      withTarget: target)
     }
 }
 

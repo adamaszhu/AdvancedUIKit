@@ -5,10 +5,6 @@
 /// - date: 06/05/2022
 extension Bundle {
 
-    /// Constants
-    private static let bundleName = "AdvancedUIKit_AdvancedUIKit"
-    private static let bundleSuffix = ".bundle"
-
     /// Returns the resource bundle associated with the current Swift module.
     static var current: Bundle = {
 
@@ -31,6 +27,12 @@ extension Bundle {
         }
         return Bundle(for: BundleFinder.self)
     }()
+}
+
+/// Constants
+private extension Bundle {
+    static let bundleName = "AdvancedUIKit_AdvancedUIKit"
+    static let bundleSuffix = ".bundle"
 }
 
 /// Class used to find the bundle

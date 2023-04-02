@@ -4,5 +4,3 @@
 /// - date: 04/05/22
 /// - author: Adamas
 open class TapTableCell<V: TapView<R>, R: TapRowType>: TableCell<V, R> {}
-
-import UIKit
