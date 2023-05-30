@@ -253,6 +253,7 @@
 		42D15E0B2327BCF1006EAEF5 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D15E0A2327BCF1006EAEF5 /* EmptyState.xib */; };
 		42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */; };
 		42FE508D1EF7CF9E009C0BD7 /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE508C1EF7CF9E009C0BD7 /* ExpandableView.swift */; };
+		B2CCDE8F2A25A261009B3B0F /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCDE8E2A25A261009B3B0F /* CameraError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -548,6 +549,7 @@
 		42D15E0A2327BCF1006EAEF5 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 		42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		42FE508C1EF7CF9E009C0BD7 /* ExpandableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
+		B2CCDE8E2A25A261009B3B0F /* CameraError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1180,6 +1182,7 @@
 				35EA4380233309030004F41B /* CodeType.swift */,
 				28F6F8BA2803CAF20034A877 /* Color+Image.swift */,
 				28D9844928D4014900FA28BB /* Image+Convertable.swift */,
+				B2CCDE8E2A25A261009B3B0F /* CameraError.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1596,6 +1599,7 @@
 				42336330235A7D2D00C1F78A /* View+Alpha.swift in Sources */,
 				4269397C1EAB253700761FDE /* String+Measurer.swift in Sources */,
 				426939991EAC43E300761FDE /* DataPickerDelegate.swift in Sources */,
+				B2CCDE8F2A25A261009B3B0F /* CameraError.swift in Sources */,
 				3519F7512282B53900C7AF17 /* ImageJoinDirection.swift in Sources */,
 				42CA09F11EE1A1BA009AF1BE /* SegmentedControl+Localizable.swift in Sources */,
 				28CC65D72822B03900689A1A /* TapTableCell.swift in Sources */,
