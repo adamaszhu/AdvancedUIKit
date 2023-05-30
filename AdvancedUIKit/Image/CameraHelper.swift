@@ -55,6 +55,18 @@ public final class CameraHelper {
         })
     }
     
+    /// Authorize the camera.
+    /// - Returns: Whether the permission is granted.
+    public func requestCameraAuthorization() async throws -> Bool {
+        guard isCameraUndetermined else {
+            throw CameraError.authorization
+        }
+        guard isDescriptionKeyExisted(Self.cameraDescriptionKey) == true else {
+            throw CameraError.description
+        }
+        return await AVCaptureDevice.requestAccess(for: .video)
+    }
+    
     /// Authorize the library.
     public func requestLibraryAuthorization() {
         guard isLibraryUndetermined else {
