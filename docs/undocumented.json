@@ -1,901 +1,915 @@
 {
   "warnings": [
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Animator/Animator.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Animator/Animator.swift",
       "line": 9,
       "symbol": "Animator.animateTransition(using:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Animator/Animator.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Animator/Animator.swift",
       "line": 11,
       "symbol": "Animator.transitionDuration(using:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Animator/FadeInAnimator.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Animator/FadeInAnimator.swift",
       "line": 9,
       "symbol": "FadeInAnimator.animateTransition(using:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Animator/FadeOutAnimator.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Animator/FadeOutAnimator.swift",
       "line": 9,
       "symbol": "FadeOutAnimator.animateTransition(using:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Application/ApplicationType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Application/ApplicationType.swift",
       "line": 7,
       "symbol": "ApplicationType.googleMap",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Button/Checkbox.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Button/Checkbox.swift",
       "line": 19,
       "symbol": "Checkbox.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Button/Checkbox.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Button/Checkbox.swift",
       "line": 24,
       "symbol": "Checkbox.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Collection/CollectionCell.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Collection/CollectionCell.swift",
       "line": 21,
       "symbol": "CollectionCell.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Collection/CollectionCell.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Collection/CollectionCell.swift",
       "line": 26,
       "symbol": "CollectionCell.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Row/ValueRow.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Row/ValueRow.swift",
       "line": 10,
       "symbol": "ValueRow.init(icon:title:subtitle:value:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Row/ValueRow.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Row/ValueRow.swift",
       "line": 19,
       "symbol": "ValueRowType",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Table/TableCell.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Table/TableCell.swift",
       "line": 33,
       "symbol": "TableCell.init(style:reuseIdentifier:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Table/TableCell.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Table/TableCell.swift",
       "line": 38,
       "symbol": "TableCell.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Validation/CreditCardType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Validation/CreditCardType.swift",
       "line": 8,
       "symbol": "CreditCardType.amex",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Validation/CreditCardType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Validation/CreditCardType.swift",
       "line": 8,
       "symbol": "CreditCardType.master",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Validation/CreditCardType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Validation/CreditCardType.swift",
       "line": 8,
       "symbol": "CreditCardType.other",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Validation/CreditCardType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Validation/CreditCardType.swift",
       "line": 8,
       "symbol": "CreditCardType.visa",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Validation/DefaultRuleFactory.swift",
-      "line": 52,
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Validation/DefaultRuleFactory.swift",
+      "line": 62,
       "symbol": "DefaultRuleFactory.creditCardNumberRules(withInvalidMessage:minLengthMessage:andMaxLengthMessage:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Validation/MaxDateRule.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Validation/MaxDateRule.swift",
       "line": 21,
       "symbol": "MaxDateRule.isValid(value:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/Validation/MinDateRule.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/Validation/MinDateRule.swift",
       "line": 21,
       "symbol": "MinDateRule.isValid(value:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/ItemsView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/ItemsView.swift",
       "line": 50,
       "symbol": "ItemsView.collectionView(_:numberOfItemsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/ItemsView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/ItemsView.swift",
       "line": 54,
       "symbol": "ItemsView.numberOfSections(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/ItemsView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/ItemsView.swift",
       "line": 58,
       "symbol": "ItemsView.collectionView(_:cellForItemAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/ItemsView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/ItemsView.swift",
       "line": 68,
       "symbol": "ItemsView.collectionView(_:didSelectItemAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextAreaView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextAreaView.swift",
       "line": 42,
       "symbol": "TextAreaView.becomeFirstResponder()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextAreaView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextAreaView.swift",
       "line": 79,
       "symbol": "TextAreaView.textView(_:shouldChangeTextIn:replacementText:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextAreaView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextAreaView.swift",
       "line": 96,
       "symbol": "TextAreaView.textViewDidBeginEditing(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextAreaView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextAreaView.swift",
       "line": 109,
       "symbol": "TextAreaView.textViewDidEndEditing(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextView.swift",
       "line": 50,
       "symbol": "TextView.becomeFirstResponder()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextView.swift",
       "line": 84,
       "symbol": "TextView.textFieldDidEndEditing(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextView.swift",
       "line": 95,
       "symbol": "TextView.textFieldShouldReturn(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextView.swift",
       "line": 101,
       "symbol": "TextView.textField(_:shouldChangeCharactersIn:replacementString:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextView.swift",
       "line": 120,
       "symbol": "TextView.textFieldDidBeginEditing(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextViewThemeType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextViewThemeType.swift",
       "line": 7,
       "symbol": "TextViewThemeType.normalColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextViewThemeType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextViewThemeType.swift",
       "line": 8,
       "symbol": "TextViewThemeType.highlightedColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextViewThemeType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextViewThemeType.swift",
       "line": 9,
       "symbol": "TextViewThemeType.errorColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextViewThemeType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextViewThemeType.swift",
       "line": 10,
       "symbol": "TextViewThemeType.textColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/TextViewThemeType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/TextViewThemeType.swift",
       "line": 11,
       "symbol": "TextViewThemeType.placeholderColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/View.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/View.swift",
       "line": 17,
       "symbol": "View.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Collection/View/View.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Collection/View/View.swift",
       "line": 22,
       "symbol": "View.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Device/DeviceHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Device/DeviceHelper.swift",
       "line": 113,
       "symbol": "DeviceHelper.mailComposeController(_:didFinishWith:error:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Device/DeviceType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Device/DeviceType.swift",
       "line": 7,
       "symbol": "DeviceType.phone",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Device/DeviceType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Device/DeviceType.swift",
       "line": 8,
       "symbol": "DeviceType.pad",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Device/DeviceType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Device/DeviceType.swift",
       "line": 9,
       "symbol": "DeviceType.watch",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Device/DeviceType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Device/DeviceType.swift",
       "line": 10,
       "symbol": "DeviceType.unknown",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Image/CodeType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Image/CameraError.swift",
+      "line": 10,
+      "symbol": "CameraError.authorization",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Image/CameraError.swift",
+      "line": 13,
+      "symbol": "CameraError.description",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Image/CodeType.swift",
       "line": 7,
       "symbol": "CodeType.code128",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Image/CodeType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Image/CodeType.swift",
       "line": 8,
       "symbol": "CodeType.pdf417",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Image/CodeType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Image/CodeType.swift",
       "line": 9,
       "symbol": "CodeType.aztec",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Image/CodeType.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Image/CodeType.swift",
       "line": 10,
       "symbol": "CodeType.qr",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Image/ExpandableGalleryView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Image/ExpandableGalleryView.swift",
       "line": 15,
       "symbol": "ExpandableGalleryView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Image/GalleryView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Image/GalleryView.swift",
       "line": 82,
       "symbol": "GalleryView.scrollViewDidScroll(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Image/ImageJoinDirection.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Image/ImageJoinDirection.swift",
       "line": 7,
       "symbol": "ImageJoinDirection.horizontalTop",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Image/ImageJoinDirection.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Image/ImageJoinDirection.swift",
       "line": 8,
       "symbol": "ImageJoinDirection.verticalLeft",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 230,
       "symbol": "KeyboardHelper.searchBarShouldBeginEditing(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 235,
       "symbol": "KeyboardHelper.searchBarSearchButtonClicked(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 239,
       "symbol": "KeyboardHelper.searchBar(_:textDidChange:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 244,
       "symbol": "KeyboardHelper.searchBar(_:shouldChangeTextIn:replacementText:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 261,
       "symbol": "KeyboardHelper.searchBarTextDidBeginEditing(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 265,
       "symbol": "KeyboardHelper.searchBarTextDidEndEditing(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 274,
       "symbol": "KeyboardHelper.textFieldShouldBeginEditing(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 279,
       "symbol": "KeyboardHelper.textFieldShouldReturn(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 284,
       "symbol": "KeyboardHelper.textFieldDidChangeText(textField:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 288,
       "symbol": "KeyboardHelper.textField(_:shouldChangeCharactersIn:replacementString:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 303,
       "symbol": "KeyboardHelper.textFieldDidBeginEditing(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Keyboard/KeyboardHelper.swift",
       "line": 307,
       "symbol": "KeyboardHelper.textFieldDidEndEditing(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
       "line": 259,
       "symbol": "InfiniteList.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
       "line": 271,
       "symbol": "InfiniteList.tableView(_:didSelectRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
       "line": 284,
       "symbol": "InfiniteList.tableView(_:numberOfRowsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
       "line": 291,
       "symbol": "InfiniteList.tableView(_:cellForRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
       "line": 335,
       "symbol": "InfiniteList.tableView(_:canEditRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
       "line": 346,
       "symbol": "InfiniteList.tableView(_:commit:forRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
       "line": 367,
       "symbol": "InfiniteList.tableView(_:willDisplay:forRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
       "line": 391,
       "symbol": "InfiniteList.scrollViewWillBeginDragging(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
       "line": 395,
       "symbol": "InfiniteList.scrollViewDidScroll(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/List/InfiniteList.swift",
       "line": 413,
       "symbol": "InfiniteList.scrollViewDidEndDragging(_:willDecelerate:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Location/LocationHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Location/LocationHelper.swift",
       "line": 52,
       "symbol": "LocationHelper.requestAlwaysAuthorization()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Location/LocationHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Location/LocationHelper.swift",
       "line": 68,
       "symbol": "LocationHelper.requestWhenInUseAuthorization()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Location/LocationHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Location/LocationHelper.swift",
       "line": 88,
       "symbol": "LocationHelper.locationManager(_:didChangeAuthorization:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/ExpandableMapView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/ExpandableMapView.swift",
       "line": 84,
       "symbol": "ExpandableMapView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/ExpandableMapView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/ExpandableMapView.swift",
       "line": 89,
       "symbol": "ExpandableMapView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/ExpandableMapView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/ExpandableMapView.swift",
       "line": 94,
       "symbol": "ExpandableMapView.prepareForInterfaceBuilder()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
       "line": 189,
       "symbol": "MapView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
       "line": 194,
       "symbol": "MapView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
       "line": 199,
       "symbol": "MapView.prepareForInterfaceBuilder()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
       "line": 246,
       "symbol": "MapView.mapView(_:didUpdate:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
       "line": 254,
       "symbol": "MapView.mapView(_:regionDidChangeAnimated:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
       "line": 259,
       "symbol": "MapView.mapView(_:regionWillChangeAnimated:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
       "line": 264,
       "symbol": "MapView.mapView(_:viewFor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/MapView.swift",
       "line": 288,
       "symbol": "MapView.mapView(_:rendererFor:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/MapViewPointPosition.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/MapViewPointPosition.swift",
       "line": 7,
       "symbol": "MapViewPointPosition.center",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Map/MapViewPointPosition.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Map/MapViewPointPosition.swift",
       "line": 8,
       "symbol": "MapViewPointPosition.bottomCenter",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Message/CustomizedMessageHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Message/CustomizedMessageHelper.swift",
       "line": 280,
       "symbol": "CustomizedMessageHelper.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
       "line": 8,
       "symbol": "MessageHelper.delegate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
       "line": 58,
       "symbol": "MessageHelper.warningTitle",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
       "line": 59,
       "symbol": "MessageHelper.errorTitle",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
       "line": 63,
       "symbol": "MessageHelper.warningConfirmButtonName",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
       "line": 64,
       "symbol": "MessageHelper.warningCancelButtonName",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
       "line": 65,
       "symbol": "MessageHelper.errorConfirmButtonName",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
       "line": 66,
       "symbol": "MessageHelper.inputConfirmButtonName",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Message/MessageHelper.swift",
       "line": 67,
       "symbol": "MessageHelper.inputCancelButtonName",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetMode.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetMode.swift",
       "line": 8,
       "symbol": "BottomSheetMode.ratio(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetMode.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetMode.swift",
       "line": 11,
       "symbol": "BottomSheetMode.auto",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetMode.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetMode.swift",
       "line": 14,
       "symbol": "BottomSheetMode.percentage(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetMode.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetMode.swift",
       "line": 18,
       "symbol": "BottomSheetMode.defaultModalHeightPercentage",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetViewController.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetViewController.swift",
       "line": 31,
       "symbol": "BottomSheetViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetViewController.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetViewController.swift",
       "line": 36,
       "symbol": "BottomSheetViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetViewController.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetViewController.swift",
       "line": 42,
       "symbol": "BottomSheetViewController.viewWillAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetViewController.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetViewController.swift",
       "line": 50,
       "symbol": "BottomSheetViewController.viewDidAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetViewController.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/BottomSheetViewController.swift",
       "line": 107,
       "symbol": "BottomSheetViewController.dismiss(animated:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/ModalViewController.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/ModalViewController.swift",
       "line": 9,
       "symbol": "ModalViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/ModalViewController.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/ModalViewController.swift",
       "line": 14,
       "symbol": "ModalViewController.init(nibName:bundle:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/ModalViewController.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/ModalViewController.swift",
       "line": 30,
       "symbol": "ModalViewController.animationController(forPresented:presenting:source:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Navigation/ModalViewController.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Navigation/ModalViewController.swift",
       "line": 36,
       "symbol": "ModalViewController.animationController(forDismissed:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Picker/DataPicker.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Picker/DataPicker.swift",
       "line": 236,
       "symbol": "DataPicker.pickerView(_:viewForRow:forComponent:reusing:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Picker/DataPicker.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Picker/DataPicker.swift",
       "line": 256,
       "symbol": "DataPicker.numberOfComponents(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/Picker/DataPicker.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/Picker/DataPicker.swift",
       "line": 260,
       "symbol": "DataPicker.pickerView(_:numberOfRowsInComponent:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/PageView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/PageView.swift",
       "line": 158,
       "symbol": "PageView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/PageView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/PageView.swift",
       "line": 169,
       "symbol": "PageView.draw(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/PageView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/PageView.swift",
       "line": 188,
       "symbol": "PageView.didMoveToSuperview()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/PageView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/PageView.swift",
       "line": 197,
       "symbol": "PageView.removeFromSuperview()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/PageView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/PageView.swift",
       "line": 206,
       "symbol": "PageView.scrollViewDidScroll(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/PopupView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/PopupView.swift",
       "line": 49,
       "symbol": "PopupView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/RootView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/RootView.swift",
       "line": 40,
       "symbol": "RootView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/RootView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/RootView.swift",
       "line": 45,
       "symbol": "RootView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/RootView.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/RootView.swift",
       "line": 50,
       "symbol": "RootView.draw(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/View+Alpha.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/View+Alpha.swift",
       "line": 8,
       "symbol": "CGFloat.visible",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/View+Alpha.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/View+Alpha.swift",
       "line": 9,
       "symbol": "CGFloat.disabled",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/adamaszhu/Documents/Project/AdvancedUIKit/AdvancedUIKit/View/View+Alpha.swift",
+      "file": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit/AdvancedUIKit/View/View+Alpha.swift",
       "line": 10,
       "symbol": "CGFloat.hidden",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/adamaszhu/Documents/Project/AdvancedUIKit"
+  "source_directory": "/Users/adamaszhu/Documents/Projects/AdvancedUIKit"
 }
