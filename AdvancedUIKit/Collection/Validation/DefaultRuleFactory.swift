@@ -5,6 +5,16 @@
 /// - author: Adamas
 public class DefaultRuleFactory {
 
+    /// Currency string rule
+    /// - Parameters:
+    ///   - message: Error message
+    ///   - languages: Languages that the currency string can be in
+    /// - Returns: The rule
+    public static func currencyRule(withMessage message: String,
+                                    and languages: [Language]) -> RuleType {
+        CurrencyRule(message: message, languages: languages)
+    }
+
     /// Number only rule
     /// - Parameter message: Error message
     /// - Returns: The rule
@@ -72,3 +82,4 @@ private extension DefaultRuleFactory {
 }
 
 import Foundation
+import AdvancedFoundation

@@ -229,7 +229,7 @@
 		4269399F1EAC4B3100761FDE /* DataPickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269399E1EAC4B3100761FDE /* DataPickerItem.swift */; };
 		426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426939A01EAC4C7700761FDE /* DataPickerColumn.swift */; };
 		427373E41ED8FFA200DD8891 /* GestureFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427373E31ED8FFA200DD8891 /* GestureFilterView.swift */; };
-		428EAB481EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */; };
+		428EAB481EDC16BC006ED22B /* DeviceInfoAccessorSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB471EDC16BC006ED22B /* DeviceInfoAccessorSpecs.swift */; };
 		428EAB5E1EDC4BD3006ED22B /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5A1EDC4BD3006ED22B /* DeviceHelper.swift */; };
 		428EAB601EDC4BD3006ED22B /* DeviceHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */; };
 		428EAB641EDC4BE3006ED22B /* DeviceHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428EAB661EDC4BE3006ED22B /* DeviceHelper.strings */; };
@@ -253,6 +253,8 @@
 		42D15E0B2327BCF1006EAEF5 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D15E0A2327BCF1006EAEF5 /* EmptyState.xib */; };
 		42EA08B51EDD76FA00B079C0 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */; };
 		42FE508D1EF7CF9E009C0BD7 /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE508C1EF7CF9E009C0BD7 /* ExpandableView.swift */; };
+		B2822E362A86281700259F20 /* CurrencyRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2822E352A86281700259F20 /* CurrencyRule.swift */; };
+		B2BFE4422A86FDCB00617B10 /* CurrencyRuleSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFE4412A86FDCB00617B10 /* CurrencyRuleSpecs.swift */; };
 		B2CCDE8F2A25A261009B3B0F /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCDE8E2A25A261009B3B0F /* CameraError.swift */; };
 /* End PBXBuildFile section */
 
@@ -524,7 +526,7 @@
 		4269399E1EAC4B3100761FDE /* DataPickerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerItem.swift; sourceTree = "<group>"; };
 		426939A01EAC4C7700761FDE /* DataPickerColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerColumn.swift; sourceTree = "<group>"; };
 		427373E31ED8FFA200DD8891 /* GestureFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureFilterView.swift; sourceTree = "<group>"; };
-		428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceInfoAccessor+Specs.swift"; sourceTree = "<group>"; };
+		428EAB471EDC16BC006ED22B /* DeviceInfoAccessorSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoAccessorSpecs.swift; sourceTree = "<group>"; };
 		428EAB5A1EDC4BD3006ED22B /* DeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
 		428EAB5C1EDC4BD3006ED22B /* DeviceHelperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelperDelegate.swift; sourceTree = "<group>"; };
 		428EAB651EDC4BE3006ED22B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeviceHelper.strings; sourceTree = "<group>"; };
@@ -549,6 +551,8 @@
 		42D15E0A2327BCF1006EAEF5 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 		42EA08B41EDD76FA00B079C0 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		42FE508C1EF7CF9E009C0BD7 /* ExpandableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
+		B2822E352A86281700259F20 /* CurrencyRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRule.swift; sourceTree = "<group>"; };
+		B2BFE4412A86FDCB00617B10 /* CurrencyRuleSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRuleSpecs.swift; sourceTree = "<group>"; };
 		B2CCDE8E2A25A261009B3B0F /* CameraError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -601,6 +605,7 @@
 		28108C7628DD22AE006C3514 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
+				B2BFE4412A86FDCB00617B10 /* CurrencyRuleSpecs.swift */,
 				28108C7428DD22A6006C3514 /* RegexRuleSpecs.swift */,
 			);
 			path = Validation;
@@ -844,6 +849,7 @@
 			children = (
 				28C11D3D2921C7DF001FD0E5 /* CreditCardNumberRule.swift */,
 				28C11D3B2921C73A001FD0E5 /* CreditCardType.swift */,
+				B2822E352A86281700259F20 /* CurrencyRule.swift */,
 				28D9844528D2018800FA28BB /* DateRule.swift */,
 				28A5BB1C28D17F2A0065218B /* DefaultRuleFactory.swift */,
 				28A5BB2128D1B2900065218B /* LuhnRule.swift */,
@@ -1237,7 +1243,7 @@
 		428EAB461EDC1683006ED22B /* Device */ = {
 			isa = PBXGroup;
 			children = (
-				428EAB471EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift */,
+				428EAB471EDC16BC006ED22B /* DeviceInfoAccessorSpecs.swift */,
 			);
 			path = Device;
 			sourceTree = "<group>";
@@ -1600,6 +1606,7 @@
 				2823EE471EF224F4009B9AC8 /* Coordinate+Measurer.swift in Sources */,
 				28C11D3E2921C7DF001FD0E5 /* CreditCardNumberRule.swift in Sources */,
 				28C11D3C2921C73A001FD0E5 /* CreditCardType.swift in Sources */,
+				B2822E362A86281700259F20 /* CurrencyRule.swift in Sources */,
 				284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */,
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
 				426939A11EAC4C7700761FDE /* DataPickerColumn.swift in Sources */,
@@ -1776,7 +1783,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				428EAB481EDC16BC006ED22B /* DeviceInfoAccessor+Specs.swift in Sources */,
+				B2BFE4422A86FDCB00617B10 /* CurrencyRuleSpecs.swift in Sources */,
+				428EAB481EDC16BC006ED22B /* DeviceInfoAccessorSpecs.swift in Sources */,
 				28108C7528DD22A6006C3514 /* RegexRuleSpecs.swift in Sources */,
 				3519F74822824D5500C7AF17 /* RemoteNotificationSpecs.swift in Sources */,
 			);
