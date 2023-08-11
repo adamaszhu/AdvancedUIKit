@@ -5,6 +5,12 @@
 /// - version: 1.9.15
 /// - date: 29/03/2023
 public protocol NotificationHelperType {
+
+    /// Parse a token data into a string
+    ///
+    /// - Parameter data: The token data
+    /// - Returns: The token string
+    static func deviceToken(from data: Data) -> String
     
     /// The delegate.
     var delegate: NotificationHelperDelegate? { get set }
@@ -25,12 +31,6 @@ public protocol NotificationHelperType {
     
     /// Register the remote notification function.
     func requestRemoteNotificationPermission()
-    
-    /// Parse a token data into a string
-    ///
-    /// - Parameter data: The token data
-    /// - Returns: The token string
-    func deviceToken(from data: Data) -> String
     
     /// Post a local notification.
     ///
@@ -101,6 +101,10 @@ public final class NotificationHelper: NotificationHelperType {
         self.application = application
         self.notificationCenter = notificationCenter
     }
+
+    public static func deviceToken(from data: Data) -> String {
+        data.map{String(format: Self.deviceTokenPattern, $0)}.joined()
+    }
     
     public func checkLocalNotificationPermission(completion: @escaping (Bool?) -> Void) {
         notificationCenter.getNotificationSettings { settings in
@@ -142,11 +146,7 @@ public final class NotificationHelper: NotificationHelperType {
         // Abandon the deletate callback for old devices.
         delegate?.notificationHelper(self, didAuthorizeRemoteNotification: true)
     }
-    
-    public func deviceToken(from data: Data) -> String {
-        data.map{String(format: Self.deviceTokenPattern, $0)}.joined()
-    }
-    
+
     public func createLocalNotification(withTitle title: String?,
                                         content: String, delay: Double,
                                         andSoundName soundName: String?) {
