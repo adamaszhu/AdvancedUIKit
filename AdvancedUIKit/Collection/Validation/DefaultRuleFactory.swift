@@ -5,16 +5,6 @@
 /// - author: Adamas
 public class DefaultRuleFactory {
 
-    /// Currency string rule
-    /// - Parameters:
-    ///   - message: Error message
-    ///   - languages: Languages that the currency string can be in
-    /// - Returns: The rule
-    public static func currencyRule(withMessage message: String,
-                                    and languages: [Language]) -> RuleType {
-        CurrencyRule(message: message, languages: languages)
-    }
-
     /// Number only rule
     /// - Parameter message: Error message
     /// - Returns: The rule
@@ -68,6 +58,16 @@ public class DefaultRuleFactory {
          MaxLengthRule(maxLength: Self.creditCardNumberMaxLength,
                        message: maxLengthMessage),
          LuhnRule(message: invalidMessage)]
+    }
+
+    /// Currency string rule
+    /// - Parameters:
+    ///   - message: Error messagee
+    ///   - languages: Languages that the currency string can be in
+    /// - Returns: The rule
+    public static func currencyRules(withMessage message: String,
+                                     and languages: [Language]) -> [RuleType] {
+        [CurrencyRule(message: message, languages: languages)]
     }
 }
 
