@@ -15,7 +15,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/Quick/Quick", .upToNextMajor(from: "5.0.0")),
         .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "10.0.0")),
-        .package(url: "https://github.com/adamaszhu/AdvancedFoundation", .upToNextMajor(from: "1.9.6"))
+        .package(url: "https://github.com/adamaszhu/AdvancedFoundation", .upToNextMajor(from: "1.9.7"))
     ],
     targets: [
         .target(name: "AdvancedUIKit",

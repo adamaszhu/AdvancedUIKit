@@ -2,7 +2,7 @@ final class CurrencyRuleSpecs: QuickSpec {
 
     override func spec() {
         describe("calls isValid(value)") {
-            let rule = CurrencyRule(message: Self.error, languages: Self.languages)
+            let rule = CurrencyRule(message: Self.error, languages: Language.allCases)
             context("with a currency string in english") {
                 it("returns nil") {
                     expect(rule.isValid(value: "$1")) == nil
@@ -28,7 +28,6 @@ final class CurrencyRuleSpecs: QuickSpec {
 }
 
 private extension CurrencyRuleSpecs {
-    static let languages: [Language] = [.mandarin, .english]
     static let error = "Error"
 }
 

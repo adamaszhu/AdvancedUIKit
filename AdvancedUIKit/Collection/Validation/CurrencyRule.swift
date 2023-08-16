@@ -12,7 +12,9 @@ public class CurrencyRule: RuleType {
     private let numberFormatters: [NumberFormatter]
 
     /// Initialize the rule
-    /// - Parameter message: The error message to apply.
+    /// - Parameters:
+    ///   - message: The error message to apply.
+    ///   - languages: The language region that the currency can be in
     public init(message: String,
                 languages: [Language]) {
         self.message = message

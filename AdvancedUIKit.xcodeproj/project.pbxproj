@@ -256,6 +256,8 @@
 		B2822E362A86281700259F20 /* CurrencyRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2822E352A86281700259F20 /* CurrencyRule.swift */; };
 		B2BFE4422A86FDCB00617B10 /* CurrencyRuleSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFE4412A86FDCB00617B10 /* CurrencyRuleSpecs.swift */; };
 		B2CCDE8F2A25A261009B3B0F /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCDE8E2A25A261009B3B0F /* CameraError.swift */; };
+		B2F2D7E72A8C96EF00012089 /* CurrencyNumberRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2D7E62A8C96EF00012089 /* CurrencyNumberRule.swift */; };
+		B2F2D7E92A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2D7E82A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -554,6 +556,8 @@
 		B2822E352A86281700259F20 /* CurrencyRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRule.swift; sourceTree = "<group>"; };
 		B2BFE4412A86FDCB00617B10 /* CurrencyRuleSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRuleSpecs.swift; sourceTree = "<group>"; };
 		B2CCDE8E2A25A261009B3B0F /* CameraError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
+		B2F2D7E62A8C96EF00012089 /* CurrencyNumberRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNumberRule.swift; sourceTree = "<group>"; };
+		B2F2D7E82A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNumberRuleSpecs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -605,6 +609,7 @@
 		28108C7628DD22AE006C3514 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
+				B2F2D7E82A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift */,
 				B2BFE4412A86FDCB00617B10 /* CurrencyRuleSpecs.swift */,
 				28108C7428DD22A6006C3514 /* RegexRuleSpecs.swift */,
 			);
@@ -849,6 +854,7 @@
 			children = (
 				28C11D3D2921C7DF001FD0E5 /* CreditCardNumberRule.swift */,
 				28C11D3B2921C73A001FD0E5 /* CreditCardType.swift */,
+				B2F2D7E62A8C96EF00012089 /* CurrencyNumberRule.swift */,
 				B2822E352A86281700259F20 /* CurrencyRule.swift */,
 				28D9844528D2018800FA28BB /* DateRule.swift */,
 				28A5BB1C28D17F2A0065218B /* DefaultRuleFactory.swift */,
@@ -1606,6 +1612,7 @@
 				2823EE471EF224F4009B9AC8 /* Coordinate+Measurer.swift in Sources */,
 				28C11D3E2921C7DF001FD0E5 /* CreditCardNumberRule.swift in Sources */,
 				28C11D3C2921C73A001FD0E5 /* CreditCardType.swift in Sources */,
+				B2F2D7E72A8C96EF00012089 /* CurrencyNumberRule.swift in Sources */,
 				B2822E362A86281700259F20 /* CurrencyRule.swift in Sources */,
 				284E5C501EDD104C00C3CC86 /* CustomizedMessageHelper.swift in Sources */,
 				426939851EAB673E00761FDE /* DataPicker.swift in Sources */,
@@ -1783,6 +1790,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F2D7E92A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift in Sources */,
 				B2BFE4422A86FDCB00617B10 /* CurrencyRuleSpecs.swift in Sources */,
 				428EAB481EDC16BC006ED22B /* DeviceInfoAccessorSpecs.swift in Sources */,
 				28108C7528DD22A6006C3514 /* RegexRuleSpecs.swift in Sources */,
