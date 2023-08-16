@@ -13,10 +13,10 @@ public class CurrencyRule: RuleType {
 
     /// Initialize the rule
     /// - Parameters:
+    ///   - languages: The language region that the currency can be in 
     ///   - message: The error message to apply.
-    ///   - languages: The language region that the currency can be in
-    public init(message: String,
-                languages: [Language]) {
+    public init(languages: [Language],
+                message: String) {
         self.message = message
         numberFormatters = languages.map { NumberFormatterFactory.currencyFormatter(for: $0) }
     }

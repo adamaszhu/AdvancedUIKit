@@ -16,7 +16,7 @@ public class CurrencyNumberRule: RuleType {
 
     public func isValid(value: String?) -> String? {
         let value = value ?? String()
-        guard let number = NumberFormatterFactory
+        guard let _ = NumberFormatterFactory
             .decimalFormatter()
             .number(from: value) else {
             return message

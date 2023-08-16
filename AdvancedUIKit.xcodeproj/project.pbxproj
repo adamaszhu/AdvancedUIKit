@@ -258,6 +258,8 @@
 		B2CCDE8F2A25A261009B3B0F /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCDE8E2A25A261009B3B0F /* CameraError.swift */; };
 		B2F2D7E72A8C96EF00012089 /* CurrencyNumberRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2D7E62A8C96EF00012089 /* CurrencyNumberRule.swift */; };
 		B2F2D7E92A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2D7E82A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift */; };
+		B2F2D7EB2A8CCAAC00012089 /* UnionRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2D7EA2A8CCAAC00012089 /* UnionRule.swift */; };
+		B2F2D7ED2A8CCB8500012089 /* UnionRuleSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2D7EC2A8CCB8500012089 /* UnionRuleSpecs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -558,6 +560,8 @@
 		B2CCDE8E2A25A261009B3B0F /* CameraError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
 		B2F2D7E62A8C96EF00012089 /* CurrencyNumberRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNumberRule.swift; sourceTree = "<group>"; };
 		B2F2D7E82A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNumberRuleSpecs.swift; sourceTree = "<group>"; };
+		B2F2D7EA2A8CCAAC00012089 /* UnionRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionRule.swift; sourceTree = "<group>"; };
+		B2F2D7EC2A8CCB8500012089 /* UnionRuleSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionRuleSpecs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -612,6 +616,7 @@
 				B2F2D7E82A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift */,
 				B2BFE4412A86FDCB00617B10 /* CurrencyRuleSpecs.swift */,
 				28108C7428DD22A6006C3514 /* RegexRuleSpecs.swift */,
+				B2F2D7EC2A8CCB8500012089 /* UnionRuleSpecs.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -866,6 +871,7 @@
 				28B5DF2B270FFFD700ED1898 /* RegexRule.swift */,
 				28B5DF2D271001C600ED1898 /* RequiredRule.swift */,
 				28B5DF29270FFF1A00ED1898 /* Rule.swift */,
+				B2F2D7EA2A8CCAAC00012089 /* UnionRule.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -1737,6 +1743,7 @@
 				28CC661028239FFB00689A1A /* ToggleTableCell.swift in Sources */,
 				28CC660E28239F9600689A1A /* ToggleView.swift in Sources */,
 				28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */,
+				B2F2D7EB2A8CCAAC00012089 /* UnionRule.swift in Sources */,
 				28FF69CF281FA6200031C289 /* ValueRow.swift in Sources */,
 				2810DCFF282215FC005247F4 /* ValueView.swift in Sources */,
 				42336330235A7D2D00C1F78A /* View+Alpha.swift in Sources */,
@@ -1795,6 +1802,7 @@
 				428EAB481EDC16BC006ED22B /* DeviceInfoAccessorSpecs.swift in Sources */,
 				28108C7528DD22A6006C3514 /* RegexRuleSpecs.swift in Sources */,
 				3519F74822824D5500C7AF17 /* RemoteNotificationSpecs.swift in Sources */,
+				B2F2D7ED2A8CCB8500012089 /* UnionRuleSpecs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

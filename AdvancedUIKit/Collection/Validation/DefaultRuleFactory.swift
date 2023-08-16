@@ -62,12 +62,14 @@ public class DefaultRuleFactory {
 
     /// Currency string rule
     /// - Parameters:
-    ///   - message: Error messagee
     ///   - languages: Languages that the currency string can be in
+    ///   - message: Error messagee
     /// - Returns: The rule
-    public static func currencyRules(withMessage message: String,
-                                     and languages: [Language]) -> [RuleType] {
-        [CurrencyRule(message: message, languages: languages)]
+    public static func currencyRules(for languages: [Language],
+                                     withMessage message: String) -> [RuleType] {
+        [UnionRule(rules: [CurrencyRule(languages: languages, message: message),
+                           CurrencyNumberRule(message: message)],
+                   message: message)]
     }
 }
 
