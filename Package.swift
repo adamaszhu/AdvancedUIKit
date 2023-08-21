@@ -10,7 +10,8 @@ let package = Package(
         .iOS(.v11)
     ],
     products: [
-        .library(name: "AdvancedUIKit", targets: ["AdvancedUIKit"])
+        .library(name: "AdvancedUIKit", targets: ["AdvancedUIKit"]),
+        .library(name: "AdvancedUIKitPhoto", targets: ["AdvancedUIKitPhoto"])
     ],
     dependencies: [
         .package(url: "https://github.com/Quick/Quick", .upToNextMajor(from: "5.0.0")),
@@ -20,7 +21,12 @@ let package = Package(
     targets: [
         .target(name: "AdvancedUIKit",
                 dependencies: ["AdvancedFoundation"],
-                path: "AdvancedUIKit"),
+                path: "AdvancedUIKit",
+                exclude: ["Camera"]),
+        .target(name: "AdvancedUIKitPhoto",
+                dependencies: ["AdvancedFoundation"],
+                path: "AdvancedUIKit/Camera",
+                swiftSettings: [.unsafeFlags(["PHOTO"])]),
         .testTarget(
             name: "AdvancedUIKitTests",
             dependencies: ["AdvancedUIKit",
