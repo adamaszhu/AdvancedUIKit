@@ -1101,6 +1101,7 @@
 				420C78E21EEB93D300A1E3EA /* Application */,
 				42CA09E01EE0460F009AF1BE /* Audio */,
 				42CA09DB1EDEE0B7009AF1BE /* Button */,
+				B2D5AF372A9384230002FBD8 /* Camera */,
 				2823715B270C2EC300A72865 /* Collection */,
 				28F550F01EDBF490006646A3 /* Device */,
 				4258DD9E1EEAE6A80085FCAA /* Image */,
@@ -1179,10 +1180,6 @@
 		4258DD9E1EEAE6A80085FCAA /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				B2CCDE8E2A25A261009B3B0F /* CameraError.swift */,
-				420C78ED1EEBB6D900A1E3EA /* CameraHelper.strings */,
-				4258DD9F1EEAE6A80085FCAA /* CameraHelper.swift */,
-				4258DDA01EEAE6A80085FCAA /* CameraHelperDelegate.swift */,
 				35EA437E233304C00004F41B /* CodeHelper.swift */,
 				35EA4380233309030004F41B /* CodeType.swift */,
 				28F6F8BA2803CAF20034A877 /* Color+Image.swift */,
@@ -1194,9 +1191,6 @@
 				28F5CBD128ACB7D300E73347 /* Image+Measurer.swift */,
 				4258DDA91EEAE6A80085FCAA /* Image+PS.swift */,
 				3519F7502282B53900C7AF17 /* ImageJoinDirection.swift */,
-				4258DDA11EEAE6A80085FCAA /* ImagePickerHelper.strings */,
-				4258DDA71EEAE6A80085FCAA /* ImagePickerHelper.swift */,
-				4258DDA81EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift */,
 				28A8D32720FD4B5D0061B420 /* ImageView+Animation.swift */,
 				4258DDAA1EEAE6A80085FCAA /* ImageView+Measurer.swift */,
 				3519F74C2282AE6F00C7AF17 /* ScrollView+Imageable.swift */,
@@ -1379,6 +1373,20 @@
 				28E66FEA1EE4D06600073DF1 /* ViewViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B2D5AF372A9384230002FBD8 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				B2CCDE8E2A25A261009B3B0F /* CameraError.swift */,
+				420C78ED1EEBB6D900A1E3EA /* CameraHelper.strings */,
+				4258DD9F1EEAE6A80085FCAA /* CameraHelper.swift */,
+				4258DDA01EEAE6A80085FCAA /* CameraHelperDelegate.swift */,
+				4258DDA11EEAE6A80085FCAA /* ImagePickerHelper.strings */,
+				4258DDA71EEAE6A80085FCAA /* ImagePickerHelper.swift */,
+				4258DDA81EEAE6A80085FCAA /* ImagePickerHelperDelegate.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
