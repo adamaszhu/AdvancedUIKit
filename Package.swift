@@ -24,7 +24,7 @@ let package = Package(
                 path: "AdvancedUIKit",
                 exclude: ["Camera"]),
         .target(name: "AdvancedUIKitPhoto",
-                dependencies: ["AdvancedFoundation"],
+                dependencies: ["AdvancedFoundation", "AdvancedUIKit"],
                 path: "AdvancedUIKit/Camera",
                 swiftSettings: [.unsafeFlags(["-DPHOTO"])]),
         .testTarget(
