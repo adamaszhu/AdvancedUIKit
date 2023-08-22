@@ -12,6 +12,13 @@ public class DefaultRuleFactory {
         RegexRule(regex: Self.numberRegex, message: message)
     }
 
+    /// Barcode only rule
+    /// - Parameter message: Error message
+    /// - Returns: The rule
+    public static func barcodeRule(withMessage message: String) -> RuleType {
+        RegexRule(regex: Self.barcodeRegex, message: message)
+    }
+
     /// Alphabet only rule
     /// - Parameter message: Error message
     /// - Returns: The rule
@@ -79,7 +86,8 @@ private extension DefaultRuleFactory {
     static let creditCardNumberMaxLength = 16
     static let creditCardVerificationNumberLength = 3
     static let fullNameRegex = "^([A-Z][-.a-zA-Z]+[ ]{1})+[A-Z][-.a-zA-Z]+$"
-    static let numberRegex = "^[0-9]*$"
+    static let numberRegex = "^\d*$"
+    static let barcodeRegex = "^\d{13}|\d{12}|\d{8}$"
     static let alphabetRegex = "^[a-zA-Z]*$"
 }
 
