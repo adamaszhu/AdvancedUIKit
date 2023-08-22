@@ -57,6 +57,7 @@ public final class CameraHelper {
     
     /// Authorize the camera.
     /// - Returns: Whether the permission is granted.
+    @available(iOS 13.0, *)
     public func requestCameraAuthorization() async throws -> Bool {
         guard isCameraUndetermined else {
             throw CameraError.authorization
