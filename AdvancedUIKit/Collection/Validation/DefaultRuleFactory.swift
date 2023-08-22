@@ -86,8 +86,8 @@ private extension DefaultRuleFactory {
     static let creditCardNumberMaxLength = 16
     static let creditCardVerificationNumberLength = 3
     static let fullNameRegex = "^([A-Z][-.a-zA-Z]+[ ]{1})+[A-Z][-.a-zA-Z]+$"
-    static let numberRegex = "^\d*$"
-    static let barcodeRegex = "^\d{13}|\d{12}|\d{8}$"
+    static let numberRegex = "^\\d*$"
+    static let barcodeRegex = "^\\d{13}|\\d{12}|\\d{8}$"
     static let alphabetRegex = "^[a-zA-Z]*$"
 }
 
