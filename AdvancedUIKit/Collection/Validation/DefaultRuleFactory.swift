@@ -12,13 +12,6 @@ public class DefaultRuleFactory {
         RegexRule(regex: Self.numberRegex, message: message)
     }
 
-    /// Barcode only rule
-    /// - Parameter message: Error message
-    /// - Returns: The rule
-    public static func barcodeRule(withMessage message: String) -> RuleType {
-        RegexRule(regex: Self.barcodeRegex, message: message)
-    }
-
     /// Alphabet only rule
     /// - Parameter message: Error message
     /// - Returns: The rule
@@ -26,11 +19,25 @@ public class DefaultRuleFactory {
         RegexRule(regex: Self.alphabetRegex, message: message)
     }
 
+    /// Phrase only rule
+    /// - Parameter message: Error message
+    /// - Returns: The rule
+    public static func phraseRule(withMessage message: String) -> RuleType {
+        RegexRule(regex: Self.phraseRegex, message: message)
+    }
+
     /// Full name rules
     /// - Parameter message: Error message
     /// - Returns: A list of rules that a full name should follow
     public static func fullNameRules(withMessage message: String) -> [RuleType] {
         [RegexRule(regex: Self.fullNameRegex, message: message)]
+    }
+
+    /// Barcode only rule
+    /// - Parameter message: Error message
+    /// - Returns: The rule
+    public static func barcodeRules(withMessage message: String) -> [RuleType] {
+        [RegexRule(regex: Self.barcodeRegex, message: message)]
     }
 
     /// Credit card verification number rules
@@ -56,6 +63,12 @@ public class DefaultRuleFactory {
                      message: message)]
     }
 
+    /// Rules for a credit card number
+    /// - Parameters:
+    ///   - invalidMessage: Invalid message
+    ///   - minLengthMessage: Message for short length
+    ///   - maxLengthMessage: Message for over length
+    /// - Returns: A list of rules
     public static func creditCardNumberRules(withInvalidMessage invalidMessage: String,
                                              minLengthMessage: String,
                                              andMaxLengthMessage maxLengthMessage: String) -> [RuleType] {
@@ -86,6 +99,7 @@ private extension DefaultRuleFactory {
     static let creditCardNumberMaxLength = 16
     static let creditCardVerificationNumberLength = 3
     static let fullNameRegex = "^([A-Z][-.a-zA-Z]+[ ]{1})+[A-Z][-.a-zA-Z]+$"
+    static let phraseRegex = "^([a-zA-Z0-9&.]+[ ]{1})+[a-zA-Z0-9&.]+$"
     static let numberRegex = "^\\d*$"
     static let barcodeRegex = "^\\d{13}|\\d{12}|\\d{8}$"
     static let alphabetRegex = "^[a-zA-Z]*$"
