@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/adamaszhu/AdvancedFoundation",
       "state" : {
-        "revision" : "9ae6746aefa94e226748b6098f59f2955a4a2a65",
-        "version" : "1.9.6"
+        "revision" : "e23a00e43952f542f24534ba497134d6658931ad",
+        "version" : "1.9.7"
       }
     },
     {
