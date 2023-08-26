@@ -260,6 +260,7 @@
 		B2F2D7E92A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2D7E82A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift */; };
 		B2F2D7EB2A8CCAAC00012089 /* UnionRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2D7EA2A8CCAAC00012089 /* UnionRule.swift */; };
 		B2F2D7ED2A8CCB8500012089 /* UnionRuleSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2D7EC2A8CCB8500012089 /* UnionRuleSpecs.swift */; };
+		B2F4FD692A9A1A0B00674A46 /* UppercaseRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F4FD682A9A1A0B00674A46 /* UppercaseRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -562,6 +563,7 @@
 		B2F2D7E82A8CAA1D00012089 /* CurrencyNumberRuleSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNumberRuleSpecs.swift; sourceTree = "<group>"; };
 		B2F2D7EA2A8CCAAC00012089 /* UnionRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionRule.swift; sourceTree = "<group>"; };
 		B2F2D7EC2A8CCB8500012089 /* UnionRuleSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionRuleSpecs.swift; sourceTree = "<group>"; };
+		B2F4FD682A9A1A0B00674A46 /* UppercaseRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UppercaseRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -872,6 +874,7 @@
 				28B5DF2D271001C600ED1898 /* RequiredRule.swift */,
 				28B5DF29270FFF1A00ED1898 /* Rule.swift */,
 				B2F2D7EA2A8CCAAC00012089 /* UnionRule.swift */,
+				B2F4FD682A9A1A0B00674A46 /* UppercaseRule.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -1752,6 +1755,7 @@
 				28CC660E28239F9600689A1A /* ToggleView.swift in Sources */,
 				28B1D80E1EE519DF00A5B2C4 /* UnderlineView.swift in Sources */,
 				B2F2D7EB2A8CCAAC00012089 /* UnionRule.swift in Sources */,
+				B2F4FD692A9A1A0B00674A46 /* UppercaseRule.swift in Sources */,
 				28FF69CF281FA6200031C289 /* ValueRow.swift in Sources */,
 				2810DCFF282215FC005247F4 /* ValueView.swift in Sources */,
 				42336330235A7D2D00C1F78A /* View+Alpha.swift in Sources */,
