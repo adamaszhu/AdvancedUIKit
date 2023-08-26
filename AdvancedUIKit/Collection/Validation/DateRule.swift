@@ -9,13 +9,13 @@ public class DateRule: RuleType {
     let message: String
 
     /// Supported date formats
-    let dateFormats: [DateFormat]
+    let dateFormats: [DateFormatType]
 
     /// Initialize the rule
     /// - Parameters:
     ///   - dateFormats: A list of format supported by the rule
     ///   - message: The error message to apply.
-    public init(dateFormats: [DateFormat], message: String) {
+    public init(dateFormats: [DateFormatType], message: String) {
         self.dateFormats = dateFormats
         self.message = message
     }
