@@ -18,3 +18,4 @@ internal extension String {
 }
 
 import Foundation
+import AdvancedFoundation
