@@ -119,8 +119,9 @@ private extension CameraHelper {
     /// System error.
     static let descriptionKeyError = "The description key doesn't exists in the Info.plist file."
 }
-#endif
 
 import AdvancedFoundation
 import AVFoundation
 import Photos
+
+#endif

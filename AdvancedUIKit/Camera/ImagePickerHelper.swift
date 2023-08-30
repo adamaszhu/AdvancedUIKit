@@ -123,10 +123,10 @@ private extension ImagePickerHelper {
     /// System error.
     static let imageError = "There has been error while picking the image."
 }
-#endif
 
-/// The file will be in a different target when using SPM
 import AdvancedUIKit
 import AdvancedFoundation
 import UIKit
+
+#endif
 #endif

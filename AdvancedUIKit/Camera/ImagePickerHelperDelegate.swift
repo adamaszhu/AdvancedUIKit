@@ -19,7 +19,8 @@ public protocol ImagePickerHelperDelegate: AnyObject {
     func imagePickerHelper(_ imagePickerHelper: ImagePickerHelper,
                            didCatchError error: String)
 }
-#endif
 
 import UIKit
+
+#endif
 #endif
