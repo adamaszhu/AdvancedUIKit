@@ -5,7 +5,7 @@ s.ios.deployment_target = '11.0'
 s.name = "AdvancedUIPhoto"
 s.summary = "AdvancedUIKitPhoto contains photo functions built on top of AdvancedUIKit framework."
 s.requires_arc = true
-s.version = "1.9.26"
+s.version = "1.9.27"
 s.license = { :type => "MIT", :file => "LICENSE" }
 s.author = { "Adamas Zhu" => "developer@adamaszhu.com" }
 s.homepage = "https://github.com/adamaszhu/AdvancedUIKit"
