@@ -42,9 +42,14 @@ git tag $NEW_RELEASE
 git push --tags
 echo ""
 
-echo "Release to Cocoapods"
-POD_SPEC_PATH="AdvancedUI.podspec"
-pod trunk push $POD_SPEC_PATH
+echo "Release main to Cocoapods"
+MAIN_POD_SPEC_PATH="AdvancedUI.podspec"
+pod trunk push $MAIN_POD_SPEC_PATH
+echo ""
+
+echo "Release photo to Cocoapods"
+PHOTO_POD_SPEC_PATH="AdvancedUIPhoto.podspec"
+pod trunk push $PHOTO_POD_SPEC_PATH
 echo ""
 
 echo "Clean up"
