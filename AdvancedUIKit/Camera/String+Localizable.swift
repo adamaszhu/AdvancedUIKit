@@ -11,7 +11,7 @@ extension String {
     /// - Returns: The localized string.
      func localizedInternalString(forType type: Any) -> String {
         NSLocalizedString(self, tableName: String(describing: type),
-                                 bundle: .module,
+                                 bundle: .current,
                                  comment: .empty)
     }
 }
