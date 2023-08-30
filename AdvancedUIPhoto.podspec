@@ -15,7 +15,7 @@ s.frameworks = "Foundation", "UIKit", "AdvancedUI"
 s.dependency 'AdvancedFoundation', '~> 1.9.7'
 s.dependency 'AdvancedUI', '~> 1.9.26'
 s.source_files = "AdvancedUIKit/Camera/*.{swift}"
-s.resources = "AdvancedUIKit/Camera/*.{strings}"
+s.resources = "AdvancedUIKit/Camera/**/*.{strings}"
 s.swift_version = "5"
 
 end
